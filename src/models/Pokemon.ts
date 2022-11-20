@@ -20,4 +20,5 @@ export interface Pokemon {
   secondary_type_ident: string | null;
   base_stats: PokemonBaseStats;
   ability_idents: string[];
+  move_idents: string[];
 }

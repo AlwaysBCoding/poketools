@@ -1,0 +1,42 @@
+[
+  {
+    "ident": "acrobatics",
+    "type_ident": "flying",
+    "category_ident": "physical",
+    "base_power": 55,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Power doubles if the user has no held item."
+  },
+  {
+    "ident": "agility",
+    "type_ident": "psychic",
+    "category_ident": "status",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "Raises the user's Speed by 2 stages."
+  },
+  {
+    "ident": "ally-switch",
+    "type_ident": "psychic",
+    "category_ident": "status",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 2,
+    "pp": 15,
+    "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side."
+  },
+  {
+    "ident": "bite",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "Has a 30% chance to make the target flinch."
+  }
+]

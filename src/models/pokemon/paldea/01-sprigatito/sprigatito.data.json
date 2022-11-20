@@ -13,5 +13,11 @@
     "special_defense": 45,
     "speed": 65
   },
-  "ability_idents": ["overgrow", "protean"]
+  "ability_idents": ["overgrow", "protean"],
+  "move_idents": [
+    "acrobatics",
+    "agility",
+    "ally-switch",
+    "bite"
+  ]
 }
