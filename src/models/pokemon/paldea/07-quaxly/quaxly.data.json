@@ -1,0 +1,17 @@
+{
+  "ident": "quaxly",
+  "paldea_regional_pokedex_number": 7,
+  "evolution_line_ident": "quaxly",
+  "evolution_line_index": 0,
+  "primary_type_ident": "water",
+  "secondary_type_ident": null,
+  "base_stats": {
+    "hp": 55,
+    "attack": 65,
+    "defense": 45,
+    "special_attack": 50,
+    "special_defense": 45,
+    "speed": 50
+  },
+  "ability_idents": ["moxie", "torrent"]
+}

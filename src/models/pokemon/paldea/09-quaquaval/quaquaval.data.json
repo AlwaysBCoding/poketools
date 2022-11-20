@@ -1,0 +1,17 @@
+{
+  "ident": "quaquaval",
+  "paldea_regional_pokedex_number": 9,
+  "evolution_line_ident": "quaxly",
+  "evolution_line_index": 2,
+  "primary_type_ident": "water",
+  "secondary_type_ident": "fighting",
+  "base_stats": {
+    "hp": 85,
+    "attack": 120,
+    "defense": 80,
+    "special_attack": 85,
+    "special_defense": 75,
+    "speed": 85
+  },
+  "ability_idents": ["moxie", "torrent"]
+}

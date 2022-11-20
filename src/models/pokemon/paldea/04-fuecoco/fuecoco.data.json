@@ -1,0 +1,17 @@
+{
+  "ident": "fuecoco",
+  "paldea_regional_pokedex_number": 4,
+  "evolution_line_ident": "fuecoco",
+  "evolution_line_index": 0,
+  "primary_type_ident": "fire",
+  "secondary_type_ident": null,
+  "base_stats": {
+    "hp": 67,
+    "attack": 45,
+    "defense": 59,
+    "special_attack": 63,
+    "special_defense": 40,
+    "speed": 36
+  },
+  "ability_idents": ["blaze", "unaware"]
+}

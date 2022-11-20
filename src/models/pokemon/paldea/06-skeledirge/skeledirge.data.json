@@ -1,0 +1,17 @@
+{
+  "ident": "skeledirge",
+  "paldea_regional_pokedex_number": 6,
+  "evolution_line_ident": "fuecoco",
+  "evolution_line_index": 2,
+  "primary_type_ident": "fire",
+  "secondary_type_ident": "ghost",
+  "base_stats": {
+    "hp": 104,
+    "attack": 75,
+    "defense": 100,
+    "special_attack": 110,
+    "special_defense": 75,
+    "speed": 66
+  },
+  "ability_idents": ["blaze", "unaware"]
+}
