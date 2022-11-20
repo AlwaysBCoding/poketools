@@ -1,0 +1,6 @@
+[
+  {"ident": "no-effect", "value": 0},
+  {"ident": "not-very-effective", "value": 0.5},
+  {"ident": "effective", "value": 1},
+  {"ident": "super-effective", "value": 2}
+]
