@@ -1,0 +1,19 @@
+{
+  "ident": "lechonk",
+  "paldea_regional_pokedex_number": 10,
+  "evolution_line_ident": "lechonk",
+  "evolution_line_index": 0,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "weight": 10.2,
+  "base_stats": {
+    "hp": 54,
+    "attack": 45,
+    "defense": 40,
+    "special_attack": 35,
+    "special_defense": 45,
+    "speed": 35
+  },
+  "ability_idents": ["aroma-veil", "gluttony", "thick-fat"],
+  "move_idents": []
+}

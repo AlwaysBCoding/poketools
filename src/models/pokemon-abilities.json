@@ -1,8 +1,11 @@
 [
+  {"ident": "aroma-veil"},
+  {"ident": "blaze"},
+  {"ident": "gluttony"},
+  {"ident": "lingering-aroma"},
+  {"ident": "moxie"},
   {"ident": "overgrow"},
   {"ident": "protean"},
-  {"ident": "blaze"},
-  {"ident": "unaware"},
-  {"ident": "moxie"},
-  {"ident": "torrent"}
+  {"ident": "torrent"},
+  {"ident": "unaware"}
 ]
