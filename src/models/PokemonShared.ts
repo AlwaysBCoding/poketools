@@ -28,6 +28,33 @@ export type PokemonType =
   | "dark"
   | "fairy";
 
+export type PokemonNature =
+  | "adamant"
+  | "bashful"
+  | "bold"
+  | "brave"
+  | "calm"
+  | "careful"
+  | "docile"
+  | "gentle"
+  | "hardy"
+  | "hasty"
+  | "impish"
+  | "jolly"
+  | "lax"
+  | "lonely"
+  | "mild"
+  | "modest"
+  | "naive"
+  | "naughty"
+  | "quiet"
+  | "quirky"
+  | "rash"
+  | "relaxed"
+  | "sassy"
+  | "serious"
+  | "timid";
+
 export type PokemonAbility =
   | "adaptability"
   | "aroma-veil"
