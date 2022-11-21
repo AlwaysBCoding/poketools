@@ -66,4 +66,7 @@ export interface PokemonMove {
   multi_hit_frequencies: PokemonMoveMultiHitFrequency[] | null;
   move_delegate_ident: PokemonMoveDelegate | null;
   move_delegate_exception_idents: string[] | null;
+  fails_if_moves_last: boolean;
+  successful_repeat_decay_value: number | null;
+  successful_repeat_decay_move_idents: string[] | null
 }

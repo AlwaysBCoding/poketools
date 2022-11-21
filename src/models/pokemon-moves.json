@@ -57,10 +57,7 @@
     "pp": 25,
     "description": "Has a 30% chance to make the target flinch.",
     "status_effects": [
-      {
-        "status_ident": "flinch",
-        "frequency": 0.30
-      }
+      {"status_ident": "flinch", "frequency": 0.30}
     ]
   },
   {
@@ -130,6 +127,12 @@
     "accuracy": null,
     "priority": 4,
     "pp": 10,
-    "description": "The user will survive attacks made by other Pokemon during this turn with at least 1 HP. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
+    "description": "The user will survive attacks made by other Pokemon during this turn with at least 1 HP. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+    "status_effects": [
+      {"status_ident": "survival", "frequency": 1}
+    ],
+    "fails_if_moves_last": "The user uses the last move used by any Pokemon, including itself. The base move of Max and G-Max Moves is considered for this purpose. Fails if no move has been used, or if the last move used was Assist, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Celebrate, Chatter, Circle Throw, Copycat, Counter, Covet, Crafty Shield, Destiny Bond, Detect, Dragon Tail, Dynamax Cannon, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Obstruct, Protect, Rage Powder, Roar, Shell Trap, Sketch, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Thief, Transform, Trick, or Whirlwind.",
+    "successful_repeat_decay_value": 3,
+    "successful_repeat_decay_move_idents": ["baneful-bunker", "detect", "endure", "kings-shield", "max-guard", "obstruct", "protect", "quick-guard", "spiky-shield", "wide-guard"]
   }
 ]
