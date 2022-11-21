@@ -7,7 +7,9 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 15,
-    "description": "Power doubles if the user has no held item."
+    "description": "Power doubles if the user has no held item.",
+    "stat_changes": [],
+    "status_effects": []
   },
   {
     "ident": "agility",
@@ -17,7 +19,15 @@
     "accuracy": null,
     "priority": 0,
     "pp": 30,
-    "description": "Raises the user's Speed by 2 stages."
+    "description": "Raises the user's Speed by 2 stages.",
+    "stat_changes": [
+      {
+        "stat_ident": "speed",
+        "stages": 2,
+        "frequency": 1
+      }
+    ],
+    "status_effects": []
   },
   {
     "ident": "ally-switch",
@@ -27,7 +37,9 @@
     "accuracy": null,
     "priority": 2,
     "pp": 15,
-    "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side."
+    "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
+    "stat_changes": [],
+    "status_effects": []
   },
   {
     "ident": "bite",
@@ -37,6 +49,13 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 25,
-    "description": "Has a 30% chance to make the target flinch."
+    "description": "Has a 30% chance to make the target flinch.",
+    "stat_changes": [],
+    "status_effects": [
+      {
+        "status_ident": "flinch",
+        "frequency": 0.30
+      }
+    ]
   }
 ]
