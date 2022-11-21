@@ -1,4 +1,4 @@
-export interface PokemonType {
+interface PokemonType {
   ident: string;
 }
 

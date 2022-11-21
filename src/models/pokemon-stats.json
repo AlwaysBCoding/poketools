@@ -1,9 +1,0 @@
-[
-  {"ident": "hp"},
-  {"ident": "attack"},
-  {"ident": "defense"},
-  {"ident": "special_attack"},
-  {"ident": "special_defense"},
-  {"ident": "speed"},
-  {"ident": "all"}
-]
