@@ -1,0 +1,20 @@
+{
+  "ident": "pawmi",
+  "national_pokedex_number": 954,
+  "paldea_regional_pokedex_number": 22,
+  "evolution_line_ident": "pawmi",
+  "evolution_line_index": 0,
+  "primary_type_ident": "electric",
+  "secondary_type_ident": null,
+  "weight": 2.5,
+  "base_stats": {
+    "hp": 45,
+    "attack": 50,
+    "defense": 20,
+    "special_attack": 40,
+    "special_defense": 25,
+    "speed": 60
+  },
+  "ability_idents": ["static", "natural-cure", "iron-fist"],
+  "move_idents": []
+}

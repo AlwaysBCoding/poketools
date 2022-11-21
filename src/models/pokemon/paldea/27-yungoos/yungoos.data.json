@@ -1,0 +1,20 @@
+{
+  "ident": "yungoos",
+  "national_pokedex_number": 734,
+  "paldea_regional_pokedex_number": 27,
+  "evolution_line_ident": "yungoos",
+  "evolution_line_index": 0,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "weight": 6,
+  "base_stats": {
+    "hp": 48,
+    "attack": 70,
+    "defense": 30,
+    "special_attack": 30,
+    "special_defense": 30,
+    "speed": 45
+  },
+  "ability_idents": ["strong-jaw", "stakeout", "adaptability"],
+  "move_idents": []
+}

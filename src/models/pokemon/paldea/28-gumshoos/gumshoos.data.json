@@ -1,0 +1,20 @@
+{
+  "ident": "gumshoos",
+  "national_pokedex_number": 735,
+  "paldea_regional_pokedex_number": 28,
+  "evolution_line_ident": "yungoos",
+  "evolution_line_index": 1,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "weight": 14.2,
+  "base_stats": {
+    "hp": 88,
+    "attack": 110,
+    "defense": 60,
+    "special_attack": 55,
+    "special_defense": 60,
+    "speed": 45
+  },
+  "ability_idents": ["strong-jaw", "stakeout", "adaptability"],
+  "move_idents": []
+}

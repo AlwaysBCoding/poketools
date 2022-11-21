@@ -1,0 +1,20 @@
+{
+  "ident": "pawmot",
+  "national_pokedex_number": 956,
+  "paldea_regional_pokedex_number": 24,
+  "evolution_line_ident": "pawmot",
+  "evolution_line_index": 2,
+  "primary_type_ident": "electric",
+  "secondary_type_ident": "fighting",
+  "weight": 41,
+  "base_stats": {
+    "hp": 70,
+    "attack": 115,
+    "defense": 70,
+    "special_attack": 70,
+    "special_defense": 60,
+    "speed": 105
+  },
+  "ability_idents": ["volt-absorb", "natural-cure", "iron-fist"],
+  "move_idents": []
+}
