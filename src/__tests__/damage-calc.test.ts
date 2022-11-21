@@ -113,9 +113,7 @@ describe("DAMAGE_CALC", () => {
       targetPokemonBattleState,
       "energy-ball"
     );
-    expect(result).toEqual(
-      [66, 66, 66, 66, 68, 68, 68, 68, 72, 72, 72, 72, 74, 74, 74, 78]
-    );
+    expect([66, 68, 72, 74, 78]).toContain(result);
   });
 
 });

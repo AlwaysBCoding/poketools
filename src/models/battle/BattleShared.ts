@@ -4,6 +4,10 @@ export interface BattleGlobalState {
   auras: AuraState[];
 }
 
+export type BattleSide =
+  | "red"
+  | "blue"
+
 export interface BattleSideState {
   reflect: boolean;
   light_screen: boolean;
