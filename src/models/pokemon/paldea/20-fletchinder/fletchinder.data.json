@@ -1,0 +1,20 @@
+{
+  "ident": "fletchinder",
+  "national_pokedex_number": 662,
+  "paldea_regional_pokedex_number": 20,
+  "evolution_line_ident": "fletchling",
+  "evolution_line_index": 1,
+  "primary_type_ident": "fire",
+  "secondary_type_ident": "flying",
+  "weight": 16,
+  "base_stats": {
+    "hp": 62,
+    "attack": 73,
+    "defense": 55,
+    "special_attack": 56,
+    "special_defense": 52,
+    "speed": 84
+  },
+  "ability_idents": ["flame-body", "gale-wings"],
+  "move_idents": []
+}

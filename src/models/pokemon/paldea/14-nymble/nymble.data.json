@@ -1,0 +1,20 @@
+{
+  "ident": "nymble",
+  "national_pokedex_number": 920,
+  "paldea_regional_pokedex_number": 14,
+  "evolution_line_ident": "nymble",
+  "evolution_line_index": 0,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": null,
+  "weight": 1,
+  "base_stats": {
+    "hp": 33,
+    "attack": 46,
+    "defense": 40,
+    "special_attack": 21,
+    "special_defense": 25,
+    "speed": 45
+  },
+  "ability_idents": ["swarm", "tinted-lens"],
+  "move_idents": []
+}

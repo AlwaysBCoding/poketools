@@ -1,0 +1,20 @@
+{
+  "ident": "skiploom",
+  "national_pokedex_number": 188,
+  "paldea_regional_pokedex_number": 17,
+  "evolution_line_ident": "hoppip",
+  "evolution_line_index": 1,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": "flying",
+  "weight": 1.0,
+  "base_stats": {
+    "hp": 55,
+    "attack": 45,
+    "defense": 50,
+    "special_attack": 45,
+    "special_defense": 65,
+    "speed": 80
+  },
+  "ability_idents": ["chlorophyll", "leaf-guard", "infiltrator"],
+  "move_idents": []
+}

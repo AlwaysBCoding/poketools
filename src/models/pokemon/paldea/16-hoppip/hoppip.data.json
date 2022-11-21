@@ -1,0 +1,20 @@
+{
+  "ident": "hoppip",
+  "national_pokedex_number": 187,
+  "paldea_regional_pokedex_number": 16,
+  "evolution_line_ident": "hoppip",
+  "evolution_line_index": 0,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": "flying",
+  "weight": 0.5,
+  "base_stats": {
+    "hp": 35,
+    "attack": 35,
+    "defense": 40,
+    "special_attack": 35,
+    "special_defense": 55,
+    "speed": 50
+  },
+  "ability_idents": ["chlorophyll", "leaf-guard", "infiltrator"],
+  "move_idents": []
+}

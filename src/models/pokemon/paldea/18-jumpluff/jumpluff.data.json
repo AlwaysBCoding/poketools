@@ -1,0 +1,20 @@
+{
+  "ident": "jumpluff",
+  "national_pokedex_number": 189,
+  "paldea_regional_pokedex_number": 18,
+  "evolution_line_ident": "hoppip",
+  "evolution_line_index": 2,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": "flying",
+  "weight": 3,
+  "base_stats": {
+    "hp": 75,
+    "attack": 55,
+    "defense": 70,
+    "special_attack": 55,
+    "special_defense": 95,
+    "speed": 110
+  },
+  "ability_idents": ["chlorophyll", "leaf-guard", "infiltrator"],
+  "move_idents": []
+}

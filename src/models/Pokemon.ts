@@ -13,6 +13,7 @@ interface PokemonBaseStats {
 
 export interface Pokemon {
   ident: string;
+  national_pokedex_number: number;
   paldea_regional_pokedex_number: number;
   evolution_line_ident: string;
   evolution_line_index: number;
