@@ -10,9 +10,9 @@ import {
 
 export interface PokemonBuild {
   pokemon_ident: string;
-  nickname: string;
-  item_ident: PokemonItem[];
-  ability_ident: PokemonAbility[];
+  nickname: string | null;
+  item_ident: PokemonItem;
+  ability_ident: PokemonAbility;
   level: number;
   shiny: boolean;
   gender: PokemonGender;
