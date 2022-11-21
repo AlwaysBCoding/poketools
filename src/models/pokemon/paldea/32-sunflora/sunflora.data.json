@@ -1,0 +1,20 @@
+{
+  "ident": "sunflora",
+  "national_pokedex_number": 192,
+  "paldea_regional_pokedex_number": 32,
+  "evolution_line_ident": "sunkern",
+  "evolution_line_index": 1,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": null,
+  "weight": 8.5,
+  "base_stats": {
+    "hp": 75,
+    "attack": 75,
+    "defense": 55,
+    "special_attack": 105,
+    "special_defense": 85,
+    "speed": 30
+  },
+  "ability_idents": ["chlorophyll", "solar-power", "early-bird"],
+  "move_idents": []
+}

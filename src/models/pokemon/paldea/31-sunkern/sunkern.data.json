@@ -1,0 +1,20 @@
+{
+  "ident": "sunkern",
+  "national_pokedex_number": 191,
+  "paldea_regional_pokedex_number": 31,
+  "evolution_line_ident": "sunkern",
+  "evolution_line_index": 0,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": null,
+  "weight": 1.8,
+  "base_stats": {
+    "hp": 30,
+    "attack": 30,
+    "defense": 30,
+    "special_attack": 30,
+    "special_defense": 30,
+    "speed": 30
+  },
+  "ability_idents": ["chlorophyll", "solar-power", "early-bird"],
+  "move_idents": []
+}

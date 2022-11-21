@@ -1,0 +1,20 @@
+{
+  "ident": "vivillon",
+  "national_pokedex_number": 666,
+  "paldea_regional_pokedex_number": 37,
+  "evolution_line_ident": "scatterbug",
+  "evolution_line_index": 2,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": "flying",
+  "weight": 17.0,
+  "base_stats": {
+    "hp": 80,
+    "attack": 52,
+    "defense": 50,
+    "special_attack": 90,
+    "special_defense": 50,
+    "speed": 89
+  },
+  "ability_idents": ["shield-dust", "compound-eyes", "friend-guard"],
+  "move_idents": []
+}

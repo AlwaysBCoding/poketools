@@ -1,0 +1,20 @@
+{
+  "ident": "spewpa",
+  "national_pokedex_number": 665,
+  "paldea_regional_pokedex_number": 36,
+  "evolution_line_ident": "scatterbug",
+  "evolution_line_index": 1,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": null,
+  "weight": 8.4,
+  "base_stats": {
+    "hp": 45,
+    "attack": 22,
+    "defense": 60,
+    "special_attack": 27,
+    "special_defense": 30,
+    "speed": 29
+  },
+  "ability_idents": ["shed-skin", "friend-guard"],
+  "move_idents": []
+}

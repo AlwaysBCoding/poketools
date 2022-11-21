@@ -1,0 +1,20 @@
+{
+  "ident": "kricketune",
+  "national_pokedex_number": 402,
+  "paldea_regional_pokedex_number": 34,
+  "evolution_line_ident": "kricketot",
+  "evolution_line_index": 1,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": null,
+  "weight": 25.5,
+  "base_stats": {
+    "hp": 77,
+    "attack": 85,
+    "defense": 51,
+    "special_attack": 55,
+    "special_defense": 51,
+    "speed": 65
+  },
+  "ability_idents": ["swarm", "technician"],
+  "move_idents": []
+}

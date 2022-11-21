@@ -1,0 +1,20 @@
+{
+  "ident": "scatterbug",
+  "national_pokedex_number": 664,
+  "paldea_regional_pokedex_number": 35,
+  "evolution_line_ident": "scatterbug",
+  "evolution_line_index": 0,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": null,
+  "weight": 2.5,
+  "base_stats": {
+    "hp": 38,
+    "attack": 35,
+    "defense": 40,
+    "special_attack": 27,
+    "special_defense": 25,
+    "speed": 35
+  },
+  "ability_idents": ["shield-dust", "compound-eyes", "friend-guard"],
+  "move_idents": []
+}
