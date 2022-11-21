@@ -1,3 +1,12 @@
+export interface PokemonStatSpread {
+  hp: number;
+  attack: number;
+  defense: number;
+  special_attack: number;
+  special_defense: number;
+  speed: number;
+};
+
 export type PokemonGender =
   | "male"
   | "female"

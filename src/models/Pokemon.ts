@@ -3,17 +3,9 @@ import {
   PokemonEvolutionLine,
   PokemonGender,
   PokemonMove,
+  PokemonStatSpread,
   PokemonType
 } from "./PokemonShared";
-
-export interface PokemonBaseStats {
-  hp: number;
-  attack: number;
-  defense: number;
-  special_attack: number;
-  special_defense: number;
-  speed: number;
-}
 
 export interface Pokemon {
   ident: string;
@@ -25,7 +17,7 @@ export interface Pokemon {
   secondary_type_ident: PokemonType | null;
   weight: number;
   genders: PokemonGender[];
-  base_stats: PokemonBaseStats;
+  base_stats: PokemonStatSpread;
   ability_idents: PokemonAbility[];
   move_idents: PokemonMove[];
 }
