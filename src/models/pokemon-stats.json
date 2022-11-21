@@ -4,5 +4,6 @@
   {"ident": "defense"},
   {"ident": "special_attack"},
   {"ident": "special_defense"},
-  {"ident": "speed"}
+  {"ident": "speed"},
+  {"ident": "all"}
 ]

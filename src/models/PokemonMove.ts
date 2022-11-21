@@ -21,16 +21,49 @@ export interface PokemonMoveStatusEffect {
   frequency: number;
 }
 
+interface PokemonMoveModifierType {
+  ident: string;
+}
+
+interface PokemonMoveModifierValue {
+  ident: string;
+}
+
+interface PokemonMoveTarget {
+  ident: string;
+}
+
+interface PokemonMoveDelegate {
+  ident: string;
+}
+
+export interface PokemonMoveModifier {
+  modifier_type_ident: string;
+  modifier_target_ident: string;
+  modifier_value_ident: string;
+}
+
+export interface PokemonMoveMultiHitFrequency {
+  number_of_hits: number;
+  frequency: number;
+}
+
 export interface PokemonMove {
   ident: string;
   description: string | null;
   detailed_description: string | null;
   type_ident: string;
   category_ident: string;
+  target_ident: string;
   base_power: number | null;
   accuracy: number | null;
+  accuracy_check: boolean;
   priority: number;
   pp: number;
-  stat_changes: PokemonMoveStatChange[];
-  status_effects: PokemonMoveStatusEffect[];
+  stat_changes: PokemonMoveStatChange[] | null;
+  status_effects: PokemonMoveStatusEffect[] | null;
+  modifiers: PokemonMoveModifier[] | null;
+  multi_hit_frequencies: PokemonMoveMultiHitFrequency[] | null;
+  move_delegate_ident: PokemonMoveDelegate | null;
+  move_delegate_exception_idents: string[] | null;
 }

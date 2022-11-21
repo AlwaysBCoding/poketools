@@ -3,18 +3,25 @@
     "ident": "acrobatics",
     "type_ident": "flying",
     "category_ident": "physical",
+    "target_ident": "target",
     "base_power": 55,
     "accuracy": 1,
     "priority": 0,
     "pp": 15,
     "description": "Power doubles if the user has no held item.",
-    "stat_changes": [],
-    "status_effects": []
+    "modifiers": [
+      {
+        "modifier_type_ident": "presence-of-item",
+        "modifier_target_ident": "self",
+        "modifier_value_ident": "double-base-power"
+      }
+    ]
   },
   {
     "ident": "agility",
     "type_ident": "psychic",
     "category_ident": "status",
+    "target_ident": "self",
     "base_power": null,
     "accuracy": null,
     "priority": 0,
@@ -26,36 +33,93 @@
         "stages": 2,
         "frequency": 1
       }
-    ],
-    "status_effects": []
+    ]
   },
   {
     "ident": "ally-switch",
     "type_ident": "psychic",
     "category_ident": "status",
+    "target_ident": "own-side",
     "base_power": null,
     "accuracy": null,
     "priority": 2,
     "pp": 15,
     "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
-    "stat_changes": [],
-    "status_effects": []
   },
   {
     "ident": "bite",
     "type_ident": "dark",
     "category_ident": "physical",
+    "target_ident": "target",
     "base_power": 60,
     "accuracy": 1,
     "priority": 0,
     "pp": 25,
     "description": "Has a 30% chance to make the target flinch.",
-    "stat_changes": [],
     "status_effects": [
       {
         "status_ident": "flinch",
         "frequency": 0.30
       }
     ]
+  },
+  {
+    "ident": "bullet-seed",
+    "type_ident": "grass",
+    "category_ident": "physical",
+    "target_ident": "target",
+    "base_power": 25,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 30,
+    "description": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+    "multi_hit_frequencies": [
+      {"number_of_hits": 2, "frequency": 0.35},
+      {"number_of_hits": 3, "frequency": 0.35},
+      {"number_of_hits": 4, "frequency": 0.15},
+      {"number_of_hits": 5, "frequency": 0.15}
+    ]
+  },
+  {
+    "ident": "charm",
+    "type_ident": "fairy",
+    "category_ident": "status",
+    "target_ident": "target",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Lowers the target's Attack by 2 stages.",
+    "stat_changes": [
+      {
+        "stat_ident": "attack",
+        "stages": 2,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "copycat",
+    "type_ident": "normal",
+    "category_ident": "status",
+    "target_ident": "target",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "The user uses the last move used by any Pokemon, including itself. The base move of Max and G-Max Moves is considered for this purpose. Fails if no move has been used, or if the last move used was Assist, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Celebrate, Chatter, Circle Throw, Copycat, Counter, Covet, Crafty Shield, Destiny Bond, Detect, Dragon Tail, Dynamax Cannon, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Obstruct, Protect, Rage Powder, Roar, Shell Trap, Sketch, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Thief, Transform, Trick, or Whirlwind.",
+    "move_delegate_ident": "last-used",
+    "move_delegate_exception_idents": ["assist", "baneful-bunker", "beak-blast", "behemoth-bash", "behemoth-blade", "belch", "bestow", "celebrate", "chatter", "circle-throw", "copycat", "counter", "covet", "crafty-shield", "destiny-bond", "detect", "dragon-tail", "dynamax-cannon", "endure", "feint", "focus-punch", "follow-me", "helping-hand", "hold-hands", "kings-shield", "mat-block", "me-first", "metronome", "mimic", "mirror-coat", "mirror-move", "nature-power", "obstruct", "protect", "rage-powder", "roar", "shell-trap", "sketch", "sleep-talk", "snatch", "spiky-shield", "spotlight", "struggle", "switcheroo", "thief", "transform", "trick", "whirlwind"]
+  },
+  {
+    "ident": "disarming-voice",
+    "type_ident": "fairy",
+    "category_ident": "special",
+    "base_power": 40,
+    "accuracy": null,
+    "accuracy_check": false,
+    "priority": 0,
+    "pp": 15,
+    "description": "This move does not check accuracy."
   }
 ]
