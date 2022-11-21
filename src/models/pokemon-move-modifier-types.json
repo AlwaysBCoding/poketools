@@ -1,3 +1,5 @@
 [
-  {"ident": "presence-of-item"}
+  {"ident": "presence-of-item"},
+  {"ident": "presence-of-permanent-status"},
+  {"ident": "recovery-percentage-of-damage"}
 ]

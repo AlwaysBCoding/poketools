@@ -68,5 +68,5 @@ export interface PokemonMove {
   move_delegate_exception_idents: string[] | null;
   fails_if_moves_last: boolean;
   successful_repeat_decay_value: number | null;
-  successful_repeat_decay_move_idents: string[] | null
+  successful_repeat_decay_move_idents: string[] | null;
 }
