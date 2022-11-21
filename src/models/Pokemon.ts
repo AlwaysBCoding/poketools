@@ -18,6 +18,7 @@ export interface Pokemon {
   evolution_line_index: number;
   primary_type_ident: string;
   secondary_type_ident: string | null;
+  weight: number;
   base_stats: PokemonBaseStats;
   ability_idents: string[];
   move_idents: string[];

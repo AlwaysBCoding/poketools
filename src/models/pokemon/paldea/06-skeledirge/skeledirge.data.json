@@ -5,6 +5,7 @@
   "evolution_line_index": 2,
   "primary_type_ident": "fire",
   "secondary_type_ident": "ghost",
+  "weight": 326.5,
   "base_stats": {
     "hp": 104,
     "attack": 75,

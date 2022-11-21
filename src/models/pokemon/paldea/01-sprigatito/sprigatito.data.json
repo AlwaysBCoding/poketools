@@ -5,6 +5,7 @@
   "evolution_line_index": 0,
   "primary_type_ident": "grass",
   "secondary_type_ident": null,
+  "weight": 4.1,
   "base_stats": {
     "hp": 40,
     "attack": 61,
@@ -22,6 +23,7 @@
     "bullet-seed",
     "charm",
     "copycat",
-    "disarming-voice"
+    "disarming-voice",
+    "endure"
   ]
 }

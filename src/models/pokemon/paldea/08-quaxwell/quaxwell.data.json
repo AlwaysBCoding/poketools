@@ -5,6 +5,7 @@
   "evolution_line_index": 1,
   "primary_type_ident": "water",
   "secondary_type_ident": null,
+  "weight": 21.5,
   "base_stats": {
     "hp": 70,
     "attack": 85,
