@@ -10,6 +10,10 @@ import { PokemonBattleState, createNewPokemonBattleState } from "../../models/ba
 export const createNewBattleState = (blueSidePokemon: PokemonBattleState[], redSidePokemon: PokemonBattleState[]): BattleState => {
 
   const newBattleState: BattleState = {
+    config: {
+      variant: "singles"
+    },
+    turn_index: 0,
     global_state: {
       terrain: "none",
       weather: "none",
@@ -19,13 +23,15 @@ export const createNewBattleState = (blueSidePokemon: PokemonBattleState[], redS
       reflect: false,
       light_screen: false,
       aurora_veil: false,
-      tailwind: false
+      tailwind: false,
+      hazards: []
     },
     red_side_state: {
       reflect: false,
       light_screen: false,
       aurora_veil: false,
-      tailwind: false
+      tailwind: false,
+      hazards: []
     },
     blue_side_pokemon: blueSidePokemon,
     red_side_pokemon: redSidePokemon
@@ -38,6 +44,10 @@ export const createNewBattleState = (blueSidePokemon: PokemonBattleState[], redS
 export const createNewBattleState1v1 = (blueSidePokemonBuild: PokemonBuild, redSidePokemonBuild: PokemonBuild): BattleState => {
 
   const newBattleState: BattleState = {
+    config: {
+      variant: "singles"
+    },
+    turn_index: 0,
     global_state: {
       terrain: "none",
       weather: "none",
@@ -47,13 +57,15 @@ export const createNewBattleState1v1 = (blueSidePokemonBuild: PokemonBuild, redS
       reflect: false,
       light_screen: false,
       aurora_veil: false,
-      tailwind: false
+      tailwind: false,
+      hazards: []
     },
     red_side_state: {
       reflect: false,
       light_screen: false,
       aurora_veil: false,
-      tailwind: false
+      tailwind: false,
+      hazards: []
     },
     blue_side_pokemon: [createNewPokemonBattleState(blueSidePokemonBuild, "blue")],
     red_side_pokemon: [createNewPokemonBattleState(redSidePokemonBuild, "red")]

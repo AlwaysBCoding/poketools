@@ -1,3 +1,9 @@
+export type BattleVariant = "singles" | "doubles";
+
+export interface BattleConfig {
+  variant: BattleVariant;
+}
+
 export interface BattleGlobalState {
   terrain: TerrainState;
   weather: WeatherState;
@@ -6,14 +12,22 @@ export interface BattleGlobalState {
 
 export type BattleSide =
   | "red"
-  | "blue"
+  | "blue";
+
+export type HazardIdent =
+  | "stealth-rocks"
+  | "spikes"
+  | "toxic-spikes";
 
 export interface BattleSideState {
   reflect: boolean;
   light_screen: boolean;
   aurora_veil: boolean;
   tailwind: boolean;
+  hazards: HazardIdent[];
 }
+
+export type PokemonBattleLocation = "field" | "party" | "preview" | "graveyard";
 
 export interface PokemonStatBoosts {
   attack: number;
@@ -49,10 +63,22 @@ export type PokemonStatus =
   | "burned"
   | "paralyzed"
   | "asleep"
-  | "frozen"
+  | "frozen";
 
 export type PokemonVolatileStatus =
   | "flinched"
   | "confused"
   | "taunted"
-  | "substitute"
+  | "substitute";
+
+export type BattleActionType =
+  | "move"
+  | "switch"
+
+export type BattleEventType =
+  | "hazard-create"
+  | "hazard-destroy"
+  | "move"
+  | "move-secondary-effect"
+  | "passive-damage"
+  | "switch";

@@ -1,7 +1,8 @@
-import { PokemonItemIdent } from "../pokemon/PokemonShared";
+import { PokemonAbilityIdent, PokemonItemIdent } from "../pokemon/PokemonShared";
 import { PokemonBuild } from "../pokemon/PokemonBuild";
 import {
   BattleSide,
+  PokemonBattleLocation,
   PokemonStatBoosts,
   PokemonStatus,
   PokemonVolatileStatus
@@ -10,12 +11,15 @@ import {
 export interface PokemonBattleState {
   pokemon_build: PokemonBuild;
   side: BattleSide;
+  location: PokemonBattleLocation;
+  ability_ident: PokemonAbilityIdent;
   item_ident: PokemonItemIdent | null;
   status: PokemonStatus;
   volatile_statuses: PokemonVolatileStatus[];
   stat_boosts: PokemonStatBoosts;
   terastallized: boolean;
   current_hp: number;
+  fainted: boolean;
 }
 
 export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side: BattleSide): PokemonBattleState => {
@@ -23,6 +27,8 @@ export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side: Ba
   return {
     pokemon_build: pokemonBuild,
     side: side,
+    location: "preview",
+    ability_ident: pokemonBuild.ability_ident,
     item_ident: pokemonBuild.item_ident,
     status: "none",
     volatile_statuses: [],
@@ -34,7 +40,8 @@ export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side: Ba
       speed: 0
     },
     terastallized: false,
-    current_hp: pokemonBuild.stat_spread.hp
+    current_hp: pokemonBuild.stat_spread.hp,
+    fainted: false
   }
 
 }

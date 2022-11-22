@@ -61,6 +61,7 @@ describe("ITEMS", () => {
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
         Object.assign(quaquavalBuild, {item_ident: "assault-vest"})
       );
+
       var damage = calculateDamage(
         battleState,
         battleState.blue_side_pokemon[0],
