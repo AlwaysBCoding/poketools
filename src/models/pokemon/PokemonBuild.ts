@@ -18,7 +18,7 @@ import { PokemonBuildTemplate } from "./PokemonBuildTemplate";
 export interface PokemonBuild {
   pokemon: Pokemon;
   nickname: string | null;
-  item_ident: PokemonItemIdent;
+  item_ident: PokemonItemIdent | null;
   ability_ident: PokemonAbilityIdent;
   level: number;
   shiny: boolean;

@@ -11,7 +11,7 @@ import {
 export interface PokemonBuildTemplate {
   pokemon_ident: string;
   nickname: string | null;
-  item_ident: PokemonItemIdent;
+  item_ident: PokemonItemIdent | null;
   ability_ident: PokemonAbilityIdent;
   level: number;
   shiny: boolean;

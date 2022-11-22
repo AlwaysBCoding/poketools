@@ -10,7 +10,7 @@ export const MEOWSCARADA_MAX_STATS: PokemonBuildTemplate = {
   gender: "male",
   tera_type_ident: "grass",
   nature_ident: "jolly",
-  move_idents: ["u-turn", "knock-off", "sucker-punch", "flower-trick"],
+  move_idents: ["u-turn", "knock-off", "energy-ball", "flower-trick"],
   iv_spread: {
     hp: 31,
     attack: 31,

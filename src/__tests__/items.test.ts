@@ -12,25 +12,26 @@ describe("ITEMS", () => {
   var meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
   var quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
 
-  describe("DEFAULT_INTERACTION", () => {
-    test("it calculates the damage correctly", () => {
-      const battleState: BattleState = createNewBattleState1v1(meowscaradaBuild, quaquavalBuild);
-      const damage = calculateDamage(
+  describe("LIFE_ORB", () => {
+
+    test("it multiplies the damage correctly", () => {
+      var battleState: BattleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
+      );
+      var damage = calculateDamage(
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "u-turn"
       );
       expect([21, 22, 23, 24, 25]).toContain(damage);
-    });
-  });
 
-  describe("LIFE_ORB", () => {
-
-    test("it multiplies the damage correctly", () => {
-      meowscaradaBuild.item_ident = "life-orb";
-      const battleState: BattleState = createNewBattleState1v1(meowscaradaBuild, quaquavalBuild);
-      const damage = calculateDamage(
+      var battleState: BattleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "life-orb"}),
+        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
+      );
+      var damage = calculateDamage(
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
@@ -40,5 +41,35 @@ describe("ITEMS", () => {
     });
 
   })
+
+  describe("ASSAULT_VEST", () => {
+
+    test("it reduces the damage correctly focus", () => {
+      var battleState: BattleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
+      );
+      var damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "energy-ball"
+      );
+      expect([98, 102, 104, 108, 110, 114, 116]).toContain(damage);
+
+      // var battleState: BattleState = createNewBattleState1v1(
+      //   Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+      //   Object.assign(quaquavalBuild, {item_ident: "assault-vest"})
+      // );
+      // var damage = calculateDamage(
+      //   battleState,
+      //   battleState.blue_side_pokemon[0],
+      //   battleState.red_side_pokemon[0],
+      //   "energy-ball"
+      // );
+      // expect([66, 68, 72, 74, 78]).toContain(damage);
+    });
+
+  });
 
 });
