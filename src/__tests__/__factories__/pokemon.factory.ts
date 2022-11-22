@@ -1,6 +1,6 @@
-import { PokemonBuild } from "../../models/PokemonBuild";
+import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
 
-export const MEOWSCARADA_MAX_STATS: PokemonBuild = {
+export const MEOWSCARADA_MAX_STATS: PokemonBuildTemplate = {
   pokemon_ident: "meowscarada",
   nickname: null,
   item_ident: "heavy-duty-boots",
@@ -29,7 +29,7 @@ export const MEOWSCARADA_MAX_STATS: PokemonBuild = {
   }
 };
 
-export const QUAQUAVAL_MAX_STATS = {
+export const QUAQUAVAL_MAX_STATS: PokemonBuildTemplate = {
   pokemon_ident: "quaquaval",
   nickname: null,
   item_ident: "lum-berry",

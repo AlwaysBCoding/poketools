@@ -1,4 +1,4 @@
-import { PokemonBuild } from "../PokemonBuild";
+import { PokemonBuild } from "../pokemon/PokemonBuild";
 import {
   BattleSide,
   PokemonStatBoosts,
