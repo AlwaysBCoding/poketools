@@ -1,24 +1,24 @@
 import {
-  PokemonAbility,
+  PokemonAbilityIdent,
   PokemonGender,
-  PokemonItem,
-  PokemonMove,
-  PokemonNature,
+  PokemonItemIdent,
+  PokemonMoveIdent,
+  PokemonNatureIdent,
   PokemonStatSpread,
-  PokemonType,
+  PokemonTypeIdent,
 } from "./PokemonShared";
 
 export interface PokemonBuildTemplate {
   pokemon_ident: string;
   nickname: string | null;
-  item_ident: PokemonItem;
-  ability_ident: PokemonAbility;
+  item_ident: PokemonItemIdent;
+  ability_ident: PokemonAbilityIdent;
   level: number;
   shiny: boolean;
   gender: PokemonGender;
-  tera_type_ident: PokemonType;
-  nature_ident: PokemonNature;
-  move_idents: PokemonMove[];
+  tera_type_ident: PokemonTypeIdent;
+  nature_ident: PokemonNatureIdent;
+  move_idents: PokemonMoveIdent[];
   iv_spread: PokemonStatSpread;
   ev_spread: PokemonStatSpread;
 }

@@ -1,10 +1,10 @@
 import {
-  PokemonAbility,
+  PokemonAbilityIdent,
   PokemonEvolutionLine,
   PokemonGender,
-  PokemonMove,
+  PokemonMoveIdent,
   PokemonStatSpread,
-  PokemonType
+  PokemonTypeIdent
 } from "./PokemonShared";
 
 export interface Pokemon {
@@ -13,11 +13,11 @@ export interface Pokemon {
   paldea_regional_pokedex_number: number;
   evolution_line_ident: PokemonEvolutionLine;
   evolution_line_index: number;
-  primary_type_ident: PokemonType;
-  secondary_type_ident: PokemonType | null;
+  primary_type_ident: PokemonTypeIdent;
+  secondary_type_ident: PokemonTypeIdent | null;
   weight: number;
   genders: PokemonGender[];
   base_stats: PokemonStatSpread;
-  ability_idents: PokemonAbility[];
-  move_idents: PokemonMove[];
+  ability_idents: PokemonAbilityIdent[];
+  move_idents: PokemonMoveIdent[];
 }

@@ -17,7 +17,7 @@ export type PokemonMoveCategory =
   | "special"
   | "non-damaging"
 
-export type PokemonType =
+export type PokemonTypeIdent =
   | "normal"
   | "fighting"
   | "flying"
@@ -37,7 +37,7 @@ export type PokemonType =
   | "dark"
   | "fairy";
 
-export type PokemonNature =
+export type PokemonNatureIdent =
   | "adamant"
   | "bashful"
   | "bold"
@@ -64,7 +64,7 @@ export type PokemonNature =
   | "serious"
   | "timid";
 
-export type PokemonAbility =
+export type PokemonAbilityIdent =
   | "adaptability"
   | "aroma-veil"
   | "big-pecks"
@@ -118,7 +118,7 @@ export type PokemonEvolutionLine =
   | "tarountula"
   | "yungoos";
 
-export type PokemonItem =
+export type PokemonItemIdent =
   | "ability-shield"
   | "absorb-bulb"
   | "adrenaline-orb"
@@ -961,7 +961,7 @@ export type PokemonItem =
   // Zen Headbutt
   // Zing Zap
 
-export type PokemonMove =
+export type PokemonMoveIdent =
   | "absorb"
   | "accelerock"
   | "acid"

@@ -5,7 +5,7 @@ import allPokemon from "../../data/pokemon/all-pokemon.json";
 
 export const calculateStatSpread = (pokemonBuildTemplate: PokemonBuildTemplate): PokemonStatSpread => {
 
-  const pokemonData: Pokemon = allPokemon.find((pokemon: Pokemon) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; });
+  const pokemonData: Pokemon = allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; });
 
   const attack = Math.floor((((2 * pokemonData.base_stats.attack) + pokemonBuildTemplate.iv_spread.attack + Math.floor(pokemonBuildTemplate.ev_spread.attack / 4)) * pokemonBuildTemplate.level) / 100) + 5;
   const defense = Math.floor((((2 * pokemonData.base_stats.defense) + pokemonBuildTemplate.iv_spread.defense + Math.floor(pokemonBuildTemplate.ev_spread.defense / 4)) * pokemonBuildTemplate.level) / 100) + 5;

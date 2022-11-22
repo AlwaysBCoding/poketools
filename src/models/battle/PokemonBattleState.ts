@@ -11,7 +11,7 @@ export interface PokemonBattleState {
   side: BattleSide;
   status: PokemonStatus;
   volatile_statuses: PokemonVolatileStatus[];
-  stat_boots: PokemonStatBoosts;
+  stat_boosts: PokemonStatBoosts;
   terastallized: boolean;
   current_hp: number;
 }

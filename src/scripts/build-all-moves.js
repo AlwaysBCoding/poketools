@@ -26,9 +26,9 @@ var recursive_file_path_search = function(dir, done) {
 };
 
 const FILE_FILTER_REGEX = new RegExp(/(.*).data.json$/, 'g');
-const ALL_POKEMON_DATA = [];
+const ALL_MOVES_DATA = [];
 
-recursive_file_path_search(path.resolve(__dirname, "../data/pokemon/paldea"), (error, results) => {
+recursive_file_path_search(path.resolve(__dirname, "../data/moves/paldea"), (error, results) => {
     if (error) { throw error; }
 
     const allFilePaths = results;
@@ -37,9 +37,9 @@ recursive_file_path_search(path.resolve(__dirname, "../data/pokemon/paldea"), (e
     filteredFilePaths.forEach((filePath, index) => {
       const fileData = fs.readFileSync(filePath, {encoding: 'utf-8'});
       const fileJSON = JSON.parse(fileData);
-      ALL_POKEMON_DATA.push(fileJSON);
+      ALL_MOVES_DATA.push(fileJSON);
     });
 
-    fs.writeFileSync(path.resolve(__dirname, "../data/pokemon/all-pokemon.json"), JSON.stringify(ALL_POKEMON_DATA, null, 2));
+    fs.writeFileSync(path.resolve(__dirname, "../data/moves/all-moves.json"), JSON.stringify(ALL_MOVES_DATA, null, 2));
 
 });
