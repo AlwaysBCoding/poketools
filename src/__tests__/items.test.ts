@@ -44,7 +44,7 @@ describe("ITEMS", () => {
 
   describe("ASSAULT_VEST", () => {
 
-    test("it reduces the damage correctly focus", () => {
+    test("it reduces the damage correctly", () => {
       var battleState: BattleState = createNewBattleState1v1(
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
@@ -57,17 +57,17 @@ describe("ITEMS", () => {
       );
       expect([98, 102, 104, 108, 110, 114, 116]).toContain(damage);
 
-      // var battleState: BattleState = createNewBattleState1v1(
-      //   Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-      //   Object.assign(quaquavalBuild, {item_ident: "assault-vest"})
-      // );
-      // var damage = calculateDamage(
-      //   battleState,
-      //   battleState.blue_side_pokemon[0],
-      //   battleState.red_side_pokemon[0],
-      //   "energy-ball"
-      // );
-      // expect([66, 68, 72, 74, 78]).toContain(damage);
+      var battleState: BattleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaquavalBuild, {item_ident: "assault-vest"})
+      );
+      var damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "energy-ball"
+      );
+      expect([66, 68, 72, 74, 78]).toContain(damage);
     });
 
   });

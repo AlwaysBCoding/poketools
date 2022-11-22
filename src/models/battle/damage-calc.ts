@@ -35,6 +35,7 @@ export const calculateDamage = ((
   var stab = 1;
   var type = 1;
   var other = 1;
+  var burn = 1;
 
   const level = attackingPokemon.pokemon_build.level;
 
@@ -68,7 +69,10 @@ export const calculateDamage = ((
   const weather = 1;
   const critical = 1;
   const random = RANDOM_ROLLS[Math.floor(Math.random() * 16)];
-  const burn = 1;
+
+  if(attackingPokemon.status === "burned" && pokemonMove.category_ident === "physical") {
+    burn = BURN_MODIFIER;
+  }
 
   if(attackingPokemon.item_ident === "life-orb") {
     other = LIFE_ORB_MODIFIER;
