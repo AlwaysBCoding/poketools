@@ -254,53 +254,6 @@ export type PokemonItemIdent =
   | "yache-berry"
   | "zoom-lens";
 
-  // Moves – C
-
-  // Calm Mind
-  // Catastropika
-  // Ceaseless Edge
-  // Celebrate
-  // Charge
-  // Charge Beam
-  // Charm
-  // Chatter
-  // Chilling Water
-  // Chilly Reception
-  // Chloroblast
-  // Circle Throw
-  // Clanging Scales
-  // Clangorous Soul
-  // Clear Smog
-  // Close Combat
-  // Coaching
-  // Coil
-  // Collision Course
-  // Combat Torque
-  // Comeuppance
-  // Confide
-  // Confuse Ray
-  // Confusion
-  // Continental Crush
-  // Conversion
-  // Conversion 2
-  // Copycat
-  // Core Enforcer
-  // Corkscrew Crash
-  // Corrosive Gas
-  // Cosmic Power
-  // Cotton Guard
-  // Cotton Spore
-  // Counter
-  // Court Change
-  // Covet
-  // Crabhammer
-  // Cross Chop
-  // Cross Poison
-  // Crunch
-  // Crush Claw
-  // Crush Grip
-  // Curse
-  // Cut
   // Moves – D
 
   // Darkest Lariat
@@ -1048,8 +1001,51 @@ export type PokemonMoveIdent =
   | "bullet-seed"
   | "burning-jealousy"
   | "burn-up"
+  | "calm-mind"
+  | "catastropika"
+  | "ceaseless-edge"
+  | "celebrate"
+  | "charge"
+  | "charge-beam"
   | "charm"
+  | "chatter"
+  | "chilling-water"
+  | "chilly-reception"
+  | "chloroblast"
+  | "circle-throw"
+  | "clanging-scales"
+  | "clangorous-soul"
+  | "clear-smog"
   | "close-combat"
+  | "coaching"
+  | "coil"
+  | "collision-course"
+  | "combat-torque"
+  | "comeuppance"
+  | "confide"
+  | "confuse-ray"
+  | "confusion"
+  | "continental-crush"
+  | "conversion"
+  | "conversion-2"
+  | "copycat"
+  | "core-enforcer"
+  | "corkscrew-crash"
+  | "corrosive-gas"
+  | "cosmic-power"
+  | "cotton-guard"
+  | "cotton-spore"
+  | "counter"
+  | "court-change"
+  | "covet"
+  | "crabhammer"
+  | "cross-chop"
+  | "cross-poison"
+  | "crunch"
+  | "crush-claw"
+  | "crush-grip"
+  | "curse"
+  | "cut"
   | "disarming-voice"
   | "endure"
   | "energy-ball"
