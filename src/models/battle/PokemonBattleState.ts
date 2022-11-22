@@ -15,3 +15,23 @@ export interface PokemonBattleState {
   terastallized: boolean;
   current_hp: number;
 }
+
+export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side: BattleSide): PokemonBattleState => {
+
+  return {
+    pokemon_build: pokemonBuild,
+    side: side,
+    status: "none",
+    volatile_statuses: [],
+    stat_boosts: {
+      attack: 0,
+      defense: 0,
+      special_attack: 0,
+      special_defense: 0,
+      speed: 0
+    },
+    terastallized: false,
+    current_hp: pokemonBuild.stat_spread.hp
+  }
+
+}

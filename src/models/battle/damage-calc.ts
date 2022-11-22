@@ -16,10 +16,11 @@ export const calculateDamage = ((
 ): number => {
 
   const pokemonMove: PokemonMove = allMoves.find((move: any) => { return move.ident === moveIdent });
-  var aValue;
-  var dValue;
-  var stab;
-  var type;
+  var aValue = 1;
+  var dValue = 1;
+  var stab = 1;
+  var type = 1;
+  var other = 1;
 
   const level = attackingPokemon.pokemon_build.level;
   const power = pokemonMove.base_power;
@@ -34,8 +35,6 @@ export const calculateDamage = ((
 
   if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
     stab = 1.5;
-  } else {
-    stab = 1;
   }
 
   var primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
@@ -52,7 +51,10 @@ export const calculateDamage = ((
   const critical = 1;
   const random = RANDOM_ROLLS[Math.floor(Math.random() * 16)];
   const burn = 1;
-  const other = 1;
+
+  if(attackingPokemon.pokemon_build.item_ident === "life-orb") {
+    other = 1.3;
+  }
 
   // const damageRolls = randomRolls.map((randomRoll) => {
   //   const baseDamage = (Math.floor(Math.floor(Math.floor(((2 * level) / 5) + 2) * power * (aValue / dValue)) / 50) + 2);
