@@ -126,7 +126,7 @@
     "move_idents": []
   },
   {
-    "ident": "crocolar",
+    "ident": "crocalor",
     "national_pokedex_number": 910,
     "paldea_regional_pokedex_number": 5,
     "evolution_line_ident": "fuecoco",
@@ -295,61 +295,60 @@
     "move_idents": []
   },
   {
-    "ident": "oinkologne",
     "national_pokedex_number": 916,
-    "paldea_regional_pokedex_number": 10,
+    "paldea_regional_pokedex_number": 11,
     "evolution_line_ident": "lechonk",
     "evolution_line_index": 1,
-    "formes": [
-      {
-        "ident": "oinkologne-male",
-        "primary_type_ident": "normal",
-        "secondary_type_ident": null,
-        "height": 1,
-        "weight": 120,
-        "genders": [
-          "male"
-        ],
-        "base_stats": {
-          "hp": 110,
-          "attack": 100,
-          "defense": 75,
-          "special_attack": 59,
-          "special_defense": 80,
-          "speed": 65
-        },
-        "ability_idents": [
-          "lingering-aroma",
-          "gluttony",
-          "thick-fat"
-        ],
-        "move_idents": []
-      },
-      {
-        "ident": "oinkologne-female",
-        "primary_type_ident": "normal",
-        "secondary_type_ident": null,
-        "height": 1,
-        "weight": 120,
-        "genders": [
-          "female"
-        ],
-        "base_stats": {
-          "hp": 115,
-          "attack": 90,
-          "defense": 70,
-          "special_attack": 59,
-          "special_defense": 90,
-          "speed": 65
-        },
-        "ability_idents": [
-          "aroma-veil",
-          "gluttony",
-          "thick-fat"
-        ],
-        "move_idents": []
-      }
-    ]
+    "ident": "oinkologne-male",
+    "primary_type_ident": "normal",
+    "secondary_type_ident": null,
+    "height": 1,
+    "weight": 120,
+    "genders": [
+      "male"
+    ],
+    "base_stats": {
+      "hp": 110,
+      "attack": 100,
+      "defense": 75,
+      "special_attack": 59,
+      "special_defense": 80,
+      "speed": 65
+    },
+    "ability_idents": [
+      "lingering-aroma",
+      "gluttony",
+      "thick-fat"
+    ],
+    "move_idents": []
+  },
+  {
+    "national_pokedex_number": 916,
+    "paldea_regional_pokedex_number": 11,
+    "evolution_line_ident": "lechonk",
+    "evolution_line_index": 1,
+    "ident": "oinkologne-female",
+    "primary_type_ident": "normal",
+    "secondary_type_ident": null,
+    "height": 1,
+    "weight": 120,
+    "genders": [
+      "female"
+    ],
+    "base_stats": {
+      "hp": 115,
+      "attack": 90,
+      "defense": 70,
+      "special_attack": 59,
+      "special_defense": 90,
+      "speed": 65
+    },
+    "ability_idents": [
+      "aroma-veil",
+      "gluttony",
+      "thick-fat"
+    ],
+    "move_idents": []
   },
   {
     "ident": "tarountula",

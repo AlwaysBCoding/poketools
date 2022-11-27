@@ -37,7 +37,22 @@ recursive_file_path_search(path.resolve(__dirname, "../data/pokemon/paldea"), (e
     filteredFilePaths.forEach((filePath, index) => {
       const fileData = fs.readFileSync(filePath, {encoding: 'utf-8'});
       const fileJSON = JSON.parse(fileData);
-      ALL_POKEMON_DATA.push(fileJSON);
+
+
+      if(fileJSON.formes && fileJSON.formes.length > 0) {
+        for (const forme of fileJSON.formes) {
+          const formeData = Object.assign({
+            national_pokedex_number: fileJSON.national_pokedex_number,
+            paldea_regional_pokedex_number: fileJSON.paldea_regional_pokedex_number,
+            evolution_line_ident: fileJSON.evolution_line_ident,
+            evolution_line_index: fileJSON.evolution_line_index
+          }, forme);
+          ALL_POKEMON_DATA.push(formeData);
+        }
+      } else {
+        ALL_POKEMON_DATA.push(fileJSON);
+      }
+
     });
 
     fs.writeFileSync(path.resolve(__dirname, "../data/pokemon/all-pokemon.json"), JSON.stringify(ALL_POKEMON_DATA, null, 2));

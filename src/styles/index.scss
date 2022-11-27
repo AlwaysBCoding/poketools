@@ -10,6 +10,8 @@ $charcoal-light: #7B7B7B;
 $charcoal-ultra-light: #C2C2C2;
 $emphasis-red: #B6000F;
 
+$serebii-green: #507C36;
+
 // GLOBALS
 // =====================
 body {
@@ -59,6 +61,17 @@ a, button {
   flex: 1;
 }
 
+// LAYOUTS
+// =====================
+$pokemon-data-table-header-row-height: 42px;
+$pokemon-data-table-data-row-height: 60px;
+$pokemon-number-cell-width: 7%;
+$pokemon-image-cell-width: 5%;
+$pokemon-ident-cell-width: 12%;
+$pokemon-type-cell-width: 12%;
+$pokemon-abilities-cell-width: 14%;
+$pokemon-base-stats-cell-width: 50%;
+
 // COMPONENTS
 // =====================
 .Header {
@@ -89,6 +102,104 @@ a, button {
         color: $charcoal-dark;
       }
     }
+  }
+}
+
+.pokemon-data-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: mistyrose;
+
+  .pokemon-header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: $pokemon-data-table-header-row-height;
+
+    .pokemon-header-item {
+      background-color: $serebii-green;
+      line-height: $pokemon-data-table-header-row-height;
+      text-align: center;
+      font-weight: bold;
+      color: $charcoal-ultra-light;
+
+      &.pokemon-base-stats {
+        line-height: calc(0.5 * $pokemon-data-table-header-row-height);
+      }
+    }
+
+    .index-number { width: $pokemon-number-cell-width; }
+    .pokemon-image { width: $pokemon-image-cell-width; }
+    .pokemon-ident { width: $pokemon-ident-cell-width; }
+    .pokemon-type { width: $pokemon-type-cell-width; }
+    .pokemon-abilities { width: $pokemon-abilities-cell-width; }
+    .pokemon-base-stats {
+      width: $pokemon-base-stats-cell-width;
+      .pokemon-base-stats-secondary {
+        display: flex;
+        flex-direction: row;
+        .pokemon-base-stats-secondary-cell {
+          width: 16.6667%;
+        }
+      }
+    }
+  }
+
+  .pokemon-data-row {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: $pokemon-data-table-data-row-height;
+
+    .index-number {
+      width: $pokemon-number-cell-width;
+      text-align: center;
+    }
+    .pokemon-image-display {
+      width: $pokemon-image-cell-width;
+      height: 100%;
+      display: flex;
+      flex-direction: center;
+      justify-content: center;
+      align-items: center;
+      .pokemon-image {
+        height: 80%;
+      }
+    }
+    .pokemon-ident {
+      width: $pokemon-ident-cell-width;
+      text-align: center;
+    }
+    .pokemon-type-display {
+      width: $pokemon-type-cell-width;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .pokemon-abilities-display {
+      width: $pokemon-abilities-cell-width;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .pokemon-base-stats-display {
+      width: $pokemon-base-stats-cell-width;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .base-stat {
+        width: 16.6667%;
+        text-align: center;
+      }
+    }
+
   }
 }
 
