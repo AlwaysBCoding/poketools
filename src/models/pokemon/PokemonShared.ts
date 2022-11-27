@@ -1,5 +1,3 @@
-import { Pokemon } from "./Pokemon";
-
 export interface PokemonStatSpread {
   hp: number;
   attack: number;
@@ -83,11 +81,16 @@ export type PokemonAbilityIdent =
   | "blaze"
   | "cheek-pouch"
   | "chlorophyll"
+  | "cloud-nine"
+  | "competitive"
   | "compound-eyes"
+  | "cute-charm"
+  | "damp"
   | "early-bird"
   | "flame-body"
   | "flash-fire"
   | "friend-guard"
+  | "frisk"
   | "gale-wings"
   | "gluttony"
   | "healer"
@@ -113,6 +116,7 @@ export type PokemonAbilityIdent =
   | "sap-sipper"
   | "serene-grace"
   | "shed-skin"
+  | "shell-armor"
   | "shield-dust"
   | "solar-power"
   | "stakeout"
@@ -132,16 +136,19 @@ export type PokemonAbilityIdent =
 export type PokemonEvolutionLine =
   | "azurill"
   | "buizel"
+  | "chewtle"
   | "combee"
   | "fletchling"
   | "fuecoco"
   | "happiny"
   | "hoppip"
   | "houndour"
+  | "igglybuff"
   | "kricketot"
   | "lechonk"
   | "nymble"
   | "pawmi"
+  | "psyduck"
   | "quaxly"
   | "rookidee"
   | "scatterbug"

@@ -1,0 +1,22 @@
+{
+  "ident": "wigglytuff",
+  "national_pokedex_number": 40,
+  "paldea_regional_pokedex_number": 61,
+  "evolution_line_ident": "igglybuff",
+  "evolution_line_index": 2,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": "fairy",
+  "height": 1,
+  "weight": 12.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 140,
+    "attack": 70,
+    "defense": 45,
+    "special_attack": 85,
+    "special_defense": 50,
+    "speed": 45
+  },
+  "ability_idents": ["cute-charm", "competitive", "frisk"],
+  "move_idents": []
+}

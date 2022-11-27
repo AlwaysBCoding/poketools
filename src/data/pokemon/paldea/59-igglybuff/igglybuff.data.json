@@ -1,0 +1,22 @@
+{
+  "ident": "igglybuff",
+  "national_pokedex_number": 174,
+  "paldea_regional_pokedex_number": 59,
+  "evolution_line_ident": "igglybuff",
+  "evolution_line_index": 0,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": "fairy",
+  "height": 0.3,
+  "weight": 1.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 90,
+    "attack": 30,
+    "defense": 15,
+    "special_attack": 40,
+    "special_defense": 20,
+    "speed": 15
+  },
+  "ability_idents": ["cute-charm", "competitive", "friend-guard"],
+  "move_idents": []
+}

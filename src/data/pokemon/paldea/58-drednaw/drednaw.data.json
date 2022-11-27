@@ -1,0 +1,22 @@
+{
+  "ident": "drednaw",
+  "national_pokedex_number": 834,
+  "paldea_regional_pokedex_number": 58,
+  "evolution_line_ident": "chewtle",
+  "evolution_line_index": 1,
+  "primary_type_ident": "water",
+  "secondary_type_ident": "rock",
+  "height": 1.0,
+  "weight": 115.5,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 90,
+    "attack": 115,
+    "defense": 90,
+    "special_attack": 48,
+    "special_defense": 68,
+    "speed": 74
+  },
+  "ability_idents": ["strong-jaw", "shell-armor", "swift-swim"],
+  "move_idents": []
+}
