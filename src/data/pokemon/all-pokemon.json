@@ -1404,5 +1404,173 @@
       "sap-sipper"
     ],
     "move_idents": []
+  },
+  {
+    "ident": "surskit",
+    "national_pokedex_number": 283,
+    "paldea_regional_pokedex_number": 49,
+    "evolution_line_ident": "surskit",
+    "evolution_line_index": 0,
+    "primary_type_ident": "bug",
+    "secondary_type_ident": "water",
+    "height": 0.5,
+    "weight": 1.7,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "attack": 30,
+      "defense": 32,
+      "special_attack": 50,
+      "special_defense": 52,
+      "speed": 65
+    },
+    "ability_idents": [
+      "swift-swim",
+      "rain-dish"
+    ],
+    "move_idents": []
+  },
+  {
+    "ident": "masquerain",
+    "national_pokedex_number": 284,
+    "paldea_regional_pokedex_number": 50,
+    "evolution_line_ident": "surskit",
+    "evolution_line_index": 1,
+    "primary_type_ident": "bug",
+    "secondary_type_ident": "flying",
+    "height": 0.8,
+    "weight": 3.6,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 70,
+      "attack": 60,
+      "defense": 62,
+      "special_attack": 100,
+      "special_defense": 82,
+      "speed": 80
+    },
+    "ability_idents": [
+      "intimidate",
+      "unnerve"
+    ],
+    "move_idents": []
+  },
+  {
+    "ident": "buizel",
+    "national_pokedex_number": 418,
+    "paldea_regional_pokedex_number": 51,
+    "evolution_line_ident": "buizel",
+    "evolution_line_index": 0,
+    "primary_type_ident": "water",
+    "secondary_type_ident": null,
+    "height": 0.7,
+    "weight": 29.5,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 55,
+      "attack": 65,
+      "defense": 35,
+      "special_attack": 60,
+      "special_defense": 30,
+      "speed": 85
+    },
+    "ability_idents": [
+      "swift-swim",
+      "water-veil"
+    ],
+    "move_idents": []
+  },
+  {
+    "ident": "floatzel",
+    "national_pokedex_number": 419,
+    "paldea_regional_pokedex_number": 52,
+    "evolution_line_ident": "buizel",
+    "evolution_line_index": 1,
+    "primary_type_ident": "water",
+    "secondary_type_ident": null,
+    "height": 1.1,
+    "weight": 33.5,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 85,
+      "attack": 105,
+      "defense": 55,
+      "special_attack": 85,
+      "special_defense": 50,
+      "speed": 115
+    },
+    "ability_idents": [
+      "swift-swim",
+      "water-veil"
+    ],
+    "move_idents": []
+  },
+  {
+    "national_pokedex_number": 194,
+    "paldea_regional_pokedex_number": 53,
+    "evolution_line_ident": "wooper",
+    "evolution_line_index": 0,
+    "ident": "wooper-paldea",
+    "primary_type_ident": "poison",
+    "secondary_type_ident": "ground",
+    "height": 0.4,
+    "weight": 11,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 55,
+      "attack": 45,
+      "defense": 45,
+      "special_attack": 25,
+      "special_defense": 25,
+      "speed": 15
+    },
+    "ability_idents": [
+      "poison-point",
+      "water-absorb"
+    ],
+    "move_idents": []
+  },
+  {
+    "ident": "clodsire",
+    "national_pokedex_number": 1009,
+    "paldea_regional_pokedex_number": 54,
+    "evolution_line_ident": "wooper",
+    "evolution_line_index": 1,
+    "primary_type_ident": "poison",
+    "secondary_type_ident": "ground",
+    "height": 1.8,
+    "weight": 223,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 130,
+      "attack": 75,
+      "defense": 60,
+      "special_attack": 45,
+      "special_defense": 100,
+      "speed": 20
+    },
+    "ability_idents": [
+      "poison-point",
+      "water-absorb"
+    ],
+    "move_idents": []
   }
 ]

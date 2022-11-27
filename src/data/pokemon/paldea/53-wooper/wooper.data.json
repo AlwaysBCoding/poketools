@@ -1,0 +1,27 @@
+{
+  "ident": "wooper",
+  "national_pokedex_number": 194,
+  "paldea_regional_pokedex_number": 53,
+  "evolution_line_ident": "wooper",
+  "evolution_line_index": 0,
+  "formes": [
+    {
+      "ident": "wooper-paldea",
+      "primary_type_ident": "poison",
+      "secondary_type_ident": "ground",
+      "height": 0.4,
+      "weight": 11,
+      "genders": ["male", "female"],
+      "base_stats": {
+        "hp": 55,
+        "attack": 45,
+        "defense": 45,
+        "special_attack": 25,
+        "special_defense": 25,
+        "speed": 15
+      },
+      "ability_idents": ["poison-point", "water-absorb"],
+      "move_idents": []
+    }
+  ]
+}

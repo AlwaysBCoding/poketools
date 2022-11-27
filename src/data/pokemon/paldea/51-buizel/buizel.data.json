@@ -1,0 +1,22 @@
+{
+  "ident": "buizel",
+  "national_pokedex_number": 418,
+  "paldea_regional_pokedex_number": 51,
+  "evolution_line_ident": "buizel",
+  "evolution_line_index": 0,
+  "primary_type_ident": "water",
+  "secondary_type_ident": null,
+  "height": 0.7,
+  "weight": 29.5,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 55,
+    "attack": 65,
+    "defense": 35,
+    "special_attack": 60,
+    "special_defense": 30,
+    "speed": 85
+  },
+  "ability_idents": ["swift-swim", "water-veil"],
+  "move_idents": []
+}

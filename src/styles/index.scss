@@ -143,14 +143,13 @@ $pokemon-base-stats-cell-width: 50%;
         display: flex;
         flex-direction: row;
         .pokemon-base-stats-secondary-cell {
-          width: 16.6667%;
+          width: 14.2857%;
         }
       }
     }
   }
 
   .pokemon-data-row {
-    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -196,7 +195,7 @@ $pokemon-base-stats-cell-width: 50%;
       flex-direction: row;
       align-items: center;
       .base-stat {
-        width: 16.6667%;
+        width: 14.2857%;
         text-align: center;
       }
     }

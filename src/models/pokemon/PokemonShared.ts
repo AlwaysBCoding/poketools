@@ -7,6 +7,10 @@ export interface PokemonStatSpread {
   speed: number;
 };
 
+export const calculatePokemonTotalStats = (statSpread: PokemonStatSpread): number => {
+  return (statSpread.hp + statSpread.attack + statSpread.defense + statSpread.special_attack + statSpread.special_defense + statSpread.speed);
+}
+
 export type PokemonGender =
   | "male"
   | "female"
@@ -84,6 +88,7 @@ export type PokemonAbilityIdent =
   | "hustle"
   | "infiltrator"
   | "insomnia"
+  | "intimidate"
   | "iron-fist"
   | "keen-eye"
   | "leaf-guard"
@@ -92,8 +97,10 @@ export type PokemonAbilityIdent =
   | "moxie"
   | "natural-cure"
   | "overgrow"
+  | "poison-point"
   | "pressure"
   | "protean"
+  | "rain-dish"
   | "run-away"
   | "sap-sipper"
   | "serene-grace"
@@ -104,15 +111,19 @@ export type PokemonAbilityIdent =
   | "static"
   | "strong-jaw"
   | "swarm"
+  | "swift-swim"
   | "technician"
   | "thick-fat"
   | "tinted-lens"
   | "torrent"
   | "unaware"
-  | "unnerve";
+  | "unnerve"
+  | "water-absorb"
+  | "water-veil";
 
 export type PokemonEvolutionLine =
   | "azurill"
+  | "buizel"
   | "combee"
   | "fletchling"
   | "fuecoco"
@@ -129,7 +140,9 @@ export type PokemonEvolutionLine =
   | "skwovet"
   | "sprigatito"
   | "sunkern"
+  | "surskit"
   | "tarountula"
+  | "wooper"
   | "yungoos";
 
 export type PokemonItemIdent =

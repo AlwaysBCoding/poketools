@@ -1,0 +1,22 @@
+{
+  "ident": "surskit",
+  "national_pokedex_number": 283,
+  "paldea_regional_pokedex_number": 49,
+  "evolution_line_ident": "surskit",
+  "evolution_line_index": 0,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": "water",
+  "height": 0.5,
+  "weight": 1.7,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 40,
+    "attack": 30,
+    "defense": 32,
+    "special_attack": 50,
+    "special_defense": 52,
+    "speed": 65
+  },
+  "ability_idents": ["swift-swim", "rain-dish"],
+  "move_idents": []
+}

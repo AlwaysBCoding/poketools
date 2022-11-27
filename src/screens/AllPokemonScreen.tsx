@@ -3,6 +3,7 @@ import useForceUpdate from "use-force-update";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
+import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
 
 const PokemonTypeDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
@@ -39,6 +40,7 @@ const PokemonBaseStatsDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
       <p className="base-stat special-attack">{pokemon.base_stats.special_attack}</p>
       <p className="base-stat special-defense">{pokemon.base_stats.special_defense}</p>
       <p className="base-stat speed">{pokemon.base_stats.speed}</p>
+      <p className="base-stat total">{calculatePokemonTotalStats(pokemon.base_stats)}</p>
     </div>
   )
 
@@ -109,6 +111,11 @@ const PokemonDataTable: React.FC<{
               onClick={() => { sortByBaseStat("speed") }}>
               SPEED
             </p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("total") }}>
+              TOTAL
+            </p>
           </div>
         </div>
       </div>
@@ -146,6 +153,9 @@ export const AllPokemonScreen = () => {
     }
     if(baseStat === "speed") {
       sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.speed - pokemonA.base_stats.speed});
+    }
+    if(baseStat === "total") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return calculatePokemonTotalStats(pokemonB.base_stats) - calculatePokemonTotalStats(pokemonA.base_stats) });
     }
     setSortedPokemon(sorted);
     forceUpdate();
