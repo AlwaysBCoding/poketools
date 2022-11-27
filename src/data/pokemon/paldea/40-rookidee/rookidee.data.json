@@ -1,0 +1,20 @@
+{
+  "ident": "rookidee",
+  "national_pokedex_number": 821,
+  "paldea_regional_pokedex_number": 40,
+  "evolution_line_ident": "rookidee",
+  "evolution_line_index": 0,
+  "primary_type_ident": "flying",
+  "secondary_type_ident": null,
+  "weight": 1.8,
+  "base_stats": {
+    "hp": 38,
+    "attack": 47,
+    "defense": 35,
+    "special_attack": 33,
+    "special_defense": 35,
+    "speed": 57
+  },
+  "ability_idents": ["keen-eye", "unnerve", "big-pecks"],
+  "move_idents": []
+}

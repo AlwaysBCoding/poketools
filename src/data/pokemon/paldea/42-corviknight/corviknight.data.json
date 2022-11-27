@@ -1,0 +1,20 @@
+{
+  "ident": "corviknight",
+  "national_pokedex_number": 823,
+  "paldea_regional_pokedex_number": 42,
+  "evolution_line_ident": "rookidee",
+  "evolution_line_index": 2,
+  "primary_type_ident": "flying",
+  "secondary_type_ident": "steel",
+  "weight": 75.0,
+  "base_stats": {
+    "hp": 98,
+    "attack": 87,
+    "defense": 105,
+    "special_attack": 53,
+    "special_defense": 85,
+    "speed": 67
+  },
+  "ability_idents": ["pressure", "unnerve", "mirror-armor"],
+  "move_idents": []
+}

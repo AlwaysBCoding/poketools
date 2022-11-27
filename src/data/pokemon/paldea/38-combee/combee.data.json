@@ -1,0 +1,20 @@
+{
+  "ident": "combee",
+  "national_pokedex_number": 415,
+  "paldea_regional_pokedex_number": 38,
+  "evolution_line_ident": "combee",
+  "evolution_line_index": 0,
+  "primary_type_ident": "bug",
+  "secondary_type_ident": "flying",
+  "weight": 5.5,
+  "base_stats": {
+    "hp": 30,
+    "attack": 30,
+    "defense": 42,
+    "special_attack": 30,
+    "special_defense": 42,
+    "speed": 70
+  },
+  "ability_idents": ["honey-gather", "hustle"],
+  "move_idents": []
+}
