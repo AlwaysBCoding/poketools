@@ -29,13 +29,15 @@ export const calculateDamage = ((
   moveIdent: PokemonMoveIdent
 ): number => {
 
-  const pokemonMove: PokemonMove = allMoves.find((move: any) => { return move.ident === moveIdent });
+  const pokemonMove: PokemonMove = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMove);
   var aValue = 1;
   var dValue = 1;
   var stab = 1;
   var type = 1;
   var other = 1;
   var burn = 1;
+
+  var totalDamage = 0;
 
   const level = attackingPokemon.pokemon_build.level;
 
@@ -83,17 +85,20 @@ export const calculateDamage = ((
   //   return Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(baseDamage * targets) * weather) * critical) * randomRoll) * stab) * type) * burn) * other);
   // });
 
-  const baseDamage = Math.floor(Math.floor((Math.floor(((2 * level) / 5) + 2) * power * aValue) / dValue) / 50) + 2;
-  const targetsModifier = pokeRound(baseDamage * targets);
-  const weatherModifier = pokeRound(targetsModifier * weather);
-  const criticalHitModifier = pokeRound(weatherModifier * critical);
-  const randomModifier = Math.floor(criticalHitModifier * random);
-  const stabModifier = pokeRound(randomModifier * stab);
-  const typeModifier = Math.floor(stabModifier * type);
-  const burnModifier = pokeRound(typeModifier * burn);
-  const otherModifier = pokeRound(burnModifier * other);
-
-  const totalDamage = otherModifier;
+  if(power) {
+    const baseDamage = Math.floor(Math.floor((Math.floor(((2 * level) / 5) + 2) * power * aValue) / dValue) / 50) + 2;
+    const targetsModifier = pokeRound(baseDamage * targets);
+    const weatherModifier = pokeRound(targetsModifier * weather);
+    const criticalHitModifier = pokeRound(weatherModifier * critical);
+    const randomModifier = Math.floor(criticalHitModifier * random);
+    const stabModifier = pokeRound(randomModifier * stab);
+    const typeModifier = Math.floor(stabModifier * type);
+    const burnModifier = pokeRound(typeModifier * burn);
+    const otherModifier = pokeRound(burnModifier * other);
+    totalDamage = otherModifier;
+  } else {
+    totalDamage = 0;
+  }
 
   return totalDamage;
 

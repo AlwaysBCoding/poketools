@@ -1,7 +1,7 @@
 import { BattleState } from "./BattleState";
 import { BattleAction } from "./BattleAction";
 
-const STAT_BOOST_MODIFIER_VALUES = {
+const STAT_BOOST_MODIFIER_VALUES: Record<string, number> = {
   "-6": 0.25,
   "-5": 0.285,
   "-4": 0.333,
@@ -23,8 +23,8 @@ const compareWithBattleState = (battleState: BattleState) => {
     const aBaseSpeed = a.actor_pokemon.pokemon_build.stat_spread.speed;
     const bBaseSpeed = b.actor_pokemon.pokemon_build.stat_spread.speed;
 
-    var aSpeed = aBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${a.actor_pokemon.stat_boosts.speed}`];
-    var bSpeed = bBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${b.actor_pokemon.stat_boosts.speed}`];
+    var aSpeed: number = aBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${a.actor_pokemon.stat_boosts.speed}`];
+    var bSpeed: number = bBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${b.actor_pokemon.stat_boosts.speed}`];
 
     if((a.actor_side === "red" && battleState.red_side_state.tailwind) || a.actor_side === "blue" && battleState.blue_side_state.tailwind) {
       aSpeed = aSpeed * 2;

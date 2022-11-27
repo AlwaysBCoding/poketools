@@ -35,15 +35,10 @@ export const pokemonBuildTemplateToPokemonBuild = (pokemonBuildTemplate: Pokemon
   var pokemonBuild: any = Object.assign(pokemonBuildTemplate, {});
 
   const statSpread = calculateStatSpread(pokemonBuildTemplate);
-  const pokemonData: Pokemon | undefined = allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; });
+  const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; }) as Pokemon);
 
-  if(pokemonData) {
-    pokemonBuild.pokemon = pokemonData;
-    pokemonBuild.stat_spread = statSpread;
-  } else {
-    pokemonBuild.pokemon = {};
-    pokemonBuild.stat_spread = {};
-  }
+  pokemonBuild.pokemon = pokemonData;
+  pokemonBuild.stat_spread = statSpread;
 
   return pokemonBuild as PokemonBuild;
 };
