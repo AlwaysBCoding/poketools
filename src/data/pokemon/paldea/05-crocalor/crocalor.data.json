@@ -6,7 +6,9 @@
   "evolution_line_index": 1,
   "primary_type_ident": "fire",
   "secondary_type_ident": null,
+  "height": 1.0,
   "weight": 30.7,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 81,
     "attack": 55,
@@ -15,5 +17,6 @@
     "special_defense": 58,
     "speed": 49
   },
-  "ability_idents": ["blaze", "unaware"]
+  "ability_idents": ["blaze", "unaware"],
+  "move_idents": []
 }

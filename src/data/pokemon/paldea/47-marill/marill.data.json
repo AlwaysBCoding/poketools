@@ -6,7 +6,9 @@
   "evolution_line_index": 1,
   "primary_type_ident": "water",
   "secondary_type_ident": "fairy",
+  "height": 0.4,
   "weight": 8.5,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 70,
     "attack": 20,

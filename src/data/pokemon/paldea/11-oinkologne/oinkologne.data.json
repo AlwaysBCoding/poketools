@@ -9,7 +9,9 @@
       "ident": "oinkologne-male",
       "primary_type_ident": "normal",
       "secondary_type_ident": null,
+      "height": 1.0,
       "weight": 120,
+      "genders": ["male"],
       "base_stats": {
         "hp": 110,
         "attack": 100,
@@ -25,7 +27,9 @@
       "ident": "oinkologne-female",
       "primary_type_ident": "normal",
       "secondary_type_ident": null,
+      "height": 1.0,
       "weight": 120,
+      "genders": ["female"],
       "base_stats": {
         "hp": 115,
         "attack": 90,

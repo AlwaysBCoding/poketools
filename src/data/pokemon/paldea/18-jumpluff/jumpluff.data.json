@@ -6,7 +6,9 @@
   "evolution_line_index": 2,
   "primary_type_ident": "grass",
   "secondary_type_ident": "flying",
+  "height": 0.8,
   "weight": 3,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 75,
     "attack": 55,

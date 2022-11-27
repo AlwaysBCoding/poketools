@@ -6,7 +6,9 @@
   "evolution_line_index": 1,
   "primary_type_ident": "normal",
   "secondary_type_ident": null,
+  "height": 1.1,
   "weight": 34.6,
+  "genders": ["female"],
   "base_stats": {
     "hp": 250,
     "attack": 5,

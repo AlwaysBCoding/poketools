@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
 
 import { HomeScreen } from "./screens/HomeScreen";
+import { AllPokemonScreen } from './screens/AllPokemonScreen';
 
 export const App: React.FC<{}> = () => {
   return (
@@ -13,8 +14,7 @@ export const App: React.FC<{}> = () => {
           <Header />
           <Routes>
             <Route path="/" element={<HomeScreen />} />
-            <Route path="/page1" element={<HomeScreen />} />
-            <Route path="/page2" element={<HomeScreen />} />
+            <Route path="/all-pokemon" element={<AllPokemonScreen />} />
           </Routes>
         </Router>
       </div>

@@ -6,7 +6,9 @@
   "evolution_line_index": 2,
   "primary_type_ident": "flying",
   "secondary_type_ident": "steel",
+  "height": 2.2,
   "weight": 75.0,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 98,
     "attack": 87,

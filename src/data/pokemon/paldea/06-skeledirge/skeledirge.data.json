@@ -6,7 +6,9 @@
   "evolution_line_index": 2,
   "primary_type_ident": "fire",
   "secondary_type_ident": "ghost",
+  "height": 1.6,
   "weight": 326.5,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 104,
     "attack": 75,
@@ -15,5 +17,6 @@
     "special_defense": 75,
     "speed": 66
   },
-  "ability_idents": ["blaze", "unaware"]
+  "ability_idents": ["blaze", "unaware"],
+  "move_idents": []
 }

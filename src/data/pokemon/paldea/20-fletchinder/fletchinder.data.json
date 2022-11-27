@@ -6,7 +6,9 @@
   "evolution_line_index": 1,
   "primary_type_ident": "fire",
   "secondary_type_ident": "flying",
+  "height": 0.7,
   "weight": 16,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 62,
     "attack": 73,

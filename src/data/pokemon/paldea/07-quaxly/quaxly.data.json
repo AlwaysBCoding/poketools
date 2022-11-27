@@ -6,7 +6,9 @@
   "evolution_line_index": 0,
   "primary_type_ident": "water",
   "secondary_type_ident": null,
+  "height": 0.5,
   "weight": 6.1,
+  "genders": ["male", "female"],
   "base_stats": {
     "hp": 55,
     "attack": 65,
@@ -15,5 +17,6 @@
     "special_defense": 45,
     "speed": 50
   },
-  "ability_idents": ["moxie", "torrent"]
+  "ability_idents": ["moxie", "torrent"],
+  "move_idents": []
 }
