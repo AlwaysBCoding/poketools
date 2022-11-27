@@ -1,0 +1,98 @@
+// IMPORTS
+// =====================
+
+// COLORS
+// =====================
+$background-cream: #FDF9EE;
+$charcoal-dark: #333333;
+$charcoal-medium: #575757;
+$charcoal-light: #7B7B7B;
+$charcoal-ultra-light: #C2C2C2;
+$emphasis-red: #B6000F;
+
+// GLOBALS
+// =====================
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a, input, textarea {
+  all: unset;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p, hr, pre, a, input {
+  margin: 0;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+.Container {
+  min-height: 100vh;
+  background-color: $background-cream;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 1280px;
+  padding-left: 64px;
+  padding-right: 64px;
+  background-color: $background-cream;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.flex-spacer {
+  flex: 1;
+}
+
+// COMPONENTS
+// =====================
+.Header {
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  .branding {
+    img.logo {
+      width: 160px;
+    }
+  }
+
+  .navigation-links {
+    display: flex;
+    flex-direction: row;
+    .navigation-link {
+      font-weight: 400;
+      font-size: 16px;
+      color: $charcoal-medium;
+      &:not(:first-child) {
+        margin-left: 22px;
+      }
+      &.selected {
+        font-weight: 500;
+        color: $charcoal-dark;
+      }
+    }
+  }
+}
+
+// SCREENS
+// =====================
+.screen.home-screen {
+}
