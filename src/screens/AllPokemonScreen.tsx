@@ -1,6 +1,7 @@
-import React from "react";
-import AllPokemon from "../data/pokemon/all-pokemon.json";
+import React, { useState } from "react";
+import useForceUpdate from "use-force-update";
 
+import AllPokemon from "../data/pokemon/all-pokemon.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
 
 const PokemonTypeDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
@@ -18,9 +19,9 @@ const PokemonAbilityDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
   return (
     <div className="pokemon-abilities-display">
-      {pokemon.ability_idents.map((pokemonAbility) => {
+      {pokemon.ability_idents.map((pokemonAbility, index) => {
         return (
-          <p>{pokemonAbility}</p>
+          <p key={`ability-${index}`}>{pokemonAbility}</p>
         )
       })}
     </div>
@@ -62,7 +63,10 @@ const PokemonDataRow: React.FC<{pokemon: Pokemon, index: number}> = ({ pokemon, 
 
 }
 
-const PokemonDataTable: React.FC<{sortedPokemon: Pokemon[]}> = ({ sortedPokemon }) => {
+const PokemonDataTable: React.FC<{
+  sortedPokemon: Pokemon[],
+  sortByBaseStat: (baseStat: string) => void
+}> = ({ sortedPokemon, sortByBaseStat }) => {
 
   return (
     <div className="pokemon-data-table">
@@ -75,12 +79,36 @@ const PokemonDataTable: React.FC<{sortedPokemon: Pokemon[]}> = ({ sortedPokemon 
         <div className="pokemon-header-item pokemon-base-stats">
           <p className="pokemon-base-stats-primary">Base Stats</p>
           <div className="pokemon-base-stats-secondary">
-            <p className="pokemon-base-stats-secondary-cell">HP</p>
-            <p className="pokemon-base-stats-secondary-cell">ATTACK</p>
-            <p className="pokemon-base-stats-secondary-cell">DEFENSE</p>
-            <p className="pokemon-base-stats-secondary-cell">SP. ATT</p>
-            <p className="pokemon-base-stats-secondary-cell">SP. DEF</p>
-            <p className="pokemon-base-stats-secondary-cell">SPEED</p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("hp") }}>
+              HP
+            </p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("attack") }}>
+              ATTACK
+            </p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("defense") }}>
+              DEFENSE
+            </p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("special-attack") }}>
+              SP. ATT
+            </p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("special-defense") }}>
+              SP. DEF
+            </p>
+            <p
+              className="pokemon-base-stats-secondary-cell"
+              onClick={() => { sortByBaseStat("speed") }}>
+              SPEED
+            </p>
           </div>
         </div>
       </div>
@@ -96,10 +124,39 @@ const PokemonDataTable: React.FC<{sortedPokemon: Pokemon[]}> = ({ sortedPokemon 
 
 export const AllPokemonScreen = () => {
   const allPokemon = AllPokemon as Pokemon[];
+  const [sortedPokemon, setSortedPokemon] = useState<Pokemon[]>(allPokemon);
+  const forceUpdate = useForceUpdate();
+
+  const sortByBaseStat = (baseStat: string) => {
+    let sorted: Pokemon[] = allPokemon;
+    if(baseStat === "hp") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.hp - pokemonA.base_stats.hp});
+    }
+    if(baseStat === "attack") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.attack - pokemonA.base_stats.attack});
+    }
+    if(baseStat === "defense") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.defense - pokemonA.base_stats.defense});
+    }
+    if(baseStat === "special-attack") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.special_attack - pokemonA.base_stats.special_attack});
+    }
+    if(baseStat === "special-defense") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.special_defense - pokemonA.base_stats.special_defense});
+    }
+    if(baseStat === "speed") {
+      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.speed - pokemonA.base_stats.speed});
+    }
+    setSortedPokemon(sorted);
+    forceUpdate();
+  }
 
   return (
-    <div className="screen all-pokemon-screen">
-      <PokemonDataTable sortedPokemon={allPokemon} />
+    <div
+      className="screen all-pokemon-screen">
+      <PokemonDataTable
+        sortedPokemon={sortedPokemon}
+        sortByBaseStat={sortByBaseStat} />
     </div>
   )
 }

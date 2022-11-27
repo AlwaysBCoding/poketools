@@ -139,6 +139,7 @@ $pokemon-base-stats-cell-width: 50%;
     .pokemon-base-stats {
       width: $pokemon-base-stats-cell-width;
       .pokemon-base-stats-secondary {
+        cursor: pointer;
         display: flex;
         flex-direction: row;
         .pokemon-base-stats-secondary-cell {
