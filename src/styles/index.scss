@@ -209,5 +209,11 @@ $pokemon-base-stats-cell-width: 50%;
 }
 
 .screen.all-pokemon-screen {
-
+  .query-input {
+    width: 100%;
+    border: 1px solid black;
+    height: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }

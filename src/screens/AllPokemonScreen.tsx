@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, KeyboardEvent } from "react";
 import useForceUpdate from "use-force-update";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
+import TypeChart from "../data/pokemon-type-effectiveness.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
-import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
+import { calculatePokemonTotalStats, PokemonTypeInteraction } from "../models/pokemon/PokemonShared";
 
 const PokemonTypeDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
@@ -67,8 +68,10 @@ const PokemonDataRow: React.FC<{pokemon: Pokemon, index: number}> = ({ pokemon, 
 
 const PokemonDataTable: React.FC<{
   sortedPokemon: Pokemon[],
-  sortByBaseStat: (baseStat: string) => void
-}> = ({ sortedPokemon, sortByBaseStat }) => {
+  currentSortStat: string,
+  currentSortStatDirection: "desc" | "asc",
+  sortByBaseStat: (baseStat: string, toggleDirection: boolean) => void
+}> = ({ sortedPokemon, currentSortStat, currentSortStatDirection, sortByBaseStat }) => {
 
   return (
     <div className="pokemon-data-table">
@@ -83,37 +86,37 @@ const PokemonDataTable: React.FC<{
           <div className="pokemon-base-stats-secondary">
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("hp") }}>
+              onClick={() => { sortByBaseStat("hp", true) }}>
               HP
             </p>
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("attack") }}>
+              onClick={() => { sortByBaseStat("attack", true) }}>
               ATTACK
             </p>
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("defense") }}>
+              onClick={() => { sortByBaseStat("defense", true) }}>
               DEFENSE
             </p>
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("special-attack") }}>
+              onClick={() => { sortByBaseStat("special-attack", true) }}>
               SP. ATT
             </p>
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("special-defense") }}>
+              onClick={() => { sortByBaseStat("special-defense", true) }}>
               SP. DEF
             </p>
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("speed") }}>
+              onClick={() => { sortByBaseStat("speed", true) }}>
               SPEED
             </p>
             <p
               className="pokemon-base-stats-secondary-cell"
-              onClick={() => { sortByBaseStat("total") }}>
+              onClick={() => { sortByBaseStat("total", true) }}>
               TOTAL
             </p>
           </div>
@@ -130,33 +133,102 @@ const PokemonDataTable: React.FC<{
 }
 
 export const AllPokemonScreen = () => {
-  const allPokemon = AllPokemon as Pokemon[];
-  const [sortedPokemon, setSortedPokemon] = useState<Pokemon[]>(allPokemon);
   const forceUpdate = useForceUpdate();
 
-  const sortByBaseStat = (baseStat: string) => {
-    let sorted: Pokemon[] = allPokemon;
+  const allPokemon = AllPokemon as Pokemon[];
+  const typeChart = TypeChart as PokemonTypeInteraction[];
+  const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>(allPokemon);
+  const [currentSortStat, setCurrentSortStat] = useState<string>("");
+  const [currentSortStatDirection, setCurrentSortStatDirection] = useState<"desc" | "asc">("desc");
+  const [sortedPokemon, setSortedPokemon] = useState<Pokemon[]>(filteredPokemon);
+  const [queryString, setQueryString] = useState<string>("");
+
+  useEffect(() => {
+    sortByBaseStat(currentSortStat, false);
+  }, [filteredPokemon])
+
+  const keyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === "Enter") {
+      filterByQueryString(event.currentTarget.value);
+    }
+  }
+
+  const filterByQueryString = (queryString: string) => {
+    const tokens = queryString.split(/\s+/);
+
+    if(tokens[0].toLowerCase() === "resists" && tokens.length === 2) {
+      const filteredPokemon = allPokemon.filter((pokemon) => {
+        const primaryTypeResistance = typeChart.find((interaction) => {
+          return interaction.offensive_type_ident === tokens[1] && interaction.defensive_type_ident === pokemon.primary_type_ident;
+        })!.effectiveness;
+        const secondaryTypeResistance = pokemon.secondary_type_ident ? (
+          typeChart.find((interaction) => {
+            return interaction.offensive_type_ident === tokens[1] && interaction.defensive_type_ident === pokemon.secondary_type_ident;
+          })!.effectiveness
+        ) : 1;
+        const resistanceValue = primaryTypeResistance * secondaryTypeResistance;
+        return resistanceValue < 1;
+      });
+      setFilteredPokemon(filteredPokemon);
+    } else if(tokens[0].toLowerCase() === "defeats" && tokens.length === 2) {
+      const filteredPokemon = allPokemon.filter((pokemon) => {
+        const primaryTypeEffectiveness = typeChart.find((interaction) => {
+          return interaction.offensive_type_ident === pokemon.primary_type_ident && interaction.defensive_type_ident === tokens[1];
+        })!.effectiveness;
+        const secondaryTypeEffectiveness = pokemon.secondary_type_ident ? (
+          typeChart.find((interaction) => {
+            return interaction.offensive_type_ident === pokemon.secondary_type_ident && interaction.defensive_type_ident === tokens[1];
+          })!.effectiveness
+        ) : 1;
+        const effectivenessValue = primaryTypeEffectiveness * secondaryTypeEffectiveness;
+        return effectivenessValue > 1;
+      });
+      setFilteredPokemon(filteredPokemon);
+    } else {
+      setCurrentSortStat("");
+      setFilteredPokemon(allPokemon);
+    }
+  }
+
+  const sortByBaseStat = (baseStat: string, toggleDirection: boolean) => {
+    let sorted: Pokemon[] = filteredPokemon;
+    let nextSortStatDirection = currentSortStatDirection;
     if(baseStat === "hp") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.hp - pokemonA.base_stats.hp});
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.hp - pokemonA.base_stats.hp});
     }
     if(baseStat === "attack") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.attack - pokemonA.base_stats.attack});
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.attack - pokemonA.base_stats.attack});
     }
     if(baseStat === "defense") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.defense - pokemonA.base_stats.defense});
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.defense - pokemonA.base_stats.defense});
     }
     if(baseStat === "special-attack") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.special_attack - pokemonA.base_stats.special_attack});
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.special_attack - pokemonA.base_stats.special_attack});
     }
     if(baseStat === "special-defense") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.special_defense - pokemonA.base_stats.special_defense});
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.special_defense - pokemonA.base_stats.special_defense});
     }
     if(baseStat === "speed") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.speed - pokemonA.base_stats.speed});
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return pokemonB.base_stats.speed - pokemonA.base_stats.speed});
     }
     if(baseStat === "total") {
-      sorted = allPokemon.sort((pokemonA, pokemonB) => { return calculatePokemonTotalStats(pokemonB.base_stats) - calculatePokemonTotalStats(pokemonA.base_stats) });
+      sorted = filteredPokemon.sort((pokemonA, pokemonB) => { return calculatePokemonTotalStats(pokemonB.base_stats) - calculatePokemonTotalStats(pokemonA.base_stats) });
     }
+
+    if(toggleDirection && currentSortStat === baseStat) {
+      if(currentSortStatDirection === "desc") {
+        nextSortStatDirection = "asc";
+      } else if(currentSortStatDirection === "asc") {
+        nextSortStatDirection = "desc";
+      }
+    } else if(toggleDirection) {
+      nextSortStatDirection = "desc";
+    }
+
+    if(nextSortStatDirection === "asc") { sorted.reverse(); }
+
+    setCurrentSortStat(baseStat);
+    setCurrentSortStatDirection(nextSortStatDirection);
     setSortedPokemon(sorted);
     forceUpdate();
   }
@@ -164,8 +236,16 @@ export const AllPokemonScreen = () => {
   return (
     <div
       className="screen all-pokemon-screen">
+      <input
+        className="query-input"
+        placeholder="QUERY INPUT"
+        value={queryString}
+        onKeyPress={keyPressHandler}
+        onChange={(e) => { setQueryString(e.target.value) }} />
       <PokemonDataTable
         sortedPokemon={sortedPokemon}
+        currentSortStat={currentSortStat}
+        currentSortStatDirection={currentSortStatDirection}
         sortByBaseStat={sortByBaseStat} />
     </div>
   )

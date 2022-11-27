@@ -1,3 +1,5 @@
+import { Pokemon } from "./Pokemon";
+
 export interface PokemonStatSpread {
   hp: number;
   attack: number;
@@ -9,6 +11,12 @@ export interface PokemonStatSpread {
 
 export const calculatePokemonTotalStats = (statSpread: PokemonStatSpread): number => {
   return (statSpread.hp + statSpread.attack + statSpread.defense + statSpread.special_attack + statSpread.special_defense + statSpread.speed);
+}
+
+export interface PokemonTypeInteraction {
+  offensive_type_ident: PokemonTypeIdent;
+  defensive_type_ident: PokemonTypeIdent;
+  effectiveness: number;
 }
 
 export type PokemonGender =

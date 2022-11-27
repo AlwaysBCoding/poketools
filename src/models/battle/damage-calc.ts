@@ -4,7 +4,7 @@ import { PokemonBattleState } from "./PokemonBattleState";
 import { PokemonMove } from "../pokemon/PokemonMove";
 
 import allMoves from "../../data/moves/all-moves.json";
-import typeChart from "../pokemon/pokemon-type-effectiveness.json";
+import typeChart from "../../data/pokemon-type-effectiveness.json";
 
 const LIFE_ORB_MODIFIER = (5324/4096);
 const SPREAD_MODIFIER = (3072/4096);
