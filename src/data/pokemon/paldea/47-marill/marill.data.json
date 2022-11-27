@@ -1,0 +1,20 @@
+{
+  "ident": "marill",
+  "national_pokedex_number": 183,
+  "paldea_regional_pokedex_number": 47,
+  "evolution_line_ident": "azurill",
+  "evolution_line_index": 1,
+  "primary_type_ident": "water",
+  "secondary_type_ident": "fairy",
+  "weight": 8.5,
+  "base_stats": {
+    "hp": 70,
+    "attack": 20,
+    "defense": 50,
+    "special_attack": 20,
+    "special_defense": 50,
+    "speed": 40
+  },
+  "ability_idents": ["thick-fat", "huge-power", "sap-sipper"],
+  "move_idents": []
+}

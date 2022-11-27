@@ -1,0 +1,20 @@
+{
+  "ident": "chansey",
+  "national_pokedex_number": 113,
+  "paldea_regional_pokedex_number": 44,
+  "evolution_line_ident": "happiny",
+  "evolution_line_index": 1,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "weight": 34.6,
+  "base_stats": {
+    "hp": 250,
+    "attack": 5,
+    "defense": 5,
+    "special_attack": 35,
+    "special_defense": 105,
+    "speed": 50
+  },
+  "ability_idents": ["natural-cure", "serene-grace", "healer"],
+  "move_idents": []
+}

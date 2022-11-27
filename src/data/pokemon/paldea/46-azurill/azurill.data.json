@@ -1,0 +1,20 @@
+{
+  "ident": "azurill",
+  "national_pokedex_number": 298,
+  "paldea_regional_pokedex_number": 46,
+  "evolution_line_ident": "azurill",
+  "evolution_line_index": 0,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": "fairy",
+  "weight": 2.0,
+  "base_stats": {
+    "hp": 50,
+    "attack": 20,
+    "defense": 40,
+    "special_attack": 20,
+    "special_defense": 40,
+    "speed": 20
+  },
+  "ability_idents": ["thick-fat", "huge-power", "sap-sipper"],
+  "move_idents": []
+}
