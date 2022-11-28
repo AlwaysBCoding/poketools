@@ -1,0 +1,22 @@
+{
+  "ident": "coalossal",
+  "national_pokedex_number": 839,
+  "paldea_regional_pokedex_number": 93,
+  "evolution_line_ident": "rolycoly",
+  "evolution_line_index": 2,
+  "primary_type_ident": "rock",
+  "secondary_type_ident": "fire",
+  "height": 2.8,
+  "weight": 310.5,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 110,
+    "attack": 80,
+    "defense": 120,
+    "special_attack": 80,
+    "special_defense": 90,
+    "speed": 30
+  },
+  "ability_idents": ["steam-engine", "flame-body", "flash-fire"],
+  "move_idents": []
+}

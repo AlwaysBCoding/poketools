@@ -1,0 +1,22 @@
+{
+  "ident": "rolycoly",
+  "national_pokedex_number": 837,
+  "paldea_regional_pokedex_number": 91,
+  "evolution_line_ident": "rolycoly",
+  "evolution_line_index": 0,
+  "primary_type_ident": "rock",
+  "secondary_type_ident": null,
+  "height": 0.3,
+  "weight": 12.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 30,
+    "attack": 40,
+    "defense": 50,
+    "special_attack": 40,
+    "special_defense": 50,
+    "speed": 30
+  },
+  "ability_idents": ["steam-engine", "heatproof", "flash-fire"],
+  "move_idents": []
+}

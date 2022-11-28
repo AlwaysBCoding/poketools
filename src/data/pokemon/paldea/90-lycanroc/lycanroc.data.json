@@ -1,0 +1,63 @@
+{
+  "ident": "lycanroc",
+  "national_pokedex_number": 745,
+  "paldea_regional_pokedex_number": 90,
+  "evolution_line_ident": "rockruff",
+  "evolution_line_index": 1,
+  "formes": [
+    {
+      "ident": "lycanroc-midday",
+      "primary_type_ident": "rock",
+      "secondary_type_ident": null,
+      "height": 0.8,
+      "weight": 25.0,
+      "genders": ["male", "female"],
+      "base_stats": {
+        "hp": 75,
+        "attack": 115,
+        "defense": 65,
+        "special_attack": 55,
+        "special_defense": 65,
+        "speed": 112
+      },
+      "ability_idents": ["keen-eye", "sand-rush", "steadfast"],
+      "move_idents": []
+    },
+    {
+      "ident": "lycanroc-midnight",
+      "primary_type_ident": "rock",
+      "secondary_type_ident": null,
+      "height": 1.1,
+      "weight": 25.0,
+      "genders": ["male", "female"],
+      "base_stats": {
+        "hp": 85,
+        "attack": 115,
+        "defense": 75,
+        "special_attack": 55,
+        "special_defense": 75,
+        "speed": 82
+      },
+      "ability_idents": ["keen-eye", "vital-spirit", "no-guard"],
+      "move_idents": []
+    },
+    {
+      "ident": "lycanroc-dusk",
+      "primary_type_ident": "rock",
+      "secondary_type_ident": null,
+      "height": 0.8,
+      "weight": 25.0,
+      "genders": ["male", "female"],
+      "base_stats": {
+        "hp": 75,
+        "attack": 117,
+        "defense": 65,
+        "special_attack": 55,
+        "special_defense": 65,
+        "speed": 110
+      },
+      "ability_idents": ["tough-claws"],
+      "move_idents": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "ident": "carkol",
+  "national_pokedex_number": 838,
+  "paldea_regional_pokedex_number": 92,
+  "evolution_line_ident": "rolycoly",
+  "evolution_line_index": 1,
+  "primary_type_ident": "rock",
+  "secondary_type_ident": "fire",
+  "height": 1.1,
+  "weight": 78.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 80,
+    "attack": 60,
+    "defense": 90,
+    "special_attack": 60,
+    "special_defense": 70,
+    "speed": 50
+  },
+  "ability_idents": ["steam-engine", "flame-body", "flash-fire"],
+  "move_idents": []
+}

@@ -1,0 +1,22 @@
+{
+  "ident": "sudowoodo",
+  "national_pokedex_number": 185,
+  "paldea_regional_pokedex_number": 88,
+  "evolution_line_ident": "bonsly",
+  "evolution_line_index": 1,
+  "primary_type_ident": "rock",
+  "secondary_type_ident": null,
+  "height": 1.2,
+  "weight": 38.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 70,
+    "attack": 100,
+    "defense": 115,
+    "special_attack": 30,
+    "special_defense": 65,
+    "speed": 30
+  },
+  "ability_idents": ["sturdy", "rock-head", "rattled"],
+  "move_idents": []
+}

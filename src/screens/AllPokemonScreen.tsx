@@ -19,9 +19,9 @@ export const AllPokemonScreen = () => {
   const [sortedPokemon, setSortedPokemon] = useState<Pokemon[]>(filteredPokemon);
   const [queryString, setQueryString] = useState<string>("");
 
-  // eslint-disable-next-line
   useEffect(() => {
     sortByBaseStat(currentSortStat, false);
+    // eslint-disable-next-line
   }, [filteredPokemon])
 
   const keyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
