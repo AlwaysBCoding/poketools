@@ -296,76 +296,6 @@ export type PokemonItemIdent =
   | "yache-berry"
   | "zoom-lens";
 
-  // Moves – D
-
-  // Darkest Lariat
-  // Dark Pulse
-  // Dark Void
-  // Dazzling Gleam
-  // Decorate
-  // Defend Order
-  // Defense Curl
-  // Defog
-  // Destiny Bond
-  // Detect
-  // Devastating Drake
-  // Diamond Storm
-  // Dig
-  // Dire Claw
-  // Disable
-  // Disarming Voice
-  // Discharge
-  // Dive
-  // Doodle
-  // Double-Edge
-  // Double Hit
-  // Double Iron Bash
-  // Double Kick
-  // Double Shock
-  // Double Team
-  // Draco Meteor
-  // Dragon Ascent
-  // Dragon Breath
-  // Dragon Claw
-  // Dragon Dance
-  // Dragon Darts
-  // Dragon Energy
-  // Dragon Pulse
-  // Dragon Rush
-  // Dragon Tail
-  // Draining Kiss
-  // Drain Punch
-  // Dream Eater
-  // Drill Peck
-  // Drill Run
-  // Drum Beating
-  // Dual Wingbeat
-  // Dynamax Cannon
-  // Dynamic Punch
-  // Moves – E
-
-  // Earth Power
-  // Earthquake
-  // Echoed Voice
-  // Eerie Impulse
-  // Eerie Spell
-  // Electric Terrain
-  // Electrify
-  // Electro Ball
-  // Electro Drift
-  // Electroweb
-  // Ember
-  // Encore
-  // Endeavor
-  // Endure
-  // Energy Ball
-  // Entrainment
-  // Eruption
-  // Esper Wing
-  // Expanding Force
-  // Explosion
-  // Extrasensory
-  // Extreme Speed
   // Moves – F
 
   // Facade
@@ -1088,9 +1018,71 @@ export type PokemonMoveIdent =
   | "crush-grip"
   | "curse"
   | "cut"
+  | "darkest-lariat"
+  | "dark-pulse"
+  | "dark-void"
+  | "dazzling-gleam"
+  | "decorate"
+  | "defend-order"
+  | "defense-curl"
+  | "defog"
+  | "destiny-bond"
+  | "detect"
+  | "devastating-drake"
+  | "diamond-storm"
+  | "dig"
+  | "dire-claw"
   | "disarming-voice"
+  | "discharge"
+  | "dive"
+  | "doodle"
+  | "double-edge"
+  | "double-hit"
+  | "double-iron-bash"
+  | "double-kick"
+  | "double-shock"
+  | "double-team"
+  | "draco-meteor"
+  | "dragon-ascent"
+  | "dragon-breath"
+  | "dragon-claw"
+  | "dragon-dance"
+  | "dragon-darts"
+  | "dragon-energy"
+  | "dragon-pulse"
+  | "dragon-rush"
+  | "dragon-tail"
+  | "draining-kiss"
+  | "drain-punch"
+  | "dream-eater"
+  | "drill-peck"
+  | "drill-run"
+  | "drum-beating"
+  | "dual-wingbeat"
+  | "dynamax-cannon"
+  | "dynamic-punch"
+  | "earth-power"
+  | "earthquake"
+  | "echoed-voice"
+  | "eerie-impulse"
+  | "eerie-spell"
+  | "electric-terrain"
+  | "electrify"
+  | "electro-ball"
+  | "electro-drift"
+  | "electroweb"
+  | "ember"
+  | "encore"
+  | "endeavor"
   | "endure"
   | "energy-ball"
+  | "entrainment"
+  | "eruption"
+  | "esper-wing"
+  | "expanding-force"
+  | "explosion"
+  | "extrasensory"
+  | "extreme-speed"
   | "facade"
   | "fake-tears"
   | "flower-trick"
