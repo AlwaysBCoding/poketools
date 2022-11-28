@@ -8,7 +8,7 @@ const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBui
   return (
     <div className="slot-content">
       <h4 className="slot-title pokemon-ident">{pokemonBuild.pokemon.ident}</h4>
-      <img className="pokemon-image" src={pokemonImage} />
+      <img className="pokemon-image" src={pokemonImage} alt={pokemonBuild.pokemon.ident} />
       <p className="level">{`LEVEL: ${pokemonBuild.level}`}</p>
       <p className="gender">{`GENDER: ${pokemonBuild.gender}`}</p>
       <p className="shiny">{`SHINY: ${pokemonBuild.shiny}`}</p>

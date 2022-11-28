@@ -14,10 +14,9 @@ export const createNewPokemonTeam = (): PokemonTeam => {
   }
 }
 
-const validatePokemonTeam = (pokemonTeam: PokemonTeam, format: string): boolean => {
-  return false;
-}
+// const validatePokemonTeam = (pokemonTeam: PokemonTeam, format: string): boolean => {
+//   return false;
+// }
 
-const savePokemonTeam = (pokemonTeam: PokemonTeam) => {
-
-}
+// const savePokemonTeam = (pokemonTeam: PokemonTeam) => {
+// }

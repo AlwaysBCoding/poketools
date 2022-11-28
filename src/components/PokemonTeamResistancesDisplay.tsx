@@ -25,6 +25,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
     return (primaryTypeResistance * secondaryTypeResistance);
   }
 
+  // eslint-disable-next-line
   useEffect(() => {
     if(team.pokemonBuilds.length > teamResistanceValues.length) {
       const nextTeamResistanceValues = [];
@@ -118,8 +119,8 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         <p className="header-row">TEAM</p>
         {allTypes.map((typeIdent, index) => {
           var displayRowClassName = "display-row";
-          const resistances = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] < 1) { return true; }}).length;
-          const weaknesses = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] > 1) { return true; }}).length;
+          const resistances = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] < 1) { return true; } else { return false; }}).length;
+          const weaknesses = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] > 1) { return true; } else { return false; }}).length;
           if(weaknesses > resistances) { displayRowClassName = "display-row overall-weak"; }
           if(resistances > weaknesses) { displayRowClassName = "display-row overall-strong"; }
           return (

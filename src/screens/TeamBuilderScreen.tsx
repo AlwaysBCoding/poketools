@@ -3,7 +3,7 @@ import useForceUpdate from "use-force-update";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
-import { PokemonBuild, createDefaultPokemonBuildForPokemon } from "../models/pokemon/PokemonBuild";
+import { createDefaultPokemonBuildForPokemon } from "../models/pokemon/PokemonBuild";
 import { PokemonTeam, createNewPokemonTeam } from "../models/pokemon/PokemonTeam";
 import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
 
@@ -25,6 +25,7 @@ export const TeamBuilderScreen = () => {
     });
     nextFilteredPokemon.sort((pokemonA, pokemonB) => { return calculatePokemonTotalStats(pokemonB.base_stats) - calculatePokemonTotalStats(pokemonA.base_stats) });
     setFilteredPokemon(nextFilteredPokemon);
+    // eslint-disable-next-line
   }, [searchString]);
 
   const selectPokemon = (pokemon: Pokemon) => {
