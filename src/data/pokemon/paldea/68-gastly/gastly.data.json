@@ -1,0 +1,22 @@
+{
+  "ident": "gastly",
+  "national_pokedex_number": 92,
+  "paldea_regional_pokedex_number": 68,
+  "evolution_line_ident": "gastly",
+  "evolution_line_index": 0,
+  "primary_type_ident": "ghost",
+  "secondary_type_ident": "poison",
+  "height": 1.3,
+  "weight": 0.1,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 30,
+    "attack": 35,
+    "defense": 30,
+    "special_attack": 100,
+    "special_defense": 35,
+    "speed": 80
+  },
+  "ability_idents": ["levitate"],
+  "move_idents": []
+}

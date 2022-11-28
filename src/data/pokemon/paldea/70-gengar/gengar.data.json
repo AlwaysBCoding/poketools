@@ -1,0 +1,22 @@
+{
+  "ident": "gengar",
+  "national_pokedex_number": 94,
+  "paldea_regional_pokedex_number": 70,
+  "evolution_line_ident": "gastly",
+  "evolution_line_index": 2,
+  "primary_type_ident": "ghost",
+  "secondary_type_ident": "poison",
+  "height": 1.5,
+  "weight": 40.5,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 60,
+    "attack": 65,
+    "defense": 60,
+    "special_attack": 130,
+    "special_defense": 75,
+    "speed": 110
+  },
+  "ability_idents": ["cursed-body"],
+  "move_idents": []
+}

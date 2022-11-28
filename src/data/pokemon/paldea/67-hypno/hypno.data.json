@@ -1,0 +1,22 @@
+{
+  "ident": "hypno",
+  "national_pokedex_number": 97,
+  "paldea_regional_pokedex_number": 67,
+  "evolution_line_ident": "drowzee",
+  "evolution_line_index": 1,
+  "primary_type_ident": "psychic",
+  "secondary_type_ident": null,
+  "height": 1.6,
+  "weight": 75.6,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 85,
+    "attack": 73,
+    "defense": 70,
+    "special_attack": 73,
+    "special_defense": 115,
+    "speed": 67
+  },
+  "ability_idents": ["insomnia", "forewarn", "inner-focus"],
+  "move_idents": []
+}

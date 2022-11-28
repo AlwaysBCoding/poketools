@@ -1,0 +1,22 @@
+{
+  "ident": "ralts",
+  "national_pokedex_number": 280,
+  "paldea_regional_pokedex_number": 62,
+  "evolution_line_ident": "ralts",
+  "evolution_line_index": 0,
+  "primary_type_ident": "psychic",
+  "secondary_type_ident": "fairy",
+  "height": 0.4,
+  "weight": 6.6,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 28,
+    "attack": 25,
+    "defense": 25,
+    "special_attack": 45,
+    "special_defense": 35,
+    "speed": 40
+  },
+  "ability_idents": ["synchronize", "trace", "telepathy"],
+  "move_idents": []
+}

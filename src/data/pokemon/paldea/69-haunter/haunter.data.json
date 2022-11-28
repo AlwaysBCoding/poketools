@@ -1,0 +1,22 @@
+{
+  "ident": "haunter",
+  "national_pokedex_number": 93,
+  "paldea_regional_pokedex_number": 69,
+  "evolution_line_ident": "gastly",
+  "evolution_line_index": 1,
+  "primary_type_ident": "ghost",
+  "secondary_type_ident": "poison",
+  "height": 1.6,
+  "weight": 0.1,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 45,
+    "attack": 50,
+    "defense": 45,
+    "special_attack": 115,
+    "special_defense": 55,
+    "speed": 95
+  },
+  "ability_idents": ["levitate"],
+  "move_idents": []
+}
