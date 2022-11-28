@@ -14,6 +14,10 @@ export const Header = () => {
       display: "ALL POKEMON"
     },
     {
+      path: "/all-teams",
+      display: "ALL TEAMS"
+    },
+    {
       path: "/team-builder",
       display: "TEAM BUILDER"
     }

@@ -116,6 +116,28 @@ $pokemon-base-stats-cell-width: 50%;
   }
 }
 
+.button {
+  height: 48px;
+  background-color: $charcoal-dark;
+  &.inverted {
+    background-color: $background-cream;
+    border: 1px solid $charcoal-dark;
+    .button-text { color: $charcoal-dark; }
+  }
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .button-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: $background-cream;
+  }
+}
+
 .pokemon-data-table {
   width: 100%;
   display: flex;
@@ -368,6 +390,10 @@ $pokemon-base-stats-cell-width: 50%;
 
 .screen.team-builder-screen {
 
+  .team-name-section {
+    width: 200px;
+  }
+
   .pokemon-select {
     height: 300px;
     display: flex;
@@ -393,5 +419,9 @@ $pokemon-base-stats-cell-width: 50%;
     margin-top: 50px;
     width: 100%;
   }
+
+}
+
+.screen.all-teams-screen {
 
 }
