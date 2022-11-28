@@ -18,5 +18,37 @@
     "speed": 45
   },
   "ability_idents": ["swarm", "tinted-lens"],
-  "move_idents": []
+  "move_idents": [
+    "agility",
+    "assurance",
+    "astonish",
+    "bug-bite",
+    "bug-buzz",
+    "counter",
+    "double-kick",
+    "endure",
+    "facade",
+    "feint",
+    "first-impression",
+    "leech-life",
+    "leer",
+    "pounce",
+    "protect",
+    "rain-dance",
+    "rest",
+    "screech",
+    "skitter-smack",
+    "sleep-talk",
+    "struggle-bug",
+    "substitute",
+    "sucker-punch",
+    "sunny-day",
+    "tackle",
+    "take-down",
+    "tera-blast",
+    "thief",
+    "trailblaze",
+    "u-turn",
+    "x-scissor"
+  ]
 }
