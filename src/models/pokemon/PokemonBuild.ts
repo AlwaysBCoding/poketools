@@ -42,3 +42,36 @@ export const pokemonBuildTemplateToPokemonBuild = (pokemonBuildTemplate: Pokemon
 
   return pokemonBuild as PokemonBuild;
 };
+
+export const createDefaultPokemonBuildForPokemon = (pokemon: Pokemon): PokemonBuild => {
+  const pokemonBuildTemplate: PokemonBuildTemplate = {
+    pokemon_ident: pokemon.ident,
+    nickname: null,
+    item_ident: null,
+    ability_ident: pokemon.ability_idents[0],
+    level: 50,
+    shiny: false,
+    gender: pokemon.genders[0],
+    tera_type_ident: pokemon.primary_type_ident,
+    nature_ident: "hardy",
+    move_idents: [],
+    iv_spread: {
+      hp: 31,
+      attack: 31,
+      defense: 31,
+      special_attack: 31,
+      special_defense: 31,
+      speed: 31
+    },
+    ev_spread: {
+      hp: 0,
+      attack: 0,
+      defense: 0,
+      special_attack: 0,
+      special_defense: 0,
+      speed: 0
+    }
+  }
+
+  return pokemonBuildTemplateToPokemonBuild(pokemonBuildTemplate);
+}

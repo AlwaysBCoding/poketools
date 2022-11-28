@@ -3,6 +3,7 @@ import { PokemonBuildTemplate } from "./PokemonBuildTemplate";
 import { PokemonStatSpread } from "./PokemonShared";
 import allPokemon from "../../data/pokemon/all-pokemon.json";
 
+
 export const calculateStatSpread = (pokemonBuildTemplate: PokemonBuildTemplate): PokemonStatSpread => {
 
   const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; }) as Pokemon);

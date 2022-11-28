@@ -43,6 +43,10 @@ a, button {
   cursor: pointer;
 }
 
+hr {
+  width: 100%;
+}
+
 .Container {
   min-height: 100vh;
   background-color: $background-cream;
@@ -237,17 +241,33 @@ $pokemon-base-stats-cell-width: 50%;
 
   .slots {
     width: 100%;
+    height: 500px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 
     .slot {
-      height: 250px;
+      height: 100%;
       width: 16.6667%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
 
       .slot-title {
         text-align: center;
         margin-top: 10px;
+      }
+
+      .slot-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        img.pokemon-image {
+          height: 100px;
+        }
       }
     }
   }
@@ -370,6 +390,7 @@ $pokemon-base-stats-cell-width: 50%;
   }
 
   .team-resistances-container {
+    margin-top: 50px;
     width: 100%;
   }
 
