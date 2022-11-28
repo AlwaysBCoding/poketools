@@ -66,7 +66,7 @@ export const TeamBuilderScreen = () => {
           onChange={(e) => { setSearchString(e.target.value) }} />
         <div className="pokemon-data-table-container">
           <PokemonDataTable
-            pokemonList={filteredPokemon.slice(0, 5)}
+            pokemonList={filteredPokemon}
             clickable={true}
             onPokemonClick={(pokemon: Pokemon) => { selectPokemon(pokemon); }}
             displayBaseStats={false} />

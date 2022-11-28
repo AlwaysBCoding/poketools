@@ -1,0 +1,45 @@
+{
+  "ident": "maushold",
+  "national_pokedex_number": 946,
+  "paldea_regional_pokedex_number": 72,
+  "evolution_line_ident": "tandemaus",
+  "evolution_line_index": 1,
+  "formes": [
+    {
+      "ident": "maushold-family-of-three",
+      "primary_type_ident": "normal",
+      "secondary_type_ident": null,
+      "height": 0.3,
+      "weight": 2.3,
+      "genders": ["genderless"],
+      "base_stats": {
+        "hp": 74,
+        "attack": 75,
+        "defense": 70,
+        "special_attack": 65,
+        "special_defense": 75,
+        "speed": 111
+      },
+      "ability_idents": ["friend-guard", "cheek-pouch", "technician"],
+      "move_idents": []
+    },
+    {
+      "ident": "maushold-family-of-four",
+      "primary_type_ident": "normal",
+      "secondary_type_ident": null,
+      "height": 0.3,
+      "weight": 2.8,
+      "genders": ["genderless"],
+      "base_stats": {
+        "hp": 74,
+        "attack": 75,
+        "defense": 70,
+        "special_attack": 65,
+        "special_defense": 75,
+        "speed": 111
+      },
+      "ability_idents": ["friend-guard", "cheek-pouch", "technician"],
+      "move_idents": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "ident": "pikachu",
+  "national_pokedex_number": 25,
+  "paldea_regional_pokedex_number": 74,
+  "evolution_line_ident": "pichu",
+  "evolution_line_index": 1,
+  "primary_type_ident": "electric",
+  "secondary_type_ident": null,
+  "height": 0.4,
+  "weight": 6.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 35,
+    "attack": 55,
+    "defense": 40,
+    "special_attack": 50,
+    "special_defense": 50,
+    "speed": 90
+  },
+  "ability_idents": ["static", "lightning-rod"],
+  "move_idents": []
+}

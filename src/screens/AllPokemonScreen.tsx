@@ -47,7 +47,7 @@ export const AllPokemonScreen = () => {
         return resistanceValue < 1;
       });
       setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "defeats" && tokens.length === 2) {
+    } else if(tokens[0].toLowerCase() === "beats" && tokens.length === 2) {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         const primaryTypeEffectiveness = typeChart.find((interaction) => {
           return interaction.offensive_type_ident === pokemon.primary_type_ident && interaction.defensive_type_ident === tokens[1];
@@ -71,6 +71,25 @@ export const AllPokemonScreen = () => {
         return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
+    } else if(tokens[1] === "than" && tokens.length === 3) {
+      const comparePokemon = allPokemon.find((pokemon) => {
+        return pokemon.ident === tokens[2];
+      })!;
+      if(tokens[0] === "faster") {
+        const filteredPokemon = allPokemon.filter((pokemon) => {
+          return pokemon.base_stats.speed >= comparePokemon.base_stats.speed
+        });
+        setCurrentSortStat("speed");
+        setCurrentSortStatDirection("desc");
+        setFilteredPokemon(filteredPokemon);
+      } else if(tokens[0] === "slower") {
+        const filteredPokemon = allPokemon.filter((pokemon) => {
+          return pokemon.base_stats.speed <= comparePokemon.base_stats.speed
+        });
+        setCurrentSortStat("speed");
+        setCurrentSortStatDirection("asc");
+        setFilteredPokemon(filteredPokemon);
+      }
     } else {
       setCurrentSortStat("");
       setFilteredPokemon(allPokemon);
@@ -129,11 +148,13 @@ export const AllPokemonScreen = () => {
         value={queryString}
         onKeyPress={keyPressHandler}
         onChange={(e) => { setQueryString(e.target.value) }} />
-      <PokemonDataTable
-        pokemonList={sortedPokemon}
-        currentSortStat={currentSortStat}
-        currentSortStatDirection={currentSortStatDirection}
-        sortByBaseStat={sortByBaseStat} />
+      <div className="data-table-container">
+        <PokemonDataTable
+          pokemonList={sortedPokemon}
+          currentSortStat={currentSortStat}
+          currentSortStatDirection={currentSortStatDirection}
+          sortByBaseStat={sortByBaseStat} />
+      </div>
     </div>
   )
 }
