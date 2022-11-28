@@ -326,68 +326,6 @@ export type PokemonItemIdent =
   | "yache-berry"
   | "zoom-lens";
 
-  // Moves – I
-
-  // Ice Beam
-  // Ice Burn
-  // Ice Fang
-  // Ice Hammer
-  // Ice Punch
-  // Ice Shard
-  // Ice Spinner
-  // Icicle Crash
-  // Icicle Spear
-  // Icy Wind
-  // Imprison
-  // Incinerate
-  // Infernal Parade
-  // Inferno
-  // Inferno Overdrive
-  // Infestation
-  // Ingrain
-  // Instruct
-  // Iron Defense
-  // Iron Head
-  // Iron Tail
-  // Moves – J
-
-  // Jaw Lock
-  // Jet Punch
-  // Judgment
-  // Jungle Healing
-  // Moves – K
-
-  // Kinesis
-  // King’s Shield
-  // Knock Off
-  // Kowtow Cleave
-  // Moves – L
-
-  // Land’s Wrath
-  // Lash Out
-  // Last Resort
-  // Last Respects
-  // Lava Plume
-  // Leafage
-  // Leaf Blade
-  // Leaf Storm
-  // Leech Life
-  // Leech Seed
-  // Leer
-  // Lick
-  // Life Dew
-  // Light of Ruin
-  // Light Screen
-  // Liquidation
-  // Lock-On
-  // Lovely Kiss
-  // Low Kick
-  // Low Sweep
-  // Lumina Crash
-  // Lunar Blessing
-  // Lunar Dance
-  // Lunge
-  // Luster Purge
   // Moves – M
 
   // Mach Punch
@@ -1107,7 +1045,60 @@ export type PokemonMoveIdent =
   | "hyperspace-hole"
   | "hyper-voice"
   | "hypnosis"
+  | "ice-beam"
+  | "ice-burn"
+  | "ice-fang"
+  | "ice-hammer"
+  | "ice-punch"
+  | "ice-shard"
+  | "ice-spinner"
+  | "icicle-crash"
+  | "icicle-spear"
+  | "icy-wind"
+  | "imprison"
+  | "incinerate"
+  | "infernal-parade"
+  | "inferno"
+  | "inferno-overdrive"
+  | "infestation"
+  | "ingrain"
+  | "instruct"
+  | "iron-defense"
+  | "iron-head"
+  | "iron-tail"
+  | "jaw-lock"
+  | "jet-punch"
+  | "judgment"
+  | "jungle-healing"
+  | "kinesis"
+  | "kings-shield"
   | "knock-off"
+  | "kowtow-cleave"
+  | "lands-wrath"
+  | "lash-out"
+  | "last-resort"
+  | "last-respects"
+  | "lava-plume"
+  | "leafage"
+  | "leaf-blade"
+  | "leaf-storm"
+  | "leech-life"
+  | "leech-seed"
+  | "leer"
+  | "lick"
+  | "life-dew"
+  | "light-of-ruin"
+  | "light-screen"
+  | "liquidation"
+  | "lock-on"
+  | "lovely-kiss"
+  | "low-kick"
+  | "low-sweep"
+  | "lumina-crash"
+  | "lunar-blessing"
+  | "lunar-dance"
+  | "lunge"
+  | "luster-purge"
   | "sucker-punch"
   | "swords-dance"
   | "tera-blast"
