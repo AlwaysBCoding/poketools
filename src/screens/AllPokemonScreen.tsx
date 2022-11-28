@@ -4,7 +4,7 @@ import useForceUpdate from "use-force-update";
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import TypeChart from "../data/pokemon-type-effectiveness.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
-import { calculatePokemonTotalStats, PokemonTypeInteraction } from "../models/pokemon/PokemonShared";
+import { calculatePokemonTotalStats, PokemonTypeInteraction, PokemonAbilityIdent, PokemonMoveIdent } from "../models/pokemon/PokemonShared";
 
 import { PokemonDataTable } from "../components/PokemonDataTable";
 
@@ -19,6 +19,7 @@ export const AllPokemonScreen = () => {
   const [sortedPokemon, setSortedPokemon] = useState<Pokemon[]>(filteredPokemon);
   const [queryString, setQueryString] = useState<string>("");
 
+  // eslint-disable-next-line
   useEffect(() => {
     sortByBaseStat(currentSortStat, false);
   }, [filteredPokemon])
@@ -58,6 +59,16 @@ export const AllPokemonScreen = () => {
         ) : 1;
         const effectivenessValue = primaryTypeEffectiveness * secondaryTypeEffectiveness;
         return effectivenessValue > 1;
+      });
+      setFilteredPokemon(filteredPokemon);
+    } else if(tokens[0].toLowerCase() === "ability" && tokens.length === 2) {
+      const filteredPokemon = allPokemon.filter((pokemon) => {
+        return pokemon.ability_idents.includes(tokens[1] as PokemonAbilityIdent)
+      });
+      setFilteredPokemon(filteredPokemon);
+    } else if(tokens[0].toLowerCase() === "move" && tokens.length === 2) {
+      const filteredPokemon = allPokemon.filter((pokemon) => {
+        return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
     } else {

@@ -308,126 +308,6 @@ export type PokemonItemIdent =
   | "yache-berry"
   | "zoom-lens";
 
-  // Moves – F
-
-  // Facade
-  // Fairy Lock
-  // Fairy Wind
-  // Fake Out
-  // Fake Tears
-  // False Surrender
-  // False Swipe
-  // Feather Dance
-  // Feint
-  // Fell Stinger
-  // Fiery Dance
-  // Fiery Wrath
-  // Fillet Away
-  // Final Gambit
-  // Fire Blast
-  // Fire Fang
-  // Fire Lash
-  // Fire Pledge
-  // Fire Punch
-  // Fire Spin
-  // First Impression
-  // Fishious Rend
-  // Fissure
-  // Flail
-  // Flame Charge
-  // Flamethrower
-  // Flame Wheel
-  // Flare Blitz
-  // Flash Cannon
-  // Flatter
-  // Fleur Cannon
-  // Fling
-  // Flip Turn
-  // Floral Healing
-  // Flower Trick
-  // Fly
-  // Flying Press
-  // Focus Blast
-  // Focus Energy
-  // Focus Punch
-  // Follow Me
-  // Force Palm
-  // Forest’s Curse
-  // Foul Play
-  // Freeze-Dry
-  // Freeze Shock
-  // Freezing Glare
-  // Frenzy Plant
-  // Frost Breath
-  // Fury Attack
-  // Fury Cutter
-  // Fury Swipes
-  // Fusion Bolt
-  // Fusion Flare
-  // Future Sight
-  // Moves – G
-
-  // Gastro Acid
-  // Gear Grind
-  // Geomancy
-  // Giga Drain
-  // Giga Impact
-  // Gigaton Hammer
-  // Gigavolt Havoc
-  // Glacial Lance
-  // Glaciate
-  // Glaive Rush
-  // Glare
-  // Grass Knot
-  // Grass Pledge
-  // Grassy Glide
-  // Grassy Terrain
-  // Grav Apple
-  // Gravity
-  // Growl
-  // Growth
-  // Guard Split
-  // Guard Swap
-  // Guillotine
-  // Gunk Shot
-  // Gust
-  // Gyro Ball
-  // Moves – H
-
-  // Hammer Arm
-  // Happy Hour
-  // Harden
-  // Haze
-  // Headbutt
-  // Head Charge
-  // Headlong Rush
-  // Head Smash
-  // Heal Bell
-  // Healing Wish
-  // Heal Pulse
-  // Heat Crash
-  // Heat Wave
-  // Heavy Slam
-  // Helping Hand
-  // Hex
-  // High Horsepower
-  // High Jump Kick
-  // Hold Back
-  // Hold Hands
-  // Hone Claws
-  // Horn Attack
-  // Horn Drill
-  // Horn Leech
-  // Howl
-  // Hurricane
-  // Hydro Cannon
-  // Hydro Pump
-  // Hydro VortexHyper Beam
-  // Hyper Dril
-  // Hyperspace Fury
-  // Hyperspace Hole
-  // Hyper Voice
-  // Hypnosis
   // Moves – I
 
   // Ice Beam
@@ -1096,9 +976,119 @@ export type PokemonMoveIdent =
   | "extrasensory"
   | "extreme-speed"
   | "facade"
+  | "fairy-wind"
+  | "fake-out"
   | "fake-tears"
+  | "false-surrender"
+  | "false-swipe"
+  | "feather-dance"
+  | "feint"
+  | "fell-stinger"
+  | "fiery-dance"
+  | "fiery-wrath"
+  | "fillet-away"
+  | "final-gambit"
+  | "fire-blast"
+  | "fire-fang"
+  | "fire-lash"
+  | "fire-pledge"
+  | "fire-punch"
+  | "fire-spin"
+  | "first-impression"
+  | "fishious-rend"
+  | "fissure"
+  | "flail"
+  | "flame-charge"
+  | "flamethrower"
+  | "flame-wheel"
+  | "flare-blitz"
+  | "flash-cannon"
+  | "flatter"
+  | "fleur-cannon"
+  | "fling"
+  | "flip-turn"
+  | "floral-healing"
   | "flower-trick"
+  | "fly"
+  | "flying-press"
+  | "focus-blast"
+  | "focus-energy"
+  | "focus-punch"
+  | "follow-me"
+  | "force-palm"
+  | "forests-curse"
+  | "foul-play"
+  | "freeze-dry"
+  | "freeze-shock"
+  | "freezing-glare"
+  | "frenzy-plant"
+  | "frost-breath"
+  | "fury-attack"
+  | "fury-cutter"
+  | "fury-swipes"
+  | "fusion-bolt"
+  | "fusion-flare"
+  | "future-sight"
+  | "gastro-acid"
+  | "gear-grind"
+  | "geomancy"
   | "giga-drain"
+  | "giga-impact"
+  | "gigaton-hammer"
+  | "gigavolt-havoc"
+  | "glacial-lance"
+  | "glaciate"
+  | "glaive-rush"
+  | "glare"
+  | "grass-knot"
+  | "grass-pledge"
+  | "grassy-glide"
+  | "grassy-terrain"
+  | "grav-apple"
+  | "gravity"
+  | "growl"
+  | "growth"
+  | "guard-split"
+  | "guard-swap"
+  | "guillotine"
+  | "gunk-shot"
+  | "gust"
+  | "gyro-ball"
+  | "hammer-arm"
+  | "happy-hour"
+  | "harden"
+  | "haze"
+  | "headbutt"
+  | "head-charge"
+  | "headlong-rush"
+  | "head-smash"
+  | "heal-bell"
+  | "healing-wish"
+  | "heal-pulse"
+  | "heat-crash"
+  | "heat-wave"
+  | "heavy-slam"
+  | "helping-hand"
+  | "hex"
+  | "high-horsepower"
+  | "high-jump-kick"
+  | "hold-back"
+  | "hold-hands"
+  | "hone-claws"
+  | "horn-attack"
+  | "horn-drill"
+  | "horn-leech"
+  | "howl"
+  | "hurricane"
+  | "hydro-cannon"
+  | "hydro-pump"
+  | "hydro-vortex"
+  | "hyper-beam"
+  | "hyper-drill"
+  | "hyperspace-fury"
+  | "hyperspace-hole"
+  | "hyper-voice"
+  | "hypnosis"
   | "knock-off"
   | "sucker-punch"
   | "swords-dance"
