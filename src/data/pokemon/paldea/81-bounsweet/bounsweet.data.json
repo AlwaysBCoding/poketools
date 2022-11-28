@@ -1,0 +1,22 @@
+{
+  "ident": "bounsweet",
+  "national_pokedex_number": 761,
+  "paldea_regional_pokedex_number": 81,
+  "evolution_line_ident": "bounsweet",
+  "evolution_line_index": 0,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": null,
+  "height": 0.3,
+  "weight": 3.2,
+  "genders": ["female"],
+  "base_stats": {
+    "hp": 42,
+    "attack": 30,
+    "defense": 38,
+    "special_attack": 30,
+    "special_defense": 38,
+    "speed": 32
+  },
+  "ability_idents": ["leaf-guard", "oblivious", "sweet-veil"],
+  "move_idents": []
+}

@@ -1,0 +1,22 @@
+{
+  "ident": "arboliva",
+  "national_pokedex_number": 937,
+  "paldea_regional_pokedex_number": 86,
+  "evolution_line_ident": "smoliv",
+  "evolution_line_index": 2,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": "normal",
+  "height": 1.4,
+  "weight": 48.2,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 78,
+    "attack": 69,
+    "defense": 90,
+    "special_attack": 125,
+    "special_defense": 109,
+    "speed": 39
+  },
+  "ability_idents": ["seed-sower", "harvest"],
+  "move_idents": []
+}

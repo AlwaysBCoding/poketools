@@ -1,0 +1,22 @@
+{
+  "ident": "vigoroth",
+  "national_pokedex_number": 288,
+  "paldea_regional_pokedex_number": 79,
+  "evolution_line_ident": "slakoth",
+  "evolution_line_index": 1,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "height": 1.4,
+  "weight": 46.5,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 80,
+    "attack": 80,
+    "defense": 80,
+    "special_attack": 55,
+    "special_defense": 55,
+    "speed": 90
+  },
+  "ability_idents": ["vital-spirit"],
+  "move_idents": []
+}

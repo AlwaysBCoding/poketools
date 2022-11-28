@@ -1,0 +1,22 @@
+{
+  "ident": "dolliv",
+  "national_pokedex_number": 936,
+  "paldea_regional_pokedex_number": 85,
+  "evolution_line_ident": "smoliv",
+  "evolution_line_index": 1,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": "normal",
+  "height": 0.6,
+  "weight": 11.9,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 52,
+    "attack": 53,
+    "defense": 60,
+    "special_attack": 78,
+    "special_defense": 78,
+    "speed": 33
+  },
+  "ability_idents": ["early-bird", "harvest"],
+  "move_idents": []
+}

@@ -1,0 +1,22 @@
+{
+  "ident": "slakoth",
+  "national_pokedex_number": 287,
+  "paldea_regional_pokedex_number": 78,
+  "evolution_line_ident": "slakoth",
+  "evolution_line_index": 0,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "height": 0.8,
+  "weight": 24.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 60,
+    "attack": 60,
+    "defense": 60,
+    "special_attack": 35,
+    "special_defense": 35,
+    "speed": 30
+  },
+  "ability_idents": ["truant"],
+  "move_idents": []
+}

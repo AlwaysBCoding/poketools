@@ -1,0 +1,22 @@
+{
+  "ident": "tsareena",
+  "national_pokedex_number": 763,
+  "paldea_regional_pokedex_number": 83,
+  "evolution_line_ident": "bounsweet",
+  "evolution_line_index": 2,
+  "primary_type_ident": "grass",
+  "secondary_type_ident": null,
+  "height": 1.2,
+  "weight": 21.4,
+  "genders": ["female"],
+  "base_stats": {
+    "hp": 72,
+    "attack": 120,
+    "defense": 98,
+    "special_attack": 50,
+    "special_defense": 98,
+    "speed": 72
+  },
+  "ability_idents": ["leaf-guard", "queenly-majesty", "sweet-veil"],
+  "move_idents": []
+}
