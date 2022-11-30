@@ -183,7 +183,7 @@ export type PokemonEvolutionLine =
   | "drowzee"
   | "fidough"
   | "fletchling"
-  | "flutter-mane"
+  | "flutter_mane"
   | "fuecoco"
   | "gastly"
   | "gible"

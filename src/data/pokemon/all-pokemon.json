@@ -3252,10 +3252,10 @@
     "move_idents": []
   },
   {
-    "ident": "flutter-mane",
+    "ident": "flutter_mane",
     "national_pokedex_number": 983,
     "paldea_regional_pokedex_number": 379,
-    "evolution_line_ident": "flutter-mane",
+    "evolution_line_ident": "flutter_mane",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
     "secondary_type_ident": "fairy",

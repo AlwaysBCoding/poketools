@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, KeyboardEvent } from "react";
 import useForceUpdate from "use-force-update";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
@@ -27,6 +27,12 @@ export const TeamBuilderScreen = () => {
     setFilteredPokemon(nextFilteredPokemon);
     // eslint-disable-next-line
   }, [searchString]);
+
+  const keyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === "Enter") {
+      selectPokemon(filteredPokemon[0]);
+    }
+  }
 
   const selectPokemon = (pokemon: Pokemon) => {
     let nextTeam = team;
@@ -63,6 +69,7 @@ export const TeamBuilderScreen = () => {
           className="pokemon-select-input"
           placeholder="SEARCH POKEMON"
           value={searchString}
+          onKeyPress={keyPressHandler}
           onChange={(e) => { setSearchString(e.target.value) }} />
         <div className="pokemon-data-table-container">
           <PokemonDataTable
