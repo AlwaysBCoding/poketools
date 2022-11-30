@@ -18,5 +18,13 @@
     "speed": 70
   },
   "ability_idents": ["honey-gather", "hustle"],
-  "move_idents": []
+  "move_idents": [
+    "bug-bite",
+    "bug-buzz",
+    "gust",
+    "sleep-talk",
+    "struggle-bug",
+    "sweet-scent",
+    "tera-blast"
+  ]
 }

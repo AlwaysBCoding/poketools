@@ -18,5 +18,15 @@
     "speed": 35
   },
   "ability_idents": ["shield-dust", "compound-eyes", "friend-guard"],
-  "move_idents": []
+  "move_idents": [
+    "bug-bite",
+    "poison-powder",
+    "pounce",
+    "rage-powder",
+    "string-shot",
+    "struggle-bug",
+    "stun-spore",
+    "tackle",
+    "tera-blast"
+  ]
 }

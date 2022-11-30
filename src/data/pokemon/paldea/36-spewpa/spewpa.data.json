@@ -18,5 +18,18 @@
     "speed": 29
   },
   "ability_idents": ["shed-skin", "friend-guard"],
-  "move_idents": []
+  "move_idents": [
+    "bug-bite",
+    "harden",
+    "iron-defense",
+    "poison-powder",
+    "pounce",
+    "protect",
+    "rage-powder",
+    "string-shot",
+    "struggle-bug",
+    "stun-spore",
+    "tackle",
+    "tera-blast"
+  ]
 }
