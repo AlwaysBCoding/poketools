@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
 import { PokemonBuild } from "../models/pokemon/PokemonBuild";
@@ -33,9 +33,64 @@ const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBui
   )
 }
 
-export const PokemonTeamDisplay: React.FC<{team: PokemonTeam}> = ({ team }) => {
+interface PokemonTeamDisplayProps {
+  team: PokemonTeam,
+  config: Record<string, any>,
+  mode: "index" | "show"
+}
+
+export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, config, mode }) => {
+  const [teamNameString, setTeamNameString] = useState<string>(team.team_name);
+
+  useEffect(() => {
+    team.team_name = teamNameString;
+  }, [teamNameString]);
+
+  const savePokemonTeam = () => {
+    let nextSavedTeams: Record<string, PokemonTeam> = {};
+    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
+    if(!savedTeams) {
+      nextSavedTeams[team.team_name] = team;
+    } else {
+      nextSavedTeams = savedTeams;
+      nextSavedTeams[team.team_name] = team;
+    }
+    localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+  }
+
+  const deletePokemonTeam = () => {
+    let nextSavedTeams: Record<string, PokemonTeam> = {};
+    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
+    if(savedTeams) {
+      nextSavedTeams = savedTeams;
+      delete nextSavedTeams[team.team_name];
+    }
+    localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+  }
+
   return (
-    <div className="pokemon-team-display">
+    <div className="pokemon-team-display mode-show">
+      <div className="team-actions">
+        {config.editable ? (
+          <input
+            className="team-name"
+            placeholder={team.team_name}
+            value={teamNameString}
+            onChange={(e) => { setTeamNameString(e.target.value) }} />
+        ) : (
+          <p className="team-name">{team.team_name}</p>
+        )}
+        {config.editable ? (
+          <div className="button" onClick={savePokemonTeam}>
+            <p>SAVE</p>
+          </div>
+        ) : (<></>)}
+        {config.deleteable ? (
+          <div className="button" onClick={deletePokemonTeam}>
+            <p>DELETE</p>
+          </div>
+        ) : (<></>)}
+      </div>
       <div className="slots">
         <div className="slot slot-1">
           {team.pokemonBuilds[0] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[0]} />) : (<h4 className="slot-title">SLOT 1</h4>)}

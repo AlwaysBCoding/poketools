@@ -4,7 +4,13 @@ import useForceUpdate from "use-force-update";
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import TypeChart from "../data/pokemon-type-effectiveness.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
-import { calculatePokemonTotalStats, PokemonTypeInteraction, PokemonAbilityIdent, PokemonMoveIdent } from "../models/pokemon/PokemonShared";
+import {
+  calculatePokemonTotalStats,
+  PokemonTypeInteraction,
+  PokemonAbilityIdent,
+  PokemonMoveIdent,
+  PokemonTypeIdent
+} from "../models/pokemon/PokemonShared";
 
 import { PokemonDataTable } from "../components/PokemonDataTable";
 
@@ -33,7 +39,22 @@ export const AllPokemonScreen = () => {
   const filterByQueryString = (queryString: string) => {
     const tokens = queryString.split(/\s+/);
 
-    if(tokens[0].toLowerCase() === "resists" && tokens.length === 2) {
+    if(tokens[0].toLowerCase() === "type") {
+      if(tokens.length === 2) {
+        const filteredPokemon = allPokemon.filter((pokemon) => {
+          return [pokemon.primary_type_ident, pokemon.secondary_type_ident].includes(tokens[1] as PokemonTypeIdent);
+        });
+        setFilteredPokemon(filteredPokemon);
+      } else if(tokens.length === 3) {
+        const filteredPokemon = allPokemon.filter((pokemon) => {
+          const values = [tokens[1] as PokemonTypeIdent, tokens[2] as PokemonTypeIdent];
+          return values.every(value => {
+            return [pokemon.primary_type_ident, pokemon.secondary_type_ident].includes(value);
+          })
+        });
+        setFilteredPokemon(filteredPokemon);
+      }
+    } else if(tokens[0].toLowerCase() === "resists" && tokens.length === 2) {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         const primaryTypeResistance = typeChart.find((interaction) => {
           return interaction.offensive_type_ident === tokens[1] && interaction.defensive_type_ident === pokemon.primary_type_ident;

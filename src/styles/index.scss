@@ -26,13 +26,18 @@ body {
   padding: 0;
 }
 
+a, input, textarea {
+  all: unset;
+  display: block;
+}
+
 * {
   box-sizing: border-box;
 }
 
-a, input, textarea {
-  all: unset;
-  display: block;
+input {
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 
 h1, h2, h3, h4, h5, h6, p, hr, pre, a, input {
@@ -263,6 +268,29 @@ $pokemon-base-stats-cell-width: 50%;
 
 .pokemon-team-display {
 
+  .team-actions {
+    display: flex;
+    flex-direction: row;
+
+    p.team-name {
+      width: 50%;
+      height: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input.team-name {
+      width: 50%;
+      height: 48px;
+      text-align: center;
+    }
+
+    .button {
+      width: 50%;
+    }
+  }
+
   .slots {
     width: 100%;
     height: 500px;
@@ -396,10 +424,6 @@ $pokemon-base-stats-cell-width: 50%;
 
 .screen.team-builder-screen {
 
-  .team-name-section {
-    width: 200px;
-  }
-
   .pokemon-select {
     height: 300px;
     display: flex;
@@ -409,7 +433,6 @@ $pokemon-base-stats-cell-width: 50%;
     input {
       width: 50%;
       height: 30px;
-      border: 1px solid black;
       text-align: center;
     }
     .pokemon-data-table-container {

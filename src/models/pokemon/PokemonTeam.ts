@@ -3,7 +3,7 @@ import { PokemonBuild } from "./PokemonBuild";
 export interface PokemonTeam {
   team_name: string;
   created_at: number;
-  pokemonBuilds: PokemonBuild[]
+  pokemonBuilds: PokemonBuild[];
 }
 
 export const createNewPokemonTeam = (): PokemonTeam => {

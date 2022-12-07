@@ -42,28 +42,8 @@ export const TeamBuilderScreen = () => {
     forceUpdate();
   }
 
-  const saveTeam = () => {
-    let nextSavedTeams: Record<string, PokemonTeam> = {};
-    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
-    if(!savedTeams) {
-      nextSavedTeams[team.team_name] = team;
-    } else {
-      nextSavedTeams = savedTeams;
-      nextSavedTeams[team.team_name] = team;
-    }
-    localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
-  }
-
   return (
     <div className="screen team-builder-screen">
-      <div className="team-name-section">
-        <h1>{team.team_name}</h1>
-        <div
-          className="button"
-          onClick={saveTeam}>
-          <p className="button-text">SAVE</p>
-        </div>
-      </div>
       <div className="pokemon-select">
         <input
           className="pokemon-select-input"
@@ -80,7 +60,7 @@ export const TeamBuilderScreen = () => {
         </div>
       </div>
       <div className="team-display-container">
-        <PokemonTeamDisplay team={team} />
+        <PokemonTeamDisplay team={team} config={{editable: true}} mode="show" />
       </div>
       <div className="team-resistances-container">
         <PokemonTeamResistancesDisplay team={team} />
