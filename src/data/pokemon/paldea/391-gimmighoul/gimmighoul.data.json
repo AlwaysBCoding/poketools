@@ -1,0 +1,41 @@
+{
+  "ident": "gimmighoul",
+  "national_pokedex_number": 999,
+  "paldea_regional_pokedex_number": 391,
+  "evolution_line_ident": "gimmighoul",
+  "evolution_line_index": 0,
+  "primary_type_ident": "ghost",
+  "secondary_type_ident": null,
+  "height": 0.3,
+  "weight": 5.0,
+  "genders": ["genderless"],
+  "base_stats": {
+    "hp": 45,
+    "attack": 30,
+    "defense": 70,
+    "special_attack": 75,
+    "special_defense": 70,
+    "speed": 10
+  },
+  "ability_idents": ["rattled"],
+  "move_idents": [
+    "astonish",
+    "confuse-ray",
+    "endure",
+    "hex",
+    "light-screen",
+    "nasty-plot",
+    "night-shade",
+    "power-gem",
+    "protect",
+    "reflect",
+    "rest",
+    "shadow-ball",
+    "sleep-talk",
+    "substitute",
+    "tackle",
+    "take-down",
+    "tera-blast",
+    "thief"
+  ]
+}
