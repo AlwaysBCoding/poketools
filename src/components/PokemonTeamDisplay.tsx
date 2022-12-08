@@ -129,6 +129,9 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
             <p>DELETE</p>
           </div>
         ) : (<></>)}
+        <div className="button" onClick={() => { navigate("/team-matchup", {state: {teamName: team.team_name}}); }}>
+          <p>MATCHUP</p>
+        </div>
       </div>
       {mode === "show" ? (
         <div className="slots">
