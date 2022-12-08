@@ -76,6 +76,7 @@ export type PokemonNatureIdent =
 
 export type PokemonAbilityIdent =
   | "adaptability"
+  | "anger-point"
   | "aroma-veil"
   | "big-pecks"
   | "blaze"
@@ -89,6 +90,7 @@ export type PokemonAbilityIdent =
   | "cursed-body"
   | "cute-charm"
   | "damp"
+  | "defiant"
   | "drought"
   | "early-bird"
   | "effect-spore"
@@ -211,6 +213,7 @@ export type PokemonEvolutionLine =
   | "impidimp"
   | "kricketot"
   | "lechonk"
+  | "mankey"
   | "nacli"
   | "nymble"
   | "pawmi"
