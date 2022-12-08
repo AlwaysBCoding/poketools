@@ -89,7 +89,10 @@ export type PokemonAbilityIdent =
   | "cursed-body"
   | "cute-charm"
   | "damp"
+  | "drought"
   | "early-bird"
+  | "effect-spore"
+  | "electromorphosis"
   | "flame-body"
   | "flash-fire"
   | "forewarn"
@@ -132,10 +135,12 @@ export type PokemonAbilityIdent =
   | "pressure"
   | "protean"
   | "protosynthesis"
+  | "purifying-salt"
   | "queenly-majesty"
   | "rain-dish"
   | "rattled"
   | "reckless"
+  | "regenerator"
   | "rivalry"
   | "rock-head"
   | "rough-skin"
@@ -177,7 +182,8 @@ export type PokemonAbilityIdent =
   | "vital-spirit"
   | "water-absorb"
   | "water-veil"
-  | "well-baked-body";
+  | "well-baked-body"
+  | "white-smoke";
 
 export type PokemonEvolutionLine =
   | "azurill"
@@ -191,6 +197,7 @@ export type PokemonEvolutionLine =
   | "fidough"
   | "fletchling"
   | "flutter_mane"
+  | "foongus"
   | "frigibax"
   | "fuecoco"
   | "gastly"
@@ -204,6 +211,7 @@ export type PokemonEvolutionLine =
   | "impidimp"
   | "kricketot"
   | "lechonk"
+  | "nacli"
   | "nymble"
   | "pawmi"
   | "pichu"
@@ -223,8 +231,10 @@ export type PokemonEvolutionLine =
   | "starly"
   | "sunkern"
   | "surskit"
+  | "tadbulb"
   | "tandemaus"
   | "tarountula"
+  | "torkoal"
   | "wooper"
   | "yungoos";
 

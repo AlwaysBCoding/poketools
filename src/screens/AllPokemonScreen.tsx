@@ -18,6 +18,7 @@ export const AllPokemonScreen = () => {
   const forceUpdate = useForceUpdate();
 
   const allPokemon = AllPokemon as Pokemon[];
+  console.log(allPokemon.length);
   const typeChart = TypeChart as PokemonTypeInteraction[];
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>(allPokemon);
   const [currentSortStat, setCurrentSortStat] = useState<string>("");
