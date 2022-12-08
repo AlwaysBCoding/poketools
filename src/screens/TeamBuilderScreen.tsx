@@ -60,7 +60,10 @@ export const TeamBuilderScreen = () => {
         </div>
       </div>
       <div className="team-display-container">
-        <PokemonTeamDisplay team={team} config={{editable: true}} mode="show" />
+        <PokemonTeamDisplay
+          team={team}
+          config={{editable: true, saveable: true}}
+          mode="show" />
       </div>
       <div className="team-resistances-container">
         <PokemonTeamResistancesDisplay team={team} />

@@ -79,6 +79,19 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
     navigate("/team-editor", {state: {teamName: team.team_name}});
   }
 
+  const savePokemonTeam = () => {
+    let nextSavedTeams: Record<string, PokemonTeam> = {};
+    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
+    if(!savedTeams) {
+      nextSavedTeams[team.team_name] = team;
+    } else {
+      nextSavedTeams = savedTeams;
+      nextSavedTeams[team.team_name] = team;
+    }
+    localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+  }
+
+
   const deletePokemonTeam = () => {
     let nextSavedTeams: Record<string, PokemonTeam> = {};
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
@@ -104,6 +117,11 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
         {config.editable ? (
           <div className="button" onClick={editPokemonTeam}>
             <p>EDIT</p>
+          </div>
+        ) : (<></>)}
+        {config.saveable ? (
+          <div className="button" onClick={savePokemonTeam}>
+            <p>SAVE</p>
           </div>
         ) : (<></>)}
         {config.deleteable ? (

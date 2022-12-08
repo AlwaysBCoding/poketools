@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, KeyboardEvent } from "react";
 import { PokemonBuild } from "../models/pokemon/PokemonBuild";
 
 export const PokemonBuildDisplay: React.FC<{
   pokemonBuild: PokemonBuild,
-  activeSectionIdent?: string;
+  activeSectionIdent?: string,
   onSectionClick?: (sectionName: string) => void,
-  onSectionInputChange?: (inputValue: string) => void
+  onSectionInputChange?: (inputValue: string) => void,
+  onEnterPress?: () => void
 }> = ({
   pokemonBuild,
   activeSectionIdent = "",
   onSectionClick = () => undefined,
-  onSectionInputChange = () => undefined
+  onSectionInputChange = () => undefined,
+  onEnterPress = () => undefined
 }) => {
   const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+
+  const keyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === "Enter") {
+      onEnterPress();
+    }
+  }
 
   return (
     <div className="pokemon-build-display">
@@ -24,6 +32,7 @@ export const PokemonBuildDisplay: React.FC<{
               <input
                 className="nickname-input"
                 autoFocus={true}
+                onKeyPress={keyPressHandler}
                 onChange={(e) => { onSectionInputChange(e.currentTarget.value) }}
                 onBlur={() => { onSectionClick("") }} />
             ) : (
@@ -59,6 +68,7 @@ export const PokemonBuildDisplay: React.FC<{
                 <input
                   className="tera-type-input"
                   autoFocus={true}
+                  onKeyPress={keyPressHandler}
                   onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
               ) : (
                 <p className="input-data tera-type-data">
@@ -75,6 +85,7 @@ export const PokemonBuildDisplay: React.FC<{
             <input
               className="pokemon-input"
               autoFocus={true}
+              onKeyPress={keyPressHandler}
               onChange={(e) => { onSectionInputChange(e.currentTarget.value) }}/>
             ) : (
               <p className="input-data pokemon-data">
@@ -88,6 +99,7 @@ export const PokemonBuildDisplay: React.FC<{
               <input
                 className="item-input"
                 autoFocus={true}
+                onKeyPress={keyPressHandler}
                 onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
             ) : (
               <p className="input-data item-data">
@@ -101,6 +113,7 @@ export const PokemonBuildDisplay: React.FC<{
               <input
                 className="ability-input"
                 autoFocus={true}
+                onKeyPress={keyPressHandler}
                 onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
             ) : (
               <p className="input-data ability-data">
@@ -116,6 +129,7 @@ export const PokemonBuildDisplay: React.FC<{
           <input
             className="move-input move-1-input"
             autoFocus={true}
+            onKeyPress={keyPressHandler}
             onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
         ) : (
           <p className="input-data move-data move-1-data" onClick={() => { onSectionClick("move1") }}>
@@ -126,6 +140,7 @@ export const PokemonBuildDisplay: React.FC<{
           <input
             className="move-input move-2-input"
             autoFocus={true}
+            onKeyPress={keyPressHandler}
             onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
         ) : (
           <p className="input-data move-data move-2-data" onClick={() => { onSectionClick("move2") }}>
@@ -136,6 +151,7 @@ export const PokemonBuildDisplay: React.FC<{
           <input
             className="move-input move-3-input"
             autoFocus={true}
+            onKeyPress={keyPressHandler}
             onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
         ) : (
           <p className="input-data move-data move-3-data" onClick={() => { onSectionClick("move3") }}>
@@ -146,6 +162,7 @@ export const PokemonBuildDisplay: React.FC<{
           <input
             className="move-input move-4-input"
             autoFocus={true}
+            onKeyPress={keyPressHandler}
             onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
         ) : (
           <p className="input-data move-data move-4-data" onClick={() => { onSectionClick("move4") }}>

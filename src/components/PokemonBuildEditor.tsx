@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, KeyboardEvent } from "react";
 
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
@@ -12,6 +12,10 @@ import AllPokemon from "../data/pokemon/all-pokemon.json";
 import AllItems from "../data/items/all-items.json";
 import AllTypes from "../data/pokemon-types.json";
 
+const allPokemon = AllPokemon as Pokemon[];
+const allItems = AllItems as PokemonItem[];
+const allTypes: PokemonTypeIdent[] = AllTypes.map((typeData) => { return typeData.ident as PokemonTypeIdent });
+
 const AllPokemonSelectList: React.FC<{
   currentInputValue: string,
   onPokemonSelect: (pokemon: Pokemon) => void
@@ -19,7 +23,6 @@ const AllPokemonSelectList: React.FC<{
   currentInputValue,
   onPokemonSelect
 }) => {
-  const allPokemon = AllPokemon as Pokemon[];
   const filteredPokemon = allPokemon.filter((pokemon) => {
     return pokemon.ident.includes(currentInputValue);
   });
@@ -41,7 +44,6 @@ const AllItemsSelectList: React.FC<{
   currentInputValue,
   onItemSelect = () => undefined
 }) => {
-  const allItems = AllItems as PokemonItem[];
   const filteredItems = allItems.filter((item) => {
     return item.ident.includes(currentInputValue);
   })
@@ -127,11 +129,12 @@ const PokemonMoveSelectList: React.FC<{
 }
 
 const AllTypesSelectList: React.FC<{
+  currentInputValue: string,
   onTypeSelect: (typeIdent: PokemonTypeIdent) => void
 }> = ({
+  currentInputValue,
   onTypeSelect = () => undefined
 }) => {
-  const allTypes: PokemonTypeIdent[] = AllTypes.map((typeData) => { return typeData.ident as PokemonTypeIdent });
 
   return (
     <div className="data-select-list all-types-select-list">
@@ -139,15 +142,17 @@ const AllTypesSelectList: React.FC<{
         <div className="generic-header-row">
           <p className="generic-header-item">Type Ident</p>
         </div>
-        {allTypes.map((typeIdent, index) => {
-          return (
-            <div
-              key={`type-index-${index}`}
-              className="generic-data-row clickable"
-              onClick={() => { onTypeSelect(typeIdent); }}>
-              <p className="type-ident">{typeIdent}</p>
-            </div>
-          )
+        {allTypes
+          .filter((typeIdent) => { return typeIdent.includes(currentInputValue) })
+          .map((typeIdent, index) => {
+            return (
+              <div
+                key={`type-index-${index}`}
+                className="generic-data-row clickable"
+                onClick={() => { onTypeSelect(typeIdent); }}>
+                <p className="type-ident">{typeIdent}</p>
+              </div>
+            )
         })}
       </div>
     </div>
@@ -250,6 +255,33 @@ export const PokemonBuildEditor: React.FC<{
     setActiveSectionInputValue("");
   }
 
+  const onEnterPress = (): void => {
+    if(activeSectionIdent === "pokemon") {
+      const filteredPokemon = allPokemon.filter((pokemon) => { return pokemon.ident.includes(activeSectionInputValue) });
+      if(filteredPokemon.length > 0) {
+        onPokemonSelect(filteredPokemon[0]);
+      }
+    }
+    if(activeSectionIdent === "item") {
+      const filteredItems = allItems.filter((item) => { return item.ident.includes(activeSectionInputValue) });
+      if(filteredItems.length > 0) {
+        onItemSelect(filteredItems[0]);
+      }
+    }
+    if(activeSectionIdent === "tera-type") {
+      const filteredTypes = allTypes.filter((typeIdent) => { return typeIdent.includes(activeSectionInputValue) });
+      if(filteredTypes.length > 0) {
+        onTypeSelect(filteredTypes[0]);
+      }
+    }
+    if(["move1", "move2", "move3", "move4"].includes(activeSectionIdent)) {
+      const filteredMoves = pokemonBuildData.pokemon.move_idents.filter((moveIdent) => { return moveIdent.includes(activeSectionInputValue); })
+      if(filteredMoves.length > 0) {
+        onMoveSelect(filteredMoves[0]);
+      }
+    }
+  }
+
   return (
     <div
       className="pokemon-build-editor">
@@ -257,7 +289,8 @@ export const PokemonBuildEditor: React.FC<{
         pokemonBuild={pokemonBuildData}
         activeSectionIdent={activeSectionIdent}
         onSectionClick={onSectionClick}
-        onSectionInputChange={onSectionInputChange} />
+        onSectionInputChange={onSectionInputChange}
+        onEnterPress={onEnterPress} />
       {activeSectionIdent === "pokemon" ? (
         <AllPokemonSelectList
           currentInputValue={activeSectionInputValue}
@@ -275,6 +308,7 @@ export const PokemonBuildEditor: React.FC<{
       ) : (<></>)}
       {activeSectionIdent === "tera-type" ? (
         <AllTypesSelectList
+          currentInputValue={activeSectionInputValue}
           onTypeSelect={onTypeSelect} />
       ) : (<></>)}
       {["move1", "move2", "move3", "move4"].includes(activeSectionIdent) ? (
