@@ -37,13 +37,23 @@ export const PokemonBuildDisplay: React.FC<{
           <img className="section-image" src={pokemonImage} />
           <div className="section-types">
             <div className="primary-type">
-              <p>GRASS</p>
+              <p>{pokemonBuild.pokemon.primary_type_ident}</p>
             </div>
             <div className="secondary-type">
-              <p>NORMAL</p>
+              <p>{pokemonBuild.pokemon.secondary_type_ident}</p>
             </div>
-            <div className="tera-type">
-              <p>TERA</p>
+            <div className="tera-type" onClick={() => { onSectionClick("tera-type"); }}>
+              <p className="input-label">Tera Type</p>
+              {activeSectionIdent === "tera-type" ? (
+                <input
+                  className="tera-type-input"
+                  autoFocus={true}
+                  onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
+              ) : (
+                <p className="input-data tera-type-data">
+                  {pokemonBuild.tera_type_ident}
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -99,62 +109,3 @@ export const PokemonBuildDisplay: React.FC<{
   )
 
 }
-
-{/* <div className="pokemon-build-display">
-<div className="data-row nickname">
-  <p className="row-label">Nickname:</p>
-  <p className="row-value">{pokemonBuildData.nickname}</p>
-</div>
-<div className="data-row pokemon-ident">
-  <p className="row-label">Ident:</p>
-  <p className="row-value">{pokemonBuildData.pokemon.ident}</p>
-</div>
-<div className="data-row pokemon-level">
-  <p className="row-label">Level:</p>
-  <p className="row-value">{pokemonBuildData.level}</p>
-</div>
-<div className="data-row pokemon-gender">
-  <p className="row-label">Gender:</p>
-  <p className="row-value">{pokemonBuildData.gender}</p>
-</div>
-<div className="data-row pokemon-shiny">
-  <p className="row-label">Shiny:</p>
-  <p className="row-value">{`${pokemonBuildData.shiny}`}</p>
-</div>
-<div className="data-row pokemon-primary-type-ident">
-  <p className="row-label">Primary Type:</p>
-  <p className="row-value">{`${pokemonBuildData.pokemon.primary_type_ident}`}</p>
-</div>
-<div className="data-row pokemon-secondary-type-ident">
-  <p className="row-label">Secondary Type:</p>
-  <p className="row-value">{`${pokemonBuildData.pokemon.secondary_type_ident}`}</p>
-</div>
-<div className="data-row pokemon-tera-type-ident">
-  <p className="row-label">Tera Type:</p>
-  <p className="row-value">{`${pokemonBuildData.tera_type_ident}`}</p>
-</div>
-<div className="data-row pokemon-item-ident">
-  <p className="row-label">Item:</p>
-  <p className="row-value">{`${pokemonBuildData.item_ident}`}</p>
-</div>
-<div className="data-row pokemon-ability-ident">
-  <p className="row-label">Ability:</p>
-  <p className="row-value">{`${pokemonBuildData.ability_ident}`}</p>
-</div>
-<div className="data-row pokemon-move-ident move-1">
-  <p className="row-label">Move 1:</p>
-  <p className="row-value">{`${pokemonBuildData.move_idents[0]}`}</p>
-</div>
-<div className="data-row pokemon-move-ident move-2">
-  <p className="row-label">Move 1:</p>
-  <p className="row-value">{`${pokemonBuildData.move_idents[0]}`}</p>
-</div>
-<div className="data-row pokemon-move-ident move-3">
-  <p className="row-label">Move 1:</p>
-  <p className="row-value">{`${pokemonBuildData.move_idents[0]}`}</p>
-</div>
-<div className="data-row pokemon-move-ident move-4">
-  <p className="row-label">Move 1:</p>
-  <p className="row-value">{`${pokemonBuildData.move_idents[0]}`}</p>
-</div>
-</div> */}

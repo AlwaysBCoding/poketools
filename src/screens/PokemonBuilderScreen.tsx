@@ -6,10 +6,11 @@ import { PokemonItem } from "../models/pokemon/PokemonItem";
 
 import { PokemonBuildDisplay } from "../components/PokemonBuildDisplay";
 import { PokemonDataTable } from "../components/PokemonDataTable";
-import { PokemonAbilityIdent } from "../models/pokemon/PokemonShared";
+import { PokemonAbilityIdent, PokemonTypeIdent } from "../models/pokemon/PokemonShared";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import AllItems from "../data/items/all-items.json";
+import AllTypes from "../data/pokemon-types.json";
 
 const AllPokemonSelectList: React.FC<{
   currentInputValue: string,
@@ -93,10 +94,30 @@ const PokemonAbilitySelectList: React.FC<{
   )
 }
 
-const AllTypesSelectList = () => {
+const AllTypesSelectList: React.FC<{
+  onTypeSelect: (typeIdent: PokemonTypeIdent) => void
+}> = ({
+  onTypeSelect = () => undefined
+}) => {
+  const allTypes: PokemonTypeIdent[] = AllTypes.map((typeData) => { return typeData.ident as PokemonTypeIdent });
+
   return (
     <div className="data-select-list all-types-select-list">
-
+      <div className="generic-data-table">
+        <div className="generic-header-row">
+          <p className="generic-header-item">Type Ident</p>
+        </div>
+        {allTypes.map((typeIdent, index) => {
+          return (
+            <div
+              key={`type-index-${index}`}
+              className="generic-data-row clickable"
+              onClick={() => { onTypeSelect(typeIdent); }}>
+              <p className="type-ident">{typeIdent}</p>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -145,6 +166,15 @@ export const PokemonBuilderScreen = () => {
     setActiveSectionInputValue("");
   }
 
+  const onTypeSelect = (teraTypeIdent: PokemonTypeIdent): void => {
+    if(teraTypeIdent !== pokemonBuildData.tera_type_ident) {
+      const nextPokemonBuildData = Object.assign(pokemonBuildData, {tera_type_ident: teraTypeIdent});
+      setPokemonBuildData(nextPokemonBuildData);
+    }
+    setactiveSectionIdent("");
+    setActiveSectionInputValue("");
+  }
+
   return (
     <div
       className="screen pokemon-builder-screen">
@@ -167,6 +197,10 @@ export const PokemonBuilderScreen = () => {
         <PokemonAbilitySelectList
           pokemon={pokemonBuildData.pokemon}
           onAbilitySelect={onAbilitySelect} />
+      ) : (<></>)}
+      {activeSectionIdent === "tera-type" ? (
+        <AllTypesSelectList
+          onTypeSelect={onTypeSelect} />
       ) : (<></>)}
     </div>
   )
