@@ -24,7 +24,7 @@ export const AllTeamsScreen = () => {
           <PokemonTeamDisplay
             key={`pokemon-team-${index}`}
             team={team}
-            config={{deleteable: true}}
+            config={{deleteable: true, editable: true}}
             mode="show" />
         )
       })}

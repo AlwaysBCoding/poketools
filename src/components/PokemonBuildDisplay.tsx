@@ -18,8 +18,19 @@ export const PokemonBuildDisplay: React.FC<{
     <div className="pokemon-build-display">
       <div className="build-section section-meta">
         <div className="row row-1">
-          <div className="section-nickname">
-            <p>NICKNAME</p>
+          <div className="section-nickname" onClick={() => { onSectionClick("nickname"); }}>
+            <p className="input-label">Nickname</p>
+            {activeSectionIdent === "nickname" ? (
+              <input
+                className="nickname-input"
+                autoFocus={true}
+                onChange={(e) => { onSectionInputChange(e.currentTarget.value) }}
+                onBlur={() => { onSectionClick("") }} />
+            ) : (
+              <p className="input-data pokemon-data">
+                {pokemonBuild.nickname}
+              </p>
+            )}
           </div>
           <div className="section-details">
             <div className="section-level">
@@ -100,10 +111,50 @@ export const PokemonBuildDisplay: React.FC<{
         </div>
       </div>
       <div className="build-section section-moves">
-
+        <p className="input-label">Moves</p>
+        {activeSectionIdent === "move1" ? (
+          <input
+            className="move-input move-1-input"
+            autoFocus={true}
+            onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
+        ) : (
+          <p className="input-data move-data move-1-data" onClick={() => { onSectionClick("move1") }}>
+            {pokemonBuild.move_idents[0]}
+          </p>
+        )}
+        {activeSectionIdent === "move2" ? (
+          <input
+            className="move-input move-2-input"
+            autoFocus={true}
+            onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
+        ) : (
+          <p className="input-data move-data move-2-data" onClick={() => { onSectionClick("move2") }}>
+            {pokemonBuild.move_idents[1]}
+          </p>
+        )}
+        {activeSectionIdent === "move3" ? (
+          <input
+            className="move-input move-3-input"
+            autoFocus={true}
+            onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
+        ) : (
+          <p className="input-data move-data move-3-data" onClick={() => { onSectionClick("move3") }}>
+            {pokemonBuild.move_idents[2]}
+          </p>
+        )}
+        {activeSectionIdent === "move4" ? (
+          <input
+            className="move-input move-4-input"
+            autoFocus={true}
+            onChange={(e) => { onSectionInputChange(e.currentTarget.value) }} />
+        ) : (
+          <p className="input-data move-data move-4-data" onClick={() => { onSectionClick("move4") }}>
+            {pokemonBuild.move_idents[3]}
+          </p>
+        )}
       </div>
-      <div className="build-section section-stats">
-
+      <div className="build-section section-stats" onClick={() => { onSectionClick("stats") }}>
+        <p className="input-label">Stats</p>
       </div>
     </div>
   )

@@ -154,8 +154,7 @@ const AllTypesSelectList: React.FC<{
   )
 }
 
-const PokemonStatsSection: React.FC<{
-}> = ({}) => {
+const PokemonStatsSection = () => {
   return (
     <div className="pokemon-stats-section">
       <p>HELLO</p>
@@ -163,10 +162,26 @@ const PokemonStatsSection: React.FC<{
   )
 }
 
-export const PokemonBuilderScreen = () => {
+export const PokemonBuildEditor: React.FC<{
+  initialPokemonBuild: PokemonBuild,
+  savePokemonBuildData: (pokemonBuildData: PokemonBuild) => void
+}> = ({
+  initialPokemonBuild,
+  savePokemonBuildData = () => undefined
+}) => {
   const [activeSectionIdent, setactiveSectionIdent] = useState<string>("");
   const [activeSectionInputValue, setActiveSectionInputValue] = useState<string>("");
-  const [pokemonBuildData, setPokemonBuildData] = useState<PokemonBuild>(createDefaultPokemonBuildForPokemonIdent("arboliva"));
+  const [pokemonBuildData, setPokemonBuildData] = useState<PokemonBuild>(initialPokemonBuild);
+
+  useEffect(() => {
+    if(pokemonBuildData) {
+      savePokemonBuildData(pokemonBuildData);
+    }
+    setPokemonBuildData(initialPokemonBuild);
+    setactiveSectionIdent("");
+    setActiveSectionInputValue("");
+    // eslint-disable-next-line
+  }, [initialPokemonBuild]);
 
   const onSectionClick = (sectionName: string): void => {
     if(activeSectionIdent === "nickname" && sectionName === "") {
@@ -237,7 +252,7 @@ export const PokemonBuilderScreen = () => {
 
   return (
     <div
-      className="screen pokemon-builder-screen">
+      className="pokemon-build-editor">
       <PokemonBuildDisplay
         pokemonBuild={pokemonBuildData}
         activeSectionIdent={activeSectionIdent}

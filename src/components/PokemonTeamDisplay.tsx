@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
 import { PokemonBuild } from "../models/pokemon/PokemonBuild";
+
+import { PokemonBuildDisplay } from "./PokemonBuildDisplay";
 
 const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBuild }) => {
   const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
@@ -17,10 +20,10 @@ const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBui
       <p className="ability">{`ABILITY: ${pokemonBuild.ability_ident}`}</p>
       <p className="item">{`ITEM: ${pokemonBuild.item_ident}`}</p>
       <hr />
-      <p className="move move-1">{`MOVE 1:`}</p>
-      <p className="move move-2">{`MOVE 2:`}</p>
-      <p className="move move-3">{`MOVE 3:`}</p>
-      <p className="move move-4">{`MOVE 4:`}</p>
+      <p className="move move-1">{`MOVE 1: ${pokemonBuild.move_idents[0]}`}</p>
+      <p className="move move-2">{`MOVE 2: ${pokemonBuild.move_idents[1]}`}</p>
+      <p className="move move-3">{`MOVE 3: ${pokemonBuild.move_idents[2]}`}</p>
+      <p className="move move-4">{`MOVE 4: ${pokemonBuild.move_idents[3]}`}</p>
       <hr />
       <p className="stat hp">{`HP: ${pokemonBuild.stat_spread.hp}`}</p>
       <p className="stat attack">{`ATTACK: ${pokemonBuild.stat_spread.attack}`}</p>
@@ -36,26 +39,44 @@ const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBui
 interface PokemonTeamDisplayProps {
   team: PokemonTeam,
   config: Record<string, any>,
-  mode: "index" | "show"
+  mode: "index" | "show" | "builder"
+}
+
+export const PokemonTeamDisplayIndex: React.FC<{
+  team: PokemonTeam,
+  onPokemonBuildClick: (pokemonBuild: PokemonBuild, teamIndex: number) => void;
+}> = ({
+  team,
+  onPokemonBuildClick = () => undefined
+}) => {
+  return (
+    <div className="pokemon-team-display mode-index">
+      {team.pokemonBuilds.map((pokemonBuild, index) => {
+        const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+        return (
+          <div
+            key={`pokemon-index-item-${index}`}
+            className="pokemon-index-item" onClick={() => { onPokemonBuildClick(pokemonBuild, index) }}>
+            <img className="pokemon-image" src={pokemonImage} alt={pokemonBuild.pokemon.ident} />
+            <p className="pokemon-ident">{pokemonBuild.pokemon.ident}</p>
+          </div>
+        )
+      })}
+    </div>
+  )
 }
 
 export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, config, mode }) => {
+  const navigate = useNavigate();
   const [teamNameString, setTeamNameString] = useState<string>(team.team_name);
 
   useEffect(() => {
     team.team_name = teamNameString;
+    // eslint-disable-next-line
   }, [teamNameString]);
 
-  const savePokemonTeam = () => {
-    let nextSavedTeams: Record<string, PokemonTeam> = {};
-    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
-    if(!savedTeams) {
-      nextSavedTeams[team.team_name] = team;
-    } else {
-      nextSavedTeams = savedTeams;
-      nextSavedTeams[team.team_name] = team;
-    }
-    localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+  const editPokemonTeam = () => {
+    navigate("/team-editor", {state: {teamName: team.team_name}});
   }
 
   const deletePokemonTeam = () => {
@@ -69,7 +90,7 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
   }
 
   return (
-    <div className="pokemon-team-display mode-show">
+    <div className={`pokemon-team-display mode-${mode}`}>
       <div className="team-actions">
         {config.editable ? (
           <input
@@ -81,8 +102,8 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
           <p className="team-name">{team.team_name}</p>
         )}
         {config.editable ? (
-          <div className="button" onClick={savePokemonTeam}>
-            <p>SAVE</p>
+          <div className="button" onClick={editPokemonTeam}>
+            <p>EDIT</p>
           </div>
         ) : (<></>)}
         {config.deleteable ? (
@@ -91,7 +112,8 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
           </div>
         ) : (<></>)}
       </div>
-      <div className="slots">
+      {mode === "show" ? (
+        <div className="slots">
         <div className="slot slot-1">
           {team.pokemonBuilds[0] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[0]} />) : (<h4 className="slot-title">SLOT 1</h4>)}
         </div>
@@ -111,6 +133,18 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
           {team.pokemonBuilds[5] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[5]} />) : (<h4 className="slot-title">SLOT 6</h4>)}
         </div>
       </div>
+      ) : (<></>)}
+      {mode === "builder" ? (
+        <div className="pokemon-team-display builder">
+          {team.pokemonBuilds.map((pokemonBuild, index) => {
+            return (
+              <PokemonBuildDisplay
+                key={`pokemon-build-index-${index}`}
+                pokemonBuild={pokemonBuild} />
+            )
+          })}
+        </div>
+      ) : (<></>)}
     </div>
   )
 }
