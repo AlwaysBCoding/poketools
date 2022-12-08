@@ -65,7 +65,7 @@ const PokemonDataRow: React.FC<{
     <div
       className={dataRowClassName}
       onClick={() => { onPokemonClick(pokemon) }}>
-      <p className="index-number">{index + 1}</p>
+      <p className="index-number">{pokemon.paldea_regional_pokedex_number}</p>
       <div className="pokemon-image-display">
         <img className="pokemon-image" src={pokemonImage} alt={pokemon.ident} />
       </div>
@@ -103,7 +103,7 @@ export const PokemonDataTable: React.FC<{
   return (
     <div className={dataTableClassName}>
       <div className="pokemon-header-row">
-        <p className="pokemon-header-item index-number">Index</p>
+        <p className="pokemon-header-item index-number">Dex</p>
         <p className="pokemon-header-item pokemon-image">Pic</p>
         <p className="pokemon-header-item pokemon-ident">Ident</p>
         <p className="pokemon-header-item pokemon-type">Type</p>

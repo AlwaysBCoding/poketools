@@ -266,6 +266,49 @@ $pokemon-base-stats-cell-width: 50%;
   }
 }
 
+.generic-data-table {
+  height: 100%;
+  max-height: 2000px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: mistyrose;
+
+  .generic-header-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: $pokemon-data-table-header-row-height;
+
+    .generic-header-item {
+      width: 100%;
+      background-color: $serebii-green;
+      line-height: $pokemon-data-table-header-row-height;
+      text-align: center;
+      font-weight: bold;
+      color: $charcoal-ultra-light;
+    }
+  }
+
+  .generic-data-row {
+    &.clickable {
+      cursor: pointer;
+      &:hover {
+        background-color: $charcoal-light;
+      }
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 24px;
+    height: 24px;
+  }
+}
+
 .pokemon-team-display {
 
   .team-actions {
@@ -420,6 +463,104 @@ $pokemon-base-stats-cell-width: 50%;
   .data-table-container {
     max-height: 2000px;
   }
+}
+
+.screen.pokemon-builder-screen {
+
+  .pokemon-build-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 630px;
+    height: 130px;
+
+    p.input-label {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    input {
+      width: 100%;
+      height: 24px;
+      border: 0px;
+      background-color: white;
+      box-shadow: inset 0 1px 2px #ccc, 1px 1px 0 rgb(255 255 255 / 60%);
+      border-radius: 2px;
+      padding-left: 5px;
+    }
+
+    .input-data {
+      padding-left: 5px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 24px;
+      border: 0px;
+      background-color: #ddd;
+      box-shadow: inset 0 1px 2px #ccc, 1px 1px 0 rgb(255 255 255 / 60%);
+      border-radius: 2px;
+    }
+
+    .section-meta {
+      width: 60%;
+      background-color: coral;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+
+      img {
+        max-height: 100%;
+      }
+
+      .row {
+        height: calc(100% / 3);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: stretch;
+
+        &.row-3 {
+          .section {
+            width: 100%;
+            margin-left: 3px;
+            &:last-child {
+              margin-right: 3px;
+            }
+          }
+        }
+      }
+
+      .section-details, .section-types {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    .section-moves {
+      width: 20%;
+      background-color: skyblue;
+    }
+    .section-stats {
+      width: 20%;
+      background-color: mistyrose;
+    }
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: flex-start;
+    // align-items: flex-start;
+
+    // .data-row {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: flex-start;
+
+    //   .row-value {
+    //     margin-left: 15px;
+    //   }
+    // }
+  }
+
 }
 
 .screen.team-builder-screen {

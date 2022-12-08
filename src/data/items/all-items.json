@@ -1,0 +1,672 @@
+[
+  {
+    "ident": "ability-shield",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "absorb-bulb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "adrenaline-orb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "aguav-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "air-balloon",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "apicot-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "assault-vest",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "auspicious-armor",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "babiri-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "berry-juice",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "black-belt",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "black-glasses",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "black-sludge",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "blunder-policy",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "booster-energy",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "bright-powder",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "cell-battery",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "charcoal",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "charti-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "chesto-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "chilian-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "choice-band",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "choice-scarf",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "choice-specs",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "chople-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "clear-amulet",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "coba-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "colbur-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "covert-cloak",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "custap-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "damp-rock",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "dragon-fang",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "eject-button",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "eject-pack",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "electric-seed",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "eviolite",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "expert-belt",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "figy-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "flame-orb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "focus-sash",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "full-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "ganlon-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "grassy-seed",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "grepa-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "grip-claw",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "haban-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "hard-stone",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "heat-rock",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "heavy-duty-boots",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "iapapa-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "icy-rock",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "kasib-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "kebia-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "kee-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "kelpsy-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "kings-rock",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "lagging-tail",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "lansat-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "lax-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "leftovers",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "leppa-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "liechi-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "life-orb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "light-clay",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "loaded-dice",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "lum-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "luminous-moss",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "magnet",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "mago-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "malicious-armor",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "maranga-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "mental-herb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "metal-coat",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "metronome",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "micle-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "miracle-seed",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "mirror-herb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "misty-seed",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "muscle-band",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "mystic-water",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "never-melt-ice",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "normal-gem",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "occa-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "odd-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "passho-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "payapa-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "petaya-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "pixie-plate",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "poison-barb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "power-herb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "protective-pads",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "psychic-seed",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "punching-glove",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "quick-claw",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "razor-claw",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "red-card",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "rindo-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "rock-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "rocky-helmet",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "room-service",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "rose-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "roseli-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "safety-goggles",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "salac-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "scope-lens",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "sea-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "sharp-beak",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "shed-shell",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "shell-bell",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "shuca-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "silk-scarf",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "silver-powder",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "sitrus-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "smooth-rock",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "snowball",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "soft-sand",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "spell-tag",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "starf-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "sticky-barb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "tanga-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "terrain-extender",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "throat-spray",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "toxic-orb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "twisted-spoon",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "utility-umbrella",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "wacan-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "wave-incense",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "weakness-policy",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "white-herb",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "wide-lens",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "wiki-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "wise-glasses",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "yache-berry",
+    "description": null,
+    "detailed_description": null
+  },
+  {
+    "ident": "zoom-lens",
+    "description": null,
+    "detailed_description": null
+  }
+]

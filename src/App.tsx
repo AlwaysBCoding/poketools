@@ -6,6 +6,7 @@ import { Header } from "./components/Header";
 import { HomeScreen } from "./screens/HomeScreen";
 import { AllPokemonScreen } from './screens/AllPokemonScreen';
 import { AllTeamsScreen } from "./screens/AllTeamsScreen";
+import { PokemonBuilderScreen } from "./screens/PokemonBuilderScreen";
 import { TeamBuilderScreen } from "./screens/TeamBuilderScreen";
 import { TeamMatchupScreen } from "./screens/TeamMatchupScreen";
 
@@ -19,6 +20,7 @@ export const App: React.FC<{}> = () => {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/all-pokemon" element={<AllPokemonScreen />} />
             <Route path="/all-teams" element={<AllTeamsScreen />} />
+            <Route path="/pokemon-builder" element={<PokemonBuilderScreen />} />
             <Route path="/team-builder" element={<TeamBuilderScreen />} />
             <Route path="/team-matchup" element={<TeamMatchupScreen />} />
           </Routes>

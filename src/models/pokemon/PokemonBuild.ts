@@ -16,8 +16,8 @@ import { calculateStatSpread } from "./stat-calc";
 import { PokemonBuildTemplate } from "./PokemonBuildTemplate";
 
 export interface PokemonBuild {
-  pokemon: Pokemon;
   nickname: string | null;
+  pokemon: Pokemon;
   item_ident: PokemonItemIdent | null;
   ability_ident: PokemonAbilityIdent;
   level: number;
@@ -74,4 +74,9 @@ export const createDefaultPokemonBuildForPokemon = (pokemon: Pokemon): PokemonBu
   }
 
   return pokemonBuildTemplateToPokemonBuild(pokemonBuildTemplate);
+}
+
+export const createDefaultPokemonBuildForPokemonIdent = (pokemonIdent: string): PokemonBuild => {
+  const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonIdent }) as Pokemon);
+  return createDefaultPokemonBuildForPokemon(pokemonData);
 }

@@ -74,7 +74,7 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
         {config.editable ? (
           <input
             className="team-name"
-            placeholder={team.team_name}
+            placeholder="ENTER TEAM NAME"
             value={teamNameString}
             onChange={(e) => { setTeamNameString(e.target.value) }} />
         ) : (
