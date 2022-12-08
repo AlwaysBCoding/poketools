@@ -49,6 +49,19 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
           )
         })}
       </div>
+      <div className="resistances-column team-resistances">
+        <p className="header-row">TEAM</p>
+        {allTypes.map((typeIdent, index) => {
+          var displayRowClassName = "display-row";
+          const resistances = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] < 1) { return true; } else { return false; }}).length;
+          const weaknesses = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] > 1) { return true; } else { return false; }}).length;
+          if(weaknesses > resistances) { displayRowClassName = "display-row overall-weak"; }
+          if(resistances > weaknesses) { displayRowClassName = "display-row overall-strong"; }
+          return (
+            <p key={`team-${typeIdent}`} className={displayRowClassName}>{`${weaknesses} / ${resistances}`}</p>
+          )
+        })}
+      </div>
       <div className="resistances-column slot-resistances slot-1">
         <p className="header-row">{team.pokemonBuilds[0] ? team.pokemonBuilds[0].pokemon.ident : "Slot 1"}</p>
         {allTypes.map((typeIdent, index) => {
@@ -113,19 +126,6 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
           } else {
             return (<p key={`6-${typeIdent}`} className="display-row">-</p>)
           }
-        })}
-      </div>
-      <div className="resistances-column team-resistances">
-        <p className="header-row">TEAM</p>
-        {allTypes.map((typeIdent, index) => {
-          var displayRowClassName = "display-row";
-          const resistances = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] < 1) { return true; } else { return false; }}).length;
-          const weaknesses = teamResistanceValues.filter((resistanceValue) => { if(resistanceValue[index] > 1) { return true; } else { return false; }}).length;
-          if(weaknesses > resistances) { displayRowClassName = "display-row overall-weak"; }
-          if(resistances > weaknesses) { displayRowClassName = "display-row overall-strong"; }
-          return (
-            <p key={`team-${typeIdent}`} className={displayRowClassName}>{`${weaknesses} / ${resistances}`}</p>
-          )
         })}
       </div>
     </div>
