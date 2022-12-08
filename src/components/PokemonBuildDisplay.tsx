@@ -173,6 +173,13 @@ export const PokemonBuildDisplay: React.FC<{
       <div className="build-section section-stats" onClick={() => { onSectionClick("stats") }}>
         <p className="input-label">Stats</p>
       </div>
+      {/* <div className="build-section section-actions">
+        <p className="input-label">Actions</p>
+        <p className="action-text">COPY</p>
+        <p className="action-text">IMPORT/EXPORT</p>
+        <p className="action-text">MOVE</p>
+        <p className="action-text">DELETE</p>
+      </div> */}
     </div>
   )
 

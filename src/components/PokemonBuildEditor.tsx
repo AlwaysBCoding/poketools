@@ -179,9 +179,6 @@ export const PokemonBuildEditor: React.FC<{
   const [pokemonBuildData, setPokemonBuildData] = useState<PokemonBuild>(initialPokemonBuild);
 
   useEffect(() => {
-    if(pokemonBuildData) {
-      savePokemonBuildData(pokemonBuildData);
-    }
     setPokemonBuildData(initialPokemonBuild);
     setactiveSectionIdent("");
     setActiveSectionInputValue("");
@@ -192,6 +189,10 @@ export const PokemonBuildEditor: React.FC<{
     if(activeSectionIdent === "nickname" && sectionName === "") {
       const nextPokemonBuildData = Object.assign(pokemonBuildData, {nickname: activeSectionInputValue});
       setPokemonBuildData(nextPokemonBuildData);
+      setactiveSectionIdent(sectionName);
+      setActiveSectionInputValue("");
+    } if(sectionName === "stats") {
+      savePokemonBuildData(pokemonBuildData);
       setactiveSectionIdent(sectionName);
       setActiveSectionInputValue("");
     } else if(sectionName !== activeSectionIdent) {

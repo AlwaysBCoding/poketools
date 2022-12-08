@@ -11,6 +11,7 @@ export const TeamEditorScreen = () => {
   const location = useLocation();
   const [team, setTeam] = useState<PokemonTeam>();
   const [activePokemonBuild, setActivePokemonBuild] = useState<PokemonBuild>();
+  const [activeTeamIndex, setActiveTeamIndex] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     const teamName = location.state.teamName;
@@ -27,15 +28,15 @@ export const TeamEditorScreen = () => {
   }
 
   const savePokemonBuildData = (pokemonBuildData: PokemonBuild) => {
-    if(team) {
+    if(team && activeTeamIndex !== undefined) {
       let nextPokemonTeam = team;
-      const targetIndex = team.pokemonBuilds.findIndex((pokemonBuild) => { return pokemonBuild.pokemon.ident === pokemonBuildData.pokemon.ident });
-      nextPokemonTeam.pokemonBuilds[targetIndex] = pokemonBuildData;
+      nextPokemonTeam.pokemonBuilds[activeTeamIndex] = pokemonBuildData;
       savePokemonTeam(nextPokemonTeam);
     }
   }
 
   const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number) => {
+    setActiveTeamIndex(teamIndex);
     setActivePokemonBuild(pokemonBuild);
   }
 
