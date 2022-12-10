@@ -197,6 +197,7 @@ export type PokemonEvolutionLine =
   | "buizel"
   | "chewtle"
   | "combee"
+  | "deino"
   | "dratini"
   | "dreepy"
   | "drowzee"
