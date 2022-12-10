@@ -85,6 +85,7 @@ export type PokemonAbilityIdent =
   | "chlorophyll"
   | "clear-body"
   | "cloud-nine"
+  | "commander"
   | "competitive"
   | "compound-eyes"
   | "corrosion"
@@ -170,6 +171,7 @@ export type PokemonAbilityIdent =
   | "strong-jaw"
   | "sturdy"
   | "super-luck"
+  | "supreme-overlord"
   | "swarm"
   | "sweet-veil"
   | "swift-swim"
@@ -187,11 +189,13 @@ export type PokemonAbilityIdent =
   | "unaware"
   | "unnerve"
   | "vital-spirit"
+  | "volt-absorb"
   | "water-absorb"
   | "water-veil"
   | "weak-armor"
   | "well-baked-body"
-  | "white-smoke";
+  | "white-smoke"
+  | "wind-power";
 
 export type PokemonEvolutionLine =
   | "azurill"
@@ -202,6 +206,7 @@ export type PokemonEvolutionLine =
   | "chewtle"
   | "combee"
   | "deino"
+  | "dondozo"
   | "dratini"
   | "dreepy"
   | "drowzee"
@@ -229,6 +234,7 @@ export type PokemonEvolutionLine =
   | "nacli"
   | "nymble"
   | "pawmi"
+  | "pawniard"
   | "pichu"
   | "psyduck"
   | "quaxly"
@@ -250,6 +256,8 @@ export type PokemonEvolutionLine =
   | "tandemaus"
   | "tarountula"
   | "torkoal"
+  | "tatsugiri"
+  | "wattrel"
   | "wooper"
   | "yungoos";
 

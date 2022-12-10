@@ -93,6 +93,11 @@ export const AllPokemonScreen = () => {
         return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
+    } else if (tokens[0] === "compare") {
+      const filteredPokemon = allPokemon.filter((pokemon) => {
+        return pokemon.ident.includes(tokens[1]) || pokemon.ident.includes(tokens[2])
+      })
+      setFilteredPokemon(filteredPokemon);
     } else if(tokens[1] === "than" && tokens.length === 3) {
       const comparePokemon = allPokemon.find((pokemon) => {
         return pokemon.ident === tokens[2];
