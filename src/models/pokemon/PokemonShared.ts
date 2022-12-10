@@ -77,6 +77,7 @@ export type PokemonNatureIdent =
 export type PokemonAbilityIdent =
   | "adaptability"
   | "anger-point"
+  | "armor-tail"
   | "aroma-veil"
   | "big-pecks"
   | "blaze"
@@ -87,6 +88,7 @@ export type PokemonAbilityIdent =
   | "competitive"
   | "compound-eyes"
   | "corrosion"
+  | "cud-chew"
   | "cursed-body"
   | "cute-charm"
   | "damp"
@@ -187,6 +189,7 @@ export type PokemonAbilityIdent =
   | "vital-spirit"
   | "water-absorb"
   | "water-veil"
+  | "weak-armor"
   | "well-baked-body"
   | "white-smoke";
 
@@ -195,6 +198,7 @@ export type PokemonEvolutionLine =
   | "bonsly"
   | "bounsweet"
   | "buizel"
+  | "charcadet"
   | "chewtle"
   | "combee"
   | "deino"
@@ -210,6 +214,7 @@ export type PokemonEvolutionLine =
   | "gastly"
   | "gible"
   | "gimmighoul"
+  | "girafarig"
   | "glimmet"
   | "growlithe"
   | "happiny"
