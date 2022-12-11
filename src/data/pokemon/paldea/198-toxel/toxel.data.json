@@ -1,0 +1,40 @@
+{
+  "ident": "toxel",
+  "national_pokedex_number": 848,
+  "paldea_regional_pokedex_number": 198,
+  "evolution_line_ident": "toxel",
+  "evolution_line_index": 0,
+  "primary_type_ident": "electric",
+  "secondary_type_ident": "poison",
+  "height": 0.4,
+  "weight": 11.0,
+  "genders": ["male", "female"],
+  "base_stats": {
+    "hp": 40,
+    "attack": 38,
+    "defense": 35,
+    "special_attack": 54,
+    "special_defense": 35,
+    "speed": 40
+  },
+  "ability_idents": ["rattled", "static", "klutz"],
+  "move_idents": [
+    "acid",
+    "belch",
+    "charm",
+    "encore",
+    "endeavor",
+    "endure",
+    "facade",
+    "flail",
+    "growl",
+    "metal-sound",
+    "nuzzle",
+    "protect",
+    "rest",
+    "sleep-talk",
+    "substitute",
+    "tearful-look",
+    "tera-blast"
+  ]
+}
