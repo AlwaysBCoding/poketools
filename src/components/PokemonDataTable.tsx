@@ -27,6 +27,15 @@ const PokemonAbilityDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
 }
 
+const calculateFullEVSpeed = (speed: number, boostingNature: boolean): number => {
+  if(boostingNature) {
+    return Math.floor((Math.floor((((2 * speed) + 31 + Math.floor(252 / 4)) * 50) / 100) + 5) * 1.10);
+  } else {
+    return Math.floor((((2 * speed) + 31 + Math.floor(252 / 4)) * 50) / 100) + 5;
+  }
+}
+
+
 const PokemonBaseStatsDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
   return (
@@ -36,7 +45,7 @@ const PokemonBaseStatsDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
       <p className="base-stat defense">{pokemon.base_stats.defense}</p>
       <p className="base-stat special-attack">{pokemon.base_stats.special_attack}</p>
       <p className="base-stat special-defense">{pokemon.base_stats.special_defense}</p>
-      <p className="base-stat speed">{pokemon.base_stats.speed}</p>
+      <p className="base-stat speed">{`${pokemon.base_stats.speed}/${calculateFullEVSpeed(pokemon.base_stats.speed, false)}/${calculateFullEVSpeed(pokemon.base_stats.speed, true)}`}</p>
       <p className="base-stat total">{calculatePokemonTotalStats(pokemon.base_stats)}</p>
     </div>
   )

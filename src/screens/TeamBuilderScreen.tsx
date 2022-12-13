@@ -3,7 +3,7 @@ import useForceUpdate from "use-force-update";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
-import { createDefaultPokemonBuildForPokemon } from "../models/pokemon/PokemonBuild";
+import { createDefaultPokemonBuildForPokemon, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
 import { PokemonTeam, createNewPokemonTeam } from "../models/pokemon/PokemonTeam";
 import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
 

@@ -7,6 +7,28 @@ import { PokemonTypeIdent, PokemonTypeInteraction } from "../models/pokemon/Poke
 import AllTypes from "../data/pokemon-types.json";
 import TypeChart from "../data/pokemon-type-effectiveness.json";
 
+// const topCutPokemonIdents = [
+//   "hydreigon",
+//   "gholdengo",
+//   "garchomp",
+//   "murkrow",
+//   "meowscarada",
+//   "amoonguss",
+//   "grimmsnarl",
+//   "annihilape",
+//   "maushold-family-of-four",
+//   "sylveon",
+//   "armarouge",
+//   "rotom-wash",
+//   "arcanine",
+//   "kingambit",
+//   "indeedee-female"
+// ];
+
+// const pkTeam = topCutPokemonIdents.map((pokemonIdent) => {
+//   return createDefaultPokemonBuildForPokemonIdent(pokemonIdent);
+// });
+
 export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ team }) => {
   const typeChart = TypeChart as PokemonTypeInteraction[];
   const allTypes: PokemonTypeIdent[] = AllTypes.map((typeData) => { return typeData.ident }) as PokemonTypeIdent[];
