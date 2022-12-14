@@ -10,6 +10,7 @@ import { PokemonBuilderScreen } from "./screens/PokemonBuilderScreen";
 import { TeamBuilderScreen } from "./screens/TeamBuilderScreen";
 import { TeamEditorScreen } from "./screens/TeamEditorScreen";
 import { TeamMatchupScreen } from "./screens/TeamMatchupScreen";
+import { DamageCalculationScreen } from "./screens/DamageCalculationScreen";
 
 export const App: React.FC<{}> = () => {
   return (
@@ -25,6 +26,7 @@ export const App: React.FC<{}> = () => {
             <Route path="/team-builder" element={<TeamBuilderScreen />} />
             <Route path="/team-editor" element={<TeamEditorScreen />} />
             <Route path="/team-matchup" element={<TeamMatchupScreen />} />
+            <Route path="/damage-calculation" element={<DamageCalculationScreen />} />
           </Routes>
         </Router>
       </div>

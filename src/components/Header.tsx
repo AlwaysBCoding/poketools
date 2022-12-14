@@ -21,6 +21,10 @@ export const Header = () => {
       path: "/team-builder",
       display: "TEAM BUILDER"
     },
+    {
+      path: "/damage-calculation",
+      display: "DAMAGE CALC"
+    }
   ];
 
   return (
