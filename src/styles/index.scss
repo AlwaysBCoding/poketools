@@ -11,6 +11,8 @@ $charcoal-ultra-light: #C2C2C2;
 $emphasis-red: #B6000F;
 
 $serebii-green: #507C36;
+$showdown-light-blue: #F1F4F9;
+$showdown-border-gray: #AAAAAA;
 
 $bad-type-interaction-background: rgb(238, 202, 207);
 $bad-type-interaction-font: rgb(142, 27, 21);
@@ -241,9 +243,12 @@ $pokemon-base-stats-cell-width: 50%;
     .pokemon-type-display {
       width: $pokemon-type-cell-width;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
+      .pokemon-type:not(:first-child) {
+        margin-left: 2.5px;
+      }
     }
     .pokemon-abilities-display {
       width: $pokemon-abilities-cell-width;
@@ -484,6 +489,26 @@ $pokemon-base-stats-cell-width: 50%;
   }
 }
 
+.pokemon-battle-state-editor {
+  display: flex;
+  flex-direction: column;
+  width: 422px;
+  height: 584px;
+  background-color: $showdown-light-blue;
+  border: 1px solid $showdown-border-gray;
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  .data-row {
+    height: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
 .pokemon-team-resistances-display {
   display: flex;
   flex-direction: row;
@@ -613,6 +638,13 @@ $pokemon-base-stats-cell-width: 50%;
     width: 100%;
   }
 
+}
+
+.screen.damage-calculation-screen {
+  .pokemon-battle-states {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .screen.all-teams-screen {

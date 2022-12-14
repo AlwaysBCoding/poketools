@@ -44,7 +44,7 @@ interface PokemonTeamDisplayProps {
 
 export const PokemonTeamDisplayIndex: React.FC<{
   team: PokemonTeam,
-  onPokemonBuildClick: (pokemonBuild: PokemonBuild, teamIndex: number) => void;
+  onPokemonBuildClick?: (pokemonBuild: PokemonBuild, teamIndex: number) => void;
 }> = ({
   team,
   onPokemonBuildClick = () => undefined

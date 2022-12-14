@@ -22,15 +22,15 @@ export interface PokemonBattleState {
   fainted: boolean;
 }
 
-export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side: BattleSide): PokemonBattleState => {
+export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side?: BattleSide): PokemonBattleState => {
 
   return {
     pokemon_build: pokemonBuild,
-    side: side,
+    side: side ? side : "red",
     location: "preview",
     ability_ident: pokemonBuild.ability_ident,
     item_ident: pokemonBuild.item_ident,
-    status: "none",
+    status: "healthy",
     volatile_statuses: [],
     stat_boosts: {
       attack: 0,

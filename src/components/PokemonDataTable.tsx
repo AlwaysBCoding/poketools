@@ -1,13 +1,14 @@
 import React from "react";
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
+import { displayPokemonType } from "../decorators/pokemon-types";
 
 const PokemonTypeDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
   return (
     <div className="pokemon-type-display">
-      <p>{pokemon.primary_type_ident}</p>
-      <p>{pokemon.secondary_type_ident}</p>
+      {displayPokemonType(pokemon.primary_type_ident)}
+      {pokemon.secondary_type_ident ? displayPokemonType(pokemon.secondary_type_ident) : (<></>)}
     </div>
   )
 

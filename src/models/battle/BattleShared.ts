@@ -57,7 +57,7 @@ export type AuraState =
   | "dark-aura";
 
 export type PokemonStatus =
-  | "none"
+  | "healthy"
   | "poisoned"
   | "badly-poisoned"
   | "burned"

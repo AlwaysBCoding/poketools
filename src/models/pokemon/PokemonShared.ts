@@ -1234,6 +1234,7 @@ export type PokemonMoveTarget =
   | "enemy-side"
   | "all-adjacent"
 
+// TODO: Change the name of this because it's conflicting with something in BattleShared
 export type PokemonStatus =
   | "flinch"
   | "survival"
