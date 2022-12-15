@@ -3,16 +3,8 @@ import useForceUpdate from "use-force-update";
 
 import { PokemonBattleState } from "../models/battle/PokemonBattleState";
 import { PokemonStatusIdent } from "../models/battle/BattleShared";
+import { PokemonMoveSimple } from "../models/pokemon/PokemonMove";
 import { calculateStatSpread } from "../models/pokemon/stat-calc";
-
-import { toTitleCase } from "../decorators/DecoratorsShared";
-import { displayPokemonType } from "../decorators/pokemon-types";
-
-import { PokemonNatureSelectList } from "../decorators/PokemonNature";
-import { PokemonItemSelectList } from "../decorators/PokemonItem";
-import { PokemonAbilitySelectList } from "../decorators/PokemonAbility";
-import { PokemonStatusSelectList } from "../decorators/PokemonStatus";
-
 import {
   PokemonNatureIdent,
   PokemonAbilityIdent,
@@ -20,6 +12,18 @@ import {
   PokemonStatSpread,
   PokemonMoveIdent
 } from "../models/pokemon/PokemonShared";
+
+
+import { toTitleCase } from "../decorators/DecoratorsShared";
+import { PokemonTypeBadge } from "../decorators/PokemonType";
+
+import { PokemonNatureSelectList } from "../decorators/PokemonNature";
+import { PokemonItemSelectList } from "../decorators/PokemonItem";
+import { PokemonAbilitySelectList } from "../decorators/PokemonAbility";
+import { PokemonStatusSelectList } from "../decorators/PokemonStatus";
+
+import AllMoves from "../data/moves/all-moves.json";
+const allMoves = AllMoves as PokemonMoveSimple[];
 
 export const PokemonBattleStateEditor: React.FC<{
   initialPokemonBattleState: PokemonBattleState
@@ -90,6 +94,11 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
+  const move0 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[0] });
+  const move1 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[1] });
+  const move2 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[2] });
+  const move3 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[3] });
+
   return (
     <div className="pokemon-battle-state-editor">
       <div className="data-group pokemon-meta">
@@ -99,12 +108,12 @@ export const PokemonBattleStateEditor: React.FC<{
         </div>
         <div className="data-row pokemon-type">
           <p className="data-row-label">Type</p>
-          {displayPokemonType(pokemonBattleState.pokemon_build.pokemon.primary_type_ident)}
-          {pokemonBattleState.pokemon_build.pokemon.secondary_type_ident ? displayPokemonType(pokemonBattleState.pokemon_build.pokemon.secondary_type_ident) : (<></>)}
+          <PokemonTypeBadge typeIdent={pokemonBattleState.pokemon_build.pokemon.primary_type_ident} />
+          {pokemonBattleState.pokemon_build.pokemon.secondary_type_ident ? (<PokemonTypeBadge typeIdent={pokemonBattleState.pokemon_build.pokemon.secondary_type_ident} />) : (<></>)}
         </div>
         <div className="data-row pokemon-tera-type">
           <p className="data-row-label">Tera</p>
-          {displayPokemonType(pokemonBattleState.pokemon_build.tera_type_ident)}
+          <PokemonTypeBadge typeIdent={pokemonBattleState.pokemon_build.tera_type_ident} />
         </div>
         <div className="data-row pokemon-level">
           <p className="data-row-label">Level</p>
@@ -244,6 +253,11 @@ export const PokemonBattleStateEditor: React.FC<{
               );
             })}
           </select>
+          <p className="col-2">{move0?.base_power || "-"}</p>
+          <div className="col-3">
+            {move0 ? (<PokemonTypeBadge typeIdent={move0.type_ident} />) : (<></>)}
+          </div>
+          <p className="col-4">{move0?.category_ident || "-"}</p>
         </div>
         <div className="data-row move-2">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[1]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 1) }}>
@@ -253,6 +267,11 @@ export const PokemonBattleStateEditor: React.FC<{
               );
             })}
           </select>
+          <p className="col-2">{move1?.base_power || "-"}</p>
+          <div className="col-3">
+            {move1 ? (<PokemonTypeBadge typeIdent={move1.type_ident} />) : (<></>)}
+          </div>
+          <p className="col-4">{move1?.category_ident || "-"}</p>
         </div>
         <div className="data-row move-3">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[2]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 2) }}>
@@ -262,6 +281,11 @@ export const PokemonBattleStateEditor: React.FC<{
               );
             })}
           </select>
+          <p className="col-2">{move2?.base_power || "-"}</p>
+          <div className="col-3">
+            {move2 ? (<PokemonTypeBadge typeIdent={move2.type_ident} />) : (<></>)}
+          </div>
+          <p className="col-4">{move2?.category_ident || "-"}</p>
         </div>
         <div className="data-row move-4">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[3]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 3) }}>
@@ -271,6 +295,11 @@ export const PokemonBattleStateEditor: React.FC<{
               );
             })}
           </select>
+          <p className="col-2">{move3?.base_power || "-"}</p>
+          <div className="col-3">
+            {move3 ? (<PokemonTypeBadge typeIdent={move3.type_ident} />) : (<></>)}
+          </div>
+          <p className="col-4">{move3?.category_ident || "-"}</p>
         </div>
       </div>
     </div>

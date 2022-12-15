@@ -1,8 +1,4 @@
-import { PokemonTypeIdent } from "./PokemonShared";
-
-interface PokemonMoveCategory {
-  ident: string;
-}
+import { PokemonTypeIdent, PokemonMoveCategory } from "./PokemonShared";
 
 interface PokemonStat {
   ident: string;
@@ -48,6 +44,18 @@ export interface PokemonMoveModifier {
 export interface PokemonMoveMultiHitFrequency {
   number_of_hits: number;
   frequency: number;
+}
+
+export interface PokemonMoveSimple {
+  ident: string;
+  type_ident: PokemonTypeIdent;
+  category_ident: PokemonMoveCategory;
+  base_power: number | null;
+  accuracy: number | null;
+  priority: number;
+  pp: number;
+  description: string;
+  stat_changes?: any;
 }
 
 export interface PokemonMove {

@@ -524,7 +524,6 @@ $pokemon-base-stats-cell-width: 50%;
   }
 
   .pokemon-meta {
-
     .data-row {
       height: 20px;
       display: flex;
@@ -536,7 +535,6 @@ $pokemon-base-stats-cell-width: 50%;
         width: 100px;
       }
     }
-
   }
 
   .pokemon-stats {
@@ -585,9 +583,12 @@ $pokemon-base-stats-cell-width: 50%;
       align-items: center;
       text-align: center;
       .col-1 { width: 138px; }
-      .col-2 { width: 32px; }
-      .col-3 { width: 66px; }
-      .col-4 { width: 72px; }
+      .col-2 { width: 48px; }
+      .col-3 { width: 42px; }
+      .col-4 {
+        width: 100px;
+        font-size: 14px;
+      }
     }
   }
 }

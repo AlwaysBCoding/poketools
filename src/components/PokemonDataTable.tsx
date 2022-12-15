@@ -1,14 +1,14 @@
 import React from "react";
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
-import { displayPokemonType } from "../decorators/pokemon-types";
+import { PokemonTypeBadge } from "../decorators/PokemonType";
 
 const PokemonTypeDisplay: React.FC<{pokemon: Pokemon}> = ({ pokemon }) => {
 
   return (
     <div className="pokemon-type-display">
-      {displayPokemonType(pokemon.primary_type_ident)}
-      {pokemon.secondary_type_ident ? displayPokemonType(pokemon.secondary_type_ident) : (<></>)}
+      <PokemonTypeBadge typeIdent={pokemon.primary_type_ident} />
+      {pokemon.secondary_type_ident ? (<PokemonTypeBadge typeIdent={pokemon.secondary_type_ident} />) : (<></>)}
     </div>
   )
 
