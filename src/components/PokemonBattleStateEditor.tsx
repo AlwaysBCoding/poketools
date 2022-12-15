@@ -26,9 +26,11 @@ import AllMoves from "../data/moves/all-moves.json";
 const allMoves = AllMoves as PokemonMoveSimple[];
 
 export const PokemonBattleStateEditor: React.FC<{
-  initialPokemonBattleState: PokemonBattleState
+  initialPokemonBattleState: PokemonBattleState,
+  updatePokemonBattleState?: (nextPokemonBattleState: PokemonBattleState) => void
 }> = ({
-  initialPokemonBattleState
+  initialPokemonBattleState,
+  updatePokemonBattleState = () => undefined
 }) => {
   const forceUpdate = useForceUpdate();
   const [pokemonBattleState, setPokemonBattleState] = useState<PokemonBattleState>(initialPokemonBattleState);
@@ -59,6 +61,7 @@ export const PokemonBattleStateEditor: React.FC<{
     );
     nextPokemonBattleState.pokemon_build.stat_spread = nextStatSpread;
     setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
     forceUpdate();
   }
 
@@ -72,6 +75,7 @@ export const PokemonBattleStateEditor: React.FC<{
     );
     nextPokemonBattleState.pokemon_build.stat_spread = nextStatSpread;
     setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
     forceUpdate();
   }
 
@@ -84,13 +88,18 @@ export const PokemonBattleStateEditor: React.FC<{
   }
 
   const handleItemSelect = (pokemonItemIdent: PokemonItemIdent) => {
-    // ...
+    const nextPokemonBattleState = pokemonBattleState;
+    nextPokemonBattleState.item_ident = pokemonItemIdent;
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   const handleMoveSelect = (moveIdent: PokemonMoveIdent, moveIndex: number) => {
     const nextPokemonBattleState = pokemonBattleState;
     nextPokemonBattleState.pokemon_build.move_idents[moveIndex] = moveIdent;
     setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
     forceUpdate();
   }
 
@@ -247,6 +256,7 @@ export const PokemonBattleStateEditor: React.FC<{
       <div className="data-group pokemon-moves">
         <div className="data-row move-1">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[0]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 0) }}>
+            <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
                 <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
@@ -261,6 +271,7 @@ export const PokemonBattleStateEditor: React.FC<{
         </div>
         <div className="data-row move-2">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[1]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 1) }}>
+            <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
                 <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
@@ -275,6 +286,7 @@ export const PokemonBattleStateEditor: React.FC<{
         </div>
         <div className="data-row move-3">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[2]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 2) }}>
+            <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
                 <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
@@ -289,6 +301,7 @@ export const PokemonBattleStateEditor: React.FC<{
         </div>
         <div className="data-row move-4">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[3]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 3) }}>
+            <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
                 <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>

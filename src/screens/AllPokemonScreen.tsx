@@ -93,7 +93,7 @@ export const AllPokemonScreen = () => {
         return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
-    } else if (tokens[0] === "compare") {
+    } else if (tokens[0] === "compare" || tokens[0] === "c") {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         return pokemon.ident.includes(tokens[1]) || pokemon.ident.includes(tokens[2])
       })

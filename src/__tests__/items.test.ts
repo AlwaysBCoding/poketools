@@ -73,4 +73,16 @@ describe("ITEMS", () => {
 
   });
 
+  describe("1.2x TYPE BOOSTING ITEMS", () => {
+
+    describe("SHARP_BEAK", () => {
+
+      it("boosts the damage correctly", () => {
+        // TODO: PICK UP HERE
+      });
+
+    })
+
+  });
+
 });

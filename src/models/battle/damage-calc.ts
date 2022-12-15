@@ -7,6 +7,7 @@ import allMoves from "../../data/moves/all-moves.json";
 import typeChart from "../../data/pokemon-type-effectiveness.json";
 
 const LIFE_ORB_MODIFIER = (5324/4096);
+const ONE_POINT_TWO_X_MODIFIER = (4916/4096);
 const SPREAD_MODIFIER = (3072/4096);
 const CRITICAL_HIT_MODIFIER = (3/2);
 const STAB_MODIFIER = (6144/4096);
