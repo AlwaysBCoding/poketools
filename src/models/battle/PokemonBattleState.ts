@@ -4,7 +4,7 @@ import {
   BattleSide,
   PokemonBattleLocation,
   PokemonStatBoosts,
-  PokemonStatus,
+  PokemonStatusIdent,
   PokemonVolatileStatus
 } from "./BattleShared";
 
@@ -14,7 +14,7 @@ export interface PokemonBattleState {
   location: PokemonBattleLocation;
   ability_ident: PokemonAbilityIdent;
   item_ident: PokemonItemIdent | null;
-  status: PokemonStatus;
+  status: PokemonStatusIdent;
   volatile_statuses: PokemonVolatileStatus[];
   stat_boosts: PokemonStatBoosts;
   terastallized: boolean;

@@ -12,7 +12,7 @@ import { Pokemon } from "./Pokemon";
 
 import allPokemon from "../../data/pokemon/all-pokemon.json";
 
-import { calculateStatSpread } from "./stat-calc";
+import { calculateStatSpreadFromBuildTemplate } from "./stat-calc";
 import { PokemonBuildTemplate } from "./PokemonBuildTemplate";
 
 export interface PokemonBuild {
@@ -34,7 +34,7 @@ export interface PokemonBuild {
 export const pokemonBuildTemplateToPokemonBuild = (pokemonBuildTemplate: PokemonBuildTemplate): PokemonBuild => {
   var pokemonBuild: any = Object.assign(pokemonBuildTemplate, {});
 
-  const statSpread = calculateStatSpread(pokemonBuildTemplate);
+  const statSpread = calculateStatSpreadFromBuildTemplate(pokemonBuildTemplate);
   const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; }) as Pokemon);
 
   pokemonBuild.pokemon = pokemonData;
