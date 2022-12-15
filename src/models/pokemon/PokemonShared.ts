@@ -438,95 +438,6 @@ export type PokemonItemIdent =
   | "yache-berry"
   | "zoom-lens";
 
-  // Moves – M
-
-  // Mach Punch
-  // Magical Leaf
-  // Magical Torque
-  // Magic Powder
-  // Magic Room
-  // Magma Storm
-  // Magnetic Flux
-  // Magnet Rise
-  // Make It Rain
-  // Max Airstream
-  // Max Darkness
-  // Max Flare
-  // Max Flutterby
-  // Max Geyser
-  // Max Guard
-  // Max Hailstorm
-  // Max Knuckle
-  // Max Lightning
-  // Max Mindstorm
-  // Max Ooze
-  // Max Overgrowth
-  // Max Phantasm
-  // Max Quake
-  // Max Rockfall
-  // Max Starfall
-  // Max Steelspike
-  // Max Strike
-  // Max Wyrmwind
-  // Mean Look
-  // Mega Drain
-  // Megahorn
-  // Mega Kick
-  // Mega Punch
-  // Memento
-  // Metal Burst
-  // Metal Claw
-  // Metal Sound
-  // Meteor Assault
-  // Meteor Beam
-  // Meteor Mash
-  // Metronome
-  // Milk Drink
-  // Mimic
-  // Mind Blown
-  // Minimize
-  // Mirror Coat
-  // Mist
-  // Mist Ball
-  // Misty Explosion
-  // Misty Terrain
-  // Moonblast
-  // Moongeist Beam
-  // Moonlight
-  // Morning Sun
-  // Mortal Spin
-  // Mountain Gale
-  // Mud-Slap
-  // Muddy Water
-  // Mud Shot
-  // Multi-Attack
-  // Mystical Fire
-  // Mystical Power
-  // Moves – N
-
-  // Nasty Plot
-  // Nature’s Madness
-  // Never-Ending Nightmare
-  // Night Daze
-  // Night Shade
-  // Night Slash
-  // Noble Roar
-  // No Retreat
-  // Noxious Torque
-  // Nuzzle
-  // Moves – O
-
-  // Oblivion Wing
-  // Obstruct
-  // Octazooka
-  // Octolock
-  // Order Up
-  // Origin Pulse
-  // Outrage
-  // Overdrive
-  // Overheat
-  // Moves – P
-
   // Pain Split
   // Parabolic Charge
   // Parting Shot
@@ -1211,6 +1122,67 @@ export type PokemonMoveIdent =
   | "lunar-dance"
   | "lunge"
   | "luster-purge"
+  | "mach-punch"
+  | "magical-leaf"
+  | "magical-torque"
+  | "magic-powder"
+  | "magic-room"
+  | "magma-storm"
+  | "magnetic-flux"
+  | "magnet-rise"
+  | "make-it-rain"
+  | "mean-look"
+  | "mega-drain"
+  | "megahorn"
+  | "mega-kick"
+  | "mega-punch"
+  | "memento"
+  | "metal-burst"
+  | "metal-claw"
+  | "metal-sound"
+  | "meteor-assault"
+  | "meteor-beam"
+  | "meteor-mash"
+  | "metronome"
+  | "milk-drink"
+  | "mimic"
+  | "mind-blown"
+  | "minimize"
+  | "mirror-coat"
+  | "mist"
+  | "mist-ball"
+  | "misty-explosion"
+  | "misty-terrain"
+  | "moonblast"
+  | "moongeist-beam"
+  | "moonlight"
+  | "morning-sun"
+  | "mortal-spin"
+  | "mountain-gale"
+  | "mud-slap"
+  | "muddy-water"
+  | "mud-shot"
+  | "multi-attack"
+  | "mystical-fire"
+  | "mystical-power"
+  | "nasty-plot"
+  | "natures-madness"
+  | "never-ending-nightmare"
+  | "night-daze"
+  | "night-shade"
+  | "night-slash"
+  | "noble-roar"
+  | "no-retreat"
+  | "noxious-torque"
+  | "nuzzle"
+  | "oblivion-wing"
+  | "obstruct"
+  | "octazooka"
+  | "order-up"
+  | "origin-pulse"
+  | "outrage"
+  | "overdrive"
+  | "overheat"
   | "sucker-punch"
   | "swords-dance"
   | "tera-blast"
