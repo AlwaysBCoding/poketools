@@ -505,6 +505,12 @@ $pokemon-base-stats-cell-width: 50%;
     margin-top: 14px;
   }
 
+  input {
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid $showdown-border-gray;
+  }
+
   .data-row-select-value {
     height: 20px;
     display: flex;
