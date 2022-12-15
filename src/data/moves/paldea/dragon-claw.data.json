@@ -1,0 +1,10 @@
+{
+  "ident": "dragon-claw",
+  "type_ident": "dragon",
+  "category_ident": "physical",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "No additional effect."
+}

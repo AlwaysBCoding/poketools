@@ -10,6 +10,26 @@
     "description": "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP."
   },
   {
+    "ident": "dragon-claw",
+    "type_ident": "dragon",
+    "category_ident": "physical",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "earthquake",
+    "type_ident": "ground",
+    "category_ident": "physical",
+    "base_power": 100,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Damage doubles if the target is using Dig."
+  },
+  {
     "ident": "energy-ball",
     "type_ident": "grass",
     "category_ident": "special",
@@ -47,6 +67,60 @@
     "description": "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP."
   },
   {
+    "ident": "low-sweep",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "speed",
+        "stages": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "play-rough",
+    "type_ident": "fairy",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 10% chance to lower the target's Attack by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "attack",
+        "stages": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "power-whip",
+    "type_ident": "grass",
+    "category_ident": "physical",
+    "base_power": 120,
+    "accuracy": 0.85,
+    "priority": 0,
+    "pp": 10,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "protect",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 4,
+    "pp": 10,
+    "description": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
+  },
+  {
     "ident": "tailwind",
     "type_ident": "flying",
     "category_ident": "non-damaging",
@@ -55,6 +129,16 @@
     "priority": 0,
     "pp": 15,
     "description": "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side."
+  },
+  {
+    "ident": "tera-blast",
+    "type_ident": "normal",
+    "category_ident": "special",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "If the user is Terastallized, this move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes, and it becomes the same its the user's Tera Type."
   },
   {
     "ident": "u-turn",

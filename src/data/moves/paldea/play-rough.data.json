@@ -1,0 +1,17 @@
+{
+  "ident": "play-rough",
+  "type_ident": "fairy",
+  "category_ident": "physical",
+  "base_power": 90,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 10% chance to lower the target's Attack by 1 stage.",
+  "stat_changes": [
+    {
+      "stat_ident": "attack",
+      "stages": -1,
+      "frequency": 0.1
+    }
+  ]
+}
