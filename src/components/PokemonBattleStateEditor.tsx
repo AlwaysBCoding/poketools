@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import useForceUpdate from "use-force-update";
 
 import { PokemonBattleState } from "../models/battle/PokemonBattleState";
 import { PokemonStatusIdent } from "../models/battle/BattleShared";
 import { calculateStatSpread } from "../models/pokemon/stat-calc";
 
+import { toTitleCase } from "../decorators/DecoratorsShared";
 import { displayPokemonType } from "../decorators/pokemon-types";
 
 import { PokemonNatureSelectList } from "../decorators/PokemonNature";
@@ -16,7 +17,8 @@ import {
   PokemonNatureIdent,
   PokemonAbilityIdent,
   PokemonItemIdent,
-  PokemonStatSpread
+  PokemonStatSpread,
+  PokemonMoveIdent
 } from "../models/pokemon/PokemonShared";
 
 export const PokemonBattleStateEditor: React.FC<{
@@ -79,6 +81,13 @@ export const PokemonBattleStateEditor: React.FC<{
 
   const handleItemSelect = (pokemonItemIdent: PokemonItemIdent) => {
     // ...
+  }
+
+  const handleMoveSelect = (moveIdent: PokemonMoveIdent, moveIndex: number) => {
+    const nextPokemonBattleState = pokemonBattleState;
+    nextPokemonBattleState.pokemon_build.move_idents[moveIndex] = moveIdent;
+    setPokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   return (
@@ -224,6 +233,44 @@ export const PokemonBattleStateEditor: React.FC<{
           <PokemonStatusSelectList
             pokemonStatusIdent={pokemonBattleState.status}
             onStatusSelect={handleStatusSelect} />
+        </div>
+      </div>
+      <div className="data-group pokemon-moves">
+        <div className="data-row move-1">
+          <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[0]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 0) }}>
+            {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
+              return (
+                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="data-row move-2">
+          <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[1]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 1) }}>
+            {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
+              return (
+                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="data-row move-3">
+          <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[2]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 2) }}>
+            {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
+              return (
+                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="data-row move-4">
+          <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[3]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 3) }}>
+            {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
+              return (
+                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+              );
+            })}
+          </select>
         </div>
       </div>
     </div>

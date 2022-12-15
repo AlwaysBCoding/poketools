@@ -1,12 +1,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { PokemonBuild } from "../models/pokemon/PokemonBuild";
 import { PokemonAbilityIdent } from "../models/pokemon/PokemonShared";
-
-function toTitleCase(str: string) {
-  return str.replace(/\w\S*/g, function(txt){
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-}
+import { toTitleCase } from "./DecoratorsShared";
 
 export const PokemonAbilitySelectList: React.FC<{
   pokemonBuild: PokemonBuild,
@@ -28,7 +23,7 @@ export const PokemonAbilitySelectList: React.FC<{
       {pokemonBuild.pokemon.ability_idents.map((abilityIdent: string, index: number) => {
         return (
           <option key={`ability-${index}`} value={abilityIdent}>
-            {toTitleCase(abilityIdent.split("-").join(" "))}
+            {toTitleCase(abilityIdent)}
           </option>
         )
       })}

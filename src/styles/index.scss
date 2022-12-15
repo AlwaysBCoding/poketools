@@ -574,7 +574,21 @@ $pokemon-base-stats-cell-width: 50%;
   }
 
   .pokemon-volatile-build-info {
+  }
 
+  .pokemon-moves {
+    .data-row {
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+      .col-1 { width: 138px; }
+      .col-2 { width: 32px; }
+      .col-3 { width: 66px; }
+      .col-4 { width: 72px; }
+    }
   }
 }
 

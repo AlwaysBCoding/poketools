@@ -1,12 +1,7 @@
 import React, { useState, ChangeEvent } from "react";
 import { PokemonItemIdent } from "../models/pokemon/PokemonShared";
 import { ALL_ITEM_IDENTS } from "../models/pokemon/PokemonItem";
-
-function toTitleCase(str: string) {
-  return str.replace(/\w\S*/g, function(txt){
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-}
+import { toTitleCase } from "./DecoratorsShared";
 
 export const PokemonItemSelectList: React.FC<{
   itemIdent: PokemonItemIdent | null,
@@ -29,7 +24,7 @@ export const PokemonItemSelectList: React.FC<{
       {ALL_ITEM_IDENTS.map((itemIdent: string, index: number) => {
         return (
           <option key={`item-${index}`} value={itemIdent}>
-            {toTitleCase(itemIdent.split("-").join(" "))}
+            {toTitleCase(itemIdent)}
           </option>
         )
       })}

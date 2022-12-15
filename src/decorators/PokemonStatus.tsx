@@ -1,11 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { PokemonStatusIdent } from "../models/battle/BattleShared";
-
-function toTitleCase(str: string) {
-  return str.replace(/\w\S*/g, function(txt){
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-}
+import { toTitleCase } from "./DecoratorsShared";
 
 export const PokemonStatusSelectList: React.FC<{
   pokemonStatusIdent: PokemonStatusIdent,

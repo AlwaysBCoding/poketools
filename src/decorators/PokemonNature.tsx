@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { PokemonNatureIdent } from "../models/pokemon/PokemonShared";
 
 export const PokemonNatureSelectList: React.FC<{
@@ -15,6 +15,10 @@ export const PokemonNatureSelectList: React.FC<{
     setSelectedNatureIdent(e.target.value as PokemonNatureIdent);
     onNatureSelect(e.target.value as PokemonNatureIdent);
   }
+
+  useEffect(() => {
+    setSelectedNatureIdent(natureIdent);
+  }, [natureIdent]);
 
   return (
     <select onChange={handleNatureSelect} value={selectedNaureIdent}>
