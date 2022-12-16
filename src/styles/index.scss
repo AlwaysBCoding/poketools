@@ -387,7 +387,7 @@ $pokemon-base-stats-cell-width: 50%;
       flex-direction: column;
       .pokemon-index-item {
         &:not(:first-child) {
-          margin-top: 10px;
+          margin-top: 5px;
         }
       }
     }
@@ -514,13 +514,13 @@ $pokemon-base-stats-cell-width: 50%;
 
   display: flex;
   flex-direction: column;
-  min-width: 422px;
-  min-height: 520px;
+  width: 428px;
+  min-height: 528px;
   padding: 10px;
   background-color: $showdown-light-blue;
   border: 1px solid $showdown-border-gray;
 
-  .data-group:not(:first-child) {
+  .data-group:not(.pokemon-meta) {
     margin-top: 14px;
   }
 
@@ -528,6 +528,13 @@ $pokemon-base-stats-cell-width: 50%;
     background-color: white;
     border-radius: 2px;
     border: 1px solid $showdown-border-gray;
+  }
+
+  img.pokemon-sprite {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 100px;
   }
 
   .data-row {
@@ -797,13 +804,8 @@ $pokemon-base-stats-cell-width: 50%;
     }
 
     .pokemon-battle-state {
-      position: relative;
-      .editor-title {
-        position: absolute;
-        z-index: 1;
-        top: -17px;
-        right: 0px;
-        font-weight: bold;
+      &.defending-pokemon {
+        margin-left: 10px;
       }
     }
   }
