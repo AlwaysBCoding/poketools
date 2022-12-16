@@ -45,11 +45,12 @@ export const TeamEditorScreen = () => {
       <div className="screen team-editor-screen">
         <PokemonTeamDisplayIndex
           team={team}
+          activeTeamIndex={activeTeamIndex}
           onPokemonBuildClick={onPokemonBuildClick} />
         {activePokemonBuild ? (
           <PokemonBuildEditor
             initialPokemonBuild={activePokemonBuild}
-            savePokemonBuildData={savePokemonBuildData} />
+            updatePokemonBuildData={savePokemonBuildData} />
         ) : (<></>)}
       </div>
       )

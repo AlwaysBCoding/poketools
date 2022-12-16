@@ -13,7 +13,6 @@ import {
   PokemonMoveIdent
 } from "../models/pokemon/PokemonShared";
 
-
 import { toTitleCase } from "../decorators/DecoratorsShared";
 import { PokemonTypeBadge } from "../decorators/PokemonType";
 

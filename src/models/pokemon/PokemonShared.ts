@@ -311,6 +311,8 @@ export type PokemonEvolutionLine =
   | "wooper"
   | "yungoos";
 
+export type PokemonIdent = string;
+
 export type PokemonItemIdent =
   | "ability-shield"
   | "absorb-bulb"

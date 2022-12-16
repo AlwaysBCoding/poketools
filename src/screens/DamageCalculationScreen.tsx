@@ -66,7 +66,6 @@ export const DamageCalculationScreen = () => {
   }
 
   const updateAttackingPokemonBattleState = (nextPokemonBattleState: PokemonBattleState): void => {
-    console.log(`UPDATING BATTLE STATE...`);
     setActiveAttackingPokemonBattleState(nextPokemonBattleState);
     forceUpdate();
   }

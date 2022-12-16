@@ -6,11 +6,13 @@ import { PokemonBuild } from "../models/pokemon/PokemonBuild";
 
 import { PokemonBuildDisplay } from "./PokemonBuildDisplay";
 
+import { displayPokemonIdent } from "../decorators/Pokemon";
+
 const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBuild }) => {
   const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
   return (
     <div className="slot-content">
-      <h4 className="slot-title pokemon-ident">{pokemonBuild.pokemon.ident}</h4>
+      <h4 className="slot-title pokemon-ident">{displayPokemonIdent(pokemonBuild.pokemon.ident)}</h4>
       <img className="pokemon-image" src={pokemonImage} alt={pokemonBuild.pokemon.ident} />
       <p className="level">{`LEVEL: ${pokemonBuild.level}`}</p>
       <p className="gender">{`GENDER: ${pokemonBuild.gender}`}</p>
@@ -44,21 +46,24 @@ interface PokemonTeamDisplayProps {
 
 export const PokemonTeamDisplayIndex: React.FC<{
   team: PokemonTeam,
+  activeTeamIndex?: number,
   onPokemonBuildClick?: (pokemonBuild: PokemonBuild, teamIndex: number) => void;
 }> = ({
   team,
+  activeTeamIndex,
   onPokemonBuildClick = () => undefined
 }) => {
   return (
     <div className="pokemon-team-display mode-index">
       {team.pokemonBuilds.map((pokemonBuild, index) => {
         const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+        const classString = (index === activeTeamIndex) ? "pokemon-index-item active" : "pokemon-index-item"
         return (
           <div
             key={`pokemon-index-item-${index}`}
-            className="pokemon-index-item" onClick={() => { onPokemonBuildClick(pokemonBuild, index) }}>
+            className={classString} onClick={() => { onPokemonBuildClick(pokemonBuild, index) }}>
             <img className="pokemon-image" src={pokemonImage} alt={pokemonBuild.pokemon.ident} />
-            <p className="pokemon-ident">{pokemonBuild.pokemon.ident}</p>
+            <p className="pokemon-ident">{displayPokemonIdent(pokemonBuild.pokemon.ident)}</p>
           </div>
         )
       })}
