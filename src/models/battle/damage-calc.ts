@@ -7,7 +7,6 @@ import allMoves from "../../data/moves/all-moves.json";
 import typeChart from "../../data/pokemon-type-effectiveness.json";
 
 const LIFE_ORB_MODIFIER = (5324/4096);
-const ONE_POINT_TWO_X_MODIFIER = (4916/4096);
 const SPREAD_MODIFIER = (3072/4096);
 const CRITICAL_HIT_MODIFIER = (3/2);
 const STAB_MODIFIER = (6144/4096);
@@ -32,16 +31,21 @@ export const calculateDamage = ((
 ): number => {
 
   const pokemonMove: PokemonMove = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMove);
-  var aValue = 1;
-  var dValue = 1;
-  var stab = 1;
-  var type = 1;
-  var other = 1;
-  var burn = 1;
+  let aValue = 1;
+  let dValue = 1;
+  let stab = 1;
+  let type = 1;
+  let other = 1;
+  let burn = 1;
 
-  var totalDamage = 0;
-
+  let power = pokemonMove.base_power || 0;
+  const targets = 1;
+  const weather = 1;
+  const critical = 1;
+  const random = hardcodedRoll ? hardcodedRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
   const level = attackingPokemon.pokemon_build.level;
+
+  let totalDamage = 0;
 
   if(pokemonMove.category_ident === "physical") {
     aValue = attackingPokemon.pokemon_build.stat_spread.attack;
@@ -55,31 +59,71 @@ export const calculateDamage = ((
     }
   }
 
-  if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
-    stab = 1.5;
+  if(attackingPokemon.terastallized) {
+    if(attackingPokemon.pokemon_build.tera_type_ident === pokemonMove.type_ident) {
+      if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
+        stab = 2;
+      } else {
+        stab = 1.5;
+      }
+    } else {
+      if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
+        stab = 1.5;
+      }
+    }
+  } else {
+    if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
+      stab = 1.5;
+    }
   }
 
-  var primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
-  var secondaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.secondary_type_ident });
+  if(targetPokemon.terastallized) {
+    let typeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.tera_type_ident });
+    if(typeEffectiveness) { type = typeEffectiveness.effectiveness; }
+  } else {
+    let primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
+    let secondaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.secondary_type_ident });
 
-  if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
-    type = primaryTypeEffectiveness.effectiveness * secondaryTypeEffectiveness.effectiveness;
-  } else if(primaryTypeEffectiveness) {
-    type = primaryTypeEffectiveness.effectiveness;
+    if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
+      type = primaryTypeEffectiveness.effectiveness * secondaryTypeEffectiveness.effectiveness;
+    } else if(primaryTypeEffectiveness) {
+      type = primaryTypeEffectiveness.effectiveness;
+    }
   }
 
-  const power = pokemonMove.base_power;
-  const targets = 1;
-  const weather = 1;
-  const critical = 1;
-  const random = hardcodedRoll ? hardcodedRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
-
+  // STATUS
   if(attackingPokemon.status === "burned" && pokemonMove.category_ident === "physical") {
     burn = BURN_MODIFIER;
   }
 
+  // ITEMS
   if(attackingPokemon.item_ident === "life-orb") {
     other = LIFE_ORB_MODIFIER;
+  }
+  // 1.2x type enhancement items
+  const typeEnhancementItems = [
+    ["black-belt", "fighting"],
+    ["black-glasses", "dark"],
+    ["charcoal", "fire"],
+    ["dragon-fang", "dragon"],
+    ["hard-stone", "rock"],
+    ["magnet", "electric"],
+    ["metal-coat", "steel"],
+    ["miracle-seed", "grass"],
+    ["mystic-water", "water"],
+    ["never-melt-ice", "ice"],
+    ["poison-barb", "poison"],
+    ["sharp-beak", "flying"],
+    ["silk-scarf", "normal"],
+    ["silver-powder", "bug"],
+    ["soft-sand", "ground"],
+    ["spell-tag", "ghost"],
+    ["twisted-spoon", "psychic"]
+  ];
+  for (const typeEnhancementItem of typeEnhancementItems) {
+    if(attackingPokemon.item_ident === typeEnhancementItem[0] && pokemonMove.type_ident === typeEnhancementItem[1]) {
+      power = power * 1.2;
+    }
   }
 
   if(power) {

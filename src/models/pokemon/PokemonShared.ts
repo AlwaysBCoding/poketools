@@ -1195,9 +1195,14 @@ export type PokemonMoveIdent =
   | "outrage"
   | "overdrive"
   | "overheat"
+  | "protect"
+  | "rage-fist"
+  | "shadow-ball"
   | "sucker-punch"
   | "swords-dance"
+  | "tailwind"
   | "tera-blast"
+  | "thunderbolt"
   | "u-turn"
 
 export type PokemonStat =

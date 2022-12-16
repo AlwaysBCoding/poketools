@@ -31,7 +31,9 @@ export const DamageCalculationScreen = () => {
   const [allTeams, setAllTeams] = useState<PokemonTeam[]>([])
   const [activeTeam, setActiveTeam] = useState<PokemonTeam>();
   const [selectedTeamName, setSelectedTeamName] = useState<string>("");
-  const [activeAttackingPokemonBattleState, setActiveAttackingPokemonBattleState] = useState<PokemonBattleState>();
+  const [activeAttackingPokemonBattleState, setActiveAttackingPokemonBattleState] = useState<PokemonBattleState>(
+    createDefaultPokemonBattleStateForPokemonIdent("garchomp")
+  );
   const [activeDefendingPokemonBattleState, setActiveDefendingPokemonBattleState] = useState<PokemonBattleState>(
     createDefaultPokemonBattleStateForPokemonIdent("hydreigon")
   );

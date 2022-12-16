@@ -158,6 +158,18 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
+  const handleTerastallizedChange = (booleanString: string) => {
+    const nextPokemonBattleState = pokemonBattleState;
+    if(booleanString === "false") {
+      nextPokemonBattleState.terastallized = false;
+    } else if(booleanString === "true") {
+      nextPokemonBattleState.terastallized = true;
+    }
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
+  }
+
   const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBattleState.pokemon_build.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBattleState.pokemon_build.pokemon.ident.split("-")[0]}/${pokemonBattleState.pokemon_build.pokemon.ident}.static.png`);
   const move0 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[0] });
   const move1 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[1] });
@@ -226,9 +238,9 @@ export const PokemonBattleStateEditor: React.FC<{
         </div>
         <div className="data-row data-row-select-value">
           <p className="data-row-label">Terastallized</p>
-          <select className="terastallized-select-list">
-            <option>False</option>
-            <option>True</option>
+          <select className="terastallized-select-list" value={`${pokemonBattleState.terastallized}`} onChange={(e) => { handleTerastallizedChange(e.target.value); }}>
+            <option value={"false"}>False</option>
+            <option value={"true"}>True</option>
           </select>
         </div>
       </div>
