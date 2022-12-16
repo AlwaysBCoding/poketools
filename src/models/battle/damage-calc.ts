@@ -38,7 +38,9 @@ export const calculateDamage = ((
   let other = 1;
   let burn = 1;
 
-  let power = pokemonMove.base_power || 0;
+  let power = 0;
+  if(pokemonMove && pokemonMove.base_power) { power = pokemonMove.base_power; }
+
   const targets = 1;
   const weather = 1;
   const critical = 1;
@@ -47,48 +49,58 @@ export const calculateDamage = ((
 
   let totalDamage = 0;
 
-  if(pokemonMove.category_ident === "physical") {
-    aValue = attackingPokemon.pokemon_build.stat_spread.attack;
-    dValue = targetPokemon.pokemon_build.stat_spread.defense;
-  } else if(pokemonMove.category_ident === "special") {
-    aValue = attackingPokemon.pokemon_build.stat_spread.special_attack;
-    if(targetPokemon.item_ident === "assault-vest") {
-      dValue = targetPokemon.pokemon_build.stat_spread.special_defense * 1.5;
-    } else {
-      dValue = targetPokemon.pokemon_build.stat_spread.special_defense;
-    }
-  }
-
-  if(attackingPokemon.terastallized) {
-    if(attackingPokemon.pokemon_build.tera_type_ident === pokemonMove.type_ident) {
-      if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
-        stab = 2;
+  if(pokemonMove && pokemonMove.category_ident) {
+    if(pokemonMove.category_ident === "physical") {
+      aValue = attackingPokemon.pokemon_build.stat_spread.attack;
+      if(targetPokemon.item_ident === "eviolite" && targetPokemon.pokemon_build.pokemon.can_evolve) {
+        dValue = targetPokemon.pokemon_build.stat_spread.defense * 1.5;
       } else {
-        stab = 1.5;
+        dValue = targetPokemon.pokemon_build.stat_spread.defense;
+      }
+    } else if(pokemonMove.category_ident === "special") {
+      aValue = attackingPokemon.pokemon_build.stat_spread.special_attack;
+      if(targetPokemon.item_ident === "assault-vest" || (targetPokemon.item_ident === "eviolite" && targetPokemon.pokemon_build.pokemon.can_evolve)) {
+        dValue = targetPokemon.pokemon_build.stat_spread.special_defense * 1.5;
+      } else {
+        dValue = targetPokemon.pokemon_build.stat_spread.special_defense;
+      }
+    }
+  }
+
+  if(pokemonMove && pokemonMove.type_ident) {
+
+    if(attackingPokemon.terastallized) {
+      if(attackingPokemon.pokemon_build.tera_type_ident === pokemonMove.type_ident) {
+        if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
+          stab = 2;
+        } else {
+          stab = 1.5;
+        }
+      } else {
+        if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
+          stab = 1.5;
+        }
       }
     } else {
       if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
         stab = 1.5;
       }
     }
-  } else {
-    if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
-      stab = 1.5;
-    }
-  }
 
-  if(targetPokemon.terastallized) {
-    let typeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.tera_type_ident });
-    if(typeEffectiveness) { type = typeEffectiveness.effectiveness; }
-  } else {
-    let primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
-    let secondaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.secondary_type_ident });
+    if(targetPokemon.terastallized) {
+      let typeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.tera_type_ident });
+      if(typeEffectiveness) { type = typeEffectiveness.effectiveness; }
+    } else {
+      let primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
+      let secondaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.secondary_type_ident });
 
-    if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
-      type = primaryTypeEffectiveness.effectiveness * secondaryTypeEffectiveness.effectiveness;
-    } else if(primaryTypeEffectiveness) {
-      type = primaryTypeEffectiveness.effectiveness;
+      if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
+        type = primaryTypeEffectiveness.effectiveness * secondaryTypeEffectiveness.effectiveness;
+      } else if(primaryTypeEffectiveness) {
+        type = primaryTypeEffectiveness.effectiveness;
+      }
     }
+
   }
 
   // STATUS

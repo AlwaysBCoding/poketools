@@ -1,5 +1,12 @@
 ## TODO
-  - create team vs team or mon vs mon damage calc UI
+  - add stat boosts to the battlestate calc screen
+  - change the pokepaste import to just copying & pasting the data into the import box
+  - allow renaming of teams
+  - figure out the right calcs for earthquake / spread moves
+  - add more moves
+    - maybe scrape Smogon to do this
+  - add more items
+  - figure out how to add reflect/light-screen or some other sorts of battle states
+  - add more items to the battle logic
   - start coding & testing basic item functionality into the damage calculation
   - figure out a way to cache sets for specific mons (hardcode?)
-  - import/export from pokepaste

@@ -29,16 +29,18 @@ const alphabeticalComp = (a: Pokemon, b: Pokemon): number => {
 export const DamageCalculationScreen = () => {
   const forceUpdate = useForceUpdate();
   const [allTeams, setAllTeams] = useState<PokemonTeam[]>([])
-  const [activeTeam, setActiveTeam] = useState<PokemonTeam>();
-  const [selectedTeamName, setSelectedTeamName] = useState<string>("");
+  const [activeAttackingTeam, setActiveAttackingTeam] = useState<PokemonTeam>();
+  const [selectedAttackingTeamName, setSelectedAttackingTeamName] = useState<string>("");
+  const [activeDefendingTeam, setActiveDefendingTeam] = useState<PokemonTeam>();
+  const [selectedDefendingTeamName, setSelectedDefendingTeamName] = useState<string>("");
   const [activeAttackingPokemonBattleState, setActiveAttackingPokemonBattleState] = useState<PokemonBattleState>(
     createDefaultPokemonBattleStateForPokemonIdent("garchomp")
   );
   const [activeDefendingPokemonBattleState, setActiveDefendingPokemonBattleState] = useState<PokemonBattleState>(
     createDefaultPokemonBattleStateForPokemonIdent("hydreigon")
   );
-  const [selectedTargetPokemonIdent, setSelectedTargetPokemonIdent] = useState<string>("");
-  const [activeTeamIndex, setActiveTeamIndex] = useState<number | undefined>(undefined);
+  const [activeAttackingTeamIndex, setActiveAttackingTeamIndex] = useState<number | undefined>(undefined);
+  const [activeDefendingTeamIndex, setActiveDefendingTeamIndex] = useState<number | undefined>(undefined);
 
   const emptyBattleState: BattleState = createEmptyBattleState();
 
@@ -51,17 +53,34 @@ export const DamageCalculationScreen = () => {
 
   }, []);
 
-  const handleSelectTeamNameChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedTeamName(event.target.value);
-    const nextTeam: PokemonTeam | undefined = allTeams.find((team: PokemonTeam) => { return team.team_name === event.target.value });
-    if(nextTeam) {
-      setActiveTeam(nextTeam);
+  const handleSelectTeamNameChange = (event: ChangeEvent<HTMLSelectElement>, side: string) => {
+    if(side === "attacking") {
+      setSelectedAttackingTeamName(event.target.value);
+      const nextTeam: PokemonTeam | undefined = allTeams.find((team: PokemonTeam) => { return team.team_name === event.target.value });
+      if(nextTeam) {
+        setActiveAttackingTeam(nextTeam);
+        setActiveAttackingTeamIndex(0);
+        selectActiveAttackingPokemon(nextTeam.pokemonBuilds[0]);
+      }
+    } else if (side === "defending") {
+      setSelectedDefendingTeamName(event.target.value);
+      const nextTeam: PokemonTeam | undefined = allTeams.find((team: PokemonTeam) => { return team.team_name === event.target.value });
+      if(nextTeam) {
+        setActiveDefendingTeam(nextTeam);
+        setActiveDefendingTeamIndex(0);
+        selectActiveDefendingPokemon(nextTeam.pokemonBuilds[0]);
+      }
     }
   }
 
   const selectActiveAttackingPokemon = (pokemonBuild: PokemonBuild): void => {
     const nextActiveAttackingPokemonBattleState = createNewPokemonBattleState(pokemonBuild);
     setActiveAttackingPokemonBattleState(nextActiveAttackingPokemonBattleState);
+  }
+
+  const selectActiveDefendingPokemon = (pokemonBuild: PokemonBuild): void => {
+    const nextActiveDefendingPokemonBattleState = createNewPokemonBattleState(pokemonBuild);
+    setActiveDefendingPokemonBattleState(nextActiveDefendingPokemonBattleState);
   }
 
   const updateAttackingPokemonBattleState = (nextPokemonBattleState: PokemonBattleState): void => {
@@ -74,9 +93,14 @@ export const DamageCalculationScreen = () => {
     forceUpdate();
   }
 
-  const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number) => {
-    setActiveTeamIndex(teamIndex);
-    selectActiveAttackingPokemon(pokemonBuild);
+  const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number, side: string) => {
+    if(side === "attacking") {
+      setActiveAttackingTeamIndex(teamIndex);
+      selectActiveAttackingPokemon(pokemonBuild);
+    } else if(side === "defending") {
+      setActiveDefendingTeamIndex(teamIndex);
+      selectActiveDefendingPokemon(pokemonBuild);
+    }
   }
 
   let attackingPokemonDamageCalcs: number[][] = [];
@@ -128,9 +152,9 @@ export const DamageCalculationScreen = () => {
   return (
     <div className="screen damage-calculation-screen">
       <div className="content-section">
-        <div className="active-team-section">
+        <div className="active-team-section attacking-team">
           <div className="active-team-select">
-            <select value={selectedTeamName} onChange={handleSelectTeamNameChange}>
+            <select value={selectedAttackingTeamName} onChange={(e) => { handleSelectTeamNameChange(e, "attacking") }}>
               <option value={""} disabled={true}>
                 --Select a Team--
               </option>
@@ -143,16 +167,15 @@ export const DamageCalculationScreen = () => {
               })}
               </select>
           </div>
-          {activeTeam ? (
+          {activeAttackingTeam ? (
             <div className="active-team-display">
               <PokemonTeamDisplayIndex
-                team={activeTeam}
-                activeTeamIndex={activeTeamIndex}
+                team={activeAttackingTeam}
+                activeTeamIndex={activeAttackingTeamIndex}
                 arrange={"vertical"}
-                onPokemonBuildClick={onPokemonBuildClick} />
+                onPokemonBuildClick={(pokemonBuild, teamIndex) => { onPokemonBuildClick(pokemonBuild, teamIndex, "attacking") }} />
             </div>
-          ) : (<></>)
-          }
+          ) : (<></>)}
         </div>
         <div className="pokemon-battle-state attacking-pokemon">
           {activeAttackingPokemonBattleState ? (
@@ -173,6 +196,31 @@ export const DamageCalculationScreen = () => {
                 damageCalcs={defendingPokemonDamageCalcs} />
             </>
           ) : (<></>)}
+        </div>
+        <div className="active-team-section defending-team">
+          <div className="active-team-select">
+            <select value={selectedDefendingTeamName} onChange={(e) => { handleSelectTeamNameChange(e, "defending") }}>
+              <option value={""} disabled={true}>
+                --Select a Team--
+              </option>
+              {allTeams.map((team: PokemonTeam, index: number) => {
+                return (
+                  <option key={`team-option-${index}`} value={team.team_name}>
+                    {team.team_name}
+                  </option>
+                )
+              })}
+            </select>
+          </div>
+          {activeDefendingTeam ? (
+            <div className="active-team-display">
+              <PokemonTeamDisplayIndex
+                team={activeDefendingTeam}
+                activeTeamIndex={activeDefendingTeamIndex}
+                arrange={"vertical"}
+                onPokemonBuildClick={(pokemonBuild, teamIndex) => { onPokemonBuildClick(pokemonBuild, teamIndex, "defending") }} />
+            </div>
+            ) : (<></>)}
         </div>
       </div>
     </div>

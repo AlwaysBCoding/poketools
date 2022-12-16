@@ -1,5 +1,6 @@
 import {
   MEOWSCARADA_MAX_STATS,
+  QUAXWELL_MAX_STATS,
   QUAQUAVAL_MAX_STATS,
   TALONFLAME_ATEAM_BUILD,
   ANNIHILAPE_BULKY_BUILD
@@ -12,6 +13,7 @@ import { calculateDamage } from "../models/battle/damage-calc";
 
 describe("ITEMS", () => {
   let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
+  let quaxwellBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAXWELL_MAX_STATS);
   let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
   let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
   let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
@@ -73,6 +75,68 @@ describe("ITEMS", () => {
         "energy-ball"
       );
       expect([66, 68, 72, 74, 78]).toContain(damage);
+    });
+
+  });
+
+  describe("EVIOLITE", () => {
+
+    test ("it reduces the damage correctly", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaxwellBuild, {item_ident: "leftovers"})
+      );
+      let damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "energy-ball",
+        0.85
+      );
+      expect(damage).toEqual(116);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaxwellBuild, {item_ident: "eviolite"})
+      );
+
+      damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "energy-ball",
+        0.85
+      );
+      expect(damage).toEqual(78);
+    })
+
+    test("it doesn't work on fully evolved mons", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
+      );
+      let damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "energy-ball",
+        0.85
+      );
+      expect(damage).toEqual(98);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
+        Object.assign(quaquavalBuild, {item_ident: "eviolite"})
+      );
+
+      damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "energy-ball",
+        0.85
+      );
+      expect(damage).toEqual(98);
     });
 
   });

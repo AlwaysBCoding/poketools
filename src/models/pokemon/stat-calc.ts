@@ -130,7 +130,12 @@ export const calculateStatSpread = (
 
 export const calculateStatSpreadFromBuildTemplate = (pokemonBuildTemplate: PokemonBuildTemplate): PokemonStatSpread => {
 
-  const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; }) as Pokemon);
+  const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => {
+    let adjustedIdent = pokemonBuildTemplate.pokemon_ident;
+    if(adjustedIdent === "maushold-four") { adjustedIdent = "maushold-family-of-four" }
+    if(adjustedIdent === "maushold-three") { adjustedIdent = "maushold-family-of-three" }
+    return pokemon.ident.includes(adjustedIdent);
+  }) as Pokemon);
 
   const attack = Math.floor((((2 * pokemonData.base_stats.attack) + pokemonBuildTemplate.iv_spread.attack + Math.floor(pokemonBuildTemplate.ev_spread.attack / 4)) * pokemonBuildTemplate.level) / 100) + 5;
   const defense = Math.floor((((2 * pokemonData.base_stats.defense) + pokemonBuildTemplate.iv_spread.defense + Math.floor(pokemonBuildTemplate.ev_spread.defense / 4)) * pokemonBuildTemplate.level) / 100) + 5;

@@ -15,8 +15,8 @@ export interface PokemonBuildTemplate {
   ability_ident: PokemonAbilityIdent;
   level: number;
   shiny: boolean;
-  gender: PokemonGender;
-  tera_type_ident: PokemonTypeIdent;
+  gender: PokemonGender | null;
+  tera_type_ident: PokemonTypeIdent | null;
   nature_ident: PokemonNatureIdent;
   move_idents: PokemonMoveIdent[];
   iv_spread: PokemonStatSpread;

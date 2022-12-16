@@ -24,6 +24,10 @@ export const Header = () => {
     {
       path: "/damage-calculation",
       display: "DAMAGE CALC"
+    },
+    {
+      path: "/import-team",
+      display: "IMPORT TEAM"
     }
   ];
 

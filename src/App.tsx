@@ -11,6 +11,7 @@ import { TeamBuilderScreen } from "./screens/TeamBuilderScreen";
 import { TeamEditorScreen } from "./screens/TeamEditorScreen";
 import { TeamMatchupScreen } from "./screens/TeamMatchupScreen";
 import { DamageCalculationScreen } from "./screens/DamageCalculationScreen";
+import { ImportTeamScreen } from "./screens/ImportTeamScreen";
 
 export const App: React.FC<{}> = () => {
   return (
@@ -27,6 +28,7 @@ export const App: React.FC<{}> = () => {
             <Route path="/team-editor" element={<TeamEditorScreen />} />
             <Route path="/team-matchup" element={<TeamMatchupScreen />} />
             <Route path="/damage-calculation" element={<DamageCalculationScreen />} />
+            <Route path="/import-team" element={<ImportTeamScreen />} />
           </Routes>
         </Router>
       </div>

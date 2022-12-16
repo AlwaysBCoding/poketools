@@ -35,10 +35,19 @@ export const pokemonBuildTemplateToPokemonBuild = (pokemonBuildTemplate: Pokemon
   var pokemonBuild: any = Object.assign(pokemonBuildTemplate, {});
 
   const statSpread = calculateStatSpreadFromBuildTemplate(pokemonBuildTemplate);
-  const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonBuildTemplate.pokemon_ident; }) as Pokemon);
+
+  const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => {
+    let adjustedIdent = pokemonBuildTemplate.pokemon_ident;
+    if(adjustedIdent === "maushold-four") { adjustedIdent = "maushold-family-of-four" }
+    if(adjustedIdent === "maushold-three") { adjustedIdent = "maushold-family-of-three" }
+    return pokemon.ident.includes(adjustedIdent);
+  }) as Pokemon);
 
   pokemonBuild.pokemon = pokemonData;
   pokemonBuild.stat_spread = statSpread;
+
+  if(!pokemonBuild.gender) { pokemonBuild.gender = pokemonData.genders[0] }
+  if(!pokemonBuild.tera_type_ident) { pokemonBuild.tera_type_ident = pokemonBuild.pokemon.primary_type_ident; }
 
   return pokemonBuild as PokemonBuild;
 };

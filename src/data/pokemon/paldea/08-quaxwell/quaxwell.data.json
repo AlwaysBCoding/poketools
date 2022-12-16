@@ -4,6 +4,7 @@
   "paldea_regional_pokedex_number": 8,
   "evolution_line_ident": "quaxly",
   "evolution_line_index": 1,
+  "can_evolve": true,
   "primary_type_ident": "water",
   "secondary_type_ident": null,
   "height": 1.2,

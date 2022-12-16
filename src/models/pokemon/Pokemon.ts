@@ -13,6 +13,7 @@ export interface Pokemon {
   paldea_regional_pokedex_number: number;
   evolution_line_ident: PokemonEvolutionLine;
   evolution_line_index: number;
+  can_evolve?: boolean;
   primary_type_ident: PokemonTypeIdent;
   secondary_type_ident: PokemonTypeIdent | null;
   weight: number;

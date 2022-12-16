@@ -401,6 +401,7 @@ $pokemon-base-stats-cell-width: 50%;
       justify-content: flex-start;
       align-items: center;
       border: 1px solid black;
+      &:hover { background-color: fade-out(lighten(yellow, 60%), 0.35); }
       &.active { background-color: lighten($serebii-green, 40%); }
       .pokemon-image {
         height: 70%;
@@ -801,6 +802,11 @@ $pokemon-base-stats-cell-width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      width: 130px;
+
+      select {
+        width: 130px;
+      }
     }
 
     .pokemon-battle-state {
@@ -835,10 +841,33 @@ $pokemon-base-stats-cell-width: 50%;
       }
 
     }
+  }
 
+  .active-team-section {
+    &.defending-team {
+      margin-left: 10px;
+    }
   }
 }
 
 .screen.all-teams-screen {
 
+}
+
+.screen.import-team-screen {
+  .import-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  textarea {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 800px;
+    height: 600px;
+  }
+  .import-action {
+    width: 250px;
+  }
 }

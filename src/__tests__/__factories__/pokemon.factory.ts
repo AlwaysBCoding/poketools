@@ -116,6 +116,35 @@ export const MEOWSCARADA_MAX_STATS: PokemonBuildTemplate = {
   }
 };
 
+export const QUAXWELL_MAX_STATS: PokemonBuildTemplate = {
+  pokemon_ident: "quaxwell",
+  nickname: null,
+  item_ident: "lum-berry",
+  ability_ident: "moxie",
+  level: 50,
+  shiny: false,
+  gender: "male",
+  tera_type_ident: "electric",
+  nature_ident: "jolly",
+  move_idents: ["swords-dance", "aqua-step", "close-combat", "tera-blast"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 31
+  },
+  ev_spread: {
+    hp: 0,
+    attack: 252,
+    defense: 0,
+    special_attack: 0,
+    special_defense: 4,
+    speed: 252
+  }
+};
+
 export const QUAQUAVAL_MAX_STATS: PokemonBuildTemplate = {
   pokemon_ident: "quaquaval",
   nickname: null,
