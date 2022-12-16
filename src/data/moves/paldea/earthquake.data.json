@@ -6,5 +6,6 @@
   "accuracy": 1,
   "priority": 0,
   "pp": 10,
-  "description": "Damage doubles if the target is using Dig."
+  "description": "Damage doubles if the target is using Dig.",
+  "target": "all-adjacent"
 }

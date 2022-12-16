@@ -10,6 +10,16 @@
     "description": "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP."
   },
   {
+    "ident": "clear-smog",
+    "type_ident": "poison",
+    "category_ident": "special",
+    "base_power": 50,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 15,
+    "description": "Resets all of the target's stat stages to 0."
+  },
+  {
     "ident": "dragon-claw",
     "type_ident": "dragon",
     "category_ident": "physical",
@@ -20,6 +30,23 @@
     "description": "No additional effect."
   },
   {
+    "ident": "earth-power",
+    "type_ident": "ground",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
     "ident": "earthquake",
     "type_ident": "ground",
     "category_ident": "physical",
@@ -27,7 +54,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 10,
-    "description": "Damage doubles if the target is using Dig."
+    "description": "Damage doubles if the target is using Dig.",
+    "target": "all-adjacent"
   },
   {
     "ident": "energy-ball",
@@ -67,6 +95,26 @@
     "description": "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP."
   },
   {
+    "ident": "hydro-pump",
+    "type_ident": "water",
+    "category_ident": "special",
+    "base_power": 110,
+    "accuracy": 0.8,
+    "priority": 0,
+    "pp": 5,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "light-screen",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "For 5 turns, the user and its party members take 0.5x damage from special attacks, or 0.66x damage if in a Double Battle. Damage is not reduced further with Aurora Veil. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side."
+  },
+  {
     "ident": "low-sweep",
     "type_ident": "fighting",
     "category_ident": "physical",
@@ -80,6 +128,25 @@
         "stat_ident": "speed",
         "stages": -1,
         "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "make-it-rain",
+    "type_ident": "steel",
+    "category_ident": "special",
+    "base_power": 120,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Lowers the user's Special Attack by 1 stage.",
+    "target": "all-enemies",
+    "stat_changes": [
+      {
+        "stat_ident": "special_attack",
+        "stages": -1,
+        "frequency": 1,
+        "target": "self"
       }
     ]
   },
@@ -121,6 +188,50 @@
     "description": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
   },
   {
+    "ident": "reflect",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "For 5 turns, the user and its party members take 0.5x damage from physical attacks, or 0.66x damage if in a Double Battle. Damage is not reduced further with Aurora Veil. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side."
+  },
+  {
+    "ident": "shadow-ball",
+    "type_ident": "ghost",
+    "category_ident": "special",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 20% chance to lower the target's Special Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": -1,
+        "frequency": 0.2
+      }
+    ]
+  },
+  {
+    "ident": "spirit-break",
+    "type_ident": "fairy",
+    "category_ident": "physical",
+    "base_power": 75,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 100% chance to lower the target's Special Attack by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_attack",
+        "stages": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
     "ident": "tailwind",
     "type_ident": "flying",
     "category_ident": "non-damaging",
@@ -139,6 +250,32 @@
     "priority": 0,
     "pp": 10,
     "description": "If the user is Terastallized, this move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes, and it becomes the same its the user's Tera Type."
+  },
+  {
+    "ident": "thunderbolt",
+    "type_ident": "electric",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 10% chance to paralyze the target.",
+    "secondary_effects": [
+      {
+        "status_ident": "paralyzed",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "trick",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user swaps its held item with the target's held item. Fails if either the user or the target is holding a Mail or Z-Crystal, if neither is holding an item, if the user is trying to give or take a Mega Stone to or from the species that can Mega Evolve with it, or if the user is trying to give or take a Blue Orb, a Red Orb, a Griseous Orb, a Plate, a Drive, or a Memory to or from a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, or a Silvally, respectively. The target is immune to this move if it has the Sticky Hold Ability."
   },
   {
     "ident": "u-turn",

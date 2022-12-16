@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { PokemonBuild } from "../models/pokemon/PokemonBuild";
 import { PokemonAbilityIdent } from "../models/pokemon/PokemonShared";
 import { toTitleCase } from "./DecoratorsShared";
@@ -18,8 +18,12 @@ export const PokemonAbilitySelectList: React.FC<{
     onAbilitySelect(e.target.value as PokemonAbilityIdent);
   }
 
+  useEffect(() => {
+    setSelectedAbilityIdent(pokemonBuild.ability_ident);
+  }, [pokemonBuild]);
+
   return (
-    <select value={selectedAbilityIdent} onChange={handleAbilitySelect}>
+    <select className="pokemon-ability-select-list" value={selectedAbilityIdent} onChange={handleAbilitySelect}>
       {pokemonBuild.pokemon.ability_idents.map((abilityIdent: string, index: number) => {
         return (
           <option key={`ability-${index}`} value={abilityIdent}>

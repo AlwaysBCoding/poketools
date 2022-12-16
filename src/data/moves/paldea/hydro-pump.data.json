@@ -1,0 +1,10 @@
+{
+  "ident": "hydro-pump",
+  "type_ident": "water",
+  "category_ident": "special",
+  "base_power": 110,
+  "accuracy": 0.8,
+  "priority": 0,
+  "pp": 5,
+  "description": "No additional effect."
+}

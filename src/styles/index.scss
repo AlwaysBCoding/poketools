@@ -384,7 +384,7 @@ $pokemon-base-stats-cell-width: 50%;
       justify-content: flex-start;
       align-items: center;
       border: 1px solid black;
-      &.active { background-color: $serebii-green; }
+      &.active { background-color: lighten($serebii-green, 40%); }
       .pokemon-image {
         height: 70%;
       }
@@ -535,7 +535,7 @@ $pokemon-base-stats-cell-width: 50%;
   .data-row-select-value {
     select {
       width: 70px;
-      &.pokemon-select-list {
+      &.pokemon-select-list, &.pokemon-ability-select-list, &.pokemon-item-select-list, &.pokemon-status-select-list {
         width: 130px;
       }
       &.pokemon-nature-select-list {
@@ -556,6 +556,14 @@ $pokemon-base-stats-cell-width: 50%;
       font-size: 14px;
       &.level {
         width: 35px;
+      }
+    }
+  }
+
+  .pokemon-meta {
+    .pokemon-type {
+      .pokemon-type-badge:nth-child(3) {
+        margin-left: 5px;
       }
     }
   }
@@ -587,72 +595,25 @@ $pokemon-base-stats-cell-width: 50%;
 
   }
 
+  .pokemon-moves {
+    .data-row {
+      font-size: 14px;
+      text-align: center;
+      .col-1 { width: 138px; }
+      .col-2 { width: 42px; }
+      .col-3 { width: 38px; }
+      .col-4 { width: 38px; }
+      &.header-row {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+  }
+
 }
 
 .pokemon-build-editor {
 
-}
-
-.pokemon-battle-state-editor {
-
-  &:not(:first-child) {
-    margin-left: 5px;
-  }
-
-  .pokemon-stats {
-    .data-row {
-      height: 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      .col-1 {
-        width: 64px;
-        font-size: 12px;
-        font-weight: bold;
-      }
-      .col-2 { width: 42px; }
-      .col-3 { width: 42px; }
-      .col-4 { width: 42px; }
-      .col-5 { width: 34px; }
-      .col-6 { width: 38px; }
-
-      &:not(.header-row) {
-        .col-2, .col-3, .col-4, .col-5 { font-size: 15px; }
-      }
-
-      &.header-row {
-        font-size: 12px;
-        font-weight: bold;
-      }
-    }
-
-    .data-row-nature-select {
-      margin-top: 10px;
-    }
-  }
-
-  .pokemon-volatile-build-info {
-  }
-
-  .pokemon-moves {
-    .data-row {
-      height: 20px;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      text-align: center;
-      .col-1 { width: 138px; }
-      .col-2 { width: 48px; }
-      .col-3 { width: 42px; }
-      .col-4 {
-        width: 100px;
-        font-size: 14px;
-      }
-    }
-  }
 }
 
 .pokemon-team-resistances-display {

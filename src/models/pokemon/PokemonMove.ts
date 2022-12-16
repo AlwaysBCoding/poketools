@@ -55,7 +55,9 @@ export interface PokemonMoveSimple {
   priority: number;
   pp: number;
   description: string;
+  target?: any;
   stat_changes?: any;
+  secondary_effects?: any;
 }
 
 export interface PokemonMove {

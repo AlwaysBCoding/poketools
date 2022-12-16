@@ -18,7 +18,7 @@ export const PokemonStatusSelectList: React.FC<{
   }
 
   return (
-    <select value={selectedStatusIdent} onChange={handleStatusSelect}>
+    <select className="pokemon-status-select-list" value={selectedStatusIdent} onChange={handleStatusSelect}>
       <option value={"healthy"}>Healthy</option>
       <option value={"poisoned"}>Poisoned</option>
       <option value={"badly-poisoned"}>Badly Poisoned</option>

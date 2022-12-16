@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import { PokemonIdent } from "../models/pokemon/PokemonShared";
+import { PokemonIdent, PokemonGender } from "../models/pokemon/PokemonShared";
 import { Pokemon } from "../models/pokemon/Pokemon";
 
 import { toTitleCase } from "./DecoratorsShared";
@@ -12,6 +12,13 @@ const alphabeticalComp = (a: Pokemon, b: Pokemon): number => {
   if(b.ident > a.ident) { return -1; }
   if(a.ident === b.ident) { return 0; }
   return 0;
+}
+
+export const displayPokemonGender = (gender: PokemonGender): string => {
+  if(gender === "male") { return "Male" }
+  else if(gender === "female") { return "Female" }
+  else if(gender === "genderless") { return "-" }
+  return toTitleCase(gender);
 }
 
 export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {

@@ -1,0 +1,19 @@
+{
+  "ident": "make-it-rain",
+  "type_ident": "steel",
+  "category_ident": "special",
+  "base_power": 120,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Lowers the user's Special Attack by 1 stage.",
+  "target": "all-enemies",
+  "stat_changes": [
+    {
+      "stat_ident": "special_attack",
+      "stages": -1,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

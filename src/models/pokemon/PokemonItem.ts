@@ -56,6 +56,7 @@ export const ALL_ITEM_IDENTS = [
   "heavy-duty-boots",
   "iapapa-berry",
   "icy-rock",
+  "iron-ball",
   "kasib-berry",
   "kebia-berry",
   "kee-berry",

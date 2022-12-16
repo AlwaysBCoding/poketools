@@ -6,6 +6,9 @@ import { PokemonStatusIdent } from "../models/battle/BattleShared";
 import { PokemonMoveSimple } from "../models/pokemon/PokemonMove";
 import { calculateStatSpread } from "../models/pokemon/stat-calc";
 import {
+  PokemonIdent,
+  PokemonTypeIdent,
+  PokemonGender,
   PokemonNatureIdent,
   PokemonAbilityIdent,
   PokemonItemIdent,
@@ -14,14 +17,16 @@ import {
 } from "../models/pokemon/PokemonShared";
 
 import { toTitleCase } from "../decorators/DecoratorsShared";
-import { PokemonTypeBadge } from "../decorators/PokemonType";
-
+import { PokemonTypeBadge, PokemonTypeSelectList } from "../decorators/PokemonType";
+import { PokemonSelectList, displayPokemonGender } from "../decorators/Pokemon";
+import { PokemonMoveCategoryBadge } from "../decorators/PokemonMoveCategory";
 import { PokemonNatureSelectList } from "../decorators/PokemonNature";
 import { PokemonItemSelectList } from "../decorators/PokemonItem";
 import { PokemonAbilitySelectList } from "../decorators/PokemonAbility";
 import { PokemonStatusSelectList } from "../decorators/PokemonStatus";
 
 import AllMoves from "../data/moves/all-moves.json";
+import { Pokemon } from "../models/pokemon/Pokemon";
 const allMoves = AllMoves as PokemonMoveSimple[];
 
 export const PokemonBattleStateEditor: React.FC<{
@@ -86,6 +91,22 @@ export const PokemonBattleStateEditor: React.FC<{
     // ...
   }
 
+  const handlePokemonSelect = (pokemonIdent: PokemonIdent) => {
+    // ...
+  }
+
+  const handleTeraTypeSelect = (typeIdent: PokemonTypeIdent) => {
+    // ...
+  }
+
+  const handleLevelChange = (levelString: string) => {
+    // ...
+  }
+
+  const handleGenderChange = (gender: PokemonGender) => {
+    // ...
+  }
+
   const handleItemSelect = (pokemonItemIdent: PokemonItemIdent) => {
     const nextPokemonBattleState = pokemonBattleState;
     nextPokemonBattleState.item_ident = pokemonItemIdent;
@@ -112,7 +133,9 @@ export const PokemonBattleStateEditor: React.FC<{
       <div className="data-group pokemon-meta">
         <div className="data-row pokemon-ident">
           <p className="data-row-label">Pokemon</p>
-          <h4>{pokemonBattleState.pokemon_build.pokemon.ident}</h4>
+          <PokemonSelectList
+            pokemonIdent={pokemonBattleState.pokemon_build.pokemon.ident}
+            onPokemonSelect={handlePokemonSelect} />
         </div>
         <div className="data-row pokemon-type">
           <p className="data-row-label">Type</p>
@@ -121,15 +144,46 @@ export const PokemonBattleStateEditor: React.FC<{
         </div>
         <div className="data-row pokemon-tera-type">
           <p className="data-row-label">Tera</p>
-          <PokemonTypeBadge typeIdent={pokemonBattleState.pokemon_build.tera_type_ident} />
+          <PokemonTypeSelectList
+            typeIdent={pokemonBattleState.pokemon_build.tera_type_ident}
+            onTypeSelect={handleTeraTypeSelect} />
         </div>
-        <div className="data-row pokemon-level">
-          <p className="data-row-label">Level</p>
-          <p className="data-row-value">{pokemonBattleState.pokemon_build.level}</p>
-        </div>
-        <div className="data-row pokemon-gender">
+        <div className="data-row data-row-select-value pokemon-gender">
           <p className="data-row-label">Gender</p>
-          <p className="data-row-value">{pokemonBattleState.pokemon_build.gender}</p>
+          <select className="data-row-select" value={pokemonBattleState.pokemon_build.gender} onChange={(e) => { handleGenderChange(e.target.value as PokemonGender); }}>
+            {pokemonBattleState.pokemon_build.pokemon.genders.map((gender: PokemonGender, index: number) => {
+              return (
+                <option key={`option-${index}`} value={gender}>{displayPokemonGender(gender)}</option>
+              )
+            })}
+          </select>
+        </div>
+        <div className="data-row data-row-input-value pokemon-level">
+          <p className="data-row-label">Level</p>
+          <input
+            className="data-row-input level"
+            value={pokemonBattleState.pokemon_build.level}
+            onChange={(e) => { handleLevelChange(e.target.value); }} />
+        </div>
+      </div>
+      <div className="data-group pokemon-volatile-build-info">
+        <div className="data-row data-row-select-value">
+          <p className="data-row-label">Ability</p>
+          <PokemonAbilitySelectList
+            pokemonBuild={pokemonBattleState.pokemon_build}
+            onAbilitySelect={handleAbilitySelect} />
+        </div>
+        <div className="data-row data-row-select-value">
+          <p className="data-row-label">Item</p>
+          <PokemonItemSelectList
+            itemIdent={pokemonBattleState.item_ident}
+            onItemSelect={handleItemSelect} />
+        </div>
+        <div className="data-row data-row-select-value">
+          <p className="data-row-label">Status</p>
+          <PokemonStatusSelectList
+            pokemonStatusIdent={pokemonBattleState.status}
+            onStatusSelect={handleStatusSelect} />
         </div>
       </div>
       <div className="data-group pokemon-stats">
@@ -225,34 +279,20 @@ export const PokemonBattleStateEditor: React.FC<{
           <p className="col-5">{pokemonBattleState.pokemon_build.stat_spread.speed}</p>
           <p className="col-6" />
         </div>
-        <div className="data-row-select-value data-row-nature-select">
-          <p className="data-row-label">Nature</p>
+        <div className="data-row data-row-select-value data-row-nature-select">
+          <p className="data-row-label pokemon-nature">Nature</p>
           <PokemonNatureSelectList
             natureIdent={pokemonBattleState.pokemon_build.nature_ident}
             onNatureSelect={handleNatureSelect} />
         </div>
       </div>
-      <div className="data-group pokemon-volatile-build-info">
-        <div className="data-row-select-value">
-          <p className="data-row-label">Ability</p>
-          <PokemonAbilitySelectList
-            pokemonBuild={pokemonBattleState.pokemon_build}
-            onAbilitySelect={handleAbilitySelect} />
-        </div>
-        <div className="data-row-select-value">
-          <p className="data-row-label">Item</p>
-          <PokemonItemSelectList
-            itemIdent={pokemonBattleState.item_ident}
-            onItemSelect={handleItemSelect} />
-        </div>
-        <div className="data-row-select-value">
-          <p className="data-row-label">Status</p>
-          <PokemonStatusSelectList
-            pokemonStatusIdent={pokemonBattleState.status}
-            onStatusSelect={handleStatusSelect} />
-        </div>
-      </div>
       <div className="data-group pokemon-moves">
+        <div className="data-row header-row">
+          <p className="col-1">Move</p>
+          <p className="col-2">BP</p>
+          <p className="col-3">Type</p>
+          <p className="col-4">Cat</p>
+        </div>
         <div className="data-row move-1">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[0]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 0) }}>
             <option value={""}>(none)</option>
@@ -264,9 +304,11 @@ export const PokemonBattleStateEditor: React.FC<{
           </select>
           <p className="col-2">{move0?.base_power || "-"}</p>
           <div className="col-3">
-            {move0 ? (<PokemonTypeBadge typeIdent={move0.type_ident} />) : (<></>)}
+            {move0 ? (<PokemonTypeBadge typeIdent={move0.type_ident} />) : (<p>-</p>)}
           </div>
-          <p className="col-4">{move0?.category_ident || "-"}</p>
+          <div className="col-4">
+            {move0?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move0.category_ident} />) : (<p>-</p>)}
+          </div>
         </div>
         <div className="data-row move-2">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[1]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 1) }}>
@@ -279,9 +321,11 @@ export const PokemonBattleStateEditor: React.FC<{
           </select>
           <p className="col-2">{move1?.base_power || "-"}</p>
           <div className="col-3">
-            {move1 ? (<PokemonTypeBadge typeIdent={move1.type_ident} />) : (<></>)}
+            {move1 ? (<PokemonTypeBadge typeIdent={move1.type_ident} />) : (<p>-</p>)}
           </div>
-          <p className="col-4">{move1?.category_ident || "-"}</p>
+          <div className="col-4">
+            {move1?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move1.category_ident} />) : (<p>-</p>)}
+          </div>
         </div>
         <div className="data-row move-3">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[2]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 2) }}>
@@ -294,9 +338,11 @@ export const PokemonBattleStateEditor: React.FC<{
           </select>
           <p className="col-2">{move2?.base_power || "-"}</p>
           <div className="col-3">
-            {move2 ? (<PokemonTypeBadge typeIdent={move2.type_ident} />) : (<></>)}
+            {move2 ? (<PokemonTypeBadge typeIdent={move2.type_ident} />) : (<p>-</p>)}
           </div>
-          <p className="col-4">{move2?.category_ident || "-"}</p>
+          <div className="col-4">
+            {move2?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move2.category_ident} />) : (<p>-</p>)}
+          </div>
         </div>
         <div className="data-row move-4">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[3]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 3) }}>
@@ -309,9 +355,11 @@ export const PokemonBattleStateEditor: React.FC<{
           </select>
           <p className="col-2">{move3?.base_power || "-"}</p>
           <div className="col-3">
-            {move3 ? (<PokemonTypeBadge typeIdent={move3.type_ident} />) : (<></>)}
+            {move3 ? (<PokemonTypeBadge typeIdent={move3.type_ident} />) : (<p>-</p>)}
           </div>
-          <p className="col-4">{move3?.category_ident || "-"}</p>
+          <div className="col-4">
+            {move3?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move3.category_ident} />) : (<p>-</p>)}
+          </div>
         </div>
       </div>
     </div>

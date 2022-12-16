@@ -1,0 +1,17 @@
+{
+  "ident": "spirit-break",
+  "type_ident": "fairy",
+  "category_ident": "physical",
+  "base_power": 75,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 100% chance to lower the target's Special Attack by 1 stage.",
+  "stat_changes": [
+    {
+      "stat_ident": "special_attack",
+      "stages": -1,
+      "frequency": 1
+    }
+  ]
+}

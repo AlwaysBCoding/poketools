@@ -365,6 +365,7 @@ export type PokemonItemIdent =
   | "heavy-duty-boots"
   | "iapapa-berry"
   | "icy-rock"
+  | "iron-ball"
   | "kasib-berry"
   | "kebia-berry"
   | "kee-berry"
