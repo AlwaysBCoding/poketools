@@ -27,7 +27,8 @@ export const calculateDamage = ((
   battleState: BattleState,
   attackingPokemon: PokemonBattleState,
   targetPokemon: PokemonBattleState,
-  moveIdent: PokemonMoveIdent
+  moveIdent: PokemonMoveIdent,
+  hardcodedRoll?: number
 ): number => {
 
   const pokemonMove: PokemonMove = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMove);
@@ -71,7 +72,7 @@ export const calculateDamage = ((
   const targets = 1;
   const weather = 1;
   const critical = 1;
-  const random = RANDOM_ROLLS[Math.floor(Math.random() * 16)];
+  const random = hardcodedRoll ? hardcodedRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
 
   if(attackingPokemon.status === "burned" && pokemonMove.category_ident === "physical") {
     burn = BURN_MODIFIER;
@@ -80,11 +81,6 @@ export const calculateDamage = ((
   if(attackingPokemon.item_ident === "life-orb") {
     other = LIFE_ORB_MODIFIER;
   }
-
-  // const damageRolls = randomRolls.map((randomRoll) => {
-  //   const baseDamage = (Math.floor(Math.floor(Math.floor(((2 * level) / 5) + 2) * power * (aValue / dValue)) / 50) + 2);
-  //   return Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(Math.floor(baseDamage * targets) * weather) * critical) * randomRoll) * stab) * type) * burn) * other);
-  // });
 
   if(power) {
     const baseDamage = Math.floor(Math.floor((Math.floor(((2 * level) / 5) + 2) * power * aValue) / dValue) / 50) + 2;

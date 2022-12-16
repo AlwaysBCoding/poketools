@@ -42,7 +42,8 @@ input {
   border: 1px solid black;
 }
 
-h1, h2, h3, h4, h5, h6, p, hr, pre, a, input {
+h1, h2, h3, h4, h5, h6, p, hr, pre, a, input, span {
+  font-family: "Verdana";
   margin: 0;
 }
 
@@ -315,7 +316,6 @@ $pokemon-base-stats-cell-width: 50%;
 }
 
 .pokemon-team-display {
-  font-family: "Verdana";
 
   .team-actions {
     display: flex;
@@ -375,6 +375,23 @@ $pokemon-base-stats-cell-width: 50%;
     justify-content: flex-start;
     align-items: stretch;
 
+    &.horizontal {
+      .pokemon-index-item {
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    &.vertical {
+      flex-direction: column;
+      .pokemon-index-item {
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+      }
+    }
+
     .pokemon-index-item {
       cursor: pointer;
       width: 130px;
@@ -394,9 +411,6 @@ $pokemon-base-stats-cell-width: 50%;
         justify-content: center;
         align-items: center;
         font-size: 12px;
-      }
-      &:not(:first-child) {
-        margin-left: 5px;
       }
     }
   }
@@ -496,12 +510,12 @@ $pokemon-base-stats-cell-width: 50%;
 }
 
 .pokemon-build-editor, .pokemon-battle-state-editor {
-  font-family: "Verdana";
+  position: relative;
 
   display: flex;
   flex-direction: column;
-  width: 422px;
-  height: 584px;
+  min-width: 422px;
+  min-height: 520px;
   padding: 10px;
   background-color: $showdown-light-blue;
   border: 1px solid $showdown-border-gray;
@@ -524,7 +538,6 @@ $pokemon-base-stats-cell-width: 50%;
     align-items: center;
 
     .data-row-label {
-      width: 90px;
       font-size: 14px;
       &.pokemon-nature {
         width: 65px;
@@ -603,6 +616,8 @@ $pokemon-base-stats-cell-width: 50%;
       .col-2 { width: 42px; }
       .col-3 { width: 38px; }
       .col-4 { width: 38px; }
+      .col-5 { width: 75px; }
+      .col-6 { width: 75px; }
       &.header-row {
         font-size: 12px;
         font-weight: 700;
@@ -613,7 +628,27 @@ $pokemon-base-stats-cell-width: 50%;
 }
 
 .pokemon-build-editor {
+  .data-row {
+    .data-row-label {
+      width: 90px;
+    }
+  }
+}
 
+.pokemon-build-editor {
+  .data-row {
+    .data-row-label {
+      width: 90px;
+    }
+  }
+}
+
+.pokemon-battle-state-editor {
+  .data-row {
+    .data-row-label {
+      width: 100px;
+    }
+  }
 }
 
 .pokemon-team-resistances-display {
@@ -748,9 +783,35 @@ $pokemon-base-stats-cell-width: 50%;
 }
 
 .screen.damage-calculation-screen {
-  .pokemon-battle-states {
+
+  .content-section {
+    min-height: 520px;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+
+    .active-team-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .pokemon-battle-state {
+      position: relative;
+      .editor-title {
+        position: absolute;
+        z-index: 1;
+        top: -17px;
+        right: 0px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .pokemon-battle-state {
+    &.attacking-pokemon {
+      margin-left: 10px;
+    }
   }
 
   .damage-calcs {
@@ -765,12 +826,12 @@ $pokemon-base-stats-cell-width: 50%;
       }
 
       .col-2 {
-        width: 120px;
+        width: 185px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
 
-      .col-3 {
-        width: 120px;
-      }
     }
 
   }

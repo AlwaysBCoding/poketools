@@ -57,7 +57,17 @@ export const PokemonBuildEditor: React.FC<{
 
   const handleLevelChange = (levelString: string) => {
     const nextPokemonBuild = pokemonBuild;
-    nextPokemonBuild.level = Number(levelString);
+    const nextLevel = Number(levelString);
+
+    const nextStatSpread: PokemonStatSpread = calculateStatSpread(
+      nextPokemonBuild.pokemon.ident,
+      nextPokemonBuild.iv_spread,
+      nextPokemonBuild.ev_spread,
+      nextPokemonBuild.nature_ident,
+      nextLevel
+    );
+    nextPokemonBuild.level = nextLevel;
+    nextPokemonBuild.stat_spread = nextStatSpread;
     setPokemonBuild(nextPokemonBuild);
     updatePokemonBuildData(nextPokemonBuild);
     forceUpdate();
@@ -179,7 +189,7 @@ export const PokemonBuildEditor: React.FC<{
             onChange={(e) => { handleLevelChange(e.target.value); }} />
         </div>
       </div>
-      <div className="data-group pokemon-volatile-build-info">
+      <div className="data-group pokemon-build-info">
         <div className="data-row data-row-select-value">
           <p className="data-row-label">Ability</p>
           <PokemonAbilitySelectList

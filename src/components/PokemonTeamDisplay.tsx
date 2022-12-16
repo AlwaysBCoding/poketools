@@ -45,16 +45,19 @@ interface PokemonTeamDisplayProps {
 }
 
 export const PokemonTeamDisplayIndex: React.FC<{
-  team: PokemonTeam,
-  activeTeamIndex?: number,
+  team: PokemonTeam;
+  activeTeamIndex?: number;
   onPokemonBuildClick?: (pokemonBuild: PokemonBuild, teamIndex: number) => void;
+  arrange?: "horizontal" | "vertical";
 }> = ({
   team,
   activeTeamIndex,
-  onPokemonBuildClick = () => undefined
+  onPokemonBuildClick = () => undefined,
+  arrange = "horizontal"
 }) => {
+  const modeClassName = arrange === "vertical" ? "mode-index vertical" : "mode-index horizontal";
   return (
-    <div className="pokemon-team-display mode-index">
+    <div className={`pokemon-team-display ${modeClassName}`}>
       {team.pokemonBuilds.map((pokemonBuild, index) => {
         const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
         const classString = (index === activeTeamIndex) ? "pokemon-index-item active" : "pokemon-index-item"

@@ -1,7 +1,8 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import useForceUpdate from "use-force-update";
+import CountUp from "react-countup";
 
-import { PokemonBattleState } from "../models/battle/PokemonBattleState";
+import { PokemonBattleState, createDefaultPokemonBattleStateForPokemonIdent } from "../models/battle/PokemonBattleState";
 import { PokemonStatusIdent } from "../models/battle/BattleShared";
 import { PokemonMoveSimple } from "../models/pokemon/PokemonMove";
 import { calculateStatSpread } from "../models/pokemon/stat-calc";
@@ -32,9 +33,11 @@ const allMoves = AllMoves as PokemonMoveSimple[];
 export const PokemonBattleStateEditor: React.FC<{
   initialPokemonBattleState: PokemonBattleState,
   updatePokemonBattleState?: (nextPokemonBattleState: PokemonBattleState) => void
+  damageCalcs?: number[][];
 }> = ({
   initialPokemonBattleState,
-  updatePokemonBattleState = () => undefined
+  updatePokemonBattleState = () => undefined,
+  damageCalcs = []
 }) => {
   const forceUpdate = useForceUpdate();
   const [pokemonBattleState, setPokemonBattleState] = useState<PokemonBattleState>(initialPokemonBattleState);
@@ -83,28 +86,60 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
-  const handleAbilitySelect = (pokemonAbilityIdent: PokemonAbilityIdent) => {
-    // ...
+  const handleAbilitySelect = (abilityIdent: PokemonAbilityIdent) => {
+    const nextPokemonBattleState = pokemonBattleState;
+    nextPokemonBattleState.ability_ident = abilityIdent;
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
-  const handleStatusSelect = (pokemonStatusIdent: PokemonStatusIdent) => {
-    // ...
+  const handleStatusSelect = (statusIdent: PokemonStatusIdent) => {
+    const nextPokemonBattleState = pokemonBattleState;
+    nextPokemonBattleState.status = statusIdent;
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   const handlePokemonSelect = (pokemonIdent: PokemonIdent) => {
-    // ...
+    const nextPokemonBattleState = createDefaultPokemonBattleStateForPokemonIdent(pokemonIdent);
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   const handleTeraTypeSelect = (typeIdent: PokemonTypeIdent) => {
-    // ...
+    const nextPokemonBattleState = pokemonBattleState;
+    nextPokemonBattleState.pokemon_build.tera_type_ident = typeIdent;
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   const handleLevelChange = (levelString: string) => {
-    // ...
+    const nextPokemonBattleState = pokemonBattleState;
+    const nextLevel = Number(levelString);
+    const nextStatSpread: PokemonStatSpread = calculateStatSpread(
+      nextPokemonBattleState.pokemon_build.pokemon.ident,
+      nextPokemonBattleState.pokemon_build.iv_spread,
+      nextPokemonBattleState.pokemon_build.ev_spread,
+      nextPokemonBattleState.pokemon_build.nature_ident,
+      nextLevel
+    );
+    nextPokemonBattleState.pokemon_build.level = nextLevel;
+    nextPokemonBattleState.pokemon_build.stat_spread = nextStatSpread;
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   const handleGenderChange = (gender: PokemonGender) => {
-    // ...
+    const nextPokemonBattleState = pokemonBattleState;
+    nextPokemonBattleState.pokemon_build.gender = gender;
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
   }
 
   const handleItemSelect = (pokemonItemIdent: PokemonItemIdent) => {
@@ -166,7 +201,7 @@ export const PokemonBattleStateEditor: React.FC<{
             onChange={(e) => { handleLevelChange(e.target.value); }} />
         </div>
       </div>
-      <div className="data-group pokemon-volatile-build-info">
+      <div className="data-group pokemon-build-info">
         <div className="data-row data-row-select-value">
           <p className="data-row-label">Ability</p>
           <PokemonAbilitySelectList
@@ -179,11 +214,20 @@ export const PokemonBattleStateEditor: React.FC<{
             itemIdent={pokemonBattleState.item_ident}
             onItemSelect={handleItemSelect} />
         </div>
+      </div>
+      <div className="data-group pokemon-volatile-build-info">
         <div className="data-row data-row-select-value">
           <p className="data-row-label">Status</p>
           <PokemonStatusSelectList
             pokemonStatusIdent={pokemonBattleState.status}
             onStatusSelect={handleStatusSelect} />
+        </div>
+        <div className="data-row data-row-select-value">
+          <p className="data-row-label">Terastallized</p>
+          <select className="terastallized-select-list">
+            <option>False</option>
+            <option>True</option>
+          </select>
         </div>
       </div>
       <div className="data-group pokemon-stats">
@@ -292,6 +336,12 @@ export const PokemonBattleStateEditor: React.FC<{
           <p className="col-2">BP</p>
           <p className="col-3">Type</p>
           <p className="col-4">Cat</p>
+          {damageCalcs.length > 0 ? (
+            <>
+              <p className="col-5">Low</p>
+              <p className="col-6">High</p>
+            </>
+          ) : (<></>)}
         </div>
         <div className="data-row move-1">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[0]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 0) }}>
@@ -309,6 +359,24 @@ export const PokemonBattleStateEditor: React.FC<{
           <div className="col-4">
             {move0?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move0.category_ident} />) : (<p>-</p>)}
           </div>
+          {damageCalcs.length > 0 ? (
+            <>
+              <CountUp
+                className="col-5 damage-calc low-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[0][0]}
+                preserveValue={true}
+                suffix={"%"} />
+              <CountUp
+                className="col-6 damage-calc high-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[0][1]}
+                preserveValue={true}
+                suffix={"%"} />
+            </>
+          ) : (<></>)}
         </div>
         <div className="data-row move-2">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[1]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 1) }}>
@@ -326,6 +394,24 @@ export const PokemonBattleStateEditor: React.FC<{
           <div className="col-4">
             {move1?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move1.category_ident} />) : (<p>-</p>)}
           </div>
+          {damageCalcs.length > 0 ? (
+            <>
+              <CountUp
+                className="col-5 damage-calc low-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[1][0]}
+                preserveValue={true}
+                suffix={"%"} />
+              <CountUp
+                className="col-6 damage-calc high-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[1][1]}
+                preserveValue={true}
+                suffix={"%"} />
+            </>
+          ) : (<></>)}
         </div>
         <div className="data-row move-3">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[2]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 2) }}>
@@ -343,6 +429,24 @@ export const PokemonBattleStateEditor: React.FC<{
           <div className="col-4">
             {move2?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move2.category_ident} />) : (<p>-</p>)}
           </div>
+          {damageCalcs.length > 0 ? (
+            <>
+              <CountUp
+                className="col-5 damage-calc low-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[2][0]}
+                preserveValue={true}
+                suffix={"%"} />
+              <CountUp
+                className="col-6 damage-calc high-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[2][1]}
+                preserveValue={true}
+                suffix={"%"} />
+            </>
+          ) : (<></>)}
         </div>
         <div className="data-row move-4">
           <select className="col-1" value={pokemonBattleState.pokemon_build.move_idents[3]} onChange={(e) => { handleMoveSelect(e.target.value as PokemonMoveIdent, 3) }}>
@@ -360,6 +464,24 @@ export const PokemonBattleStateEditor: React.FC<{
           <div className="col-4">
             {move3?.category_ident ? (<PokemonMoveCategoryBadge moveCategory={move3.category_ident} />) : (<p>-</p>)}
           </div>
+          {damageCalcs.length > 0 ? (
+            <>
+              <CountUp
+                className="col-5 damage-calc low-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[3][0]}
+                preserveValue={true}
+                suffix={"%"} />
+              <CountUp
+                className="col-6 damage-calc high-roll"
+                duration={0.3}
+                decimals={2}
+                end={damageCalcs[3][1]}
+                preserveValue={true}
+                suffix={"%"} />
+            </>
+          ) : (<></>)}
         </div>
       </div>
     </div>

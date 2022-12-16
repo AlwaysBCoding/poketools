@@ -1,5 +1,5 @@
-import { PokemonAbilityIdent, PokemonItemIdent } from "../pokemon/PokemonShared";
-import { PokemonBuild } from "../pokemon/PokemonBuild";
+import { PokemonIdent, PokemonAbilityIdent, PokemonItemIdent } from "../pokemon/PokemonShared";
+import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../pokemon/PokemonBuild";
 import {
   BattleSide,
   PokemonBattleLocation,
@@ -44,4 +44,9 @@ export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side?: B
     fainted: false
   }
 
+}
+
+export const createDefaultPokemonBattleStateForPokemonIdent = (pokemonIdent: PokemonIdent): PokemonBattleState => {
+  const pokemonBuild = createDefaultPokemonBuildForPokemonIdent(pokemonIdent);
+  return createNewPokemonBattleState(pokemonBuild);
 }
