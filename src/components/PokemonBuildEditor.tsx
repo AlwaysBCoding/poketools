@@ -1,12 +1,20 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import useForceUpdate from "use-force-update";
 
-import { PokemonIdent, PokemonTypeIdent, PokemonGender } from "../models/pokemon/PokemonShared";
+import {
+  PokemonIdent,
+  PokemonTypeIdent,
+  PokemonGender,
+  PokemonNatureIdent,
+  PokemonStatSpread
+} from "../models/pokemon/PokemonShared";
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
+import { calculateStatSpread } from "../models/pokemon/stat-calc";
 
 import { PokemonTypeBadge, PokemonTypeSelectList } from "../decorators/PokemonType";
 import { PokemonSelectList } from "../decorators/Pokemon";
+import { PokemonNatureSelectList } from "../decorators/PokemonNature";
 import { toTitleCase } from "../decorators/DecoratorsShared";
 
 export const PokemonBuildEditor: React.FC<{
@@ -54,6 +62,47 @@ export const PokemonBuildEditor: React.FC<{
     forceUpdate();
   }
 
+  const handleStatValueChange = (statIdent: string, value: string) => {
+    const nextPokemonBuild = pokemonBuild;
+    if(statIdent === "iv-hp") { nextPokemonBuild.iv_spread.hp = Number(value); }
+    if(statIdent === "ev-hp") { nextPokemonBuild.ev_spread.hp = Number(value); }
+    if(statIdent === "iv-attack") { nextPokemonBuild.iv_spread.attack = Number(value); }
+    if(statIdent === "ev-attack") { nextPokemonBuild.ev_spread.attack = Number(value); }
+    if(statIdent === "iv-defense") { nextPokemonBuild.iv_spread.defense = Number(value); }
+    if(statIdent === "ev-defense") { nextPokemonBuild.ev_spread.defense = Number(value); }
+    if(statIdent === "iv-special_attack") { nextPokemonBuild.iv_spread.special_attack = Number(value); }
+    if(statIdent === "ev-special_attack") { nextPokemonBuild.ev_spread.special_attack = Number(value); }
+    if(statIdent === "iv-special_defense") { nextPokemonBuild.iv_spread.special_defense = Number(value); }
+    if(statIdent === "ev-special_defense") { nextPokemonBuild.ev_spread.special_defense = Number(value); }
+    if(statIdent === "iv-speed") { nextPokemonBuild.iv_spread.speed = Number(value); }
+    if(statIdent === "ev-speed") { nextPokemonBuild.ev_spread.speed = Number(value); }
+    const nextStatSpread: PokemonStatSpread = calculateStatSpread(
+      nextPokemonBuild.pokemon.ident,
+      nextPokemonBuild.iv_spread,
+      nextPokemonBuild.ev_spread,
+      nextPokemonBuild.nature_ident
+    );
+    nextPokemonBuild.stat_spread = nextStatSpread;
+    setPokemonBuild(nextPokemonBuild);
+    updatePokemonBuildData(nextPokemonBuild);
+    forceUpdate();
+  }
+
+  const handleNatureSelect = (pokemonNatureIdent: PokemonNatureIdent) => {
+    const nextPokemonBuild = pokemonBuild;
+    const nextStatSpread: PokemonStatSpread = calculateStatSpread(
+      nextPokemonBuild.pokemon.ident,
+      nextPokemonBuild.iv_spread,
+      nextPokemonBuild.ev_spread,
+      pokemonNatureIdent
+    );
+    nextPokemonBuild.nature_ident = pokemonNatureIdent;
+    nextPokemonBuild.stat_spread = nextStatSpread;
+    setPokemonBuild(nextPokemonBuild);
+    updatePokemonBuildData(nextPokemonBuild);
+    forceUpdate();
+  }
+
   return (
     <div className="pokemon-build-editor">
       <div className="data-group pokemon-meta">
@@ -91,7 +140,107 @@ export const PokemonBuildEditor: React.FC<{
             value={pokemonBuild.level}
             onChange={(e) => { handleLevelChange(e.target.value); }} />
         </div>
+      </div>
+      <div className="data-group pokemon-stats">
+        <div className="data-row header-row">
+          <p className="col-1"></p>
+          <p className="col-2">Base</p>
+          <p className="col-3">IVs</p>
+          <p className="col-4">EVs</p>
+          <p className="col-5">Total</p>
+          <p className="col-6" />
         </div>
+        <div className="data-row data-row-hp">
+          <p className="col-1">HP</p>
+          <p className="col-2">{pokemonBuild.pokemon.base_stats.hp}</p>
+          <input
+            className="col-3"
+            value={pokemonBuild.iv_spread.hp}
+            onChange={(e) => { handleStatValueChange("iv-hp", e.target.value); }} />
+          <input
+            className="col-4"
+            value={pokemonBuild.ev_spread.hp}
+            onChange={(e) => { handleStatValueChange("ev-hp", e.target.value); }} />
+          <p className="col-5">{pokemonBuild.stat_spread.hp}</p>
+          <p className="col-6" />
+        </div>
+        <div className="data-row data-row-attack">
+          <p className="col-1">Attack</p>
+          <p className="col-2">{pokemonBuild.pokemon.base_stats.attack}</p>
+          <input
+            className="col-3"
+            value={pokemonBuild.iv_spread.attack}
+            onChange={(e) => { handleStatValueChange("iv-attack", e.target.value); }} />
+          <input
+            className="col-4"
+            value={pokemonBuild.ev_spread.attack}
+            onChange={(e) => { handleStatValueChange("ev-attack", e.target.value); }} />
+          <p className="col-5">{pokemonBuild.stat_spread.attack}</p>
+          <p className="col-6" />
+        </div>
+        <div className="data-row data-row-defense">
+          <p className="col-1">Defense</p>
+          <p className="col-2">{pokemonBuild.pokemon.base_stats.defense}</p>
+          <input
+            className="col-3"
+            value={pokemonBuild.iv_spread.defense}
+            onChange={(e) => { handleStatValueChange("iv-defense", e.target.value); }} />
+          <input
+            className="col-4"
+            value={pokemonBuild.ev_spread.defense}
+            onChange={(e) => { handleStatValueChange("ev-defense", e.target.value); }} />
+          <p className="col-5">{pokemonBuild.stat_spread.defense}</p>
+          <p className="col-6" />
+        </div>
+        <div className="data-row data-row-special-attack">
+          <p className="col-1">Sp. Atk</p>
+          <p className="col-2">{pokemonBuild.pokemon.base_stats.special_attack}</p>
+          <input
+            className="col-3"
+            value={pokemonBuild.iv_spread.special_attack}
+            onChange={(e) => { handleStatValueChange("iv-special_attack", e.target.value); }} />
+          <input
+            className="col-4"
+            value={pokemonBuild.ev_spread.special_attack}
+            onChange={(e) => { handleStatValueChange("ev-special_attack", e.target.value); }} />
+          <p className="col-5">{pokemonBuild.stat_spread.special_attack}</p>
+          <p className="col-6" />
+        </div>
+        <div className="data-row data-row-special-defense">
+          <p className="col-1">Sp. Def</p>
+          <p className="col-2">{pokemonBuild.pokemon.base_stats.special_defense}</p>
+          <input
+            className="col-3"
+            value={pokemonBuild.iv_spread.special_defense}
+            onChange={(e) => { handleStatValueChange("iv-special_defense", e.target.value); }} />
+          <input
+            className="col-4"
+            value={pokemonBuild.ev_spread.special_defense}
+            onChange={(e) => { handleStatValueChange("ev-special_defense", e.target.value); }} />
+          <p className="col-5">{pokemonBuild.stat_spread.special_defense}</p>
+          <p className="col-6" />
+        </div>
+        <div className="data-row data-row-speed">
+          <p className="col-1">Speed</p>
+          <p className="col-2">{pokemonBuild.pokemon.base_stats.speed}</p>
+          <input
+            className="col-3"
+            value={pokemonBuild.iv_spread.speed}
+            onChange={(e) => { handleStatValueChange("iv-speed", e.target.value); }} />
+          <input
+            className="col-4"
+            value={pokemonBuild.ev_spread.speed}
+            onChange={(e) => { handleStatValueChange("ev-speed", e.target.value); }} />
+          <p className="col-5">{pokemonBuild.stat_spread.speed}</p>
+          <p className="col-6" />
+        </div>
+        <div className="data-row data-row-select-value data-row-nature-select">
+          <p className="data-row-label pokemon-nature">Nature</p>
+          <PokemonNatureSelectList
+            natureIdent={pokemonBuild.nature_ident}
+            onNatureSelect={handleNatureSelect} />
+        </div>
+      </div>
       {/*
       <div className="data-group pokemon-stats">
         <div className="data-row header-row">

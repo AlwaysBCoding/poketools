@@ -524,8 +524,11 @@ $pokemon-base-stats-cell-width: 50%;
     align-items: center;
 
     .data-row-label {
-      width: 100px;
+      width: 90px;
       font-size: 14px;
+      &.pokemon-nature {
+        width: 65px;
+      }
     }
   }
 
@@ -533,8 +536,16 @@ $pokemon-base-stats-cell-width: 50%;
     select {
       width: 70px;
       &.pokemon-select-list {
-        width: 120px;
+        width: 130px;
       }
+      &.pokemon-nature-select-list {
+        width: 155px;
+      }
+    }
+
+    &.data-row-nature-select {
+      margin-top: 10px;
+      .data-row-label { text-align: start; }
     }
   }
 
@@ -547,6 +558,33 @@ $pokemon-base-stats-cell-width: 50%;
         width: 35px;
       }
     }
+  }
+
+  .pokemon-stats {
+    .data-row {
+      align-items: center;
+      text-align: center;
+      .col-1 {
+        width: 64px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .col-2 { width: 42px; }
+      .col-3 { width: 42px; }
+      .col-4 { width: 42px; }
+      .col-5 { width: 34px; }
+      .col-6 { width: 38px; }
+
+      &:not(.header-row) {
+        .col-2, .col-3, .col-4, .col-5 { font-size: 14px; }
+      }
+
+      &.header-row {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
   }
 
 }

@@ -9,7 +9,7 @@ export const PokemonNatureSelectList: React.FC<{
   onNatureSelect = () => undefined
 }) => {
 
-  const [selectedNaureIdent, setSelectedNatureIdent] = useState<PokemonNatureIdent>(natureIdent);
+  const [selectedNatureIdent, setSelectedNatureIdent] = useState<PokemonNatureIdent>(natureIdent);
 
   const handleNatureSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedNatureIdent(e.target.value as PokemonNatureIdent);
@@ -21,7 +21,10 @@ export const PokemonNatureSelectList: React.FC<{
   }, [natureIdent]);
 
   return (
-    <select onChange={handleNatureSelect} value={selectedNaureIdent}>
+    <select className="pokemon-nature-select-list" onChange={handleNatureSelect} value={selectedNatureIdent}>
+      <option value={""} disabled={true}>
+        --Select a Nature--
+      </option>
       <option value={"adamant"}>Adamant (+Atk, -SpA)</option>
       <option value={"bashful"}>Bashful</option>
       <option value={"bold"}>Bold (+Def, -Atk)</option>
