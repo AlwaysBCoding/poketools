@@ -1,7 +1,6 @@
 ## TODO
   - figure out the right calcs for earthquake / spread moves
   - figure out the right calcs for assurance/avalanche power up moves
-  - add stat boosts to the battlestate calc screen
   - add critical hits to the battlestate calc screen
 
   - allow renaming of teams

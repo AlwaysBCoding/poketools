@@ -27,8 +27,46 @@ import { PokemonAbilitySelectList } from "../decorators/PokemonAbility";
 import { PokemonStatusSelectList } from "../decorators/PokemonStatus";
 
 import AllMoves from "../data/moves/all-moves.json";
-import { Pokemon } from "../models/pokemon/Pokemon";
 const allMoves = AllMoves as PokemonMoveSimple[];
+
+const StatBoostSelectList: React.FC<{
+  statBoostValue: string,
+  onStatBoostSelect?: (statBoostValue: string) => void
+}> = ({
+  statBoostValue,
+  onStatBoostSelect = () => undefined
+}) => {
+
+  const [selectedStatBoostValue, setSelectedStatBoostValue] = useState<string>("0");
+
+  const handleStatBoostSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedStatBoostValue(e.target.value);
+    onStatBoostSelect(e.target.value);
+  }
+
+  useEffect(() => {
+    setSelectedStatBoostValue(statBoostValue);
+  }, [statBoostValue]);
+
+  return (
+    <select className="stat-boost-select-list" value={selectedStatBoostValue} onChange={handleStatBoostSelect}>
+      <option value={"6"}>+6</option>
+      <option value={"5"}>+5</option>
+      <option value={"4"}>+4</option>
+      <option value={"3"}>+3</option>
+      <option value={"2"}>+2</option>
+      <option value={"1"}>+1</option>
+      <option value={"0"}>--</option>
+      <option value={"-1"}>-1</option>
+      <option value={"-2"}>-2</option>
+      <option value={"-3"}>-3</option>
+      <option value={"-4"}>-4</option>
+      <option value={"-5"}>-5</option>
+      <option value={"-6"}>-6</option>
+    </select>
+  )
+
+};
 
 export const PokemonBattleStateEditor: React.FC<{
   initialPokemonBattleState: PokemonBattleState,
@@ -174,6 +212,18 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
+  const handleStatBoostValueChange = (statIdent: string, value: number) => {
+    const nextPokemonBattleState = pokemonBattleState;
+    if(statIdent === "attack") { nextPokemonBattleState.stat_boosts["attack"] = value; }
+    if(statIdent === "defense") { nextPokemonBattleState.stat_boosts["defense"] = value; }
+    if(statIdent === "special_attack") { nextPokemonBattleState.stat_boosts["special_attack"] = value; }
+    if(statIdent === "special_defense") { nextPokemonBattleState.stat_boosts["special_defense"] = value; }
+    if(statIdent === "speed") { nextPokemonBattleState.stat_boosts["speed"] = value; }
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
+  }
+
   const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBattleState.pokemon_build.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBattleState.pokemon_build.pokemon.ident.split("-")[0]}/${pokemonBattleState.pokemon_build.pokemon.ident}.static.png`);
   const move0 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[0] });
   const move1 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[1] });
@@ -283,7 +333,9 @@ export const PokemonBattleStateEditor: React.FC<{
             value={pokemonBattleState.pokemon_build.ev_spread.attack}
             onChange={(e) => { handleStatValueChange("ev-attack", e.target.value); }} />
           <p className="col-5">{pokemonBattleState.pokemon_build.stat_spread.attack}</p>
-          <p className="col-6" />
+          <StatBoostSelectList
+            statBoostValue={`${pokemonBattleState.stat_boosts.attack}`}
+            onStatBoostSelect={(valueString) => { handleStatBoostValueChange("attack", Number(valueString)) }} />
         </div>
         <div className="data-row data-row-defense">
           <p className="col-1">Defense</p>
@@ -297,7 +349,9 @@ export const PokemonBattleStateEditor: React.FC<{
             value={pokemonBattleState.pokemon_build.ev_spread.defense}
             onChange={(e) => { handleStatValueChange("ev-defense", e.target.value); }} />
           <p className="col-5">{pokemonBattleState.pokemon_build.stat_spread.defense}</p>
-          <p className="col-6" />
+          <StatBoostSelectList
+            statBoostValue={`${pokemonBattleState.stat_boosts.defense}`}
+            onStatBoostSelect={(valueString) => { handleStatBoostValueChange("defense", Number(valueString)) }} />
         </div>
         <div className="data-row data-row-special-attack">
           <p className="col-1">Sp. Atk</p>
@@ -311,7 +365,9 @@ export const PokemonBattleStateEditor: React.FC<{
             value={pokemonBattleState.pokemon_build.ev_spread.special_attack}
             onChange={(e) => { handleStatValueChange("ev-special_attack", e.target.value); }} />
           <p className="col-5">{pokemonBattleState.pokemon_build.stat_spread.special_attack}</p>
-          <p className="col-6" />
+          <StatBoostSelectList
+            statBoostValue={`${pokemonBattleState.stat_boosts.special_attack}`}
+            onStatBoostSelect={(valueString) => { handleStatBoostValueChange("special_attack", Number(valueString)) }} />
         </div>
         <div className="data-row data-row-special-defense">
           <p className="col-1">Sp. Def</p>
@@ -325,7 +381,9 @@ export const PokemonBattleStateEditor: React.FC<{
             value={pokemonBattleState.pokemon_build.ev_spread.special_defense}
             onChange={(e) => { handleStatValueChange("ev-special_defense", e.target.value); }} />
           <p className="col-5">{pokemonBattleState.pokemon_build.stat_spread.special_defense}</p>
-          <p className="col-6" />
+          <StatBoostSelectList
+            statBoostValue={`${pokemonBattleState.stat_boosts.special_defense}`}
+            onStatBoostSelect={(valueString) => { handleStatBoostValueChange("special_defense", Number(valueString)) }} />
         </div>
         <div className="data-row data-row-speed">
           <p className="col-1">Speed</p>
@@ -339,7 +397,9 @@ export const PokemonBattleStateEditor: React.FC<{
             value={pokemonBattleState.pokemon_build.ev_spread.speed}
             onChange={(e) => { handleStatValueChange("ev-speed", e.target.value); }} />
           <p className="col-5">{pokemonBattleState.pokemon_build.stat_spread.speed}</p>
-          <p className="col-6" />
+          <StatBoostSelectList
+            statBoostValue={`${pokemonBattleState.stat_boosts.speed}`}
+            onStatBoostSelect={(valueString) => { handleStatBoostValueChange("speed", Number(valueString)) }} />
         </div>
         <div className="data-row data-row-select-value data-row-nature-select">
           <p className="data-row-label pokemon-nature">Nature</p>

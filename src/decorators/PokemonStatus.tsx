@@ -1,6 +1,5 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import { PokemonStatusIdent } from "../models/battle/BattleShared";
-import { toTitleCase } from "./DecoratorsShared";
 
 export const PokemonStatusSelectList: React.FC<{
   pokemonStatusIdent: PokemonStatusIdent,
@@ -16,6 +15,10 @@ export const PokemonStatusSelectList: React.FC<{
     setSelectedStatusIdent(e.target.value as PokemonStatusIdent);
     onStatusSelect(e.target.value as PokemonStatusIdent);
   }
+
+  useEffect(() => {
+    setSelectedStatusIdent(pokemonStatusIdent);
+  }, [pokemonStatusIdent]);
 
   return (
     <select className="pokemon-status-select-list" value={selectedStatusIdent} onChange={handleStatusSelect}>
