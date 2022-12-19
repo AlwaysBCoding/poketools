@@ -147,6 +147,148 @@ describe("DAMAGE_CALC", () => {
       expect(damage).toEqual(76);
     });
 
-  })
+  });
+
+  describe("STAT_BOOSTS", () => {
+    let gholdengoBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GHOLDENGO_ATEAM_BUILD);
+    let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+
+    test("it correctly increases damage for attacking stat boosts", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+
+      let damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(134);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 1, special_defense: 0, speed: 0};
+
+      damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(200);
+    });
+
+    test("it correctly reduces damage for negative attacking stat boosts", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+
+      let damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(134);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: -1, special_defense: 0, speed: 0};
+
+      damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(90);
+    });
+
+    test("it correctly increases damage for negative defensive stat boosts", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+
+      let damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(134);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: -1, speed: 0};
+
+      damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(200);
+    });
+
+    test("it correctly reduces damage for positive defending stat boosts", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+
+      let damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(134);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(gholdengoBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 1, speed: 0};
+
+      damage = calculateDamage(
+        battleState,
+        battleState.blue_side_pokemon[0],
+        battleState.red_side_pokemon[0],
+        "shadow-ball",
+        0.85
+      );
+      expect(damage).toEqual(90);
+    });
+
+  });
 
 });

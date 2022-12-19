@@ -14,6 +14,21 @@ const BURN_MODIFIER = (2048/4096);
 
 const RANDOM_ROLLS = [0.85, 0.86, 0.87, 0.88, 0.89, 0.90, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00];
 const CRITICAL_HIT_STAGES = [(1/24), (1/8), (1/2), 1];
+const STAT_STAGE_MULTIPLIERS: Record<string, number> = {
+  "-6": (2/8),
+  "-5": (2/7),
+  "-4": (2/6),
+  "-3": (2/5),
+  "-2": (2/4),
+  "-1": (2/3),
+  "0": (2/2),
+  "1": (3/2),
+  "2": (4/2),
+  "3": (5/2),
+  "4": (6/2),
+  "5": (7/2),
+  "6": (8/2)
+}
 
 const pokeRound = (x: number) => {
   if(x % 1 === 0.5) {
@@ -53,18 +68,18 @@ export const calculateDamage = ((
 
   if(pokemonMove && pokemonMove.category_ident) {
     if(pokemonMove.category_ident === "physical") {
-      aValue = attackingPokemon.pokemon_build.stat_spread.attack;
+      aValue = attackingPokemon.pokemon_build.stat_spread.attack * STAT_STAGE_MULTIPLIERS[`${attackingPokemon.stat_boosts["attack"]}`];
       if(targetPokemon.item_ident === "eviolite" && targetPokemon.pokemon_build.pokemon.can_evolve) {
-        dValue = targetPokemon.pokemon_build.stat_spread.defense * 1.5;
+        dValue = targetPokemon.pokemon_build.stat_spread.defense * 1.5 * STAT_STAGE_MULTIPLIERS[`${targetPokemon.stat_boosts["defense"]}`];
       } else {
-        dValue = targetPokemon.pokemon_build.stat_spread.defense;
+        dValue = targetPokemon.pokemon_build.stat_spread.defense * STAT_STAGE_MULTIPLIERS[`${targetPokemon.stat_boosts["defense"]}`];
       }
     } else if(pokemonMove.category_ident === "special") {
-      aValue = attackingPokemon.pokemon_build.stat_spread.special_attack;
+      aValue = attackingPokemon.pokemon_build.stat_spread.special_attack * STAT_STAGE_MULTIPLIERS[`${attackingPokemon.stat_boosts["special_attack"]}`];
       if(targetPokemon.item_ident === "assault-vest" || (targetPokemon.item_ident === "eviolite" && targetPokemon.pokemon_build.pokemon.can_evolve)) {
-        dValue = targetPokemon.pokemon_build.stat_spread.special_defense * 1.5;
+        dValue = targetPokemon.pokemon_build.stat_spread.special_defense * 1.5 * STAT_STAGE_MULTIPLIERS[`${targetPokemon.stat_boosts["special_defense"]}`];
       } else {
-        dValue = targetPokemon.pokemon_build.stat_spread.special_defense;
+        dValue = targetPokemon.pokemon_build.stat_spread.special_defense * STAT_STAGE_MULTIPLIERS[`${targetPokemon.stat_boosts["special_defense"]}`];
       }
     }
   }

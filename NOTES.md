@@ -1,10 +1,9 @@
 ## TODO
-  - add acrobatics custom logic to damage calc + test
   - figure out the right calcs for earthquake / spread moves
-  - change the pokepaste import to just copying & pasting the data into the import box
+  - figure out the right calcs for assurance/avalanche power up moves
   - add stat boosts to the battlestate calc screen
+  - add critical hits to the battlestate calc screen
 
-  - add more moves (A)
   - allow renaming of teams
   - add more items
   - add more abilities
