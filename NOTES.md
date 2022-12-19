@@ -1,6 +1,6 @@
 ## TODO
+  - primary_type_ident and secondary_type_ident in the damage calc should be on the PokemonBattleState, not on the pokemon_build
   - figure out the right calcs for assurance/avalanche power up moves
-
   - allow renaming of teams
   - add more items
   - add more abilities

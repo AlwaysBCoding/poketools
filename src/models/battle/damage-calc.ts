@@ -131,12 +131,16 @@ export const calculateDamage = ({
 
     if(targetPokemon.terastallized) {
       let typeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.tera_type_ident });
-      if(typeEffectiveness) { type = typeEffectiveness.effectiveness; }
+      if(targetPokemon.item_ident === "iron-ball" && targetPokemon.pokemon_build.tera_type_ident === "flying" && pokemonMove.type_ident === "ground" ) {
+        type = 1;
+      } else if(typeEffectiveness) { type = typeEffectiveness.effectiveness; }
     } else {
       let primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
       let secondaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.secondary_type_ident });
 
-      if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
+      if(targetPokemon.item_ident === "iron-ball" && [targetPokemon.pokemon_build.pokemon.primary_type_ident, targetPokemon.pokemon_build.pokemon.secondary_type_ident].includes("flying") && pokemonMove.type_ident === "ground") {
+        type = 1;
+      } else if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
         type = primaryTypeEffectiveness.effectiveness * secondaryTypeEffectiveness.effectiveness;
       } else if(primaryTypeEffectiveness) {
         type = primaryTypeEffectiveness.effectiveness;

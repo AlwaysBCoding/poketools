@@ -3,6 +3,7 @@ import {
   QUAXWELL_MAX_STATS,
   QUAQUAVAL_MAX_STATS,
   TALONFLAME_ATEAM_BUILD,
+  GARCHOMP_ATEAM_BUILD,
   ANNIHILAPE_BULKY_BUILD
 } from "./__factories__/pokemon.factory";
 import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/pokemon/PokemonBuild";
@@ -10,6 +11,7 @@ import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/poke
 import { BattleState } from "../models/battle/BattleState";
 import { createNewBattleState1v1 } from "./__factories__/battle.factory";
 import { calculateDamage } from "../models/battle/damage-calc";
+import { createNewPokemonBattleState } from "../models/battle/PokemonBattleState";
 
 describe("ITEMS", () => {
   let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
@@ -17,6 +19,7 @@ describe("ITEMS", () => {
   let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
   let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
   let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+  let garchompBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GARCHOMP_ATEAM_BUILD);
 
   describe("LIFE_ORB", () => {
 
@@ -189,6 +192,42 @@ describe("ITEMS", () => {
       });
 
     })
+
+  });
+
+  describe("IRON_BALL", () => {
+
+    it("hits flying pokemon for neutral damage", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(garchompBuild, {item_ident: "leftovers"}),
+        Object.assign(talonflameBuild, {})
+      );
+
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "earthquake",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0,
+        hardcodedTargetingValue: "spread"
+      });
+      expect(damage).toEqual(0);
+
+      battleState.red_side_pokemon[0].item_ident = "iron-ball";
+
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "earthquake",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0,
+        hardcodedTargetingValue: "spread"
+      });
+      expect(damage).toEqual(93);
+
+    });
 
   });
 
