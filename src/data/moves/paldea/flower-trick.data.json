@@ -1,0 +1,11 @@
+{
+  "ident": "flower-trick",
+  "type_ident": "grass",
+  "category_ident": "physical",
+  "base_power": 70,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities. This move does not check accuracy.",
+  "critical_hit_stage_index": 3
+}

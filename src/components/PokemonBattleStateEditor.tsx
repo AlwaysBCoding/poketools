@@ -17,9 +17,9 @@ import {
   PokemonMoveIdent
 } from "../models/pokemon/PokemonShared";
 
-import { toTitleCase } from "../decorators/DecoratorsShared";
 import { PokemonTypeBadge, PokemonTypeSelectList } from "../decorators/PokemonType";
 import { PokemonSelectList, displayPokemonGender } from "../decorators/Pokemon";
+import { displayPokemonMove } from "../decorators/PokemonMove";
 import { PokemonMoveCategoryBadge } from "../decorators/PokemonMoveCategory";
 import { PokemonNatureSelectList } from "../decorators/PokemonNature";
 import { PokemonItemSelectList } from "../decorators/PokemonItem";
@@ -70,19 +70,37 @@ const StatBoostSelectList: React.FC<{
 
 export const PokemonBattleStateEditor: React.FC<{
   initialPokemonBattleState: PokemonBattleState,
-  updatePokemonBattleState?: (nextPokemonBattleState: PokemonBattleState) => void
+  updatePokemonBattleState?: (nextPokemonBattleState: PokemonBattleState) => void,
+  targeting: string,
+  updateTargeting?: (nextTargeting: string) => void,
+  criticalHit: boolean,
+  updateCriticalHit?: (nextCriticalHit: boolean) => void,
   damageCalcs?: number[][];
 }> = ({
   initialPokemonBattleState,
   updatePokemonBattleState = () => undefined,
+  targeting,
+  updateTargeting = () => undefined,
+  criticalHit,
+  updateCriticalHit = () => undefined,
   damageCalcs = []
 }) => {
   const forceUpdate = useForceUpdate();
   const [pokemonBattleState, setPokemonBattleState] = useState<PokemonBattleState>(initialPokemonBattleState);
+  const [targetingValue, setTargetingValue] = useState<string>(targeting);
+  const [criticalHitValue, setCriticalHitValue] = useState<boolean>(criticalHit);
 
   useEffect(() => {
     setPokemonBattleState(initialPokemonBattleState);
   }, [initialPokemonBattleState]);
+
+ useEffect(() => {
+  setTargetingValue(targeting);
+ }, [targeting]);
+
+ useEffect(() => {
+  setCriticalHitValue(criticalHit);
+ }, [criticalHit]);
 
   const handleStatValueChange = (statIdent: string, value: string) => {
     const nextPokemonBattleState = pokemonBattleState;
@@ -224,6 +242,23 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
+  const handleTargetingSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    setTargetingValue(e.target.value);
+    updateTargeting(e.target.value);
+    forceUpdate();
+  }
+
+  const handleCriticalHitSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    if(e.target.value === "false") {
+      setCriticalHitValue(false);
+      updateCriticalHit(false);
+    } else if(e.target.value === "true") {
+      setCriticalHitValue(true);
+      updateCriticalHit(true);
+    }
+    forceUpdate();
+  }
+
   const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBattleState.pokemon_build.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBattleState.pokemon_build.pokemon.ident.split("-")[0]}/${pokemonBattleState.pokemon_build.pokemon.ident}.static.png`);
   const move0 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[0] });
   const move1 = allMoves.find((move: PokemonMoveSimple) => { return move.ident === pokemonBattleState.pokemon_build.move_idents[1] });
@@ -293,8 +328,8 @@ export const PokemonBattleStateEditor: React.FC<{
         <div className="data-row data-row-select-value">
           <p className="data-row-label">Terastallized</p>
           <select className="terastallized-select-list" value={`${pokemonBattleState.terastallized}`} onChange={(e) => { handleTerastallizedChange(e.target.value); }}>
-            <option value={"false"}>False</option>
-            <option value={"true"}>True</option>
+            <option value={"false"}>No</option>
+            <option value={"true"}>Yes</option>
           </select>
         </div>
       </div>
@@ -426,7 +461,7 @@ export const PokemonBattleStateEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -461,7 +496,7 @@ export const PokemonBattleStateEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -496,7 +531,7 @@ export const PokemonBattleStateEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -531,7 +566,7 @@ export const PokemonBattleStateEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBattleState.pokemon_build.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -560,6 +595,22 @@ export const PokemonBattleStateEditor: React.FC<{
                 suffix={"%"} />
             </>
           ) : (<></>)}
+        </div>
+      </div>
+      <div className="data-group pokemon-move-modifiers">
+        <div className="data-row data-row-select-value">
+          <p className="data-row-label">Targeting</p>
+          <select className="targeting-select-list" value={targetingValue} onChange={handleTargetingSelect}>
+            <option value={"single"}>Single</option>
+            <option value={"spread"}>Spread</option>
+          </select>
+        </div>
+        <div className="data-row data-row-select-value">
+          <p className="data-row-label">Critical Hit</p>
+          <select className="critical-hit-select-list" value={`${criticalHitValue}`} onChange={handleCriticalHitSelect}>
+            <option value={"false"}>No</option>
+            <option value={"true"}>Yes</option>
+          </select>
         </div>
       </div>
     </div>

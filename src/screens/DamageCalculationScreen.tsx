@@ -42,6 +42,11 @@ export const DamageCalculationScreen = () => {
   const [activeAttackingTeamIndex, setActiveAttackingTeamIndex] = useState<number | undefined>(undefined);
   const [activeDefendingTeamIndex, setActiveDefendingTeamIndex] = useState<number | undefined>(undefined);
 
+  const [attackingTargetingValue, setAttackingTargetingValue] = useState<string>("single");
+  const [attackingCriticalHitValue, setAttackingCriticalHitValue] = useState<boolean>(false);
+  const [defendingTargetingValue, setDefendingTargetingValue] = useState<string>("single");
+  const [defendingCriticalHitValue, setDefendingCriticalHitValue] = useState<boolean>(false);
+
   const emptyBattleState: BattleState = createEmptyBattleState();
 
   useEffect(() => {
@@ -93,13 +98,35 @@ export const DamageCalculationScreen = () => {
     forceUpdate();
   }
 
-  const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number, side: string) => {
+  const updateTargeting = (nextTargeting: string, side: "attacking" | "defending"): void => {
+    if(side === "attacking") {
+      setAttackingTargetingValue(nextTargeting);
+    } else if(side === "defending") {
+      setDefendingTargetingValue(nextTargeting);
+    }
+    forceUpdate();
+  }
+
+  const updateCriticalHit = (nextCriticalHit: boolean, side: "attacking" | "defending"): void => {
+    if(side === "attacking") {
+      setAttackingCriticalHitValue(nextCriticalHit);
+    } else if(side === "defending") {
+      setDefendingCriticalHitValue(nextCriticalHit);
+    }
+    forceUpdate();
+  }
+
+  const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number, side: "attacking" | "defending") => {
     if(side === "attacking") {
       setActiveAttackingTeamIndex(teamIndex);
       selectActiveAttackingPokemon(pokemonBuild);
+      setAttackingTargetingValue("single");
+      setAttackingCriticalHitValue(false);
     } else if(side === "defending") {
       setActiveDefendingTeamIndex(teamIndex);
       selectActiveDefendingPokemon(pokemonBuild);
+      setDefendingTargetingValue("single");
+      setDefendingCriticalHitValue(false);
     }
   }
 
@@ -113,34 +140,38 @@ export const DamageCalculationScreen = () => {
         activeAttackingPokemonBattleState,
         activeDefendingPokemonBattleState,
         moveIdent,
-        0.85
+        0.85,
+        attackingCriticalHitValue ? 1 : 0
       );
       const highRollDamageAmount = calculateDamage(
         emptyBattleState,
         activeAttackingPokemonBattleState,
         activeDefendingPokemonBattleState,
         moveIdent,
-        1.00
+        1.00,
+        attackingCriticalHitValue ? 1 : 0
       );
       return [
         Number(((lowRollDamageAmount / activeDefendingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
         Number(((highRollDamageAmount / activeDefendingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
       ];
     });
-    defendingPokemonDamageCalcs = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
+    defendingPokemonDamageCalcs = activeDefendingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage(
         emptyBattleState,
         activeDefendingPokemonBattleState,
         activeAttackingPokemonBattleState,
         moveIdent,
-        0.85
+        0.85,
+        defendingCriticalHitValue ? 1 : 0
       );
       const highRollDamageAmount = calculateDamage(
         emptyBattleState,
         activeDefendingPokemonBattleState,
         activeAttackingPokemonBattleState,
         moveIdent,
-        1.00
+        1.00,
+        defendingCriticalHitValue ? 1 : 0
       );
       return [
         Number(((lowRollDamageAmount / activeAttackingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
@@ -183,6 +214,10 @@ export const DamageCalculationScreen = () => {
               <PokemonBattleStateEditor
                 initialPokemonBattleState={activeAttackingPokemonBattleState}
                 updatePokemonBattleState={updateAttackingPokemonBattleState}
+                targeting={attackingTargetingValue}
+                updateTargeting={(nextTargeting: string) => { updateTargeting(nextTargeting, "attacking") }}
+                criticalHit={attackingCriticalHitValue}
+                updateCriticalHit={(nextCriticalHit: boolean) => { updateCriticalHit(nextCriticalHit, "attacking") }}
                 damageCalcs={attackingPokemonDamageCalcs} />
             </>
           ) : (<></>)}
@@ -193,6 +228,10 @@ export const DamageCalculationScreen = () => {
               <PokemonBattleStateEditor
                 initialPokemonBattleState={activeDefendingPokemonBattleState}
                 updatePokemonBattleState={updateDefendingPokemonBattleState}
+                targeting={defendingTargetingValue}
+                updateTargeting={(nextTargeting: string) => { updateTargeting(nextTargeting, "defending") }}
+                criticalHit={defendingCriticalHitValue}
+                updateCriticalHit={(nextCriticalHit: boolean) => { updateCriticalHit(nextCriticalHit, "defending") }}
                 damageCalcs={defendingPokemonDamageCalcs} />
             </>
           ) : (<></>)}

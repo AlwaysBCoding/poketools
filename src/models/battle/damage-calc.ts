@@ -43,7 +43,8 @@ export const calculateDamage = ((
   attackingPokemon: PokemonBattleState,
   targetPokemon: PokemonBattleState,
   moveIdent: PokemonMoveIdent,
-  hardcodedRoll?: number
+  hardcodedRoll?: number,
+  hardcodedCritRoll?: number
 ): number => {
 
   const pokemonMove: PokemonMove = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMove);
@@ -56,11 +57,19 @@ export const calculateDamage = ((
 
   let power = 0;
   if(pokemonMove && pokemonMove.base_power) { power = pokemonMove.base_power; }
-  if(pokemonMove.ident === "acrobatics" && attackingPokemon.item_ident === null) { power = pokemonMove.base_power! * 2; }
+  if(pokemonMove && pokemonMove.ident === "acrobatics" && attackingPokemon.item_ident === null) { power = pokemonMove.base_power! * 2; }
+
+  let isCriticalHit = false;
+  let critical = 1;
+  let activeCritStage = CRITICAL_HIT_STAGES[0];
+  const critRoll = hardcodedCritRoll || hardcodedCritRoll === 0 ? (1 - hardcodedCritRoll) : (1 - Math.random());
+  if(critRoll <= activeCritStage) {
+    isCriticalHit = true;
+    critical = 1.5;
+  }
 
   const targets = 1;
   const weather = 1;
-  const critical = 1;
   const random = hardcodedRoll ? hardcodedRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
   const level = attackingPokemon.pokemon_build.level;
 

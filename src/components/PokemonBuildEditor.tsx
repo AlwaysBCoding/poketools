@@ -16,12 +16,12 @@ import { PokemonMoveSimple } from "../models/pokemon/PokemonMove";
 import { calculateStatSpread } from "../models/pokemon/stat-calc";
 
 import { PokemonTypeBadge, PokemonTypeSelectList } from "../decorators/PokemonType";
+import { displayPokemonMove } from "../decorators/PokemonMove";
 import { PokemonMoveCategoryBadge } from "../decorators/PokemonMoveCategory";
 import { PokemonSelectList, displayPokemonGender } from "../decorators/Pokemon";
 import { PokemonNatureSelectList } from "../decorators/PokemonNature";
 import { PokemonAbilitySelectList } from "../decorators/PokemonAbility";
 import { PokemonItemSelectList } from "../decorators/PokemonItem";
-import { toTitleCase } from "../decorators/DecoratorsShared";
 
 import AllMoves from "../data/moves/all-moves.json";
 const ALL_MOVES = AllMoves as PokemonMoveSimple[];
@@ -317,7 +317,7 @@ export const PokemonBuildEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBuild.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -334,7 +334,7 @@ export const PokemonBuildEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBuild.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -351,7 +351,7 @@ export const PokemonBuildEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBuild.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>
@@ -368,7 +368,7 @@ export const PokemonBuildEditor: React.FC<{
             <option value={""}>(none)</option>
             {pokemonBuild.pokemon.move_idents.map((moveIdent: PokemonMoveIdent, index: number) => {
               return (
-                <option key={`option-${index}`} value={moveIdent}>{toTitleCase(moveIdent)}</option>
+                <option key={`option-${index}`} value={moveIdent}>{displayPokemonMove(moveIdent)}</option>
               );
             })}
           </select>

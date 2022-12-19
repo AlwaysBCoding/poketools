@@ -24,7 +24,8 @@ describe("MOVES", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "acrobatics",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(72);
 
@@ -37,7 +38,8 @@ describe("MOVES", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "acrobatics",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(144);
     });

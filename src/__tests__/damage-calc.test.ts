@@ -25,9 +25,11 @@ describe("DAMAGE_CALC", () => {
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
-        "u-turn"
+        "u-turn",
+        0.85,
+        0
       );
-      expect([27, 29, 30, 31, 32]).toContain(damage);
+      expect(damage).toEqual(27);
 
       meowscaradaBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
       quaquavalBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
@@ -40,9 +42,11 @@ describe("DAMAGE_CALC", () => {
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
-        "u-turn"
+        "u-turn",
+        0.85,
+        0
       );
-      expect([13, 14, 16]).toContain(damage);
+      expect(damage).toEqual(13);
     });
   });
 
@@ -62,7 +66,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "brave-bird",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(186);
 
@@ -78,7 +83,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "brave-bird",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(93);
     });
@@ -94,7 +100,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "brave-bird",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(186);
 
@@ -110,7 +117,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "brave-bird",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(248);
     });
@@ -126,7 +134,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "thunderbolt",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(51);
 
@@ -142,7 +151,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "thunderbolt",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(76);
     });
@@ -166,7 +176,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(134);
 
@@ -182,7 +193,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(200);
     });
@@ -200,7 +212,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(134);
 
@@ -216,7 +229,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(90);
     });
@@ -234,7 +248,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(134);
 
@@ -250,7 +265,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(200);
     });
@@ -268,7 +284,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(134);
 
@@ -284,7 +301,8 @@ describe("DAMAGE_CALC", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "shadow-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(90);
     });

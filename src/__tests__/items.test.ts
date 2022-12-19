@@ -29,9 +29,11 @@ describe("ITEMS", () => {
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
-        "u-turn"
+        "u-turn",
+        0.85,
+        0
       );
-      expect([21, 22, 23, 24, 25]).toContain(damage);
+      expect(damage).toEqual(21);
 
       var battleState: BattleState = createNewBattleState1v1(
         Object.assign(meowscaradaBuild, {item_ident: "life-orb"}),
@@ -41,9 +43,11 @@ describe("ITEMS", () => {
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
-        "u-turn"
+        "u-turn",
+        0.85,
+        0
       );
-      expect([27, 29, 30, 31, 32]).toContain(damage);
+      expect(damage).toEqual(27);
     });
 
   })
@@ -59,9 +63,11 @@ describe("ITEMS", () => {
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
-        "energy-ball"
+        "energy-ball",
+        0.85,
+        0
       );
-      expect([98, 102, 104, 108, 110, 114, 116]).toContain(damage);
+      expect(damage).toEqual(98);
 
       var battleState: BattleState = createNewBattleState1v1(
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
@@ -72,9 +78,11 @@ describe("ITEMS", () => {
         battleState,
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
-        "energy-ball"
+        "energy-ball",
+        0.85,
+        0
       );
-      expect([66, 68, 72, 74, 78]).toContain(damage);
+      expect(damage).toEqual(66);
     });
 
   });
@@ -91,7 +99,8 @@ describe("ITEMS", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "energy-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(116);
 
@@ -105,7 +114,8 @@ describe("ITEMS", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "energy-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(78);
     })
@@ -120,7 +130,8 @@ describe("ITEMS", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "energy-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(98);
 
@@ -134,7 +145,8 @@ describe("ITEMS", () => {
         battleState.blue_side_pokemon[0],
         battleState.red_side_pokemon[0],
         "energy-ball",
-        0.85
+        0.85,
+        0
       );
       expect(damage).toEqual(98);
     });
@@ -156,7 +168,8 @@ describe("ITEMS", () => {
           battleState.blue_side_pokemon[0],
           battleState.red_side_pokemon[0],
           "brave-bird",
-          0.85
+          0.85,
+          0
         );
         expect(damage).toEqual(156);
 
@@ -169,7 +182,8 @@ describe("ITEMS", () => {
           battleState.blue_side_pokemon[0],
           battleState.red_side_pokemon[0],
           "brave-bird",
-          0.85
+          0.85,
+          0
         );
         expect(damage).toEqual(186);
       });
