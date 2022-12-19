@@ -19,28 +19,28 @@ describe("MOVES", () => {
         Object.assign(talonflameBuild, {item_ident: "leftovers"}),
         Object.assign(annihilapeBuild, {item_ident: "leftovers"})
       );
-      var damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "acrobatics",
-        0.85,
-        0
-      );
+      var damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "acrobatics",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+    });
       expect(damage).toEqual(72);
 
       battleState = createNewBattleState1v1(
         Object.assign(talonflameBuild, {item_ident: null}),
         Object.assign(annihilapeBuild, {item_ident: "leftovers"})
       );
-      var damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "acrobatics",
-        0.85,
-        0
-      );
+      var damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "acrobatics",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(144);
     });
 

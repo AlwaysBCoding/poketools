@@ -5,6 +5,7 @@ import { PokemonMove } from "../pokemon/PokemonMove";
 
 import allMoves from "../../data/moves/all-moves.json";
 import typeChart from "../../data/pokemon-type-effectiveness.json";
+import { Pokemon } from "../pokemon/Pokemon";
 
 const LIFE_ORB_MODIFIER = (5324/4096);
 const SPREAD_MODIFIER = (3072/4096);
@@ -38,14 +39,25 @@ const pokeRound = (x: number) => {
   }
 }
 
-export const calculateDamage = ((
-  battleState: BattleState,
-  attackingPokemon: PokemonBattleState,
-  targetPokemon: PokemonBattleState,
-  moveIdent: PokemonMoveIdent,
-  hardcodedRoll?: number,
-  hardcodedCritRoll?: number
-): number => {
+interface DamageCalcParams {
+  battleState: BattleState;
+  attackingPokemon: PokemonBattleState;
+  targetPokemon: PokemonBattleState;
+  moveIdent: PokemonMoveIdent;
+  hardcodedRandomRoll?: number;
+  hardcodedCritRoll?: number;
+  hardcodedTargetingValue?: string;
+}
+
+export const calculateDamage = ({
+  battleState,
+  attackingPokemon,
+  targetPokemon,
+  moveIdent,
+  hardcodedRandomRoll,
+  hardcodedCritRoll,
+  hardcodedTargetingValue,
+}: DamageCalcParams): number => {
 
   const pokemonMove: PokemonMove = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMove);
   let aValue = 1;
@@ -70,7 +82,7 @@ export const calculateDamage = ((
 
   const targets = 1;
   const weather = 1;
-  const random = hardcodedRoll ? hardcodedRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
+  const random = hardcodedRandomRoll ? hardcodedRandomRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
   const level = attackingPokemon.pokemon_build.level;
 
   let totalDamage = 0;
@@ -181,4 +193,4 @@ export const calculateDamage = ((
 
   return totalDamage;
 
-});
+};

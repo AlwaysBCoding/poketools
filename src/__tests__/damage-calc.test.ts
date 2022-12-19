@@ -21,14 +21,14 @@ describe("DAMAGE_CALC", () => {
         Object.assign(meowscaradaBuild, {item_ident: "life-orb"}),
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
       );
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "u-turn",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "u-turn",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(27);
 
       meowscaradaBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
@@ -38,14 +38,14 @@ describe("DAMAGE_CALC", () => {
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
       );
       battleState.blue_side_pokemon[0].status = "burned";
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "u-turn",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "u-turn",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(13);
     });
   });
@@ -61,14 +61,14 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {item_ident: "leftovers"})
       );
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "brave-bird",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "brave-bird",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(186);
 
       battleState = createNewBattleState1v1(
@@ -78,14 +78,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.red_side_pokemon[0].terastallized = true;
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "brave-bird",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "brave-bird",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(93);
     });
 
@@ -95,14 +95,14 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {item_ident: "leftovers"})
       );
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "brave-bird",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "brave-bird",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(186);
 
       battleState = createNewBattleState1v1(
@@ -112,14 +112,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.blue_side_pokemon[0].terastallized = true;
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "brave-bird",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "brave-bird",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(248);
     });
 
@@ -129,14 +129,14 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {item_ident: "leftovers"})
       );
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "thunderbolt",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "thunderbolt",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(51);
 
       battleState = createNewBattleState1v1(
@@ -146,14 +146,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.blue_side_pokemon[0].terastallized = true;
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "thunderbolt",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "thunderbolt",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(76);
     });
 
@@ -171,14 +171,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(134);
 
       battleState = createNewBattleState1v1(
@@ -188,14 +188,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 1, special_defense: 0, speed: 0};
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(200);
     });
 
@@ -207,14 +207,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(134);
 
       battleState = createNewBattleState1v1(
@@ -224,14 +224,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: -1, special_defense: 0, speed: 0};
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(90);
     });
 
@@ -243,14 +243,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(134);
 
       battleState = createNewBattleState1v1(
@@ -260,14 +260,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: -1, speed: 0};
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(200);
     });
 
@@ -279,14 +279,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
 
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(134);
 
       battleState = createNewBattleState1v1(
@@ -296,14 +296,14 @@ describe("DAMAGE_CALC", () => {
 
       battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 1, speed: 0};
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "shadow-ball",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "shadow-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(90);
     });
 

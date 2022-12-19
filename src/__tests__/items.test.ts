@@ -25,28 +25,28 @@ describe("ITEMS", () => {
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
       );
-      var damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "u-turn",
-        0.85,
-        0
-      );
+      var damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "u-turn",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(21);
 
       var battleState: BattleState = createNewBattleState1v1(
         Object.assign(meowscaradaBuild, {item_ident: "life-orb"}),
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
       );
-      var damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "u-turn",
-        0.85,
-        0
-      );
+      var damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "u-turn",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(27);
     });
 
@@ -59,14 +59,14 @@ describe("ITEMS", () => {
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
       );
-      var damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "energy-ball",
-        0.85,
-        0
-      );
+      var damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "energy-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(98);
 
       var battleState: BattleState = createNewBattleState1v1(
@@ -74,14 +74,14 @@ describe("ITEMS", () => {
         Object.assign(quaquavalBuild, {item_ident: "assault-vest"})
       );
 
-      var damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "energy-ball",
-        0.85,
-        0
-      );
+      var damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "energy-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(66);
     });
 
@@ -94,14 +94,14 @@ describe("ITEMS", () => {
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
         Object.assign(quaxwellBuild, {item_ident: "leftovers"})
       );
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "energy-ball",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "energy-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(116);
 
       battleState = createNewBattleState1v1(
@@ -109,14 +109,14 @@ describe("ITEMS", () => {
         Object.assign(quaxwellBuild, {item_ident: "eviolite"})
       );
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "energy-ball",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "energy-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(78);
     })
 
@@ -125,14 +125,14 @@ describe("ITEMS", () => {
         Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
         Object.assign(quaquavalBuild, {item_ident: "leftovers"})
       );
-      let damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "energy-ball",
-        0.85,
-        0
-      );
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "energy-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(98);
 
       battleState = createNewBattleState1v1(
@@ -140,14 +140,14 @@ describe("ITEMS", () => {
         Object.assign(quaquavalBuild, {item_ident: "eviolite"})
       );
 
-      damage = calculateDamage(
-        battleState,
-        battleState.blue_side_pokemon[0],
-        battleState.red_side_pokemon[0],
-        "energy-ball",
-        0.85,
-        0
-      );
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "energy-ball",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0
+      });
       expect(damage).toEqual(98);
     });
 
@@ -163,28 +163,28 @@ describe("ITEMS", () => {
           Object.assign(annihilapeBuild, {item_ident: "leftovers"})
         );
 
-        let damage = calculateDamage(
-          battleState,
-          battleState.blue_side_pokemon[0],
-          battleState.red_side_pokemon[0],
-          "brave-bird",
-          0.85,
-          0
-        );
+        let damage = calculateDamage({
+          battleState: battleState,
+          attackingPokemon: battleState.blue_side_pokemon[0],
+          targetPokemon: battleState.red_side_pokemon[0],
+          moveIdent: "brave-bird",
+          hardcodedRandomRoll: 0.85,
+          hardcodedCritRoll: 0
+        });
         expect(damage).toEqual(156);
 
         battleState = createNewBattleState1v1(
           Object.assign(talonflameBuild, {item_ident: "sharp-beak"}),
           Object.assign(annihilapeBuild, {item_ident: "leftovers"})
         );
-        damage = calculateDamage(
-          battleState,
-          battleState.blue_side_pokemon[0],
-          battleState.red_side_pokemon[0],
-          "brave-bird",
-          0.85,
-          0
-        );
+        damage = calculateDamage({
+          battleState: battleState,
+          attackingPokemon: battleState.blue_side_pokemon[0],
+          targetPokemon: battleState.red_side_pokemon[0],
+          moveIdent: "brave-bird",
+          hardcodedRandomRoll: 0.85,
+          hardcodedCritRoll: 0
+        });
         expect(damage).toEqual(186);
       });
 

@@ -135,44 +135,48 @@ export const DamageCalculationScreen = () => {
 
   if(activeAttackingPokemonBattleState && activeDefendingPokemonBattleState) {
     attackingPokemonDamageCalcs = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
-      const lowRollDamageAmount = calculateDamage(
-        emptyBattleState,
-        activeAttackingPokemonBattleState,
-        activeDefendingPokemonBattleState,
-        moveIdent,
-        0.85,
-        attackingCriticalHitValue ? 1 : 0
-      );
-      const highRollDamageAmount = calculateDamage(
-        emptyBattleState,
-        activeAttackingPokemonBattleState,
-        activeDefendingPokemonBattleState,
-        moveIdent,
-        1.00,
-        attackingCriticalHitValue ? 1 : 0
-      );
+      const lowRollDamageAmount = calculateDamage({
+        battleState: emptyBattleState,
+        attackingPokemon: activeAttackingPokemonBattleState,
+        targetPokemon: activeDefendingPokemonBattleState,
+        moveIdent: moveIdent,
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: attackingCriticalHitValue ? 1 : 0,
+        hardcodedTargetingValue: attackingTargetingValue
+      });
+      const highRollDamageAmount = calculateDamage({
+        battleState: emptyBattleState,
+        attackingPokemon: activeAttackingPokemonBattleState,
+        targetPokemon: activeDefendingPokemonBattleState,
+        moveIdent: moveIdent,
+        hardcodedRandomRoll: 1.00,
+        hardcodedCritRoll: attackingCriticalHitValue ? 1 : 0,
+        hardcodedTargetingValue: attackingTargetingValue
+      });
       return [
         Number(((lowRollDamageAmount / activeDefendingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
         Number(((highRollDamageAmount / activeDefendingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
       ];
     });
     defendingPokemonDamageCalcs = activeDefendingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
-      const lowRollDamageAmount = calculateDamage(
-        emptyBattleState,
-        activeDefendingPokemonBattleState,
-        activeAttackingPokemonBattleState,
-        moveIdent,
-        0.85,
-        defendingCriticalHitValue ? 1 : 0
-      );
-      const highRollDamageAmount = calculateDamage(
-        emptyBattleState,
-        activeDefendingPokemonBattleState,
-        activeAttackingPokemonBattleState,
-        moveIdent,
-        1.00,
-        defendingCriticalHitValue ? 1 : 0
-      );
+      const lowRollDamageAmount = calculateDamage({
+        battleState: emptyBattleState,
+        attackingPokemon: activeDefendingPokemonBattleState,
+        targetPokemon: activeAttackingPokemonBattleState,
+        moveIdent: moveIdent,
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: defendingCriticalHitValue ? 1 : 0,
+        hardcodedTargetingValue: defendingTargetingValue
+      });
+      const highRollDamageAmount = calculateDamage({
+        battleState: emptyBattleState,
+        attackingPokemon: activeDefendingPokemonBattleState,
+        targetPokemon: activeAttackingPokemonBattleState,
+        moveIdent: moveIdent,
+        hardcodedRandomRoll: 1.00,
+        hardcodedCritRoll: defendingCriticalHitValue ? 1 : 0,
+        hardcodedTargetingValue: defendingTargetingValue
+      });
       return [
         Number(((lowRollDamageAmount / activeAttackingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
         Number(((highRollDamageAmount / activeAttackingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
