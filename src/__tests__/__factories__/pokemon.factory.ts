@@ -1,4 +1,34 @@
 import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
+import { PokemonBuild } from "../../models/pokemon/PokemonBuild";
+
+export const GARCHOMP_ATEAM_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "garchomp",
+  nickname: null,
+  item_ident: "life-orb",
+  ability_ident: "rough-skin",
+  level: 50,
+  shiny: false,
+  gender: "male",
+  tera_type_ident: "fire",
+  nature_ident: "adamant",
+  move_idents: ["dragon-claw", "earthquake", "tera-blast", "protect"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 31
+  },
+  ev_spread: {
+    hp: 4,
+    attack: 252,
+    defense: 0,
+    special_attack: 0,
+    special_defense: 0,
+    speed: 252
+  }
+}
 
 export const GHOLDENGO_ATEAM_BUILD: PokemonBuildTemplate = {
   pokemon_ident: "gholdengo",

@@ -66,21 +66,25 @@ export const calculateDamage = ({
   let type = 1;
   let other = 1;
   let burn = 1;
+  let spread = 1;
+  let critical = 1;
 
   let power = 0;
   if(pokemonMove && pokemonMove.base_power) { power = pokemonMove.base_power; }
   if(pokemonMove && pokemonMove.ident === "acrobatics" && attackingPokemon.item_ident === null) { power = pokemonMove.base_power! * 2; }
 
   let isCriticalHit = false;
-  let critical = 1;
   let activeCritStage = CRITICAL_HIT_STAGES[0];
   const critRoll = hardcodedCritRoll || hardcodedCritRoll === 0 ? (1 - hardcodedCritRoll) : (1 - Math.random());
   if(critRoll <= activeCritStage) {
     isCriticalHit = true;
-    critical = 1.5;
+    critical = CRITICAL_HIT_MODIFIER;
   }
 
-  const targets = 1;
+  if(pokemonMove && ["all-adjacent", "all-enemies"].includes(pokemonMove.target) && hardcodedTargetingValue === "spread") {
+    spread = SPREAD_MODIFIER;
+  }
+
   const weather = 1;
   const random = hardcodedRandomRoll ? hardcodedRandomRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
   const level = attackingPokemon.pokemon_build.level;
@@ -112,16 +116,16 @@ export const calculateDamage = ({
         if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
           stab = 2;
         } else {
-          stab = 1.5;
+          stab = STAB_MODIFIER;
         }
       } else {
         if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
-          stab = 1.5;
+          stab = STAB_MODIFIER;
         }
       }
     } else {
       if([attackingPokemon.pokemon_build.pokemon.primary_type_ident, attackingPokemon.pokemon_build.pokemon.secondary_type_ident].includes(pokemonMove.type_ident)) {
-        stab = 1.5;
+        stab = STAB_MODIFIER;
       }
     }
 
@@ -178,7 +182,7 @@ export const calculateDamage = ({
 
   if(power) {
     const baseDamage = Math.floor(Math.floor((Math.floor(((2 * level) / 5) + 2) * power * aValue) / dValue) / 50) + 2;
-    const targetsModifier = pokeRound(baseDamage * targets);
+    const targetsModifier = pokeRound(baseDamage * spread);
     const weatherModifier = pokeRound(targetsModifier * weather);
     const criticalHitModifier = pokeRound(weatherModifier * critical);
     const randomModifier = Math.floor(criticalHitModifier * random);

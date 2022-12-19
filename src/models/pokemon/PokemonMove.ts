@@ -79,7 +79,7 @@ export interface PokemonMove {
   detailed_description: string | null;
   type_ident: PokemonTypeIdent;
   category_ident: string;
-  target_ident: string;
+  target: PokemonMoveTarget;
   base_power: number | null;
   accuracy: number | null;
   accuracy_check: boolean;

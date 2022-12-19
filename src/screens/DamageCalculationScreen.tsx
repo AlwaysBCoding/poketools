@@ -120,13 +120,9 @@ export const DamageCalculationScreen = () => {
     if(side === "attacking") {
       setActiveAttackingTeamIndex(teamIndex);
       selectActiveAttackingPokemon(pokemonBuild);
-      setAttackingTargetingValue("single");
-      setAttackingCriticalHitValue(false);
     } else if(side === "defending") {
       setActiveDefendingTeamIndex(teamIndex);
       selectActiveDefendingPokemon(pokemonBuild);
-      setDefendingTargetingValue("single");
-      setDefendingCriticalHitValue(false);
     }
   }
 

@@ -1,5 +1,4 @@
 ## TODO
-  - figure out the right calcs for earthquake / spread moves
   - figure out the right calcs for assurance/avalanche power up moves
 
   - allow renaming of teams

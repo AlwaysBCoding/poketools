@@ -3,6 +3,7 @@ import {
   QUAQUAVAL_MAX_STATS,
   TALONFLAME_ATEAM_BUILD,
   GHOLDENGO_ATEAM_BUILD,
+  GARCHOMP_ATEAM_BUILD,
   ANNIHILAPE_BULKY_BUILD
 } from "./__factories__/pokemon.factory";
 
@@ -305,6 +306,46 @@ describe("DAMAGE_CALC", () => {
         hardcodedCritRoll: 0
       });
       expect(damage).toEqual(90);
+    });
+
+  });
+
+  describe("SPREAD_DAMAGE", () => {
+    let garchompBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GARCHOMP_ATEAM_BUILD);
+    let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+
+    test("it correctly reduces damage for spread attacks", () => {
+      let battleState: BattleState = createNewBattleState1v1(
+        Object.assign(garchompBuild, {item_ident: "leftovers"}),
+        Object.assign(annihilapeBuild, {item_ident: "leftovers"})
+      );
+
+      let damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "earthquake",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0,
+        hardcodedTargetingValue: "single"
+      });
+      expect(damage).toEqual(90);
+
+      battleState = createNewBattleState1v1(
+        Object.assign(garchompBuild, {}),
+        Object.assign(annihilapeBuild, {})
+      );
+
+      damage = calculateDamage({
+        battleState: battleState,
+        attackingPokemon: battleState.blue_side_pokemon[0],
+        targetPokemon: battleState.red_side_pokemon[0],
+        moveIdent: "earthquake",
+        hardcodedRandomRoll: 0.85,
+        hardcodedCritRoll: 0,
+        hardcodedTargetingValue: "spread"
+      });
+      expect(damage).toEqual(67);
     });
 
   });
