@@ -1,0 +1,10 @@
+{
+  "ident": "aerial-ace",
+  "type_ident": "flying",
+  "category_ident": "physical",
+  "base_power": 60,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "This move does not check accuracy."
+}

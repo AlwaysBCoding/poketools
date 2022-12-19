@@ -1,0 +1,18 @@
+{
+  "ident": "amnesia",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the user's Special Defense by 2 stages.",
+  "stat_changes": [
+    {
+      "stat_ident": "special_defense",
+      "stages": 2,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

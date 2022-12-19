@@ -1,0 +1,18 @@
+{
+  "ident": "acupressure",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 30,
+  "description": "Raises a random stat by 2 stages as long as the stat is not already at stage 6. The user can choose to use this move on itself or an adjacent ally. Fails if no stat stage can be raised or if used on an ally with a substitute.",
+  "stat_changes": [
+    {
+      "stat_ident": "random",
+      "stages": 2,
+      "frequency": 1
+    }
+  ],
+  "target": "self-or-ally"
+}

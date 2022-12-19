@@ -27,9 +27,17 @@ interface PokemonMoveModifierValue {
   ident: string;
 }
 
-interface PokemonMoveTarget {
-  ident: string;
-}
+type PokemonMoveTarget =
+  | "any-adjacent"
+  | "any-enemy"
+  | "any-ally"
+  | "all-adjacent"
+  | "all-enemies"
+  | "all-allies"
+  | "self"
+  | "self-or-ally"
+  | "self-and-allies"
+  | "global"
 
 interface PokemonMoveDelegate {
   ident: string;
@@ -55,9 +63,14 @@ export interface PokemonMoveSimple {
   priority: number;
   pp: number;
   description: string;
-  target?: any;
+  target?: PokemonMoveTarget;
   stat_changes?: any;
   secondary_effects?: any;
+  recovery?: any;
+  recoil?: any;
+  crash_damage?: any;
+  critical_hit_stage_index?: number;
+  multihit?: number[][];
 }
 
 export interface PokemonMove {

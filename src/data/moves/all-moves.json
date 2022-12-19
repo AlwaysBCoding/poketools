@@ -1,5 +1,471 @@
 [
   {
+    "ident": "absorb",
+    "type_ident": "grass",
+    "category_ident": "special",
+    "base_power": 20,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+    "recovery": [
+      {
+        "percentage_of_damage": 0.5
+      }
+    ]
+  },
+  {
+    "ident": "accelerock",
+    "type_ident": "rock",
+    "category_ident": "physical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 1,
+    "pp": 20,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "acid-armor",
+    "type_ident": "poison",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Defense by 2 stages.",
+    "stat_changes": [
+      {
+        "stat_ident": "defense",
+        "stages": 2,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "acid-spray",
+    "type_ident": "poison",
+    "category_ident": "special",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 100% chance to lower the target's Special Defense by 2 stages.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": -2,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "acid",
+    "type_ident": "poison",
+    "category_ident": "special",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 30,
+    "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "acrobatics",
+    "type_ident": "flying",
+    "category_ident": "physical",
+    "base_power": 55,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Power doubles if the user has no held item."
+  },
+  {
+    "ident": "acupressure",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "Raises a random stat by 2 stages as long as the stat is not already at stage 6. The user can choose to use this move on itself or an adjacent ally. Fails if no stat stage can be raised or if used on an ally with a substitute.",
+    "stat_changes": [
+      {
+        "stat_ident": "random",
+        "stages": 2,
+        "frequency": 1
+      }
+    ],
+    "target": "self-or-ally"
+  },
+  {
+    "ident": "aerial-ace",
+    "type_ident": "flying",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "This move does not check accuracy."
+  },
+  {
+    "ident": "after-you",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 15,
+    "description": "The target makes its move immediately after the user this turn, no matter the priority of its selected move. Fails if the target would have moved next anyway, or if the target already moved this turn."
+  },
+  {
+    "ident": "agility",
+    "type_ident": "psychic",
+    "category_ident": "non-damaing",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "Raises the user's Speed by 2 stages.",
+    "stat_changes": [
+      {
+        "stat_ident": "speed",
+        "stages": 2,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "air-cutter",
+    "type_ident": "flying",
+    "category_ident": "special",
+    "base_power": 60,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 25,
+    "description": "Has a higher chance for a critical hit.",
+    "critical_hit_stage_index": 1
+  },
+  {
+    "ident": "air-slash",
+    "type_ident": "flying",
+    "category_ident": "special",
+    "base_power": 75,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 30% chance to make the target flinch.",
+    "secondary_effects": [
+      {
+        "status": "flinched",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "ally-switch",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 2,
+    "pp": 15,
+    "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side."
+  },
+  {
+    "ident": "amnesia",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Special Defense by 2 stages.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": 2,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "ancient-power",
+    "type_ident": "rock",
+    "category_ident": "special",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "all",
+        "stages": 1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "apple-acid",
+    "type_ident": "grass",
+    "category_ident": "special",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 100% chance to lower the target's Special Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "aqua-cutter",
+    "type_ident": "water",
+    "category_ident": "pyhsical",
+    "base_power": 70,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a higher chance for a critical hit.",
+    "critical_hit_stage_index": 1
+  },
+  {
+    "ident": "aqua-jet",
+    "type_ident": "water",
+    "category_ident": "pyhsical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "aqua-ring",
+    "type_ident": "water",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "The user has 1/16 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect."
+  },
+  {
+    "ident": "aqua-step",
+    "type_ident": "water",
+    "category_ident": "physical",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 100% chance to raise the user's Speed by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "speed",
+        "stages": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "aqua-tail",
+    "type_ident": "water",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "arm-thrust",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 15,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+    "multihit": [
+      [
+        2,
+        0.35
+      ],
+      [
+        3,
+        0.35
+      ],
+      [
+        4,
+        0.15
+      ],
+      [
+        5,
+        0.15
+      ]
+    ]
+  },
+  {
+    "ident": "armor-cannon",
+    "type_ident": "fire",
+    "category_ident": "special",
+    "base_power": 120,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Lowers the user's Defense and Special Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "defense",
+        "stages": -1,
+        "frequency": 1
+      },
+      {
+        "stat_ident": "special_defense",
+        "stages": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "aromatic-mist",
+    "type_ident": "fairy",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the target's Special Defense by 1 stage. Fails if there is no ally adjacent to the user.",
+    "target": "any-ally",
+    "stat_changes": [
+      {
+        "stat_ident": "special_defense",
+        "stages": 1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "assurance",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Power doubles if the target has already taken damage this turn, other than direct damage from Belly Drum, confusion, Curse, or Pain Split."
+  },
+  {
+    "ident": "astonish",
+    "type_ident": "ghost",
+    "category_ident": "physical",
+    "base_power": 30,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 30% chance to make the target flinch.",
+    "secondary_effects": [
+      {
+        "status": "flinched",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "attack-order",
+    "type_ident": "bug",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a higher chance for a critical hit.",
+    "critical_hit_stage_index": 1
+  },
+  {
+    "ident": "attack-order",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if both the user and the target are the same gender, if either is genderless, or if the target is already infatuated. The effect ends when either the user or the target is no longer active. Pokemon with the Oblivious Ability or protected by the Aroma Veil Ability are immune."
+  },
+  {
+    "ident": "aura-sphere",
+    "type_ident": "fighting",
+    "category_ident": "special",
+    "base_power": 80,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "This move does not check accuracy."
+  },
+  {
+    "ident": "aurora-beam",
+    "type_ident": "ice",
+    "category_ident": "special",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 10% chance to lower the target's Attack by 1 stage.",
+    "stat_changes": [
+      {
+        "stat_ident": "attack",
+        "stages": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "aurora-veil",
+    "type_ident": "ice",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Hail."
+  },
+  {
+    "ident": "avalanche",
+    "type_ident": "ice",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": -4,
+    "pp": 10,
+    "description": "Power doubles if the user was hit by the target this turn."
+  },
+  {
+    "ident": "axe-kick",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 120,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+    "crash_damage": {
+      "percentage_of_maximum_hp": 0.5
+    }
+  },
+  {
     "ident": "brave-bird",
     "type_ident": "flying",
     "category_ident": "physical",
@@ -7,7 +473,10 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 15,
-    "description": "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP."
+    "description": "If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+    "recoil": {
+      "percentage_of_damage": 0.33
+    }
   },
   {
     "ident": "clear-smog",
@@ -92,7 +561,16 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 15,
-    "description": "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP."
+    "description": "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+    "recoil": {
+      "percentage_of_damage": 0.33
+    },
+    "secondary_effects": [
+      {
+        "status_ident": "burned",
+        "frequency": 0.1
+      }
+    ]
   },
   {
     "ident": "hydro-pump",

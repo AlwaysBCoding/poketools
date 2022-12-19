@@ -1,0 +1,10 @@
+{
+  "ident": "aqua-jet",
+  "type_ident": "water",
+  "category_ident": "pyhsical",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "No additional effect."
+}

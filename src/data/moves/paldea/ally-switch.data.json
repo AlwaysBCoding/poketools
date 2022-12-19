@@ -1,0 +1,10 @@
+{
+  "ident": "ally-switch",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 2,
+  "pp": 15,
+  "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side."
+}

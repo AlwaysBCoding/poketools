@@ -142,9 +142,13 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
-  const handleItemSelect = (pokemonItemIdent: PokemonItemIdent) => {
+  const handleItemSelect = (itemIdent: PokemonItemIdent) => {
     const nextPokemonBattleState = pokemonBattleState;
-    nextPokemonBattleState.item_ident = pokemonItemIdent;
+    if(itemIdent) {
+      nextPokemonBattleState.item_ident = itemIdent;
+    } else {
+      nextPokemonBattleState.item_ident = null;
+    }
     setPokemonBattleState(nextPokemonBattleState);
     updatePokemonBattleState(nextPokemonBattleState);
     forceUpdate();

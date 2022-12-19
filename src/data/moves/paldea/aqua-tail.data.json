@@ -1,0 +1,10 @@
+{
+  "ident": "aqua-tail",
+  "type_ident": "water",
+  "category_ident": "physical",
+  "base_power": 90,
+  "accuracy": 0.9,
+  "priority": 0,
+  "pp": 10,
+  "description": "No additional effect."
+}

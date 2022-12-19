@@ -1,0 +1,18 @@
+{
+  "ident": "aromatic-mist",
+  "type_ident": "fairy",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the target's Special Defense by 1 stage. Fails if there is no ally adjacent to the user.",
+  "target": "any-ally",
+  "stat_changes": [
+    {
+      "stat_ident": "special_defense",
+      "stages": 1,
+      "frequency": 1
+    }
+  ]
+}

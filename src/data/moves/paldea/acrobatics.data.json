@@ -1,0 +1,10 @@
+{
+  "ident": "acrobatics",
+  "type_ident": "flying",
+  "category_ident": "physical",
+  "base_power": 55,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Power doubles if the user has no held item."
+}

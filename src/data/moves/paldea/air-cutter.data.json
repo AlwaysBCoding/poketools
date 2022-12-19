@@ -1,0 +1,11 @@
+{
+  "ident": "air-cutter",
+  "type_ident": "flying",
+  "category_ident": "special",
+  "base_power": 60,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 25,
+  "description": "Has a higher chance for a critical hit.",
+  "critical_hit_stage_index": 1
+}

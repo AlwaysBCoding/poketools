@@ -13,6 +13,7 @@ const STAB_MODIFIER = (6144/4096);
 const BURN_MODIFIER = (2048/4096);
 
 const RANDOM_ROLLS = [0.85, 0.86, 0.87, 0.88, 0.89, 0.90, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00];
+const CRITICAL_HIT_STAGES = [(1/24), (1/8), (1/2), 1];
 
 const pokeRound = (x: number) => {
   if(x % 1 === 0.5) {
@@ -40,6 +41,7 @@ export const calculateDamage = ((
 
   let power = 0;
   if(pokemonMove && pokemonMove.base_power) { power = pokemonMove.base_power; }
+  if(pokemonMove.ident === "acrobatics" && attackingPokemon.item_ident === null) { power = pokemonMove.base_power! * 2; }
 
   const targets = 1;
   const weather = 1;

@@ -1,0 +1,10 @@
+{
+  "ident": "aura-sphere",
+  "type_ident": "fighting",
+  "category_ident": "special",
+  "base_power": 80,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "This move does not check accuracy."
+}

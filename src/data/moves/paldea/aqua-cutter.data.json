@@ -1,0 +1,11 @@
+{
+  "ident": "aqua-cutter",
+  "type_ident": "water",
+  "category_ident": "pyhsical",
+  "base_power": 70,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Has a higher chance for a critical hit.",
+  "critical_hit_stage_index": 1
+}
