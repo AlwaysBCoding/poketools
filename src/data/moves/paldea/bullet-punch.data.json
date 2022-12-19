@@ -1,0 +1,10 @@
+{
+  "ident": "bullet-punch",
+  "type_ident": "steel",
+  "category_ident": "physical",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 1,
+  "pp": 30,
+  "description": "No additional effect."
+}

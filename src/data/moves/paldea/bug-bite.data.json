@@ -1,0 +1,10 @@
+{
+  "ident": "bug-bite",
+  "type_ident": "bug",
+  "category_ident": "physical",
+  "base_power": 60,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability."
+}

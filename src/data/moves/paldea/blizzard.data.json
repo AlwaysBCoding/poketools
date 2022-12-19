@@ -1,0 +1,17 @@
+{
+  "ident": "blizzard",
+  "type_ident": "ice",
+  "category_ident": "special",
+  "base_power": 110,
+  "accuracy": 0.70,
+  "priority": 0,
+  "pp": 5,
+  "description": "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
+  "target": "all-enemies",
+  "secondary_effects": [
+    {
+      "status_ident": "frozen",
+      "frequency": 0.10
+    }
+  ]
+}

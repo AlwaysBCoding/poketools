@@ -1,0 +1,16 @@
+{
+  "ident": "breaking-swipe",
+  "type_ident": "dragon",
+  "category_ident": "physical",
+  "base_power": 60,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 100% chance to lower the target's Attack by 1 stage.",
+  "stat_changes": [
+    {
+      "attack": -1,
+      "frequency": 1
+    }
+  ]
+}

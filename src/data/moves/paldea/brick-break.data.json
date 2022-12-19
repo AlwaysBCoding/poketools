@@ -1,0 +1,10 @@
+{
+  "ident": "brick-break",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 75,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated."
+}

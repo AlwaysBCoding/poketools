@@ -1,0 +1,16 @@
+{
+  "ident": "bounce",
+  "type_ident": "flying",
+  "category_ident": "physical",
+  "base_power": 85,
+  "accuracy": 0.85,
+  "priority": 0,
+  "pp": 5,
+  "description": "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Gust, Hurricane, Sky Uppercut, Smack Down, Thousand Arrows, Thunder, and Twister, and Gust and Twister have doubled power when used against it. If the user is holding a Power Herb, the move completes in one turn.",
+  "secondary_effects": [
+    {
+      "status_ident": "paralyzed",
+      "frequency": 0.30
+    }
+  ]
+}

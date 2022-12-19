@@ -1,0 +1,16 @@
+{
+  "ident": "baby-doll-eyes",
+  "type_ident": "fairy",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 1,
+  "pp": 30,
+  "description": "Lowers the target's Attack by 1 stage.",
+  "stat_changes": [
+    {
+      "attack": -1,
+      "frequency": 1
+    }
+  ]
+}

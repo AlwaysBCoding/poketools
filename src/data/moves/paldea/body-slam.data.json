@@ -1,0 +1,16 @@
+{
+  "ident": "body-slam",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 85,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 30% chance to paralyze the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+  "secondary_effects": [
+    {
+      "status_ident": "paralyzed",
+      "frequency": 0.30
+    }
+  ]
+}

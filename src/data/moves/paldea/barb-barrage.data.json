@@ -1,0 +1,16 @@
+{
+  "ident": "barb-barrage",
+  "type_ident": "poison",
+  "category_ident": "physical",
+  "base_power": 60,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 50% chance to poison the target. Power doubles if the target is poisoned.",
+  "secondary_effects": [
+    {
+      "status_ident": "poisoned",
+      "frequency": 0.5
+    }
+  ]
+}

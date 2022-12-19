@@ -1,0 +1,22 @@
+{
+  "ident": "belly-drum",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "Raises the user's Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack stat stage is 6.",
+  "stat_changes": [
+    {
+      "stat_ident": "attack",
+      "stages": 12,
+      "frequency": 1
+    },
+    {
+      "stat_ident": "hp",
+      "percentage_of_maximum": -0.50,
+      "frequency": 1
+    }
+  ]
+}

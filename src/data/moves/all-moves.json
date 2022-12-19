@@ -466,6 +466,250 @@
     }
   },
   {
+    "ident": "baby-doll-eyes",
+    "type_ident": "fairy",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 1,
+    "pp": 30,
+    "description": "Lowers the target's Attack by 1 stage.",
+    "stat_changes": [
+      {
+        "attack": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "baneful-bunker",
+    "type_ident": "poison",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 4,
+    "pp": 10,
+    "description": "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
+  },
+  {
+    "ident": "barb-barrage",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 50% chance to poison the target. Power doubles if the target is poisoned.",
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 0.5
+      }
+    ]
+  },
+  {
+    "ident": "baton-pass",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 40,
+    "description": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes, confusion, and certain move effects transferred to it."
+  },
+  {
+    "ident": "belch",
+    "type_ident": "poison",
+    "category_ident": "special",
+    "base_power": 120,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "This move cannot be selected until the user eats a Berry, either by eating one that was held, stealing and eating one off another Pokemon with Bug Bite or Pluck, or eating one that was thrown at it with Fling. Once the condition is met, this move can be selected and used for the rest of the battle even if the user gains or uses another item or switches out. Consuming a Berry with Natural Gift does not count for the purposes of eating one."
+  },
+  {
+    "ident": "belly-drum",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "Raises the user's Attack by 12 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack stat stage is 6.",
+    "stat_changes": [
+      {
+        "stat_ident": "attack",
+        "stages": 12,
+        "frequency": 1
+      },
+      {
+        "stat_ident": "hp",
+        "percentage_of_maximum": -0.5,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "bind",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 15,
+    "accuracy": 0.85,
+    "priority": 0,
+    "pp": 20,
+    "description": "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move."
+  },
+  {
+    "ident": "bite",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "Has a 30% chance to make the target flinch.",
+    "secondary_effects": [
+      {
+        "status_ident": "flinched",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "bitter-blade",
+    "type_ident": "fire",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+    "recovery": [
+      {
+        "percentage_of_damage": 0.5
+      }
+    ]
+  },
+  {
+    "ident": "blast-burn",
+    "type_ident": "fire",
+    "category_ident": "special",
+    "base_power": 150,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 5,
+    "description": "If this move is successful, the user must recharge on the following turn and cannot select a move.",
+    "recharge_turn": true
+  },
+  {
+    "ident": "blizzard",
+    "type_ident": "ice",
+    "category_ident": "special",
+    "base_power": 110,
+    "accuracy": 0.7,
+    "priority": 0,
+    "pp": 5,
+    "description": "Has a 10% chance to freeze the target. If the weather is Hail, this move does not check accuracy.",
+    "target": "all-enemies",
+    "secondary_effects": [
+      {
+        "status_ident": "frozen",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "block",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field."
+  },
+  {
+    "ident": "body-press",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal."
+  },
+  {
+    "ident": "body-slam",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 85,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 30% chance to paralyze the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+    "secondary_effects": [
+      {
+        "status_ident": "paralyzed",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "bone-rush",
+    "type_ident": "ground",
+    "category_ident": "physical",
+    "base_power": 25,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+    "multihit": [
+      [
+        2,
+        0.35
+      ],
+      [
+        3,
+        0.35
+      ],
+      [
+        4,
+        0.15
+      ],
+      [
+        5,
+        0.15
+      ]
+    ]
+  },
+  {
+    "ident": "boomburst",
+    "type_ident": "normal",
+    "category_ident": "special",
+    "base_power": 140,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "No additional effect.",
+    "target": "all-adjacent"
+  },
+  {
+    "ident": "bounce",
+    "type_ident": "flying",
+    "category_ident": "physical",
+    "base_power": 85,
+    "accuracy": 0.85,
+    "priority": 0,
+    "pp": 5,
+    "description": "Has a 30% chance to paralyze the target. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Gust, Hurricane, Sky Uppercut, Smack Down, Thousand Arrows, Thunder, and Twister, and Gust and Twister have doubled power when used against it. If the user is holding a Power Herb, the move completes in one turn.",
+    "secondary_effects": [
+      {
+        "status_ident": "paralyzed",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
     "ident": "brave-bird",
     "type_ident": "flying",
     "category_ident": "physical",
@@ -477,6 +721,172 @@
     "recoil": {
       "percentage_of_damage": 0.33
     }
+  },
+  {
+    "ident": "breaking-swipe",
+    "type_ident": "dragon",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 100% chance to lower the target's Attack by 1 stage.",
+    "stat_changes": [
+      {
+        "attack": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "brick-break",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 75,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated."
+  },
+  {
+    "ident": "brine",
+    "type_ident": "water",
+    "category_ident": "special",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Power doubles if the target has less than or equal to half of its maximum HP remaining."
+  },
+  {
+    "ident": "brutal-swing",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "No additional effect.",
+    "target": "all-adjacent"
+  },
+  {
+    "ident": "bubble-beam",
+    "type_ident": "water",
+    "category_ident": "special",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 10% chance to lower the target's Speed by 1 stage.",
+    "stat_changes": [
+      {
+        "speed": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "bug-bite",
+    "type_ident": "bug",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability."
+  },
+  {
+    "ident": "bug-buzz",
+    "type_ident": "bug",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "special_defense": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "bulk-up",
+    "type_ident": "fighting",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Attack and Defense by 1 stage.",
+    "stat_changes": [
+      {
+        "attack": 1,
+        "frequency": 1,
+        "target": "self"
+      },
+      {
+        "defense": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "bulldoze",
+    "type_ident": "ground",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+    "target": "all-adjacent",
+    "stat_changes": [
+      {
+        "speed": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "bullet-punch",
+    "type_ident": "steel",
+    "category_ident": "physical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 1,
+    "pp": 30,
+    "description": "No additional effect."
+  },
+  {
+    "ident": "bullet-seed",
+    "type_ident": "grass",
+    "category_ident": "physical",
+    "base_power": 25,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 30,
+    "description": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+    "multihit": [
+      [
+        2,
+        0.35
+      ],
+      [
+        3,
+        0.35
+      ],
+      [
+        4,
+        0.15
+      ],
+      [
+        5,
+        0.15
+      ]
+    ]
   },
   {
     "ident": "clear-smog",
@@ -571,6 +981,17 @@
         "frequency": 0.1
       }
     ]
+  },
+  {
+    "ident": "flower-trick",
+    "type_ident": "grass",
+    "category_ident": "physical",
+    "base_power": 70,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities. This move does not check accuracy.",
+    "critical_hit_stage_index": 3
   },
   {
     "ident": "hydro-pump",
