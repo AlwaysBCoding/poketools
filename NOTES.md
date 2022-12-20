@@ -12,6 +12,19 @@
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
 
+## ML
+  - rock, paper, scissors game with hardcoded player logic based on environment
+    - weather, terrain
+    - weather (rain, sun, snow)
+    - terrain (electric, grass, psychic)
+    - if terrain(electric[1]) -> always throws rock
+    - if terrain(grass[2]) -> always throws paper
+    - if terrain(psychic[3]) -> always throws scissors
+    - if terrain(none[0]) -> revert to weather logic
+    - if weather(rain[1]) -> throws rock
+    - if weather(sun[2]) -> throws paper
+    - if weather(snow[3]) -> throws scissors
+
 ## Damaging Moves with Custom functionality to add
   - Ancient Power (all stats boosted 1 stage)
   - Assurance (2x base power if taret has already taken damage this turn)
