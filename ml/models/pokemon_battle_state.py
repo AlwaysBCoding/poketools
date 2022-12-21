@@ -1,11 +1,21 @@
+from models.pokemon import PokemonStatBoosts
+
 class PokemonBattleState():
   def __init__(self, pokemon_build):
+    self.pokemon_build = pokemon_build
+    self.primary_type_ident = pokemon_build.pokemon.primary_type_ident
+    self.secondary_type_ident = pokemon_build.pokemon.secondary_type_ident
+    self.ability_ident = pokemon_build.ability_ident
+    self.item_ident = pokemon_build.item_ident
+    self.stat_boosts = PokemonStatBoosts()
+    self.status = "healthy"
 
-# pokemon_build: PokemonBuild
+# self.location = ""
+# self.side = ""
+# self.volatile_statuses = ""
+
 # side: BattleSide
 # location: PokemonBattleLocation
-# ability_ident: PokemonAbilityIdent
-# item_ident: PokemonItemIdent | null
 # status: PokemonStatusIdent
 # volatile_statuses: PokemonVolatileStatus[]
 # stat_boosts: PokemonStatBoosts

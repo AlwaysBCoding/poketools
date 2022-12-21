@@ -1,32 +1,20 @@
-class PokemonBuildTemplate():
-  def __init__(self):
-
-# pokemon_ident: string
-# nickname: string | null
-# item_ident: string | null
-# ability_ident: string
-# level: number
-# shiny: boolean
-# gender: string[] | null
-# tera_type_ident: string | null
-# nature_ident: string | null
-# move_idents: string[]
-# iv_spread: PokemonStatSpread
-# ev_spread: PokemonStatSpread
-
 class PokemonBuild():
-  def __init__(self):
-
-# nickname: string | null
-# pokemon: Pokemon
-# item_ident: string | null
-# ability_ident: string
-# level: number
-# shiny: boolean
-# gender: string
-# tera_type_ident: string
-# nature_ident: string
-# move_idents: string[]
-# iv_spread: PokemonStatSpread
-# ev_spread: PokemonStatSpread
-# stat_spread: PokemonStatSpread
+  def __init__(
+    self,
+    pokemon,
+    item_ident,
+    ability_ident,
+    level,
+    gender,
+    tera_type_ident,
+    move_idents,
+    stat_spread
+  ):
+    self.pokemon = pokemon
+    self.item_ident = item_ident
+    self.ability_ident = ability_ident
+    self.level = level
+    self.gender = gender,
+    self.tera_type_ident = tera_type_ident
+    self.move_idents = move_idents
+    self.stat_spread = stat_spread
