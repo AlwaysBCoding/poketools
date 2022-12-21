@@ -1,0 +1,10 @@
+{
+  "ident": "sucker-punch",
+  "type_ident": "dark",
+  "category_ident": "physical",
+  "base_power": 70,
+  "accuracy": 1,
+  "priority": 1,
+  "pp": 5,
+  "description": "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user."
+}

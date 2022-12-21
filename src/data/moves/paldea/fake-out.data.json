@@ -1,0 +1,16 @@
+{
+  "ident": "fake-out",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 3,
+  "pp": 10,
+  "description": "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
+  "secondary_effects": [
+    {
+      "status_ident": "flinched",
+      "frequency": 1
+    }
+  ]
+}

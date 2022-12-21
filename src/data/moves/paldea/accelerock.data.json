@@ -6,5 +6,6 @@
   "accuracy": 1,
   "priority": 1,
   "pp": 20,
-  "description": "No additional effect."
+  "description": "No additional effect.",
+  "target": ""
 }

@@ -12,6 +12,21 @@ from pathlib import Path
 import json
 
 if __name__ == "__main__":
+  gastrodon_f = open(Path("../src/data/pokemon/paldea/328-gastrodon/gastrodon.data.json"))
+  gastrodon_data = json.load(gastrodon_f)
+  gastrodon = Pokemon(gastrodon_data)
+  gastrodon_build = PokemonBuild(
+    pokemon=gastrodon,
+    item_ident="leftovers",
+    ability_ident="storm-drain",
+    level=50,
+    gender="male",
+    tera_type_ident="flying",
+    move_idents=["clear-smog", "earth-power", "ice-beam", "hydro-pump"],
+    stat_spread=PokemonStatSpread(hp=218, attack=92, defense=88, special_attack=128, special_defense=130, speed=59)
+  )
+  gastrodon_battle_state = PokemonBattleState(gastrodon_build)
+
   garchomp_f = open(Path("../src/data/pokemon/paldea/128-garchomp/garchomp.data.json"))
   garchomp_data = json.load(garchomp_f)
   garchomp = Pokemon(garchomp_data)
@@ -22,7 +37,7 @@ if __name__ == "__main__":
     level=50,
     gender="male",
     tera_type_ident="fire",
-    move_idents=["dragon-claw", "earthquake", "tera-blast", "protect"],
+    move_idents=["dragon-claw", "earthquake", "bite", "fire-fang"],
     stat_spread=PokemonStatSpread(hp=183, attack=200, defense=115, special_attack=90, special_defense=105, speed=154)
   )
   garchomp_battle_state = PokemonBattleState(garchomp_build)
@@ -42,7 +57,50 @@ if __name__ == "__main__":
   )
   talonflame_battle_state = PokemonBattleState(talonflame_build)
 
-  damage = calculate_damage({}, garchomp_battle_state, talonflame_battle_state, "dragon-claw", hardcoded_random_roll=0.85, hardcoded_crit_roll=0)
+  gholdengo_f = open(Path("../src/data/pokemon/paldea/392-gholdengo/gholdengo.data.json"))
+  gholdengo_data = json.load(gholdengo_f)
+  gholdengo = Pokemon(gholdengo_data)
+  gholdengo_build = PokemonBuild(
+    pokemon=gholdengo,
+    item_ident="focus-sash",
+    ability_ident="good-as-gold",
+    level=50,
+    gender="genderless",
+    tera_type_ident="flying",
+    move_idents=["thunderbolt", "shadow-ball", "make-it-rain", "nasty-plot"],
+    stat_spread=PokemonStatSpread(hp=162, attack=72, defense=115, special_attack=185, special_defense=112, speed=149)
+  )
+  gholdengo_battle_state = PokemonBattleState(gholdengo_build)
+
+  tsareena_f = open(Path("../src/data/pokemon/paldea/83-tsareena/tsareena.data.json"))
+  tsareena_data = json.load(tsareena_f)
+  tsareena = Pokemon(tsareena_data)
+  tsareena_build = PokemonBuild(
+    pokemon=tsareena,
+    item_ident="choice-scarf",
+    ability_ident="queenly-majesty",
+    level=50,
+    gender="female",
+    tera_type_ident="grass",
+    move_idents=["power-whip", "u-turn", "low-sweep", "play-rough"],
+    stat_spread=PokemonStatSpread(hp=152, attack=172, defense=118, special_attack=63, special_defense=118, speed=132)
+  )
+  tsareena_battle_state = PokemonBattleState(tsareena_build)
+
+  grimmsnarl_f = open(Path("../src/data/pokemon/paldea/287-grimmsnarl/grimmsnarl.data.json"))
+  grimmsnarl_data = json.load(grimmsnarl_f)
+  grimmsnarl = Pokemon(grimmsnarl_data)
+  grimmsnarl_build = PokemonBuild(
+    pokemon=grimmsnarl,
+    item_ident="iron-ball",
+    ability_ident="prankster",
+    level=50,
+    gender="male",
+    tera_type_ident="steel",
+    move_idents=["fake-out", "sucker-punch", "spirit-break", "ice-punch"],
+    stat_spread=PokemonStatSpread(hp=195, attack=171, defense=85, special_attack=103, special_defense=111, speed=80)
+  )
+  grimmsnarl_battle_state = PokemonBattleState(grimmsnarl_build)
 
 # if __name__ == '__main__':
 #   env = Game()

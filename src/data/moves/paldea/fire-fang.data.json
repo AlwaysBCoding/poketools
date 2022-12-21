@@ -1,0 +1,21 @@
+{
+  "ident": "fire-fang",
+  "type_ident": "fire",
+  "category_ident": "physical",
+  "base_power": 65,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 10% chance to burn the target and a 10% chance to make it flinch.",
+  "target": "",
+  "secondary_effects": [
+    {
+      "status_ident": "burned",
+      "frequency": 0.10
+    },
+    {
+      "status_ident": "flinched",
+      "frequency": 0.10
+    }
+  ]
+}

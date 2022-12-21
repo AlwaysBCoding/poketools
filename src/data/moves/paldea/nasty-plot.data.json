@@ -1,17 +1,15 @@
 {
-  "ident": "acid-armor",
-  "type_ident": "poison",
+  "ident": "nasty-plot",
+  "type_ident": "dark",
   "category_ident": "non-damaging",
   "base_power": null,
   "accuracy": null,
   "priority": 0,
   "pp": 20,
-  "description": "Raises the user's Defense by 2 stages.",
-  "target": "",
+  "description": "Raises the user's Special Attack by 2 stages.",
   "stat_changes": [
     {
-      "stat_ident": "defense",
-      "stages": 2,
+      "special_attack": 2,
       "frequency": 1,
       "target": "self"
     }
