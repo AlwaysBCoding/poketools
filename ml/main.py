@@ -1,59 +1,74 @@
 from model import Agent
 from game import Game
+from damage_calculation import calculate_damage
 
 import numpy as np
 import ipdb
 
-if __name__ == '__main__':
-  env = Game()
+if __name__ == "__main__":
+  print(calculate_damage(1))
 
-  agent = Agent(
-    gamma=0.99,
-    epsilon=1.0,
-    batch_size=64,
-    n_actions=3,
-    epsilon_end=0.001,
-    epsilon_dec=5e-4,
-    input_dimensions=[3],
-    learning_rate=0.0003
-  )
+# if __name__ == '__main__':
+#   env = Game()
+#   NUMBER_OF_AGENT_ACTIONS = 4
+#   OBSERVATION_DIMENSIONS = 7
 
-  n_games = 4000
+#   agent = Agent(
+#     gamma=0.99,
+#     epsilon=1.0,
+#     max_memory_size=1000000,
+#     batch_size=64,
+#     n_actions=NUMBER_OF_AGENT_ACTIONS,
+#     epsilon_end=0.001,
+#     epsilon_dec=5e-4,
+#     input_dimensions=[OBSERVATION_DIMENSIONS],
+#     learning_rate=0.0003
+#   )
 
-  scores, epsilon_history = [], []
+#   n_games = 2000
 
-  for i in range(n_games):
-    score = 0
-    done = 0
-    observation = env.reset()
+#   scores, epsilon_history = [], []
 
-    while not done == 1:
-      action = agent.choose_action(observation)
-      observation_, reward, done = env.step(action)
-      score += reward
-      agent.store_transition(observation, action, reward, observation_, done)
-      agent.learn()
-      observation = observation_
+#   for i in range(n_games):
+#     score = 0
+#     done = 0
+#     episode_actions = []
+#     observation = env.reset()
 
-    scores.append(score)
-    epsilon_history.append(agent.epsilon)
-    average_score = np.mean(scores[-100:])
+#     while not done == 1:
+#       actions = agent.show_actions(observation)
+#       action = agent.choose_action(observation)
+#       episode_actions.append([actions, action])
+#       observation_, reward, done = env.step(action)
+#       score += reward
+#       agent.store_transition(observation, action, reward, observation_, done)
+#       agent.learn()
+#       observation = observation_
 
-    print(
-      'episode ',
-      i,
-      'score %.2f' % score,
-      'average score %.2f' % average_score,
-      'epsilon %.2f' % agent.epsilon
-    )
+#     scores.append(score)
+#     epsilon_history.append(agent.epsilon)
+#     average_score = np.mean(scores[-100:])
 
-  observation = env.reset()
-  print("\n\n")
-  print("FINAL OBSERVATION")
-  print(observation)
+#     print(
+#       'episode ',
+#       i,
+#       'score %.2f' % score,
+#       'average score %.2f' % average_score,
+#       'epsilon %.2f' % agent.epsilon
+#     )
 
-  agent.show_actions(observation)
-  action = agent.choose_action(observation)
+#     if(i == 1999):
+#       print("ACTION DEBUGGER...")
+#       print(episode_actions)
 
-  print("CHOSEN ACTION...")
-  print(action)
+
+  # observation = env.reset()
+  # print("\n\n")
+  # print("FINAL OBSERVATION")
+  # print(observation)
+
+  # agent.show_actions(observation)
+  # action = agent.choose_action(observation)
+
+  # print("CHOSEN ACTION...")
+  # print(action)

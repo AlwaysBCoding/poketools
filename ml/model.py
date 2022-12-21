@@ -66,8 +66,7 @@ class Agent():
   def show_actions(self, observation):
     state = T.tensor([observation]).to(self.Q_eval.device)
     actions = self.Q_eval.forward(state)
-    print("SHOWING ACTIONS...")
-    print(actions)
+    return actions
 
   def choose_action(self, observation):
     if np.random.random() > self.epsilon:
