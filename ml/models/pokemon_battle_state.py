@@ -9,6 +9,8 @@ class PokemonBattleState():
     self.item_ident = pokemon_build.item_ident
     self.stat_boosts = PokemonStatBoosts()
     self.status = "healthy"
+    self.current_hp = pokemon_build.stat_spread.hp
+    self.location_ident = "party"
 
 # self.location = ""
 # self.side = ""
