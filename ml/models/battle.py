@@ -1,5 +1,6 @@
 from models.battle_state import BattleState
 from helpers import find
+from damage_calculation import calculate_damage
 
 from functools import cmp_to_key
 from pathlib import Path
@@ -35,6 +36,7 @@ class Battle():
   def __init__(self, config, blue_side_pokemon, red_side_pokemon, blue_side_pokemon_order, red_side_pokemon_order):
     self.config = config
     self.turn_index = 0
+    self.status = "active"
     self.battle_turns = []
     self.battle_state = BattleState(config, blue_side_pokemon, red_side_pokemon)
     self.initial_step(blue_side_pokemon_order, red_side_pokemon_order)
@@ -85,7 +87,7 @@ class Battle():
       self_and_allies = ["blue-field-1"]
     elif actor_pokemon_battle_state.battle_side == "red":
       self_ = ["red-field-1"]
-      any_adjacent = ["red-field-1"]
+      any_adjacent = ["blue-field-1"]
       all_enemies = ["blue-field-1"]
       all_adjacent = ["blue-field-1"]
       self_and_allies = ["red-field-1"]
@@ -169,6 +171,10 @@ class Battle():
 
   def perform_battle_action(self, battle_action):
     action_events = []
+    should_end_battle = False
+
+    if(battle_action.actor.location_ident == "graveyard"):
+      return [action_events, should_end_battle]
 
     if(battle_action.action_type == "switch"):
       battle_action.actor.location_ident = "party"
@@ -183,24 +189,64 @@ class Battle():
       action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {battle_action.action_data['move']['ident']}")
       if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
         "..."
-      elif(battle_action.action_data["move"]["category_ident"] in ["physical", "special"]):
-        "..."
+      elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
+        target_pokemon_slot = battle_action.action_data['move_targets'][0]
+        target_pokemon_id = self.battle_state.field_state[target_pokemon_slot]
+        target_pokemon = find(self.pokemon_battle_states(), lambda x: x.id == target_pokemon_id)
+        damage = calculate_damage(
+          battle_state={},
+          attacking_pokemon=battle_action.actor,
+          target_pokemon=target_pokemon,
+          move_ident=battle_action.action_data['move']['ident']
+        )
+        target_pokemon_previous_hp = target_pokemon.current_hp
+        target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
+        action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+        if(target_pokemon.current_hp == 0):
+          target_pokemon.location_ident = "graveyard"
+          self.battle_state.field_state[target_pokemon_slot] = None
+          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
+          possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
+          if(len(possible_replacement_pokemons) > 0):
+            replacement_pokemon = np.random.choice(possible_replacement_pokemons)
+            replacement_pokemon.location_ident = "field"
+            self.battle_state.field_state[target_pokemon_slot] = replacement_pokemon.id
+            action_events.append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
+          else:
+            should_end_battle = True
+            action_events.append("THE BATTLE IS OVER")
 
-    return action_events
+    return [action_events, should_end_battle]
 
   def step(self, blue_actions, red_actions):
-    battle_events = []
-    battle_actions = blue_actions + red_actions
-    ordered_battle_actions = self.order_battle_actions(battle_actions)
-    for battle_action in ordered_battle_actions:
-      action_events = self.perform_battle_action(battle_action)
-      battle_events += action_events
-    self.end_battle_turn(battle_events)
+    if self.status == "complete":
+      print("CANNOT PERFORM STEP, BATTLE IS OVER")
+    else:
+      battle_events = []
+      battle_actions = blue_actions + red_actions
+      ordered_battle_actions = self.order_battle_actions(battle_actions)
+      for battle_action in ordered_battle_actions:
+        action_events, should_end_battle = self.perform_battle_action(battle_action)
+        battle_events += action_events
+        if(should_end_battle):
+          self.status = "complete"
+          break
+      self.end_battle_turn(battle_events)
 
   # CONVENIENCE HELPERS
   # =====================
-  def blue_field_pokemon(self):
-    return find(self.battle_state.blue_side_pokemon, lambda x: x.location_ident == "field")
+  def field_pokemon(self, side):
+    if(side == "blue"):
+      return find(self.battle_state.blue_side_pokemon, lambda x: x.location_ident == "field")
+    elif(side == "red"):
+      return find(self.battle_state.red_side_pokemon, lambda x: x.location_ident == "field")
+    else:
+      return None
 
-  def red_field_pokemon(self):
-    return find(self.battle_state.red_side_pokemon, lambda x: x.location_ident == "field")
+  def party_pokemons(self, side):
+    if(side == "blue"):
+      return list(filter(lambda x: x.location_ident == "party", self.battle_state.blue_side_pokemon))
+    elif(side == "red"):
+      return list(filter(lambda x: x.location_ident == "party", self.battle_state.red_side_pokemon))
+    else:
+      return []

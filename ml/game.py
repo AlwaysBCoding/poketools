@@ -121,14 +121,19 @@ class Game():
     }
     self.battle = Battle(self.battle_config, blue_side_pokemon, red_side_pokemon, blue_side_pokemon_order, red_side_pokemon_order)
 
-    for x in range(4):
-      print(f"TURN {x + 1}")
-      blue_field_pokemon = self.battle.blue_field_pokemon()
-      red_field_pokemon = self.battle.red_field_pokemon()
-      blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
-      red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
+    try:
+      for x in range(100):
+        if(self.battle.status == "complete"):
+          break
+        print(f"TURN {x + 1}")
+        blue_field_pokemon = self.battle.field_pokemon("blue")
+        red_field_pokemon = self.battle.field_pokemon("red")
+        blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
+        red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
 
-      self.battle.step([np.random.choice(blue_pokemon_actions)], [np.random.choice(red_pokemon_actions)])
+        self.battle.step([np.random.choice(blue_pokemon_actions)], [np.random.choice(red_pokemon_actions)])
+    except Exception as e:
+      ipdb.set_trace()
 
     return [
       np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),

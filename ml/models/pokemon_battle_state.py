@@ -18,3 +18,6 @@ class PokemonBattleState():
     self.battle_side = battle_side
     self.current_slot = None
     self.terastallized = False
+
+  def max_hp(self):
+    return self.pokemon_build.stat_spread.hp
