@@ -7,6 +7,7 @@ from models.battle import Battle
 
 import numpy as np
 from pathlib import Path
+from functools import reduce
 import json
 import ipdb
 
@@ -109,6 +110,14 @@ class Game():
     self.reward = 0
     self.done = 0
 
+    talonflame_battle_state.reset()
+    tsareena_battle_state.reset()
+    gastrodon_battle_state.reset()
+
+    garchomp_battle_state.reset()
+    grimmsnarl_battle_state.reset()
+    gholdengo_battle_state.reset()
+
     blue_side_pokemon = [talonflame_battle_state, tsareena_battle_state, gastrodon_battle_state]
     blue_side_pokemon_order = [0, 1, 2]
     np.random.shuffle(blue_side_pokemon_order)
@@ -120,20 +129,6 @@ class Game():
       "variant": "singles"
     }
     self.battle = Battle(self.battle_config, blue_side_pokemon, red_side_pokemon, blue_side_pokemon_order, red_side_pokemon_order)
-
-    try:
-      for x in range(100):
-        if(self.battle.status == "complete"):
-          break
-        print(f"TURN {x + 1}")
-        blue_field_pokemon = self.battle.field_pokemon("blue")
-        red_field_pokemon = self.battle.field_pokemon("red")
-        blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
-        red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
-
-        self.battle.step([np.random.choice(blue_pokemon_actions)], [np.random.choice(red_pokemon_actions)])
-    except Exception as e:
-      ipdb.set_trace()
 
     return [
       np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
@@ -222,7 +217,28 @@ class Game():
       np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[2].location_ident))
     ]
 
+  def possible_actions(self):
+    return self.battle.available_actions_for_pokemon_battle_state(self.battle.field_pokemon("blue").id)
+
   def step(self, action):
+    blue_field_pokemon = self.battle.field_pokemon("blue")
+    red_field_pokemon = self.battle.field_pokemon("red")
+
+    blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
+    red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
+
+    self.battle.step([blue_pokemon_actions[action]], [np.random.choice(red_pokemon_actions)])
+
+    if(self.battle.status == "complete"):
+      self.done = 1
+      if(self.battle.winner == "blue"):
+        total_team_hp = 523
+        remaining_hp = reduce(lambda memo, i: memo + i.current_hp, self.battle.alive_pokemons("blue"), 0)
+        self.reward = np.round((remaining_hp / total_team_hp) * 100, 2)
+      elif(self.battle.winner == "red"):
+        total_team_hp = 540
+        remaining_hp = reduce(lambda memo, i: memo + i.current_hp, self.battle.alive_pokemons("red"), 0)
+        self.reward = np.round((remaining_hp / total_team_hp) * 100, 2) * -1
 
     observation_ = [
       np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
@@ -311,7 +327,7 @@ class Game():
       np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[2].location_ident))
     ]
 
-    return [observation_, reward, done]
+    return [observation_, self.reward, self.done]
 
 # class Game():
 #   def __init__(self):

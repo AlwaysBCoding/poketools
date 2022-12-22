@@ -37,6 +37,7 @@ class Battle():
     self.config = config
     self.turn_index = 0
     self.status = "active"
+    self.winner = None
     self.battle_turns = []
     self.battle_state = BattleState(config, blue_side_pokemon, red_side_pokemon)
     self.initial_step(blue_side_pokemon_order, red_side_pokemon_order)
@@ -44,7 +45,8 @@ class Battle():
   def end_battle_turn(self, battle_events):
     self.turn_index += 1
     for battle_event in battle_events:
-      print(battle_event)
+      # print(battle_event)
+      continue
 
   def initial_step(self, blue_side_pokemon_order, red_side_pokemon_order):
     battle_events = []
@@ -110,7 +112,6 @@ class Battle():
     if not pokemon_battle_state.location_ident == "field":
       return []
     else:
-      party_pokemons = []
       for move_ident in pokemon_battle_state.pokemon_build.move_idents:
         available_actions.append(
           BattleAction(
@@ -123,11 +124,7 @@ class Battle():
           )
         )
 
-      if(pokemon_battle_state.battle_side == "blue"):
-        party_pokemons = filter(lambda x: x.location_ident == "party", self.battle_state.blue_side_pokemon)
-      elif(pokemon_battle_state.battle_side == "red"):
-        party_pokemons = filter(lambda x: x.location_ident == "party", self.battle_state.red_side_pokemon)
-
+      party_pokemons = self.party_pokemons(pokemon_battle_state.battle_side)
       for party_pokemon in party_pokemons:
         available_actions.append(
           BattleAction(
@@ -219,19 +216,18 @@ class Battle():
     return [action_events, should_end_battle]
 
   def step(self, blue_actions, red_actions):
-    if self.status == "complete":
-      print("CANNOT PERFORM STEP, BATTLE IS OVER")
-    else:
-      battle_events = []
-      battle_actions = blue_actions + red_actions
-      ordered_battle_actions = self.order_battle_actions(battle_actions)
-      for battle_action in ordered_battle_actions:
-        action_events, should_end_battle = self.perform_battle_action(battle_action)
-        battle_events += action_events
-        if(should_end_battle):
-          self.status = "complete"
-          break
-      self.end_battle_turn(battle_events)
+    battle_events = []
+    battle_actions = blue_actions + red_actions
+    ordered_battle_actions = self.order_battle_actions(battle_actions)
+    for battle_action in ordered_battle_actions:
+      action_events, should_end_battle = self.perform_battle_action(battle_action)
+      battle_events += action_events
+      if(should_end_battle):
+        self.status = "complete"
+        self.winner = battle_action.actor.battle_side
+        break
+    self.battle_turns.append(battle_events)
+    self.end_battle_turn(battle_events)
 
   # CONVENIENCE HELPERS
   # =====================
@@ -242,6 +238,12 @@ class Battle():
       return find(self.battle_state.red_side_pokemon, lambda x: x.location_ident == "field")
     else:
       return None
+
+  def alive_pokemons(self, side):
+    if(side == "blue"):
+      return list(filter(lambda x: x.location_ident != "graveyard", self.battle_state.blue_side_pokemon))
+    elif(side == "red"):
+      return list(filter(lambda x: x.location_ident != "graveyard", self.battle_state.red_side_pokemon))
 
   def party_pokemons(self, side):
     if(side == "blue"):
