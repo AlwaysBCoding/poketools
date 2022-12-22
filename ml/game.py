@@ -3,11 +3,12 @@ from models.pokemon_build import PokemonBuild
 from models.pokemon_battle_state import PokemonBattleState
 from mappings import type_ident_mapping, ability_ident_mapping, item_ident_mapping, status_ident_mapping, location_ident_mapping
 
-from damage_calculation import calculate_damage
+from models.battle import Battle
 
 import numpy as np
 from pathlib import Path
 import json
+import ipdb
 
 gastrodon_f = open(Path("../src/data/pokemon/paldea/328-gastrodon/gastrodon.data.json"))
 gastrodon_data = json.load(gastrodon_f)
@@ -22,7 +23,7 @@ gastrodon_build = PokemonBuild(
   move_idents=["clear-smog", "earth-power", "ice-beam", "hydro-pump"],
   stat_spread=PokemonStatSpread(hp=218, attack=92, defense=88, special_attack=128, special_defense=130, speed=59)
 )
-gastrodon_battle_state = PokemonBattleState(gastrodon_build)
+gastrodon_battle_state = PokemonBattleState(gastrodon_build, "blue")
 
 garchomp_f = open(Path("../src/data/pokemon/paldea/128-garchomp/garchomp.data.json"))
 garchomp_data = json.load(garchomp_f)
@@ -37,7 +38,7 @@ garchomp_build = PokemonBuild(
   move_idents=["dragon-claw", "earthquake", "bite", "fire-fang"],
   stat_spread=PokemonStatSpread(hp=183, attack=200, defense=115, special_attack=90, special_defense=105, speed=154)
 )
-garchomp_battle_state = PokemonBattleState(garchomp_build)
+garchomp_battle_state = PokemonBattleState(garchomp_build, "red")
 
 talonflame_f = open(Path("../src/data/pokemon/paldea/21-talonflame/talonflame.data.json"))
 talonflame_data = json.load(talonflame_f)
@@ -52,7 +53,7 @@ talonflame_build = PokemonBuild(
   move_idents=["tailwind", "brave-bird", "flare-blitz", "feint"],
   stat_spread=PokemonStatSpread(hp=153, attack=146, defense=91, special_attack=84, special_defense=89, speed=178)
 )
-talonflame_battle_state = PokemonBattleState(talonflame_build)
+talonflame_battle_state = PokemonBattleState(talonflame_build, "blue")
 
 gholdengo_f = open(Path("../src/data/pokemon/paldea/392-gholdengo/gholdengo.data.json"))
 gholdengo_data = json.load(gholdengo_f)
@@ -67,7 +68,7 @@ gholdengo_build = PokemonBuild(
   move_idents=["thunderbolt", "shadow-ball", "make-it-rain", "nasty-plot"],
   stat_spread=PokemonStatSpread(hp=162, attack=72, defense=115, special_attack=185, special_defense=112, speed=149)
 )
-gholdengo_battle_state = PokemonBattleState(gholdengo_build)
+gholdengo_battle_state = PokemonBattleState(gholdengo_build, "red")
 
 tsareena_f = open(Path("../src/data/pokemon/paldea/83-tsareena/tsareena.data.json"))
 tsareena_data = json.load(tsareena_f)
@@ -82,7 +83,7 @@ tsareena_build = PokemonBuild(
   move_idents=["power-whip", "u-turn", "low-sweep", "play-rough"],
   stat_spread=PokemonStatSpread(hp=152, attack=172, defense=118, special_attack=63, special_defense=118, speed=132)
 )
-tsareena_battle_state = PokemonBattleState(tsareena_build)
+tsareena_battle_state = PokemonBattleState(tsareena_build, "blue")
 
 grimmsnarl_f = open(Path("../src/data/pokemon/paldea/287-grimmsnarl/grimmsnarl.data.json"))
 grimmsnarl_data = json.load(grimmsnarl_f)
@@ -97,7 +98,7 @@ grimmsnarl_build = PokemonBuild(
   move_idents=["fake-out", "sucker-punch", "spirit-break", "ice-punch"],
   stat_spread=PokemonStatSpread(hp=195, attack=171, defense=85, special_attack=103, special_defense=111, speed=80)
 )
-grimmsnarl_battle_state = PokemonBattleState(grimmsnarl_build)
+grimmsnarl_battle_state = PokemonBattleState(grimmsnarl_build, "red")
 
 class Game():
   def __init__(self):
@@ -109,191 +110,200 @@ class Game():
     self.done = 0
 
     blue_side_pokemon = [talonflame_battle_state, tsareena_battle_state, gastrodon_battle_state]
-    np.random.shuffle(blue_side_pokemon)
+    blue_side_pokemon_order = [0, 1, 2]
+    np.random.shuffle(blue_side_pokemon_order)
     red_side_pokemon = [garchomp_battle_state, grimmsnarl_battle_state, gholdengo_battle_state]
-    np.random.shuffle(red_side_pokemon)
+    red_side_pokemon_order = [0, 1, 2]
+    np.random.shuffle(red_side_pokemon_order)
 
-    self.turn_index = 0
-    self.global_state = {}
-    self.blue_side_state = {}
-    self.red_side_state = {}
-    self.blue_side_pokemon = blue_side_pokemon
-    self.red_side_pokemon = red_side_pokemon
+    self.battle_config = {
+      "variant": "singles"
+    }
+    self.battle = Battle(self.battle_config, blue_side_pokemon, red_side_pokemon, blue_side_pokemon_order, red_side_pokemon_order)
+
+    for x in range(4):
+      print(f"TURN {x + 1}")
+      blue_field_pokemon = self.battle.blue_field_pokemon()
+      red_field_pokemon = self.battle.red_field_pokemon()
+      blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
+      red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
+
+      self.battle.step([np.random.choice(blue_pokemon_actions)], [np.random.choice(red_pokemon_actions)])
 
     return [
-      np.float32(blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(blue_side_pokemon[0].primary_type_ident)),
-      np.float32(type_ident_mapping(blue_side_pokemon[0].secondary_type_ident)),
-      np.float32(ability_ident_mapping(blue_side_pokemon[0].ability_ident)),
-      np.float32(item_ident_mapping(blue_side_pokemon[0].item_ident)),
-      np.float32(status_ident_mapping(blue_side_pokemon[0].status)),
-      np.float32(blue_side_pokemon[0].stat_boosts.attack),
-      np.float32(blue_side_pokemon[0].stat_boosts.defense),
-      np.float32(blue_side_pokemon[0].stat_boosts.special_attack),
-      np.float32(blue_side_pokemon[0].stat_boosts.special_defense),
-      np.float32(blue_side_pokemon[0].stat_boosts.speed),
-      np.float32(blue_side_pokemon[0].current_hp),
-      np.float32(blue_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(blue_side_pokemon[0].location_ident)),
-      np.float32(blue_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(blue_side_pokemon[1].primary_type_ident)),
-      np.float32(type_ident_mapping(blue_side_pokemon[1].secondary_type_ident)),
-      np.float32(ability_ident_mapping(blue_side_pokemon[1].ability_ident)),
-      np.float32(item_ident_mapping(blue_side_pokemon[1].item_ident)),
-      np.float32(status_ident_mapping(blue_side_pokemon[1].status)),
-      np.float32(blue_side_pokemon[1].stat_boosts.attack),
-      np.float32(blue_side_pokemon[1].stat_boosts.defense),
-      np.float32(blue_side_pokemon[1].stat_boosts.special_attack),
-      np.float32(blue_side_pokemon[1].stat_boosts.special_defense),
-      np.float32(blue_side_pokemon[1].stat_boosts.speed),
-      np.float32(blue_side_pokemon[1].current_hp),
-      np.float32(blue_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(blue_side_pokemon[1].location_ident)),
-      np.float32(blue_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(blue_side_pokemon[2].primary_type_ident)),
-      np.float32(type_ident_mapping(blue_side_pokemon[2].secondary_type_ident)),
-      np.float32(ability_ident_mapping(blue_side_pokemon[2].ability_ident)),
-      np.float32(item_ident_mapping(blue_side_pokemon[2].item_ident)),
-      np.float32(status_ident_mapping(blue_side_pokemon[2].status)),
-      np.float32(blue_side_pokemon[2].stat_boosts.attack),
-      np.float32(blue_side_pokemon[2].stat_boosts.defense),
-      np.float32(blue_side_pokemon[2].stat_boosts.special_attack),
-      np.float32(blue_side_pokemon[2].stat_boosts.special_defense),
-      np.float32(blue_side_pokemon[2].stat_boosts.speed),
-      np.float32(blue_side_pokemon[2].current_hp),
-      np.float32(blue_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(blue_side_pokemon[2].location_ident)),
-      np.float32(red_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(red_side_pokemon[0].primary_type_ident)),
-      np.float32(type_ident_mapping(red_side_pokemon[0].secondary_type_ident)),
-      np.float32(ability_ident_mapping(red_side_pokemon[0].ability_ident)),
-      np.float32(item_ident_mapping(red_side_pokemon[0].item_ident)),
-      np.float32(status_ident_mapping(red_side_pokemon[0].status)),
-      np.float32(red_side_pokemon[0].stat_boosts.attack),
-      np.float32(red_side_pokemon[0].stat_boosts.defense),
-      np.float32(red_side_pokemon[0].stat_boosts.special_attack),
-      np.float32(red_side_pokemon[0].stat_boosts.special_defense),
-      np.float32(red_side_pokemon[0].stat_boosts.speed),
-      np.float32(red_side_pokemon[0].current_hp),
-      np.float32(red_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(red_side_pokemon[0].location_ident)),
-      np.float32(red_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(red_side_pokemon[1].primary_type_ident)),
-      np.float32(type_ident_mapping(red_side_pokemon[1].secondary_type_ident)),
-      np.float32(ability_ident_mapping(red_side_pokemon[1].ability_ident)),
-      np.float32(item_ident_mapping(red_side_pokemon[1].item_ident)),
-      np.float32(status_ident_mapping(red_side_pokemon[1].status)),
-      np.float32(red_side_pokemon[1].stat_boosts.attack),
-      np.float32(red_side_pokemon[1].stat_boosts.defense),
-      np.float32(red_side_pokemon[1].stat_boosts.special_attack),
-      np.float32(red_side_pokemon[1].stat_boosts.special_defense),
-      np.float32(red_side_pokemon[1].stat_boosts.speed),
-      np.float32(red_side_pokemon[1].current_hp),
-      np.float32(red_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(red_side_pokemon[1].location_ident)),
-      np.float32(red_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(red_side_pokemon[2].primary_type_ident)),
-      np.float32(type_ident_mapping(red_side_pokemon[2].secondary_type_ident)),
-      np.float32(ability_ident_mapping(red_side_pokemon[2].ability_ident)),
-      np.float32(item_ident_mapping(red_side_pokemon[2].item_ident)),
-      np.float32(status_ident_mapping(red_side_pokemon[2].status)),
-      np.float32(red_side_pokemon[2].stat_boosts.attack),
-      np.float32(red_side_pokemon[2].stat_boosts.defense),
-      np.float32(red_side_pokemon[2].stat_boosts.special_attack),
-      np.float32(red_side_pokemon[2].stat_boosts.special_defense),
-      np.float32(red_side_pokemon[2].stat_boosts.speed),
-      np.float32(red_side_pokemon[2].current_hp),
-      np.float32(red_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(red_side_pokemon[2].location_ident))
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].status)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].current_hp),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].location_ident)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].status)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.speed),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].current_hp),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].location_ident)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].status)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.speed),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].current_hp),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].location_ident)),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.red_side_pokemon[0].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.red_side_pokemon[0].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.red_side_pokemon[0].status)),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.speed),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].current_hp),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[0].location_ident)),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.red_side_pokemon[1].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.red_side_pokemon[1].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.red_side_pokemon[1].status)),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.speed),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].current_hp),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[1].location_ident)),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.red_side_pokemon[2].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.red_side_pokemon[2].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.red_side_pokemon[2].status)),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.speed),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].current_hp),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[2].location_ident))
     ]
 
   def step(self, action):
 
     observation_ = [
-      np.float32(blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(blue_side_pokemon[0].primary_type_ident)),
-      np.float32(type_ident_mapping(blue_side_pokemon[0].secondary_type_ident)),
-      np.float32(ability_ident_mapping(blue_side_pokemon[0].ability_ident)),
-      np.float32(item_ident_mapping(blue_side_pokemon[0].item_ident)),
-      np.float32(status_ident_mapping(blue_side_pokemon[0].status)),
-      np.float32(blue_side_pokemon[0].stat_boosts.attack),
-      np.float32(blue_side_pokemon[0].stat_boosts.defense),
-      np.float32(blue_side_pokemon[0].stat_boosts.special_attack),
-      np.float32(blue_side_pokemon[0].stat_boosts.special_defense),
-      np.float32(blue_side_pokemon[0].stat_boosts.speed),
-      np.float32(blue_side_pokemon[0].current_hp),
-      np.float32(blue_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(blue_side_pokemon[0].location_ident)),
-      np.float32(blue_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(blue_side_pokemon[1].primary_type_ident)),
-      np.float32(type_ident_mapping(blue_side_pokemon[1].secondary_type_ident)),
-      np.float32(ability_ident_mapping(blue_side_pokemon[1].ability_ident)),
-      np.float32(item_ident_mapping(blue_side_pokemon[1].item_ident)),
-      np.float32(status_ident_mapping(blue_side_pokemon[1].status)),
-      np.float32(blue_side_pokemon[1].stat_boosts.attack),
-      np.float32(blue_side_pokemon[1].stat_boosts.defense),
-      np.float32(blue_side_pokemon[1].stat_boosts.special_attack),
-      np.float32(blue_side_pokemon[1].stat_boosts.special_defense),
-      np.float32(blue_side_pokemon[1].stat_boosts.speed),
-      np.float32(blue_side_pokemon[1].current_hp),
-      np.float32(blue_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(blue_side_pokemon[1].location_ident)),
-      np.float32(blue_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(blue_side_pokemon[2].primary_type_ident)),
-      np.float32(type_ident_mapping(blue_side_pokemon[2].secondary_type_ident)),
-      np.float32(ability_ident_mapping(blue_side_pokemon[2].ability_ident)),
-      np.float32(item_ident_mapping(blue_side_pokemon[2].item_ident)),
-      np.float32(status_ident_mapping(blue_side_pokemon[2].status)),
-      np.float32(blue_side_pokemon[2].stat_boosts.attack),
-      np.float32(blue_side_pokemon[2].stat_boosts.defense),
-      np.float32(blue_side_pokemon[2].stat_boosts.special_attack),
-      np.float32(blue_side_pokemon[2].stat_boosts.special_defense),
-      np.float32(blue_side_pokemon[2].stat_boosts.speed),
-      np.float32(blue_side_pokemon[2].current_hp),
-      np.float32(blue_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(blue_side_pokemon[2].location_ident)),
-      np.float32(red_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(red_side_pokemon[0].primary_type_ident)),
-      np.float32(type_ident_mapping(red_side_pokemon[0].secondary_type_ident)),
-      np.float32(ability_ident_mapping(red_side_pokemon[0].ability_ident)),
-      np.float32(item_ident_mapping(red_side_pokemon[0].item_ident)),
-      np.float32(status_ident_mapping(red_side_pokemon[0].status)),
-      np.float32(red_side_pokemon[0].stat_boosts.attack),
-      np.float32(red_side_pokemon[0].stat_boosts.defense),
-      np.float32(red_side_pokemon[0].stat_boosts.special_attack),
-      np.float32(red_side_pokemon[0].stat_boosts.special_defense),
-      np.float32(red_side_pokemon[0].stat_boosts.speed),
-      np.float32(red_side_pokemon[0].current_hp),
-      np.float32(red_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(red_side_pokemon[0].location_ident)),
-      np.float32(red_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(red_side_pokemon[1].primary_type_ident)),
-      np.float32(type_ident_mapping(red_side_pokemon[1].secondary_type_ident)),
-      np.float32(ability_ident_mapping(red_side_pokemon[1].ability_ident)),
-      np.float32(item_ident_mapping(red_side_pokemon[1].item_ident)),
-      np.float32(status_ident_mapping(red_side_pokemon[1].status)),
-      np.float32(red_side_pokemon[1].stat_boosts.attack),
-      np.float32(red_side_pokemon[1].stat_boosts.defense),
-      np.float32(red_side_pokemon[1].stat_boosts.special_attack),
-      np.float32(red_side_pokemon[1].stat_boosts.special_defense),
-      np.float32(red_side_pokemon[1].stat_boosts.speed),
-      np.float32(red_side_pokemon[1].current_hp),
-      np.float32(red_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(red_side_pokemon[1].location_ident)),
-      np.float32(red_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
-      np.float32(type_ident_mapping(red_side_pokemon[2].primary_type_ident)),
-      np.float32(type_ident_mapping(red_side_pokemon[2].secondary_type_ident)),
-      np.float32(ability_ident_mapping(red_side_pokemon[2].ability_ident)),
-      np.float32(item_ident_mapping(red_side_pokemon[2].item_ident)),
-      np.float32(status_ident_mapping(red_side_pokemon[2].status)),
-      np.float32(red_side_pokemon[2].stat_boosts.attack),
-      np.float32(red_side_pokemon[2].stat_boosts.defense),
-      np.float32(red_side_pokemon[2].stat_boosts.special_attack),
-      np.float32(red_side_pokemon[2].stat_boosts.special_defense),
-      np.float32(red_side_pokemon[2].stat_boosts.speed),
-      np.float32(red_side_pokemon[2].current_hp),
-      np.float32(red_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(red_side_pokemon[2].location_ident))
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].status)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].current_hp),
+      np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].location_ident)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].status)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.speed),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].current_hp),
+      np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].location_ident)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].status)),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.speed),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].current_hp),
+      np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].location_ident)),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.red_side_pokemon[0].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.red_side_pokemon[0].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.red_side_pokemon[0].status)),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.speed),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].current_hp),
+      np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[0].location_ident)),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.red_side_pokemon[1].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.red_side_pokemon[1].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.red_side_pokemon[1].status)),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.speed),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].current_hp),
+      np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[1].location_ident)),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].primary_type_ident)),
+      np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].secondary_type_ident)),
+      np.float32(ability_ident_mapping(self.battle.battle_state.red_side_pokemon[2].ability_ident)),
+      np.float32(item_ident_mapping(self.battle.battle_state.red_side_pokemon[2].item_ident)),
+      np.float32(status_ident_mapping(self.battle.battle_state.red_side_pokemon[2].status)),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.special_attack),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.special_defense),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.speed),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].current_hp),
+      np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.stat_spread.hp),
+      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[2].location_ident))
     ]
 
     return [observation_, reward, done]

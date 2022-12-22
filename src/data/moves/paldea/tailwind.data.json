@@ -6,5 +6,6 @@
   "accuracy": null,
   "priority": 0,
   "pp": 15,
-  "description": "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side."
+  "description": "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
+  "target": "self-and-allies"
 }

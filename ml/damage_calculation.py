@@ -1,3 +1,5 @@
+from helpers import find
+
 import math
 import json
 from pathlib import Path
@@ -38,9 +40,6 @@ def poke_round(x):
   else:
     return round(x)
 
-def first(iterable, condition = lambda x: True):
-  return next(x for x in iterable if condition(x))
-
 def calculate_damage(
   battle_state,
   attacking_pokemon,
@@ -50,7 +49,7 @@ def calculate_damage(
   hardcoded_crit_roll=None,
   hardcoded_targeting_value=None
 ):
-  pokemon_move = first(all_moves_data, lambda x: x["ident"] == move_ident)
+  pokemon_move = find(all_moves_data, lambda x: x["ident"] == move_ident)
 
   a_value = 1
   d_value = 1
@@ -93,8 +92,8 @@ def calculate_damage(
   if(attacking_pokemon.primary_type_ident == pokemon_move["type_ident"]):
     stab = STAB_MODIFIER
 
-  primary_type_effectiveness = first(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.primary_type_ident)
-  secondary_type_effectiveness = first(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.secondary_type_ident)
+  primary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.primary_type_ident)
+  secondary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.secondary_type_ident)
   if(primary_type_effectiveness and secondary_type_effectiveness):
     type_value = primary_type_effectiveness["effectiveness"] * secondary_type_effectiveness["effectiveness"]
   elif(primary_type_effectiveness):

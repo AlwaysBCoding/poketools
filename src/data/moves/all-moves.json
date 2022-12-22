@@ -8,6 +8,7 @@
     "priority": 0,
     "pp": 25,
     "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+    "target": "",
     "recovery": [
       {
         "percentage_of_damage": 0.5
@@ -22,7 +23,8 @@
     "accuracy": 1,
     "priority": 1,
     "pp": 20,
-    "description": "No additional effect."
+    "description": "No additional effect.",
+    "target": ""
   },
   {
     "ident": "acid-armor",
@@ -33,6 +35,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Raises the user's Defense by 2 stages.",
+    "target": "",
     "stat_changes": [
       {
         "stat_ident": "defense",
@@ -51,6 +54,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Has a 100% chance to lower the target's Special Defense by 2 stages.",
+    "target": "",
     "stat_changes": [
       {
         "stat_ident": "special_defense",
@@ -68,6 +72,7 @@
     "priority": 0,
     "pp": 30,
     "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+    "target": "",
     "stat_changes": [
       {
         "stat_ident": "special_defense",
@@ -84,7 +89,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 15,
-    "description": "Power doubles if the user has no held item."
+    "description": "Power doubles if the user has no held item.",
+    "target": ""
   },
   {
     "ident": "acupressure",
@@ -112,7 +118,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 20,
-    "description": "This move does not check accuracy."
+    "description": "This move does not check accuracy.",
+    "target": ""
   },
   {
     "ident": "after-you",
@@ -122,7 +129,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 15,
-    "description": "The target makes its move immediately after the user this turn, no matter the priority of its selected move. Fails if the target would have moved next anyway, or if the target already moved this turn."
+    "description": "The target makes its move immediately after the user this turn, no matter the priority of its selected move. Fails if the target would have moved next anyway, or if the target already moved this turn.",
+    "target": ""
   },
   {
     "ident": "agility",
@@ -133,6 +141,7 @@
     "priority": 0,
     "pp": 30,
     "description": "Raises the user's Speed by 2 stages.",
+    "target": "",
     "stat_changes": [
       {
         "stat_ident": "speed",
@@ -151,6 +160,7 @@
     "priority": 0,
     "pp": 25,
     "description": "Has a higher chance for a critical hit.",
+    "target": "",
     "critical_hit_stage_index": 1
   },
   {
@@ -954,6 +964,22 @@
     ]
   },
   {
+    "ident": "fake-out",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 3,
+    "pp": 10,
+    "description": "Has a 100% chance to make the target flinch. Fails unless it is the user's first turn on the field.",
+    "secondary_effects": [
+      {
+        "status_ident": "flinched",
+        "frequency": 1
+      }
+    ]
+  },
+  {
     "ident": "feint",
     "type_ident": "normal",
     "category_ident": "physical",
@@ -962,6 +988,27 @@
     "priority": 2,
     "pp": 10,
     "description": "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally."
+  },
+  {
+    "ident": "fire-fang",
+    "type_ident": "fire",
+    "category_ident": "physical",
+    "base_power": 65,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 10% chance to burn the target and a 10% chance to make it flinch.",
+    "target": "",
+    "secondary_effects": [
+      {
+        "status_ident": "burned",
+        "frequency": 0.1
+      },
+      {
+        "status_ident": "flinched",
+        "frequency": 0.1
+      }
+    ]
   },
   {
     "ident": "flare-blitz",
@@ -1004,6 +1051,38 @@
     "description": "No additional effect."
   },
   {
+    "ident": "ice-beam",
+    "type_ident": "ice",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 10% chance to freeze the target.",
+    "secondary_effects": [
+      {
+        "status_ident": "frozen",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "ice-punch",
+    "type_ident": "ice",
+    "category_ident": "physical",
+    "base_power": 75,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 10% chance to freeze the target.",
+    "secondary_effects": [
+      {
+        "status_ident": "frozen",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
     "ident": "light-screen",
     "type_ident": "psychic",
     "category_ident": "non-damaging",
@@ -1044,6 +1123,24 @@
       {
         "stat_ident": "special_attack",
         "stages": -1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "nasty-plot",
+    "type_ident": "dark",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Special Attack by 2 stages.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "special_attack": 2,
         "frequency": 1,
         "target": "self"
       }
@@ -1131,6 +1228,16 @@
     ]
   },
   {
+    "ident": "sucker-punch",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 70,
+    "accuracy": 1,
+    "priority": 1,
+    "pp": 5,
+    "description": "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user."
+  },
+  {
     "ident": "tailwind",
     "type_ident": "flying",
     "category_ident": "non-damaging",
@@ -1138,7 +1245,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 15,
-    "description": "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side."
+    "description": "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
+    "target": "self-and-allies"
   },
   {
     "ident": "tera-blast",

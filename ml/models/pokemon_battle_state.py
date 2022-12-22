@@ -1,7 +1,10 @@
 from models.pokemon import PokemonStatBoosts
+import uuid
 
 class PokemonBattleState():
-  def __init__(self, pokemon_build):
+  def __init__(self, pokemon_build, battle_side):
+    self.id = uuid.uuid4().hex
+
     self.pokemon_build = pokemon_build
     self.primary_type_ident = pokemon_build.pokemon.primary_type_ident
     self.secondary_type_ident = pokemon_build.pokemon.secondary_type_ident
@@ -9,17 +12,9 @@ class PokemonBattleState():
     self.item_ident = pokemon_build.item_ident
     self.stat_boosts = PokemonStatBoosts()
     self.status = "healthy"
+    self.volatile_statuses = []
     self.current_hp = pokemon_build.stat_spread.hp
     self.location_ident = "party"
-
-# self.location = ""
-# self.side = ""
-# self.volatile_statuses = ""
-
-# side: BattleSide
-# location: PokemonBattleLocation
-# status: PokemonStatusIdent
-# volatile_statuses: PokemonVolatileStatus[]
-# stat_boosts: PokemonStatBoosts
-# terastallized: boolean
-# current_hp: number
+    self.battle_side = battle_side
+    self.current_slot = None
+    self.terastallized = False
