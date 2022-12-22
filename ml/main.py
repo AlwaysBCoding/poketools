@@ -8,7 +8,6 @@ if __name__ == "__main__":
   # GAME LOOP
   # =====================
   env = Game()
-  initial_observation = env.reset()
   NUMBER_OF_AGENT_ACTIONS = 6
   OBSERVATION_DIMENSIONS = 84
 
@@ -24,7 +23,7 @@ if __name__ == "__main__":
     learning_rate=0.001
   )
 
-  n_games = 3500
+  n_games = 3000
 
   scores, epsilon_history = [], []
 
@@ -43,6 +42,7 @@ if __name__ == "__main__":
       score += reward
       agent.store_transition(observation, action, reward, observation_, done)
       agent.learn()
+      observation = observation_
 
     scores.append(score)
     epsilon_history.append(agent.epsilon)

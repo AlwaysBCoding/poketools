@@ -35,3 +35,5 @@
   - randomness in different pokemon in different indicies each time (or better to explicitly sort them?)
   - model needs to be explicit about the value that is important (i.e. which mon is on the field, or one value can accomodate for that)
   - obvious questions about model architecture in general
+  - why does it always go up in efficacy through 1000 epochs, reach a plateau, bounce around a lot then start rapidly declining around 3000 epochs? whats causing that?
+  - how many epochs to train for?

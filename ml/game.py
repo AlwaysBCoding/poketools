@@ -227,7 +227,15 @@ class Game():
     blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
     red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
 
-    self.battle.step([blue_pokemon_actions[action]], [np.random.choice(red_pokemon_actions)])
+    red_pokemon_action = np.random.choice(red_pokemon_actions)
+    # if(red_pokemon_actions[0].actor.pokemon_build.pokemon.ident == "garchomp"):
+    #   red_pokemon_action = red_pokemon_actions[1]
+    # if(red_pokemon_actions[0].actor.pokemon_build.pokemon.ident == "gholdengo"):
+    #   red_pokemon_action = np.random.choice([red_pokemon_actions[0], red_pokemon_actions[2]])
+    # if(red_pokemon_actions[0].actor.pokemon_build.pokemon.ident == "grimmsnarl"):
+    #   red_pokemon_action = red_pokemon_actions[3]
+
+    self.battle.step([blue_pokemon_actions[action]], [red_pokemon_action])
 
     if(self.battle.status == "complete"):
       self.done = 1
