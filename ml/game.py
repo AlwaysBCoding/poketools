@@ -1,7 +1,7 @@
 from models.pokemon import Pokemon, PokemonStatSpread
 from models.pokemon_build import PokemonBuild
 from models.pokemon_battle_state import PokemonBattleState
-from mappings import type_ident_mapping, ability_ident_mapping, item_ident_mapping, status_ident_mapping, location_ident_mapping
+from mappings import type_ident_mapping, ability_ident_mapping, item_ident_mapping, status_ident_mapping, location_mapping
 
 from models.battle import Battle
 
@@ -129,6 +129,7 @@ class Game():
       "variant": "singles"
     }
     self.battle = Battle(self.battle_config, blue_side_pokemon, red_side_pokemon, blue_side_pokemon_order, red_side_pokemon_order)
+    battle.initial_step(blue_side_pokemon_order, red_side_pokemon_order)
 
     return [
       np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
@@ -144,7 +145,7 @@ class Game():
       np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed),
       np.float32(self.battle.battle_state.blue_side_pokemon[0].current_hp),
       np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.blue_side_pokemon[0].location)),
       np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].secondary_type_ident)),
@@ -158,7 +159,7 @@ class Game():
       np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.speed),
       np.float32(self.battle.battle_state.blue_side_pokemon[1].current_hp),
       np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.blue_side_pokemon[1].location)),
       np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].secondary_type_ident)),
@@ -172,7 +173,7 @@ class Game():
       np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.speed),
       np.float32(self.battle.battle_state.blue_side_pokemon[2].current_hp),
       np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.blue_side_pokemon[2].location)),
       np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].secondary_type_ident)),
@@ -186,7 +187,7 @@ class Game():
       np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.speed),
       np.float32(self.battle.battle_state.red_side_pokemon[0].current_hp),
       np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[0].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.red_side_pokemon[0].location)),
       np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].secondary_type_ident)),
@@ -200,7 +201,7 @@ class Game():
       np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.speed),
       np.float32(self.battle.battle_state.red_side_pokemon[1].current_hp),
       np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[1].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.red_side_pokemon[1].location)),
       np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].secondary_type_ident)),
@@ -214,7 +215,7 @@ class Game():
       np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.speed),
       np.float32(self.battle.battle_state.red_side_pokemon[2].current_hp),
       np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[2].location_ident))
+      np.float32(location_mapping(self.battle.battle_state.red_side_pokemon[2].location))
     ]
 
   def possible_actions(self):
@@ -262,7 +263,7 @@ class Game():
       np.float32(self.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed),
       np.float32(self.battle.battle_state.blue_side_pokemon[0].current_hp),
       np.float32(self.battle.battle_state.blue_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[0].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.blue_side_pokemon[0].location)),
       np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].secondary_type_ident)),
@@ -276,7 +277,7 @@ class Game():
       np.float32(self.battle.battle_state.blue_side_pokemon[1].stat_boosts.speed),
       np.float32(self.battle.battle_state.blue_side_pokemon[1].current_hp),
       np.float32(self.battle.battle_state.blue_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[1].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.blue_side_pokemon[1].location)),
       np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].secondary_type_ident)),
@@ -290,7 +291,7 @@ class Game():
       np.float32(self.battle.battle_state.blue_side_pokemon[2].stat_boosts.speed),
       np.float32(self.battle.battle_state.blue_side_pokemon[2].current_hp),
       np.float32(self.battle.battle_state.blue_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.blue_side_pokemon[2].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.blue_side_pokemon[2].location)),
       np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[0].secondary_type_ident)),
@@ -304,7 +305,7 @@ class Game():
       np.float32(self.battle.battle_state.red_side_pokemon[0].stat_boosts.speed),
       np.float32(self.battle.battle_state.red_side_pokemon[0].current_hp),
       np.float32(self.battle.battle_state.red_side_pokemon[0].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[0].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.red_side_pokemon[0].location)),
       np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[1].secondary_type_ident)),
@@ -318,7 +319,7 @@ class Game():
       np.float32(self.battle.battle_state.red_side_pokemon[1].stat_boosts.speed),
       np.float32(self.battle.battle_state.red_side_pokemon[1].current_hp),
       np.float32(self.battle.battle_state.red_side_pokemon[1].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[1].location_ident)),
+      np.float32(location_mapping(self.battle.battle_state.red_side_pokemon[1].location)),
       np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.pokemon.paldea_regional_pokedex_number),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].primary_type_ident)),
       np.float32(type_ident_mapping(self.battle.battle_state.red_side_pokemon[2].secondary_type_ident)),
@@ -332,7 +333,7 @@ class Game():
       np.float32(self.battle.battle_state.red_side_pokemon[2].stat_boosts.speed),
       np.float32(self.battle.battle_state.red_side_pokemon[2].current_hp),
       np.float32(self.battle.battle_state.red_side_pokemon[2].pokemon_build.stat_spread.hp),
-      np.float32(location_ident_mapping(self.battle.battle_state.red_side_pokemon[2].location_ident))
+      np.float32(location_mapping(self.battle.battle_state.red_side_pokemon[2].location))
     ]
 
     return [observation_, self.reward, self.done]

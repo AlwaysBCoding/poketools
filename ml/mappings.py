@@ -86,10 +86,10 @@ def status_ident_mapping(status_ident):
   if status_ident == "frozen":
     return 6
 
-def location_ident_mapping(location_ident):
-  if location_ident == "field":
+def location_mapping(location):
+  if location == "field":
     return 0
-  if location_ident == "party":
+  if location == "party":
     return 1
-  if location_ident == "graveyard":
+  if location == "graveyard":
     return 2

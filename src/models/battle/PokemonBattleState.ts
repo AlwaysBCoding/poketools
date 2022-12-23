@@ -11,9 +11,9 @@ import {
 } from "./BattleShared";
 
 export interface PokemonBattleState {
-  id: string;
+  battle_id: string;
   pokemon_build: PokemonBuild;
-  side: BattleSide;
+  battle_side: BattleSide;
   location: PokemonBattleLocation;
   primary_type_ident: PokemonTypeIdent;
   secondary_type_ident: PokemonTypeIdent | null;
@@ -30,9 +30,9 @@ export interface PokemonBattleState {
 export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side?: BattleSide): PokemonBattleState => {
 
   return {
-    id: uuidv4(),
+    battle_id: uuidv4(),
     pokemon_build: pokemonBuild,
-    side: side ? side : "red",
+    battle_side: side ? side : "red",
     location: "preview",
     primary_type_ident: pokemonBuild.pokemon.primary_type_ident,
     secondary_type_ident: pokemonBuild.pokemon.secondary_type_ident,

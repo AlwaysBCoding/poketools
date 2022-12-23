@@ -37,7 +37,7 @@ export const BattleSimulatorScreen = () => {
     }
   }
 
-  const startBattle = () => {
+  const startBattle = async () => {
     if(activeBlueTeam && activeRedTeam) {
       const battle: Battle = createBattle({
         config: {variant: "singles"},
@@ -45,6 +45,21 @@ export const BattleSimulatorScreen = () => {
         redSidePokemonBuilds: activeRedTeam.pokemonBuilds
       });
       setBattle(battle);
+
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(battle)
+      }
+
+      const response = await fetch("http://localhost:8000/start-battle", fetchOptions);
+      const result = await response.json();
+
+      console.log(`GOT SERVER RESULT`);
+      console.log(result);
     }
   }
 

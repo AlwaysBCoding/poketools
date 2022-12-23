@@ -18,8 +18,8 @@ import { PokemonBuildTemplate } from "./PokemonBuildTemplate";
 export interface PokemonBuild {
   nickname: string | null;
   pokemon: Pokemon;
-  item_ident: PokemonItemIdent | null;
   ability_ident: PokemonAbilityIdent;
+  item_ident: PokemonItemIdent | null;
   level: number;
   shiny: boolean;
   gender: PokemonGender;
@@ -88,4 +88,17 @@ export const createDefaultPokemonBuildForPokemon = (pokemon: Pokemon): PokemonBu
 export const createDefaultPokemonBuildForPokemonIdent = (pokemonIdent: string): PokemonBuild => {
   const pokemonData: Pokemon = (allPokemon.find((pokemon: any) => { return pokemon.ident === pokemonIdent }) as Pokemon);
   return createDefaultPokemonBuildForPokemon(pokemonData);
+}
+
+export const pokemonBuildSerializeAPI = (pokemonBuild: PokemonBuild): Record<string, any> => {
+  return {
+    pokemon_ident: pokemonBuild.pokemon.ident,
+    ability_ident: pokemonBuild.ability_ident,
+    item_ident: pokemonBuild.item_ident,
+    level: pokemonBuild.level,
+    gender: pokemonBuild.gender,
+    tera_type_ident: pokemonBuild.tera_type_ident,
+    move_idents: pokemonBuild.move_idents,
+    stat_spread: pokemonBuild.stat_spread
+  }
 }
