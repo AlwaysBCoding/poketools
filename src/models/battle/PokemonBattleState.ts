@@ -1,7 +1,9 @@
-import { PokemonIdent, PokemonAbilityIdent, PokemonItemIdent } from "../pokemon/PokemonShared";
+import { v4 as uuidv4 } from 'uuid';
+import { PokemonIdent, PokemonTypeIdent, PokemonAbilityIdent, PokemonItemIdent } from "../pokemon/PokemonShared";
 import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../pokemon/PokemonBuild";
 import {
   BattleSide,
+  BattleSlot,
   PokemonBattleLocation,
   PokemonStatBoosts,
   PokemonStatusIdent,
@@ -9,9 +11,12 @@ import {
 } from "./BattleShared";
 
 export interface PokemonBattleState {
+  id: string;
   pokemon_build: PokemonBuild;
   side: BattleSide;
   location: PokemonBattleLocation;
+  primary_type_ident: PokemonTypeIdent;
+  secondary_type_ident: PokemonTypeIdent | null;
   ability_ident: PokemonAbilityIdent;
   item_ident: PokemonItemIdent | null;
   status: PokemonStatusIdent;
@@ -19,15 +24,18 @@ export interface PokemonBattleState {
   stat_boosts: PokemonStatBoosts;
   terastallized: boolean;
   current_hp: number;
-  fainted: boolean;
+  current_slot: BattleSlot | null;
 }
 
 export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side?: BattleSide): PokemonBattleState => {
 
   return {
+    id: uuidv4(),
     pokemon_build: pokemonBuild,
     side: side ? side : "red",
     location: "preview",
+    primary_type_ident: pokemonBuild.pokemon.primary_type_ident,
+    secondary_type_ident: pokemonBuild.pokemon.secondary_type_ident,
     ability_ident: pokemonBuild.ability_ident,
     item_ident: pokemonBuild.item_ident,
     status: "healthy",
@@ -41,7 +49,7 @@ export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side?: B
     },
     terastallized: false,
     current_hp: pokemonBuild.stat_spread.hp,
-    fainted: false
+    current_slot: null
   }
 
 }

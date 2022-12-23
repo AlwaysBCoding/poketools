@@ -28,6 +28,10 @@ export const Header = () => {
     {
       path: "/import-team",
       display: "IMPORT TEAM"
+    },
+    {
+      path: "/battle-simulator",
+      display: "BATTLE SIMULATOR"
     }
   ];
 
