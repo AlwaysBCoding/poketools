@@ -9,7 +9,7 @@ export interface Battle {
   turn_index: number;
   status: BattleStatus;
   winner: BattleSide | null;
-  battle_turns: BattleTurn[];
+  battle_turns: string[][];
   battle_state: BattleState;
 }
 

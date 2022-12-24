@@ -57,9 +57,8 @@ export const BattleSimulatorScreen = () => {
 
       const response = await fetch("http://localhost:8000/start-battle", fetchOptions);
       const result = await response.json();
-
-      console.log(`GOT SERVER RESULT`);
-      console.log(result);
+      const nextBattle = result;
+      setBattle(nextBattle);
     }
   }
 
@@ -104,7 +103,7 @@ export const BattleSimulatorScreen = () => {
       </div>
       <div className="battle-container">
         {battle ? (
-          <BattleRenderer battle={battle} />
+          <BattleRenderer battle={battle} perspective="blue" />
         ): (<></>)}
       </div>
     </div>
