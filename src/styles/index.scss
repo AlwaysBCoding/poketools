@@ -806,6 +806,21 @@ $pokemon-base-stats-cell-width: 50%;
     }
   }
 
+  .battle-eval-bar-container {
+    width: 20px;
+    background-color: red;
+    min-height: 460px;
+    max-height: 460px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .battle-eval-bar {
+      background-color: blue;
+    }
+  }
+
 }
 
 // SCREENS

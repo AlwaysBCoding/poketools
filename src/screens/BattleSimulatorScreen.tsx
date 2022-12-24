@@ -18,6 +18,7 @@ export const BattleSimulatorScreen = () => {
   const [activeRedTeam, setActiveRedTeam] = useState<PokemonTeam>();
   const [battle, setBattle] = useState<Battle>();
   const [battleActions, setBattleActions] = useState<BattleAction[]>([]);
+  const [agentActions, setAgentActions] = useState<number[]>([]);
 
   useEffect(() => {
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
@@ -63,8 +64,10 @@ export const BattleSimulatorScreen = () => {
       const result = await response.json();
       const nextBattle = result.battle;
       const nextBattleActions = result.actions;
+      const nextAgentActions = result.agent_actions;
       setBattle(nextBattle);
       setBattleActions(nextBattleActions);
+      setAgentActions(nextAgentActions);
       forceUpdate();
     }
   }
@@ -86,8 +89,10 @@ export const BattleSimulatorScreen = () => {
     const result = await response.json();
     const nextBattle = result.battle;
     const nextBattleActions = result.actions;
+    const nextAgentActions = result.agent_actions;
     setBattle(nextBattle);
     setBattleActions(nextBattleActions);
+    setAgentActions(nextAgentActions);
     forceUpdate();
   }
 
@@ -135,6 +140,7 @@ export const BattleSimulatorScreen = () => {
           <BattleRenderer
             battle={battle}
             battleActions={battleActions}
+            agentActions={agentActions}
             selectBattleAction={selectBattleAction}
             perspective="blue" />
         ): (<></>)}

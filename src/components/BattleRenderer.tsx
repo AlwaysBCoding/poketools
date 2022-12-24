@@ -6,6 +6,14 @@ import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonBattleState } from "../models/battle/PokemonBattleState";
 import { BattleSide } from "../models/battle/BattleShared";
 
+export const BattleEvalBar: React.FC<{maxActionValue: number}> = ({ maxActionValue }) => {
+  return (
+    <div className="battle-eval-bar-container">
+      <div className="battle-eval-bar" style={{height: `${maxActionValue * 100}%`}}></div>
+    </div>
+  )
+}
+
 export const BattleLogRenderer: React.FC<{battle: Battle}> = ({ battle }) => {
   return (
     <div className="battle-log-renderer">
@@ -30,11 +38,13 @@ export const BattleLogRenderer: React.FC<{battle: Battle}> = ({ battle }) => {
 export const BattleRenderer: React.FC<{
   battle: Battle,
   battleActions: BattleAction[],
+  agentActions: number[],
   selectBattleAction?: (battleAction: BattleAction) => void,
   perspective: BattleSide
 }> = ({
   battle,
   battleActions,
+  agentActions,
   selectBattleAction = () => undefined,
   perspective
 }) => {
@@ -96,26 +106,37 @@ export const BattleRenderer: React.FC<{
         </div>
         <div className="battle-actions">
           <div className="moves">
-            {battleActions.filter((x: BattleAction) => x.action_type === "move").map((battleAction: BattleAction, index: number) => {
-              return (
-                <div className="action move" key={`move-${index}`} onClick={() => { selectBattleAction(battleAction) }}>
-                  <p>{battleAction.action_data.move.ident}</p>
-                </div>
-              )
+            {battleActions.map((battleAction: BattleAction, index: number) => {
+              if(battleAction.action_type === "move") {
+                return (
+                  <div className="action move" key={`move-${index}`} onClick={() => { selectBattleAction(battleAction) }}>
+                    <p>{`${battleAction.action_data.move.ident} | ${agentActions[index].toFixed(4)}`}</p>
+                  </div>
+                )
+              } else {
+                return (<></>)
+              }
             })}
           </div>
           <div className="switches">
-            {battleActions.filter((x: BattleAction) => x.action_type === "switch").map((battleAction: BattleAction, index: number) => {
-              return (
-                <div className="action switch" key={`switch-${index}`} onClick={() => { selectBattleAction(battleAction) }}>
-                  <p>{`switch -> ${battleAction.action_data.switch_target.pokemon_build.pokemon.ident}`}</p>
-                </div>
-              )
+            {battleActions.map((battleAction: BattleAction, index: number) => {
+              if(battleAction.action_type === "switch") {
+                return (
+                  <div className="action switch" key={`switch-${index}`} onClick={() => { selectBattleAction(battleAction) }}>
+                    <p>{`switch -> ${battleAction.action_data.switch_target.pokemon_build.pokemon.ident} | ${agentActions[index].toFixed(4)}`}</p>
+                  </div>
+                )
+              } else {
+                return (<></>)
+              }
             })}
           </div>
         </div>
       </div>
       <BattleLogRenderer battle={battle} />
+      {agentActions.length > 0 ? (
+        <BattleEvalBar maxActionValue={Math.max(...agentActions)} />
+      ) : (<></>)}
     </div>
   )
 

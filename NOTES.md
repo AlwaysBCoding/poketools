@@ -29,9 +29,10 @@
   - Bug Bite (steals the opponents berry)
 
 ## OPEN AI QUESTIONS
-  - does the input_dimensions always have to be a flattened array of single float values?
-  - discrete categorical values vs numerical values in the input array
-    - One Hot Encoding
+  - what to do for imperfect knowledge games, where observation states become avaialable over time
+    - i.e. which pokemon is in the back
+    - i.e. what the item/spread of a pokemon is
+    - how does the input data differentiate between 0 values or continuous values and unknown values
   - slicing the actions vector contingent on game state
   - randomness in different pokemon in different indicies each time (or better to explicitly sort them?)
   - model needs to be explicit about the value that is important (i.e. which mon is on the field, or one value can accomodate for that)
