@@ -1,6 +1,7 @@
 from models.pokemon_battle_state import PokemonBattleState
 from models.battle_state import BattleState
-from helpers import find
+from helpers import find, flatten
+from mappings import type_ident_mapping, ability_ident_mapping, item_ident_mapping, status_ident_mapping, location_mapping
 from damage_calculation import calculate_damage
 
 from functools import cmp_to_key
@@ -82,6 +83,17 @@ class Battle():
     self.winner = winner
     self.battle_turns = battle_turns
     self.battle_state = battle_state
+
+  @classmethod
+  def create(cls, config, blue_side_pokemon, red_side_pokemon):
+    return cls(
+      config=config,
+      turn_index=0,
+      status="active",
+      winner=None,
+      battle_turns=[],
+      battle_state=BattleState.create(config, blue_side_pokemon, red_side_pokemon)
+    )
 
   def end_battle_turn(self, battle_events):
     self.turn_index += 1
@@ -323,4 +335,83 @@ class Battle():
       "battle_state": self.battle_state.serialize_api()
     }
   def serialize_ml(self):
-    "..."
+    return flatten([
+      type_ident_mapping(self.battle_state.blue_side_pokemon[0].primary_type_ident),
+      type_ident_mapping(self.battle_state.blue_side_pokemon[0].secondary_type_ident),
+      ability_ident_mapping(self.battle_state.blue_side_pokemon[0].ability_ident),
+      item_ident_mapping(self.battle_state.blue_side_pokemon[0].item_ident),
+      status_ident_mapping(self.battle_state.blue_side_pokemon[0].status),
+      np.float32(self.battle_state.blue_side_pokemon[0].stat_boosts.attack),
+      np.float32(self.battle_state.blue_side_pokemon[0].stat_boosts.defense),
+      np.float32(self.battle_state.blue_side_pokemon[0].stat_boosts.special_attack),
+      np.float32(self.battle_state.blue_side_pokemon[0].stat_boosts.special_defense),
+      np.float32(self.battle_state.blue_side_pokemon[0].stat_boosts.speed),
+      np.float32(self.battle_state.blue_side_pokemon[0].current_hp),
+      np.float32(self.battle_state.blue_side_pokemon[0].pokemon_build.stat_spread.hp),
+      location_mapping(self.battle_state.blue_side_pokemon[0].location),
+      type_ident_mapping(self.battle_state.blue_side_pokemon[1].primary_type_ident),
+      type_ident_mapping(self.battle_state.blue_side_pokemon[1].secondary_type_ident),
+      ability_ident_mapping(self.battle_state.blue_side_pokemon[1].ability_ident),
+      item_ident_mapping(self.battle_state.blue_side_pokemon[1].item_ident),
+      status_ident_mapping(self.battle_state.blue_side_pokemon[1].status),
+      np.float32(self.battle_state.blue_side_pokemon[1].stat_boosts.attack),
+      np.float32(self.battle_state.blue_side_pokemon[1].stat_boosts.defense),
+      np.float32(self.battle_state.blue_side_pokemon[1].stat_boosts.special_attack),
+      np.float32(self.battle_state.blue_side_pokemon[1].stat_boosts.special_defense),
+      np.float32(self.battle_state.blue_side_pokemon[1].stat_boosts.speed),
+      np.float32(self.battle_state.blue_side_pokemon[1].current_hp),
+      np.float32(self.battle_state.blue_side_pokemon[1].pokemon_build.stat_spread.hp),
+      location_mapping(self.battle_state.blue_side_pokemon[1].location),
+      type_ident_mapping(self.battle_state.blue_side_pokemon[2].primary_type_ident),
+      type_ident_mapping(self.battle_state.blue_side_pokemon[2].secondary_type_ident),
+      ability_ident_mapping(self.battle_state.blue_side_pokemon[2].ability_ident),
+      item_ident_mapping(self.battle_state.blue_side_pokemon[2].item_ident),
+      status_ident_mapping(self.battle_state.blue_side_pokemon[2].status),
+      np.float32(self.battle_state.blue_side_pokemon[2].stat_boosts.attack),
+      np.float32(self.battle_state.blue_side_pokemon[2].stat_boosts.defense),
+      np.float32(self.battle_state.blue_side_pokemon[2].stat_boosts.special_attack),
+      np.float32(self.battle_state.blue_side_pokemon[2].stat_boosts.special_defense),
+      np.float32(self.battle_state.blue_side_pokemon[2].stat_boosts.speed),
+      np.float32(self.battle_state.blue_side_pokemon[2].current_hp),
+      np.float32(self.battle_state.blue_side_pokemon[2].pokemon_build.stat_spread.hp),
+      location_mapping(self.battle_state.blue_side_pokemon[2].location),
+      type_ident_mapping(self.battle_state.red_side_pokemon[0].primary_type_ident),
+      type_ident_mapping(self.battle_state.red_side_pokemon[0].secondary_type_ident),
+      ability_ident_mapping(self.battle_state.red_side_pokemon[0].ability_ident),
+      item_ident_mapping(self.battle_state.red_side_pokemon[0].item_ident),
+      status_ident_mapping(self.battle_state.red_side_pokemon[0].status),
+      np.float32(self.battle_state.red_side_pokemon[0].stat_boosts.attack),
+      np.float32(self.battle_state.red_side_pokemon[0].stat_boosts.defense),
+      np.float32(self.battle_state.red_side_pokemon[0].stat_boosts.special_attack),
+      np.float32(self.battle_state.red_side_pokemon[0].stat_boosts.special_defense),
+      np.float32(self.battle_state.red_side_pokemon[0].stat_boosts.speed),
+      np.float32(self.battle_state.red_side_pokemon[0].current_hp),
+      np.float32(self.battle_state.red_side_pokemon[0].pokemon_build.stat_spread.hp),
+      location_mapping(self.battle_state.red_side_pokemon[0].location),
+      type_ident_mapping(self.battle_state.red_side_pokemon[1].primary_type_ident),
+      type_ident_mapping(self.battle_state.red_side_pokemon[1].secondary_type_ident),
+      ability_ident_mapping(self.battle_state.red_side_pokemon[1].ability_ident),
+      item_ident_mapping(self.battle_state.red_side_pokemon[1].item_ident),
+      status_ident_mapping(self.battle_state.red_side_pokemon[1].status),
+      np.float32(self.battle_state.red_side_pokemon[1].stat_boosts.attack),
+      np.float32(self.battle_state.red_side_pokemon[1].stat_boosts.defense),
+      np.float32(self.battle_state.red_side_pokemon[1].stat_boosts.special_attack),
+      np.float32(self.battle_state.red_side_pokemon[1].stat_boosts.special_defense),
+      np.float32(self.battle_state.red_side_pokemon[1].stat_boosts.speed),
+      np.float32(self.battle_state.red_side_pokemon[1].current_hp),
+      np.float32(self.battle_state.red_side_pokemon[1].pokemon_build.stat_spread.hp),
+      location_mapping(self.battle_state.red_side_pokemon[1].location),
+      type_ident_mapping(self.battle_state.red_side_pokemon[2].primary_type_ident),
+      type_ident_mapping(self.battle_state.red_side_pokemon[2].secondary_type_ident),
+      ability_ident_mapping(self.battle_state.red_side_pokemon[2].ability_ident),
+      item_ident_mapping(self.battle_state.red_side_pokemon[2].item_ident),
+      status_ident_mapping(self.battle_state.red_side_pokemon[2].status),
+      np.float32(self.battle_state.red_side_pokemon[2].stat_boosts.attack),
+      np.float32(self.battle_state.red_side_pokemon[2].stat_boosts.defense),
+      np.float32(self.battle_state.red_side_pokemon[2].stat_boosts.special_attack),
+      np.float32(self.battle_state.red_side_pokemon[2].stat_boosts.special_defense),
+      np.float32(self.battle_state.red_side_pokemon[2].stat_boosts.speed),
+      np.float32(self.battle_state.red_side_pokemon[2].current_hp),
+      np.float32(self.battle_state.red_side_pokemon[2].pokemon_build.stat_spread.hp),
+      location_mapping(self.battle_state.red_side_pokemon[2].location)
+    ])

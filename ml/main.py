@@ -1,33 +1,56 @@
 from model import Agent
 from game import Game
 
+import torch as T
+from pathlib import Path
 import numpy as np
 import ipdb
 
 if __name__ == "__main__":
   # GAME LOOP
   # =====================
+  RESTORE_FROM_CHECKPOINT = True
+  SAVE_CHECKPOINT = True
+  CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/checkpoint.pt")
+
   env = Game()
+
   NUMBER_OF_AGENT_ACTIONS = 6
-  OBSERVATION_DIMENSIONS = 84
+  OBSERVATION_DIMENSIONS = 414
+  EPSILON_START = 1.0
+  EPSILON_END = 0.01
+  EPSILON_DEC = 2e-4
+  LEARNING_RATE = 0.002
+
+  epoch = 0
+
+  if(RESTORE_FROM_CHECKPOINT):
+    EPSILON_START = EPSILON_END
 
   agent = Agent(
     gamma=0.99,
-    epsilon=1.0,
+    epsilon=EPSILON_START,
     max_memory_size=1000000,
     batch_size=64,
     n_actions=NUMBER_OF_AGENT_ACTIONS,
-    epsilon_end=0.01,
-    epsilon_dec=1e-4,
+    epsilon_end=EPSILON_END,
+    epsilon_dec=EPSILON_DEC,
     input_dimensions=[OBSERVATION_DIMENSIONS],
-    learning_rate=0.001
+    learning_rate=LEARNING_RATE
   )
 
-  n_games = 3000
+  if(RESTORE_FROM_CHECKPOINT):
+    checkpoint = T.load(CHECKPOINT_PATH)
+    agent.Q_eval.load_state_dict(checkpoint['model_state_dict'])
+    agent.Q_eval.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    epoch = checkpoint['epoch']
+
+  n_games = 2500
 
   scores, epsilon_history = [], []
 
   for i in range(n_games):
+    epoch += 1
     score = 0
     done = 0
     observation = env.reset()
@@ -50,10 +73,16 @@ if __name__ == "__main__":
 
     print(
       'episode ',
-      i,
+      epoch,
       'score %.2f' % score,
       'average score %.2f' % average_score,
       'epsilon %.2f' % agent.epsilon
     )
 
-  ipdb.set_trace()
+  if(SAVE_CHECKPOINT):
+    checkpoint_params = {}
+    checkpoint_params['epoch'] = epoch
+    checkpoint_params['model_state_dict'] = agent.Q_eval.state_dict()
+    checkpoint_params['optimizer_state_dict'] = agent.Q_eval.optimizer.state_dict()
+    checkpoint_params['average_score'] = np.mean(scores[-100:])
+    T.save(checkpoint_params, CHECKPOINT_PATH)

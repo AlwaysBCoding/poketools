@@ -47,18 +47,31 @@ class BattleState():
     self.blue_side_pokemon = blue_side_pokemon
     self.red_side_pokemon = red_side_pokemon
 
-    # if(config.get("variant") == "singles"):
-    #   self.field_state = {
-    #     "blue-field-1": None,
-    #     "red-field-1": None
-    #   }
-    # elif(config.get("variant") == "doubles"):
-    #   self.field_state = {
-    #     "blue-field-1": None,
-    #     "blue-field-2": None,
-    #     "red-field-1": None,
-    #     "red-field-2": None
-    #   }
+
+  @classmethod
+  def create(cls, config, blue_side_pokemon, red_side_pokemon):
+    field_state = {}
+    if(config.get("variant") == "singles"):
+      field_state = {
+        "blue-field-1": None,
+        "red-field-1": None
+      }
+    elif(config.get("variant") == "doubles"):
+      field_state = {
+        "blue-field-1": None,
+        "blue-field-2": None,
+        "red-field-1": None,
+        "red-field-2": None
+      }
+
+    return cls(
+      global_state=GlobalBattleState.create_empty(),
+      field_state=field_state,
+      blue_side_state=SideBattleState.create_empty(),
+      red_side_state=SideBattleState.create_empty(),
+      blue_side_pokemon=blue_side_pokemon,
+      red_side_pokemon=red_side_pokemon
+    )
 
   def create_empty(self):
     self.global_state = GlobalBattleState.create_empty()

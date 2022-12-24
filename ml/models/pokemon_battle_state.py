@@ -35,6 +35,25 @@ class PokemonBattleState():
     self.terastallized = terastallized
     self.current_slot = current_slot
 
+  @classmethod
+  def create_from_pokemon_build(cls, pokemon_build, battle_side):
+    return cls(
+      battle_id=uuid.uuid4(),
+      pokemon_build=pokemon_build,
+      battle_side=battle_side,
+      primary_type_ident=pokemon_build.pokemon.primary_type_ident,
+      secondary_type_ident=pokemon_build.pokemon.secondary_type_ident,
+      ability_ident=pokemon_build.ability_ident,
+      item_ident=pokemon_build.item_ident,
+      stat_boosts=PokemonStatBoosts(),
+      status="healthy",
+      volatile_statuses=[],
+      current_hp=pokemon_build.stat_spread.hp,
+      location="preview",
+      terastallized=False,
+      current_slot=None
+    )
+
   def max_hp(self):
     return self.pokemon_build.stat_spread.hp
 

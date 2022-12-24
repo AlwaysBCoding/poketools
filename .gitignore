@@ -27,3 +27,6 @@ __pycache__/
 
 # python virtual environment
 mlenv/
+
+# ml model checkpoints
+**/checkpoint.pt

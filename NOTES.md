@@ -31,6 +31,7 @@
 ## OPEN AI QUESTIONS
   - does the input_dimensions always have to be a flattened array of single float values?
   - discrete categorical values vs numerical values in the input array
+    - One Hot Encoding
   - slicing the actions vector contingent on game state
   - randomness in different pokemon in different indicies each time (or better to explicitly sort them?)
   - model needs to be explicit about the value that is important (i.e. which mon is on the field, or one value can accomodate for that)
