@@ -63,7 +63,7 @@ def calculate_damage(
   power = 0
   if(pokemon_move):
     power = pokemon_move["base_power"]
-  if(pokemon_move and pokemon_move["ident"] == "acrobatics" and attacking_pokemon["item_ident"] == None):
+  if(pokemon_move and pokemon_move["ident"] == "acrobatics" and attacking_pokemon.item_ident == None):
     power = pokemon_move["base_power"] * 2
 
   is_critical_hit = False

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
+import useForceUpdate from "use-force-update";
 
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
+import { BattleAction } from "../models/battle/BattleAction";
 import { Battle, createBattle } from "../models/battle/Battle";
 import { BattleSide } from "../models/battle/BattleShared";
 
@@ -8,12 +10,14 @@ import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { BattleRenderer } from "../components/BattleRenderer";
 
 export const BattleSimulatorScreen = () => {
+  const forceUpdate = useForceUpdate();
   const [allTeams, setAllTeams] = useState<PokemonTeam[]>([]);
   const [blueTeamName, setBlueTeamName] = useState<string>("");
   const [redTeamName, setRedTeamName] = useState<string>("");
   const [activeBlueTeam, setActiveBlueTeam] = useState<PokemonTeam>();
   const [activeRedTeam, setActiveRedTeam] = useState<PokemonTeam>();
   const [battle, setBattle] = useState<Battle>();
+  const [battleActions, setBattleActions] = useState<BattleAction[]>([]);
 
   useEffect(() => {
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
@@ -57,9 +61,34 @@ export const BattleSimulatorScreen = () => {
 
       const response = await fetch("http://localhost:8000/start-battle", fetchOptions);
       const result = await response.json();
-      const nextBattle = result;
+      const nextBattle = result.battle;
+      const nextBattleActions = result.actions;
       setBattle(nextBattle);
+      setBattleActions(nextBattleActions);
+      forceUpdate();
     }
+  }
+
+  const selectBattleAction = async (battleAction: BattleAction) => {
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "battle": battle,
+        "battle_action": battleAction
+      })
+    }
+
+    const response = await fetch("http://localhost:8000/send-battle-action", fetchOptions);
+    const result = await response.json();
+    const nextBattle = result.battle;
+    const nextBattleActions = result.actions;
+    setBattle(nextBattle);
+    setBattleActions(nextBattleActions);
+    forceUpdate();
   }
 
   return (
@@ -103,7 +132,11 @@ export const BattleSimulatorScreen = () => {
       </div>
       <div className="battle-container">
         {battle ? (
-          <BattleRenderer battle={battle} perspective="blue" />
+          <BattleRenderer
+            battle={battle}
+            battleActions={battleActions}
+            selectBattleAction={selectBattleAction}
+            perspective="blue" />
         ): (<></>)}
       </div>
     </div>

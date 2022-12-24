@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Battle } from "../models/battle/Battle";
+import { BattleAction } from "../models/battle/BattleAction";
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonBattleState } from "../models/battle/PokemonBattleState";
 import { BattleSide } from "../models/battle/BattleShared";
@@ -26,7 +27,17 @@ export const BattleLogRenderer: React.FC<{battle: Battle}> = ({ battle }) => {
   )
 }
 
-export const BattleRenderer: React.FC<{battle: Battle, perspective: BattleSide}> = ({ battle, perspective }) => {
+export const BattleRenderer: React.FC<{
+  battle: Battle,
+  battleActions: BattleAction[],
+  selectBattleAction?: (battleAction: BattleAction) => void,
+  perspective: BattleSide
+}> = ({
+  battle,
+  battleActions,
+  selectBattleAction = () => undefined,
+  perspective
+}) => {
   let bluePokemonImage;
   let redPokemonImage;
   let bluePokemonHealthPercentage;
@@ -81,6 +92,26 @@ export const BattleRenderer: React.FC<{battle: Battle, perspective: BattleSide}>
                 <img src={redPokemonImage} className="pokemon-image" alt="pokemon-image" />
               </div>
             ) : (<></>)}
+          </div>
+        </div>
+        <div className="battle-actions">
+          <div className="moves">
+            {battleActions.filter((x: BattleAction) => x.action_type === "move").map((battleAction: BattleAction, index: number) => {
+              return (
+                <div className="action move" key={`move-${index}`} onClick={() => { selectBattleAction(battleAction) }}>
+                  <p>{battleAction.action_data.move.ident}</p>
+                </div>
+              )
+            })}
+          </div>
+          <div className="switches">
+            {battleActions.filter((x: BattleAction) => x.action_type === "switch").map((battleAction: BattleAction, index: number) => {
+              return (
+                <div className="action switch" key={`switch-${index}`} onClick={() => { selectBattleAction(battleAction) }}>
+                  <p>{`switch -> ${battleAction.action_data.switch_target.pokemon_build.pokemon.ident}`}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>

@@ -28,6 +28,7 @@ class PokemonBattleState():
     self.ability_ident = ability_ident
     self.item_ident = item_ident
     self.stat_boosts = stat_boosts
+    self.status = status
     self.volatile_statuses = volatile_statuses
     self.current_hp = current_hp
     self.location = location
@@ -87,6 +88,7 @@ class PokemonBattleState():
       "ability_ident": self.ability_ident,
       "item_ident": self.item_ident,
       "stat_boosts": self.stat_boosts.serialize_api(),
+      "status": self.status,
       "volatile_statuses": self.volatile_statuses,
       "current_hp": self.current_hp,
       "location": self.location,

@@ -219,14 +219,14 @@ class Game():
     ]
 
   def possible_actions(self):
-    return self.battle.available_actions_for_pokemon_battle_state(self.battle.field_pokemon("blue").id)
+    return self.battle.available_actions_for_pokemon_battle_state(self.battle.field_pokemon("blue").battle_id)
 
   def step(self, action):
     blue_field_pokemon = self.battle.field_pokemon("blue")
     red_field_pokemon = self.battle.field_pokemon("red")
 
-    blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.id)
-    red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.id)
+    blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.battle_id)
+    red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.battle_id)
 
     red_pokemon_action = np.random.choice(red_pokemon_actions)
     # if(red_pokemon_actions[0].actor.pokemon_build.pokemon.ident == "garchomp"):

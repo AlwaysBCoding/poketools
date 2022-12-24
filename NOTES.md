@@ -1,6 +1,6 @@
 ## TODO
-  - figure out how to port the battle sim logic to Python? to train the AI on it
-  - primary_type_ident and secondary_type_ident in the damage calc should be on the PokemonBattleState, not on the pokemon_build
+  - figure out why fainted blue_side pokemon can perform a battle action after fainting (probably because it doesn't get cancelled after fainting, if they were acting second)
+
   - figure out the right calcs for assurance/avalanche power up moves
   - allow renaming of teams
   - add more items

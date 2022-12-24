@@ -747,12 +747,12 @@ $pokemon-base-stats-cell-width: 50%;
   justify-content: flex-start;
 
   .battle-renderer {
-    height: 360px;
-    width: calc($battle-renderer-aspect-ratio * 360px);
-    background-color: mistyrose;
 
     .pokemons {
       position: relative;
+      height: 360px;
+      width: calc($battle-renderer-aspect-ratio * 360px);
+      background-color: mistyrose;
     }
 
     .player-pokemons {

@@ -1,3 +1,4 @@
+from models.pokemon_battle_state import PokemonBattleState
 from models.battle_state import BattleState
 from helpers import find
 from damage_calculation import calculate_damage
@@ -32,6 +33,39 @@ class BattleAction():
     self.action_type = action_type
     self.action_data = action_data
 
+  @classmethod
+  def deserialize(cls, serialized_battle_action):
+    action_data = {}
+    if(serialized_battle_action["action_type"] == "move"):
+      action_data = serialized_battle_action["action_data"]
+    elif(serialized_battle_action["action_type"] == "switch"):
+      action_data = {
+        "switch_target": PokemonBattleState.deserialize(serialized_battle_action["action_data"]["switch_target"])
+      }
+    return cls(
+      actor=PokemonBattleState.deserialize(serialized_battle_action["actor"]),
+      action_type=serialized_battle_action["action_type"],
+      action_data=action_data
+    )
+
+  def serialize_api(self):
+    action_data = {}
+    if(self.action_type == "move"):
+      action_data = {
+        "move": self.action_data["move"],
+        "move_targets": self.action_data["move_targets"]
+      }
+    elif(self.action_type == "switch"):
+      action_data = {
+        "switch_target": self.action_data["switch_target"].serialize_api()
+      }
+
+    return {
+      "actor": self.actor.serialize_api(),
+      "action_type": self.action_type,
+      "action_data": action_data
+    }
+
 class Battle():
   def __init__(
     self,
@@ -61,10 +95,14 @@ class Battle():
     blue_pokemon = self.battle_state.blue_side_pokemon[blue_side_pokemon_order[0]]
     blue_pokemon.location = "field"
     self.battle_state.field_state["blue-field-1"] = blue_pokemon.battle_id
+    self.battle_state.blue_side_pokemon[blue_side_pokemon_order[1]].location = "party"
+    self.battle_state.blue_side_pokemon[blue_side_pokemon_order[2]].location = "party"
     turn_events.append(f"Go {blue_pokemon.pokemon_build.pokemon.ident}!")
     red_pokemon = self.battle_state.red_side_pokemon[red_side_pokemon_order[0]]
     red_pokemon.location = "field"
     self.battle_state.field_state["red-field-1"] = red_pokemon.battle_id
+    self.battle_state.red_side_pokemon[red_side_pokemon_order[1]].location = "party"
+    self.battle_state.red_side_pokemon[red_side_pokemon_order[2]].location = "party"
     turn_events.append(f"Go {red_pokemon.pokemon_build.pokemon.ident}!")
     self.battle_turns.append(turn_events)
     self.end_battle_turn(turn_events)
@@ -181,14 +219,16 @@ class Battle():
       return [action_events, should_end_battle]
 
     if(battle_action.action_type == "switch"):
-      battle_action.actor.location = "party"
-      action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} come back!")
-      battle_action.action_data['switch_target'].location = "field"
-      action_events.append(f"Go {battle_action.action_data['switch_target'].pokemon_build.pokemon.ident}!")
-      if(battle_action.actor.battle_side == "blue"):
-        self.battle_state.field_state["blue-field-1"] = battle_action.action_data['switch_target'].battle_id
+      actor = self.pokemon_battle_state_by_id(battle_action.actor.battle_id)
+      target = self.pokemon_battle_state_by_id(battle_action.action_data["switch_target"].battle_id)
+      actor.location = "party"
+      action_events.append(f"{actor.pokemon_build.pokemon.ident} come back!")
+      target.location = "field"
+      action_events.append(f"Go {target.pokemon_build.pokemon.ident}!")
+      if(actor.battle_side == "blue"):
+        self.battle_state.field_state["blue-field-1"] = target.battle_id
       elif(battle_action.actor.battle_side == "red"):
-        self.battle_state.field_state["red-field-1"] = battle_action.action_data['switch_target'].battle_id
+        self.battle_state.field_state["red-field-1"] = target.battle_id
     elif(battle_action.action_type == "move"):
       action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {battle_action.action_data['move']['ident']}")
       if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):

@@ -20,16 +20,16 @@ const STAT_BOOST_MODIFIER_VALUES: Record<string, number> = {
 const compareWithBattleState = (battleState: BattleState) => {
 
   return function(a: BattleAction, b: BattleAction) {
-    const aBaseSpeed = a.actor_pokemon.pokemon_build.stat_spread.speed;
-    const bBaseSpeed = b.actor_pokemon.pokemon_build.stat_spread.speed;
+    const aBaseSpeed = a.actor.pokemon_build.stat_spread.speed;
+    const bBaseSpeed = b.actor.pokemon_build.stat_spread.speed;
 
-    var aSpeed: number = aBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${a.actor_pokemon.stat_boosts.speed}`];
-    var bSpeed: number = bBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${b.actor_pokemon.stat_boosts.speed}`];
+    var aSpeed: number = aBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${a.actor.stat_boosts.speed}`];
+    var bSpeed: number = bBaseSpeed * STAT_BOOST_MODIFIER_VALUES[`${b.actor.stat_boosts.speed}`];
 
-    if((a.actor_side === "red" && battleState.red_side_state.tailwind) || a.actor_side === "blue" && battleState.blue_side_state.tailwind) {
+    if((a.actor.battle_side === "red" && battleState.red_side_state.tailwind) || a.actor.battle_side === "blue" && battleState.blue_side_state.tailwind) {
       aSpeed = aSpeed * 2;
     }
-    if((b.actor_side === "red" && battleState.red_side_state.tailwind) || b.actor_side === "blue" && battleState.blue_side_state.tailwind) {
+    if((b.actor.battle_side === "red" && battleState.red_side_state.tailwind) || b.actor.battle_side === "blue" && battleState.blue_side_state.tailwind) {
       bSpeed = bSpeed * 2;
     }
 

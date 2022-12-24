@@ -29,7 +29,7 @@ class PokemonStatSpread():
       "hp": self.hp,
       "attack": self.attack,
       "defense": self.defense,
-      "special_sttack": self.special_attack,
+      "special_attack": self.special_attack,
       "special_defense": self.special_defense,
       "speed": self.speed
     }
