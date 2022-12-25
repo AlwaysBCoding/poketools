@@ -38,3 +38,19 @@ export const createBattle = ({
   }
 
 }
+
+export const initialStep = (battle: Battle): Battle => {
+  battle.battle_state.blue_side_pokemon[0].location = "field";
+  battle.battle_state.red_side_pokemon[0].location = "field";
+  battle.battle_state.field_state["blue-field-1"] = battle.battle_state.blue_side_pokemon[0].battle_id;
+  battle.battle_state.field_state["red-field-1"] = battle.battle_state.red_side_pokemon[0].battle_id;
+
+  battle.battle_turns.push([
+    "Battle Started!",
+    `Go ${battle.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.ident}!`,
+    `Go ${battle.battle_state.red_side_pokemon[0].pokemon_build.pokemon.ident}!`
+  ]);
+  battle.turn_index += 1;
+
+  return battle;
+}

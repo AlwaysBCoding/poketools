@@ -1,4 +1,11 @@
 ## TODO
+  - add python unit testing workflow for properly coding move behavior
+  - add more overall moves
+  - create a worklfow for training models on big GPU machines on AWS and synchronizing later
+
+  - hold off on adding abilities
+  - hold off on adding items
+
   - figure out why fainted blue_side pokemon can perform a battle action after fainting (probably because it doesn't get cancelled after fainting, if they were acting second)
 
   - figure out the right calcs for assurance/avalanche power up moves
@@ -27,12 +34,14 @@
   - Brick Break (destroys screens)
   - Brine (power doubles if target has <= 1/2 hp remaining)
   - Bug Bite (steals the opponents berry)
+  - Knock-Off (power is contingent on whether or not target has held item, target loses held item)
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time
     - i.e. which pokemon is in the back
     - i.e. what the item/spread of a pokemon is
     - how does the input data differentiate between 0 values or continuous values and unknown values
+  - how do some of the actions have values > 1 at the end of the game? when 1 is the highest possible reward that you can ever get?
   - slicing the actions vector contingent on game state
   - randomness in different pokemon in different indicies each time (or better to explicitly sort them?)
   - model needs to be explicit about the value that is important (i.e. which mon is on the field, or one value can accomodate for that)

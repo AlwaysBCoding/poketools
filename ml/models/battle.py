@@ -97,6 +97,17 @@ class Battle():
 
   def end_battle_turn(self, battle_events):
     self.turn_index += 1
+
+    if(self.battle_state.blue_side_state.reflect > 0):
+      self.battle_state.blue_side_state.reflect -= 1
+    if(self.battle_state.red_side_state.reflect > 0):
+      self.battle_state.red_side_state.reflect -= 1
+
+    if(self.battle_state.blue_side_state.tailwind > 0):
+      self.battle_state.blue_side_state.tailwind -= 1
+    if(self.battle_state.red_side_state.tailwind > 0):
+      self.battle_state.red_side_state.tailwind -= 1
+
     for battle_event in battle_events:
       # print(battle_event)
       continue
@@ -207,6 +218,11 @@ class Battle():
     a_speed = a_base_speed * STAT_BOOST_MODIFIER_VALUES[f"{battle_action_a.actor.stat_boosts.speed}"]
     b_speed = b_base_speed * STAT_BOOST_MODIFIER_VALUES[f"{battle_action_b.actor.stat_boosts.speed}"]
 
+    if((battle_action_a.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind > 0) or (battle_action_a.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind > 0)):
+      a_speed *= 2
+    if((battle_action_b.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind > 0) or (battle_action_b.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind > 0)):
+      b_speed *= 2
+
     if(a_speed > b_speed):
       return -1
     elif(b_speed > a_speed):
@@ -241,16 +257,29 @@ class Battle():
         self.battle_state.field_state["blue-field-1"] = target.battle_id
       elif(battle_action.actor.battle_side == "red"):
         self.battle_state.field_state["red-field-1"] = target.battle_id
+
     elif(battle_action.action_type == "move"):
-      action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {battle_action.action_data['move']['ident']}")
+      move_ident = battle_action.action_data["move"]["ident"]
+      action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {move_ident}")
+
       if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
-        "..."
+        if(move_ident == "reflect"):
+          if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.reflect == 0):
+            self.battle_state.blue_side_state.reflect = 5
+          elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
+            self.battle_state.red_side_state.reflect = 5
+        if(move_ident == "tailwind"):
+          if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
+            self.battle_state.blue_side_state.tailwind = 4
+          elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind == 0):
+            self.battle_state.red_side_state.tailwind = 4
+
       elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
         target_pokemon_slot = battle_action.action_data['move_targets'][0]
         target_pokemon_id = self.battle_state.field_state[target_pokemon_slot]
         target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
         damage = calculate_damage(
-          battle_state={},
+          battle_state=self.battle_state,
           attacking_pokemon=battle_action.actor,
           target_pokemon=target_pokemon,
           move_ident=battle_action.action_data['move']['ident']
@@ -258,6 +287,12 @@ class Battle():
         target_pokemon_previous_hp = target_pokemon.current_hp
         target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
         action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+
+        if(battle_action.action_data['move']['ident'] == 'knock-off' and target_pokemon.item_ident != None):
+          knocked_off_item_ident = target_pokemon.item_ident
+          target_pokemon.item_ident = None
+          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
+
         if(target_pokemon.current_hp == 0):
           target_pokemon.location = "graveyard"
           self.battle_state.field_state[target_pokemon_slot] = None

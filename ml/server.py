@@ -6,6 +6,7 @@ from pprint import pprint
 import ipdb
 
 from models.battle import Battle, BattleAction
+from damage_calculation import calculate_damage
 
 import numpy as np
 import torch as T
@@ -86,17 +87,87 @@ def sendBattleAction():
     traceback.print_exc()
     return {"status": "error"}
 
-@app.route("/get-battle-actions")
-def path1():
-  return "/get-battle-actions"
+@app.route("/test/perform-battle-action", methods=["POST", "OPTIONS"])
+def testPerformBattleAction():
+  try:
+    data = request.get_json()
+    battle = Battle.deserialize(data["battle"])
+    battle_action = BattleAction.deserialize(data["battle_action"])
+    action_events, should_end_battle = battle.perform_battle_action(battle_action)
+    return {
+      "battle": battle.serialize_api(),
+      "action_events": action_events
+    }
+  except Exception as e:
+    print("GOT EXCEPTION")
+    print(e)
+    traceback.print_exc()
+    return {"status": "error"}
 
-@app.route("/predict-battle-action")
-def path2():
-  return "/predict-battle-action"
+@app.route("/test/calculate-damage", methods=["POST", "OPTIONS"])
+def testCalculateDamage():
+  try:
+    data = request.get_json()
+    battle = Battle.deserialize(data["battle"])
+    battle_action = BattleAction.deserialize(data["battle_action"])
+    target_slot = battle_action.action_data["move_targets"][0]
+    target_pokemon_battle_id = battle.battle_state.field_state[target_slot]
+    target_pokemon = battle.pokemon_battle_state_by_id(target_pokemon_battle_id)
 
-@app.route("/transition-battle-state")
-def path3():
-  return "/transition-battle-state"
+    random_roll = data.get("random_roll")
+    crit_roll = data.get("crit_roll")
+    targeting_value = data.get("targeting_value")
+
+    damage = calculate_damage(
+      battle_state=battle.battle_state,
+      attacking_pokemon=battle_action.actor,
+      target_pokemon=target_pokemon,
+      move_ident=battle_action.action_data["move"]["ident"],
+      hardcoded_random_roll=random_roll,
+      hardcoded_crit_roll=crit_roll,
+      hardcoded_targeting_value=targeting_value
+    )
+    return {
+      "damage": damage
+    }
+  except Exception as e:
+    print("GOT EXCEPTION")
+    print(e)
+    traceback.print_exc()
+    return {"status": "error"}
+
+@app.route("/test/battle-step", methods=["POST", "OPTIONS"])
+def testBattleStep():
+  try:
+    data = request.get_json()
+    battle = Battle.deserialize(data["battle"])
+    blue_actions = list(map(lambda x: BattleAction.deserialize(x), data['blue_battle_actions']))
+    red_actions = list(map(lambda x: BattleAction.deserialize(x), data['red_battle_actions']))
+    battle.step(blue_actions, red_actions)
+    return {
+      "battle": battle.serialize_api()
+    }
+  except Exception as e:
+    print("GOT EXCEPTION")
+    print(e)
+    traceback.print_exc()
+    return {"status": "error"}
+
+@app.route("/test/order-actions", methods=["POST", "OPTIONS"])
+def testOrderActions():
+  try:
+    data = request.get_json()
+    battle = Battle.deserialize(data["battle"])
+    battle_actions = list(map(lambda x: BattleAction.deserialize(x), data['battle_actions']))
+    ordered_battle_actions = battle.order_battle_actions(battle_actions)
+    return {
+      "battle_actions": list(map(lambda x: x.serialize_api(), ordered_battle_actions))
+    }
+  except Exception as e:
+    print("GOT EXCEPTION")
+    print(e)
+    traceback.print_exc()
+    return {"status": "error"}
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", port=8000, debug=True)

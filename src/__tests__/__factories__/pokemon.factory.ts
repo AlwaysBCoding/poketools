@@ -1,5 +1,33 @@
 import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
-import { PokemonBuild } from "../../models/pokemon/PokemonBuild";
+
+export const GRIMMSNARL_ATEAM_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "grimmsnarl",
+  nickname: null,
+  item_ident: "iron-ball",
+  ability_ident: "prankster",
+  level: 50,
+  shiny: false,
+  gender: "male",
+  tera_type_ident: "steel",
+  nature_ident: "adamant",
+  move_idents: ["reflect", "light-screen", "trick", "spirit-break"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 31
+  },
+  ev_spread: {
+    hp: 200,
+    attack: 130,
+    defense: 0,
+    special_attack: 0,
+    special_defense: 126,
+    speed: 0
+  }
+}
 
 export const GARCHOMP_ATEAM_BUILD: PokemonBuildTemplate = {
   pokemon_ident: "garchomp",

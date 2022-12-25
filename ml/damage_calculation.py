@@ -60,28 +60,46 @@ def calculate_damage(
   spread = 1
   critical = 1
 
+  level = attacking_pokemon.pokemon_build.level
+  total_damage = 0
+
+  # BASE POWER
+  # =====================
   power = 0
   if(pokemon_move):
-    power = pokemon_move["base_power"]
-  if(pokemon_move and pokemon_move["ident"] == "acrobatics" and attacking_pokemon.item_ident == None):
-    power = pokemon_move["base_power"] * 2
+    power = pokemon_move['base_power']
+    if(pokemon_move['ident'] == 'acrobatics' and attacking_pokemon.item_ident == None):
+      power *= 2
+    if(pokemon_move['ident'] == 'knock-off' and target_pokemon.item_ident != None):
+      power *= 1.5
 
+  # CRITICAL
+  # =====================
   is_critical_hit = False
   active_crit_stage = CRITICAL_HIT_STAGES[0]
   crit_roll = (1 - hardcoded_crit_roll) if hardcoded_crit_roll else (1 - hardcoded_crit_roll) if hardcoded_crit_roll == 0 else (1 - np.random.random())
-  if(crit_roll <= active_crit_stage):
+  if(pokemon_move['ident'] == 'flower-trick'):
+    is_critical_hit = True
+    critical = CRITICAL_HIT_MODIFIER
+  elif(crit_roll <= active_crit_stage):
     is_critical_hit = True
     critical = CRITICAL_HIT_MODIFIER
 
+  # SPREAD
+  # =====================
   if(pokemon_move and hardcoded_targeting_value == "spread"):
     spread = SPREAD_MODIFIER
 
+  # WEATHER
+  # =====================
   weather = 1
+
+  # RANDOM
+  # =====================
   random = hardcoded_random_roll if hardcoded_random_roll else np.random.choice(RANDOM_ROLLS)
-  level = attacking_pokemon.pokemon_build.level
 
-  total_damage = 0
-
+  # BASE
+  # =====================
   if(pokemon_move["category_ident"] == "physical"):
     a_value = attacking_pokemon.pokemon_build.stat_spread.attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.attack}"]
     d_value = target_pokemon.pokemon_build.stat_spread.defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
@@ -89,9 +107,23 @@ def calculate_damage(
     a_value = attacking_pokemon.pokemon_build.stat_spread.special_attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.special_attack}"]
     d_value = target_pokemon.pokemon_build.stat_spread.special_defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.special_defense}"]
 
-  if(attacking_pokemon.primary_type_ident == pokemon_move["type_ident"]):
-    stab = STAB_MODIFIER
+  # STAB
+  # =====================
+  if(attacking_pokemon.terastallized):
+    if(attacking_pokemon.pokemon_build.tera_type_ident == pokemon_move['type_ident']):
+      if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
+        stab = 2
+      else:
+        stab = STAB_MODIFIER
+    else:
+      if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
+        stab = STAB_MODIFIER
+  else:
+    if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
+      stab = STAB_MODIFIER
 
+  # TYPE
+  # =====================
   primary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.primary_type_ident)
   secondary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.secondary_type_ident)
   if(primary_type_effectiveness and secondary_type_effectiveness):
@@ -99,11 +131,22 @@ def calculate_damage(
   elif(primary_type_effectiveness):
     type_value = primary_type_effectiveness["effectiveness"]
 
+  # BURN
+  # =====================
   if(attacking_pokemon.status == "burned" and pokemon_move["category_ident"] == "physical"):
     burn = BURN_MODIFIER
 
+  # OTHER
+  # =====================
   if(attacking_pokemon.item_ident == "life-orb"):
-    other = LIFE_ORB_MODIFIER
+    other *= LIFE_ORB_MODIFIER
+
+  if(target_pokemon.battle_side == "blue"):
+    if(battle_state.blue_side_state.reflect > 0 and pokemon_move['category_ident'] == 'physical' and not is_critical_hit):
+      other *= 0.5
+  elif(target_pokemon.battle_side == "red"):
+    if(battle_state.red_side_state.reflect > 0 and pokemon_move['category_ident'] == 'physical' and not is_critical_hit):
+      other *= 0.5
 
   if(power):
     base_damage = math.floor(math.floor((math.floor(((2 * level) / 5) + 2) * power * a_value) / d_value) / 50) + 2
