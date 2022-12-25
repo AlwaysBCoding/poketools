@@ -1,5 +1,12 @@
 ## TODO
   - Implement Accuracy (stat stage & accuracy rolls)
+  - Implement Evasiveness (stat stage & accuracy rolls)
+  - Implement crit ratio as a stat boost stage
+  - Implement Protect/Detect logic
+
+  - implement recoil damage logic
+  - implement recovery damage logic
+
   - create a worklfow for training models on big GPU machines on AWS and synchronizing later
 
   - add more overall moves
@@ -44,6 +51,17 @@
   - Counter (deals damage to the last pokemon to hit this mon based on damage amount)
   - Covet (steals target's item)
   - Curse (effect depends on user's typing)
+  - Defog (removes hazards, terrain)
+  - Destiny Bond (kills the killer if active and user faints)
+  - Detect/Protect
+  - Dig (user digs first turn, attacks second turn)
+  - Dive (same as bounce / dig)
+  - Doodle (changes ability of user and ally to that of selected target)
+  - Double Shock (fails unless electric type, loses typing while active)
+  - Dragon Darts (smart targeting)
+  - Dragon Rush (weird effect about countering minimize)
+  - Dragon Tail (forced target to switch out (similar to circle throw))
+  - Dream Eater (target unaffected unless they are asleep)
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

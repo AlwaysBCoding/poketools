@@ -1,0 +1,12 @@
+{
+  "ident": "double-kick",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 30,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 30,
+  "description": "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+  "target": "any-adjacent",
+  "multihit": 2
+}

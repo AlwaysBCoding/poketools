@@ -1,0 +1,17 @@
+{
+  "ident": "dynamic-punch",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 0.50,
+  "priority": 0,
+  "pp": 5,
+  "description": "Has a 100% chance to confuse the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "confused",
+      "frequency": 1
+    }
+  ]
+}

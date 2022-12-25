@@ -1,0 +1,17 @@
+{
+  "ident": "dark-pulse",
+  "type_ident": "dark",
+  "category_ident": "special",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 20% chance to make the target flinch.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "flinched",
+      "frequency": 0.2
+    }
+  ]
+}

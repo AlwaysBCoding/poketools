@@ -1,6 +1,6 @@
 {
-  "ident": "brave-bird",
-  "type_ident": "flying",
+  "ident": "double-edge",
+  "type_ident": "normal",
   "category_ident": "physical",
   "base_power": 120,
   "accuracy": 1,

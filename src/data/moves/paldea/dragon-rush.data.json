@@ -1,0 +1,17 @@
+{
+  "ident": "dragon-rush",
+  "type_ident": "dragon",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 0.75,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 20% chance to make the target flinch. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "flinched",
+      "frequency": 0.2
+    }
+  ]
+}

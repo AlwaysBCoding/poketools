@@ -1,0 +1,11 @@
+{
+  "ident": "dig",
+  "type_ident": "ground",
+  "category_ident": "phyiscal",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks other than Earthquake and Magnitude but takes double damage from them, and is also unaffected by weather. If the user is holding a Power Herb, the move completes in one turn.",
+  "target": "any-adjacent"
+}

@@ -1,0 +1,11 @@
+{
+  "ident": "disarming-voice",
+  "type_ident": "fairy",
+  "category_ident": "special",
+  "base_power": 40,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 15,
+  "description": "This move does not check accuracy.",
+  "target": "all-enemies"
+}

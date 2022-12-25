@@ -1,0 +1,19 @@
+{
+  "ident": "dragon-dance",
+  "type_ident": "dragon",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the user's Attack and Speed by 1 stage.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "attack": 1,
+      "speed": 1,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

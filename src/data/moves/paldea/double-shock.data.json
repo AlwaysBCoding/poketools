@@ -1,0 +1,11 @@
+{
+  "ident": "double-shock",
+  "type_ident": "electric",
+  "category_ident": "physical",
+  "base_power": 120,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Fails unless the user is an Electric type. If this move is successful, the user's Electric type becomes typeless as long as it remains active.",
+  "target": "any-adjacent"
+}

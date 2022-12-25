@@ -1,0 +1,12 @@
+{
+  "ident": "dual-wingbeat",
+  "type_ident": "flying",
+  "category_ident": "physical",
+  "base_power": 40,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Hits twice. If the first hit breaks the target's substitute, it will take damage for the second hit.",
+  "target": "any-adjacent",
+  "multihit": 2
+}

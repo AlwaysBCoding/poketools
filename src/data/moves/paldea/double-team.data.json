@@ -1,0 +1,16 @@
+{
+  "ident": "double-team",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 15,
+  "description": "Raises the user's evasiveness by 1 stage.",
+  "target": "self",
+  "stat_changes": [{
+    "evasiveness": 1,
+    "frequency": 1,
+    "target": "self"
+  }]
+}
