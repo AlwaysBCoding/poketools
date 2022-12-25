@@ -1,4 +1,4 @@
-from models.pokemon_battle_state import PokemonBattleState
+from models.pokemon_battle_state import PokemonBattleState, PokemonStatBoosts
 from models.battle_state import BattleState
 from helpers import find, flatten
 from mappings import type_ident_mapping, ability_ident_mapping, item_ident_mapping, status_ident_mapping, location_mapping
@@ -257,6 +257,7 @@ class Battle():
       actor = self.pokemon_battle_state_by_id(battle_action.actor.battle_id)
       target = self.pokemon_battle_state_by_id(battle_action.action_data["switch_target"].battle_id)
       actor.location = "party"
+      actor.stat_boosts = PokemonStatBoosts()
       action_events.append(f"{actor.pokemon_build.pokemon.ident} come back!")
       target.location = "field"
       action_events.append(f"Go {target.pokemon_build.pokemon.ident}!")
@@ -268,6 +269,9 @@ class Battle():
     elif(battle_action.action_type == "move"):
       move_ident = battle_action.action_data["move"]["ident"]
       action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {move_ident}")
+      target_pokemon_slot = battle_action.action_data['move_targets'][0]
+      target_pokemon_id = self.battle_state.field_state[target_pokemon_slot]
+      target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
 
       if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
         if(move_ident == "reflect"):
@@ -290,9 +294,6 @@ class Battle():
 
         # DEFAULT MOVE BEHAVIOR
         # =====================
-        target_pokemon_slot = battle_action.action_data['move_targets'][0]
-        target_pokemon_id = self.battle_state.field_state[target_pokemon_slot]
-        target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
         damage = calculate_damage(
           battle_state=self.battle_state,
           attacking_pokemon=battle_action.actor,
@@ -302,21 +303,6 @@ class Battle():
         target_pokemon_previous_hp = target_pokemon.current_hp
         target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
         action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
-
-        if(battle_action.action_data['move'].get('stat_changes')):
-          target_stat_change = battle_action.action_data['move']['stat_changes'][0]
-          if(target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL):
-            target_boost_pokemon = self.pokemon_battle_state_by_id(battle_action.actor.battle_id) if target_stat_change.get('target') == 'self' else target_pokemon
-            if(target_stat_change.get('attack')):
-              target_boost_pokemon.stat_boosts.attack += target_stat_change.get('attack')
-            if(target_stat_change.get('defense')):
-              target_boost_pokemon.stat_boosts.defense += target_stat_change.get('defense')
-            if(target_stat_change.get('special_attack')):
-              target_boost_pokemon.stat_boosts.special_attack += target_stat_change.get('special_attack')
-            if(target_stat_change.get('special_defense')):
-              target_boost_pokemon.stat_boosts.special_defense += target_stat_change.get('special_defense')
-            if(target_stat_change.get('speed')):
-              target_boost_pokemon.stat_boosts.speed += target_stat_change.get('speed')
 
         # CUSTOM MOVE BEHAVIOR
         # =====================
@@ -340,6 +326,23 @@ class Battle():
           else:
             should_end_battle = True
             action_events.append("THE BATTLE IS OVER")
+
+      # STAT BOOSTS
+      # =====================
+      if(battle_action.action_data['move'].get('stat_changes')):
+        target_stat_change = battle_action.action_data['move']['stat_changes'][0]
+        if(target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL):
+          target_boost_pokemon = self.pokemon_battle_state_by_id(battle_action.actor.battle_id) if target_stat_change.get('target') == 'self' else target_pokemon
+          if(target_stat_change.get('attack')):
+            target_boost_pokemon.stat_boosts.attack += target_stat_change.get('attack')
+          if(target_stat_change.get('defense')):
+            target_boost_pokemon.stat_boosts.defense += target_stat_change.get('defense')
+          if(target_stat_change.get('special_attack')):
+            target_boost_pokemon.stat_boosts.special_attack += target_stat_change.get('special_attack')
+          if(target_stat_change.get('special_defense')):
+            target_boost_pokemon.stat_boosts.special_defense += target_stat_change.get('special_defense')
+          if(target_stat_change.get('speed')):
+            target_boost_pokemon.stat_boosts.speed += target_stat_change.get('speed')
 
     return [action_events, should_end_battle]
 

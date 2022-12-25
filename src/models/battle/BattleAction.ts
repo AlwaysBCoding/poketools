@@ -23,3 +23,13 @@ export const composeMoveAction = (actor: PokemonBattleState, moveIdent: PokemonM
     }
   }
 }
+
+export const composeSwitchAction = (actor: PokemonBattleState, switchTarget: PokemonBattleState): BattleAction => {
+  return {
+    actor: actor,
+    action_type: "switch",
+    action_data: {
+      "switch_target": switchTarget
+    }
+  }
+}

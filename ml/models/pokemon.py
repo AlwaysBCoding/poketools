@@ -1,20 +1,3 @@
-class PokemonStatBoosts():
-  def __init__(self, attack=0, defense=0, special_attack=0, special_defense=0, speed=0):
-    self.attack = attack
-    self.defense = defense
-    self.special_attack = special_attack
-    self.special_defense = special_defense
-    self.speed = speed
-
-  def serialize_api(self):
-    return {
-      "attack": self.attack,
-      "defense": self.defense,
-      "special_attack": self.special_attack,
-      "special_defense": self.special_defense,
-      "speed": self.speed
-    }
-
 class PokemonStatSpread():
   def __init__(self, hp, attack, defense, special_attack, special_defense, speed):
     self.hp = hp
