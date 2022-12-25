@@ -1,0 +1,17 @@
+{
+  "ident": "crunch",
+  "type_ident": "dark",
+  "category_ident": "physical",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 20% chance to lower the target's Defense by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "defense": -1,
+      "frequency": 0.2
+    }
+  ]
+}

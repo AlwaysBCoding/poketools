@@ -1,0 +1,18 @@
+{
+  "ident": "charge-beam",
+  "type_ident": "electric",
+  "category_ident": "special",
+  "base_power": 50,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 70% chance to raise the user's Special Attack by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_attack": 1,
+      "frequency": 0.70,
+      "target": "self"
+    }
+  ]
+}

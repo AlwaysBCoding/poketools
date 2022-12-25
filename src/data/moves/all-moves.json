@@ -880,6 +880,116 @@
     ]
   },
   {
+    "ident": "calm-mind",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Special Attack and Special Defense by 1 stage.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "special_attack": 1,
+        "special_defense": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "charge-beam",
+    "type_ident": "electric",
+    "category_ident": "special",
+    "base_power": 50,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 70% chance to raise the user's Special Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "special_attack": 1,
+        "frequency": 0.7,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "charge",
+    "type_ident": "electric",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Special Defense by 1 stage. The user's next Electric-type attack will have its power doubled.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "special_defense": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "charm",
+    "type_ident": "fairy",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Lowers the target's Attack by 2 stages.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": -2,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "chilling-water",
+    "type_ident": "water",
+    "category_ident": "special",
+    "base_power": 50,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 100% chance to lower the target's Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "chilly-reception",
+    "type_ident": "ice",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the weather becomes Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members."
+  },
+  {
+    "ident": "circle-throw",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 0.9,
+    "priority": -6,
+    "pp": 10,
+    "description": "If both the user and the target have not fainted, the target is forced to switch out and be replaced with a random unfainted ally. This effect fails if the target is under the effect of Ingrain, has the Suction Cups Ability, or this move hit a substitute.",
+    "target": "any-adjacent"
+  },
+  {
     "ident": "clear-smog",
     "type_ident": "poison",
     "category_ident": "special",
@@ -888,6 +998,287 @@
     "priority": 0,
     "pp": 15,
     "description": "Resets all of the target's stat stages to 0."
+  },
+  {
+    "ident": "close-combat",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 120,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Lowers the user's Defense and Special Defense by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "defense": -1,
+        "special_defense": -1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "coil",
+    "type_ident": "poison",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Attack, Defense, and accuracy by 1 stage.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "attack": 1,
+        "defense": 1,
+        "accuracy": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "collision-course",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 100,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Damage is multiplied by 1.3333 if this move is super effective against the target.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "comeuppance",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn."
+  },
+  {
+    "ident": "confide",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Lowers the target's Special Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "special_attack": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "confuse-ray",
+    "type_ident": "ghost",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Causes the target to become confused.",
+    "secondary_effects": [
+      {
+        "status_ident": "confused",
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "confusion",
+    "type_ident": "psychic",
+    "category_ident": "special",
+    "base_power": 50,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "Has a 10% chance to confuse the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "confused",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "copycat",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "The user uses the last move used by any Pokemon, including itself. The base move of Max and G-Max Moves is considered for this purpose. Fails if no move has been used, or if the last move used was Assist, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Celebrate, Chatter, Circle Throw, Copycat, Counter, Covet, Crafty Shield, Destiny Bond, Detect, Dragon Tail, Dynamax Cannon, Endure, Feint, Focus Punch, Follow Me, Helping Hand, Hold Hands, King's Shield, Mat Block, Me First, Metronome, Mimic, Mirror Coat, Mirror Move, Nature Power, Obstruct, Protect, Rage Powder, Roar, Shell Trap, Sketch, Sleep Talk, Snatch, Spiky Shield, Spotlight, Struggle, Switcheroo, Thief, Transform, Trick, or Whirlwind."
+  },
+  {
+    "ident": "cosmic-power",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Defense and Special Defense by 1 stage.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "defense": 1,
+        "special_defense": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "cotton-guard",
+    "type_ident": "grass",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "Raises the user's Defense by 3 stages.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "defense": 3,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "cotton-spore",
+    "type_ident": "grass",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 40,
+    "description": "Lowers the target's Speed by 2 stages.",
+    "target": "all-enemies",
+    "stat_changes": [
+      {
+        "speed": -2,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "counter",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": -5,
+    "pp": 20,
+    "description": "Deals damage to the last opposing Pokemon to hit the user with a physical attack this turn equal to twice the HP lost by the user from that attack. If the user did not lose HP from the attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical attack this turn."
+  },
+  {
+    "ident": "covet",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "If this attack was successful and the user has not fainted, it steals the target's held item if the user is not holding one. The target's item is not stolen if it is a Mail or Z-Crystal, or if the target is a Kyogre holding a Blue Orb, a Groudon holding a Red Orb, a Giratina holding a Griseous Orb, an Arceus holding a Plate, a Genesect holding a Drive, a Silvally holding a Memory, or a Pokemon that can Mega Evolve holding the Mega Stone for its species. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "crabhammer",
+    "type_ident": "water",
+    "category_ident": "physical",
+    "base_power": 100,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a higher chance for a critical hit.",
+    "target": "any-adjacent",
+    "critical_hit_stage_index": 1
+  },
+  {
+    "ident": "cross-chop",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 100,
+    "accuracy": 0.8,
+    "priority": 0,
+    "pp": 5,
+    "description": "Has a higher chance for a critical hit.",
+    "target": "any-adjacent",
+    "critical_hit_stage_index": 1
+  },
+  {
+    "ident": "cross-poison",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 70,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 10% chance to poison the target and a higher chance for a critical hit.",
+    "target": "any-adjacent",
+    "critical_hit_stage_index": 1,
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "crunch",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 20% chance to lower the target's Defense by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "defense": -1,
+        "frequency": 0.2
+      }
+    ]
+  },
+  {
+    "ident": "crush-claw",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 75,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 50% chance to lower the target's Defense by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "defense": -1,
+        "frequency": 0.5
+      }
+    ]
+  },
+  {
+    "ident": "curse",
+    "type_ident": "ghost",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "If the user is not a Ghost type, lowers the user's Speed by 1 stage and raises the user's Attack and Defense by 1 stage. If the user is a Ghost type, the user loses 1/2 of its maximum HP, rounded down and even if it would cause fainting, in exchange for the target losing 1/4 of its maximum HP, rounded down, at the end of each turn while it is active. If the target uses Baton Pass, the replacement will continue to be affected. Fails if there is no target or if the target is already affected."
   },
   {
     "ident": "dragon-claw",

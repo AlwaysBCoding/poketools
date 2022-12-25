@@ -1,0 +1,16 @@
+{
+  "ident": "confuse-ray",
+  "type_ident": "ghost",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "Causes the target to become confused.",
+  "secondary_effects": [
+    {
+      "status_ident": "confused",
+      "frequency": 1
+    }
+  ]
+}

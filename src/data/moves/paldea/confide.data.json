@@ -1,0 +1,17 @@
+{
+  "ident": "confide",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Lowers the target's Special Attack by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_attack": -1,
+      "frequency": 1
+    }
+  ]
+}

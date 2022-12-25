@@ -1,0 +1,20 @@
+{
+  "ident": "coil",
+  "type_ident": "poison",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the user's Attack, Defense, and accuracy by 1 stage.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "attack": 1,
+      "defense": 1,
+      "accuracy": 1,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

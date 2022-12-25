@@ -1,0 +1,18 @@
+{
+  "ident": "charge",
+  "type_ident": "electric",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the user's Special Defense by 1 stage. The user's next Electric-type attack will have its power doubled.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "special_defense": 1,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

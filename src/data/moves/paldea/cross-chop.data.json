@@ -1,0 +1,12 @@
+{
+  "ident": "cross-chop",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 0.80,
+  "priority": 0,
+  "pp": 5,
+  "description": "Has a higher chance for a critical hit.",
+  "target": "any-adjacent",
+  "critical_hit_stage_index": 1
+}

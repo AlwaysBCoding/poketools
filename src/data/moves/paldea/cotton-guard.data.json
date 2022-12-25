@@ -1,0 +1,18 @@
+{
+  "ident": "cotton-guard",
+  "type_ident": "grass",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "Raises the user's Defense by 3 stages.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "defense": 3,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

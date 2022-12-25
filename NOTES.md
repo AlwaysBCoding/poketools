@@ -1,5 +1,5 @@
 ## TODO
-  - IMPLEMENT the stat_boost min/max tests in battle.test.ts
+  - Implement Accuracy (stat stage & accuracy rolls)
   - create a worklfow for training models on big GPU machines on AWS and synchronizing later
 
   - add more overall moves
@@ -34,6 +34,16 @@
   - Brick Break (destroys screens)
   - Brine (power doubles if target has <= 1/2 hp remaining)
   - Bug Bite (steals the opponents berry)
+  - Charge (next electric-type attack will have its power doubled)
+  - Chilly Reception (user sets snow and then switches out)
+  - Circle Throw (target is forced to switch out)
+  - Clear Smog (resets all targets stat changes)
+  - Collision Course (damage is multiplied by 1.33* if move is super effective)
+  - Comeuppance (wtf is this attack)
+  - Copycat (copies last attempted move)
+  - Counter (deals damage to the last pokemon to hit this mon based on damage amount)
+  - Covet (steals target's item)
+  - Curse (effect depends on user's typing)
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

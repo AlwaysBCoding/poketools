@@ -1,0 +1,12 @@
+{
+  "ident": "crabhammer",
+  "type_ident": "water",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a higher chance for a critical hit.",
+  "target": "any-adjacent",
+  "critical_hit_stage_index": 1
+}
