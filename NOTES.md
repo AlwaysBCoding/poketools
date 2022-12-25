@@ -34,7 +34,6 @@
   - Brick Break (destroys screens)
   - Brine (power doubles if target has <= 1/2 hp remaining)
   - Bug Bite (steals the opponents berry)
-  - Knock-Off (power is contingent on whether or not target has held item, target loses held item)
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

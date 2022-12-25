@@ -10,8 +10,7 @@
   "target": "",
   "stat_changes": [
     {
-      "stat_ident": "special_defense",
-      "stages": -2,
+      "special_defense": -2,
       "frequency": 1
     }
   ]

@@ -10,7 +10,7 @@
   "target": "any-ally",
   "stat_changes": [
     {
-      "stat_ident": "special_defense",
+      "special_defense": 1,
       "stages": 1,
       "frequency": 1
     }

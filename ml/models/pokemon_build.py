@@ -16,7 +16,7 @@ class PokemonBuild():
     self.ability_ident = ability_ident
     self.item_ident = item_ident
     self.level = level
-    self.gender = gender,
+    self.gender = gender
     self.tera_type_ident = tera_type_ident
     self.move_idents = move_idents
     self.stat_spread = stat_spread

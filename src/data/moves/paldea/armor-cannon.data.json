@@ -9,13 +9,8 @@
   "description": "Lowers the user's Defense and Special Defense by 1 stage.",
   "stat_changes": [
     {
-      "stat_ident": "defense",
-      "stages": -1,
-      "frequency": 1
-    },
-    {
-      "stat_ident": "special_defense",
-      "stages": -1,
+      "defense": -1,
+      "special_defense": -1,
       "frequency": 1
     }
   ]

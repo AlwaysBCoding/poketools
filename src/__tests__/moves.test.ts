@@ -125,6 +125,42 @@ describe("MOVES", () => {
   });
 
   describe("AQUA STEP", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [meowscaradaBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const aquaStepAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "aqua-step",
+      ["red-field-1"]
+    );
+
+    const energyBallAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "energy-ball",
+      ["blue-field-1"]
+    );
+
+    test("it boosts quaquaval's speed after use", async () => {
+      const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattle, [aquaStepAction, energyBallAction]);
+      expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
+      const battleStepResult = await BATTLE_STEP(initialBattle, [aquaStepAction], [energyBallAction]);
+      expect(battleStepResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed).toEqual(1);
+      const nextAquaStepAction: BattleAction = composeMoveAction(
+        battleStepResult.battle.battle_state.blue_side_pokemon[0],
+        "aqua-step",
+        ["red-field-1"]
+      );
+      const nextOrderedActionsResult = await ORDER_BATTLE_ACTIONS(battleStepResult.battle, [nextAquaStepAction, energyBallAction]);
+      expect(nextOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("quaquaval");
+    });
+
   });
 
   describe("KNOCK-OFF", () => {
@@ -325,7 +361,8 @@ describe("MOVES", () => {
     });
 
     test("it properly decrements the tailwind counter at the end of the turn", async () => {
-      const battleStepResult = await BATTLE_STEP(initialBattle, [tailwindAction], [knockOffAction]);
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const battleStepResult = await BATTLE_STEP(initialBattleCopy, [tailwindAction], [knockOffAction]);
       expect(battleStepResult.battle.battle_state.blue_side_state.tailwind).toEqual(3);
     });
 

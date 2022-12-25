@@ -10,10 +10,6 @@
   "stat_changes": [
     {
       "attack": 1,
-      "frequency": 1,
-      "target": "self"
-    },
-    {
       "defense": 1,
       "frequency": 1,
       "target": "self"

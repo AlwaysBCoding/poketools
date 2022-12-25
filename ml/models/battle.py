@@ -7,6 +7,7 @@ from damage_calculation import calculate_damage
 from functools import cmp_to_key
 from pathlib import Path
 import json
+from pprint import pprint
 import numpy as np
 
 all_moves_f = open(Path("../src/data/moves/all-moves.json"))
@@ -247,6 +248,7 @@ class Battle():
   def perform_battle_action(self, battle_action):
     action_events = []
     should_end_battle = False
+    STAT_CHANGE_FREQUENCY_ROLL = np.random.random()
 
     if(battle_action.actor.location == "graveyard"):
       return [action_events, should_end_battle]
@@ -285,6 +287,9 @@ class Battle():
             self.battle_state.red_side_state.tailwind = 4
 
       elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
+
+        # DEFAULT MOVE BEHAVIOR
+        # =====================
         target_pokemon_slot = battle_action.action_data['move_targets'][0]
         target_pokemon_id = self.battle_state.field_state[target_pokemon_slot]
         target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
@@ -298,11 +303,30 @@ class Battle():
         target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
         action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
 
+        if(battle_action.action_data['move'].get('stat_changes')):
+          target_stat_change = battle_action.action_data['move']['stat_changes'][0]
+          if(target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL):
+            target_boost_pokemon = self.pokemon_battle_state_by_id(battle_action.actor.battle_id) if target_stat_change.get('target') == 'self' else target_pokemon
+            if(target_stat_change.get('attack')):
+              target_boost_pokemon.stat_boosts.attack += target_stat_change.get('attack')
+            if(target_stat_change.get('defense')):
+              target_boost_pokemon.stat_boosts.defense += target_stat_change.get('defense')
+            if(target_stat_change.get('special_attack')):
+              target_boost_pokemon.stat_boosts.special_attack += target_stat_change.get('special_attack')
+            if(target_stat_change.get('special_defense')):
+              target_boost_pokemon.stat_boosts.special_defense += target_stat_change.get('special_defense')
+            if(target_stat_change.get('speed')):
+              target_boost_pokemon.stat_boosts.speed += target_stat_change.get('speed')
+
+        # CUSTOM MOVE BEHAVIOR
+        # =====================
         if(battle_action.action_data['move']['ident'] == 'knock-off' and target_pokemon.item_ident != None):
           knocked_off_item_ident = target_pokemon.item_ident
           target_pokemon.item_ident = None
           action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
 
+        # POKEMON FAINTS
+        # =====================
         if(target_pokemon.current_hp == 0):
           target_pokemon.location = "graveyard"
           self.battle_state.field_state[target_pokemon_slot] = None

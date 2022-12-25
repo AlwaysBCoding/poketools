@@ -9,8 +9,7 @@
   "description": "Has a 100% chance to lower the target's Special Attack by 1 stage.",
   "stat_changes": [
     {
-      "stat_ident": "special_attack",
-      "stages": -1,
+      "special_attack": -1,
       "frequency": 1
     }
   ]

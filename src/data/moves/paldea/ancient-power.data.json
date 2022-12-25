@@ -9,8 +9,7 @@
   "description": "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
   "stat_changes": [
     {
-      "stat_ident": "all",
-      "stages": 1,
+      "all": 1,
       "frequency": 0.1
     }
   ]

@@ -10,8 +10,7 @@
   "target": "",
   "stat_changes": [
     {
-      "stat_ident": "speed",
-      "stages": 2,
+      "speed": 2,
       "frequency": 1,
       "target": "self"
     }

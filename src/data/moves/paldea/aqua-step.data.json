@@ -9,8 +9,7 @@
   "description": "Has a 100% chance to raise the user's Speed by 1 stage.",
   "stat_changes": [
     {
-      "stat_ident": "speed",
-      "stages": 1,
+      "speed": 1,
       "frequency": 1,
       "target": "self"
     }

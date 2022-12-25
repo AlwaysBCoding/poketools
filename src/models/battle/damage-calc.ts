@@ -1,11 +1,10 @@
 import { PokemonMoveIdent } from "../pokemon/PokemonShared";
 import { BattleState } from "./BattleState";
 import { PokemonBattleState } from "./PokemonBattleState";
-import { PokemonMove } from "../pokemon/PokemonMove";
+import { PokemonMoveSimple } from "../pokemon/PokemonMove";
 
 import allMoves from "../../data/moves/all-moves.json";
 import typeChart from "../../data/pokemon-type-effectiveness.json";
-import { Pokemon } from "../pokemon/Pokemon";
 
 const LIFE_ORB_MODIFIER = (5324/4096);
 const SPREAD_MODIFIER = (3072/4096);
@@ -59,7 +58,7 @@ export const calculateDamage = ({
   hardcodedTargetingValue,
 }: DamageCalcParams): number => {
 
-  const pokemonMove: PokemonMove = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMove);
+  const pokemonMove: PokemonMoveSimple = (allMoves.find((move: any) => { return move.ident === moveIdent }) as PokemonMoveSimple);
   let aValue = 1;
   let dValue = 1;
   let stab = 1;
@@ -81,7 +80,7 @@ export const calculateDamage = ({
     critical = CRITICAL_HIT_MODIFIER;
   }
 
-  if(pokemonMove && ["all-adjacent", "all-enemies"].includes(pokemonMove.target) && hardcodedTargetingValue === "spread") {
+  if(pokemonMove && ["all-adjacent", "all-enemies"].includes(`${pokemonMove.target}`) && hardcodedTargetingValue === "spread") {
     spread = SPREAD_MODIFIER;
   }
 
