@@ -21,7 +21,6 @@
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
 
 ## Damaging Moves with Custom functionality to add
-  - Ancient Power (all stats boosted 1 stage)
   - Assurance (2x base power if taret has already taken damage this turn)
   - Avalanche (2x base power if the user was hit by the target this turn)
   - Barb Barrage (2x base power if the target is poisoned)

@@ -2,6 +2,7 @@ import {
   TALONFLAME_ATEAM_BUILD,
   ANNIHILAPE_BULKY_BUILD,
   GRIMMSNARL_ATEAM_BUILD,
+  GASTRODON_ATEAM_BUILD,
   MEOWSCARADA_MAX_STATS,
   QUAQUAVAL_MAX_STATS
 } from "./__factories__/pokemon.factory";
@@ -14,7 +15,7 @@ import { BattleConfig } from "../models/battle/BattleShared";
 const SERVER_URI = "http://localhost:8000";
 const BATTLE_CONFIG: BattleConfig = {variant: "singles"};
 
-const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction): Promise<Record<string, any>> => {
+const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction, hardcodedStatChangeFrequencyRoll?: number): Promise<Record<string, any>> => {
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -23,7 +24,8 @@ const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction)
     },
     body: JSON.stringify({
       battle: battle,
-      battle_action: battleAction
+      battle_action: battleAction,
+      hardcoded_stat_change_frequency_roll: hardcodedStatChangeFrequencyRoll
     })
   }
 
@@ -122,6 +124,34 @@ describe("MOVES", () => {
       expect(acrobaticsActionDamageResult.damage).toEqual(144);
     });
 
+  });
+
+  describe("ANCIENT_POWER", () => {
+    let gastrodonBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GASTRODON_ATEAM_BUILD);
+    gastrodonBuild.move_idents = ["clear-smog", "hydro-pump", "earth-power", "ancient-power"];
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [gastrodonBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const ancientPowerAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "ancient-power",
+      ["red-field-1"]
+    );
+
+    test("it boosts all stats if frequency roll is proc'd", async () => {
+      const ancientPowerActionResult = await PERFORM_BATTLE_ACTION(initialBattle, ancientPowerAction, 1);
+      expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.attack).toEqual(1);
+      expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.defense).toEqual(1);
+      expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_attack).toEqual(1);
+      expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_defense).toEqual(1);
+      expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed).toEqual(1);
+    });
   });
 
   describe("AQUA STEP", () => {

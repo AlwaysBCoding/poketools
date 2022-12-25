@@ -10,7 +10,8 @@
   "stat_changes": [
     {
       "all": 1,
-      "frequency": 0.1
+      "frequency": 0.1,
+      "target": "self"
     }
   ]
 }

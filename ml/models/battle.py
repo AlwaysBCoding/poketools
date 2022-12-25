@@ -245,10 +245,10 @@ class Battle():
   def order_battle_actions(self, battle_actions):
     return sorted(battle_actions, key=cmp_to_key(self.compare_battle_actions))
 
-  def perform_battle_action(self, battle_action):
+  def perform_battle_action(self, battle_action, hardcoded_stat_change_frequency_roll=None):
     action_events = []
     should_end_battle = False
-    STAT_CHANGE_FREQUENCY_ROLL = np.random.random()
+    STAT_CHANGE_FREQUENCY_ROLL = (1 - hardcoded_stat_change_frequency_roll) if hardcoded_stat_change_frequency_roll else np.random.random()
 
     if(battle_action.actor.location == "graveyard"):
       return [action_events, should_end_battle]
@@ -348,6 +348,17 @@ class Battle():
           if(target_stat_change.get('speed')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('speed'), 6), -6)
             target_boost_pokemon.stat_boosts.speed = next_stat_value
+          if(target_stat_change.get('all')):
+            next_attack_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('all'), 6), -6)
+            next_defense_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('all'), 6), -6)
+            next_special_attack_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('all'), 6), -6)
+            next_special_defense_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('all'), 6), -6)
+            next_speed_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('all'), 6), -6)
+            target_boost_pokemon.stat_boosts.attack = next_attack_value
+            target_boost_pokemon.stat_boosts.defense = next_defense_value
+            target_boost_pokemon.stat_boosts.special_attack = next_special_attack_value
+            target_boost_pokemon.stat_boosts.special_defense = next_special_defense_value
+            target_boost_pokemon.stat_boosts.speed = next_speed_value
 
     return [action_events, should_end_battle]
 

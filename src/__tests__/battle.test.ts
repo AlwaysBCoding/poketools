@@ -12,7 +12,7 @@ import { Battle, createBattle, initialStep } from "../models/battle/Battle";
 const SERVER_URI = "http://localhost:8000";
 const BATTLE_CONFIG: BattleConfig = {variant: "singles"};
 
-const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction): Promise<Record<string, any>> => {
+const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction, hardcodedStatChangeFrequencyRoll?: number): Promise<Record<string, any>> => {
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -21,7 +21,8 @@ const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction)
     },
     body: JSON.stringify({
       battle: battle,
-      battle_action: battleAction
+      battle_action: battleAction,
+      hardcoded_stat_change_frequency_roll: hardcodedStatChangeFrequencyRoll
     })
   }
 

@@ -95,9 +95,10 @@ def sendBattleAction():
 def testPerformBattleAction():
   try:
     data = request.get_json()
-    battle = Battle.deserialize(data["battle"])
-    battle_action = BattleAction.deserialize(data["battle_action"])
-    action_events, should_end_battle = battle.perform_battle_action(battle_action)
+    battle = Battle.deserialize(data['battle'])
+    battle_action = BattleAction.deserialize(data['battle_action'])
+    hardcoded_stat_change_frequency_roll = data.get('hardcoded_stat_change_frequency_roll')
+    action_events, should_end_battle = battle.perform_battle_action(battle_action, hardcoded_stat_change_frequency_roll)
     return {
       "battle": battle.serialize_api(),
       "action_events": action_events

@@ -1,5 +1,34 @@
 import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
 
+export const GASTRODON_ATEAM_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "gastrodon",
+  nickname: null,
+  item_ident: "leftovers",
+  ability_ident: "storm-drain",
+  level: 50,
+  shiny: false,
+  gender: "female",
+  tera_type_ident: "grass",
+  nature_ident: "calm",
+  move_idents: ["clear-smog", "hydro-pump", "earth-power", "protect"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 0
+  },
+  ev_spread: {
+    hp: 252,
+    attack: 0,
+    defense: 0,
+    special_attack: 124,
+    special_defense: 132,
+    speed: 0
+  }
+}
+
 export const GRIMMSNARL_ATEAM_BUILD: PokemonBuildTemplate = {
   pokemon_ident: "grimmsnarl",
   nickname: null,
