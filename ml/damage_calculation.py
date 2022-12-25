@@ -144,8 +144,12 @@ def calculate_damage(
   if(target_pokemon.battle_side == "blue"):
     if(battle_state.blue_side_state.reflect > 0 and pokemon_move['category_ident'] == 'physical' and not is_critical_hit):
       other *= 0.5
+    if(battle_state.blue_side_state.light_screen > 0 and pokemon_move['category_ident'] == 'special' and not is_critical_hit):
+      other *= 0.5
   elif(target_pokemon.battle_side == "red"):
     if(battle_state.red_side_state.reflect > 0 and pokemon_move['category_ident'] == 'physical' and not is_critical_hit):
+      other *= 0.5
+    if(battle_state.red_side_state.light_screen > 0 and pokemon_move['category_ident'] == 'special' and not is_critical_hit):
       other *= 0.5
 
   if(power):

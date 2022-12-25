@@ -103,6 +103,11 @@ class Battle():
     if(self.battle_state.red_side_state.reflect > 0):
       self.battle_state.red_side_state.reflect -= 1
 
+    if(self.battle_state.blue_side_state.light_screen > 0):
+      self.battle_state.blue_side_state.light_screen -= 1
+    if(self.battle_state.red_side_state.light_screen > 0):
+      self.battle_state.red_side_state.light_screen -= 1
+
     if(self.battle_state.blue_side_state.tailwind > 0):
       self.battle_state.blue_side_state.tailwind -= 1
     if(self.battle_state.red_side_state.tailwind > 0):
@@ -268,6 +273,11 @@ class Battle():
             self.battle_state.blue_side_state.reflect = 5
           elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
             self.battle_state.red_side_state.reflect = 5
+        if(move_ident == "light-screen"):
+          if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.light_screen == 0):
+            self.battle_state.blue_side_state.light_screen = 5
+          elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.light_screen == 0):
+            self.battle_state.red_side_state.light_screen = 5
         if(move_ident == "tailwind"):
           if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
             self.battle_state.blue_side_state.tailwind = 4

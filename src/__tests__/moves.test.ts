@@ -125,7 +125,6 @@ describe("MOVES", () => {
   });
 
   describe("AQUA STEP", () => {
-
   });
 
   describe("KNOCK-OFF", () => {
@@ -165,17 +164,57 @@ describe("MOVES", () => {
   });
 
   describe("LIGHT SCREEN", () => {
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+    let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
 
-    test("it sets light screen", () => {
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [grimmsnarlBuild],
+      redSidePokemonBuilds: [meowscaradaBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
 
+    const lightScreenAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "light-screen",
+      ["blue-field-1"]
+    );
+
+    const energyBallAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "energy-ball",
+      ["blue-field-1"]
+    );
+
+    test("it sets light screen", async () => {
+      const lightScreenActionResult = await PERFORM_BATTLE_ACTION(initialBattle, lightScreenAction);
+      expect(lightScreenActionResult.battle.battle_state.blue_side_state.light_screen).toEqual(5);
     });
 
-    test("special damage halves when light screen is active", () => {
+    test("special damage halves when light screen is active", async () => {
+      const lightScreenActionResult = await PERFORM_BATTLE_ACTION(initialBattle, lightScreenAction);
+      const energyBallActionResult = await CALCULATE_DAMAGE(lightScreenActionResult.battle, energyBallAction);
 
+      expect(energyBallActionResult.damage).toEqual(21);
     });
 
-    test("critical hits go through light screen", () => {
+    test("critical hits go through light screen", async () => {
+      const lightScreenActionResult = await PERFORM_BATTLE_ACTION(initialBattle, lightScreenAction);
+      const energyBallDamageResult = await CALCULATE_DAMAGE(lightScreenActionResult.battle, energyBallAction, 0.85, 1);
 
+      expect(energyBallDamageResult.damage).toEqual(64);
+    });
+
+    test("it doesn't reset light screen counter if light screen is already active", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_state.light_screen = 3;
+      const lightScreenActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, lightScreenAction);
+      expect(lightScreenActionResult.battle.battle_state.blue_side_state.light_screen).toEqual(3);
+    });
+
+    test("it properly decrements the light screen counter at the end of the turn", async () => {
+      const battleStepResult = await BATTLE_STEP(initialBattle, [lightScreenAction], [energyBallAction]);
+      expect(battleStepResult.battle.battle_state.blue_side_state.light_screen).toEqual(4);
     });
 
   });
