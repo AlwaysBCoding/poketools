@@ -90,7 +90,7 @@ grimmsnarl_build = PokemonBuild(
   level=50,
   gender="male",
   tera_type_ident="steel",
-  move_idents=["fake-out", "sucker-punch", "spirit-break", "ice-punch"],
+  move_idents=["reflect", "light-screen", "spirit-break", "ice-punch"],
   stat_spread=PokemonStatSpread(hp=195, attack=171, defense=85, special_attack=103, special_defense=111, speed=80)
 )
 
@@ -104,15 +104,15 @@ class Game():
     self.done = 0
 
     talonflame_battle_state = PokemonBattleState.create_from_pokemon_build(talonflame_build, "blue")
-    tsareena_battle_state = PokemonBattleState.create_from_pokemon_build(tsareena_build, "blue")
-    gastrodon_battle_state = PokemonBattleState.create_from_pokemon_build(gastrodon_build, "blue")
+    grimmsnarl_battle_state = PokemonBattleState.create_from_pokemon_build(grimmsnarl_build, "blue")
+    gholdengo_battle_state = PokemonBattleState.create_from_pokemon_build(gholdengo_build, "blue")
 
+    tsareena_battle_state = PokemonBattleState.create_from_pokemon_build(tsareena_build, "red")
+    gastrodon_battle_state = PokemonBattleState.create_from_pokemon_build(gastrodon_build, "red")
     garchomp_battle_state = PokemonBattleState.create_from_pokemon_build(garchomp_build, "red")
-    grimmsnarl_battle_state = PokemonBattleState.create_from_pokemon_build(grimmsnarl_build, "red")
-    gholdengo_battle_state = PokemonBattleState.create_from_pokemon_build(gholdengo_build, "red")
 
-    blue_side_pokemon = [talonflame_battle_state, tsareena_battle_state, gastrodon_battle_state]
-    red_side_pokemon = [garchomp_battle_state, grimmsnarl_battle_state, gholdengo_battle_state]
+    blue_side_pokemon = [talonflame_battle_state, grimmsnarl_battle_state, gholdengo_battle_state]
+    red_side_pokemon = [tsareena_battle_state, gastrodon_battle_state, garchomp_battle_state]
 
     battle_config = {"variant": "singles"}
     self.battle = Battle.create(battle_config, blue_side_pokemon, red_side_pokemon)

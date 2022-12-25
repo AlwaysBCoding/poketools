@@ -1,7 +1,8 @@
 ## TODO
-  - add python unit testing workflow for properly coding move behavior
-  - add more overall moves
+  - IMPLEMENT the stat_boost min/max tests in battle.test.ts
   - create a worklfow for training models on big GPU machines on AWS and synchronizing later
+
+  - add more overall moves
 
   - hold off on adding abilities
   - hold off on adding items

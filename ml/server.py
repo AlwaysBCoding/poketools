@@ -45,7 +45,11 @@ def startBattle():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data)
-    battle.initial_step([0,1,2], [0,1,2])
+    blue_side_pokemon_order = [0, 1, 2]
+    np.random.shuffle(blue_side_pokemon_order)
+    red_side_pokemon_order = [0, 1, 2]
+    np.random.shuffle(red_side_pokemon_order)
+    battle.initial_step(blue_side_pokemon_order, red_side_pokemon_order)
     battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
     serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
     observation = battle.serialize_ml()

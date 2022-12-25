@@ -3,13 +3,14 @@ from game import Game
 
 import torch as T
 from pathlib import Path
+from pprint import pprint
 import numpy as np
 import ipdb
 
 if __name__ == "__main__":
   # GAME LOOP
   # =====================
-  RESTORE_FROM_CHECKPOINT = True
+  RESTORE_FROM_CHECKPOINT = False
   SAVE_CHECKPOINT = True
   CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/checkpoint.pt")
 

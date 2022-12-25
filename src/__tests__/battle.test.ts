@@ -95,4 +95,12 @@ describe("GAME LOOP", () => {
     expect(battleStepResult2.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_attack).toEqual(0);
   });
 
+  test("a pokemon cannot get to a stat boost stage of greater than 6", async () => {
+    // TODO: IMPLEMENT
+  });
+
+  test("a pokemon cannot get to a stat boost stage of less than 6", async () => {
+    // TODO: IMPLEMENT
+  });
+
 });

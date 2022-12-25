@@ -334,15 +334,20 @@ class Battle():
         if(target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL):
           target_boost_pokemon = self.pokemon_battle_state_by_id(battle_action.actor.battle_id) if target_stat_change.get('target') == 'self' else target_pokemon
           if(target_stat_change.get('attack')):
-            target_boost_pokemon.stat_boosts.attack += target_stat_change.get('attack')
+            next_stat_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('attack'), 6), -6)
+            target_boost_pokemon.stat_boosts.attack = next_stat_value
           if(target_stat_change.get('defense')):
-            target_boost_pokemon.stat_boosts.defense += target_stat_change.get('defense')
+            next_stat_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('defense'), 6), -6)
+            target_boost_pokemon.stat_boosts.defense = next_stat_value
           if(target_stat_change.get('special_attack')):
-            target_boost_pokemon.stat_boosts.special_attack += target_stat_change.get('special_attack')
+            next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('special_attack'), 6), -6)
+            target_boost_pokemon.stat_boosts.special_attack = next_stat_value
           if(target_stat_change.get('special_defense')):
-            target_boost_pokemon.stat_boosts.special_defense += target_stat_change.get('special_defense')
+            next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('special_defense'), 6), -6)
+            target_boost_pokemon.stat_boosts.special_defense = next_stat_value
           if(target_stat_change.get('speed')):
-            target_boost_pokemon.stat_boosts.speed += target_stat_change.get('speed')
+            next_stat_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('speed'), 6), -6)
+            target_boost_pokemon.stat_boosts.speed = next_stat_value
 
     return [action_events, should_end_battle]
 

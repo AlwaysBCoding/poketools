@@ -10,7 +10,7 @@ class SideBattleState():
 
   @classmethod
   def create_empty(cls):
-    cls(reflect=0, light_screen=0, aurora_veil=0, tailwind=0, hazards=[])
+    return cls(reflect=0, light_screen=0, aurora_veil=0, tailwind=0, hazards=[])
 
   def serialize_api(self):
     return {
@@ -29,7 +29,7 @@ class GlobalBattleState():
 
   @classmethod
   def create_empty(cls):
-    cls(terrain=None, weather=None, auras=[])
+    return cls(terrain=None, weather=None, auras=[])
 
   def serialize_api(self):
     return {
