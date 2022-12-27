@@ -1,0 +1,11 @@
+{
+  "ident": "electro-drift",
+  "type_ident": "electric",
+  "category_ident": "special",
+  "base_power": 100,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Damage is multiplied by 1.3333 if this move is super effective against the target.",
+  "target": "any-adjacent"
+}

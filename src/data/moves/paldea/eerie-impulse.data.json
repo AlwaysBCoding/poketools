@@ -1,0 +1,17 @@
+{
+  "ident": "eerie-impulse",
+  "type_ident": "electric",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Lowers the target's Special Attack by 2 stages.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_attack": -2,
+      "frequency": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "ident": "extrasensory",
+  "type_ident": "psychic",
+  "category_ident": "special",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Has a 10% chance to make the target flinch.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "flinched",
+      "frequency": 0.1
+    }
+  ]
+}

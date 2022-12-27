@@ -1,0 +1,12 @@
+{
+  "ident": "echoed-voice",
+  "type_ident": "normal",
+  "category_ident": "special",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "For every consecutive turn that this move is used by at least one Pokemon, this move's power is multiplied by the number of turns to pass, but not more than 5.",
+  "detailed_description": "This move increases in power when used by y Pokémon on your side in the last turn. The increase is by 100%. If two Pokémon use it in Double or Triple Battles or it's used repeatedly, the second power is 80 and if a third Pokémon uses it, its Base Power is 160. If it's used a fourth time within the same two turns, it is capped at 200.",
+  "target": "any-adjacent"
+}

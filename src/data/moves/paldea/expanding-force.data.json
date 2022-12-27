@@ -1,0 +1,11 @@
+{
+  "ident": "expanding-force",
+  "type_ident": "psychic",
+  "category_ident": "special",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "If the current terrain is Psychic Terrain and the user is grounded, this move hits all opposing Pokemon and has its power multiplied by 1.5.",
+  "target": "any-adjacent"
+}

@@ -1,0 +1,17 @@
+{
+  "ident": "electroweb",
+  "type_ident": "electric",
+  "category_ident": "special",
+  "base_power": 55,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+  "target": "all-enemies",
+  "stat_changes": [
+    {
+      "speed": -1,
+      "frequency": 1
+    }
+  ]
+}

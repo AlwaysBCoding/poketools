@@ -62,6 +62,17 @@
   - Dragon Rush (weird effect about countering minimize)
   - Dragon Tail (forced target to switch out (similar to circle throw))
   - Dream Eater (target unaffected unless they are asleep)
+  - Echoed Voice (has a weird multiplier across turns for consecutive usage)
+  - Electric Terrain (sets electric terrain)
+  - Electro Ball (base power conditional on speed difference between pokemon)
+  - Electro Drift (damage is multiplied by 1.33* if move is super effective [Collision Course])
+  - Encore (target becomes encore'd must repeat last move)
+  - Endeavor (damage is equal to HP difference of target and user)
+  - Endure (target survives turn, same cooldown as protect)
+  - Entrainment (changes targets ability)
+  - Eruption (base power is conditional on user's HP)
+  - Expanding Force (changes targeting to all-enemies if in psychic terrain)
+  - Explosion (user faints after using move)
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

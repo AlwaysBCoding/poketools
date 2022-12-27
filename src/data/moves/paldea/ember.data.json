@@ -1,0 +1,17 @@
+{
+  "ident": "ember",
+  "type_ident": "fire",
+  "category_ident": "special",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 25,
+  "description": "Has a 10% chance to burn the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "burned",
+      "frequency": 0.1
+    }
+  ]
+}
