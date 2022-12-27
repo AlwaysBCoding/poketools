@@ -1174,6 +1174,7 @@ export type PokemonMoveIdent =
   | "overdrive"
   | "overheat"
   | "protect"
+  | "psychic-terrain"
   | "rage-fist"
   | "reflect"
   | "shadow-ball"
@@ -1185,6 +1186,7 @@ export type PokemonMoveIdent =
   | "thunderbolt"
   | "trick"
   | "u-turn"
+  | "volt-switch"
 
 export type PokemonStat =
   | "hp"
@@ -1201,10 +1203,10 @@ export type PokemonMoveTarget =
   | "all-adjacent"
   | "all-enemies"
   | "all-allies"
+  | "field"
   | "self"
   | "self-or-ally"
   | "self-and-allies"
-  | "global"
 
 // TODO: Change the name of this because it's conflicting with something in BattleShared
 export type PokemonStatus =

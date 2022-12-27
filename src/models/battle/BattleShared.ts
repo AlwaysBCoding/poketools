@@ -7,8 +7,10 @@ export interface BattleConfig {
 export type BattleStatus = "preview" | "active" | "complete";
 
 export interface BattleGlobalState {
-  terrain: TerrainState;
-  weather: WeatherState;
+  terrain: TerrainState | null;
+  terrain_counter: number;
+  weather: WeatherState | null;
+  weather_counter: number;
   auras: AuraState[];
 }
 
@@ -38,14 +40,12 @@ export interface PokemonStatBoosts {
 }
 
 export type TerrainState =
-  | "none"
   | "electric"
   | "grassy"
   | "misty"
   | "psychic";
 
 export type WeatherState =
-  | "none"
   | "sun"
   | "rain"
   | "sand"

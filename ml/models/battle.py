@@ -114,6 +114,9 @@ class Battle():
     if(self.battle_state.red_side_state.tailwind > 0):
       self.battle_state.red_side_state.tailwind -= 1
 
+    if(self.battle_state.global_state.terrain_counter > 0):
+      self.battle_state.global_state.terrain_counter -= 1
+
     for battle_event in battle_events:
       # print(battle_event)
       continue
@@ -176,6 +179,8 @@ class Battle():
       return all_enemies
     elif move_target == "self-and-allies":
       return self_and_allies
+    elif move_target == "field":
+      return ["field"]
     else:
       return any_adjacent
 
@@ -269,63 +274,67 @@ class Battle():
     elif(battle_action.action_type == "move"):
       move_ident = battle_action.action_data["move"]["ident"]
       action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {move_ident}")
-      target_pokemon_slot = battle_action.action_data['move_targets'][0]
-      target_pokemon_id = self.battle_state.field_state[target_pokemon_slot]
-      target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
+      target_slot = battle_action.action_data['move_targets'][0]
+      if(target_slot == "field"):
+        if(move_ident == "electric-terrain"):
+          self.battle_state.global_state.set_terrain("electric")
+      else:
+        target_pokemon_id = self.battle_state.field_state[target_slot]
+        target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
 
-      if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
-        if(move_ident == "reflect"):
-          if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.reflect == 0):
-            self.battle_state.blue_side_state.reflect = 5
-          elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
-            self.battle_state.red_side_state.reflect = 5
-        if(move_ident == "light-screen"):
-          if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.light_screen == 0):
-            self.battle_state.blue_side_state.light_screen = 5
-          elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.light_screen == 0):
-            self.battle_state.red_side_state.light_screen = 5
-        if(move_ident == "tailwind"):
-          if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
-            self.battle_state.blue_side_state.tailwind = 4
-          elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind == 0):
-            self.battle_state.red_side_state.tailwind = 4
+        if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
+          if(move_ident == "reflect"):
+            if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.reflect == 0):
+              self.battle_state.blue_side_state.reflect = 5
+            elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
+              self.battle_state.red_side_state.reflect = 5
+          if(move_ident == "light-screen"):
+            if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.light_screen == 0):
+              self.battle_state.blue_side_state.light_screen = 5
+            elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.light_screen == 0):
+              self.battle_state.red_side_state.light_screen = 5
+          if(move_ident == "tailwind"):
+            if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
+              self.battle_state.blue_side_state.tailwind = 4
+            elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind == 0):
+              self.battle_state.red_side_state.tailwind = 4
 
-      elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
+        elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
 
-        # DEFAULT MOVE BEHAVIOR
-        # =====================
-        damage = calculate_damage(
-          battle_state=self.battle_state,
-          attacking_pokemon=battle_action.actor,
-          target_pokemon=target_pokemon,
-          move_ident=battle_action.action_data['move']['ident']
-        )
-        target_pokemon_previous_hp = target_pokemon.current_hp
-        target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
-        action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+          # DEFAULT MOVE BEHAVIOR
+          # =====================
+          damage = calculate_damage(
+            battle_state=self.battle_state,
+            attacking_pokemon=battle_action.actor,
+            target_pokemon=target_pokemon,
+            move_ident=battle_action.action_data['move']['ident']
+          )
+          target_pokemon_previous_hp = target_pokemon.current_hp
+          target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
+          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
 
-        # CUSTOM MOVE BEHAVIOR
-        # =====================
-        if(battle_action.action_data['move']['ident'] == 'knock-off' and target_pokemon.item_ident != None):
-          knocked_off_item_ident = target_pokemon.item_ident
-          target_pokemon.item_ident = None
-          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
+          # CUSTOM MOVE BEHAVIOR
+          # =====================
+          if(battle_action.action_data['move']['ident'] == 'knock-off' and target_pokemon.item_ident != None):
+            knocked_off_item_ident = target_pokemon.item_ident
+            target_pokemon.item_ident = None
+            action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
 
-        # POKEMON FAINTS
-        # =====================
-        if(target_pokemon.current_hp == 0):
-          target_pokemon.location = "graveyard"
-          self.battle_state.field_state[target_pokemon_slot] = None
-          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
-          possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
-          if(len(possible_replacement_pokemons) > 0):
-            replacement_pokemon = np.random.choice(possible_replacement_pokemons)
-            replacement_pokemon.location = "field"
-            self.battle_state.field_state[target_pokemon_slot] = replacement_pokemon.battle_id
-            action_events.append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
-          else:
-            should_end_battle = True
-            action_events.append("THE BATTLE IS OVER")
+          # POKEMON FAINTS
+          # =====================
+          if(target_pokemon.current_hp == 0):
+            target_pokemon.location = "graveyard"
+            self.battle_state.field_state[target_slot] = None
+            action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
+            possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
+            if(len(possible_replacement_pokemons) > 0):
+              replacement_pokemon = np.random.choice(possible_replacement_pokemons)
+              replacement_pokemon.location = "field"
+              self.battle_state.field_state[target_slot] = replacement_pokemon.battle_id
+              action_events.append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
+            else:
+              should_end_battle = True
+              action_events.append("THE BATTLE IS OVER")
 
       # STAT BOOSTS
       # =====================

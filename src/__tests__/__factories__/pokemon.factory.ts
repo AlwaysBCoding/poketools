@@ -1,5 +1,34 @@
 import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
 
+export const AMPHAROS_SIMPLE_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "ampharos",
+  nickname: null,
+  ability_ident: "static",
+  item_ident: "focus-sash",
+  level: 50,
+  shiny: false,
+  gender: "female",
+  tera_type_ident: "electric",
+  nature_ident: "modest",
+  move_idents: ["volt-switch", "dragon-pulse", "focus-blast", "thunderbolt"],
+  iv_spread: {
+    hp: 31,
+    attack: 0,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 32
+  },
+  ev_spread: {
+    hp: 4,
+    attack: 0,
+    defense: 0,
+    special_attack: 252,
+    special_defense: 0,
+    speed: 252
+  }
+}
+
 export const GASTRODON_ATEAM_BUILD: PokemonBuildTemplate = {
   pokemon_ident: "gastrodon",
   nickname: null,

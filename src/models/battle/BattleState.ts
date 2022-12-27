@@ -28,8 +28,10 @@ export const createNewBattleState = (config: BattleConfig, blueSidePokemon: Poke
 
   return {
     global_state: {
-      terrain: "none",
-      weather: "none",
+      terrain: null,
+      terrain_counter: 0,
+      weather: null,
+      weather_counter: 0,
       auras: []
     },
     blue_side_state: {
@@ -56,8 +58,10 @@ export const createEmptyBattleState = (): BattleState => {
 
   return {
     global_state: {
-      terrain: "none",
-      weather: "none",
+      terrain: null,
+      terrain_counter: 0,
+      weather: null,
+      weather_counter: 0,
       auras: []
     },
     blue_side_state: {

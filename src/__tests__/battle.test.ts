@@ -105,3 +105,23 @@ describe("GAME LOOP", () => {
   });
 
 });
+
+describe("TERRAINS", () => {
+
+  describe("ELECTRIC TERRAIN", () => {
+    // TODO: IMPLEMENT
+  });
+
+  describe("GRASSY TERRAIN", () => {
+    // TODO: IMPLEMENT
+  });
+
+  describe("MISTY TERRAIN", () => {
+    // TODO: IMPLEMENT
+  });
+
+  describe("PSYCHIC TERRAIN", () => {
+    // TODO: IMPLEMENT
+  });
+
+});

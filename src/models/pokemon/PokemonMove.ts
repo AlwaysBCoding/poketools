@@ -34,10 +34,10 @@ type PokemonMoveTarget =
   | "all-adjacent"
   | "all-enemies"
   | "all-allies"
+  | "field"
   | "self"
   | "self-or-ally"
   | "self-and-allies"
-  | "global"
 
 interface PokemonMoveDelegate {
   ident: string;

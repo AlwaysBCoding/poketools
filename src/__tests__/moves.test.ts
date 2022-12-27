@@ -1,4 +1,5 @@
 import {
+  AMPHAROS_SIMPLE_BUILD,
   TALONFLAME_ATEAM_BUILD,
   ANNIHILAPE_BULKY_BUILD,
   GRIMMSNARL_ATEAM_BUILD,
@@ -189,6 +190,56 @@ describe("MOVES", () => {
       );
       const nextOrderedActionsResult = await ORDER_BATTLE_ACTIONS(battleStepResult.battle, [nextAquaStepAction, energyBallAction]);
       expect(nextOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("quaquaval");
+    });
+
+  });
+
+  describe("ELECTRIC TERRAIN", () => {
+    const ampharosBuildTemplate = AMPHAROS_SIMPLE_BUILD;
+    ampharosBuildTemplate.move_idents = ["volt-switch", "thunderbolt", "focus-blast", "electric-terrain"];
+    let ampharosBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ampharosBuildTemplate);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [ampharosBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const electricTerrainAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "electric-terrain",
+      ["field"]
+    );
+
+    const spiritBreakAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "spirit-break",
+      ["blue-field-1"]
+    );
+
+    test("it sets electric terrain", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const electricTerrainActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, electricTerrainAction);
+      expect(electricTerrainActionResult.battle.battle_state.global_state.terrain).toEqual("electric");
+      expect(electricTerrainActionResult.battle.battle_state.global_state.terrain_counter).toEqual(5);
+    });
+
+    test("it doesn't set electric terrain if electric terrain is already set", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.global_state.terrain = "electric";
+      initialBattleCopy.battle_state.global_state.terrain_counter = 3;
+      const electricTerrainActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, electricTerrainAction);
+      expect(electricTerrainActionResult.battle.battle_state.global_state.terrain).toEqual("electric");
+      expect(electricTerrainActionResult.battle.battle_state.global_state.terrain_counter).toEqual(3);
+    });
+
+    test("it properly decrements the terrain counter at the end of the turn", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const battleStepResult = await BATTLE_STEP(initialBattleCopy, [electricTerrainAction], [spiritBreakAction]);
+      expect(battleStepResult.battle.battle_state.global_state.terrain).toEqual("electric");
+      expect(battleStepResult.battle.battle_state.global_state.terrain_counter).toEqual(4);
     });
 
   });
