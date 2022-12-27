@@ -1777,7 +1777,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 10,
-    "description": "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain."
+    "description": "For 5 turns, the terrain becomes Electric Terrain. During the effect, the power of Electric-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot fall asleep; Pokemon already asleep do not wake up. Grounded Pokemon cannot become affected by Yawn or fall asleep from its effect. Camouflage transforms the user into an Electric type, Nature Power becomes Thunderbolt, and Secret Power has a 30% chance to cause paralysis. Fails if the current terrain is Electric Terrain.",
+    "target": "field"
   },
   {
     "ident": "electro-ball",
@@ -2035,6 +2036,16 @@
     "critical_hit_stage_index": 3
   },
   {
+    "ident": "grassy-terrain",
+    "type_ident": "grass",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.3, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain."
+  },
+  {
     "ident": "hydro-pump",
     "type_ident": "water",
     "category_ident": "special",
@@ -2131,6 +2142,16 @@
     ]
   },
   {
+    "ident": "misty-terrain",
+    "type_ident": "fairy",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain."
+  },
+  {
     "ident": "nasty-plot",
     "type_ident": "dark",
     "category_ident": "non-damaging",
@@ -2185,6 +2206,27 @@
     "description": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
   },
   {
+    "ident": "psychic-terrain",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain."
+  },
+  {
+    "ident": "rain-dance",
+    "type_ident": "water",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "For 5 turns, the weather becomes Rain Dance. The damage of Water-type attacks is multiplied by 1.5 and the damage of Fire-type attacks is multiplied by 0.5 during the effect. Lasts for 8 turns if the user is holding Damp Rock. Fails if the current weather is Rain Dance.",
+    "target": "field"
+  },
+  {
     "ident": "reflect",
     "type_ident": "psychic",
     "category_ident": "non-damaging",
@@ -2193,6 +2235,17 @@
     "priority": 0,
     "pp": 20,
     "description": "For 5 turns, the user and its party members take 0.5x damage from physical attacks, or 0.66x damage if in a Double Battle. Damage is not reduced further with Aurora Veil. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side."
+  },
+  {
+    "ident": "sandstorm",
+    "type_ident": "rock",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the weather becomes Sandstorm. At the end of each turn except the last, all active Pokemon lose 1/16 of their maximum HP, rounded down, unless they are a Ground, Rock, or Steel type, or have the Magic Guard, Overcoat, Sand Force, Sand Rush, or Sand Veil Abilities. During the effect, the Special Defense of Rock-type Pokemon is multiplied by 1.5 when taking damage from a special attack. Lasts for 8 turns if the user is holding Smooth Rock. Fails if the current weather is Sandstorm.",
+    "target": "field"
   },
   {
     "ident": "shadow-ball",
@@ -2209,6 +2262,17 @@
         "frequency": 0.2
       }
     ]
+  },
+  {
+    "ident": "snowscape",
+    "type_ident": "ice",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the weather becomes Snow. During the effect, the Defense of Ice-type Pokemon is multiplied by 1.5 when taking damage from a physical attack. Lasts for 8 turns if the user is holding Icy Rock. Fails if the current weather is Snow.",
+    "target": "field"
   },
   {
     "ident": "spirit-break",
@@ -2235,6 +2299,17 @@
     "priority": 1,
     "pp": 5,
     "description": "Fails if the target did not select a physical attack, special attack, or Me First for use this turn, or if the target moves before the user."
+  },
+  {
+    "ident": "sunny-day",
+    "type_ident": "fire",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "For 5 turns, the weather becomes Sunny Day. The damage of Fire-type attacks is multiplied by 1.5 and the damage of Water-type attacks is multiplied by 0.5 during the effect. Lasts for 8 turns if the user is holding Heat Rock. Fails if the current weather is Sunny Day.",
+    "target": "field"
   },
   {
     "ident": "tailwind",

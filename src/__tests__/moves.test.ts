@@ -398,6 +398,55 @@ describe("MOVES", () => {
 
   });
 
+  describe("SUNNY DAY", () => {
+    const talonflameBuildTemplate = TALONFLAME_ATEAM_BUILD;
+    talonflameBuildTemplate.move_idents = ["tailwind", "brave-bird", "sunny-day", "flare-blitz"];
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(talonflameBuildTemplate);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const sunnyDayAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "sunny-day",
+      ["field"]
+    );
+
+    const spiritBreakAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "spirit-break",
+      ["blue-field-1"]
+    );
+
+    test("it sets sun weather", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const sunnyDayActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, sunnyDayAction);
+      expect(sunnyDayActionResult.battle.battle_state.global_state.weather).toEqual("sun");
+      expect(sunnyDayActionResult.battle.battle_state.global_state.weather_counter).toEqual(5);
+    });
+
+    test("it doesn't set sun weather if sun is already set", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.global_state.weather = "sun";
+      initialBattleCopy.battle_state.global_state.weather_counter = 3;
+      const sunnyDayActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, sunnyDayAction);
+      expect(sunnyDayActionResult.battle.battle_state.global_state.weather).toEqual("sun");
+      expect(sunnyDayActionResult.battle.battle_state.global_state.weather_counter).toEqual(3);
+    });
+
+    test("it properly decrements the weather counter at the end of the turn", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const battleStepResult = await BATTLE_STEP(initialBattleCopy, [sunnyDayAction], [spiritBreakAction]);
+      expect(battleStepResult.battle.battle_state.global_state.weather).toEqual("sun");
+      expect(battleStepResult.battle.battle_state.global_state.weather_counter).toEqual(4);
+    });
+  });
+
   describe("TAILWIND", () => {
     let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
     let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);

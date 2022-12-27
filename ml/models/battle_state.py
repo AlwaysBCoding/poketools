@@ -38,6 +38,14 @@ class GlobalBattleState():
     else:
       return False
 
+  def set_weather(self, weather):
+    if(not self.weather or (self.weather and self.weather != weather)):
+      self.weather = weather
+      self.weather_counter = 5
+      return True
+    else:
+      return False
+
   @classmethod
   def create_empty(cls):
     return cls(terrain=None, terrain_counter=0, weather=None, weather_counter=0, auras=[])

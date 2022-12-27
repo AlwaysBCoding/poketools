@@ -117,6 +117,9 @@ class Battle():
     if(self.battle_state.global_state.terrain_counter > 0):
       self.battle_state.global_state.terrain_counter -= 1
 
+    if(self.battle_state.global_state.weather_counter > 0):
+      self.battle_state.global_state.weather_counter -= 1
+
     for battle_event in battle_events:
       # print(battle_event)
       continue
@@ -275,9 +278,27 @@ class Battle():
       move_ident = battle_action.action_data["move"]["ident"]
       action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {move_ident}")
       target_slot = battle_action.action_data['move_targets'][0]
+
       if(target_slot == "field"):
+
         if(move_ident == "electric-terrain"):
           self.battle_state.global_state.set_terrain("electric")
+        elif(move_ident == "grassy-terrain"):
+          self.battle_state.global_state.set_terrain("grassy")
+        elif(move_ident == "misty-terrain"):
+          self.battle_state.global_state.set_terrain("misty")
+        elif(move_ident == "psychic-terrain"):
+          self.battle_state.global_state.set_terrain("psychic")
+
+        if(move_ident == "rain-dance"):
+          self.battle_state.global_state.set_weather("rain")
+        elif(move_ident == "sandstorm"):
+          self.battle_state.global_state.set_weather("sandstorm")
+        elif(move_ident == "snowscape"):
+          self.battle_state.global_state.set_weather("snow")
+        elif(move_ident == "sunny-day"):
+          self.battle_state.global_state.set_weather("sun")
+
       else:
         target_pokemon_id = self.battle_state.field_state[target_slot]
         target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)

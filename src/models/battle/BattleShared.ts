@@ -48,7 +48,7 @@ export type TerrainState =
 export type WeatherState =
   | "sun"
   | "rain"
-  | "sand"
+  | "sandstorm"
   | "snow";
 
 export type AuraState =

@@ -1,4 +1,7 @@
 ## TODO
+  - Implement conditional behavior based on each terrain
+  - Implement conditional behavior based on each weather
+
   - Implement Accuracy (stat stage & accuracy rolls)
   - Implement Evasiveness (stat stage & accuracy rolls)
   - Implement crit ratio as a stat boost stage
@@ -63,7 +66,6 @@
   - Dragon Tail (forced target to switch out (similar to circle throw))
   - Dream Eater (target unaffected unless they are asleep)
   - Echoed Voice (has a weird multiplier across turns for consecutive usage)
-  - Electric Terrain (sets electric terrain)
   - Electro Ball (base power conditional on speed difference between pokemon)
   - Electro Drift (damage is multiplied by 1.33* if move is super effective [Collision Course])
   - Encore (target becomes encore'd must repeat last move)
