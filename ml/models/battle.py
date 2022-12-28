@@ -342,14 +342,14 @@ class Battle():
 
           if(battle_action.action_data['move'].get('recoil')):
             if(battle_action.action_data['move']['recoil'].get('percentage_of_damage')):
-              recoil_amount = np.round(damage * battle_action.action_data['move']['recoil'].get('percentage_of_damage'))
+              recoil_amount = np.round(damage_taken * battle_action.action_data['move']['recoil'].get('percentage_of_damage'))
               actor_pokemon_previous_hp = actor_pokemon.current_hp
               recoil_damage_taken = actor_pokemon.take_damage(recoil_amount)
               action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} took {math.floor(round(recoil_damage_taken / actor_pokemon.max_hp(), 2) * 100)}% damage in recoil")
 
           if(battle_action.action_data['move'].get('recovery')):
             if(battle_action.action_data['move']['recovery'].get('percentage_of_damage')):
-              recovery_amount = np.round(damage * battle_action.action_data['move']['recovery'].get('percentage_of_damage'))
+              recovery_amount = np.round(damage_taken * battle_action.action_data['move']['recovery'].get('percentage_of_damage'))
               actor_pokemon_previous_hp = actor_pokemon.current_hp
               recovery_taken = actor_pokemon.recover_hp(recovery_amount)
               action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} recovered {math.floor(round(recovery_taken / actor_pokemon.max_hp(), 2) * 100)}% hp")

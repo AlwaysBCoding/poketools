@@ -483,325 +483,6 @@ export type PokemonItemIdent =
   | "yache-berry"
   | "zoom-lens";
 
-  // Pain Split
-  // Parabolic Charge
-  // Parting Shot
-  // Payback
-  // Pay Day
-  // Peck
-  // Perish Song
-  // Petal Blizzard
-  // Petal Dance
-  // Phantom Force
-  // Photon Geyser
-  // Pin Missile
-  // Plasma Fists
-  // Play Nice
-  // Play Rough
-  // Pluck
-  // Poison Fang
-  // Poison Gas
-  // Poison Jab
-  // Poison Powder
-  // Poison Sting
-  // Poison Tail
-  // Pollen Puff
-  // Poltergeist
-  // Population Bomb
-  // Pounce
-  // Pound
-  // Powder Snow
-  // Power Gem
-  // Power Shift
-  // Power Split
-  // Power Swap
-  // Power Trick
-  // Power Trip
-  // Power Whip
-  // Precipice Blades
-  // Present
-  // Prismatic Laser
-  // Protect
-  // Psybeam
-  // Psychic
-  // Psychic Fangs
-  // Psychic Terrain
-  // Psycho Cut
-  // Psych Up
-  // Psyshield Bash
-  // Psyshock
-  // Psystrike
-  // Purify
-  // Pyro Ball
-  // Moves – Q
-
-  // Quash
-  // Quick Attack
-  // Quick Guard
-  // Quiver Dance
-  // Moves – R
-
-  // Rage Fist
-  // Rage Powder
-  // Raging Bull
-  // Raging Fury
-  // Rain Dance
-  // Rapid Spin
-  // Razor Leaf
-  // Razor Shell
-  // Recover
-  // Recycle
-  // Reflect
-  // Reflect Type
-  // Relic Song
-  // Rest
-  // Retaliate
-  // Revelation Dance
-  // Reversal
-  // Revival Blessing
-  // Rising Voltage
-  // Roar
-  // Roar of Time
-  // Rock Blast
-  // Rock Polish
-  // Rock Slide
-  // Rock Smash
-  // Rock Throw
-  // Rock Tomb
-  // Rock Wrecker
-  // Role Play
-  // Rollout
-  // Roost
-  // Round
-  // Ruination
-  // Moves – S
-
-  // Sacred Fire
-  // Sacred Sword
-  // Safeguard
-  // Salt Cure
-  // Sand Attack
-  // Sandsear Storm
-  // Sandstorm
-  // Sand Tomb
-  // Savage Spin-Out
-  // Scald
-  // Scale Shot
-  // Scary Face
-  // Scorching Sands
-  // Scratch
-  // Screech
-  // Searing Shot
-  // Secret Sword
-  // Seed Bomb
-  // Seed Flare
-  // Seismic Toss
-  // Self-Destruct
-  // Shadow Ball
-  // Shadow Bone
-  // Shadow Claw
-  // Shadow Force
-  // Shadow Punch
-  // Shadow Sneak
-  // Shattered Psyche
-  // Shed Tail
-  // Sheer Cold
-  // Shell Side Arm
-  // Shell Smash
-  // Shell Trap
-  // Shelter
-  // Shift Gear
-  // Shock Wave
-  // Shore Up
-  // Silk Trap
-  // Simple Beam
-  // Sing
-  // Sketch
-  // Skill Swap
-  // Skitter Smack
-  // Sky Attack
-  // Slack Off
-  // Slam
-  // Slash
-  // Sleep Powder
-  // Sleep Talk
-  // Sludge
-  // Sludge Bomb
-  // Sludge Wave
-  // Smack Down
-  // Smart Strike
-  // Smog
-  // Smokescreen
-  // Snap Trap
-  // Snarl
-  // Snipe Shot
-  // Snore
-  // Snowscape
-  // Soak
-  // Soft-Boiled
-  // Solar Beam
-  // Solar Blade
-  // Spacial Rend
-  // Spark
-  // Sparkling Aria
-  // Spectral Thief
-  // Speed Swap
-  // Spicy Extract
-  // Spikes
-  // Spiky Shield
-  // Spin Out
-  // Spirit Break
-  // Spirit Shackle
-  // Spite
-  // Spit Up
-  // Splash
-  // Spore
-  // Springtide Storm
-  // Stealth Rock
-  // Steam Eruption
-  // Steel Beam
-  // Steel Roller
-  // Steel Wing
-  // Sticky Web
-  // Stockpile
-  // Stomp
-  // Stomping Tantrum
-  // Stone Axe
-  // Stone Edge
-  // Stored Power
-  // Storm Throw
-  // Strange Steam
-  // Strength
-  // Strength Sap
-  // String Shot
-  // Struggle
-  // Struggle Bug
-  // Stuff Cheeks
-  // Stun Spore
-  // Substitute
-  // Subzero Slammer
-  // Sucker Punch
-  // Sunny Day
-  // Sunsteel Strike
-  // Super Fang
-  // Superpower
-  // Supersonic
-  // Supersonic Skystrike
-  // Surf
-  // Surging Strikes
-  // Swagger
-  // Swallow
-  // Sweet Kiss
-  // Sweet Scent
-  // Swift
-  // Switcheroo
-  // Swords Dance
-  // Synthesis
-  // Moves – T
-
-  // Tackle
-  // Tail Slap
-  // Tail Whip
-  // Tailwind
-  // Take Down
-  // Take Heart
-  // Tar Shot
-  // Taunt
-  // Tearful Look
-  // Teatime
-  // Techno Blast
-  // Tectonic Rage
-  // Teeter Dance
-  // Teleport
-  // Tera Blast
-  // Terrain Pulse
-  // Thief
-  // Thousand Arrows
-  // Thousand Waves
-  // Thrash
-  // Throat Chop
-  // Thunder
-  // Thunderbolt
-  // Thunder Cage
-  // Thunder Fang
-  // Thunderous Kick
-  // Thunder Punch
-  // Thunder Shock
-  // Thunder Wave
-  // Tickle
-  // Tidy Up
-  // Topsy-Turvy
-  // Torch Song
-  // Torment
-  // Toxic
-  // Toxic Spikes
-  // Toxic Thread
-  // Trailblaze
-  // Transform
-  // Tri Attack
-  // Trick
-  // Trick-or-Treat
-  // Trick Room
-  // Triple Arrows
-  // Triple Axel
-  // Triple Dive
-  // Triple Kick
-  // Trop Kick
-  // Twin Beam
-  // Twinkle Tackle
-  // Twister
-  // Moves – U
-
-  // U-turn
-  // Uproar
-  // Moves – V
-
-  // V-create
-  // Vacuum Wave
-  // Venoshock
-  // Victory Dance
-  // Vine Whip
-  // Vise Grip
-  // Volt Switch
-  // Volt Tackle
-  // Moves – W
-
-  // Waterfall
-  // Water Gun
-  // Water Pledge
-  // Water Pulse
-  // Water Shuriken
-  // Water Spout
-  // Wave Crash
-  // Weather Ball
-  // Whirlpool
-  // Whirlwind
-  // Wicked Blow
-  // Wicked Torque
-  // Wide Guard
-  // Wildbolt Storm
-  // Wild Charge
-  // Will-O-Wisp
-  // Wing Attack
-  // Wish
-  // Withdraw
-  // Wonder Room
-  // Wood Hammer
-  // Work Up
-  // Worry Seed
-  // Wrap
-  // Moves – X
-
-  // X-Scissor
-  // Moves – Y
-
-  // Yawn
-  // Moves – Z
-
-  // Zap Cannon
-  // Zen Headbutt
-  // Zing Zap
-
 export type PokemonMoveIdent =
   | "absorb"
   | "accelerock"
@@ -1164,28 +845,302 @@ export type PokemonMoveIdent =
   | "outrage"
   | "overdrive"
   | "overheat"
+  | "pain-split"
+  | "parabolic-charge"
+  | "parting-shot"
+  | "payback"
+  | "pay-day"
+  | "peck"
+  | "perish-song"
+  | "petal-blizzard"
+  | "petal-dance"
+  | "phantom-force"
+  | "photon-geyser"
+  | "pin-missile"
+  | "plasma-fists"
+  | "play-nice"
+  | "pluck"
+  | "poison-fang"
+  | "poison-gas"
+  | "poison-jab"
+  | "poison-powder"
+  | "poison-sting"
+  | "poison-tail"
+  | "pollen-puff"
+  | "poltergeist"
+  | "population-bomb"
+  | "pounce"
+  | "pound"
+  | "powder-snow"
+  | "power-gem"
+  | "power-shift"
+  | "power-split"
+  | "power-swap"
+  | "power-trick"
+  | "power-trip"
+  | "power-whip"
+  | "precipice-blades"
+  | "present"
+  | "prismatic-laser"
   | "protect"
+  | "psybeam"
+  | "psychic"
+  | "psychic-fangs"
   | "psychic-terrain"
+  | "psycho-cut"
+  | "psych-up"
+  | "psyshield-bash"
+  | "psyshock"
+  | "psystrike"
+  | "purify"
+  | "pyro-ball"
+  | "quash"
+  | "quick-attack"
+  | "quick-guard"
+  | "quiver-dance"
   | "rage-fist"
   | "rage-powder"
+  | "raging-bull"
+  | "raging-fury"
   | "rain-dance"
+  | "rapid-spin"
+  | "razor-leaf"
+  | "razor-shell"
+  | "recover"
+  | "recycle"
   | "reflect"
+  | "reflect-type"
+  | "relic-song"
+  | "rest"
+  | "retaliate"
+  | "revelation-dance"
+  | "reversal"
+  | "revival-blessing"
+  | "rising-voltage"
+  | "roar"
+  | "roar-of-time"
+  | "rock-blast"
+  | "rock-polish"
+  | "rock-slide"
+  | "rock-smash"
+  | "rock-throw"
+  | "rock-tomb"
+  | "rock-wrecker"
+  | "role-play"
+  | "rollout"
+  | "roost"
+  | "round"
+  | "ruination"
+  | "sacred-fire"
+  | "sacred-sword"
+  | "safeguard"
+  | "salt-cure"
+  | "sand-attack"
+  | "sandsear-storm"
   | "sandstorm"
+  | "sand-tomb"
+  | "savage-spin-out"
+  | "scald"
+  | "scale-shot"
+  | "scary-face"
+  | "scorching-sands"
+  | "scratch"
+  | "screech"
+  | "searing-shot"
+  | "secret-sword"
+  | "seed-bomb"
+  | "seed-flare"
+  | "seismic-toss"
+  | "self-destruct"
   | "shadow-ball"
+  | "shadow-bone"
+  | "shadow-claw"
+  | "shadow-force"
+  | "shadow-punch"
+  | "shadow-sneak"
+  | "shattered-psyche"
+  | "shed-tail"
+  | "sheer-cold"
+  | "shell-side-arm"
+  | "shell-smash"
+  | "shell-trap"
+  | "shelter"
+  | "shift-gear"
+  | "shock-wave"
+  | "shore-up"
+  | "silk-trap"
+  | "simple-beam"
+  | "sing"
+  | "sketch"
+  | "skill-swap"
+  | "skitter-smack"
+  | "sky-attack"
+  | "slack-off"
+  | "slam"
+  | "slash"
+  | "sleep-powder"
+  | "sleep-talk"
+  | "sludge"
+  | "sludge-bomb"
+  | "sludge-wave"
+  | "smack-down"
+  | "smart-strike"
+  | "smog"
+  | "smokescreen"
+  | "snap-trap"
+  | "snarl"
+  | "snipe-shot"
+  | "snore"
   | "snowscape"
+  | "soak"
+  | "soft-boiled"
+  | "solar-beam"
+  | "solar-blade"
+  | "spacial-rend"
+  | "spark"
+  | "sparkling-aria"
+  | "spectral-thief"
+  | "speed-swap"
+  | "spicy-extract"
+  | "spikes"
+  | "spiky-shield"
+  | "spin-out"
   | "spirit-break"
+  | "spirit-shackle"
+  | "spite"
+  | "spit-up"
+  | "splash"
+  | "spore"
+  | "springtide-storm"
+  | "stealth-rock"
+  | "steam-eruption"
+  | "steel-beam"
   | "steel-roller"
+  | "steel-wing"
+  | "sticky-web"
+  | "stockpile"
+  | "stomp"
+  | "stomping-tantrum"
+  | "stone-axe"
+  | "stone-edge"
+  | "stored-power"
+  | "storm-throw"
+  | "strange-steam"
+  | "strength"
+  | "strength-sap"
+  | "string-shot"
+  | "struggle"
+  | "struggle-bug"
+  | "stuff-cheeks"
+  | "stun-spore"
+  | "substitute"
+  | "subzero-slammer"
   | "sucker-punch"
   | "sunny-day"
+  | "sunsteel-strike"
+  | "super-fang"
+  | "superpower"
+  | "supersonic"
+  | "supersonic-sky-strike"
+  | "surf"
+  | "surging-strikes"
+  | "swagger"
+  | "swallow"
+  | "sweet-kiss"
+  | "sweet-scent"
+  | "swift"
+  | "switcheroo"
   | "swords-dance"
+  | "synthesis"
+  | "tackle"
+  | "tail-slap"
+  | "tail-whip"
   | "tailwind"
+  | "take-down"
+  | "take-heart"
+  | "tar-shot"
+  | "taunt"
+  | "tearful-look"
+  | "teatime"
+  | "techno-blast"
+  | "tectonic-rage"
+  | "teleport"
   | "tera-blast"
+  | "terrain-pulse"
+  | "thief"
+  | "thousand-arrows"
+  | "thousand-waves"
+  | "thrash"
+  | "throat-chop"
+  | "thunder"
   | "thunderbolt"
+  | "thunder-cage"
+  | "thunder-fang"
+  | "thunderous-kick"
+  | "thunder-punch"
+  | "thunder-shock"
+  | "thunder-wave"
+  | "tickle"
+  | "tidy-up"
+  | "topsy-turvy"
+  | "torch-song"
+  | "torment"
+  | "toxic"
+  | "toxic-spikes"
+  | "toxic-thread"
+  | "trailblaze"
+  | "transform"
+  | "tri-attack"
   | "trick"
+  | "trick-or-treat"
+  | "trick-room"
+  | "triple-arrows"
+  | "triple-axel"
+  | "triple-dive"
+  | "triple-kick"
+  | "trop-kick"
+  | "twin-beam"
+  | "twinkle-tackle"
+  | "twister"
   | "u-turn"
+  | "uproar"
+  | "v-create"
+  | "vacuum-wave"
+  | "venoshock"
+  | "victory-dance"
+  | "vine-whip"
+  | "vise-grip"
   | "volt-switch"
+  | "volt-tackle"
+  | "waterfall"
+  | "water-gun"
   | "water-pledge"
+  | "water-pulse"
+  | "water-shuriken"
+  | "water-spout"
+  | "wave-crash"
+  | "weather-ball"
+  | "whirlpool"
+  | "whirlwind"
+  | "wicked-blow"
+  | "wicked-torque"
+  | "wide-guard"
+  | "wildbolt-storm"
+  | "wild-charge"
+  | "will-o-wisp"
+  | "wing-attack"
   | "wish"
+  | "withdraw"
+  | "wonder-room"
+  | "wood-hammer"
+  | "work-up"
+  | "worry-seed"
+  | "wrap"
+  | "x-scissor"
+  | "yawn"
+  | "zap-cannon"
+  | "zen-headbutt"
+  | "zing-zap"
 
 export type PokemonStat =
   | "hp"
