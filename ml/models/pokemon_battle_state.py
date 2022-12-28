@@ -1,5 +1,8 @@
 from models.pokemon_build import PokemonBuild
+from mappings import type_ident_mapping, ability_ident_mapping, item_ident_mapping, status_ident_mapping, location_mapping
+from helpers import flatten
 import uuid
+import numpy as np
 
 class PokemonStatBoosts():
   def __init__(self, attack=0, defense=0, special_attack=0, special_defense=0, speed=0, accuracy=0, evasiveness=0, critical_hit=0):
@@ -23,6 +26,18 @@ class PokemonStatBoosts():
       "evasiveness": self.evasiveness,
       "critical_hit": self.critical_hit
     }
+
+  def serialize_ml(self):
+    return [
+      np.float32(self.attack),
+      np.float32(self.defense),
+      np.float32(self.special_attack),
+      np.float32(self.special_defense),
+      np.float32(self.speed),
+      np.float32(self.accuracy),
+      np.float32(self.evasiveness),
+      np.float32(self.critical_hit)
+    ]
 
 class PokemonBattleState():
   def __init__(
@@ -147,3 +162,16 @@ class PokemonBattleState():
       "terastallized": self.terastallized,
       "current_slot": self.current_slot
     }
+
+  def serialize_ml(self):
+    return flatten([
+      type_ident_mapping(self.primary_type_ident),
+      type_ident_mapping(self.secondary_type_ident),
+      ability_ident_mapping(self.ability_ident),
+      item_ident_mapping(self.item_ident),
+      status_ident_mapping(self.status),
+      self.stat_boosts.serialize_ml(),
+      np.float32(self.current_hp),
+      np.float32(self.max_hp()),
+      location_mapping(self.location),
+    ])

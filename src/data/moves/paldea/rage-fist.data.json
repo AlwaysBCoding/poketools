@@ -1,0 +1,11 @@
+{
+  "ident": "rage-fist",
+  "type_ident": "ghost",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "Power is equal to 50+(X*50), where X is the total number of times the user has been hit by a damaging attack during the battle, even if the user did not lose HP from the attack. X cannot be greater than 6 and does not reset upon switching out or fainting. Each hit of a multi-hit attack is counted, but confusion damage is not counted.",
+  "target": "any-adjacent"
+}

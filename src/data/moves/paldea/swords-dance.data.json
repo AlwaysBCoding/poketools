@@ -1,0 +1,18 @@
+{
+  "ident": "swords-dance",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the user's Attack by 2 stages.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "attack": 2,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

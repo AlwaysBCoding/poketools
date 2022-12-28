@@ -1,0 +1,11 @@
+{
+  "ident": "steel-roller",
+  "type_ident": "steel",
+  "category_ident": "physical",
+  "base_power": 130,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Fails if there is no terrain active. Ends the effects of Electric Terrain, Grassy Terrain, Misty Terrain, and Psychic Terrain.",
+  "target": "any-adjacent"
+}

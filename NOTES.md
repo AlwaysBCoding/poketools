@@ -14,6 +14,9 @@
   - allow renaming of teams
   - figure out a way to cache sets for specific mons (hardcode?)
 
+  - add terastallizing
+  - add VGC config
+
   - DEX COMPLETION: (67.5%)
   - MOVE TEMPLATE COMPLETION: (23%)
   - ITEM COMPLETION: (0%)
@@ -45,6 +48,7 @@
   - Feint (breaks through protect, and cancels protect for the turn)
   - Fell Stinger (raises the user's attack if it knocks out target)
   - Fling (depends what item is being held, each item different)
+  - Rage Fist (power is increased every time ape is hit)
 
 ## Custom Move Behavior Grouping
   - User loses percentage of maximum HP in exchange for stat boosts
@@ -135,6 +139,9 @@
   - Move takes effect in future turns
     - Future Sight
     - Wish
+  - Ends the effect of terrain
+    - Ice Spinner
+    - Steel Roller
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

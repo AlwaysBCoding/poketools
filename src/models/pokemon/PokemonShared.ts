@@ -1174,6 +1174,7 @@ export type PokemonMoveIdent =
   | "shadow-ball"
   | "snowscape"
   | "spirit-break"
+  | "steel-roller"
   | "sucker-punch"
   | "sunny-day"
   | "swords-dance"

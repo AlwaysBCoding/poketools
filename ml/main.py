@@ -17,11 +17,12 @@ if __name__ == "__main__":
   env = Game()
 
   NUMBER_OF_AGENT_ACTIONS = 6
-  OBSERVATION_DIMENSIONS = 414
+  OBSERVATION_DIMENSIONS = 479
   EPSILON_START = 1.0
   EPSILON_END = 0.01
   EPSILON_DEC = 2e-4
   LEARNING_RATE = 0.002
+  BATCH_SIZE = 64
 
   epoch = 0
 
@@ -32,7 +33,7 @@ if __name__ == "__main__":
     gamma=0.99,
     epsilon=EPSILON_START,
     max_memory_size=1000000,
-    batch_size=64,
+    batch_size=BATCH_SIZE,
     n_actions=NUMBER_OF_AGENT_ACTIONS,
     epsilon_end=EPSILON_END,
     epsilon_dec=EPSILON_DEC,

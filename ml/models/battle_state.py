@@ -1,6 +1,10 @@
 from models.pokemon_battle_state import PokemonBattleState
 from pprint import pprint
 
+from mappings import terrain_mapping, weather_mapping
+from helpers import flatten
+import numpy as np
+
 class SideBattleState():
   def __init__(self, reflect, light_screen, aurora_veil, tailwind, hazards):
     self.reflect = reflect
@@ -21,6 +25,14 @@ class SideBattleState():
       "tailwind": self.tailwind,
       "hazards": self.hazards
     }
+
+  def serialize_ml(self):
+    return [
+      np.float32(self.reflect),
+      np.float32(self.light_screen),
+      np.float32(self.aurora_veil),
+      np.float32(self.tailwind)
+    ]
 
 class GlobalBattleState():
   def __init__(self, terrain, terrain_counter, weather, weather_counter, auras):
@@ -58,6 +70,14 @@ class GlobalBattleState():
       "weather_counter": self.weather_counter,
       "auras": self.auras
     }
+
+  def serialize_ml(self):
+    return flatten([
+      terrain_mapping(self.terrain),
+      np.float32(self.terrain_counter),
+      weather_mapping(self.weather),
+      np.float32(self.weather_counter)
+    ])
 
 class BattleState():
   def __init__(self, global_state, field_state, blue_side_state, red_side_state, blue_side_pokemon, red_side_pokemon):
@@ -141,4 +161,10 @@ class BattleState():
     }
 
   def serialize_ml(self):
-    "..."
+    return flatten([
+      self.global_state.serialize_ml(),
+      self.blue_side_state.serialize_ml(),
+      self.red_side_state.serialize_ml(),
+      flatten(list(map(lambda x: x.serialize_ml(), self.blue_side_pokemon))),
+      flatten(list(map(lambda x: x.serialize_ml(), self.red_side_pokemon))),
+    ])
