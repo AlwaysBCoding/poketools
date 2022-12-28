@@ -192,10 +192,10 @@ class BattleState():
     blue_field_slot = self.field_pokemon('blue').serialize_ml() if self.field_pokemon('blue') else POKEMON_BATTLE_STATE_EMPTY_ML
     red_field_slot = self.field_pokemon('red').serialize_ml() if self.field_pokemon('red') else POKEMON_BATTLE_STATE_EMPTY_ML
 
-    blue_party_slot_1 = self.party_pokemons('blue')[0].serialize_ml() if self.party_pokemons('blue')[0] else POKEMON_BATTLE_STATE_EMPTY_ML
-    blue_party_slot_2 = self.party_pokemons('blue')[1].serialize_ml() if self.party_pokemons('blue')[1] else POKEMON_BATTLE_STATE_EMPTY_ML
-    red_party_slot_1 = self.party_pokemons('red')[0].serialize_ml() if self.party_pokemons('red')[0] else POKEMON_BATTLE_STATE_EMPTY_ML
-    red_party_slot_2 = self.party_pokemons('red')[1].serialize_ml() if self.party_pokemons('red')[1] else POKEMON_BATTLE_STATE_EMPTY_ML
+    blue_party_slot_1 = self.party_pokemons('blue')[0].serialize_ml() if len(self.party_pokemons('blue')) > 0 else POKEMON_BATTLE_STATE_EMPTY_ML
+    blue_party_slot_2 = self.party_pokemons('blue')[1].serialize_ml() if len(self.party_pokemons('blue')) > 1 else POKEMON_BATTLE_STATE_EMPTY_ML
+    red_party_slot_1 = self.party_pokemons('red')[0].serialize_ml() if len(self.party_pokemons('red')) > 0 else POKEMON_BATTLE_STATE_EMPTY_ML
+    red_party_slot_2 = self.party_pokemons('red')[1].serialize_ml() if len(self.party_pokemons('red')) > 1 else POKEMON_BATTLE_STATE_EMPTY_ML
 
     return flatten([
       self.global_state.serialize_ml(),
