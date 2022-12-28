@@ -1,4 +1,12 @@
 ## TODO
+  - change serialize_ml() functions to put the field mons in one spot
+    - also remove graveyard mons entirely from the serialized state, they're not important
+
+  - train the AI against another AI that's trying to win instead of just random moves
+
+  - cull things the AI should never do (like setting light-screen when light-screen is still active)
+    - find a way to completely disallow obviously dumb? actions
+
   - close combat stil lowers stats even if it hits gholdengo for 0 damage
     - can lower the stats via secondary effect of pokemon that gets knocked out on that turn (fix this)
     - need a concept of whether or not a move is successful?
@@ -22,7 +30,7 @@
   - add VGC config
 
   - DEX COMPLETION: (67.5%)
-  - MOVE TEMPLATE COMPLETION: (23%)
+  - MOVE TEMPLATE COMPLETION: (27%)
   - ITEM COMPLETION: (0%)
   - ABILITY COMPLETION: (0%)
 
@@ -52,6 +60,10 @@
   - Feint (breaks through protect, and cancels protect for the turn)
   - Fell Stinger (raises the user's attack if it knocks out target)
   - Fling (depends what item is being held, each item different)
+  - Gastro Acid (nullifies target's ability)
+  - Gravity (sets gravity)
+  - Guard Split (changes stats by custom amounts)
+  - Guard Swap (changes stat boosts)
   - Rage Fist (power is increased every time ape is hit)
 
 ## Custom Move Behavior Grouping
@@ -80,6 +92,8 @@
     - Protect
   - Damage is conditional on stats of user, target, or ratio of the two
     - Electro Ball
+    - Grass Knot
+    - Gyro Ball
   - Damage is conditional on the HP of the user
     - Brine
     - Endeavor
@@ -90,8 +104,11 @@
     - Double Shock
   - Move has custom logic depending on the weather
     - Blizzard
+    - Growth
   - Move has custom logic depending on the terrain
     - Expanding Force
+  - Move has custom logic depending on the gravity
+    - Grav Apple
   - Move has custom logic depending on the status of the user or status of the target
     - Barb Barrage
     - Dream Eater
@@ -111,6 +128,7 @@
     - First Impression
   - One-Hit KO
     - Fissure
+    - Guillotine
   - Damage contingent on if user has already been hit or damaged this turn
     - Assurance
     - Avalanche
@@ -124,6 +142,7 @@
   - User must recharge next turn
     - Blast Burn
     - Frenzy Plant
+    - Giga Impact
   - Multi-hit
     - Arm Thrust
     - Bone Rush
@@ -146,6 +165,10 @@
   - Ends the effect of terrain
     - Ice Spinner
     - Steel Roller
+  - Cannot be used twice in a row
+    - Gigaton Hammer
+  - Cause double damage on the user until end next turn
+    - Glaive Rush
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

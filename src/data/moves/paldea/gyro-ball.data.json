@@ -1,0 +1,11 @@
+{
+  "ident": "gyro-ball",
+  "type_ident": "steel",
+  "category_ident": "physical",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Power is equal to (25 * target's current Speed / user's current Speed) + 1, rounded down, but not more than 150. If the user's current Speed is 0, this move's power is 1.",
+  "target": "any-adjacent"
+}

@@ -1,0 +1,11 @@
+{
+  "ident": "gust",
+  "type_ident": "flying",
+  "category_ident": "special",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 35,
+  "description": "Power doubles if the target is using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop.",
+  "target": "any-adjacent"
+}

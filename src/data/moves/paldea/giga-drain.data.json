@@ -1,0 +1,14 @@
+{
+  "ident": "giga-drain",
+  "type_ident": "grass",
+  "category_ident": "special",
+  "base_power": 75,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+  "target": "any-adjacent",
+  "recovery": {
+    "percentage_of_damage": 0.5
+  }
+}

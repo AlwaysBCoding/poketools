@@ -1,0 +1,17 @@
+{
+  "ident": "glare",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 30,
+  "description": "Paralyzes the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "paralyzed",
+      "frequency": 1
+    }
+  ]
+}

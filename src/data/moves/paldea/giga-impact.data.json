@@ -1,7 +1,7 @@
 {
-  "ident": "blast-burn",
-  "type_ident": "fire",
-  "category_ident": "special",
+  "ident": "giga-impact",
+  "type_ident": "normal",
+  "category_ident": "physical",
   "base_power": 150,
   "accuracy": 0.90,
   "priority": 0,

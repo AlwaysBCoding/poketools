@@ -1,0 +1,11 @@
+{
+  "ident": "gigaton-hammer",
+  "type_ident": "steel",
+  "category_ident": "physical",
+  "base_power": 160,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Cannot be used twice in a row.",
+  "target": "any-adjacent"
+}

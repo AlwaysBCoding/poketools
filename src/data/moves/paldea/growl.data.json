@@ -1,0 +1,17 @@
+{
+  "ident": "growl",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 40,
+  "description": "Lowers the target's Attack by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "defense": -1,
+      "frequency": 1
+    }
+  ]
+}
