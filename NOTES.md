@@ -11,8 +11,6 @@
 
   - create a worklfow for training models on big GPU machines on AWS and synchronizing later
 
-  - figure out why fainted blue_side pokemon can perform a battle action after fainting (probably because it doesn't get cancelled after fainting, if they were acting second)
-
   - allow renaming of teams
   - figure out a way to cache sets for specific mons (hardcode?)
 

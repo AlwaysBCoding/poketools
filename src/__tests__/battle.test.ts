@@ -1,4 +1,6 @@
 import {
+  TALONFLAME_ATEAM_BUILD,
+  ANNIHILAPE_BULKY_BUILD,
   GHOLDENGO_ATEAM_BUILD,
   MEOWSCARADA_MAX_STATS,
   GRIMMSNARL_ATEAM_BUILD,
@@ -102,6 +104,37 @@ describe("GAME LOOP", () => {
 
   test("a pokemon cannot get to a stat boost stage of less than 6", async () => {
     // TODO: IMPLEMENT
+  });
+
+  test("a pokemon cannot act after fainting", async () => {
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+    talonflameBuild.move_idents = ["acrobatics", "brave-bird", "flare-blitz", "feint"];
+    talonflameBuild.item_ident = null;
+    let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [annihilapeBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const braveBirdAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "acrobatics",
+      ["red-field-1"]
+    )
+
+    const drainPunchAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "drain-punch",
+      ["blue-field-1"]
+    );
+
+    const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+    initialBattleCopy.battle_state.red_side_pokemon[0].current_hp = 100;
+    const battleStepResult = await BATTLE_STEP(initialBattleCopy, [braveBirdAction], [drainPunchAction]);
+    expect(battleStepResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(154);
   });
 
 });
