@@ -96,11 +96,13 @@ def status_ident_mapping(status_ident):
 
 def location_mapping(location):
   if location == 'field':
-    return [1, 0, 0]
+    return [1, 0, 0, 0]
   if location == 'party':
-    return [0, 1, 0]
+    return [0, 1, 0, 0]
   if location == 'graveyard':
-    return [0, 0, 1]
+    return [0, 0, 1, 0]
+  if location == 'preview':
+    return [0, 0, 0, 1]
 
 def terrain_mapping(terrain):
   if terrain == None:

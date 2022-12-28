@@ -173,5 +173,5 @@ class PokemonBattleState():
       self.stat_boosts.serialize_ml(),
       np.float32(self.current_hp),
       np.float32(self.max_hp()),
-      location_mapping(self.location),
+      location_mapping(self.location)
     ])

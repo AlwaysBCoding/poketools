@@ -2,7 +2,7 @@ from models.pokemon_battle_state import PokemonBattleState
 from pprint import pprint
 
 from mappings import terrain_mapping, weather_mapping
-from helpers import flatten
+from helpers import find, flatten
 import numpy as np
 
 class SideBattleState():
@@ -88,7 +88,6 @@ class BattleState():
     self.blue_side_pokemon = blue_side_pokemon
     self.red_side_pokemon = red_side_pokemon
 
-
   @classmethod
   def create(cls, config, blue_side_pokemon, red_side_pokemon):
     field_state = {}
@@ -118,6 +117,30 @@ class BattleState():
     self.global_state = GlobalBattleState.create_empty()
     self.blue_side_state = SideBattleState.create_empty()
     self.red_side_state = SideBattleState.create_empty()
+
+  # CONVENIENCE HELPERS
+  # =====================
+  def field_pokemon(self, side):
+    if(side == "blue"):
+      return find(self.blue_side_pokemon, lambda x: x.location == "field")
+    elif(side == "red"):
+      return find(self.red_side_pokemon, lambda x: x.location == "field")
+    else:
+      return None
+
+  def alive_pokemons(self, side):
+    if(side == "blue"):
+      return list(filter(lambda x: x.location != "graveyard", self.blue_side_pokemon))
+    elif(side == "red"):
+      return list(filter(lambda x: x.location != "graveyard", self.red_side_pokemon))
+
+  def party_pokemons(self, side):
+    if(side == "blue"):
+      return list(filter(lambda x: x.location == "party", self.blue_side_pokemon))
+    elif(side == "red"):
+      return list(filter(lambda x: x.location == "party", self.red_side_pokemon))
+    else:
+      return []
 
   # SERIALIZERS
   # =====================
@@ -161,10 +184,27 @@ class BattleState():
     }
 
   def serialize_ml(self):
+    POKEMON_BATTLE_STATE_EMPTY_ML = np.zeros(77)
+
+    blue_party_pokemons = self.party_pokemons('blue')
+    red_party_pokemons = self.party_pokemons('red')
+
+    blue_field_slot = self.field_pokemon('blue').serialize_ml() if self.field_pokemon('blue') else POKEMON_BATTLE_STATE_EMPTY_ML
+    red_field_slot = self.field_pokemon('red').serialize_ml() if self.field_pokemon('red') else POKEMON_BATTLE_STATE_EMPTY_ML
+
+    blue_party_slot_1 = self.party_pokemons('blue')[0].serialize_ml() if self.party_pokemons('blue')[0] else POKEMON_BATTLE_STATE_EMPTY_ML
+    blue_party_slot_2 = self.party_pokemons('blue')[1].serialize_ml() if self.party_pokemons('blue')[1] else POKEMON_BATTLE_STATE_EMPTY_ML
+    red_party_slot_1 = self.party_pokemons('red')[0].serialize_ml() if self.party_pokemons('red')[0] else POKEMON_BATTLE_STATE_EMPTY_ML
+    red_party_slot_2 = self.party_pokemons('red')[1].serialize_ml() if self.party_pokemons('red')[1] else POKEMON_BATTLE_STATE_EMPTY_ML
+
     return flatten([
       self.global_state.serialize_ml(),
       self.blue_side_state.serialize_ml(),
       self.red_side_state.serialize_ml(),
-      flatten(list(map(lambda x: x.serialize_ml(), self.blue_side_pokemon))),
-      flatten(list(map(lambda x: x.serialize_ml(), self.red_side_pokemon))),
+      blue_field_slot,
+      red_field_slot,
+      blue_party_slot_1,
+      blue_party_slot_2,
+      red_party_slot_1,
+      red_party_slot_2
     ])

@@ -443,26 +443,13 @@ class Battle():
   # CONVENIENCE HELPERS
   # =====================
   def field_pokemon(self, side):
-    if(side == "blue"):
-      return find(self.battle_state.blue_side_pokemon, lambda x: x.location == "field")
-    elif(side == "red"):
-      return find(self.battle_state.red_side_pokemon, lambda x: x.location == "field")
-    else:
-      return None
+    return self.battle_state.field_pokemon(side)
 
   def alive_pokemons(self, side):
-    if(side == "blue"):
-      return list(filter(lambda x: x.location != "graveyard", self.battle_state.blue_side_pokemon))
-    elif(side == "red"):
-      return list(filter(lambda x: x.location != "graveyard", self.battle_state.red_side_pokemon))
+    return self.battle_state.alive_pokemons(side)
 
   def party_pokemons(self, side):
-    if(side == "blue"):
-      return list(filter(lambda x: x.location == "party", self.battle_state.blue_side_pokemon))
-    elif(side == "red"):
-      return list(filter(lambda x: x.location == "party", self.battle_state.red_side_pokemon))
-    else:
-      return []
+    return self.battle_state.party_pokemons(side)
 
   # SERIALIZERS
   # =====================

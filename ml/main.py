@@ -17,7 +17,7 @@ if __name__ == "__main__":
   env = Game()
 
   NUMBER_OF_AGENT_ACTIONS = 6
-  OBSERVATION_DIMENSIONS = 479
+  OBSERVATION_DIMENSIONS = 485
   EPSILON_START = 1.0
   EPSILON_END = 0.01
   EPSILON_DEC = 2e-4
@@ -47,7 +47,8 @@ if __name__ == "__main__":
     agent.Q_eval.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     epoch = checkpoint['epoch']
 
-  n_games = 2500
+  n_games = 10_000_000
+  checkpoint_interval = 5_000
 
   scores, epsilon_history = [], []
 
@@ -81,10 +82,13 @@ if __name__ == "__main__":
       'epsilon %.2f' % agent.epsilon
     )
 
-  if(SAVE_CHECKPOINT):
-    checkpoint_params = {}
-    checkpoint_params['epoch'] = epoch
-    checkpoint_params['model_state_dict'] = agent.Q_eval.state_dict()
-    checkpoint_params['optimizer_state_dict'] = agent.Q_eval.optimizer.state_dict()
-    checkpoint_params['average_score'] = np.mean(scores[-100:])
-    T.save(checkpoint_params, CHECKPOINT_PATH)
+    if(SAVE_CHECKPOINT and (i % checkpoint_interval == 0)):
+      checkpoint_params = {}
+      checkpoint_params['epoch'] = epoch
+      checkpoint_params['model_state_dict'] = agent.Q_eval.state_dict()
+      checkpoint_params['optimizer_state_dict'] = agent.Q_eval.optimizer.state_dict()
+      checkpoint_params['average_score'] = np.mean(scores[-1000:])
+      T.save(checkpoint_params, CHECKPOINT_PATH)
+      scores = scores[-1000:]
+      epsilon_history = epsilon_history[-1000:]
+      print("CHECKPOINT SAVED")
