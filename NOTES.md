@@ -6,30 +6,22 @@
 
   - Implement Accuracy (stat stage & accuracy rolls)
   - Implement Evasiveness (stat stage & accuracy rolls)
-  - Implement crit ratio as a stat boost stage
 
   - Implement Protect/Detect logic
 
-  - implement recoil damage logic
   - implement recovery damage logic
 
   - create a worklfow for training models on big GPU machines on AWS and synchronizing later
 
   - figure out why fainted blue_side pokemon can perform a battle action after fainting (probably because it doesn't get cancelled after fainting, if they were acting second)
 
-  - figure out the right calcs for assurance/avalanche power up moves
   - allow renaming of teams
-  - add more items
-  - add more abilities
-  - figure out how to add reflect/light-screen or some other sorts of battle states
-  - start coding & testing basic item functionality into the damage calculation
   - figure out a way to cache sets for specific mons (hardcode?)
-
-  - implement items
-  - implement abilities
 
   - DEX COMPLETION: (67.5%)
   - MOVE TEMPLATE COMPLETION: (23%)
+  - ITEM COMPLETION: (0%)
+  - ABILITY COMPLETION: (0%)
 
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class

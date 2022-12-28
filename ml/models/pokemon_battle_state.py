@@ -76,6 +76,11 @@ class PokemonBattleState():
       current_slot=None
     )
 
+  def take_damage(self, damage_amount):
+    damage_taken = min(self.current_hp, damage_amount)
+    self.current_hp -= damage_taken
+    return damage_taken
+
   def max_hp(self):
     return self.pokemon_build.stat_spread.hp
 

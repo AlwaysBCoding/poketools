@@ -253,16 +253,19 @@ class Battle():
   def order_battle_actions(self, battle_actions):
     return sorted(battle_actions, key=cmp_to_key(self.compare_battle_actions))
 
-  def perform_battle_action(self, battle_action, hardcoded_stat_change_frequency_roll=None):
+  def perform_battle_action(self, battle_action, hardcoded_stat_change_frequency_roll=None, hardcoded_random_roll=None, hardcoded_crit_roll=None):
     action_events = []
     should_end_battle = False
     STAT_CHANGE_FREQUENCY_ROLL = (1 - hardcoded_stat_change_frequency_roll) if hardcoded_stat_change_frequency_roll else np.random.random()
 
-    if(battle_action.actor.location == "graveyard"):
+    actor_pokemon_id = battle_action.actor.battle_id
+    actor_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == actor_pokemon_id)
+
+    if(actor_pokemon.location == "graveyard"):
       return [action_events, should_end_battle]
 
     if(battle_action.action_type == "switch"):
-      actor = self.pokemon_battle_state_by_id(battle_action.actor.battle_id)
+      actor = self.pokemon_battle_state_by_id(actor_pokemon.battle_id)
       target = self.pokemon_battle_state_by_id(battle_action.action_data["switch_target"].battle_id)
       actor.location = "party"
       actor.stat_boosts = PokemonStatBoosts()
@@ -271,12 +274,12 @@ class Battle():
       action_events.append(f"Go {target.pokemon_build.pokemon.ident}!")
       if(actor.battle_side == "blue"):
         self.battle_state.field_state["blue-field-1"] = target.battle_id
-      elif(battle_action.actor.battle_side == "red"):
+      elif(actor_pokemon.battle_side == "red"):
         self.battle_state.field_state["red-field-1"] = target.battle_id
 
     elif(battle_action.action_type == "move"):
       move_ident = battle_action.action_data["move"]["ident"]
-      action_events.append(f"{battle_action.actor.pokemon_build.pokemon.ident} used {move_ident}")
+      action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} used {move_ident}")
       target_slot = battle_action.action_data['move_targets'][0]
 
       if(target_slot == "field"):
@@ -305,19 +308,19 @@ class Battle():
 
         if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
           if(move_ident == "reflect"):
-            if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.reflect == 0):
+            if(actor_pokemon.battle_side == "blue" and self.battle_state.blue_side_state.reflect == 0):
               self.battle_state.blue_side_state.reflect = 5
-            elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
+            elif(actor_pokemon.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
               self.battle_state.red_side_state.reflect = 5
           if(move_ident == "light-screen"):
-            if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.light_screen == 0):
+            if(actor_pokemon.battle_side == "blue" and self.battle_state.blue_side_state.light_screen == 0):
               self.battle_state.blue_side_state.light_screen = 5
-            elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.light_screen == 0):
+            elif(actor_pokemon.battle_side == "red" and self.battle_state.red_side_state.light_screen == 0):
               self.battle_state.red_side_state.light_screen = 5
           if(move_ident == "tailwind"):
-            if(battle_action.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
+            if(actor_pokemon.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
               self.battle_state.blue_side_state.tailwind = 4
-            elif(battle_action.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind == 0):
+            elif(actor_pokemon.battle_side == "red" and self.battle_state.red_side_state.tailwind == 0):
               self.battle_state.red_side_state.tailwind = 4
 
         elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
@@ -326,13 +329,21 @@ class Battle():
           # =====================
           damage = calculate_damage(
             battle_state=self.battle_state,
-            attacking_pokemon=battle_action.actor,
+            attacking_pokemon=actor_pokemon,
             target_pokemon=target_pokemon,
-            move_ident=battle_action.action_data['move']['ident']
+            move_ident=battle_action.action_data['move']['ident'],
+            hardcoded_random_roll=hardcoded_random_roll,
+            hardcoded_crit_roll=hardcoded_crit_roll
           )
           target_pokemon_previous_hp = target_pokemon.current_hp
-          target_pokemon.current_hp = max(0, target_pokemon_previous_hp - damage)
-          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+          damage_taken = target_pokemon.take_damage(damage)
+          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage_taken} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+          if(battle_action.action_data['move'].get('recoil')):
+            if(battle_action.action_data['move']['recoil'].get('percentage_of_damage')):
+              recoil_amount = np.round(damage * battle_action.action_data['move']['recoil'].get('percentage_of_damage'))
+              actor_pokemon_previous_hp = actor_pokemon.current_hp
+              recoil_damage_taken = actor_pokemon.take_damage(recoil_amount)
+              action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} took {recoil_damage_taken} damage in recoil {actor_pokemon_previous_hp} -> {actor_pokemon.current_hp}")
 
           # CUSTOM MOVE BEHAVIOR
           # =====================
@@ -362,7 +373,7 @@ class Battle():
       if(battle_action.action_data['move'].get('stat_changes')):
         target_stat_change = battle_action.action_data['move']['stat_changes'][0]
         if(target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL):
-          target_boost_pokemon = self.pokemon_battle_state_by_id(battle_action.actor.battle_id) if target_stat_change.get('target') == 'self' else target_pokemon
+          target_boost_pokemon = actor_pokemon if target_stat_change.get('target') == 'self' else target_pokemon
           if(target_stat_change.get('attack')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('attack'), 6), -6)
             target_boost_pokemon.stat_boosts.attack = next_stat_value

@@ -98,7 +98,15 @@ def testPerformBattleAction():
     battle = Battle.deserialize(data['battle'])
     battle_action = BattleAction.deserialize(data['battle_action'])
     hardcoded_stat_change_frequency_roll = data.get('hardcoded_stat_change_frequency_roll')
-    action_events, should_end_battle = battle.perform_battle_action(battle_action, hardcoded_stat_change_frequency_roll)
+    hardcoded_random_roll = data.get("random_roll")
+    hardcoded_crit_roll = data.get("crit_roll")
+
+    action_events, should_end_battle = battle.perform_battle_action(
+      battle_action,
+      hardcoded_stat_change_frequency_roll,
+      hardcoded_random_roll,
+      hardcoded_crit_roll
+    )
     return {
       "battle": battle.serialize_api(),
       "action_events": action_events

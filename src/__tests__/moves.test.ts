@@ -26,7 +26,9 @@ const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction,
     body: JSON.stringify({
       battle: battle,
       battle_action: battleAction,
-      hardcoded_stat_change_frequency_roll: hardcodedStatChangeFrequencyRoll
+      hardcoded_stat_change_frequency_roll: hardcodedStatChangeFrequencyRoll,
+      random_roll: 0.85,
+      crit_roll: 0
     })
   }
 
@@ -127,7 +129,8 @@ describe("MOVES", () => {
 
   });
 
-  describe("ANCIENT_POWER", () => {
+  // ATOMIC STAT BOOSTS
+  describe("ANCIENT POWER", () => {
     let gastrodonBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GASTRODON_ATEAM_BUILD);
     gastrodonBuild.move_idents = ["clear-smog", "hydro-pump", "earth-power", "ancient-power"];
     let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
@@ -194,6 +197,7 @@ describe("MOVES", () => {
 
   });
 
+  // TERRAIN
   describe("ELECTRIC TERRAIN", () => {
     const ampharosBuildTemplate = AMPHAROS_SIMPLE_BUILD;
     ampharosBuildTemplate.move_idents = ["volt-switch", "thunderbolt", "focus-blast", "electric-terrain"];
@@ -244,7 +248,34 @@ describe("MOVES", () => {
 
   });
 
-  describe("FOCUS ENERGY focusx", () => {
+  // RECOIL DAMAGE
+  describe("FLARE BLITZ", () => {
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const flareBlitzAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "flare-blitz",
+      ["red-field-1"]
+    );
+
+    test("it deals the proper amount of recoil damage", async () => {
+      const flareBlitzActionResult = await PERFORM_BATTLE_ACTION(initialBattle, flareBlitzAction);
+      expect(flareBlitzActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(78);
+      expect(flareBlitzActionResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(115);
+    });
+
+  });
+
+  // CRIT STAGE CHANGE
+  describe("FOCUS ENERGY", () => {
     let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
     annihilapeBuild.move_idents = ["bulk-up", "drain-punch", "rage-fist", "focus-energy"];
     let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
@@ -423,6 +454,7 @@ describe("MOVES", () => {
 
   });
 
+  // WEATHER
   describe("SUNNY DAY", () => {
     const talonflameBuildTemplate = TALONFLAME_ATEAM_BUILD;
     talonflameBuildTemplate.move_idents = ["tailwind", "brave-bird", "sunny-day", "flare-blitz"];
