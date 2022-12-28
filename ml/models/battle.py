@@ -9,6 +9,7 @@ from pathlib import Path
 import json
 from pprint import pprint
 import numpy as np
+import math
 
 all_moves_f = open(Path("../src/data/moves/all-moves.json"))
 all_moves_data = json.load(all_moves_f)
@@ -337,21 +338,21 @@ class Battle():
           )
           target_pokemon_previous_hp = target_pokemon.current_hp
           damage_taken = target_pokemon.take_damage(damage)
-          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage_taken} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+          action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {math.floor(round(damage_taken / target_pokemon.max_hp(), 2) * 100)}% damage")
 
           if(battle_action.action_data['move'].get('recoil')):
             if(battle_action.action_data['move']['recoil'].get('percentage_of_damage')):
               recoil_amount = np.round(damage * battle_action.action_data['move']['recoil'].get('percentage_of_damage'))
               actor_pokemon_previous_hp = actor_pokemon.current_hp
               recoil_damage_taken = actor_pokemon.take_damage(recoil_amount)
-              action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} took {recoil_damage_taken} damage in recoil {actor_pokemon_previous_hp} -> {actor_pokemon.current_hp}")
+              action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} took {math.floor(round(recoil_damage_taken / actor_pokemon.max_hp(), 2) * 100)}% damage in recoil")
 
           if(battle_action.action_data['move'].get('recovery')):
             if(battle_action.action_data['move']['recovery'].get('percentage_of_damage')):
               recovery_amount = np.round(damage * battle_action.action_data['move']['recovery'].get('percentage_of_damage'))
               actor_pokemon_previous_hp = actor_pokemon.current_hp
               recovery_taken = actor_pokemon.recover_hp(recovery_amount)
-              action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} recovered {recovery_taken} hp {actor_pokemon_previous_hp} -> {actor_pokemon.current_hp}")
+              action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} recovered {math.floor(round(recovery_taken / actor_pokemon.max_hp(), 2) * 100)}% hp")
 
           # CUSTOM MOVE BEHAVIOR
           # =====================
@@ -385,21 +386,27 @@ class Battle():
           if(target_stat_change.get('attack')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('attack'), 6), -6)
             target_boost_pokemon.stat_boosts.attack = next_stat_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} attack now {next_stat_value}")
           if(target_stat_change.get('defense')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('defense'), 6), -6)
             target_boost_pokemon.stat_boosts.defense = next_stat_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} defense now {next_stat_value}")
           if(target_stat_change.get('special_attack')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('special_attack'), 6), -6)
             target_boost_pokemon.stat_boosts.special_attack = next_stat_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special attack now {next_stat_value}")
           if(target_stat_change.get('special_defense')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('special_defense'), 6), -6)
             target_boost_pokemon.stat_boosts.special_defense = next_stat_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special defense now {next_stat_value}")
           if(target_stat_change.get('speed')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('speed'), 6), -6)
             target_boost_pokemon.stat_boosts.speed = next_stat_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} speed now {next_stat_value}")
           if(target_stat_change.get('critical_hit')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.critical_hit + target_stat_change.get('critical_hit'), 3), 0)
             target_boost_pokemon.stat_boosts.critical_hit = next_stat_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} critical hit stage now {next_stat_value}")
           if(target_stat_change.get('all')):
             next_attack_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('all'), 6), -6)
             next_defense_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('all'), 6), -6)
@@ -411,6 +418,11 @@ class Battle():
             target_boost_pokemon.stat_boosts.special_attack = next_special_attack_value
             target_boost_pokemon.stat_boosts.special_defense = next_special_defense_value
             target_boost_pokemon.stat_boosts.speed = next_speed_value
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} attack now {next_attack_value}")
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} defense now {next_defense_value}")
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special attack now {next_special_attack_value}")
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special defense now {next_special_defense_value}")
+            action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} speed now {next_speed_value}")
 
     return [action_events, should_end_battle]
 

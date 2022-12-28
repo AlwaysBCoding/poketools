@@ -795,6 +795,9 @@ $pokemon-base-stats-cell-width: 50%;
   }
 
   .battle-log-renderer {
+    max-height: 800px;
+    padding-bottom: 50px;
+    overflow-y: scroll;
     background-color: $showdown-light-blue;
     display: flex;
     flex-direction: column;

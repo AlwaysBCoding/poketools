@@ -197,6 +197,11 @@ describe("MOVES", () => {
 
   });
 
+  // MOVE DOESNT LOWER STATS IF 0 DAMAGE / FAILS
+  describe("CLOSE COMBAT", () => {
+    // TODO: IMPLEMENT
+  });
+
   // RECOVERY
   describe("DRAIN PUNCH", () => {
     let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);

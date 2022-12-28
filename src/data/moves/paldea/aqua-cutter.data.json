@@ -1,7 +1,7 @@
 {
   "ident": "aqua-cutter",
   "type_ident": "water",
-  "category_ident": "pyhsical",
+  "category_ident": "physical",
   "base_power": 70,
   "accuracy": 1,
   "priority": 0,

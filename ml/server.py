@@ -18,7 +18,7 @@ CORS(app)
 
 CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/checkpoint.pt")
 NUMBER_OF_AGENT_ACTIONS = 6
-OBSERVATION_DIMENSIONS = 414
+OBSERVATION_DIMENSIONS = 479
 EPSILON_START = 1.0
 EPSILON_END = 0.01
 EPSILON_DEC = 2e-4
@@ -68,6 +68,8 @@ def startBattle():
 @app.route("/send-battle-action", methods=["POST", "OPTIONS"])
 def sendBattleAction():
   try:
+    serialized_next_battle_actions = []
+
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])
     blue_actions = [BattleAction.deserialize(data["battle_action"])]
@@ -75,8 +77,9 @@ def sendBattleAction():
 
     battle.step(blue_actions, red_actions)
 
-    next_battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
-    serialized_next_battle_actions = list(map(lambda x: x.serialize_api(), next_battle_actions))
+    if(battle.field_pokemon("blue")):
+      next_battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
+      serialized_next_battle_actions = list(map(lambda x: x.serialize_api(), next_battle_actions))
 
     observation = battle.serialize_ml()
     agent_actions = agent.show_actions(observation)

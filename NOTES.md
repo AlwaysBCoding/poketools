@@ -1,4 +1,8 @@
 ## TODO
+  - close combat stil lowers stats even if it hits gholdengo for 0 damage
+    - can lower the stats via secondary effect of pokemon that gets knocked out on that turn (fix this)
+    - need a concept of whether or not a move is successful?
+
   - Implement conditional behavior based on each terrain
   - Implement conditional behavior based on each weather
 
