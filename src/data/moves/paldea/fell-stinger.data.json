@@ -1,0 +1,11 @@
+{
+  "ident": "fell-stinger",
+  "type_ident": "bug",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 25,
+  "description": "Raises the user's Attack by 3 stages if this move knocks out the target.",
+  "target": "any-adjacent"
+}

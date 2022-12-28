@@ -7,5 +7,6 @@
   "priority": 0,
   "pp": 10,
   "description": "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities. This move does not check accuracy.",
+  "target": "any-adjacent",
   "critical_hit_stage_index": 3
 }

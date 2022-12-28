@@ -1,0 +1,11 @@
+{
+  "ident": "false-surrender",
+  "type_ident": "dark",
+  "category_ident": "physical",
+  "base_power": 80,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "This move does not check accuracy.",
+  "target": "any-adjacent"
+}

@@ -1,0 +1,11 @@
+{
+  "ident": "foul-play",
+  "type_ident": "dark",
+  "category_ident": "physical",
+  "base_power": 95,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Damage is calculated using the target's Attack stat, including stat stage changes. The user's Ability, item, and burn are used as normal.",
+  "target": "any-adjacent"
+}

@@ -1,0 +1,23 @@
+{
+  "ident": "fillet-away",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "Raises the user's Attack, Special Attack, and Speed by 2 stages in exchange for the user losing 1/2 of its maximum HP, rounded down. Fails if the user would faint or if its Attack, Special Attack, and Speed stat stages would not change.",
+  "stat_changes": [
+    {
+      "attack": 2,
+      "special_attack": 2,
+      "speed": 2,
+      "frequency": 1
+    },
+    {
+      "stat_ident": "hp",
+      "percentage_of_maximum": -0.50,
+      "frequency": 1
+    }
+  ]
+}

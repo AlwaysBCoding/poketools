@@ -1,0 +1,11 @@
+{
+  "ident": "fury-cutter",
+  "type_ident": "bug",
+  "category_ident": "physical",
+  "base_power": 40,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 20,
+  "description": "Power doubles with each successful hit, up to a maximum of 160 power. The power is reset if this move misses or another move is used.",
+  "target": "any-adjacent"
+}

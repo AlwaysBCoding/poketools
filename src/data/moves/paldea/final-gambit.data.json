@@ -1,0 +1,11 @@
+{
+  "ident": "final-gambit",
+  "type_ident": "fighting",
+  "category_ident": "special",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Deals damage to the target equal to the user's current HP. If this move is successful, the user faints.",
+  "target": "any-adjacent"
+}

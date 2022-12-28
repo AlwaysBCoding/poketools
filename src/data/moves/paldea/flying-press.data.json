@@ -1,0 +1,11 @@
+{
+  "ident": "flying-press",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 10,
+  "description": "This move combines Flying in its type effectiveness against the target. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+  "target": "any-adjacent"
+}

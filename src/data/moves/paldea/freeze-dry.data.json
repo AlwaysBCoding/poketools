@@ -1,0 +1,17 @@
+{
+  "ident": "freeze-dry",
+  "type_ident": "ice",
+  "category_ident": "special",
+  "base_power": 70,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Has a 10% chance to freeze the target. This move's type effectiveness against Water is changed to be super effective no matter what this move's type is.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "frozen",
+      "frequency": 0.10
+    }
+  ]
+}

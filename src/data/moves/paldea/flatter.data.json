@@ -1,0 +1,23 @@
+{
+  "ident": "flatter",
+  "type_ident": "dark",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Raises the target's Special Attack by 1 stage and confuses it.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_attack": 1,
+      "frequency": 1
+    }
+  ],
+  "secondary_effects": [
+    {
+      "status_ident": "confused",
+      "frequency": 1
+    }
+  ]
+}

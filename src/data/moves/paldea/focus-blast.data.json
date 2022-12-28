@@ -1,0 +1,17 @@
+{
+  "ident": "focus-blast",
+  "type_ident": "fighting",
+  "category_ident": "special",
+  "base_power": 120,
+  "accuracy": 0.70,
+  "priority": 0,
+  "pp": 5,
+  "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_defense": -1,
+      "frequency": 0.10
+    }
+  ]
+}

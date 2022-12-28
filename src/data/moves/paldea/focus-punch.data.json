@@ -1,0 +1,11 @@
+{
+  "ident": "focus-punch",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 150,
+  "accuracy": 1,
+  "priority": -3,
+  "pp": 20,
+  "description": "The user loses its focus and does nothing if it is hit by a damaging attack this turn before it can execute the move.",
+  "target": "any-adjacent"
+}

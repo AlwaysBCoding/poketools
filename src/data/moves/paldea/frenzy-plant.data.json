@@ -1,0 +1,12 @@
+{
+  "ident": "frenzy-plant",
+  "type_ident": "grass",
+  "category_ident": "special",
+  "base_power": 150,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 5,
+  "description": "If this move is successful, the user must recharge on the following turn and cannot select a move.",
+  "target": "any-adjacent",
+  "recharge_turn": true
+}

@@ -1,0 +1,12 @@
+{
+  "ident": "frost-breath",
+  "type_ident": "ice",
+  "category_ident": "special",
+  "base_power": 60,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities.",
+  "target": "any-adjacent",
+  "critical_hit_stage_index": 3
+}
