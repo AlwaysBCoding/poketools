@@ -197,6 +197,41 @@ describe("MOVES", () => {
 
   });
 
+  // RECOVERY
+  describe("DRAIN PUNCH", () => {
+    let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [annihilapeBuild],
+      redSidePokemonBuilds: [talonflameBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const drainPunchAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "drain-punch",
+      ["red-field-1"]
+    );
+
+    test("it recovers the proper amount of recovery hp", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].current_hp = 100;
+      const drainPunchActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, drainPunchAction);
+      expect(drainPunchActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(122);
+      expect(drainPunchActionResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(116);
+    });
+
+    test("there is no recovery amount if hp is full", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const drainPunchActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, drainPunchAction);
+      expect(drainPunchActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(122);
+      expect(drainPunchActionResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(217);
+    });
+
+  });
+
   // TERRAIN
   describe("ELECTRIC TERRAIN", () => {
     const ampharosBuildTemplate = AMPHAROS_SIMPLE_BUILD;

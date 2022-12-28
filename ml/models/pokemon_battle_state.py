@@ -81,6 +81,12 @@ class PokemonBattleState():
     self.current_hp -= damage_taken
     return damage_taken
 
+  def recover_hp(self, recovery_amount):
+    hp_missing = self.max_hp() - self.current_hp
+    recovery_taken = min(hp_missing, recovery_amount)
+    self.current_hp += recovery_taken
+    return recovery_taken
+
   def max_hp(self):
     return self.pokemon_build.stat_spread.hp
 

@@ -338,12 +338,20 @@ class Battle():
           target_pokemon_previous_hp = target_pokemon.current_hp
           damage_taken = target_pokemon.take_damage(damage)
           action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} took {damage_taken} damage {target_pokemon_previous_hp} -> {target_pokemon.current_hp}")
+
           if(battle_action.action_data['move'].get('recoil')):
             if(battle_action.action_data['move']['recoil'].get('percentage_of_damage')):
               recoil_amount = np.round(damage * battle_action.action_data['move']['recoil'].get('percentage_of_damage'))
               actor_pokemon_previous_hp = actor_pokemon.current_hp
               recoil_damage_taken = actor_pokemon.take_damage(recoil_amount)
               action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} took {recoil_damage_taken} damage in recoil {actor_pokemon_previous_hp} -> {actor_pokemon.current_hp}")
+
+          if(battle_action.action_data['move'].get('recovery')):
+            if(battle_action.action_data['move']['recovery'].get('percentage_of_damage')):
+              recovery_amount = np.round(damage * battle_action.action_data['move']['recovery'].get('percentage_of_damage'))
+              actor_pokemon_previous_hp = actor_pokemon.current_hp
+              recovery_taken = actor_pokemon.recover_hp(recovery_amount)
+              action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} recovered {recovery_taken} hp {actor_pokemon_previous_hp} -> {actor_pokemon.current_hp}")
 
           # CUSTOM MOVE BEHAVIOR
           # =====================
