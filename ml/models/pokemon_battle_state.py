@@ -2,12 +2,15 @@ from models.pokemon_build import PokemonBuild
 import uuid
 
 class PokemonStatBoosts():
-  def __init__(self, attack=0, defense=0, special_attack=0, special_defense=0, speed=0):
+  def __init__(self, attack=0, defense=0, special_attack=0, special_defense=0, speed=0, accuracy=0, evasiveness=0, critical_hit=0):
     self.attack = attack
     self.defense = defense
     self.special_attack = special_attack
     self.special_defense = special_defense
     self.speed = speed
+    self.accuracy = accuracy
+    self.evasiveness = evasiveness
+    self.critical_hit = critical_hit
 
   def serialize_api(self):
     return {
@@ -15,7 +18,10 @@ class PokemonStatBoosts():
       "defense": self.defense,
       "special_attack": self.special_attack,
       "special_defense": self.special_defense,
-      "speed": self.speed
+      "speed": self.speed,
+      "accuracy": self.accuracy,
+      "evasiveness": self.evasiveness,
+      "critical_hit": self.critical_hit
     }
 
 class PokemonBattleState():

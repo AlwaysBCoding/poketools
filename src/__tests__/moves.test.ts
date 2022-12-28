@@ -244,6 +244,31 @@ describe("MOVES", () => {
 
   });
 
+  describe("FOCUS ENERGY focusx", () => {
+    let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+    annihilapeBuild.move_idents = ["bulk-up", "drain-punch", "rage-fist", "focus-energy"];
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [annihilapeBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const focusEnergyAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "focus-energy",
+      ["blue-field-1"]
+    );
+
+    test("it boosts the user's crit ratio", async () => {
+      const focusEnergyActionResult = await PERFORM_BATTLE_ACTION(initialBattle, focusEnergyAction);
+      expect(focusEnergyActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.critical_hit).toEqual(2);
+    });
+
+  });
+
   describe("KNOCK-OFF", () => {
     let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
     let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);

@@ -10,7 +10,7 @@
   "target": "self",
   "stat_changes": [
     {
-      "critical_hit_stage": 2,
+      "critical_hit": 2,
       "frequency": 1,
       "target": "self"
     }

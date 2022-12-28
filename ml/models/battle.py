@@ -378,6 +378,9 @@ class Battle():
           if(target_stat_change.get('speed')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('speed'), 6), -6)
             target_boost_pokemon.stat_boosts.speed = next_stat_value
+          if(target_stat_change.get('critical_hit')):
+            next_stat_value = max(min(target_boost_pokemon.stat_boosts.critical_hit + target_stat_change.get('critical_hit'), 3), 0)
+            target_boost_pokemon.stat_boosts.critical_hit = next_stat_value
           if(target_stat_change.get('all')):
             next_attack_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('all'), 6), -6)
             next_defense_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('all'), 6), -6)

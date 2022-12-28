@@ -37,6 +37,9 @@ export interface PokemonStatBoosts {
   special_attack: number;
   special_defense: number;
   speed: number;
+  accuracy: number;
+  evasiveness: number;
+  critical_hit: number;
 }
 
 export type TerrainState =

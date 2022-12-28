@@ -76,12 +76,12 @@ def calculate_damage(
   # CRITICAL
   # =====================
   is_critical_hit = False
-  active_crit_stage = CRITICAL_HIT_STAGES[0]
+  crit_stage_index = attacking_pokemon.stat_boosts.critical_hit
+  if(pokemon_move.get('critical_hit_stage_index')):
+    crit_stage_index = min(crit_stage_index + pokemon_move.get('critical_hit_stage_index'), 3)
+  active_crit_stage = CRITICAL_HIT_STAGES[crit_stage_index]
   crit_roll = (1 - hardcoded_crit_roll) if hardcoded_crit_roll else (1 - hardcoded_crit_roll) if hardcoded_crit_roll == 0 else (1 - np.random.random())
-  if(pokemon_move['ident'] == 'flower-trick'):
-    is_critical_hit = True
-    critical = CRITICAL_HIT_MODIFIER
-  elif(crit_roll <= active_crit_stage):
+  if(crit_roll <= active_crit_stage):
     is_critical_hit = True
     critical = CRITICAL_HIT_MODIFIER
 

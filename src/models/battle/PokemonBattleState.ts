@@ -45,7 +45,10 @@ export const createNewPokemonBattleState = (pokemonBuild: PokemonBuild, side?: B
       defense: 0,
       special_attack: 0,
       special_defense: 0,
-      speed: 0
+      speed: 0,
+      accuracy: 0,
+      evasiveness: 0,
+      critical_hit: 0
     },
     terastallized: false,
     current_hp: pokemonBuild.stat_spread.hp,
