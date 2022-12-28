@@ -184,7 +184,7 @@ class BattleState():
     }
 
   def serialize_ml(self):
-    POKEMON_BATTLE_STATE_EMPTY_ML = np.zeros(77)
+    POKEMON_BATTLE_STATE_EMPTY_ML = np.zeros(77, dtype=np.float32)
 
     blue_party_pokemons = self.party_pokemons('blue')
     red_party_pokemons = self.party_pokemons('red')
@@ -201,10 +201,10 @@ class BattleState():
       self.global_state.serialize_ml(),
       self.blue_side_state.serialize_ml(),
       self.red_side_state.serialize_ml(),
-      blue_field_slot,
-      red_field_slot,
-      blue_party_slot_1,
-      blue_party_slot_2,
-      red_party_slot_1,
-      red_party_slot_2
+      flatten(blue_field_slot),
+      flatten(red_field_slot),
+      flatten(blue_party_slot_1),
+      flatten(blue_party_slot_2),
+      flatten(red_party_slot_1),
+      flatten(red_party_slot_2)
     ])
