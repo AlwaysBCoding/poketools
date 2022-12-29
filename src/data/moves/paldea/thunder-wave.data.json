@@ -1,0 +1,11 @@
+{
+  "ident": "thunder-wave",
+  "type_ident": "electric",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 20,
+  "description": "Paralyzes the target. This move does not ignore type immunity.",
+  "target": "any-adjacent"
+}

@@ -233,6 +233,17 @@ class Battle():
     if(battle_action_a.action_type == 'move' and battle_action_b.action_type == 'move'):
       a_priority = battle_action_a.action_data['move'].get('priority')
       b_priority = battle_action_b.action_data['move'].get('priority')
+
+      if(pokemon_battle_state_a.ability_ident == 'gale-wings' and battle_action_a.action_data['move'].get('type_ident') == 'flying' and pokemon_battle_state_a.current_hp == pokemon_battle_state_a.max_hp()):
+        a_priority += 1
+      if(pokemon_battle_state_b.ability_ident == 'gale-wings' and battle_action_b.action_data['move'].get('type_ident') == 'flying' and pokemon_battle_state_b.current_hp == pokemon_battle_state_b.max_hp()):
+        b_priority += 1
+
+      if(pokemon_battle_state_a.ability_ident == 'prankster' and battle_action_a.action_data['move'].get('category_ident') == 'non-damaging'):
+        a_priority += 1
+      if(pokemon_battle_state_b.ability_ident == 'prankster' and battle_action_b.action_data['move'].get('category_ident') == 'non-damaging'):
+        b_priority += 1
+
       if(a_priority > b_priority):
         return -1
       if(b_priority > a_priority):
@@ -273,46 +284,46 @@ class Battle():
     actor_pokemon_id = battle_action.actor.battle_id
     actor_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == actor_pokemon_id)
 
-    if(actor_pokemon.location == "graveyard"):
+    if(actor_pokemon.location == 'graveyard'):
       return [action_events, should_end_battle]
 
-    if(battle_action.action_type == "switch"):
+    if(battle_action.action_type == 'switch'):
       actor = self.pokemon_battle_state_by_id(actor_pokemon.battle_id)
-      target = self.pokemon_battle_state_by_id(battle_action.action_data["switch_target"].battle_id)
-      actor.location = "party"
+      target = self.pokemon_battle_state_by_id(battle_action.action_data['switch_target'].battle_id)
+      actor.location = 'party'
       actor.stat_boosts = PokemonStatBoosts()
       action_events.append(f"{actor.pokemon_build.pokemon.ident} come back!")
-      target.location = "field"
+      target.location = 'field'
       action_events.append(f"Go {target.pokemon_build.pokemon.ident}!")
-      if(actor.battle_side == "blue"):
-        self.battle_state.field_state["blue-field-1"] = target.battle_id
-      elif(actor_pokemon.battle_side == "red"):
-        self.battle_state.field_state["red-field-1"] = target.battle_id
+      if(actor.battle_side == 'blue'):
+        self.battle_state.field_state['blue-field-1'] = target.battle_id
+      elif(actor_pokemon.battle_side == 'red'):
+        self.battle_state.field_state['red-field-1'] = target.battle_id
 
-    elif(battle_action.action_type == "move"):
-      move_ident = battle_action.action_data["move"]["ident"]
+    elif(battle_action.action_type == 'move'):
+      move_ident = battle_action.action_data['move']['ident']
       action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} used {move_ident}")
       target_slot = battle_action.action_data['move_targets'][0]
 
-      if(target_slot == "field"):
+      if(target_slot == 'field'):
 
-        if(move_ident == "electric-terrain"):
-          self.battle_state.global_state.set_terrain("electric")
-        elif(move_ident == "grassy-terrain"):
-          self.battle_state.global_state.set_terrain("grassy")
-        elif(move_ident == "misty-terrain"):
-          self.battle_state.global_state.set_terrain("misty")
-        elif(move_ident == "psychic-terrain"):
-          self.battle_state.global_state.set_terrain("psychic")
+        if(move_ident == 'electric-terrain'):
+          self.battle_state.global_state.set_terrain('electric')
+        elif(move_ident == 'grassy-terrain'):
+          self.battle_state.global_state.set_terrain('grassy')
+        elif(move_ident == 'misty-terrain'):
+          self.battle_state.global_state.set_terrain('misty')
+        elif(move_ident == 'psychic-terrain'):
+          self.battle_state.global_state.set_terrain('psychic')
 
-        if(move_ident == "rain-dance"):
-          self.battle_state.global_state.set_weather("rain")
-        elif(move_ident == "sandstorm"):
-          self.battle_state.global_state.set_weather("sandstorm")
-        elif(move_ident == "snowscape"):
-          self.battle_state.global_state.set_weather("snow")
-        elif(move_ident == "sunny-day"):
-          self.battle_state.global_state.set_weather("sun")
+        if(move_ident == 'rain-dance'):
+          self.battle_state.global_state.set_weather('rain')
+        elif(move_ident == 'sandstorm'):
+          self.battle_state.global_state.set_weather('sandstorm')
+        elif(move_ident == 'snowscape'):
+          self.battle_state.global_state.set_weather('snow')
+        elif(move_ident == 'sunny-day'):
+          self.battle_state.global_state.set_weather('sun')
 
       else:
         target_pokemon_id = self.battle_state.field_state[target_slot]

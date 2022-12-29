@@ -3231,6 +3231,17 @@
     "description": "If the user is Terastallized, this move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes, and it becomes the same its the user's Tera Type."
   },
   {
+    "ident": "thunder-wave",
+    "type_ident": "electric",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 20,
+    "description": "Paralyzes the target. This move does not ignore type immunity.",
+    "target": "any-adjacent"
+  },
+  {
     "ident": "thunderbolt",
     "type_ident": "electric",
     "category_ident": "special",

@@ -1,4 +1,10 @@
 ## TODO
+  - implement status conditions
+
+  - implement secondary effects of moves being able to create status conditions
+
+  - implement prankster thunder wave failing against a dark type and the general idea of moves failing.
+
   - train the AI against another AI that's trying to win instead of just random moves
     - or at least just trying to do damage
 

@@ -648,6 +648,7 @@ describe("MOVES", () => {
 
     test("speed is doubled under tailwind", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].ability_ident = "flame-body";
       const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [tailwindAction, knockOffAction]);
       expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
       const tailwindActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, tailwindAction);
