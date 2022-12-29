@@ -16,19 +16,23 @@ from model import Agent
 app = Flask(__name__)
 CORS(app)
 
-CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/checkpoint.pt")
+BLUE_CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/blue.checkpoint.pt")
+RED_CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/red.checkpoint.pt")
 NUMBER_OF_AGENT_ACTIONS = 6
 OBSERVATION_DIMENSIONS = 485
 EPSILON_START = 1.0
 EPSILON_END = 0.01
 EPSILON_DEC = 2e-4
 LEARNING_RATE = 0.002
+GAMMA = 0.99
+MAX_MEMORY_SIZE = 1_000_000
+BATCH_SIZE = 64
 
-agent = Agent(
-  gamma=0.99,
+blue_agent = Agent(
+  gamma=GAMMA,
   epsilon=EPSILON_START,
-  max_memory_size=1000000,
-  batch_size=64,
+  max_memory_size=MAX_MEMORY_SIZE,
+  batch_size=BATCH_SIZE,
   n_actions=NUMBER_OF_AGENT_ACTIONS,
   epsilon_end=EPSILON_END,
   epsilon_dec=EPSILON_DEC,
@@ -36,9 +40,25 @@ agent = Agent(
   learning_rate=LEARNING_RATE
 )
 
-checkpoint = T.load(CHECKPOINT_PATH)
-agent.Q_eval.load_state_dict(checkpoint['model_state_dict'])
-agent.Q_eval.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+red_agent = Agent(
+  gamma=GAMMA,
+  epsilon=EPSILON_START,
+  max_memory_size=MAX_MEMORY_SIZE,
+  batch_size=BATCH_SIZE,
+  n_actions=NUMBER_OF_AGENT_ACTIONS,
+  epsilon_end=EPSILON_END,
+  epsilon_dec=EPSILON_DEC,
+  input_dimensions=[OBSERVATION_DIMENSIONS],
+  learning_rate=LEARNING_RATE
+)
+
+blue_checkpoint = T.load(BLUE_CHECKPOINT_PATH)
+blue_agent.Q_eval.load_state_dict(blue_checkpoint['model_state_dict'])
+blue_agent.Q_eval.optimizer.load_state_dict(blue_checkpoint['optimizer_state_dict'])
+
+red_checkpoint = T.load(RED_CHECKPOINT_PATH)
+red_agent.Q_eval.load_state_dict(red_checkpoint['model_state_dict'])
+red_agent.Q_eval.optimizer.load_state_dict(red_checkpoint['optimizer_state_dict'])
 
 @app.route("/start-battle", methods=["POST", "OPTIONS"])
 def startBattle():
@@ -53,11 +73,11 @@ def startBattle():
     battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
     serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
     observation = battle.serialize_ml()
-    agent_actions = agent.show_actions(observation)
+    blue_agent_actions = blue_agent.show_actions(observation)
     return {
       "battle": battle.serialize_api(),
       "actions": serialized_battle_actions,
-      "agent_actions": agent_actions.tolist()[0]
+      "agent_actions": blue_agent_actions.tolist()[0]
     }
   except Exception as e:
     print("GOT EXCEPTION")
@@ -73,20 +93,23 @@ def sendBattleAction():
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])
     blue_actions = [BattleAction.deserialize(data["battle_action"])]
-    red_actions = [np.random.choice(battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("red").battle_id))]
+
+    observation = battle.serialize_ml()
+    red_possible_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon('red').battle_id)
+    red_actions = [red_possible_actions[red_agent.choose_action(observation, len(red_possible_actions))]]
 
     battle.step(blue_actions, red_actions)
 
-    if(battle.field_pokemon("blue")):
-      next_battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
+    if(battle.field_pokemon('blue')):
+      next_battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon('blue').battle_id)
       serialized_next_battle_actions = list(map(lambda x: x.serialize_api(), next_battle_actions))
 
-    observation = battle.serialize_ml()
-    agent_actions = agent.show_actions(observation)
+    observation_ = battle.serialize_ml()
+    blue_agent_actions = blue_agent.show_actions(observation_)
     return {
       "battle": battle.serialize_api(),
       "actions": serialized_next_battle_actions,
-      "agent_actions": agent_actions.tolist()[0]
+      "agent_actions": blue_agent_actions.tolist()[0]
     }
   except Exception as e:
     print("GOT EXCEPTION")

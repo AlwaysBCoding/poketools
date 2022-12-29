@@ -1,19 +1,26 @@
 ## TODO
+  - better battle rendering
+    - party pokemon + HP
+    - stat boosts
+    - tailwind/reflect turns
+
+  - logic for knocking yourself out with recoil damage
+
+  - target pokemon switches out after fainting before adding the stat drop for using make-it-rain etc...
+    - also battle is over happens before the stat drop currently
+
+  - close combat stil lowers stats even if it hits gholdengo for 0 damage
+    - can lower the stats via secondary effect of pokemon that gets knocked out on that turn (fix this)
+    - need a concept of whether or not a move is successful?
+
   - implement status conditions
 
   - implement secondary effects of moves being able to create status conditions
 
   - implement prankster thunder wave failing against a dark type and the general idea of moves failing.
 
-  - train the AI against another AI that's trying to win instead of just random moves
-    - or at least just trying to do damage
-
   - cull things the AI should never do (like setting light-screen when light-screen is still active)
     - find a way to completely disallow obviously dumb? actions
-
-  - close combat stil lowers stats even if it hits gholdengo for 0 damage
-    - can lower the stats via secondary effect of pokemon that gets knocked out on that turn (fix this)
-    - need a concept of whether or not a move is successful?
 
   - Implement conditional behavior based on each terrain
   - Implement conditional behavior based on each weather
@@ -23,7 +30,8 @@
 
   - Implement Protect/Detect logic
 
-  - create a worklfow for training models on big GPU machines on AWS and synchronizing later
+  - add more pokemon builds to the training set
+  - play 6v6 singles -- (moar fun)
 
   - allow renaming of teams
   - figure out a way to cache sets for specific mons (hardcode?)
@@ -182,5 +190,5 @@
   - randomness in different pokemon in different indicies each time (or better to explicitly sort them?)
   - model needs to be explicit about the value that is important (i.e. which mon is on the field, or one value can accomodate for that)
   - obvious questions about model architecture in general
-  - why does it always go up in efficacy through 1000 epochs, reach a plateau, bounce around a lot then start rapidly declining around 3000 epochs? whats causing that?
   - how many epochs to train for?
+  - would it be better to just have the pokemon ID and let the AI figure it out, or generalize the pokemon to it's stats and input that into the neural net?

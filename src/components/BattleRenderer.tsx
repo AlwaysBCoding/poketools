@@ -135,7 +135,7 @@ export const BattleRenderer: React.FC<{
       </div>
       <BattleLogRenderer battle={battle} />
       {agentActions.length > 0 ? (
-        <BattleEvalBar maxActionValue={Math.max(...agentActions)} />
+        <BattleEvalBar maxActionValue={Math.max(...(agentActions.slice(0, battleActions.length)))} />
       ) : (<></>)}
     </div>
   )
