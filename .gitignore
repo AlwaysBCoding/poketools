@@ -30,3 +30,4 @@ mlenv/
 
 # ml model checkpoints
 **/checkpoint.pt
+**/*.checkpoint.pt

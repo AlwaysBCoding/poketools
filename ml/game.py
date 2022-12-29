@@ -135,11 +135,13 @@ quaquaval_build = PokemonBuild(
 
 class Game():
   def __init__(self):
-    self.reward = 0
+    self.blue_reward = 0
+    self.red_reward = 0
     self.done = 0
 
   def reset(self):
-    self.reward = 0
+    self.blue_reward = 0
+    self.red_reward = 0
     self.done = 0
 
     talonflame_battle_state = PokemonBattleState.create_from_pokemon_build(talonflame_build, "blue")
@@ -170,33 +172,36 @@ class Game():
 
     return self.battle.serialize_ml()
 
-  def possible_actions(self):
-    return self.battle.available_actions_for_pokemon_battle_state(self.battle.field_pokemon("blue").battle_id)
+  def possible_actions(self, side):
+    if(self.battle.field_pokemon(side)):
+      return self.battle.available_actions_for_pokemon_battle_state(self.battle.field_pokemon(side).battle_id)
+    else:
+      return []
 
-  def step(self, action):
-    blue_field_pokemon = self.battle.field_pokemon("blue")
-    red_field_pokemon = self.battle.field_pokemon("red")
+  def step(self, blue_action, red_action):
+    blue_field_pokemon = self.battle.field_pokemon('blue')
+    red_field_pokemon = self.battle.field_pokemon('red')
 
     blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.battle_id)
     red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.battle_id)
 
-    red_pokemon_action = np.random.choice(red_pokemon_actions)
+    self.battle.step([blue_pokemon_actions[blue_action]], [red_pokemon_actions[red_action]])
 
-    self.battle.step([blue_pokemon_actions[action]], [red_pokemon_action])
-
-    if(self.battle.status == "complete"):
+    if(self.battle.status == 'complete'):
       self.done = 1
-      if(self.battle.winner == "blue"):
+      if(self.battle.winner == 'blue'):
         # total_team_hp = 523
         # remaining_hp = reduce(lambda memo, i: memo + i.current_hp, self.battle.alive_pokemons("blue"), 0)
         # self.reward = np.round((remaining_hp / total_team_hp) * 100, 2)
-        self.reward = 1
-      elif(self.battle.winner == "red"):
+        self.blue_reward = 1
+        self.red_reward = -1
+      elif(self.battle.winner == 'red'):
         # total_team_hp = 540
         # remaining_hp = reduce(lambda memo, i: memo + i.current_hp, self.battle.alive_pokemons("red"), 0)
         # self.reward = np.round((remaining_hp / total_team_hp) * 100, 2) * -1
-        self.reward = -1
+        self.blue_reward = -1
+        self.red_reward = -1
 
     observation_ = self.battle.serialize_ml()
 
-    return [observation_, self.reward, self.done]
+    return [observation_, self.blue_reward, self.red_reward, self.done]
