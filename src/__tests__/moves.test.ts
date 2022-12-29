@@ -116,16 +116,18 @@ describe("MOVES", () => {
     );
 
     test("it normal damage if an item is held", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const acrobaticsActionCopy = JSON.parse(JSON.stringify(acrobaticsAction));
       acrobaticsActionCopy.actor.item_ident = "leftovers";
-      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattle, acrobaticsActionCopy);
+      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, acrobaticsActionCopy);
       expect(acrobaticsActionDamageResult.damage).toEqual(72);
     });
 
     test("it deals damage with double BP if no item is held", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const acrobaticsActionCopy = JSON.parse(JSON.stringify(acrobaticsAction));
       acrobaticsActionCopy.actor.item_ident = null;
-      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattle, acrobaticsActionCopy);
+      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, acrobaticsActionCopy);
       expect(acrobaticsActionDamageResult.damage).toEqual(144);
     });
 
@@ -151,7 +153,8 @@ describe("MOVES", () => {
     );
 
     test("it boosts all stats if frequency roll is proc'd", async () => {
-      const ancientPowerActionResult = await PERFORM_BATTLE_ACTION(initialBattle, ancientPowerAction, 1);
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const ancientPowerActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, ancientPowerAction, 1);
       expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.attack).toEqual(1);
       expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.defense).toEqual(1);
       expect(ancientPowerActionResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_attack).toEqual(1);
@@ -380,9 +383,17 @@ describe("MOVES", () => {
     );
 
     test("it deals the proper amount of recoil damage", async () => {
-      const flareBlitzActionResult = await PERFORM_BATTLE_ACTION(initialBattle, flareBlitzAction);
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const flareBlitzActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, flareBlitzAction);
       expect(flareBlitzActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(78);
       expect(flareBlitzActionResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(115);
+    });
+
+    test("it can knock itself out with recoil damage", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].current_hp = 10;
+      const flareBlitzActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, flareBlitzAction);
+      expect(flareBlitzActionResult.battle.battle_state.blue_side_pokemon[0].location).toEqual('graveyard');
     });
 
   });

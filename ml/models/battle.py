@@ -283,6 +283,7 @@ class Battle():
 
     actor_pokemon_id = battle_action.actor.battle_id
     actor_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == actor_pokemon_id)
+    actor_slot = 'blue-field-1' if actor_pokemon.battle_side == 'blue' else 'red-field-1'
 
     if(actor_pokemon.location == 'graveyard'):
       return [action_events, should_end_battle]
@@ -398,13 +399,26 @@ class Battle():
             else:
               should_end_battle = True
               action_events.append("THE BATTLE IS OVER")
+          if(actor_pokemon.current_hp == 0):
+            actor_pokemon.location = "graveyard"
+            self.battle_state.field_state[actor_slot] = None
+            action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} fainted")
+            possible_replacement_pokemons = self.party_pokemons(actor_pokemon.battle_side)
+            if(len(possible_replacement_pokemons) > 0):
+              replacement_pokemon = np.random.choice(possible_replacement_pokemons)
+              replacement_pokemon.location = "field"
+              self.battle_state.field_state[actor_slot] = replacement_pokemon.battle_id
+              action_events.append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
+            elif not should_end_battle:
+              should_end_battle = True
+              action_events.append("THE BATTLE IS OVER")
 
       # STAT BOOSTS
       # =====================
       if(battle_action.action_data['move'].get('stat_changes')):
         target_stat_change = battle_action.action_data['move']['stat_changes'][0]
-        if(target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL):
-          target_boost_pokemon = actor_pokemon if target_stat_change.get('target') == 'self' else target_pokemon
+        target_boost_pokemon = actor_pokemon if target_stat_change.get('target') == 'self' else target_pokemon
+        if((not target_boost_pokemon.fainted()) and (not should_end_battle) and (target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL)):
           if(target_stat_change.get('attack')):
             next_stat_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('attack'), 6), -6)
             target_boost_pokemon.stat_boosts.attack = next_stat_value

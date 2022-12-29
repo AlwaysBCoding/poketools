@@ -105,6 +105,12 @@ class PokemonBattleState():
   def max_hp(self):
     return self.pokemon_build.stat_spread.hp
 
+  def fainted(self):
+    if self.current_hp == 0:
+      return True
+    else:
+      return False
+
   def reset(self):
     self.primary_type_ident = self.pokemon_build.pokemon.primary_type_ident
     self.secondary_type_ident = self.pokemon_build.pokemon.secondary_type_ident

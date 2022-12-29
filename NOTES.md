@@ -4,13 +4,7 @@
     - stat boosts
     - tailwind/reflect turns
 
-  - logic for knocking yourself out with recoil damage
-
-  - target pokemon switches out after fainting before adding the stat drop for using make-it-rain etc...
-    - also battle is over happens before the stat drop currently
-
   - close combat stil lowers stats even if it hits gholdengo for 0 damage
-    - can lower the stats via secondary effect of pokemon that gets knocked out on that turn (fix this)
     - need a concept of whether or not a move is successful?
 
   - implement status conditions
