@@ -1,5 +1,63 @@
 import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
 
+export const DRAGONITE_SIMPLE_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "dragonite",
+  nickname: null,
+  ability_ident: "multiscale",
+  item_ident: "choice-band",
+  level: 50,
+  shiny: false,
+  gender: "male",
+  tera_type_ident: "normal",
+  nature_ident: "adamant",
+  move_idents: ["dual-wingbeat", "dragon-claw", "extreme-speed", "giga-impact"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 31
+  },
+  ev_spread: {
+    hp: 244,
+    attack: 4,
+    defense: 36,
+    special_attack: 0,
+    special_defense: 4,
+    speed: 220
+  }
+}
+
+export const DRAGAPULT_SIMPLE_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "dragapult",
+  nickname: null,
+  ability_ident: "clear-body",
+  item_ident: "focus-sash",
+  level: 50,
+  shiny: false,
+  gender: "male",
+  tera_type_ident: "dragon",
+  nature_ident: "timid",
+  move_idents: ["draco-meteor", "hex", "quick-attack", "dragon-tail"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 31
+  },
+  ev_spread: {
+    hp: 0,
+    attack: 0,
+    defense: 4,
+    special_attack: 252,
+    special_defense: 0,
+    speed: 252
+  }
+}
+
 export const AMPHAROS_SIMPLE_BUILD: PokemonBuildTemplate = {
   pokemon_ident: "ampharos",
   nickname: null,
@@ -17,7 +75,7 @@ export const AMPHAROS_SIMPLE_BUILD: PokemonBuildTemplate = {
     defense: 31,
     special_attack: 31,
     special_defense: 31,
-    speed: 32
+    speed: 31
   },
   ev_spread: {
     hp: 4,

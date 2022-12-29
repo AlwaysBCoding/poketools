@@ -1,8 +1,6 @@
 ## TODO
-  - change serialize_ml() functions to put the field mons in one spot
-    - also remove graveyard mons entirely from the serialized state, they're not important
-
   - train the AI against another AI that's trying to win instead of just random moves
+    - or at least just trying to do damage
 
   - cull things the AI should never do (like setting light-screen when light-screen is still active)
     - find a way to completely disallow obviously dumb? actions
@@ -13,8 +11,6 @@
 
   - Implement conditional behavior based on each terrain
   - Implement conditional behavior based on each weather
-
-  - Implement priority brackets for ordering actions
 
   - Implement Accuracy (stat stage & accuracy rolls)
   - Implement Evasiveness (stat stage & accuracy rolls)

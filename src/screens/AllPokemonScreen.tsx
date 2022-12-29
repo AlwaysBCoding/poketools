@@ -93,6 +93,11 @@ export const AllPokemonScreen = () => {
         return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
+    } else if(tokens[0].toLowerCase() === "move" && tokens.length === 3) {
+      const filteredPokemon = allPokemon.filter((pokemon) => {
+        return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent) && pokemon.move_idents.includes(tokens[2] as PokemonMoveIdent);
+      });
+      setFilteredPokemon(filteredPokemon);
     } else if (tokens[0] === "compare" || tokens[0] === "c") {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         return pokemon.ident.includes(tokens[1]) || pokemon.ident.includes(tokens[2])

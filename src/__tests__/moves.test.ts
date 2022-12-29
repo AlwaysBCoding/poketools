@@ -1,4 +1,6 @@
 import {
+  DRAGONITE_SIMPLE_BUILD,
+  DRAGAPULT_SIMPLE_BUILD,
   AMPHAROS_SIMPLE_BUILD,
   TALONFLAME_ATEAM_BUILD,
   ANNIHILAPE_BULKY_BUILD,
@@ -288,6 +290,77 @@ describe("MOVES", () => {
 
   });
 
+  // PRIORITY
+  describe("EXTREME SPEED", () => {
+    let dragoniteBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(DRAGONITE_SIMPLE_BUILD);
+    let dragapultBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(DRAGAPULT_SIMPLE_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [dragoniteBuild],
+      redSidePokemonBuilds: [dragapultBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const gigaImpactAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "giga-impact",
+      ["red-field-1"]
+    );
+
+    const extremeSpeedAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "extreme-speed",
+      ["red-field-1"]
+    );
+
+    const dracoMeteorAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "draco-meteor",
+      ["blue-field-1"]
+    );
+
+    const quickAttackAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "quick-attack",
+      ["blue-field-1"]
+    );
+
+    const dragonTailAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "dragon-tail",
+      ["blue-field-1"]
+    );
+
+    test("it correctly orders boosted speed ahead in the same priority bracket", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].stat_boosts.speed = 4;
+      const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [gigaImpactAction, dracoMeteorAction]);
+      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragonite');
+    });
+
+    test("it places priority 1 over boosted priority 0 speed", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].stat_boosts.speed = 4;
+      const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [gigaImpactAction, quickAttackAction]);
+      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragapult');
+    });
+
+    test("it places priority 2 over priority 1", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].stat_boosts.speed = 4;
+      const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [extremeSpeedAction, quickAttackAction]);
+      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragonite');
+    });
+
+    test("it respects negative priorities", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [gigaImpactAction, dragonTailAction]);
+      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragonite');
+    });
+
+  });
+
   // RECOIL DAMAGE
   describe("FLARE BLITZ", () => {
     let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
@@ -568,14 +641,16 @@ describe("MOVES", () => {
     );
 
     test("it sets tailwind", async () => {
-      const tailwindActionResult = await PERFORM_BATTLE_ACTION(initialBattle, tailwindAction);
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const tailwindActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, tailwindAction);
       expect(tailwindActionResult.battle.battle_state.blue_side_state.tailwind).toEqual(4);
     });
 
     test("speed is doubled under tailwind", async () => {
-      const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattle, [tailwindAction, knockOffAction]);
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [tailwindAction, knockOffAction]);
       expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
-      const tailwindActionResult = await PERFORM_BATTLE_ACTION(initialBattle, tailwindAction);
+      const tailwindActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, tailwindAction);
       const tailwindOrderedActionsResult = await ORDER_BATTLE_ACTIONS(tailwindActionResult.battle, [tailwindAction, knockOffAction]);
       expect(tailwindOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("talonflame");
     });

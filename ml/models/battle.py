@@ -53,20 +53,20 @@ class BattleAction():
 
   def serialize_api(self):
     action_data = {}
-    if(self.action_type == "move"):
+    if(self.action_type == 'move'):
       action_data = {
-        "move": self.action_data["move"],
-        "move_targets": self.action_data["move_targets"]
+        'move': self.action_data['move'],
+        'move_targets': self.action_data['move_targets']
       }
-    elif(self.action_type == "switch"):
+    elif(self.action_type == 'switch'):
       action_data = {
-        "switch_target": self.action_data["switch_target"].serialize_api()
+        'switch_target': self.action_data['switch_target'].serialize_api()
       }
 
     return {
-      "actor": self.actor.serialize_api(),
-      "action_type": self.action_type,
-      "action_data": action_data
+      'actor': self.actor.serialize_api(),
+      'action_type': self.action_type,
+      'action_data': action_data
     }
 
 class Battle():
@@ -222,20 +222,31 @@ class Battle():
       return available_actions
 
   def compare_battle_actions(self, battle_action_a, battle_action_b):
-    if(battle_action_a.action_type == "switch" and battle_action_b.action_type == "move"):
+    pokemon_battle_state_a = self.pokemon_battle_state_by_id(battle_action_a.actor.battle_id)
+    pokemon_battle_state_b = self.pokemon_battle_state_by_id(battle_action_b.actor.battle_id)
+
+    if(battle_action_a.action_type == 'switch' and battle_action_b.action_type == 'move'):
       return -1
-    elif(battle_action_b.action_type == "switch" and battle_action_a.action_type == "move"):
+    elif(battle_action_b.action_type == 'switch' and battle_action_a.action_type == 'move'):
       return 1
 
-    a_base_speed = battle_action_a.actor.pokemon_build.stat_spread.speed
-    b_base_speed = battle_action_b.actor.pokemon_build.stat_spread.speed
+    if(battle_action_a.action_type == 'move' and battle_action_b.action_type == 'move'):
+      a_priority = battle_action_a.action_data['move'].get('priority')
+      b_priority = battle_action_b.action_data['move'].get('priority')
+      if(a_priority > b_priority):
+        return -1
+      if(b_priority > a_priority):
+        return 1
 
-    a_speed = a_base_speed * STAT_BOOST_MODIFIER_VALUES[f"{battle_action_a.actor.stat_boosts.speed}"]
-    b_speed = b_base_speed * STAT_BOOST_MODIFIER_VALUES[f"{battle_action_b.actor.stat_boosts.speed}"]
+    a_base_speed = pokemon_battle_state_a.pokemon_build.stat_spread.speed
+    b_base_speed = pokemon_battle_state_b.pokemon_build.stat_spread.speed
 
-    if((battle_action_a.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind > 0) or (battle_action_a.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind > 0)):
+    a_speed = a_base_speed * STAT_BOOST_MODIFIER_VALUES[f"{pokemon_battle_state_a.stat_boosts.speed}"]
+    b_speed = b_base_speed * STAT_BOOST_MODIFIER_VALUES[f"{pokemon_battle_state_b.stat_boosts.speed}"]
+
+    if((pokemon_battle_state_a.battle_side == "blue" and self.battle_state.blue_side_state.tailwind > 0) or (pokemon_battle_state_a.battle_side == "red" and self.battle_state.red_side_state.tailwind > 0)):
       a_speed *= 2
-    if((battle_action_b.actor.battle_side == "blue" and self.battle_state.blue_side_state.tailwind > 0) or (battle_action_b.actor.battle_side == "red" and self.battle_state.red_side_state.tailwind > 0)):
+    if((pokemon_battle_state_b.battle_side == "blue" and self.battle_state.blue_side_state.tailwind > 0) or (pokemon_battle_state_b.battle_side == "red" and self.battle_state.red_side_state.tailwind > 0)):
       b_speed *= 2
 
     if(a_speed > b_speed):
