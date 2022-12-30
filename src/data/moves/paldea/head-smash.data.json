@@ -1,0 +1,14 @@
+{
+  "ident": "head-smash",
+  "type_ident": "rock",
+  "category_ident": "physical",
+  "base_power": 150,
+  "accuracy": 0.80,
+  "priority": 0,
+  "pp": 5,
+  "description": "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
+  "target": "any-adjacent",
+  "recoil": {
+    "percentage_of_damage": 0.50
+  }
+}

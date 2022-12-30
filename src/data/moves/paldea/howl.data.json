@@ -1,0 +1,18 @@
+{
+  "ident": "howl",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 40,
+  "description": "Raises the Attack of the user and all allies 1 stage.",
+  "target": "self-and-allies",
+  "stat_changes": [
+    {
+      "attack": 1,
+      "frequency": 1,
+      "target": "self-and-allies"
+    }
+  ]
+}

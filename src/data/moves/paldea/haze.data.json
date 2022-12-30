@@ -1,0 +1,11 @@
+{
+  "ident": "haze",
+  "type_ident": "ice",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 30,
+  "description": "Resets the stat stages of all active Pokemon to 0.",
+  "target": "field"
+}

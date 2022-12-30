@@ -1,0 +1,11 @@
+{
+  "ident": "hex",
+  "type_ident": "ghost",
+  "category_ident": "special",
+  "base_power": 65,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "Power doubles if the target has a non-volatile status condition.",
+  "target": "any-adjacent"
+}

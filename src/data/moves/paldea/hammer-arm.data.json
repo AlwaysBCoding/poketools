@@ -1,0 +1,18 @@
+{
+  "ident": "hammer-arm",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Lowers the user's Speed by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "speed": -1,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

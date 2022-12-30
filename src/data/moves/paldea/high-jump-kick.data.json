@@ -1,0 +1,11 @@
+{
+  "ident": "high-jump-kick",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 130,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+  "target": "any-adjacent"
+}

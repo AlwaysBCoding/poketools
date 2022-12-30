@@ -1,0 +1,11 @@
+{
+  "ident": "hyper-drill",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 100,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Bypasses protection without breaking it.",
+  "target": "any-adjacent"
+}

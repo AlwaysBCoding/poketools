@@ -1,0 +1,18 @@
+{
+  "ident": "harden",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 30,
+  "description": "Raises the user's Defense by 1 stage.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "defense": 1,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

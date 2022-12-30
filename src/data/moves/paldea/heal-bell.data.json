@@ -1,0 +1,11 @@
+{
+  "ident": "heal-bell",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 5,
+  "description": "Every Pokemon in the user's party is cured of its non-volatile status condition. Active Pokemon with the Soundproof Ability are not cured, unless they are the user.",
+  "target": "team"
+}

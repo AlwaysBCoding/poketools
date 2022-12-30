@@ -2871,6 +2871,321 @@
     "target": "any-adjacent"
   },
   {
+    "ident": "hammer-arm",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 100,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Lowers the user's Speed by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "speed": -1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "harden",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "Raises the user's Defense by 1 stage.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "defense": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "haze",
+    "type_ident": "ice",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "Resets the stat stages of all active Pokemon to 0.",
+    "target": "field"
+  },
+  {
+    "ident": "head-smash",
+    "type_ident": "rock",
+    "category_ident": "physical",
+    "base_power": 150,
+    "accuracy": 0.8,
+    "priority": 0,
+    "pp": 5,
+    "description": "If the target lost HP, the user takes recoil damage equal to 1/2 the HP lost by the target, rounded half up, but not less than 1 HP.",
+    "target": "any-adjacent",
+    "recoil": {
+      "percentage_of_damage": 0.5
+    }
+  },
+  {
+    "ident": "headbutt",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 70,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 30% chance to make the target flinch.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "flinched",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "headlong-rush",
+    "type_ident": "ground",
+    "category_ident": "physical",
+    "base_power": 120,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Lowers the user's Defense and Special Defense by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "defense": -1,
+        "special_defense": -1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "heal-bell",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "Every Pokemon in the user's party is cured of its non-volatile status condition. Active Pokemon with the Soundproof Ability are not cured, unless they are the user.",
+    "target": "team"
+  },
+  {
+    "ident": "heal-pulse",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The target restores 1/2 of its maximum HP, rounded half up. If the user has the Mega Launcher Ability, the target instead restores 3/4 of its maximum HP, rounded half down.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "healing-wish",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user faints, and if the Pokemon brought out to replace it does not have full HP or has a non-volatile status condition, its HP is fully restored along with having any non-volatile status condition cured. The replacement is sent out at the end of the turn, and the healing happens before hazards take effect. This effect continues until a Pokemon that meets either of these conditions switches in at the user's position or gets swapped into the position with Ally Switch. Fails if the user is the last unfainted Pokemon in its party.",
+    "target": "self"
+  },
+  {
+    "ident": "heat-crash",
+    "type_ident": "fire",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "The power of this move depends on (user's weight / target's weight), rounded down. Power is equal to 120 if the result is 5 or more, 100 if 4, 80 if 3, 60 if 2, and 40 if 1 or less. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "heat-wave",
+    "type_ident": "fire",
+    "category_ident": "special",
+    "base_power": 95,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 10% chance to burn the target.",
+    "target": "all-enemies",
+    "secondary_effects": [
+      {
+        "status_ident": "burned",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "heavy-slam",
+    "type_ident": "steel",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "The power of this move depends on (user's weight / target's weight), rounded down. Power is equal to 120 if the result is 5 or more, 100 if 4, 80 if 3, 60 if 2, and 40 if 1 or less. Damage doubles and no accuracy check is done if the target has used Minimize while active.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "helping-hand",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 5,
+    "pp": 20,
+    "description": "The power of the target's attack this turn is multiplied by 1.5 (this effect is stackable). Fails if there is no ally adjacent to the user or if the ally already moved this turn, but does not fail if the ally is using a two-turn move.",
+    "target": "any-ally"
+  },
+  {
+    "ident": "hex",
+    "type_ident": "ghost",
+    "category_ident": "special",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Power doubles if the target has a non-volatile status condition.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "high-horsepower",
+    "type_ident": "ground",
+    "category_ident": "physical",
+    "base_power": 95,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 10,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "high-jump-kick",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 130,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "hone-claws",
+    "type_ident": "dark",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 15,
+    "description": "Raises the user's Attack and accuracy by 1 stage.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "attack": 1,
+        "accuracy": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "horn-attack",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "horn-drill",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 0.3,
+    "priority": 0,
+    "pp": 5,
+    "description": "Deals damage to the target equal to the target's maximum HP. Ignores accuracy and evasiveness modifiers. This attack's accuracy is equal to (user's level - target's level + 30)%, and fails if the target is at a higher level. Pokemon with the Sturdy Ability are immune.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "horn-leech",
+    "type_ident": "grass",
+    "category_ident": "physical",
+    "base_power": 75,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+    "target": "any-adjacent",
+    "recovery": {
+      "percentage_of_damage": 0.5
+    }
+  },
+  {
+    "ident": "howl",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 40,
+    "description": "Raises the Attack of the user and all allies 1 stage.",
+    "target": "self-and-allies",
+    "stat_changes": [
+      {
+        "attack": 1,
+        "frequency": 1,
+        "target": "self-and-allies"
+      }
+    ]
+  },
+  {
+    "ident": "hurricane",
+    "type_ident": "flying",
+    "category_ident": "special",
+    "base_power": 110,
+    "accuracy": 0.7,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 30% chance to confuse the target. This move can hit a target using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop. If the weather is Primordial Sea or Rain Dance, this move does not check accuracy. If the weather is Desolate Land or Sunny Day, this move's accuracy is 50%. If this move is used against a Pokemon holding Utility Umbrella, this move's accuracy remains at 70%.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "counfused",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "hydro-cannon",
+    "type_ident": "water",
+    "category_ident": "special",
+    "base_power": 150,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 5,
+    "description": "If this move is successful, the user must recharge on the following turn and cannot select a move.",
+    "target": "any-adjacent",
+    "recharge_turn": true
+  },
+  {
     "ident": "hydro-pump",
     "type_ident": "water",
     "category_ident": "special",
@@ -2879,6 +3194,57 @@
     "priority": 0,
     "pp": 5,
     "description": "No additional effect."
+  },
+  {
+    "ident": "hyper-beam",
+    "type_ident": "normal",
+    "category_ident": "special",
+    "base_power": 150,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 5,
+    "description": "If this move is successful, the user must recharge on the following turn and cannot select a move.",
+    "target": "any-adjacent",
+    "recharge_turn": true
+  },
+  {
+    "ident": "hyper-drill",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 100,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 5,
+    "description": "Bypasses protection without breaking it.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "hyper-voice",
+    "type_ident": "normal",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "No additional effect.",
+    "target": "all-enemies"
+  },
+  {
+    "ident": "hypnosis",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 0.6,
+    "priority": 0,
+    "pp": 20,
+    "description": "Causes the target to fall asleep.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "asleep",
+        "frequency": 1
+      }
+    ]
   },
   {
     "ident": "ice-beam",

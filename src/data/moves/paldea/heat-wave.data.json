@@ -1,0 +1,17 @@
+{
+  "ident": "heat-wave",
+  "type_ident": "fire",
+  "category_ident": "special",
+  "base_power": 95,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 10% chance to burn the target.",
+  "target": "all-enemies",
+  "secondary_effects": [
+    {
+      "status_ident": "burned",
+      "frequency": 0.10
+    }
+  ]
+}

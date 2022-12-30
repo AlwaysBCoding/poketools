@@ -1,0 +1,17 @@
+{
+  "ident": "hypnosis",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 0.60,
+  "priority": 0,
+  "pp": 20,
+  "description": "Causes the target to fall asleep.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "asleep",
+      "frequency": 1
+    }
+  ]
+}

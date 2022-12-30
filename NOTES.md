@@ -34,7 +34,7 @@
   - add VGC config
 
   - DEX COMPLETION: (67.5%)
-  - MOVE TEMPLATE COMPLETION: (27%)
+  - MOVE TEMPLATE COMPLETION: (30.7%)
   - ITEM COMPLETION: (0%)
   - ABILITY COMPLETION: (0%)
 
@@ -61,13 +61,16 @@
   - Encore (target becomes encore'd must repeat last move)
   - Entrainment (changes targets ability)
   - False Swipe (leaves the target with at least 1 HP)
-  - Feint (breaks through protect, and cancels protect for the turn)
   - Fell Stinger (raises the user's attack if it knocks out target)
   - Fling (depends what item is being held, each item different)
   - Gastro Acid (nullifies target's ability)
   - Gravity (sets gravity)
   - Guard Split (changes stats by custom amounts)
   - Guard Swap (changes stat boosts)
+  - Haze (removes all stat changes from the field)
+  - Heal Bell (removes status conditions from entire team)
+  - Heal Pulse (target restores HP)
+  - Helping Hand (increases ally's damage)
   - Rage Fist (power is increased every time ape is hit)
 
 ## Custom Move Behavior Grouping
@@ -98,6 +101,8 @@
     - Electro Ball
     - Grass Knot
     - Gyro Ball
+    - Heat Crash
+    - Heavy Slam
   - Damage is conditional on the HP of the user
     - Brine
     - Endeavor
@@ -109,6 +114,7 @@
   - Move has custom logic depending on the weather
     - Blizzard
     - Growth
+    - Hurricane
   - Move has custom logic depending on the terrain
     - Expanding Force
   - Move has custom logic depending on the gravity
@@ -117,9 +123,11 @@
     - Barb Barrage
     - Dream Eater
     - Facade
+    - Hex
   - Use faints by performing this move
     - Explosion
     - Final Gambit
+    - Healing Wish
   - Move has custom logic depending on other moves used this turn
     - Fire Pledge
     - Grass Pledge
@@ -133,6 +141,7 @@
   - One-Hit KO
     - Fissure
     - Guillotine
+    - Horn Drill
   - Damage contingent on if user has already been hit or damaged this turn
     - Assurance
     - Avalanche
@@ -147,6 +156,8 @@
     - Blast Burn
     - Frenzy Plant
     - Giga Impact
+    - Hydro Cannon
+    - Hyper Beam
   - Multi-hit
     - Arm Thrust
     - Bone Rush
@@ -173,6 +184,11 @@
     - Gigaton Hammer
   - Cause double damage on the user until end next turn
     - Glaive Rush
+  - User takes damage if the attack is not successful
+    - High Jump Kick
+  - Bypasses Protection
+    - Feint
+    - Hyper Drill
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

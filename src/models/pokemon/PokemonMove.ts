@@ -38,6 +38,7 @@ type PokemonMoveTarget =
   | "self"
   | "self-or-ally"
   | "self-and-allies"
+  | "team"
 
 interface PokemonMoveDelegate {
   ident: string;

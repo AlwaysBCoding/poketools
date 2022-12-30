@@ -1,0 +1,11 @@
+{
+  "ident": "heal-pulse",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "The target restores 1/2 of its maximum HP, rounded half up. If the user has the Mega Launcher Ability, the target instead restores 3/4 of its maximum HP, rounded half down.",
+  "target": "any-adjacent"
+}
