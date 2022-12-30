@@ -105,6 +105,9 @@ class PokemonBattleState():
   def max_hp(self):
     return self.pokemon_build.stat_spread.hp
 
+  def hp_percentage(self):
+    return self.current_hp / self.max_hp()
+
   def fainted(self):
     if self.current_hp == 0:
       return True

@@ -1,7 +1,8 @@
 import {
   GRIMMSNARL_ATEAM_BUILD,
-  TALONFLAME_ATEAM_BUILD,
-  MEOWSCARADA_MAX_STATS
+  MEOWSCARADA_MAX_STATS,
+  QUAQUAVAL_MAX_STATS,
+  TALONFLAME_ATEAM_BUILD
 } from "./__factories__/pokemon.factory";
 import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/pokemon/PokemonBuild";
 
@@ -92,6 +93,64 @@ const ORDER_BATTLE_ACTIONS = async (battle: Battle, battleActions: BattleAction[
 
 describe("ABILITIES", () => {
 
+  // NO COMPETITIVE USE
+  // =====================
+  // HONEY GATHER
+
+  // COMPETITIVE USE
+  // =====================
+  describe("ADAPTABILITY", () => {
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [quaquavalBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const flareBlitzAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "flare-blitz",
+      ["red-field-1"]
+    );
+
+    test("super effective attacks have increased STAB", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].ability_ident = 'adaptability';
+      const flareBlitzActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, flareBlitzAction);
+      expect(flareBlitzActionDamage.damage).toEqual(67);
+    });
+
+  });
+
+  describe("BLAZE, OVERGROW, TORRENT", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const aquaStepAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "aqua-step",
+      ["red-field-1"]
+    );
+
+    test("it deals increased damage with < 1/3rd HP", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].ability_ident = 'torrent';
+      initialBattleCopy.battle_state.blue_side_pokemon[0].current_hp = 5;
+      const aquaStepActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, aquaStepAction);
+      expect(aquaStepActionDamage.damage).toEqual(136);
+    });
+  });
+
   describe("GALE WINGS", () => {
     let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
     let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
@@ -140,6 +199,31 @@ describe("ABILITIES", () => {
       expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('meowscarada');
     });
 
+  });
+
+  describe("HUGE POWER", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const aquaStepAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "aqua-step",
+      ["red-field-1"]
+    );
+
+    test("it deals damage with an increased attack stat", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].ability_ident = 'huge-power';
+      const aquaStepActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, aquaStepAction);
+      expect(aquaStepActionDamage.damage).toEqual(183);
+    });
   });
 
   describe("PRANKSTER", () => {

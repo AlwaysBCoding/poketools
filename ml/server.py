@@ -150,6 +150,7 @@ def testCalculateDamage():
     battle = Battle.deserialize(data["battle"])
     battle_action = BattleAction.deserialize(data["battle_action"])
     target_slot = battle_action.action_data["move_targets"][0]
+    attacking_pokemon = battle.pokemon_battle_state_by_id(battle_action.actor.battle_id)
     target_pokemon_battle_id = battle.battle_state.field_state[target_slot]
     target_pokemon = battle.pokemon_battle_state_by_id(target_pokemon_battle_id)
 
@@ -159,7 +160,7 @@ def testCalculateDamage():
 
     damage = calculate_damage(
       battle_state=battle.battle_state,
-      attacking_pokemon=battle_action.actor,
+      attacking_pokemon=attacking_pokemon,
       target_pokemon=target_pokemon,
       move_ident=battle_action.action_data["move"]["ident"],
       hardcoded_random_roll=random_roll,

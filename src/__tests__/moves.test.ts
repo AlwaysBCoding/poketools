@@ -117,17 +117,15 @@ describe("MOVES", () => {
 
     test("it normal damage if an item is held", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
-      const acrobaticsActionCopy = JSON.parse(JSON.stringify(acrobaticsAction));
-      acrobaticsActionCopy.actor.item_ident = "leftovers";
-      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, acrobaticsActionCopy);
+      initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = "leftovers";
+      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, acrobaticsAction);
       expect(acrobaticsActionDamageResult.damage).toEqual(72);
     });
 
     test("it deals damage with double BP if no item is held", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
-      const acrobaticsActionCopy = JSON.parse(JSON.stringify(acrobaticsAction));
-      acrobaticsActionCopy.actor.item_ident = null;
-      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, acrobaticsActionCopy);
+      initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = null;
+      const acrobaticsActionDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, acrobaticsAction);
       expect(acrobaticsActionDamageResult.damage).toEqual(144);
     });
 
@@ -187,9 +185,10 @@ describe("MOVES", () => {
     );
 
     test("it boosts quaquaval's speed after use", async () => {
-      const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattle, [aquaStepAction, energyBallAction]);
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [aquaStepAction, energyBallAction]);
       expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
-      const battleStepResult = await BATTLE_STEP(initialBattle, [aquaStepAction], [energyBallAction]);
+      const battleStepResult = await BATTLE_STEP(initialBattleCopy, [aquaStepAction], [energyBallAction]);
       expect(battleStepResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed).toEqual(1);
       const nextAquaStepAction: BattleAction = composeMoveAction(
         battleStepResult.battle.battle_state.blue_side_pokemon[0],
@@ -200,6 +199,33 @@ describe("MOVES", () => {
       expect(nextOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("quaquaval");
     });
 
+  });
+
+  // aValue
+  describe("BODY PRESS", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+    grimmsnarlBuild.move_idents = ['body-press', 'spirit-break', 'reflect', 'light-screen'];
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const bodyPressAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "body-press",
+      ["blue-field-1"]
+    );
+
+    test("it deals damage with an increased attack stat", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.red_side_pokemon[0].stat_boosts.defense = 3;
+      const bodyPressActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, bodyPressAction);
+      expect(bodyPressActionDamage.damage).toEqual(64);
+    });
   });
 
   // MOVE DOESNT LOWER STATS IF 0 DAMAGE / FAILS
@@ -291,6 +317,33 @@ describe("MOVES", () => {
       expect(battleStepResult.battle.battle_state.global_state.terrain_counter).toEqual(4);
     });
 
+  });
+
+  // aValue
+  describe("FOUL PLAY", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+    quaquavalBuild.stat_spread.attack = 189;
+    grimmsnarlBuild.move_idents = ['foul-play', 'spirit-break', 'reflect', 'light-screen'];
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const foulPlayAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "foul-play",
+      ["blue-field-1"]
+    );
+
+    test("it deals damage with an increased attack stat", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const foulPlayActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, foulPlayAction);
+      expect(foulPlayActionDamage.damage).toEqual(51);
+    });
   });
 
   // PRIORITY

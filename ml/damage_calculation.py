@@ -1,4 +1,5 @@
 from helpers import find
+from pprint import pprint
 
 import math
 import json
@@ -9,30 +10,6 @@ all_moves_file = open(Path("../src/data/moves/all-moves.json"))
 all_moves_data = json.load(all_moves_file)
 type_chart_file = open(Path("../src/data/pokemon-type-effectiveness.json"))
 type_chart_data = json.load(type_chart_file)
-
-LIFE_ORB_MODIFIER = (5324/4096)
-SPREAD_MODIFIER = (3072/4096)
-CRITICAL_HIT_MODIFIER = (3/2)
-STAB_MODIFIER = (6144/4096)
-BURN_MODIFIER = (2048/4096)
-
-RANDOM_ROLLS = [0.85, 0.86, 0.87, 0.88, 0.89, 0.90, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00]
-CRITICAL_HIT_STAGES = [(1/24), (1/8), (1/2), 1]
-STAT_STAGE_MULTIPLIERS = {
-  "-6": (2/8),
-  "-5": (2/7),
-  "-4": (2/6),
-  "-3": (2/5),
-  "-2": (2/4),
-  "-1": (2/3),
-  "0": (2/2),
-  "1": (3/2),
-  "2": (4/2),
-  "3": (5/2),
-  "4": (6/2),
-  "5": (7/2),
-  "6": (8/2)
-}
 
 def poke_round(x):
   if(x % 1 == 0.5):
@@ -50,6 +27,31 @@ def calculate_damage(
   hardcoded_targeting_value=None
 ):
   pokemon_move = find(all_moves_data, lambda x: x["ident"] == move_ident)
+
+  LIFE_ORB_MODIFIER = (5324/4096)
+  SPREAD_MODIFIER = (3072/4096)
+  CRITICAL_HIT_MODIFIER = (3/2)
+  STAB_MODIFIER = (6144/4096)
+  TERA_STAB_MODIFIER = (8192/4096)
+  BURN_MODIFIER = (2048/4096)
+
+  RANDOM_ROLLS = [0.85, 0.86, 0.87, 0.88, 0.89, 0.90, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00]
+  CRITICAL_HIT_STAGES = [(1/24), (1/8), (1/2), 1]
+  STAT_STAGE_MULTIPLIERS = {
+    "-6": (2/8),
+    "-5": (2/7),
+    "-4": (2/6),
+    "-3": (2/5),
+    "-2": (2/4),
+    "-1": (2/3),
+    "0": (2/2),
+    "1": (3/2),
+    "2": (4/2),
+    "3": (5/2),
+    "4": (6/2),
+    "5": (7/2),
+    "6": (8/2)
+  }
 
   a_value = 1
   d_value = 1
@@ -100,19 +102,41 @@ def calculate_damage(
 
   # BASE
   # =====================
+  attack_stat = attacking_pokemon.pokemon_build.stat_spread.attack
+  attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.attack}"]
+  if(pokemon_move['ident'] == 'body-press'):
+    attack_stat = attacking_pokemon.pokemon_build.stat_spread.defense
+    attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.defense}"]
+  if(pokemon_move['ident'] == 'foul-play'):
+    attack_stat = target_pokemon.pokemon_build.stat_spread.attack
+    attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
+  if(attacking_pokemon.ability_ident == 'huge-power'):
+    attack_stat *= 2
+
   if(pokemon_move["category_ident"] == "physical"):
-    a_value = attacking_pokemon.pokemon_build.stat_spread.attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.attack}"]
+    a_value = attack_stat * attack_multipliers
     d_value = target_pokemon.pokemon_build.stat_spread.defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
   elif(pokemon_move["category_ident"] == "special"):
     a_value = attacking_pokemon.pokemon_build.stat_spread.special_attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.special_attack}"]
     d_value = target_pokemon.pokemon_build.stat_spread.special_defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.special_defense}"]
 
+  if(attacking_pokemon.ability_ident == 'blaze' and pokemon_move['type_ident'] == 'fire' and attacking_pokemon.hp_percentage() <= (1/3)):
+    a_value *= 1.5
+  if(attacking_pokemon.ability_ident == 'overgrow' and pokemon_move['type_ident'] == 'grass' and attacking_pokemon.hp_percentage() <= (1/3)):
+    a_value *= 1.5
+  if(attacking_pokemon.ability_ident == 'torrent' and pokemon_move['type_ident'] == 'water' and attacking_pokemon.hp_percentage() <= (1/3)):
+    a_value *= 1.5
+
   # STAB
   # =====================
+  if(attacking_pokemon.ability_ident == 'adaptability'):
+    STAB_MODIFIER = 2
+    TERA_STAB_MODIFIER = 2.25
+
   if(attacking_pokemon.terastallized):
     if(attacking_pokemon.pokemon_build.tera_type_ident == pokemon_move['type_ident']):
       if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
-        stab = 2
+        stab = TERA_STAB_MODIFIER
       else:
         stab = STAB_MODIFIER
     else:

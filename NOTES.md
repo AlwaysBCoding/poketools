@@ -1,4 +1,10 @@
 ## TODO
+  - add contact (boolean) to move templates
+    - aftermath ability implementation
+
+  - add switch-in hook logic
+    - drizzle, drought, sandstorm, snow-warning ability implementation
+
   - better battle rendering
     - party pokemon + HP
     - stat boosts
@@ -33,10 +39,10 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (67.5%)
-  - MOVE TEMPLATE COMPLETION: (30.7%)
-  - ITEM COMPLETION: (0%)
-  - ABILITY COMPLETION: (0%)
+  - DEX COMPLETION: (270/400)
+  - MOVE TEMPLATE COMPLETION: (8/26)
+  - ITEM COMPLETION: (1.25%)
+  - ABILITY COMPLETION: (8/160)
 
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
@@ -172,8 +178,7 @@
     - Echoed Voice
     - Fury Cutter
   - Damage is calculated using a different aValue/dValue than you would expect
-    - Body Press
-    - Foul Play
+    [IMPLEMENTED]
   - Move takes effect in future turns
     - Future Sight
     - Wish
