@@ -1,6 +1,8 @@
 ## TODO
   - add contact (boolean) to move templates
     - aftermath ability implementation
+  - add okho (boolean) to move templates
+    - not affected by accuracy / evasion modifiers
 
   - add switch-in hook logic
     - drizzle, drought, sandstorm, snow-warning ability implementation
@@ -39,10 +41,10 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (270/400)
-  - MOVE TEMPLATE COMPLETION: (8/26)
-  - ITEM COMPLETION: (1.25%)
-  - ABILITY COMPLETION: (8/160)
+  - DEX COMPLETION: (276/400) | 69%
+  - MOVE TEMPLATE COMPLETION: (8/26) | 30.76%
+  - ITEM COMPLETION: (1.25%) | 1.25%
+  - ABILITY COMPLETION: (8/160) | 5%
 
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
