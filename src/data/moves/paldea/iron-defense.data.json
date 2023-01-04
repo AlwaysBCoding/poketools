@@ -1,0 +1,18 @@
+{
+  "ident": "iron-defense",
+  "type_ident": "steel",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 15,
+  "description": "Raises the user's Defense by 2 stages.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "defense": 2,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

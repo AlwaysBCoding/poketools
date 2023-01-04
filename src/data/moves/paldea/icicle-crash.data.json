@@ -1,0 +1,17 @@
+{
+  "ident": "icicle-crash",
+  "type_ident": "ice",
+  "category_ident": "physical",
+  "base_power": 85,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 30% chance to make the target flinch.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "flinched",
+      "frequency": 0.30
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ident": "ice-fang",
+  "type_ident": "ice",
+  "category_ident": "physical",
+  "base_power": 65,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 10% chance to freeze the target and a 10% chance to make it flinch.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "frozen",
+      "frequency": 0.10
+    },
+    {
+      "status_ident": "flinched",
+      "frequency": 0.10
+    }
+  ]
+}

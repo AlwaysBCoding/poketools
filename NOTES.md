@@ -42,7 +42,7 @@
   - add VGC config
 
   - DEX COMPLETION: (281/400) | 70.25%
-  - MOVE TEMPLATE COMPLETION: (8/26) | 30.76%
+  - MOVE TEMPLATE COMPLETION: (11/26) | 42.30%
   - ITEM COMPLETION: (1.25%) | 1.25%
   - ABILITY COMPLETION: (8/165) | 4.85%
 
@@ -54,13 +54,11 @@
   - Belch (cannot use the move until the user has consumed a berry)
   - Body Slam (damage doubles and no accuracy check is performed if target used minimize)
   - Brick Break (destroys screens)
-  - Bug Bite (steals the opponents berry)
   - Charge (next electric-type attack will have its power doubled)
   - Clear Smog (resets all targets stat changes)
   - Comeuppance (wtf is this attack)
   - Copycat (copies last attempted move)
   - Counter (deals damage to the last pokemon to hit this mon based on damage amount)
-  - Covet (steals target's item)
   - Defog (removes hazards, terrain)
   - Destiny Bond (kills the killer if active and user faints)
   - Doodle (changes ability of user and ally to that of selected target)
@@ -79,6 +77,8 @@
   - Heal Bell (removes status conditions from entire team)
   - Heal Pulse (target restores HP)
   - Helping Hand (increases ally's damage)
+  - Ingrain (user cannot switch out, recovers 1/16th HP at end of each turn)
+  - Instruct (target uses last used move)
   - Rage Fist (power is increased every time ape is hit)
 
 ## Custom Move Behavior Grouping
@@ -140,9 +140,11 @@
     - Fire Pledge
     - Grass Pledge
     - Water Pledge
-  - Prevents target from switching out, deals DOT damage
-    - Bind
-    - Fire Spin
+  - Prevents target from switching out, potentially deals DOT damage [BINDING]
+    - Bind (YES DOT)
+    - Fire Spin (YES DOT)
+    - Infestation (YES DOT)
+    - Jaw Lock (NO DOT, prevents user switch-out)
   - Fails unless it is the user's first turn on the field
     - Fake Out
     - First Impression
@@ -176,6 +178,7 @@
     - Dual Wingbeat
     - Fury Attack
     - Fury Swipes
+    - Icicle Spear
   - Has a multiplier effect across successive usages
     - Echoed Voice
     - Fury Cutter
@@ -196,6 +199,13 @@
   - Bypasses Protection
     - Feint
     - Hyper Drill
+  - Disables enemy moves
+    - Disable
+    - Imprison
+  - Steals or Destroys target's held item
+    - Bug Bite
+    - Covet
+    - Incinerate
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

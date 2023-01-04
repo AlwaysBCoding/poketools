@@ -7,6 +7,7 @@
   "priority": 0,
   "pp": 10,
   "description": "Has a 10% chance to freeze the target.",
+  "target": "any-adjacent",
   "secondary_effects": [
     {
       "status_ident": "frozen",

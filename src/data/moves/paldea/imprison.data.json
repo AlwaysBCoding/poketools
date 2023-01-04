@@ -1,0 +1,11 @@
+{
+  "ident": "imprison",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "The user prevents all opposing Pokemon from using any moves that the user also knows as long as the user remains active.",
+  "target": "self"
+}
