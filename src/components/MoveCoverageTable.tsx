@@ -63,12 +63,13 @@ export const MoveCoverageTable: React.FC<{blueTeam: PokemonTeam, redTeam: Pokemo
                   hardcodedCritRoll: 0,
                   hardcodedTargetingValue: "single"
                 });
-                const lowRollDamageDisplay = lowRollDamage ? `${((lowRollDamage / redTeamBattleStates[0].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
+                const lowRollPercentage = (lowRollDamage / redTeamBattleStates[0].pokemon_build.stat_spread.hp);
+                const lowRollDamageDisplay = lowRollDamage ? `${(lowRollPercentage * 100).toFixed(2)}%` : ``;
                 const highRollDamageDisplay = highRollDamage ? `${((highRollDamage / redTeamBattleStates[0].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
                 let damageCalcClassName = `pokemon-damage-calc pokemon-damage-calc-${index}`;
-                if((lowRollDamage / redTeamBattleStates[0].pokemon_build.stat_spread.hp) > 1) { damageCalcClassName += " one-hit-ko"; }
-                if(lowRollDamage === 0) { damageCalcClassName += " no-damage"; }
-                if((highRollDamage / redTeamBattleStates[0].pokemon_build.stat_spread.hp) <= 0.25) { damageCalcClassName += " low-damage"; }
+                if(lowRollPercentage > 1) { damageCalcClassName += " guaranteed-one-hit-ko"; }
+                if(lowRollPercentage > 0.50 && lowRollPercentage < 1) { damageCalcClassName += " guaranteed-two-hit-ko"; }
+                if(lowRollPercentage === 0) { damageCalcClassName += " no-damage"; }
                 return (
                   <div key={`pokemon-damage-calc-${index}`} className={damageCalcClassName}>
                     <p className={`pokemon-damage-roll pokemon-damage-roll-low`}>
@@ -101,12 +102,13 @@ export const MoveCoverageTable: React.FC<{blueTeam: PokemonTeam, redTeam: Pokemo
                   hardcodedCritRoll: 0,
                   hardcodedTargetingValue: "single"
                 });
-                const lowRollDamageDisplay = lowRollDamage ? `${((lowRollDamage / redTeamBattleStates[1].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
+                const lowRollPercentage = (lowRollDamage / redTeamBattleStates[1].pokemon_build.stat_spread.hp);
+                const lowRollDamageDisplay = lowRollDamage ? `${(lowRollPercentage * 100).toFixed(2)}%` : ``;
                 const highRollDamageDisplay = highRollDamage ? `${((highRollDamage / redTeamBattleStates[1].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
                 let damageCalcClassName = `pokemon-damage-calc pokemon-damage-calc-${index}`;
-                if((lowRollDamage / redTeamBattleStates[1].pokemon_build.stat_spread.hp) > 1) { damageCalcClassName += " one-hit-ko"; }
-                if(lowRollDamage === 0) { damageCalcClassName += " no-damage"; }
-                if((highRollDamage / redTeamBattleStates[1].pokemon_build.stat_spread.hp) <= 0.25) { damageCalcClassName += " low-damage"; }
+                if(lowRollPercentage > 1) { damageCalcClassName += " guaranteed-one-hit-ko"; }
+                if(lowRollPercentage > 0.50 && lowRollPercentage < 1) { damageCalcClassName += " guaranteed-two-hit-ko"; }
+                if(lowRollPercentage === 0) { damageCalcClassName += " no-damage"; }
                 return (
                   <div key={`pokemon-damage-calc-${index}`} className={damageCalcClassName}>
                     <p className={`pokemon-damage-roll pokemon-damage-roll-low`}>
@@ -139,12 +141,13 @@ export const MoveCoverageTable: React.FC<{blueTeam: PokemonTeam, redTeam: Pokemo
                   hardcodedCritRoll: 0,
                   hardcodedTargetingValue: "single"
                 });
-                const lowRollDamageDisplay = lowRollDamage ? `${((lowRollDamage / redTeamBattleStates[2].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
+                const lowRollPercentage = (lowRollDamage / redTeamBattleStates[2].pokemon_build.stat_spread.hp);
+                const lowRollDamageDisplay = lowRollDamage ? `${(lowRollPercentage * 100).toFixed(2)}%` : ``;
                 const highRollDamageDisplay = highRollDamage ? `${((highRollDamage / redTeamBattleStates[2].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
                 let damageCalcClassName = `pokemon-damage-calc pokemon-damage-calc-${index}`;
-                if((lowRollDamage / redTeamBattleStates[2].pokemon_build.stat_spread.hp) > 1) { damageCalcClassName += " one-hit-ko"; }
-                if(lowRollDamage === 0) { damageCalcClassName += " no-damage"; }
-                if((highRollDamage / redTeamBattleStates[2].pokemon_build.stat_spread.hp) <= 0.25) { damageCalcClassName += " low-damage"; }
+                if(lowRollPercentage > 1) { damageCalcClassName += " guaranteed-one-hit-ko"; }
+                if(lowRollPercentage > 0.50 && lowRollPercentage < 1) { damageCalcClassName += " guaranteed-two-hit-ko"; }
+                if(lowRollPercentage === 0) { damageCalcClassName += " no-damage"; }
                 return (
                   <div key={`pokemon-damage-calc-${index}`} className={damageCalcClassName}>
                     <p className={`pokemon-damage-roll pokemon-damage-roll-low`}>
@@ -177,12 +180,13 @@ export const MoveCoverageTable: React.FC<{blueTeam: PokemonTeam, redTeam: Pokemo
                   hardcodedCritRoll: 0,
                   hardcodedTargetingValue: "single"
                 });
-                const lowRollDamageDisplay = lowRollDamage ? `${((lowRollDamage / redTeamBattleStates[3].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
+                const lowRollPercentage = (lowRollDamage / redTeamBattleStates[3].pokemon_build.stat_spread.hp);
+                const lowRollDamageDisplay = lowRollDamage ? `${(lowRollPercentage * 100).toFixed(2)}%` : ``;
                 const highRollDamageDisplay = highRollDamage ? `${((highRollDamage / redTeamBattleStates[3].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
                 let damageCalcClassName = `pokemon-damage-calc pokemon-damage-calc-${index}`;
-                if((lowRollDamage / redTeamBattleStates[3].pokemon_build.stat_spread.hp) > 1) { damageCalcClassName += " one-hit-ko"; }
-                if(lowRollDamage === 0) { damageCalcClassName += " no-damage"; }
-                if((highRollDamage / redTeamBattleStates[3].pokemon_build.stat_spread.hp) <= 0.25) { damageCalcClassName += " low-damage"; }
+                if(lowRollPercentage > 1) { damageCalcClassName += " guaranteed-one-hit-ko"; }
+                if(lowRollPercentage > 0.50 && lowRollPercentage < 1) { damageCalcClassName += " guaranteed-two-hit-ko"; }
+                if(lowRollPercentage === 0) { damageCalcClassName += " no-damage"; }
                 return (
                   <div key={`pokemon-damage-calc-${index}`} className={damageCalcClassName}>
                     <p className={`pokemon-damage-roll pokemon-damage-roll-low`}>
@@ -215,12 +219,13 @@ export const MoveCoverageTable: React.FC<{blueTeam: PokemonTeam, redTeam: Pokemo
                   hardcodedCritRoll: 0,
                   hardcodedTargetingValue: "single"
                 });
-                const lowRollDamageDisplay = lowRollDamage ? `${((lowRollDamage / redTeamBattleStates[4].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
+                const lowRollPercentage = (lowRollDamage / redTeamBattleStates[4].pokemon_build.stat_spread.hp);
+                const lowRollDamageDisplay = lowRollDamage ? `${(lowRollPercentage * 100).toFixed(2)}%` : ``;
                 const highRollDamageDisplay = highRollDamage ? `${((highRollDamage / redTeamBattleStates[4].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
                 let damageCalcClassName = `pokemon-damage-calc pokemon-damage-calc-${index}`;
-                if((lowRollDamage / redTeamBattleStates[4].pokemon_build.stat_spread.hp) > 1) { damageCalcClassName += " one-hit-ko"; }
-                if(lowRollDamage === 0) { damageCalcClassName += " no-damage"; }
-                if((highRollDamage / redTeamBattleStates[4].pokemon_build.stat_spread.hp) <= 0.25) { damageCalcClassName += " low-damage"; }
+                if(lowRollPercentage > 1) { damageCalcClassName += " guaranteed-one-hit-ko"; }
+                if(lowRollPercentage > 0.50 && lowRollPercentage < 1) { damageCalcClassName += " guaranteed-two-hit-ko"; }
+                if(lowRollPercentage === 0) { damageCalcClassName += " no-damage"; }
                 return (
                   <div key={`pokemon-damage-calc-${index}`} className={damageCalcClassName}>
                     <p className={`pokemon-damage-roll pokemon-damage-roll-low`}>
@@ -253,12 +258,13 @@ export const MoveCoverageTable: React.FC<{blueTeam: PokemonTeam, redTeam: Pokemo
                   hardcodedCritRoll: 0,
                   hardcodedTargetingValue: "single"
                 });
-                const lowRollDamageDisplay = lowRollDamage ? `${((lowRollDamage / redTeamBattleStates[5].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
+                const lowRollPercentage = (lowRollDamage / redTeamBattleStates[5].pokemon_build.stat_spread.hp);
+                const lowRollDamageDisplay = lowRollDamage ? `${(lowRollPercentage * 100).toFixed(2)}%` : ``;
                 const highRollDamageDisplay = highRollDamage ? `${((highRollDamage / redTeamBattleStates[5].pokemon_build.stat_spread.hp) * 100).toFixed(2)}%` : ``;
                 let damageCalcClassName = `pokemon-damage-calc pokemon-damage-calc-${index}`;
-                if((lowRollDamage / redTeamBattleStates[5].pokemon_build.stat_spread.hp) > 1) { damageCalcClassName += " one-hit-ko"; }
-                if(lowRollDamage === 0) { damageCalcClassName += " no-damage"; }
-                if((highRollDamage / redTeamBattleStates[5].pokemon_build.stat_spread.hp) <= 0.25) { damageCalcClassName += " low-damage"; }
+                if(lowRollPercentage > 1) { damageCalcClassName += " guaranteed-one-hit-ko"; }
+                if(lowRollPercentage > 0.50 && lowRollPercentage < 1) { damageCalcClassName += " guaranteed-two-hit-ko"; }
+                if(lowRollPercentage === 0) { damageCalcClassName += " no-damage"; }
                 return (
                   <div key={`pokemon-damage-calc-${index}`} className={damageCalcClassName}>
                     <p className={`pokemon-damage-roll pokemon-damage-roll-low`}>

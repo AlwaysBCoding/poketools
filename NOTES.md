@@ -1,4 +1,20 @@
 ## TODO
+  - allow dynamic changes of pokemon_build_state while looking at move coverage table in matchup screen
+  - add field state such as reflect, terrain, weather etc... to damage calcs and matchup screen
+
+  - create Analytics tab ALA pikalytics on top of the Smogon/Showdown Data
+
+  - implement VGC game logic
+  - implement targeting logic
+  - control both blue & red team moves
+  - save flow charts with teams
+  - search teams for specific combinations/leads
+    - practice against leads on various teams
+  - train VGC AI
+
+  - AI to find best item / ability / nature / spread / moves for a pokemon against specific teams?
+    - Can add 1 of X pokemon, figure out which one.
+
   - implement a database to save teams (from VGC paste spreadsheet on wolfe screen)
 
   - add contact (boolean) to move templates
@@ -47,7 +63,7 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (281/400) | 70.25%
+  - DEX COMPLETION: (292/400) | 73.00%
   - MOVE TEMPLATE COMPLETION: (12/26) | 46.15%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/165) | 4.85%
@@ -234,3 +250,4 @@
   - obvious questions about model architecture in general
   - how many epochs to train for?
   - would it be better to just have the pokemon ID and let the AI figure it out, or generalize the pokemon to it's stats and input that into the neural net?
+  - How fast can you ad-hoc train a model?

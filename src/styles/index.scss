@@ -753,7 +753,8 @@ $pokemon-base-stats-cell-width: 50%;
           justify-content: space-evenly;
           align-items: center;
           font-size: 14px;
-          &.one-hit-ko { background-color: $good-type-interaction-background; }
+          &.guaranteed-one-hit-ko { background-color: darken($good-type-interaction-background, 12.5%); }
+          &.guaranteed-two-hit-ko { background-color: lighten($good-type-interaction-background, 2.5%); }
           // &.low-damage { background-color: $bad-type-interaction-background; }
           // &.no-damage { background-color: lighten($charcoal-ultra-light, 8%); }
 
