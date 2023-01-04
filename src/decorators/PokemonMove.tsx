@@ -1,4 +1,3 @@
-import React, { useState, ChangeEvent } from "react";
 import { PokemonMoveIdent } from "../models/pokemon/PokemonShared";
 import { toTitleCase } from "./DecoratorsShared";
 

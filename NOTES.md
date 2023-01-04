@@ -5,6 +5,10 @@
     - aftermath ability implementation
   - add okho (boolean) to move templates
     - not affected by accuracy / evasion modifiers
+  - add punching to move templates (iron fist)
+  - add bite to move templates (strong jaw)
+  - add sound to move templates (soundproof)
+  - add ballistic? to move templates (bulletproof)
 
   - add switch-in hook logic
     - drizzle, drought, sandstorm, snow-warning ability implementation

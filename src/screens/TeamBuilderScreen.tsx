@@ -33,8 +33,7 @@ export const TeamBuilderScreen = () => {
 
   const onAddNewPokemonClick = (teamIndex: number) => {
     const nextTeam = team;
-    const randomPokemonData = allPokemon[Math.floor(Math.random()*allPokemon.length)];
-    const nextPokemonBuild = createDefaultPokemonBuildForPokemonIdent(randomPokemonData.ident);
+    const nextPokemonBuild = createDefaultPokemonBuildForPokemonIdent(allPokemon[Math.floor(Math.random()*allPokemon.length)].ident);
     nextTeam.pokemonBuilds[teamIndex] = nextPokemonBuild;
     setTeam(nextTeam);
     setActiveTeamIndex(teamIndex);
@@ -53,6 +52,7 @@ export const TeamBuilderScreen = () => {
       let nextPokemonTeam = team;
       nextPokemonTeam.pokemonBuilds[activeTeamIndex] = pokemonBuildData;
       savePokemonTeam(nextPokemonTeam);
+      forceUpdate();
     }
   }
 

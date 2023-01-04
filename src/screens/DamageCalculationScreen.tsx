@@ -1,10 +1,9 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import useForceUpdate from "use-force-update";
-import CountUp from "react-countup";
 
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
-import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
+import { PokemonBuild } from "../models/pokemon/PokemonBuild";
 import { PokemonMoveIdent } from "../models/pokemon/PokemonShared";
 
 import { BattleState, createEmptyBattleState } from "../models/battle/BattleState";
@@ -14,30 +13,21 @@ import { calculateDamage } from "../models/battle/damage-calc";
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { PokemonBattleStateEditor } from "../components/PokemonBattleStateEditor";
 
-import { displayPokemonMove } from "../decorators/PokemonMove";
-
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 const allPokemon = AllPokemon as Pokemon[];
 
-const alphabeticalComp = (a: Pokemon, b: Pokemon): number => {
-  if(a.ident > b.ident) { return 1; }
-  if(b.ident > a.ident) { return -1; }
-  if(a.ident === b.ident) { return 0; }
-  return 0;
-}
-
 export const DamageCalculationScreen = () => {
   const forceUpdate = useForceUpdate();
-  const [allTeams, setAllTeams] = useState<PokemonTeam[]>([])
+  const [allTeams, setAllTeams] = useState<PokemonTeam[]>([]);
   const [activeAttackingTeam, setActiveAttackingTeam] = useState<PokemonTeam>();
   const [selectedAttackingTeamName, setSelectedAttackingTeamName] = useState<string>("");
   const [activeDefendingTeam, setActiveDefendingTeam] = useState<PokemonTeam>();
   const [selectedDefendingTeamName, setSelectedDefendingTeamName] = useState<string>("");
   const [activeAttackingPokemonBattleState, setActiveAttackingPokemonBattleState] = useState<PokemonBattleState>(
-    createDefaultPokemonBattleStateForPokemonIdent("garchomp")
+    createDefaultPokemonBattleStateForPokemonIdent(allPokemon[Math.floor(Math.random()*allPokemon.length)].ident)
   );
   const [activeDefendingPokemonBattleState, setActiveDefendingPokemonBattleState] = useState<PokemonBattleState>(
-    createDefaultPokemonBattleStateForPokemonIdent("hydreigon")
+    createDefaultPokemonBattleStateForPokemonIdent(allPokemon[Math.floor(Math.random()*allPokemon.length)].ident)
   );
   const [activeAttackingTeamIndex, setActiveAttackingTeamIndex] = useState<number | undefined>(undefined);
   const [activeDefendingTeamIndex, setActiveDefendingTeamIndex] = useState<number | undefined>(undefined);
@@ -50,12 +40,9 @@ export const DamageCalculationScreen = () => {
   const emptyBattleState: BattleState = createEmptyBattleState();
 
   useEffect(() => {
-
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
     const nextTeams: PokemonTeam[] = Object.values(savedTeams);
-
     setAllTeams(nextTeams);
-
   }, []);
 
   const handleSelectTeamNameChange = (event: ChangeEvent<HTMLSelectElement>, side: string) => {
@@ -272,5 +259,4 @@ export const DamageCalculationScreen = () => {
       </div>
     </div>
   )
-
 }

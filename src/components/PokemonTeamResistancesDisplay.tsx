@@ -43,7 +43,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
 
   return (
     <div className="pokemon-team-resistances-display">
-      <div className="resistances-column esistance-labels">
+      <div className="resistances-column resistance-labels">
         <p className="header-row">Attacking Type</p>
         {allTypes.map((typeIdent) => {
           return (

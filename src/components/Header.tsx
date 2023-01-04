@@ -22,6 +22,10 @@ export const Header = () => {
       display: "TEAM BUILDER"
     },
     {
+      path: "/team-matchup",
+      display: "TEAM MATCHUP"
+    },
+    {
       path: "/damage-calculation",
       display: "DAMAGE CALC"
     },
