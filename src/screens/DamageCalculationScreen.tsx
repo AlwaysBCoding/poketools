@@ -126,11 +126,11 @@ export const DamageCalculationScreen = () => {
     }
   }
 
-  let attackingPokemonDamageCalcs: number[][] = [];
-  let defendingPokemonDamageCalcs: number[][] = [];
+  let attackingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
+  let defendingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
 
   if(activeAttackingPokemonBattleState && activeDefendingPokemonBattleState) {
-    attackingPokemonDamageCalcs = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
+    const attackingPokemonDamageCalcsData = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
         battleState: emptyBattleState,
         attackingPokemon: activeAttackingPokemonBattleState,
@@ -154,7 +154,11 @@ export const DamageCalculationScreen = () => {
         Number(((highRollDamageAmount / activeDefendingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
       ];
     });
-    defendingPokemonDamageCalcs = activeDefendingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
+    attackingPokemonDamageCalcs[0] = attackingPokemonDamageCalcsData[0] ? attackingPokemonDamageCalcsData[0] : [0, 0];
+    attackingPokemonDamageCalcs[1] = attackingPokemonDamageCalcsData[1] ? attackingPokemonDamageCalcsData[1] : [0, 0];
+    attackingPokemonDamageCalcs[2] = attackingPokemonDamageCalcsData[2] ? attackingPokemonDamageCalcsData[2] : [0, 0];
+    attackingPokemonDamageCalcs[3] = attackingPokemonDamageCalcsData[3] ? attackingPokemonDamageCalcsData[3] : [0, 0];
+    const defendingPokemonDamageCalcsData = activeDefendingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
         battleState: emptyBattleState,
         attackingPokemon: activeDefendingPokemonBattleState,
@@ -178,6 +182,10 @@ export const DamageCalculationScreen = () => {
         Number(((highRollDamageAmount / activeAttackingPokemonBattleState.pokemon_build.stat_spread.hp) * 100).toFixed(2)),
       ];
     });
+    defendingPokemonDamageCalcs[0] = defendingPokemonDamageCalcsData[0] ? defendingPokemonDamageCalcsData[0] : [0, 0];
+    defendingPokemonDamageCalcs[1] = defendingPokemonDamageCalcsData[1] ? defendingPokemonDamageCalcsData[1] : [0, 0];
+    defendingPokemonDamageCalcs[2] = defendingPokemonDamageCalcsData[2] ? defendingPokemonDamageCalcsData[2] : [0, 0];
+    defendingPokemonDamageCalcs[3] = defendingPokemonDamageCalcsData[3] ? defendingPokemonDamageCalcsData[3] : [0, 0];
   }
 
   return (

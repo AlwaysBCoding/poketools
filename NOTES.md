@@ -1,4 +1,6 @@
 ## TODO
+  - implement a database to save teams (from VGC paste spreadsheet on wolfe screen)
+
   - add contact (boolean) to move templates
     - aftermath ability implementation
   - add okho (boolean) to move templates
