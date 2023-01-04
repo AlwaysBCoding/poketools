@@ -63,10 +63,10 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (292/400) | 73.00%
+  - DEX COMPLETION: (301/400) | 75.25%
   - MOVE TEMPLATE COMPLETION: (12/26) | 46.15%
   - ITEM COMPLETION: (21/136) | 15.44%
-  - ABILITY COMPLETION: (8/165) | 4.85%
+  - ABILITY COMPLETION: (8/167) | 4.80%
 
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
