@@ -8,7 +8,7 @@ export interface PokemonTeam {
 
 export const createNewPokemonTeam = (): PokemonTeam => {
   return {
-    team_name: "Default Team",
+    team_name: `TEAM ${Date.now()}`,
     created_at: Date.now(),
     pokemonBuilds: []
   }

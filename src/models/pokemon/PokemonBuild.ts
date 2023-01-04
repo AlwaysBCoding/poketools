@@ -53,6 +53,12 @@ export const pokemonBuildTemplateToPokemonBuild = (pokemonBuildTemplate: Pokemon
 };
 
 export const createDefaultPokemonBuildForPokemon = (pokemon: Pokemon): PokemonBuild => {
+  const randomMoveIdents = pokemon.move_idents
+    .map(x => ({ x, r: Math.random() }))
+    .sort((a, b) => a.r - b.r)
+    .map(a => a.x)
+    .slice(0, 4);
+
   const pokemonBuildTemplate: PokemonBuildTemplate = {
     pokemon_ident: pokemon.ident,
     nickname: null,
@@ -63,7 +69,7 @@ export const createDefaultPokemonBuildForPokemon = (pokemon: Pokemon): PokemonBu
     gender: pokemon.genders[0],
     tera_type_ident: pokemon.primary_type_ident,
     nature_ident: "hardy",
-    move_idents: [],
+    move_idents: randomMoveIdents,
     iv_spread: {
       hp: 31,
       attack: 31,

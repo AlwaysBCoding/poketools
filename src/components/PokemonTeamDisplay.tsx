@@ -48,14 +48,30 @@ export const PokemonTeamDisplayIndex: React.FC<{
   team: PokemonTeam;
   activeTeamIndex?: number;
   onPokemonBuildClick?: (pokemonBuild: PokemonBuild, teamIndex: number) => void;
+  onAddNewPokemonClick?: (teamIndex: number) => void;
   arrange?: "horizontal" | "vertical";
+  numberOfSlots?: number;
 }> = ({
   team,
   activeTeamIndex,
   onPokemonBuildClick = () => undefined,
-  arrange = "horizontal"
+  onAddNewPokemonClick = () => undefined,
+  arrange = "horizontal",
+  numberOfSlots
 }) => {
   const modeClassName = arrange === "vertical" ? "mode-index vertical" : "mode-index horizontal";
+
+  const renderEmptySlot = (index: number) => {
+    return (
+      <div
+        key={`pokemon-index-item-${index}`}
+        className="pokemon-index-item add-new-pokemon"
+        onClick={() => { onAddNewPokemonClick(index) }}>
+        <p className="add-new-pokemon-icon">+</p>
+      </div>
+    )
+  }
+
   return (
     <div className={`pokemon-team-display ${modeClassName}`}>
       {team.pokemonBuilds.map((pokemonBuild, index) => {
@@ -64,12 +80,14 @@ export const PokemonTeamDisplayIndex: React.FC<{
         return (
           <div
             key={`pokemon-index-item-${index}`}
-            className={classString} onClick={() => { onPokemonBuildClick(pokemonBuild, index) }}>
+            className={classString}
+            onClick={() => { onPokemonBuildClick(pokemonBuild, index) }}>
             <img className="pokemon-image" src={pokemonImage} alt={pokemonBuild.pokemon.ident} />
             <p className="pokemon-ident">{displayPokemonIdent(pokemonBuild.pokemon.ident)}</p>
           </div>
         )
       })}
+      {numberOfSlots && numberOfSlots > team.pokemonBuilds.length ? renderEmptySlot(team.pokemonBuilds.length) : (<></>)}
     </div>
   )
 }

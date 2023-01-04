@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import useForceUpdate from "use-force-update";
 
+import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
-import { PokemonBuild } from "../models/pokemon/PokemonBuild";
+import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
 
 import { PokemonBuildEditor } from "../components/PokemonBuildEditor";
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
+import { PokemonTeamResistancesDisplay } from "../components/PokemonTeamResistancesDisplay";
+
+import AllPokemon from "../data/pokemon/all-pokemon.json";
+const allPokemon = AllPokemon as Pokemon[];
 
 export const TeamEditorScreen = () => {
+  const forceUpdate = useForceUpdate();
   const location = useLocation();
   const [team, setTeam] = useState<PokemonTeam>();
   const [activePokemonBuild, setActivePokemonBuild] = useState<PokemonBuild>();
@@ -32,7 +39,18 @@ export const TeamEditorScreen = () => {
       let nextPokemonTeam = team;
       nextPokemonTeam.pokemonBuilds[activeTeamIndex] = pokemonBuildData;
       savePokemonTeam(nextPokemonTeam);
+      forceUpdate();
     }
+  }
+
+  const onAddNewPokemonClick = (teamIndex: number) => {
+    const nextTeam = team;
+    const randomPokemonData = allPokemon[Math.floor(Math.random()*allPokemon.length)];
+    const nextPokemonBuild = createDefaultPokemonBuildForPokemonIdent(randomPokemonData.ident);
+    nextTeam!.pokemonBuilds[teamIndex] = nextPokemonBuild;
+    setTeam(nextTeam);
+    setActiveTeamIndex(teamIndex);
+    setActivePokemonBuild(nextPokemonBuild);
   }
 
   const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number) => {
@@ -46,12 +64,17 @@ export const TeamEditorScreen = () => {
         <PokemonTeamDisplayIndex
           team={team}
           activeTeamIndex={activeTeamIndex}
-          onPokemonBuildClick={onPokemonBuildClick} />
+          numberOfSlots={6}
+          onPokemonBuildClick={onPokemonBuildClick}
+          onAddNewPokemonClick={onAddNewPokemonClick} />
         {activePokemonBuild ? (
           <PokemonBuildEditor
             initialPokemonBuild={activePokemonBuild}
             updatePokemonBuildData={savePokemonBuildData} />
         ) : (<></>)}
+        <div className="team-resistances-container">
+          <PokemonTeamResistancesDisplay team={team} />
+        </div>
       </div>
       )
   } else {

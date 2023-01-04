@@ -1,69 +1,80 @@
 import React, { useState, useEffect, KeyboardEvent } from "react";
 import useForceUpdate from "use-force-update";
 
-import AllPokemon from "../data/pokemon/all-pokemon.json";
 import { Pokemon } from "../models/pokemon/Pokemon";
-import { createDefaultPokemonBuildForPokemon, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
+import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
 import { PokemonTeam, createNewPokemonTeam } from "../models/pokemon/PokemonTeam";
-import { calculatePokemonTotalStats } from "../models/pokemon/PokemonShared";
+import { PokemonBuildEditor } from "../components/PokemonBuildEditor";
 
-import { PokemonDataTable } from "../components/PokemonDataTable";
-import { PokemonTeamDisplay } from "../components/PokemonTeamDisplay";
+import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { PokemonTeamResistancesDisplay } from "../components/PokemonTeamResistancesDisplay";
+
+import AllPokemon from "../data/pokemon/all-pokemon.json";
+const allPokemon = AllPokemon as Pokemon[];
 
 export const TeamBuilderScreen = () => {
   const forceUpdate = useForceUpdate();
-  const allPokemon = AllPokemon as Pokemon[];
+  const initialTeam = createNewPokemonTeam();
 
-  const [searchString, setSearchString] = useState<string>("");
-  const [team, setTeam] = useState<PokemonTeam>(createNewPokemonTeam());
-  const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>(allPokemon);
+  const [team, setTeam] = useState<PokemonTeam>(initialTeam);
+  const [teamNameString, setTeamNameString] = useState<string>(initialTeam.team_name);
+  const [activeTeamIndex, setActiveTeamIndex] = useState<number | undefined>(undefined);
+  const [activePokemonBuild, setActivePokemonBuild] = useState<PokemonBuild>();
 
   useEffect(() => {
-    const nextFilteredPokemon = allPokemon.filter((pokemon) => {
-      return pokemon.ident.includes(searchString);
-    });
-    nextFilteredPokemon.sort((pokemonA, pokemonB) => { return calculatePokemonTotalStats(pokemonB.base_stats) - calculatePokemonTotalStats(pokemonA.base_stats) });
-    setFilteredPokemon(nextFilteredPokemon);
+    team.team_name = teamNameString;
     // eslint-disable-next-line
-  }, [searchString]);
+  }, [teamNameString]);
 
-  const keyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
-    if(event.key === "Enter") {
-      selectPokemon(filteredPokemon[0]);
-    }
+  const onPokemonBuildClick = (pokemonBuild: PokemonBuild, teamIndex: number) => {
+    setActiveTeamIndex(teamIndex);
+    setActivePokemonBuild(pokemonBuild);
   }
 
-  const selectPokemon = (pokemon: Pokemon) => {
-    let nextTeam = team;
-    nextTeam.pokemonBuilds.push(createDefaultPokemonBuildForPokemon(pokemon));
+  const onAddNewPokemonClick = (teamIndex: number) => {
+    const nextTeam = team;
+    const randomPokemonData = allPokemon[Math.floor(Math.random()*allPokemon.length)];
+    const nextPokemonBuild = createDefaultPokemonBuildForPokemonIdent(randomPokemonData.ident);
+    nextTeam.pokemonBuilds[teamIndex] = nextPokemonBuild;
     setTeam(nextTeam);
-    setSearchString("");
-    forceUpdate();
+    setActiveTeamIndex(teamIndex);
+    setActivePokemonBuild(nextPokemonBuild);
+  }
+
+  const savePokemonTeam = (team: PokemonTeam) => {
+    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
+    let nextSavedTeams = savedTeams;
+    nextSavedTeams[team.team_name] = team;
+    localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+  }
+
+  const savePokemonBuildData = (pokemonBuildData: PokemonBuild) => {
+    if(team && activeTeamIndex !== undefined) {
+      let nextPokemonTeam = team;
+      nextPokemonTeam.pokemonBuilds[activeTeamIndex] = pokemonBuildData;
+      savePokemonTeam(nextPokemonTeam);
+    }
   }
 
   return (
     <div className="screen team-builder-screen">
-      <div className="pokemon-select">
-        <input
-          className="pokemon-select-input"
-          placeholder="SEARCH POKEMON"
-          value={searchString}
-          onKeyPress={keyPressHandler}
-          onChange={(e) => { setSearchString(e.target.value) }} />
-        <div className="pokemon-data-table-container">
-          <PokemonDataTable
-            pokemonList={filteredPokemon}
-            clickable={true}
-            onPokemonClick={(pokemon: Pokemon) => { selectPokemon(pokemon); }}
-            displayBaseStats={false} />
-        </div>
-      </div>
       <div className="team-display-container">
-        <PokemonTeamDisplay
+        <input
+          className="team-name"
+          placeholder={`DEFAULT TEAM`}
+          value={teamNameString}
+          onChange={(e) => { setTeamNameString(e.target.value) }} />
+        <PokemonTeamDisplayIndex
           team={team}
-          config={{editable: true, saveable: true}}
-          mode="show" />
+          activeTeamIndex={activeTeamIndex}
+          numberOfSlots={6}
+          onPokemonBuildClick={onPokemonBuildClick}
+          onAddNewPokemonClick={onAddNewPokemonClick} />
+        {activePokemonBuild ? (
+          <PokemonBuildEditor
+            initialPokemonBuild={activePokemonBuild}
+            updatePokemonBuildData={savePokemonBuildData} />
+        ) : (<></>)}
       </div>
       <div className="team-resistances-container">
         <PokemonTeamResistancesDisplay team={team} />

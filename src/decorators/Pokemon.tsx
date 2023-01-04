@@ -22,7 +22,9 @@ export const displayPokemonGender = (gender: PokemonGender): string => {
 }
 
 export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
-  if(pokemonIdent === "indeedee-female") { return "Indeedee-F" }
+  if(pokemonIdent === "gastrodon-east") { return "Gastrodon (East)"}
+  else if(pokemonIdent === "gastrodon-west") { return "Gastrodon (West)"}
+  else if(pokemonIdent === "indeedee-female") { return "Indeedee-F" }
   else if(pokemonIdent === "indeedee-male") { return "Indeedee-M" }
   else if(pokemonIdent === "lycanroc-dusk") { return "Lycanroc (Dusk)" }
   else if(pokemonIdent === "lycanroc-midday") { return "Lycanroc (Midday)" }

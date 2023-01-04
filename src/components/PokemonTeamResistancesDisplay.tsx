@@ -7,27 +7,7 @@ import { PokemonTypeIdent, PokemonTypeInteraction } from "../models/pokemon/Poke
 import AllTypes from "../data/pokemon-types.json";
 import TypeChart from "../data/pokemon-type-effectiveness.json";
 
-// const topCutPokemonIdents = [
-//   "hydreigon",
-//   "gholdengo",
-//   "garchomp",
-//   "murkrow",
-//   "meowscarada",
-//   "amoonguss",
-//   "grimmsnarl",
-//   "annihilape",
-//   "maushold-family-of-four",
-//   "sylveon",
-//   "armarouge",
-//   "rotom-wash",
-//   "arcanine",
-//   "kingambit",
-//   "indeedee-female"
-// ];
-
-// const pkTeam = topCutPokemonIdents.map((pokemonIdent) => {
-//   return createDefaultPokemonBuildForPokemonIdent(pokemonIdent);
-// });
+import { displayPokemonIdent } from "../decorators/Pokemon";
 
 export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ team }) => {
   const typeChart = TypeChart as PokemonTypeInteraction[];
@@ -85,7 +65,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         })}
       </div>
       <div className="resistances-column slot-resistances slot-1">
-        <p className="header-row">{team.pokemonBuilds[0] ? team.pokemonBuilds[0].pokemon.ident : "Slot 1"}</p>
+        <p className="header-row">{team.pokemonBuilds[0] ? displayPokemonIdent(team.pokemonBuilds[0].pokemon.ident) : "Slot 1"}</p>
         {allTypes.map((typeIdent, index) => {
           if(teamResistanceValues[0]) {
             const interactionValue = teamResistanceValues[0][index];
@@ -96,7 +76,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         })}
       </div>
       <div className="resistances-column slot-resistances slot-2">
-        <p className="header-row">{team.pokemonBuilds[1] ? team.pokemonBuilds[1].pokemon.ident : "Slot 2"}</p>
+        <p className="header-row">{team.pokemonBuilds[1] ? displayPokemonIdent(team.pokemonBuilds[1].pokemon.ident) : "Slot 2"}</p>
         {allTypes.map((typeIdent, index) => {
           if(teamResistanceValues[1]) {
             const interactionValue = teamResistanceValues[1][index];
@@ -107,7 +87,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         })}
       </div>
       <div className="resistances-column slot-resistances slot-3">
-        <p className="header-row">{team.pokemonBuilds[2] ? team.pokemonBuilds[2].pokemon.ident : "Slot 3"}</p>
+        <p className="header-row">{team.pokemonBuilds[2] ? displayPokemonIdent(team.pokemonBuilds[2].pokemon.ident) : "Slot 3"}</p>
         {allTypes.map((typeIdent, index) => {
           if(teamResistanceValues[2]) {
             const interactionValue = teamResistanceValues[2][index];
@@ -118,7 +98,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         })}
       </div>
       <div className="resistances-column slot-resistances slot-4">
-        <p className="header-row">{team.pokemonBuilds[3] ? team.pokemonBuilds[3].pokemon.ident : "Slot 4"}</p>
+        <p className="header-row">{team.pokemonBuilds[3] ? displayPokemonIdent(team.pokemonBuilds[3].pokemon.ident) : "Slot 4"}</p>
         {allTypes.map((typeIdent, index) => {
           if(teamResistanceValues[3]) {
             const interactionValue = teamResistanceValues[3][index];
@@ -129,7 +109,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         })}
       </div>
       <div className="resistances-column slot-resistances slot-5">
-        <p className="header-row">{team.pokemonBuilds[4] ? team.pokemonBuilds[4].pokemon.ident : "Slot 5"}</p>
+        <p className="header-row">{team.pokemonBuilds[4] ? displayPokemonIdent(team.pokemonBuilds[4].pokemon.ident) : "Slot 5"}</p>
         {allTypes.map((typeIdent, index) => {
           if(teamResistanceValues[4]) {
             const interactionValue = teamResistanceValues[4][index];
@@ -140,7 +120,7 @@ export const PokemonTeamResistancesDisplay: React.FC<{team: PokemonTeam}> = ({ t
         })}
       </div>
       <div className="resistances-column slot-resistances slot-6">
-        <p className="header-row">{team.pokemonBuilds[5] ? team.pokemonBuilds[5].pokemon.ident : "Slot 6"}</p>
+        <p className="header-row">{team.pokemonBuilds[5] ? displayPokemonIdent(team.pokemonBuilds[5].pokemon.ident) : "Slot 6"}</p>
         {allTypes.map((typeIdent, index) => {
           if(teamResistanceValues[5]) {
             const interactionValue = teamResistanceValues[5][index];
