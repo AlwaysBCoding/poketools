@@ -43,11 +43,12 @@
 
   - DEX COMPLETION: (281/400) | 70.25%
   - MOVE TEMPLATE COMPLETION: (11/26) | 42.30%
-  - ITEM COMPLETION: (1.25%) | 1.25%
+  - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/165) | 4.85%
 
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
+    - implement correct pokemon can_evolve logic on pokemon.py
 
 ## Damaging Moves with Custom functionality to add
   - Beat Up (haven't even added the data for this one at all (complex logic))

@@ -47,7 +47,7 @@ class Pokemon():
     self.move_idents = move_idents
 
   def can_evolve(self):
-    if(self.data.can_evolve and self.data.can_evolve == True):
+    if self.evolution_line_index != 2:
       return True
     else:
       return False

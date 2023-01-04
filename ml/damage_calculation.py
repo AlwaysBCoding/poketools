@@ -26,7 +26,7 @@ def calculate_damage(
   hardcoded_crit_roll=None,
   hardcoded_targeting_value=None
 ):
-  pokemon_move = find(all_moves_data, lambda x: x["ident"] == move_ident)
+  pokemon_move = find(all_moves_data, lambda x: x['ident'] == move_ident)
 
   LIFE_ORB_MODIFIER = (5324/4096)
   SPREAD_MODIFIER = (3072/4096)
@@ -38,21 +38,43 @@ def calculate_damage(
   RANDOM_ROLLS = [0.85, 0.86, 0.87, 0.88, 0.89, 0.90, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1.00]
   CRITICAL_HIT_STAGES = [(1/24), (1/8), (1/2), 1]
   STAT_STAGE_MULTIPLIERS = {
-    "-6": (2/8),
-    "-5": (2/7),
-    "-4": (2/6),
-    "-3": (2/5),
-    "-2": (2/4),
-    "-1": (2/3),
-    "0": (2/2),
-    "1": (3/2),
-    "2": (4/2),
-    "3": (5/2),
-    "4": (6/2),
-    "5": (7/2),
-    "6": (8/2)
+    '-6': (2/8),
+    '-5': (2/7),
+    '-4': (2/6),
+    '-3': (2/5),
+    '-2': (2/4),
+    '-1': (2/3),
+    '0': (2/2),
+    '1': (3/2),
+    '2': (4/2),
+    '3': (5/2),
+    '4': (6/2),
+    '5': (7/2),
+    '6': (8/2)
   }
 
+  TYPE_ENHANCEMENT_ITEMS = [
+    ['black-belt', 'fighting'],
+    ['black-glasses', 'dark'],
+    ['charcoal', 'fire'],
+    ['dragon-fang', 'dragon'],
+    ['hard-stone', 'rock'],
+    ['magnet', 'electric'],
+    ['metal-coat', 'steel'],
+    ['miracle-seed', 'grass'],
+    ['mystic-water', 'water'],
+    ['never-melt-ice', 'ice'],
+    ['poison-barb', 'poison'],
+    ['sharp-beak', 'flying'],
+    ['silk-scarf', 'normal'],
+    ['silver-powder', 'bug'],
+    ['soft-sand', 'ground'],
+    ['spell-tag', 'ghost'],
+    ['twisted-spoon', 'psychic']
+  ]
+
+  # DAMAGE CALC VALUES
+  # =====================
   a_value = 1
   d_value = 1
   stab = 1
@@ -70,10 +92,15 @@ def calculate_damage(
   power = 0
   if(pokemon_move):
     power = pokemon_move['base_power']
+
     if(pokemon_move['ident'] == 'acrobatics' and attacking_pokemon.item_ident == None):
       power *= 2
     if(pokemon_move['ident'] == 'knock-off' and target_pokemon.item_ident != None):
       power *= 1.5
+
+  for type_enhancement_item in TYPE_ENHANCEMENT_ITEMS:
+    if(attacking_pokemon.item_ident == type_enhancement_item[0] and pokemon_move['type_ident'] == type_enhancement_item[1]):
+      power *= 1.2
 
   # CRITICAL
   # =====================
@@ -113,12 +140,14 @@ def calculate_damage(
   if(attacking_pokemon.ability_ident == 'huge-power'):
     attack_stat *= 2
 
-  if(pokemon_move["category_ident"] == "physical"):
+  if(pokemon_move['category_ident'] == 'physical'):
     a_value = attack_stat * attack_multipliers
     d_value = target_pokemon.pokemon_build.stat_spread.defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
-  elif(pokemon_move["category_ident"] == "special"):
+  elif(pokemon_move['category_ident'] == 'special'):
     a_value = attacking_pokemon.pokemon_build.stat_spread.special_attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.special_attack}"]
     d_value = target_pokemon.pokemon_build.stat_spread.special_defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.special_defense}"]
+    if(target_pokemon.item_ident == 'assault-vest' or (target_pokemon.item_ident == 'eviolite' and target_pokemon.pokemon_build.pokemon.can_evolve())):
+      d_value *= 1.5
 
   if(attacking_pokemon.ability_ident == 'blaze' and pokemon_move['type_ident'] == 'fire' and attacking_pokemon.hp_percentage() <= (1/3)):
     a_value *= 1.5
@@ -150,7 +179,9 @@ def calculate_damage(
   # =====================
   primary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.primary_type_ident)
   secondary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.secondary_type_ident)
-  if(primary_type_effectiveness and secondary_type_effectiveness):
+  if(target_pokemon.item_ident == 'iron-ball' and 'flying' in [target_pokemon.primary_type_ident, target_pokemon.secondary_type_ident] and pokemon_move['type_ident'] == 'ground'):
+    type_value = 1
+  elif(primary_type_effectiveness and secondary_type_effectiveness):
     type_value = primary_type_effectiveness["effectiveness"] * secondary_type_effectiveness["effectiveness"]
   elif(primary_type_effectiveness):
     type_value = primary_type_effectiveness["effectiveness"]

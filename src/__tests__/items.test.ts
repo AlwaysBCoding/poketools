@@ -9,224 +9,248 @@ import {
 import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/pokemon/PokemonBuild";
 
 import { BattleState } from "../models/battle/BattleState";
+import { BattleConfig } from "../models/battle/BattleShared";
+import { BattleAction, composeMoveAction } from "../models/battle/BattleAction";
+import { Battle, createBattle, initialStep } from "../models/battle/Battle";
 import { createNewBattleState1v1 } from "./__factories__/battle.factory";
 import { calculateDamage } from "../models/battle/damage-calc";
-import { createNewPokemonBattleState } from "../models/battle/PokemonBattleState";
+import { Pokemon } from "../models/pokemon/Pokemon";
+
+const SERVER_URI = "http://localhost:8000";
+const BATTLE_CONFIG: BattleConfig = {variant: "singles"};
+
+const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction, hardcodedStatChangeFrequencyRoll?: number): Promise<Record<string, any>> => {
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      battle: battle,
+      battle_action: battleAction,
+      hardcoded_stat_change_frequency_roll: hardcodedStatChangeFrequencyRoll,
+      random_roll: 0.85,
+      crit_roll: 0
+    })
+  }
+
+  const response = await fetch(`${SERVER_URI}/test/perform-battle-action`, fetchOptions);
+  const result = await response.json();
+  return result;
+}
+
+const CALCULATE_DAMAGE = async (battle: Battle, battleAction: BattleAction, random_roll?: number, crit_roll?: number): Promise<Record<string, any>> => {
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      battle: battle,
+      battle_action: battleAction,
+      random_roll: random_roll ? random_roll : 0.85,
+      crit_roll: crit_roll ? crit_roll : 0
+    })
+  }
+
+  const response = await fetch(`${SERVER_URI}/test/calculate-damage`, fetchOptions);
+  const result = await response.json();
+  return result;
+}
+
+const BATTLE_STEP = async(battle: Battle, blueBattleActions: BattleAction[], redBattleActions: BattleAction[]): Promise<Record<string, any>> => {
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      battle: battle,
+      blue_battle_actions: blueBattleActions,
+      red_battle_actions: redBattleActions
+    })
+  }
+
+  const response = await fetch(`${SERVER_URI}/test/battle-step`, fetchOptions);
+  const result = await response.json();
+  return result;
+}
+
+const ORDER_BATTLE_ACTIONS = async (battle: Battle, battleActions: BattleAction[]): Promise<Record<string, any>> => {
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      battle: battle,
+      battle_actions: battleActions
+    })
+  }
+
+  const response = await fetch(`${SERVER_URI}/test/order-actions`, fetchOptions);
+  const result = await response.json();
+  return result;
+}
 
 describe("ITEMS", () => {
-  let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
-  let quaxwellBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAXWELL_MAX_STATS);
-  let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
-  let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
-  let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
-  let garchompBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GARCHOMP_ATEAM_BUILD);
 
-  describe("LIFE_ORB", () => {
+  describe("1.2x TYPE BOOSTING ITEMS", () => {
 
-    test("it multiplies the damage correctly", () => {
-      var battleState: BattleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
-      );
-      var damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "u-turn",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
+    describe("SHARP_BEAK", () => {
+      let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+      let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
+
+      let createdBattle: Battle = createBattle({
+        config: BATTLE_CONFIG,
+        blueSidePokemonBuilds: [talonflameBuild],
+        redSidePokemonBuilds: [annihilapeBuild]
       });
-      expect(damage).toEqual(21);
+      let initialBattle: Battle = initialStep(createdBattle);
 
-      var battleState: BattleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "life-orb"}),
-        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
+      const braveBirdAction: BattleAction = composeMoveAction(
+        initialBattle.battle_state.blue_side_pokemon[0],
+        "brave-bird",
+        ["red-field-1"]
       );
-      var damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "u-turn",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(27);
-    });
 
-  })
+      test("it boosts the damage correctly", async () => {
+        const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+        initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = 'sharp-beak';
+        const braveBirdActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, braveBirdAction);
+        expect(braveBirdActionDamage.damage).toEqual(186);
+      });
+
+    })
+
+  });
 
   describe("ASSAULT_VEST", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
 
-    test("it reduces the damage correctly", () => {
-      var battleState: BattleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
-      );
-      var damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "energy-ball",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(98);
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [meowscaradaBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
 
-      var battleState: BattleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaquavalBuild, {item_ident: "assault-vest"})
-      );
+    const energyBallAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "energy-ball",
+      ["blue-field-1"]
+    );
 
-      var damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "energy-ball",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(66);
+    test("it reduces the damage correctly", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = "assault-vest";
+      const energyBallActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, energyBallAction);
+      expect(energyBallActionDamage.damage).toEqual(66);
     });
 
   });
 
   describe("EVIOLITE", () => {
+    let quaxwellBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAXWELL_MAX_STATS);
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
 
-    test ("it reduces the damage correctly", () => {
-      let battleState: BattleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaxwellBuild, {item_ident: "leftovers"})
-      );
-      let damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "energy-ball",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(116);
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaxwellBuild],
+      redSidePokemonBuilds: [meowscaradaBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
 
-      battleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaxwellBuild, {item_ident: "eviolite"})
-      );
+    let createdBattle2: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [meowscaradaBuild]
+    });
+    let initialBattle2: Battle = initialStep(createdBattle2);
 
-      damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "energy-ball",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(78);
+    const energyBallAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "energy-ball",
+      ["blue-field-1"]
+    );
+
+    const energyBallAction2: BattleAction = composeMoveAction(
+      initialBattle2.battle_state.red_side_pokemon[0],
+      "energy-ball",
+      ["blue-field-1"]
+    );
+
+    test ("it reduces the damage correctly", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = 'eviolite';
+      const energyBallActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, energyBallAction);
+      expect(energyBallActionDamage.damage).toEqual(78);
     })
 
-    test("it doesn't work on fully evolved mons", () => {
-      let battleState: BattleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaquavalBuild, {item_ident: "leftovers"})
-      );
-      let damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "energy-ball",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(98);
-
-      battleState = createNewBattleState1v1(
-        Object.assign(meowscaradaBuild, {item_ident: "leftovers"}),
-        Object.assign(quaquavalBuild, {item_ident: "eviolite"})
-      );
-
-      damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "energy-ball",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0
-      });
-      expect(damage).toEqual(98);
+    test("it doesn't work on fully evolved mons", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle2));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = 'eviolite';
+      const energyBallActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, energyBallAction2);
+      expect(energyBallActionDamage.damage).toEqual(98);
     });
 
   });
 
-  describe("1.2x TYPE BOOSTING ITEMS", () => {
+  describe("IRON_BALL", () => {
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+    let garchompBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GARCHOMP_ATEAM_BUILD);
 
-    describe("SHARP_BEAK", () => {
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [garchompBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
 
-      it("boosts the damage correctly", () => {
-        let battleState: BattleState = createNewBattleState1v1(
-          Object.assign(talonflameBuild, {item_ident: "leftovers"}),
-          Object.assign(annihilapeBuild, {item_ident: "leftovers"})
-        );
+    const earthquakeAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "earthquake",
+      ["blue-field-1"]
+    );
 
-        let damage = calculateDamage({
-          battleState: battleState,
-          attackingPokemon: battleState.blue_side_pokemon[0],
-          targetPokemon: battleState.red_side_pokemon[0],
-          moveIdent: "brave-bird",
-          hardcodedRandomRoll: 0.85,
-          hardcodedCritRoll: 0
-        });
-        expect(damage).toEqual(156);
-
-        battleState = createNewBattleState1v1(
-          Object.assign(talonflameBuild, {item_ident: "sharp-beak"}),
-          Object.assign(annihilapeBuild, {item_ident: "leftovers"})
-        );
-        damage = calculateDamage({
-          battleState: battleState,
-          attackingPokemon: battleState.blue_side_pokemon[0],
-          targetPokemon: battleState.red_side_pokemon[0],
-          moveIdent: "brave-bird",
-          hardcodedRandomRoll: 0.85,
-          hardcodedCritRoll: 0
-        });
-        expect(damage).toEqual(186);
-      });
-
-    })
+    test("hits flying pokemon for neutral damage", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.blue_side_pokemon[0].item_ident = 'iron-ball';
+      initialBattleCopy.battle_state.red_side_pokemon[0].item_ident = 'leftovers';
+      const earthquakeActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, earthquakeAction);
+      expect(earthquakeActionDamage.damage).toEqual(124);
+    });
 
   });
 
-  describe("IRON_BALL", () => {
+  describe("LIFE_ORB", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
 
-    it("hits flying pokemon for neutral damage", () => {
-      let battleState: BattleState = createNewBattleState1v1(
-        Object.assign(garchompBuild, {item_ident: "leftovers"}),
-        Object.assign(talonflameBuild, {})
-      );
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [meowscaradaBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
 
-      let damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "earthquake",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0,
-        hardcodedTargetingValue: "spread"
-      });
-      expect(damage).toEqual(0);
+    const uTurnAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "u-turn",
+      ["blue-field-1"]
+    );
 
-      battleState.red_side_pokemon[0].item_ident = "iron-ball";
-
-      damage = calculateDamage({
-        battleState: battleState,
-        attackingPokemon: battleState.blue_side_pokemon[0],
-        targetPokemon: battleState.red_side_pokemon[0],
-        moveIdent: "earthquake",
-        hardcodedRandomRoll: 0.85,
-        hardcodedCritRoll: 0,
-        hardcodedTargetingValue: "spread"
-      });
-      expect(damage).toEqual(93);
-
+    test("it multiplies damage correctly", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.red_side_pokemon[0].item_ident = 'life-orb';
+      const uTurnActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, uTurnAction);
+      expect(uTurnActionDamage.damage).toEqual(27);
     });
 
   });
