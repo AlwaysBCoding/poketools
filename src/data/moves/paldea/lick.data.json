@@ -1,0 +1,17 @@
+{
+  "ident": "lick",
+  "type_ident": "ghost",
+  "category_ident": "physical",
+  "base_power": 30,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 30,
+  "description": "Has a 30% chance to paralyze the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "paralyzed",
+      "frequency": 0.30
+    }
+  ]
+}

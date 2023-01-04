@@ -1,0 +1,17 @@
+{
+  "ident": "liquidation",
+  "type_ident": "water",
+  "category_ident": "physical",
+  "base_power": 0.85,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 20% chance to lower the target's Defense by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "defense": -1,
+      "frequency": 0.20
+    }
+  ]
+}

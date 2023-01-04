@@ -1,0 +1,11 @@
+{
+  "ident": "last-resort",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 140,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "This move fails unless the user knows this move and at least one other move, and has used all the other moves it knows at least once each since it became active or Transformed.",
+  "target": "any-adjacent"
+}

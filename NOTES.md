@@ -42,7 +42,7 @@
   - add VGC config
 
   - DEX COMPLETION: (281/400) | 70.25%
-  - MOVE TEMPLATE COMPLETION: (11/26) | 42.30%
+  - MOVE TEMPLATE COMPLETION: (12/26) | 46.15%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/165) | 4.85%
 
@@ -52,7 +52,6 @@
 
 ## Damaging Moves with Custom functionality to add
   - Beat Up (haven't even added the data for this one at all (complex logic))
-  - Belch (cannot use the move until the user has consumed a berry)
   - Body Slam (damage doubles and no accuracy check is performed if target used minimize)
   - Brick Break (destroys screens)
   - Charge (next electric-type attack will have its power doubled)
@@ -80,7 +79,9 @@
   - Helping Hand (increases ally's damage)
   - Ingrain (user cannot switch out, recovers 1/16th HP at end of each turn)
   - Instruct (target uses last used move)
-  - Rage Fist (power is increased every time ape is hit)
+  - Leech Seed (custom DOT on specific slot)
+  - Life Dew (self-and-allies recovery targeting)
+  - Lock-On (makes the target unable to avoid the next-turn user move)
 
 ## Custom Move Behavior Grouping
   - User loses percentage of maximum HP in exchange for stat boosts
@@ -112,6 +113,7 @@
     - Gyro Ball
     - Heat Crash
     - Heavy Slam
+    - Low Kick
   - Damage is conditional on the HP of the user
     - Brine
     - Endeavor
@@ -207,6 +209,12 @@
     - Bug Bite
     - Covet
     - Incinerate
+  - Move cannot be used until a condition has been met
+    - Belch
+    - Last Resort
+  - Base Power increases according to custom counters
+    - Last Respects
+    - Rage Fist
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

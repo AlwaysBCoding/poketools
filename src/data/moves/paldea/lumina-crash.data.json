@@ -1,0 +1,17 @@
+{
+  "ident": "lumina-crash",
+  "type_ident": "psychic",
+  "category_ident": "special",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 100% chance to lower the target's Special Defense by 2 stages.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_defense": -2,
+      "frequency": 1
+    }
+  ]
+}

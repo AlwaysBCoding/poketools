@@ -1,0 +1,14 @@
+{
+  "ident": "life-dew",
+  "type_ident": "water",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "Each Pokemon on the user's side restores 1/4 of its maximum HP, rounded half up.",
+  "target": "self-and-allies",
+  "recovery": {
+    "percentage_of_maximum": 0.25
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "ident": "leer",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 30,
+  "description": "Lowers the target's Defense by 1 stage.",
+  "target": "all-enemies",
+  "stat_changes": [
+    {
+      "defense": -1,
+      "frequency": 1
+    }
+  ]
+}
