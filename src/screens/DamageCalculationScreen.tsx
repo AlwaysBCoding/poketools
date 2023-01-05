@@ -12,6 +12,7 @@ import { calculateDamage } from "../models/battle/damage-calc";
 
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { PokemonBattleStateEditor } from "../components/PokemonBattleStateEditor";
+import { BattleFieldStateEditor } from "../components/BattleFieldStateEditor";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 const allPokemon = AllPokemon as Pokemon[];
@@ -37,7 +38,7 @@ export const DamageCalculationScreen = () => {
   const [defendingTargetingValue, setDefendingTargetingValue] = useState<string>("single");
   const [defendingCriticalHitValue, setDefendingCriticalHitValue] = useState<boolean>(false);
 
-  const emptyBattleState: BattleState = createEmptyBattleState();
+  const [battleState, setBattleState] = useState<BattleState>(createEmptyBattleState());
 
   useEffect(() => {
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
@@ -113,13 +114,17 @@ export const DamageCalculationScreen = () => {
     }
   }
 
+  const updateBattleState = (nextBattleState: BattleState) => {
+    setBattleState(nextBattleState);
+  }
+
   let attackingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
   let defendingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
 
   if(activeAttackingPokemonBattleState && activeDefendingPokemonBattleState) {
     const attackingPokemonDamageCalcsData = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeAttackingPokemonBattleState,
         targetPokemon: activeDefendingPokemonBattleState,
         moveIdent: moveIdent,
@@ -128,7 +133,7 @@ export const DamageCalculationScreen = () => {
         hardcodedTargetingValue: attackingTargetingValue
       });
       const highRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeAttackingPokemonBattleState,
         targetPokemon: activeDefendingPokemonBattleState,
         moveIdent: moveIdent,
@@ -147,7 +152,7 @@ export const DamageCalculationScreen = () => {
     attackingPokemonDamageCalcs[3] = attackingPokemonDamageCalcsData[3] ? attackingPokemonDamageCalcsData[3] : [0, 0];
     const defendingPokemonDamageCalcsData = activeDefendingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeDefendingPokemonBattleState,
         targetPokemon: activeAttackingPokemonBattleState,
         moveIdent: moveIdent,
@@ -156,7 +161,7 @@ export const DamageCalculationScreen = () => {
         hardcodedTargetingValue: defendingTargetingValue
       });
       const highRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeDefendingPokemonBattleState,
         targetPokemon: activeAttackingPokemonBattleState,
         moveIdent: moveIdent,
@@ -177,6 +182,10 @@ export const DamageCalculationScreen = () => {
 
   return (
     <div className="screen damage-calculation-screen">
+      <div className="battle-field-state-container">
+        <BattleFieldStateEditor
+          onBattleFieldStateChange={updateBattleState} />
+      </div>
       <div className="content-section">
         <div className="active-team-section attacking-team">
           <div className="active-team-select">

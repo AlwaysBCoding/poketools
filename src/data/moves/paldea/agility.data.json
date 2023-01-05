@@ -1,7 +1,7 @@
 {
   "ident": "agility",
   "type_ident": "psychic",
-  "category_ident": "non-damaing",
+  "category_ident": "non-damaging",
   "base_power": null,
   "accuracy": null,
   "priority": 0,

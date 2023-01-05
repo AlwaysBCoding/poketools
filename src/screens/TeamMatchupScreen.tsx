@@ -286,6 +286,7 @@ export const TeamMatchupScreen = () => {
           <div className="analysis-section-content">
             {activeAnalysisTable === "speed-tiers" ? (
               <SpeedTiersDisplay
+                battleState={battleState}
                 blueTeam={activeAttackingTeam}
                 redTeam={activeDefendingTeam} />
             ) : (<></>)}

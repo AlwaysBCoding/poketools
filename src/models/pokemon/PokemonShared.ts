@@ -200,6 +200,7 @@ export type PokemonAbilityIdent =
   | "shell-armor"
   | "shield-dust"
   | "simple"
+  | "slush-rush"
   | "snow-cloak"
   | "solar-power"
   | "solid-rock"
