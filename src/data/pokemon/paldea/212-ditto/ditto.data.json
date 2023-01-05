@@ -1,0 +1,24 @@
+{
+  "ident": "ditto",
+  "national_pokedex_number": 132,
+  "paldea_regional_pokedex_number": 212,
+  "evolution_line_ident": "ditto",
+  "evolution_line_index": 0,
+  "primary_type_ident": "normal",
+  "secondary_type_ident": null,
+  "height": 0.3,
+  "weight": 4.0,
+  "genders": ["genderless"],
+  "base_stats": {
+    "hp": 48,
+    "attack": 48,
+    "defense": 48,
+    "special_attack": 48,
+    "special_defense": 48,
+    "speed": 48
+  },
+  "ability_idents": ["limber", "imposter"],
+  "move_idents": [
+    "transform"
+  ]
+}

@@ -11682,6 +11682,146 @@
     ]
   },
   {
+    "ident": "voltorb",
+    "national_pokedex_number": 100,
+    "paldea_regional_pokedex_number": 207,
+    "evolution_line_ident": "voltorb",
+    "evolution_line_index": 0,
+    "primary_type_ident": "electric",
+    "secondary_type_ident": null,
+    "height": 0.5,
+    "weight": 10.4,
+    "genders": [
+      "genderless"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "attack": 30,
+      "defense": 50,
+      "special_attack": 55,
+      "special_defense": 55,
+      "speed": 100
+    },
+    "ability_idents": [
+      "soundproof",
+      "static",
+      "aftermath"
+    ],
+    "move_idents": [
+      "agility",
+      "charge",
+      "charge-beam",
+      "discharge",
+      "eerie-impulse",
+      "electric-terrain",
+      "electro-ball",
+      "endure",
+      "explosion",
+      "facade",
+      "foul-play",
+      "gyro-ball",
+      "helping-hand",
+      "light-screen",
+      "magnet-rise",
+      "metal-sound",
+      "mirror-coat",
+      "protect",
+      "rain-dance",
+      "recycle",
+      "rest",
+      "rollout",
+      "screech",
+      "self-destruct",
+      "sleep-talk",
+      "spark",
+      "substitute",
+      "swift",
+      "tackle",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "thunder-shock",
+      "thunder-wave",
+      "volt-switch",
+      "wild-charge"
+    ]
+  },
+  {
+    "ident": "electrode",
+    "national_pokedex_number": 101,
+    "paldea_regional_pokedex_number": 208,
+    "evolution_line_ident": "voltorb",
+    "evolution_line_index": 1,
+    "primary_type_ident": "electric",
+    "secondary_type_ident": null,
+    "height": 1.2,
+    "weight": 66.6,
+    "genders": [
+      "genderless"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "attack": 50,
+      "defense": 70,
+      "special_attack": 80,
+      "special_defense": 80,
+      "speed": 150
+    },
+    "ability_idents": [
+      "soundproof",
+      "static",
+      "aftermath"
+    ],
+    "move_idents": [
+      "agility",
+      "charge",
+      "charge-beam",
+      "discharge",
+      "eerie-impulse",
+      "electric-terrain",
+      "electro-ball",
+      "endure",
+      "explosion",
+      "facade",
+      "foul-play",
+      "giga-impact",
+      "gyro-ball",
+      "helping-hand",
+      "hyper-beam",
+      "light-screen",
+      "magnetic-flux",
+      "magnet-rise",
+      "metal-sound",
+      "mirror-coat",
+      "protect",
+      "rain-dance",
+      "recycle",
+      "rest",
+      "rollout",
+      "scary-face",
+      "screech",
+      "self-destruct",
+      "sleep-talk",
+      "spark",
+      "substitute",
+      "swift",
+      "tackle",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "thunder-shock",
+      "thunder-wave",
+      "volt-switch",
+      "wild-charge"
+    ]
+  },
+  {
     "ident": "magnemite",
     "national_pokedex_number": 81,
     "paldea_regional_pokedex_number": 209,
@@ -11979,6 +12119,35 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
+    ]
+  },
+  {
+    "ident": "ditto",
+    "national_pokedex_number": 132,
+    "paldea_regional_pokedex_number": 212,
+    "evolution_line_ident": "ditto",
+    "evolution_line_index": 0,
+    "primary_type_ident": "normal",
+    "secondary_type_ident": null,
+    "height": 0.3,
+    "weight": 4,
+    "genders": [
+      "genderless"
+    ],
+    "base_stats": {
+      "hp": 48,
+      "attack": 48,
+      "defense": 48,
+      "special_attack": 48,
+      "special_defense": 48,
+      "speed": 48
+    },
+    "ability_idents": [
+      "limber",
+      "imposter"
+    ],
+    "move_idents": [
+      "transform"
     ]
   },
   {
