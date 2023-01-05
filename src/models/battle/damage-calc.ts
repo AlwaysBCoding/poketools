@@ -94,6 +94,12 @@ export const calculateDamage = ({
       } else if(pokemonMove.type_ident === "water") {
         weather = 0.5
       }
+    } else if(battleState.global_state.weather === "rain") {
+      if(pokemonMove.type_ident === "fire") {
+        weather = 0.5
+      } else if(pokemonMove.type_ident === "water") {
+        weather = 1.5
+      }
     }
   }
 

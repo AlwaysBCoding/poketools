@@ -162,7 +162,42 @@ describe("GAME LOOP", () => {
 describe("WEATHER", () => {
 
   describe("RAIN", () => {
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
 
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [quaquavalBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const flareBlitzAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "flare-blitz",
+      ["red-field-1"]
+    );
+
+    const aquaStepAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "aqua-step",
+      ["blue-field-1"]
+    );
+
+    test("it reduces the damage of fire attacks", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.global_state.weather = "rain";
+      const flareBlitzDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, flareBlitzAction);
+      expect(flareBlitzDamageResult.damage).toEqual(24);
+    });
+
+    test("it multiplies the damage of water attacks", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.global_state.weather = "rain";
+      initialBattleCopy.battle_state.red_side_pokemon[0].stat_boosts.attack = -2;
+      const aquaStepDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, aquaStepAction);
+      expect(aquaStepDamageResult.damage).toEqual(132);
+    });
   });
 
   describe("SANDSTORM", () => {
@@ -209,7 +244,6 @@ describe("WEATHER", () => {
       const aquaStepDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, aquaStepAction);
       expect(aquaStepDamageResult.damage).toEqual(84);
     });
-
   });
 
 })

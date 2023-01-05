@@ -127,6 +127,11 @@ def calculate_damage(
       weather = 1.5
     elif(pokemon_move['type_ident'] == "water"):
       weather = 0.5
+  elif(battle_state.global_state.weather == "rain"):
+    if(pokemon_move['type_ident'] == "fire"):
+      weather = 0.5
+    elif(pokemon_move['type_ident'] == "water"):
+      weather = 1.5
 
   # RANDOM
   # =====================
