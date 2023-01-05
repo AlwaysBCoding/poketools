@@ -13,7 +13,7 @@ import { calculateDamage } from "../models/battle/damage-calc";
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { PokemonBattleStateEditor } from "../components/PokemonBattleStateEditor";
 import { SpeedTiersDisplay } from "../components/SpeedTiersDisplay";
-import { PokemonTeamResistancesDisplay } from "../components/PokemonTeamResistancesDisplay";
+import { BattleFieldStateEditor } from "../components/BattleFieldStateEditor";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 import { MoveCoverageTable } from "../components/MoveCoverageTable";
@@ -40,7 +40,7 @@ export const TeamMatchupScreen = () => {
   const [defendingTargetingValue, setDefendingTargetingValue] = useState<string>("single");
   const [defendingCriticalHitValue, setDefendingCriticalHitValue] = useState<boolean>(false);
 
-  const emptyBattleState: BattleState = createEmptyBattleState();
+  const [battleState, setBattleState] = useState<BattleState>(createEmptyBattleState());
 
   const [activeAnalysisTable, setActiveAnalysisTable] = useState<string>("");
 
@@ -118,13 +118,18 @@ export const TeamMatchupScreen = () => {
     }
   }
 
+  const updateBattleState = (nextBattleState: BattleState) => {
+    setBattleState(nextBattleState);
+  }
+
   let attackingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
   let defendingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
 
   if(activeAttackingPokemonBattleState && activeDefendingPokemonBattleState) {
+    console.log(`RE-ROLLING DAMAGE CALCS`);
     const attackingPokemonDamageCalcsData = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeAttackingPokemonBattleState,
         targetPokemon: activeDefendingPokemonBattleState,
         moveIdent: moveIdent,
@@ -133,7 +138,7 @@ export const TeamMatchupScreen = () => {
         hardcodedTargetingValue: attackingTargetingValue
       });
       const highRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeAttackingPokemonBattleState,
         targetPokemon: activeDefendingPokemonBattleState,
         moveIdent: moveIdent,
@@ -152,7 +157,7 @@ export const TeamMatchupScreen = () => {
     attackingPokemonDamageCalcs[3] = attackingPokemonDamageCalcsData[3] ? attackingPokemonDamageCalcsData[3] : [0, 0];
     const defendingPokemonDamageCalcsData = activeDefendingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeDefendingPokemonBattleState,
         targetPokemon: activeAttackingPokemonBattleState,
         moveIdent: moveIdent,
@@ -161,7 +166,7 @@ export const TeamMatchupScreen = () => {
         hardcodedTargetingValue: defendingTargetingValue
       });
       const highRollDamageAmount = calculateDamage({
-        battleState: emptyBattleState,
+        battleState: battleState,
         attackingPokemon: activeDefendingPokemonBattleState,
         targetPokemon: activeAttackingPokemonBattleState,
         moveIdent: moveIdent,
@@ -182,6 +187,10 @@ export const TeamMatchupScreen = () => {
 
   return (
     <div className="screen team-matchup-screen">
+      <div className="battle-field-state-container">
+        <BattleFieldStateEditor
+          onBattleFieldStateChange={updateBattleState} />
+      </div>
       <div className="content-section">
         <div className="active-team-section attacking-team">
           <div className="active-team-select">

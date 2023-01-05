@@ -43,16 +43,18 @@ export interface PokemonStatBoosts {
 }
 
 export type TerrainState =
+  | "none"
   | "electric"
   | "grassy"
   | "misty"
   | "psychic";
 
 export type WeatherState =
-  | "sun"
+  | "none"
   | "rain"
   | "sandstorm"
-  | "snow";
+  | "snow"
+  | "sun";
 
 export type AuraState =
   | "aura-break"

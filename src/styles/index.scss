@@ -666,6 +666,64 @@ $pokemon-base-stats-cell-width: 50%;
   }
 }
 
+.battle-field-state-editor {
+  height: 100px;
+  width: 100%;
+  background-color: $showdown-light-blue;
+  border: 1px solid $showdown-border-gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .battle-field-state-section {
+    padding: 5px;
+    width: 33.3333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &.blue-team-section {
+      background: linear-gradient(to left, transparent, fade-out(blue, 0.90));
+      .toggle-field { justify-content: flex-start; }
+      .toggle-field-label { text-align: left; }
+    }
+    &.red-team-section {
+      background: linear-gradient(to right, transparent, fade-out(red, 0.90));
+      .toggle-field { justify-content: flex-end; }
+      .toggle-field-label { text-align: right; }
+    }
+
+    &.blue-team-section, &.red-team-section {
+      .toggle-field-label {
+        width: 125px;
+      }
+    }
+
+    &.global-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      .toggle-field-label {
+        width: 70px;
+        text-align: center;
+      }
+      .toggle-select-list {
+        width: 70px;
+      }
+    }
+
+    .toggle-field {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 14px;
+    }
+
+  }
+}
+
 .pokemon-build-usage-data {
 
   font-size: 14px;
@@ -1067,6 +1125,12 @@ $pokemon-base-stats-cell-width: 50%;
 
 .screen.damage-calculation-screen, .screen.team-matchup-screen {
 
+  .battle-field-state-container {
+    margin-left: 200px;
+    margin-right: 205px;
+    margin-bottom: 10px;
+  }
+
   .content-section {
     min-height: 520px;
     display: flex;
@@ -1085,16 +1149,14 @@ $pokemon-base-stats-cell-width: 50%;
     }
 
     .pokemon-battle-state {
+      &.attacking-pokemon {
+        margin-left: 10px;
+      }
       &.defending-pokemon {
         margin-left: 10px;
       }
     }
-  }
 
-  .pokemon-battle-state {
-    &.attacking-pokemon {
-      margin-left: 10px;
-    }
   }
 
   .damage-calcs {
