@@ -83,6 +83,7 @@ def calculate_damage(
   burn = 1
   spread = 1
   critical = 1
+  weather = 1
 
   level = attacking_pokemon.pokemon_build.level
   total_damage = 0
@@ -121,7 +122,11 @@ def calculate_damage(
 
   # WEATHER
   # =====================
-  weather = 1
+  if(battle_state.global_state.weather == "sun"):
+    if(pokemon_move['type_ident'] == "fire"):
+      weather = 1.5
+    elif(pokemon_move['type_ident'] == "water"):
+      weather = 0.5
 
   # RANDOM
   # =====================

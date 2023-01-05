@@ -1,4 +1,6 @@
 ## TODO
+  - synchronize typescript damage calc function in tandem with the python one
+
   - allow dynamic changes of pokemon_build_state while looking at move coverage table in matchup screen
   - add field state such as reflect, terrain, weather etc... to damage calcs and matchup screen
 

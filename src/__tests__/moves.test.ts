@@ -186,6 +186,7 @@ describe("MOVES", () => {
 
     test("it boosts quaquaval's speed after use", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.red_side_pokemon[0].stat_boosts.special_attack = -2;
       const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [aquaStepAction, energyBallAction]);
       expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
       const battleStepResult = await BATTLE_STEP(initialBattleCopy, [aquaStepAction], [energyBallAction]);

@@ -126,7 +126,6 @@ export const TeamMatchupScreen = () => {
   let defendingPokemonDamageCalcs: number[][] = [[0, 0], [0, 0], [0, 0], [0, 0]];
 
   if(activeAttackingPokemonBattleState && activeDefendingPokemonBattleState) {
-    console.log(`RE-ROLLING DAMAGE CALCS`);
     const attackingPokemonDamageCalcsData = activeAttackingPokemonBattleState.pokemon_build.move_idents.map((moveIdent: PokemonMoveIdent) => {
       const lowRollDamageAmount = calculateDamage({
         battleState: battleState,
@@ -292,11 +291,13 @@ export const TeamMatchupScreen = () => {
             ) : (<></>)}
             {activeAnalysisTable === "attacking-move-coverage" ? (
               <MoveCoverageTable
+                battleState={battleState}
                 blueTeam={activeAttackingTeam}
                 redTeam={activeDefendingTeam} />
             ) : (<></>)}
             {activeAnalysisTable === "defensive-move-coverage" ? (
               <MoveCoverageTable
+                battleState={battleState}
                 blueTeam={activeDefendingTeam}
                 redTeam={activeAttackingTeam} />
             ) : (<></>)}

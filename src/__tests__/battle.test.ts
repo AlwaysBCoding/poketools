@@ -33,6 +33,26 @@ const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction,
   return result;
 }
 
+const CALCULATE_DAMAGE = async (battle: Battle, battleAction: BattleAction, random_roll?: number, crit_roll?: number): Promise<Record<string, any>> => {
+  const fetchOptions = {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      battle: battle,
+      battle_action: battleAction,
+      random_roll: random_roll ? random_roll : 0.85,
+      crit_roll: crit_roll ? crit_roll : 0
+    })
+  }
+
+  const response = await fetch(`${SERVER_URI}/test/calculate-damage`, fetchOptions);
+  const result = await response.json();
+  return result;
+}
+
 const BATTLE_STEP = async(battle: Battle, blueBattleActions: BattleAction[], redBattleActions: BattleAction[]): Promise<Record<string, any>> => {
   const fetchOptions = {
     method: "POST",
@@ -138,6 +158,61 @@ describe("GAME LOOP", () => {
   });
 
 });
+
+describe("WEATHER", () => {
+
+  describe("RAIN", () => {
+
+  });
+
+  describe("SANDSTORM", () => {
+
+  });
+
+  describe("SNOW", () => {
+
+  });
+
+  describe("SUN", () => {
+    let talonflameBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(TALONFLAME_ATEAM_BUILD);
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [talonflameBuild],
+      redSidePokemonBuilds: [quaquavalBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const flareBlitzAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "flare-blitz",
+      ["red-field-1"]
+    );
+
+    const aquaStepAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "aqua-step",
+      ["blue-field-1"]
+    );
+
+    test("it multiplies the damage of fire attacks", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.global_state.weather = "sun";
+      const flareBlitzDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, flareBlitzAction);
+      expect(flareBlitzDamageResult.damage).toEqual(75);
+    });
+
+    test("it reduces the damage of water attacks", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      initialBattleCopy.battle_state.global_state.weather = "sun";
+      const aquaStepDamageResult = await CALCULATE_DAMAGE(initialBattleCopy, aquaStepAction);
+      expect(aquaStepDamageResult.damage).toEqual(84);
+    });
+
+  });
+
+})
 
 describe("TERRAINS", () => {
 

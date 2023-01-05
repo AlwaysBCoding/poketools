@@ -67,6 +67,7 @@ export const calculateDamage = ({
   let burn = 1;
   let spread = 1;
   let critical = 1;
+  let weather = 1;
 
   let power = 0;
   if(pokemonMove && pokemonMove.base_power) { power = pokemonMove.base_power; }
@@ -84,7 +85,18 @@ export const calculateDamage = ({
     spread = SPREAD_MODIFIER;
   }
 
-  const weather = 1;
+  // WEATHER
+  // =====================
+  if(pokemonMove) {
+    if(battleState.global_state.weather === "sun") {
+      if(pokemonMove.type_ident === "fire") {
+        weather = 1.5
+      } else if(pokemonMove.type_ident === "water") {
+        weather = 0.5
+      }
+    }
+  }
+
   const random = hardcodedRandomRoll ? hardcodedRandomRoll : RANDOM_ROLLS[Math.floor(Math.random() * 16)];
   const level = attackingPokemon.pokemon_build.level;
 
