@@ -1,9 +1,20 @@
 ## TODO
   - synchronize typescript damage calc function in tandem with the python one
+    - way to run the damage calc tests from typescript
 
-  - allow dynamic changes of pokemon_build_state while looking at move coverage table in matchup screen
+  - * BLITZ THROUGH ADDING DAMAGE ONLY ABILITIES/ITEMS *
+  - * SHIP THE DAMAGE CALCULATOR AS THE FIRST GOAL *
+
+  - implement choice items in damage/speed calcs
 
   - add field state such as reflect, terrain, weather etc... to damage calcs and matchup screen
+    - started doing this -- not completed yet
+    - Implement conditional behavior based on each terrain
+    - implement conditional defense buffs on snow/sandstorm
+
+  - implement status conditions
+
+  ---------------------
 
   - implement VGC game logic
   - implement targeting logic
@@ -12,6 +23,8 @@
   - search teams for specific combinations/leads
     - practice against leads on various teams
   - train VGC AI
+
+  - allow dynamic changes of pokemon_build_state while looking at move coverage table in matchup screen
 
   - AI to find best item / ability / nature / spread / moves for a pokemon against specific teams?
     - Can add 1 of X pokemon, figure out which one.
@@ -38,17 +51,12 @@
   - close combat stil lowers stats even if it hits gholdengo for 0 damage
     - need a concept of whether or not a move is successful?
 
-  - implement status conditions
-
   - implement secondary effects of moves being able to create status conditions
 
   - implement prankster thunder wave failing against a dark type and the general idea of moves failing.
 
   - cull things the AI should never do (like setting light-screen when light-screen is still active)
     - find a way to completely disallow obviously dumb? actions
-
-  - Implement conditional behavior based on each terrain
-  - Implement conditional behavior based on each weather
 
   - Implement Accuracy (stat stage & accuracy rolls)
   - Implement Evasiveness (stat stage & accuracy rolls)

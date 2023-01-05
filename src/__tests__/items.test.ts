@@ -155,6 +155,18 @@ describe("ITEMS", () => {
 
   });
 
+  describe("CHOICE BAND", () => {
+    // TODO: IMPLEMENT DAMAGE CALCS
+  });
+
+  describe("CHOICE SCARF", () => {
+    // TODO: IMPLEMENT SPEED CALCS
+  });
+
+  describe("CHOICE SPECS", () => {
+    // TODO: IMPLEMENT DAMAGE CALCS
+  });
+
   describe("EVIOLITE", () => {
     let quaxwellBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAXWELL_MAX_STATS);
     let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
