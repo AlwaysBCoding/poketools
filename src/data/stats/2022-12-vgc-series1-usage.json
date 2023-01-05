@@ -1,0 +1,7936 @@
+[{
+	"ident": "meowscarada",
+	"abilities": [
+		["overgrow", 79.82],
+		["protean", 20.18]
+	],
+	"items": [
+		["focus-sash", 66.43],
+		["choice-band", 17.869],
+		["life-orb", 13.302]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 41.634],
+		["jolly", [0, 252, 0, 0, 4, 252], 20.528],
+		["adamant", [4, 252, 0, 0, 0, 252], 9.368],
+		["jolly", [0, 252, 4, 0, 0, 252], 8.434],
+		["adamant", [0, 252, 0, 0, 4, 252], 2.826],
+		["adamant", [0, 252, 4, 0, 0, 252], 2.628]
+	],
+	"moves": [
+		["flower-trick", 99.685],
+		["knock-off", 96.053],
+		["protect", 71.847],
+		["sucker-punch", 61.526],
+		["u-turn", 23.857],
+		["trick-room", 15.737],
+		["play-rough", 10.839],
+		["brick-break", 8.341]
+	],
+	"teammates": [
+		["dondozo", 42.691],
+		["tatsugiri", 42.504],
+		["sylveon", 39.961],
+		["gholdengo", 37.678],
+		["dragonite", 18.284],
+		["murkrow", 16.408],
+		["arcanine", 15.883],
+		["armarouge", 14.635],
+		["talonflame", 14.431],
+		["maushold", 14.363],
+		["annihilape", 13.82]
+	]
+}, {
+	"ident": "gholdengo",
+	"abilities": [
+		["good-as-gold", 100.0]
+	],
+	"items": [
+		["choice-specs", 42.464],
+		["life-orb", 20.901],
+		["choice-scarf", 19.397],
+		["sitrus-berry", 4.943],
+		["weakness-policy", 3.466],
+		["leftovers", 3.389],
+		["metal-coat", 1.978]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 15.892],
+		["modest", [116, 0, 4, 132, 4, 252], 7.417],
+		["timid", [0, 0, 0, 252, 4, 252], 5.707],
+		["modest", [4, 0, 0, 252, 0, 252], 4.698],
+		["timid", [44, 0, 4, 252, 4, 204], 3.959],
+		["modest", [252, 0, 0, 252, 4, 0], 3.636]
+	],
+	"moves": [
+		["make-it-rain", 99.94],
+		["shadow-ball", 98.175],
+		["protect", 37.467],
+		["thunderbolt", 37.335],
+		["power-gem", 25.806],
+		["dazzling-gleam", 21.834],
+		["nasty-plot", 21.047],
+		["trick", 16.421],
+		["tera-blast", 12.873],
+		["steel-beam", 8.695],
+		["flash-cannon", 7.321]
+	],
+	"teammates": [
+		["meowscarada", 40.542],
+		["murkrow", 33.159],
+		["hydreigon", 28.724],
+		["dondozo", 26.539],
+		["sylveon", 24.937],
+		["tatsugiri", 22.424],
+		["garchomp", 19.95],
+		["maushold", 18.633],
+		["talonflame", 18.501],
+		["amoonguss", 17.503],
+		["annihilape", 17.263]
+	]
+}, {
+	"ident": "sylveon",
+	"abilities": [
+		["pixilate", 99.937],
+		["cute-charm", 0.063]
+	],
+	"items": [
+		["babiri-berry", 28.143],
+		["throat-spray", 27.737],
+		["choice-specs", 20.007],
+		["leftovers", 9.736],
+		["sitrus-berry", 6.479],
+		["safety-goggles", 4.507]
+	],
+	"spreads": [
+		["modest", [164, 0, 252, 84, 4, 4], 11.797],
+		["quiet", [164, 4, 252, 84, 4, 0], 10.026],
+		["modest", [252, 0, 116, 52, 4, 84], 5.827],
+		["modest", [204, 0, 4, 156, 4, 140], 5.39],
+		["modest", [164, 0, 172, 156, 4, 12], 3.888],
+		["modest", [164, 0, 188, 76, 4, 76], 3.568]
+	],
+	"moves": [
+		["hyper-voice", 99.904],
+		["tera-blast", 80.952],
+		["protect", 59.911],
+		["quick-attack", 51.992],
+		["yawn", 25.262],
+		["detect", 19.4],
+		["hyper-beam", 17.49],
+		["sleep-talk", 15.644],
+		["calm-mind", 8.932],
+		["substitute", 4.912]
+	],
+	"teammates": [
+		["meowscarada", 56.652],
+		["dondozo", 55.713],
+		["tatsugiri", 50.301],
+		["gholdengo", 32.856],
+		["talonflame", 24.587],
+		["kingambit", 20.635],
+		["armarouge", 19.784],
+		["arcanine", 18.755],
+		["garchomp", 17.356],
+		["annihilape", 14.317],
+		["dragonite", 11.505]
+	]
+}, {
+	"ident": "annihilape",
+	"abilities": [
+		["defiant", 68.567],
+		["vital-spirit", 29.583],
+		["inner-focus", 1.85]
+	],
+	"items": [
+		["leftovers", 41.237],
+		["choice-scarf", 27.733],
+		["sitrus-berry", 7.736],
+		["assault-vest", 7.375],
+		["safety-goggles", 6.038],
+		["lum-berry", 5.572]
+	],
+	"spreads": [
+		["jolly", [252, 4, 0, 0, 0, 252], 17.002],
+		["careful", [180, 4, 92, 0, 76, 156], 5.769],
+		["adamant", [244, 36, 36, 0, 156, 36], 5.386],
+		["adamant", [148, 172, 4, 0, 4, 180], 4.552],
+		["careful", [252, 12, 164, 0, 76, 4], 3.684],
+		["adamant", [236, 116, 12, 0, 4, 140], 3.652]
+	],
+	"moves": [
+		["rage-fist", 77.901],
+		["drain-punch", 67.131],
+		["bulk-up", 63.054],
+		["protect", 58.021],
+		["close-combat", 29.639],
+		["final-gambit", 28.717],
+		["shadow-claw", 20.43],
+		["u-turn", 19.556],
+		["brick-break", 11.299],
+		["ice-punch", 5.76]
+	],
+	"teammates": [
+		["maushold", 39.209],
+		["grimmsnarl", 34.907],
+		["amoonguss", 29.96],
+		["armarouge", 28.051],
+		["hydreigon", 26.951],
+		["gholdengo", 22.728],
+		["murkrow", 19.697],
+		["meowscarada", 19.579],
+		["indeedee-f", 19.371],
+		["sylveon", 14.307],
+		["garchomp", 13.423]
+	]
+}, {
+	"ident": "dondozo",
+	"abilities": [
+		["unaware", 99.274],
+		["oblivious", 0.573],
+		["water-veil", 0.153]
+	],
+	"items": [
+		["leftovers", 82.767],
+		["chesto-berry", 8.678],
+		["safety-goggles", 3.616]
+	],
+	"spreads": [
+		["adamant", [0, 252, 0, 0, 4, 252], 27.632],
+		["adamant", [116, 156, 0, 0, 0, 236], 8.119],
+		["relaxed", [140, 0, 116, 0, 252, 0], 8.088],
+		["adamant", [4, 252, 4, 0, 4, 244], 7.185],
+		["adamant", [116, 156, 4, 0, 4, 228], 3.353],
+		["adamant", [12, 252, 4, 0, 4, 236], 3.208]
+	],
+	"moves": [
+		["protect", 74.073],
+		["wave-crash", 70.308],
+		["order-up", 60.713],
+		["earthquake", 51.467],
+		["tera-blast", 48.646],
+		["substitute", 29.676],
+		["rest", 20.401],
+		["yawn", 12.443],
+		["fissure", 11.338],
+		["sleep-talk", 9.036]
+	],
+	"teammates": [
+		["tatsugiri", 87.046],
+		["meowscarada", 67.157],
+		["sylveon", 61.819],
+		["gholdengo", 38.799],
+		["talonflame", 25.771],
+		["arcanine", 23.82],
+		["dragonite", 21.212],
+		["kingambit", 17.047],
+		["annihilape", 12.345],
+		["volcarona", 11.71],
+		["grimmsnarl", 9.022]
+	]
+}, {
+	"ident": "tatsugiri",
+	"abilities": [
+		["commander", 94.802],
+		["storm-drain", 5.198]
+	],
+	"items": [
+		["choice-scarf", 65.22],
+		["focus-sash", 26.848],
+		["sitrus-berry", 3.2]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 25.28],
+		["timid", [0, 0, 0, 252, 4, 252], 15.272],
+		["timid", [0, 0, 4, 252, 0, 252], 13.767],
+		["timid", [0, 0, 36, 252, 0, 220], 12.986],
+		["modest", [4, 0, 0, 252, 0, 252], 8.4],
+		["modest", [0, 0, 4, 252, 0, 252], 4.785]
+	],
+	"moves": [
+		["draco-meteor", 99.501],
+		["muddy-water", 97.698],
+		["icy-wind", 85.214],
+		["hydro-pump", 34.821],
+		["protect", 33.095],
+		["dragon-pulse", 16.877],
+		["soak", 14.556]
+	],
+	"teammates": [
+		["dondozo", 92.703],
+		["meowscarada", 71.208],
+		["sylveon", 59.442],
+		["gholdengo", 34.914],
+		["arcanine", 25.357],
+		["dragonite", 22.543],
+		["talonflame", 21.074],
+		["kingambit", 18.131],
+		["volcarona", 12.47],
+		["tyranitar", 8.468],
+		["lycanroc", 7.303]
+	]
+}, {
+	"ident": "hydreigon",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["life-orb", 37.784],
+		["scope-lens", 26.163],
+		["assault-vest", 16.402],
+		["choice-specs", 9.549],
+		["razor-claw", 3.471],
+		["leftovers", 1.19],
+		["haban-berry", 1.091]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 21.479],
+		["timid", [0, 0, 0, 252, 4, 252], 12.166],
+		["modest", [4, 0, 0, 252, 0, 252], 7.096],
+		["modest", [188, 0, 4, 116, 4, 196], 7.031],
+		["modest", [60, 0, 0, 196, 0, 252], 4.218],
+		["timid", [12, 0, 4, 236, 4, 252], 3.381]
+	],
+	"moves": [
+		["draco-meteor", 97.792],
+		["dark-pulse", 71.931],
+		["protect", 57.747],
+		["heat-wave", 48.818],
+		["snarl", 31.632],
+		["focus-energy", 29.632],
+		["flash-cannon", 25.167],
+		["tailwind", 15.623],
+		["flamethrower", 5.775]
+	],
+	"teammates": [
+		["gholdengo", 46.089],
+		["amoonguss", 41.397],
+		["murkrow", 36.866],
+		["annihilape", 32.846],
+		["maushold", 31.601],
+		["armarouge", 22.448],
+		["meowscarada", 21.85],
+		["garchomp", 20.04],
+		["azumarill", 17.598],
+		["skeledirge", 12.042],
+		["grimmsnarl", 11.397]
+	]
+}, {
+	"ident": "amoonguss",
+	"abilities": [
+		["regenerator", 96.993],
+		["effect-spore", 3.007]
+	],
+	"items": [
+		["rocky-helmet", 55.576],
+		["mental-herb", 8.581],
+		["eject-pack", 7.425],
+		["aguav-berry", 6.276],
+		["sitrus-berry", 4.867],
+		["wiki-berry", 3.564],
+		["occa-berry", 3.331],
+		["black-sludge", 2.349],
+		["coba-berry", 1.533],
+		["eject-button", 1.489],
+		["room-service", 0.908]
+	],
+	"spreads": [
+		["sassy", [252, 0, 180, 0, 76, 0], 10.658],
+		["relaxed", [252, 0, 156, 0, 100, 0], 9.545],
+		["bold", [236, 0, 188, 0, 84, 0], 9.185],
+		["sassy", [252, 0, 100, 0, 156, 0], 7.751],
+		["relaxed", [236, 0, 156, 0, 116, 0], 6.021],
+		["bold", [236, 0, 156, 0, 116, 0], 4.939]
+	],
+	"moves": [
+		["spore", 99.951],
+		["rage-powder", 98.946],
+		["pollen-puff", 75.328],
+		["clear-smog", 59.485],
+		["protect", 43.199],
+		["leaf-storm", 8.964]
+	],
+	"teammates": [
+		["hydreigon", 42.718],
+		["annihilape", 37.678],
+		["gholdengo", 28.98],
+		["kingambit", 22.349],
+		["maushold", 21.971],
+		["armarouge", 20.355],
+		["grimmsnarl", 16.022],
+		["pelipper", 15.583],
+		["garchomp", 14.586],
+		["palafin", 13.574],
+		["azumarill", 13.038]
+	]
+}, {
+	"ident": "murkrow",
+	"abilities": [
+		["prankster", 99.65],
+		["insomnia", 0.35],
+		["super-luck", 0.0]
+	],
+	"items": [
+		["eviolite", 92.619],
+		["covert-cloak", 2.602]
+	],
+	"spreads": [
+		["bold", [252, 0, 252, 0, 4, 0], 11.674],
+		["impish", [252, 0, 252, 0, 4, 0], 5.465],
+		["bold", [252, 0, 140, 0, 116, 0], 5.318],
+		["bold", [252, 0, 252, 0, 0, 4], 5.271],
+		["calm", [252, 0, 100, 4, 140, 12], 4.545],
+		["calm", [36, 0, 252, 0, 220, 0], 4.239]
+	],
+	"moves": [
+		["tailwind", 99.452],
+		["haze", 97.704],
+		["foul-play", 91.13],
+		["taunt", 43.62],
+		["quash", 23.349],
+		["protect", 8.447],
+		["brave-bird", 7.958],
+		["sunny-day", 6.809],
+		["icy-wind", 5.469]
+	],
+	"teammates": [
+		["gholdengo", 57.825],
+		["hydreigon", 40.067],
+		["garchomp", 36.697],
+		["meowscarada", 30.788],
+		["maushold", 28.41],
+		["annihilape", 26.09],
+		["armarouge", 23.538],
+		["indeedee-f", 19.379],
+		["dragonite", 14.468],
+		["sylveon", 11.577],
+		["amoonguss", 11.12]
+	]
+}, {
+	"ident": "garchomp",
+	"abilities": [
+		["rough-skin", 92.631],
+		["sand-veil", 7.369]
+	],
+	"items": [
+		["life-orb", 22.977],
+		["clear-amulet", 22.822],
+		["assault-vest", 12.656],
+		["sitrus-berry", 12.359],
+		["choice-band", 4.047],
+		["haban-berry", 3.909],
+		["soft-sand", 3.894],
+		["choice-scarf", 3.86],
+		["lum-berry", 3.397],
+		["rocky-helmet", 2.22],
+		["expert-belt", 2.191],
+		["bright-powder", 1.85]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 22.796],
+		["jolly", [4, 252, 0, 0, 0, 252], 17.966],
+		["adamant", [228, 84, 20, 0, 68, 108], 8.49],
+		["jolly", [148, 100, 4, 0, 4, 252], 6.907],
+		["jolly", [12, 236, 4, 0, 4, 252], 3.102],
+		["adamant", [252, 156, 44, 0, 4, 52], 2.928]
+	],
+	"moves": [
+		["earthquake", 98.582],
+		["dragon-claw", 87.153],
+		["protect", 76.06],
+		["swords-dance", 39.266],
+		["rock-slide", 38.101],
+		["stomping-tantrum", 22.192],
+		["rock-tomb", 11.415],
+		["tera-blast", 7.219],
+		["iron-head", 6.482]
+	],
+	"teammates": [
+		["murkrow", 40.398],
+		["gholdengo", 38.299],
+		["sylveon", 25.288],
+		["hydreigon", 23.976],
+		["annihilape", 19.572],
+		["kingambit", 18.431],
+		["maushold", 18.089],
+		["arcanine", 17.421],
+		["grimmsnarl", 17.414],
+		["amoonguss", 16.911],
+		["talonflame", 16.823]
+	]
+}, {
+	"ident": "maushold",
+	"abilities": [
+		["technician", 50.927],
+		["friend-guard", 49.069],
+		["cheek-pouch", 0.004]
+	],
+	"items": [
+		["wide-lens", 52.711],
+		["safety-goggles", 15.902],
+		["focus-sash", 14.777],
+		["rocky-helmet", 7.511],
+		["aguav-berry", 5.49]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 25.783],
+		["calm", [252, 0, 44, 0, 212, 0], 8.315],
+		["timid", [252, 0, 4, 0, 0, 252], 7.28],
+		["jolly", [0, 252, 4, 0, 0, 252], 5.386],
+		["jolly", [140, 108, 4, 0, 4, 252], 3.872],
+		["jolly", [140, 4, 76, 0, 36, 252], 3.489]
+	],
+	"moves": [
+		["follow-me", 94.636],
+		["protect", 89.386],
+		["population-bomb", 55.661],
+		["beat-up", 39.712],
+		["encore", 39.299],
+		["feint", 28.584],
+		["taunt", 16.49],
+		["super-fang", 12.466],
+		["charm", 4.67]
+	],
+	"teammates": [
+		["annihilape", 56.512],
+		["hydreigon", 37.373],
+		["gholdengo", 35.359],
+		["murkrow", 30.915],
+		["meowscarada", 29.328],
+		["armarouge", 27.228],
+		["amoonguss", 25.18],
+		["garchomp", 17.881],
+		["indeedee-f", 16.195],
+		["grimmsnarl", 11.838],
+		["dragonite", 10.212]
+	]
+}, {
+	"ident": "armarouge",
+	"abilities": [
+		["flash-fire", 84.436],
+		["weak-armor", 15.564]
+	],
+	"items": [
+		["safety-goggles", 23.754],
+		["covert-cloak", 19.694],
+		["weakness-policy", 17.471],
+		["life-orb", 16.671],
+		["sitrus-berry", 8.347],
+		["focus-sash", 2.607],
+		["choice-scarf", 2.471],
+		["auspicious-armor", 2.447],
+		["choice-specs", 1.229],
+		["clear-amulet", 1.089]
+	],
+	"spreads": [
+		["modest", [244, 0, 68, 116, 68, 12], 8.494],
+		["quiet", [228, 0, 28, 252, 0, 0], 5.319],
+		["modest", [252, 0, 0, 252, 4, 0], 4.988],
+		["modest", [148, 0, 4, 252, 4, 100], 4.97],
+		["bold", [252, 0, 124, 52, 52, 28], 4.714],
+		["quiet", [252, 0, 0, 252, 4, 0], 4.3]
+	],
+	"moves": [
+		["armor-cannon", 83.614],
+		["expanding-force", 79.978],
+		["trick-room", 76.718],
+		["wide-guard", 47.083],
+		["protect", 30.182],
+		["heat-wave", 24.745],
+		["energy-ball", 16.529],
+		["psychic", 16.521],
+		["aura-sphere", 7.507]
+	],
+	"teammates": [
+		["indeedee-f", 54.15],
+		["annihilape", 40.616],
+		["meowscarada", 30.019],
+		["sylveon", 28.624],
+		["maushold", 27.352],
+		["hydreigon", 26.67],
+		["murkrow", 25.73],
+		["amoonguss", 23.435],
+		["kingambit", 17.178],
+		["gholdengo", 15.894],
+		["garchomp", 15.065]
+	]
+}, {
+	"ident": "kingambit",
+	"abilities": [
+		["defiant", 79.871],
+		["supreme-overlord", 20.126],
+		["pressure", 0.003]
+	],
+	"items": [
+		["assault-vest", 46.132],
+		["life-orb", 21.496],
+		["black-glasses", 11.245],
+		["safety-goggles", 9.379],
+		["weakness-policy", 5.511],
+		["sitrus-berry", 2.002]
+	],
+	"spreads": [
+		["adamant", [252, 252, 0, 0, 4, 0], 14.308],
+		["adamant", [252, 196, 4, 0, 52, 4], 9.31],
+		["adamant", [156, 252, 4, 0, 28, 68], 9.043],
+		["brave", [252, 252, 0, 0, 4, 0], 6.983],
+		["adamant", [252, 116, 4, 0, 100, 36], 5.58],
+		["adamant", [252, 252, 0, 0, 0, 4], 4.16]
+	],
+	"moves": [
+		["iron-head", 99.767],
+		["sucker-punch", 97.951],
+		["kowtow-cleave", 93.124],
+		["protect", 51.071],
+		["brick-break", 24.335],
+		["low-kick", 12.675],
+		["tera-blast", 12.537]
+	],
+	"teammates": [
+		["sylveon", 32.022],
+		["meowscarada", 28.987],
+		["amoonguss", 27.598],
+		["dondozo", 23.842],
+		["tatsugiri", 23.81],
+		["garchomp", 19.631],
+		["armarouge", 18.425],
+		["volcarona", 16.11],
+		["pelipper", 13.933],
+		["dragonite", 12.902],
+		["annihilape", 12.307]
+	]
+}, {
+	"ident": "grimmsnarl",
+	"abilities": [
+		["prankster", 94.115],
+		["frisk", 4.772],
+		["pickpocket", 1.113]
+	],
+	"items": [
+		["light-clay", 83.715],
+		["babiri-berry", 9.977],
+		["wide-lens", 1.153],
+		["assault-vest", 1.033]
+	],
+	"spreads": [
+		["sassy", [196, 0, 116, 0, 196, 0], 10.086],
+		["adamant", [228, 244, 4, 0, 4, 28], 8.871],
+		["careful", [252, 4, 0, 0, 252, 0], 5.222],
+		["careful", [244, 4, 124, 0, 116, 20], 5.178],
+		["careful", [252, 4, 52, 0, 172, 28], 4.533],
+		["impish", [252, 4, 156, 0, 36, 60], 4.431]
+	],
+	"moves": [
+		["light-screen", 88.094],
+		["reflect", 87.973],
+		["spirit-break", 80.98],
+		["taunt", 29.472],
+		["fake-out", 26.614],
+		["sucker-punch", 24.518],
+		["thunder-wave", 22.04],
+		["parting-shot", 18.612],
+		["misty-terrain", 8.244]
+	],
+	"teammates": [
+		["annihilape", 65.37],
+		["amoonguss", 23.858],
+		["gholdengo", 23.515],
+		["talonflame", 23.441],
+		["garchomp", 22.365],
+		["volcarona", 19.982],
+		["sylveon", 19.558],
+		["meowscarada", 18.15],
+		["skeledirge", 17.583],
+		["hydreigon", 17.513],
+		["maushold", 15.381]
+	]
+}, {
+	"ident": "arcanine",
+	"abilities": [
+		["intimidate", 86.342],
+		["flash-fire", 13.23],
+		["justified", 0.428]
+	],
+	"items": [
+		["choice-band", 35.038],
+		["assault-vest", 15.335],
+		["sitrus-berry", 15.282],
+		["aguav-berry", 10.595],
+		["iapapa-berry", 6.622],
+		["eject-button", 4.288],
+		["safety-goggles", 4.27],
+		["wide-lens", 2.948],
+		["life-orb", 2.409]
+	],
+	"spreads": [
+		["adamant", [196, 236, 76, 0, 0, 0], 20.552],
+		["jolly", [244, 4, 20, 0, 20, 220], 9.583],
+		["jolly", [52, 252, 4, 0, 4, 196], 5.659],
+		["adamant", [252, 156, 12, 0, 84, 4], 5.387],
+		["adamant", [244, 156, 4, 0, 92, 12], 4.147],
+		["adamant", [252, 156, 12, 0, 12, 76], 3.818]
+	],
+	"moves": [
+		["flare-blitz", 94.907],
+		["extreme-speed", 77.251],
+		["snarl", 51.831],
+		["close-combat", 47.309],
+		["protect", 45.372],
+		["will-o-wisp", 32.827],
+		["wild-charge", 19.62],
+		["play-rough", 7.033],
+		["psychic-fangs", 6.562]
+	],
+	"teammates": [
+		["meowscarada", 47.366],
+		["dondozo", 45.157],
+		["tatsugiri", 45.137],
+		["sylveon", 39.452],
+		["gholdengo", 30.314],
+		["garchomp", 25.151],
+		["dragonite", 24.145],
+		["annihilape", 19.906],
+		["amoonguss", 18.358],
+		["grimmsnarl", 16.481],
+		["murkrow", 14.296]
+	]
+}, {
+	"ident": "indeedee-f",
+	"abilities": [
+		["psychic-surge", 95.027],
+		["synchronize", 4.897],
+		["own-tempo", 0.076]
+	],
+	"items": [
+		["psychic-seed", 30.324],
+		["focus-sash", 16.531],
+		["colbur-berry", 14.557],
+		["rocky-helmet", 10.766],
+		["sitrus-berry", 9.229],
+		["safety-goggles", 7.503],
+		["terrain-extender", 6.188]
+	],
+	"spreads": [
+		["bold", [252, 0, 252, 0, 4, 0], 25.367],
+		["quiet", [252, 0, 4, 252, 0, 0], 8.391],
+		["relaxed", [252, 0, 252, 0, 4, 0], 7.507],
+		["bold", [252, 0, 252, 0, 0, 4], 5.963],
+		["bold", [252, 0, 196, 4, 52, 4], 4.528],
+		["timid", [0, 0, 4, 252, 0, 252], 4.01]
+	],
+	"moves": [
+		["follow-me", 99.044],
+		["trick-room", 59.691],
+		["helping-hand", 57.486],
+		["dazzling-gleam", 55.868],
+		["psychic", 42.059],
+		["protect", 41.383],
+		["heal-pulse", 12.142],
+		["shadow-ball", 5.981],
+		["psyshock", 5.561],
+		["fake-out", 5.379]
+	],
+	"teammates": [
+		["armarouge", 77.932],
+		["annihilape", 40.365],
+		["meowscarada", 31.144],
+		["murkrow", 30.488],
+		["maushold", 23.414],
+		["sylveon", 21.764],
+		["amoonguss", 16.305],
+		["hydreigon", 15.597],
+		["torkoal", 14.891],
+		["gholdengo", 12.604],
+		["garchomp", 10.124]
+	]
+}, {
+	"ident": "dragonite",
+	"abilities": [
+		["inner-focus", 51.816],
+		["multiscale", 48.184]
+	],
+	"items": [
+		["assault-vest", 40.889],
+		["choice-band", 29.972],
+		["lum-berry", 6.909],
+		["life-orb", 6.878],
+		["weakness-policy", 4.851],
+		["safety-goggles", 3.713],
+		["sharp-beak", 1.765],
+		["silk-scarf", 1.338]
+	],
+	"spreads": [
+		["adamant", [252, 252, 4, 0, 0, 0], 17.868],
+		["adamant", [252, 252, 0, 0, 0, 4], 12.564],
+		["adamant", [252, 252, 0, 0, 4, 0], 7.943],
+		["adamant", [196, 252, 0, 0, 0, 60], 7.186],
+		["adamant", [244, 252, 4, 0, 4, 4], 6.685],
+		["adamant", [108, 252, 4, 0, 4, 140], 4.589]
+	],
+	"moves": [
+		["extreme-speed", 98.083],
+		["dragon-claw", 52.491],
+		["ice-spinner", 42.314],
+		["fire-punch", 40.745],
+		["brick-break", 27.627],
+		["low-kick", 26.128],
+		["earthquake", 21.152],
+		["protect", 13.127],
+		["tera-blast", 11.921],
+		["aerial-ace", 11.031],
+		["outrage", 10.687],
+		["stomping-tantrum", 10.113],
+		["dragon-dance", 8.206],
+		["roost", 3.967],
+		["thunder-punch", 3.94]
+	],
+	"teammates": [
+		["meowscarada", 54.703],
+		["gholdengo", 42.178],
+		["dondozo", 40.342],
+		["tatsugiri", 40.258],
+		["sylveon", 24.279],
+		["arcanine", 24.223],
+		["murkrow", 23.068],
+		["annihilape", 20.246],
+		["kingambit", 17.546],
+		["volcarona", 17.256],
+		["maushold", 14.963]
+	]
+}, {
+	"ident": "talonflame",
+	"abilities": [
+		["gale-wings", 99.192],
+		["flame-body", 0.808]
+	],
+	"items": [
+		["sharp-beak", 44.753],
+		["covert-cloak", 30.913],
+		["expert-belt", 13.173],
+		["life-orb", 3.845],
+		["safety-goggles", 1.76],
+		["focus-sash", 1.517]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 49.328],
+		["jolly", [0, 252, 0, 0, 4, 252], 21.888],
+		["jolly", [252, 4, 0, 0, 0, 252], 7.177],
+		["jolly", [4, 244, 4, 0, 4, 252], 2.881],
+		["timid", [252, 0, 0, 44, 0, 212], 2.351],
+		["adamant", [220, 252, 4, 0, 4, 28], 2.07]
+	],
+	"moves": [
+		["tailwind", 99.491],
+		["brave-bird", 94.325],
+		["will-o-wisp", 56.902],
+		["protect", 50.736],
+		["flare-blitz", 32.424],
+		["taunt", 26.802],
+		["quick-guard", 14.418],
+		["feint", 13.906]
+	],
+	"teammates": [
+		["sylveon", 58.005],
+		["gholdengo", 57.506],
+		["dondozo", 54.791],
+		["meowscarada", 48.266],
+		["tatsugiri", 42.07],
+		["annihilape", 29.67],
+		["grimmsnarl", 29.551],
+		["garchomp", 27.238],
+		["kingambit", 12.073],
+		["maushold", 11.866],
+		["cryogonal", 11.476]
+	]
+}, {
+	"ident": "volcarona",
+	"abilities": [
+		["flame-body", 99.541],
+		["swarm", 0.459]
+	],
+	"items": [
+		["sitrus-berry", 26.469],
+		["leftovers", 16.316],
+		["choice-specs", 14.542],
+		["rocky-helmet", 14.329],
+		["safety-goggles", 5.957],
+		["aguav-berry", 4.803],
+		["expert-belt", 4.328],
+		["focus-sash", 3.848],
+		["life-orb", 3.792],
+		["covert-cloak", 1.758]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 11.445],
+		["modest", [116, 0, 108, 36, 4, 244], 7.746],
+		["bold", [244, 0, 196, 4, 60, 4], 5.376],
+		["timid", [196, 0, 228, 36, 4, 44], 5.331],
+		["timid", [4, 0, 20, 228, 4, 252], 5.203],
+		["bold", [212, 0, 196, 4, 60, 36], 5.133]
+	],
+	"moves": [
+		["heat-wave", 55.081],
+		["protect", 53.687],
+		["quiver-dance", 48.195],
+		["struggle-bug", 43.675],
+		["giga-drain", 31.842],
+		["rage-powder", 28.742],
+		["bug-buzz", 26.133],
+		["overheat", 23.874],
+		["tera-blast", 20.822],
+		["fiery-dance", 18.004],
+		["flamethrower", 16.72],
+		["will-o-wisp", 11.437],
+		["tailwind", 11.04]
+	],
+	"teammates": [
+		["meowscarada", 36.969],
+		["grimmsnarl", 27.831],
+		["dondozo", 27.506],
+		["tatsugiri", 27.503],
+		["kingambit", 27.057],
+		["amoonguss", 25.748],
+		["annihilape", 24.911],
+		["sylveon", 22.905],
+		["dragonite", 21.312],
+		["garchomp", 17.804],
+		["baxcalibur", 16.743]
+	]
+}, {
+	"ident": "azumarill",
+	"abilities": [
+		["huge-power", 78.911],
+		["sap-sipper", 21.077],
+		["thick-fat", 0.012]
+	],
+	"items": [
+		["assault-vest", 44.335],
+		["sitrus-berry", 40.594],
+		["choice-band", 5.28],
+		["mystic-water", 3.616],
+		["safety-goggles", 2.855]
+	],
+	"spreads": [
+		["adamant", [252, 252, 0, 0, 0, 4], 17.775],
+		["adamant", [252, 252, 0, 0, 4, 0], 8.939],
+		["relaxed", [252, 0, 252, 0, 4, 0], 6.984],
+		["adamant", [156, 236, 0, 0, 0, 116], 5.466],
+		["brave", [204, 252, 52, 0, 0, 0], 4.975],
+		["adamant", [228, 156, 4, 0, 4, 116], 4.974]
+	],
+	"moves": [
+		["aqua-jet", 81.471],
+		["play-rough", 78.9],
+		["liquidation", 73.497],
+		["protect", 47.11],
+		["perish-song", 33.502],
+		["ice-spinner", 32.689],
+		["sing", 18.302],
+		["brick-break", 9.268],
+		["dig", 5.608]
+	],
+	"teammates": [
+		["hydreigon", 41.121],
+		["meowscarada", 34.917],
+		["amoonguss", 29.522],
+		["annihilape", 28.648],
+		["skeledirge", 24.891],
+		["murkrow", 21.247],
+		["gholdengo", 21.114],
+		["grimmsnarl", 20.617],
+		["armarouge", 19.405],
+		["maushold", 17.549],
+		["gothitelle", 17.307]
+	]
+}, {
+	"ident": "baxcalibur",
+	"abilities": [
+		["thermal-exchange", 99.659],
+		["ice-body", 0.341]
+	],
+	"items": [
+		["clear-amulet", 32.675],
+		["loaded-dice", 29.953],
+		["figy-berry", 11.01],
+		["assault-vest", 10.753],
+		["expert-belt", 6.367],
+		["life-orb", 3.655],
+		["sitrus-berry", 2.234]
+	],
+	"spreads": [
+		["adamant", [228, 196, 4, 0, 60, 20], 15.507],
+		["adamant", [0, 252, 100, 0, 156, 0], 8.936],
+		["adamant", [228, 252, 4, 0, 4, 20], 7.026],
+		["adamant", [252, 196, 4, 0, 4, 52], 6.603],
+		["adamant", [220, 252, 0, 0, 0, 36], 6.385],
+		["adamant", [12, 196, 60, 0, 4, 236], 4.599]
+	],
+	"moves": [
+		["protect", 85.67],
+		["glaive-rush", 84.872],
+		["ice-shard", 80.371],
+		["icicle-spear", 41.673],
+		["tera-blast", 38.357],
+		["swords-dance", 22.218],
+		["dragon-dance", 15.676],
+		["earthquake", 12.878]
+	],
+	"teammates": [
+		["meowscarada", 52.477],
+		["gholdengo", 49.371],
+		["mimikyu", 44.013],
+		["tauros-paldea-water", 38.423],
+		["garganacl", 31.847],
+		["amoonguss", 22.142],
+		["volcarona", 21.539],
+		["dondozo", 18.64],
+		["tatsugiri", 18.627],
+		["kingambit", 17.967],
+		["sylveon", 17.409]
+	]
+}, {
+	"ident": "skeledirge",
+	"abilities": [
+		["unaware", 99.202],
+		["blaze", 0.798]
+	],
+	"items": [
+		["leftovers", 28.02],
+		["sitrus-berry", 20.146],
+		["safety-goggles", 17.011],
+		["throat-spray", 9.384],
+		["mirror-herb", 6.751],
+		["rocky-helmet", 5.679],
+		["iapapa-berry", 4.077],
+		["wiki-berry", 2.1],
+		["assault-vest", 1.656],
+		["quick-claw", 0.829]
+	],
+	"spreads": [
+		["bold", [252, 0, 252, 4, 0, 0], 17.749],
+		["modest", [220, 0, 4, 76, 196, 12], 8.34],
+		["quiet", [140, 0, 36, 236, 92, 0], 7.149],
+		["modest", [252, 0, 60, 108, 4, 84], 6.722],
+		["modest", [252, 0, 60, 116, 4, 76], 3.931],
+		["modest", [140, 0, 252, 76, 4, 36], 3.628]
+	],
+	"moves": [
+		["torch-song", 99.453],
+		["shadow-ball", 85.576],
+		["slack-off", 79.907],
+		["protect", 72.608],
+		["tera-blast", 17.231],
+		["will-o-wisp", 16.387],
+		["hyper-voice", 7.393],
+		["earth-power", 4.629]
+	],
+	"teammates": [
+		["meowscarada", 40.616],
+		["hydreigon", 34.04],
+		["grimmsnarl", 32.347],
+		["azumarill", 30.112],
+		["annihilape", 29.843],
+		["amoonguss", 26.556],
+		["gholdengo", 20.076],
+		["maushold", 19.735],
+		["kingambit", 18.89],
+		["tauros-paldea-fire", 15.088],
+		["avalugg", 15.087]
+	]
+}, {
+	"ident": "pelipper",
+	"abilities": [
+		["drizzle", 99.169],
+		["rain-dish", 0.561],
+		["keen-eye", 0.27]
+	],
+	"items": [
+		["damp-rock", 54.766],
+		["focus-sash", 29.241],
+		["sitrus-berry", 5.972],
+		["safety-goggles", 1.991],
+		["eject-button", 1.432],
+		["sharp-beak", 1.162],
+		["wiki-berry", 1.049]
+	],
+	"spreads": [
+		["bold", [252, 0, 76, 4, 140, 36], 22.714],
+		["timid", [4, 0, 0, 252, 0, 252], 14.497],
+		["modest", [4, 0, 0, 252, 0, 252], 11.619],
+		["bold", [252, 0, 252, 4, 0, 0], 6.024],
+		["modest", [252, 0, 0, 252, 0, 4], 5.837],
+		["modest", [76, 0, 0, 252, 0, 180], 4.317]
+	],
+	"moves": [
+		["hurricane", 99.917],
+		["tailwind", 89.562],
+		["hydro-pump", 72.971],
+		["wide-guard", 56.985],
+		["u-turn", 30.709],
+		["protect", 25.716],
+		["helping-hand", 15.764]
+	],
+	"teammates": [
+		["gholdengo", 53.344],
+		["palafin", 50.656],
+		["amoonguss", 48.486],
+		["kingambit", 35.105],
+		["drednaw", 17.73],
+		["skeledirge", 17.083],
+		["meowscarada", 16.321],
+		["gengar", 16.058],
+		["hydreigon", 14.964],
+		["barraskewda", 14.124],
+		["kilowattrel", 9.431]
+	]
+}, {
+	"ident": "torkoal",
+	"abilities": [
+		["drought", 99.668],
+		["white-smoke", 0.331],
+		["shell-armor", 0.0]
+	],
+	"items": [
+		["charcoal", 39.242],
+		["choice-specs", 19.825],
+		["life-orb", 12.674],
+		["leftovers", 12.146],
+		["assault-vest", 5.56],
+		["lum-berry", 3.435],
+		["heat-rock", 1.885],
+		["safety-goggles", 1.512]
+	],
+	"spreads": [
+		["quiet", [252, 0, 0, 252, 4, 0], 48.718],
+		["quiet", [252, 0, 4, 252, 0, 0], 10.391],
+		["modest", [252, 0, 0, 252, 4, 0], 10.028],
+		["sassy", [252, 0, 4, 0, 252, 0], 7.347],
+		["modest", [244, 0, 4, 252, 4, 4], 3.015],
+		["quiet", [252, 0, 0, 252, 6, 0], 2.669]
+	],
+	"moves": [
+		["eruption", 85.485],
+		["protect", 65.475],
+		["earth-power", 59.855],
+		["heat-wave", 50.653],
+		["solar-beam", 25.709],
+		["flamethrower", 24.119],
+		["clear-smog", 23.854],
+		["body-press", 14.263],
+		["yawn", 10.926],
+		["lava-plume", 10.233],
+		["overheat", 9.365],
+		["fire-blast", 4.658]
+	],
+	"teammates": [
+		["annihilape", 35.16],
+		["armarouge", 27.993],
+		["indeedee-f", 27.99],
+		["meowscarada", 23.081],
+		["hariyama", 21.951],
+		["maushold", 21.129],
+		["farigiraf", 20.776],
+		["oranguru", 18.119],
+		["kingambit", 16.871],
+		["sylveon", 12.034],
+		["azumarill", 11.337]
+	]
+}, {
+	"ident": "tyranitar",
+	"abilities": [
+		["sand-stream", 99.702],
+		["unnerve", 0.298]
+	],
+	"items": [
+		["assault-vest", 40.311],
+		["weakness-policy", 13.649],
+		["lum-berry", 11.32],
+		["life-orb", 5.384],
+		["choice-scarf", 4.881],
+		["clear-amulet", 4.118],
+		["chople-berry", 3.598],
+		["focus-sash", 2.928],
+		["choice-band", 2.872],
+		["safety-goggles", 2.427],
+		["figy-berry", 2.133],
+		["covert-cloak", 1.539]
+	],
+	"spreads": [
+		["adamant", [252, 156, 4, 0, 4, 92], 12.769],
+		["brave", [252, 252, 0, 0, 4, 0], 11.623],
+		["adamant", [252, 252, 0, 0, 4, 0], 4.36],
+		["jolly", [4, 252, 0, 0, 0, 252], 4.256],
+		["adamant", [252, 124, 4, 0, 12, 116], 4.206],
+		["adamant", [4, 252, 0, 0, 0, 252], 3.735]
+	],
+	"moves": [
+		["rock-slide", 99.046],
+		["tera-blast", 63.588],
+		["assurance", 57.11],
+		["ice-punch", 46.877],
+		["protect", 45.806],
+		["crunch", 39.281],
+		["dragon-dance", 9.492],
+		["low-kick", 8.357],
+		["brick-break", 6.856],
+		["earthquake", 4.461]
+	],
+	"teammates": [
+		["lycanroc", 51.416],
+		["dondozo", 28.869],
+		["tatsugiri", 28.791],
+		["meowscarada", 24.688],
+		["rotom-heat", 18.847],
+		["garchomp", 18.414],
+		["gholdengo", 17.878],
+		["sylveon", 15.998],
+		["annihilape", 15.181],
+		["amoonguss", 14.231],
+		["farigiraf", 13.746]
+	]
+}, {
+	"ident": "mimikyu",
+	"abilities": [
+		["disguise", 100.0]
+	],
+	"items": [
+		["life-orb", 80.119],
+		["mental-herb", 6.079],
+		["choice-band", 3.838],
+		["expert-belt", 3.353],
+		["clear-amulet", 2.092]
+	],
+	"spreads": [
+		["adamant", [4, 252, 0, 0, 0, 252], 32.304],
+		["adamant", [100, 252, 4, 0, 4, 148], 11.775],
+		["jolly", [4, 252, 0, 0, 0, 252], 8.863],
+		["adamant", [20, 236, 0, 0, 0, 252], 5.981],
+		["adamant", [228, 252, 4, 0, 20, 4], 4.559],
+		["adamant", [0, 252, 0, 0, 4, 252], 3.888]
+	],
+	"moves": [
+		["play-rough", 98.748],
+		["shadow-sneak", 91.837],
+		["shadow-claw", 75.732],
+		["protect", 61.63],
+		["trick-room", 28.773],
+		["taunt", 11.277],
+		["swords-dance", 7.504],
+		["curse", 7.177]
+	],
+	"teammates": [
+		["baxcalibur", 57.099],
+		["gholdengo", 51.872],
+		["tauros-paldea-water", 45.998],
+		["meowscarada", 44.224],
+		["garganacl", 38.489],
+		["amoonguss", 34.84],
+		["kingambit", 30.683],
+		["hydreigon", 16.363],
+		["annihilape", 14.922],
+		["dondozo", 14.578],
+		["tatsugiri", 14.548]
+	]
+}, {
+	"ident": "garganacl",
+	"abilities": [
+		["purifying-salt", 98.703],
+		["clear-body", 1.017],
+		["sturdy", 0.28]
+	],
+	"items": [
+		["leftovers", 84.644],
+		["sitrus-berry", 7.474],
+		["aguav-berry", 2.816],
+		["iapapa-berry", 1.679]
+	],
+	"spreads": [
+		["careful", [252, 0, 20, 0, 236, 0], 21.0],
+		["impish", [252, 0, 20, 0, 236, 0], 14.185],
+		["careful", [252, 0, 100, 0, 156, 0], 6.499],
+		["careful", [252, 4, 4, 0, 244, 4], 6.23],
+		["relaxed", [252, 0, 76, 0, 180, 0], 5.452],
+		["relaxed", [252, 0, 4, 0, 252, 0], 4.702]
+	],
+	"moves": [
+		["salt-cure", 97.271],
+		["recover", 93.107],
+		["wide-guard", 83.16],
+		["protect", 57.372],
+		["body-press", 39.199],
+		["iron-defense", 20.286]
+	],
+	"teammates": [
+		["meowscarada", 58.461],
+		["gholdengo", 46.624],
+		["baxcalibur", 43.115],
+		["mimikyu", 40.164],
+		["tauros-paldea-water", 37.846],
+		["murkrow", 22.817],
+		["arcanine", 20.424],
+		["amoonguss", 18.154],
+		["garchomp", 14.551],
+		["rotom-mow", 11.719],
+		["annihilape", 11.675]
+	]
+}, {
+	"ident": "tauros-paldea-water",
+	"abilities": [
+		["intimidate", 94.144],
+		["anger-point", 5.794],
+		["cud-chew", 0.061]
+	],
+	"items": [
+		["assault-vest", 22.386],
+		["rindo-berry", 22.062],
+		["safety-goggles", 14.209],
+		["mirror-herb", 11.168],
+		["focus-sash", 8.731],
+		["choice-band", 6.356],
+		["expert-belt", 5.406],
+		["sitrus-berry", 3.794],
+		["life-orb", 3.182]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 33.661],
+		["jolly", [52, 196, 4, 0, 4, 252], 22.056],
+		["adamant", [244, 132, 20, 0, 28, 84], 9.715],
+		["adamant", [4, 252, 0, 0, 0, 252], 6.483],
+		["jolly", [100, 156, 4, 0, 4, 244], 5.82],
+		["jolly", [132, 116, 4, 0, 4, 252], 3.695]
+	],
+	"moves": [
+		["close-combat", 98.707],
+		["raging-bull", 95.091],
+		["aqua-jet", 84.693],
+		["protect", 70.497],
+		["tera-blast", 22.398],
+		["wave-crash", 22.056]
+	],
+	"teammates": [
+		["gholdengo", 56.78],
+		["baxcalibur", 54.651],
+		["mimikyu", 50.43],
+		["meowscarada", 45.809],
+		["garganacl", 39.762],
+		["amoonguss", 25.494],
+		["kingambit", 24.944],
+		["volcarona", 20.913],
+		["garchomp", 18.438],
+		["murkrow", 18.104],
+		["sylveon", 13.923]
+	]
+}, {
+	"ident": "palafin",
+	"abilities": [
+		["zero-to-hero", 100.0]
+	],
+	"items": [
+		["choice-band", 57.766],
+		["choice-scarf", 14.423],
+		["mystic-water", 7.136],
+		["leftovers", 5.788],
+		["clear-amulet", 3.6],
+		["assault-vest", 2.31],
+		["sitrus-berry", 1.764],
+		["punching-glove", 1.498],
+		["life-orb", 1.325]
+	],
+	"spreads": [
+		["adamant", [252, 252, 0, 0, 0, 4], 33.861],
+		["adamant", [252, 252, 0, 0, 4, 0], 13.936],
+		["jolly", [124, 172, 12, 0, 4, 196], 9.76],
+		["adamant", [148, 252, 0, 0, 0, 108], 5.479],
+		["adamant", [0, 252, 0, 0, 4, 252], 3.705],
+		["jolly", [0, 252, 0, 0, 4, 252], 3.054]
+	],
+	"moves": [
+		["jet-punch", 87.803],
+		["wave-crash", 80.629],
+		["flip-turn", 79.089],
+		["close-combat", 67.347],
+		["haze", 23.058],
+		["ice-punch", 17.74],
+		["protect", 16.768],
+		["drain-punch", 12.39]
+	],
+	"teammates": [
+		["pelipper", 68.103],
+		["amoonguss", 56.781],
+		["gholdengo", 49.616],
+		["kingambit", 36.062],
+		["skeledirge", 20.085],
+		["armarouge", 19.841],
+		["hydreigon", 19.642],
+		["indeedee-f", 18.824],
+		["gengar", 17.879],
+		["salamence", 15.614],
+		["sylveon", 14.529]
+	]
+}, {
+	"ident": "rotom-wash",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["sitrus-berry", 55.859],
+		["choice-specs", 17.461],
+		["leftovers", 6.781],
+		["assault-vest", 4.857],
+		["choice-scarf", 3.607],
+		["aguav-berry", 3.275],
+		["safety-goggles", 2.517],
+		["light-clay", 2.206]
+	],
+	"spreads": [
+		["modest", [252, 0, 0, 252, 4, 0], 16.405],
+		["modest", [252, 0, 108, 92, 4, 52], 10.195],
+		["modest", [252, 0, 0, 196, 0, 60], 5.999],
+		["modest", [252, 0, 4, 196, 4, 52], 3.883],
+		["bold", [244, 0, 52, 4, 148, 60], 3.061],
+		["modest", [252, 0, 0, 252, 0, 4], 2.246]
+	],
+	"moves": [
+		["hydro-pump", 98.608],
+		["thunderbolt", 91.669],
+		["protect", 62.938],
+		["tera-blast", 41.74],
+		["volt-switch", 28.975],
+		["will-o-wisp", 25.684],
+		["nasty-plot", 14.631],
+		["trick", 10.191],
+		["discharge", 8.209]
+	],
+	"teammates": [
+		["garchomp", 41.636],
+		["gholdengo", 38.373],
+		["murkrow", 31.871],
+		["grimmsnarl", 31.561],
+		["meowscarada", 29.148],
+		["annihilape", 27.812],
+		["amoonguss", 22.948],
+		["sylveon", 21.292],
+		["baxcalibur", 18.03],
+		["arcanine", 17.262],
+		["hydreigon", 15.665]
+	]
+}, {
+	"ident": "farigiraf",
+	"abilities": [
+		["armor-tail", 96.845],
+		["cud-chew", 2.04],
+		["sap-sipper", 1.115]
+	],
+	"items": [
+		["throat-spray", 41.4],
+		["safety-goggles", 14.618],
+		["mental-herb", 12.371],
+		["focus-sash", 6.006],
+		["colbur-berry", 5.381],
+		["sitrus-berry", 4.841],
+		["normal-gem", 4.548],
+		["rocky-helmet", 2.801],
+		["life-orb", 2.355],
+		["covert-cloak", 1.01]
+	],
+	"spreads": [
+		["quiet", [180, 0, 188, 76, 60, 0], 11.989],
+		["modest", [180, 0, 172, 44, 108, 4], 9.704],
+		["quiet", [252, 0, 4, 252, 0, 0], 7.207],
+		["quiet", [252, 0, 0, 252, 4, 0], 5.902],
+		["modest", [252, 0, 0, 252, 4, 0], 5.099],
+		["calm", [220, 0, 0, 124, 164, 0], 3.563]
+	],
+	"moves": [
+		["trick-room", 95.909],
+		["hyper-voice", 80.283],
+		["protect", 55.052],
+		["shadow-ball", 32.825],
+		["psychic", 29.326],
+		["dazzling-gleam", 28.269],
+		["imprison", 23.956],
+		["helping-hand", 18.276],
+		["twin-beam", 9.029],
+		["psyshock", 3.911],
+		["skill-swap", 3.068],
+		["nasty-plot", 2.795]
+	],
+	"teammates": [
+		["hariyama", 39.556],
+		["torkoal", 33.137],
+		["kingambit", 30.11],
+		["tyranitar", 21.358],
+		["gholdengo", 21.222],
+		["annihilape", 20.733],
+		["skeledirge", 19.563],
+		["azumarill", 17.897],
+		["hydreigon", 16.696],
+		["lycanroc", 16.531],
+		["murkrow", 14.909]
+	]
+}, {
+	"ident": "dragapult",
+	"abilities": [
+		["clear-body", 63.554],
+		["infiltrator", 33.789],
+		["cursed-body", 2.657]
+	],
+	"items": [
+		["choice-band", 61.746],
+		["life-orb", 13.002],
+		["focus-sash", 6.488],
+		["choice-scarf", 4.937],
+		["dragon-fang", 3.173],
+		["choice-specs", 3.051],
+		["lum-berry", 1.703],
+		["safety-goggles", 1.165]
+	],
+	"spreads": [
+		["adamant", [4, 252, 0, 0, 0, 252], 31.025],
+		["adamant", [0, 252, 0, 0, 4, 252], 16.261],
+		["jolly", [4, 252, 0, 0, 0, 252], 9.282],
+		["jolly", [0, 252, 0, 0, 4, 252], 8.137],
+		["timid", [116, 0, 4, 252, 4, 132], 5.151],
+		["timid", [4, 0, 0, 252, 0, 252], 4.401]
+	],
+	"moves": [
+		["dragon-darts", 82.018],
+		["u-turn", 73.731],
+		["phantom-force", 72.359],
+		["sucker-punch", 47.096],
+		["shadow-ball", 18.137],
+		["protect", 15.917],
+		["tera-blast", 12.921],
+		["draco-meteor", 12.807],
+		["flamethrower", 10.189],
+		["will-o-wisp", 9.712],
+		["dragon-dance", 7.678],
+		["psychic-fangs", 5.404],
+		["dragon-pulse", 5.359],
+		["surf", 4.689],
+		["outrage", 4.436]
+	],
+	"teammates": [
+		["gholdengo", 29.742],
+		["meowscarada", 24.795],
+		["dondozo", 24.661],
+		["tatsugiri", 24.464],
+		["indeedee-f", 23.602],
+		["murkrow", 22.238],
+		["sylveon", 21.395],
+		["amoonguss", 19.891],
+		["kingambit", 17.436],
+		["armarouge", 16.465],
+		["volcarona", 16.236]
+	]
+}, {
+	"ident": "hariyama",
+	"abilities": [
+		["guts", 92.386],
+		["thick-fat", 7.607],
+		["sheer-force", 0.007]
+	],
+	"items": [
+		["flame-orb", 92.309],
+		["assault-vest", 4.989]
+	],
+	"spreads": [
+		["brave", [0, 252, 100, 0, 156, 0], 12.365],
+		["brave", [0, 252, 252, 0, 4, 0], 8.574],
+		["brave", [252, 252, 4, 0, 0, 0], 7.413],
+		["brave", [252, 252, 0, 0, 4, 0], 6.725],
+		["brave", [0, 252, 124, 0, 132, 0], 6.062],
+		["adamant", [0, 236, 124, 0, 148, 0], 5.894]
+	],
+	"moves": [
+		["fake-out", 98.727],
+		["close-combat", 79.53],
+		["knock-off", 73.702],
+		["wide-guard", 63.391],
+		["bullet-punch", 20.711],
+		["drain-punch", 13.316],
+		["heavy-slam", 11.441],
+		["headlong-rush", 7.868],
+		["facade", 7.381],
+		["rock-slide", 4.067]
+	],
+	"teammates": [
+		["farigiraf", 40.237],
+		["torkoal", 35.615],
+		["kingambit", 25.196],
+		["meowscarada", 23.697],
+		["azumarill", 22.969],
+		["armarouge", 21.186],
+		["skeledirge", 18.33],
+		["amoonguss", 17.556],
+		["tyranitar", 16.442],
+		["hydreigon", 15.164],
+		["annihilape", 14.912]
+	]
+}, {
+	"ident": "gallade",
+	"abilities": [
+		["sharpness", 98.815],
+		["justified", 0.668],
+		["steadfast", 0.518]
+	],
+	"items": [
+		["focus-sash", 63.878],
+		["safety-goggles", 8.295],
+		["scope-lens", 7.35],
+		["sitrus-berry", 5.631],
+		["life-orb", 3.366],
+		["black-belt", 2.266],
+		["expert-belt", 2.2],
+		["razor-claw", 2.2]
+	],
+	"spreads": [
+		["adamant", [172, 252, 0, 0, 0, 84], 38.917],
+		["jolly", [4, 252, 0, 0, 0, 252], 8.961],
+		["adamant", [0, 252, 0, 0, 0, 252], 6.504],
+		["adamant", [4, 252, 0, 0, 0, 252], 6.423],
+		["brave", [236, 36, 236, 0, 0, 0], 6.316],
+		["brave", [220, 84, 204, 0, 0, 0], 4.599]
+	],
+	"moves": [
+		["sacred-sword", 98.619],
+		["psycho-cut", 95.862],
+		["trick-room", 79.897],
+		["protect", 62.321],
+		["wide-guard", 17.478],
+		["imprison", 11.301],
+		["night-slash", 11.049],
+		["leaf-blade", 8.02]
+	],
+	"teammates": [
+		["armarouge", 53.609],
+		["garchomp", 46.36],
+		["kingambit", 43.194],
+		["sylveon", 41.948],
+		["jumpluff", 38.764],
+		["amoonguss", 26.285],
+		["gholdengo", 24.148],
+		["hydreigon", 20.599],
+		["maushold", 19.775],
+		["murkrow", 18.832],
+		["annihilape", 17.543]
+	]
+}, {
+	"ident": "pawmot",
+	"abilities": [
+		["iron-fist", 66.527],
+		["volt-absorb", 27.17],
+		["natural-cure", 6.302]
+	],
+	"items": [
+		["focus-sash", 72.908],
+		["life-orb", 12.888],
+		["expert-belt", 3.388],
+		["punching-glove", 2.555],
+		["choice-band", 2.491],
+		["air-balloon", 1.086]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 53.168],
+		["jolly", [4, 252, 0, 0, 0, 252], 37.062],
+		["jolly", [0, 252, 4, 0, 0, 252], 3.608],
+		["jolly", [0, 0, 4, 252, 0, 252], 1.379]
+	],
+	"moves": [
+		["double-shock", 90.803],
+		["revival-blessing", 72.024],
+		["mach-punch", 67.249],
+		["fake-out", 62.866],
+		["close-combat", 50.33],
+		["ice-punch", 22.214],
+		["fire-punch", 17.987]
+	],
+	"teammates": [
+		["murkrow", 35.866],
+		["tatsugiri", 35.247],
+		["dondozo", 33.405],
+		["volcarona", 30.376],
+		["sylveon", 29.925],
+		["annihilape", 24.349],
+		["meowscarada", 23.717],
+		["armarouge", 21.383],
+		["indeedee-f", 20.225],
+		["kingambit", 17.53],
+		["hydreigon", 16.173]
+	]
+}, {
+	"ident": "lycanroc",
+	"abilities": [
+		["sand-rush", 99.996],
+		["keen-eye", 0.004],
+		["steadfast", 0.0]
+	],
+	"items": [
+		["focus-sash", 97.001]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 36.1],
+		["jolly", [0, 252, 0, 0, 4, 252], 25.897],
+		["adamant", [4, 252, 0, 0, 0, 252], 15.468],
+		["jolly", [0, 252, 4, 0, 0, 252], 6.696],
+		["adamant", [4, 244, 4, 0, 4, 252], 4.678],
+		["jolly", [0, 252, 0, 0, 0, 252], 3.848]
+	],
+	"moves": [
+		["rock-slide", 99.829],
+		["endeavor", 93.379],
+		["endure", 79.294],
+		["close-combat", 73.568],
+		["psychic-fangs", 18.135],
+		["protect", 12.836],
+		["accelerock", 8.548]
+	],
+	"teammates": [
+		["tyranitar", 92.617],
+		["dondozo", 44.728],
+		["tatsugiri", 44.727],
+		["meowscarada", 31.072],
+		["rotom-heat", 30.209],
+		["farigiraf", 19.164],
+		["skeledirge", 18.706],
+		["annihilape", 18.522],
+		["sylveon", 15.106],
+		["indeedee-f", 13.99],
+		["hariyama", 13.394]
+	]
+}, {
+	"ident": "gengar",
+	"abilities": [
+		["cursed-body", 100.0]
+	],
+	"items": [
+		["focus-sash", 97.061]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 44.137],
+		["timid", [4, 0, 0, 252, 0, 252], 29.461],
+		["timid", [44, 0, 4, 92, 116, 252], 16.939],
+		["timid", [0, 0, 4, 252, 0, 252], 2.945],
+		["timid", [0, 0, 0, 252, 0, 252], 2.723]
+	],
+	"moves": [
+		["sludge-bomb", 78.957],
+		["shadow-ball", 72.348],
+		["haze", 67.189],
+		["icy-wind", 50.177],
+		["protect", 32.726],
+		["taunt", 21.866],
+		["perish-song", 13.233],
+		["trick-room", 12.395],
+		["hypnosis", 8.108],
+		["disable", 7.441],
+		["will-o-wisp", 5.79],
+		["energy-ball", 5.434],
+		["imprison", 4.816]
+	],
+	"teammates": [
+		["amoonguss", 44.035],
+		["hydreigon", 38.126],
+		["gholdengo", 32.835],
+		["pelipper", 31.433],
+		["palafin", 26.031],
+		["garchomp", 25.72],
+		["grimmsnarl", 25.317],
+		["kingambit", 21.717],
+		["azumarill", 21.04],
+		["annihilape", 20.039],
+		["rotom-wash", 15.36]
+	]
+}, {
+	"ident": "tauros-paldea-fire",
+	"abilities": [
+		["intimidate", 59.552],
+		["anger-point", 39.961],
+		["cud-chew", 0.487]
+	],
+	"items": [
+		["life-orb", 38.294],
+		["choice-scarf", 35.132],
+		["safety-goggles", 6.515],
+		["assault-vest", 6.422],
+		["aguav-berry", 3.8],
+		["expert-belt", 3.45],
+		["focus-sash", 3.184]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 70.712],
+		["jolly", [0, 252, 0, 0, 0, 252], 6.809],
+		["adamant", [164, 84, 4, 0, 4, 252], 5.805],
+		["jolly", [0, 252, 0, 0, 4, 252], 3.937],
+		["jolly", [116, 140, 0, 0, 0, 252], 2.756],
+		["adamant", [196, 252, 0, 0, 0, 60], 2.169]
+	],
+	"moves": [
+		["close-combat", 99.303],
+		["raging-bull", 95.958],
+		["rock-slide", 65.747],
+		["protect", 57.656],
+		["iron-head", 35.984],
+		["will-o-wisp", 14.939],
+		["flare-blitz", 8.022],
+		["tera-blast", 6.973]
+	],
+	"teammates": [
+		["meowscarada", 71.879],
+		["hydreigon", 39.498],
+		["azumarill", 38.648],
+		["kingambit", 36.643],
+		["sylveon", 34.059],
+		["skeledirge", 33.589],
+		["avalugg", 33.583],
+		["tatsugiri", 33.202],
+		["dondozo", 32.953],
+		["gholdengo", 15.803],
+		["amoonguss", 14.673]
+	]
+}, {
+	"ident": "gothitelle",
+	"abilities": [
+		["shadow-tag", 94.618],
+		["frisk", 4.791],
+		["competitive", 0.591]
+	],
+	"items": [
+		["figy-berry", 23.631],
+		["iapapa-berry", 14.919],
+		["aguav-berry", 14.209],
+		["chesto-berry", 11.352],
+		["focus-sash", 9.577],
+		["sitrus-berry", 9.355],
+		["colbur-berry", 7.463],
+		["mental-herb", 1.826],
+		["leftovers", 1.634],
+		["safety-goggles", 1.483]
+	],
+	"spreads": [
+		["bold", [252, 0, 116, 0, 140, 0], 14.277],
+		["relaxed", [252, 0, 196, 0, 60, 0], 9.353],
+		["sassy", [252, 0, 20, 0, 236, 0], 7.678],
+		["careful", [244, 0, 188, 0, 76, 0], 7.582],
+		["quiet", [252, 0, 4, 252, 0, 0], 7.183],
+		["sassy", [252, 0, 124, 0, 132, 0], 6.199]
+	],
+	"moves": [
+		["fake-out", 82.574],
+		["trick-room", 74.724],
+		["protect", 68.658],
+		["hypnosis", 57.459],
+		["psychic", 41.727],
+		["heal-pulse", 22.667],
+		["helping-hand", 18.391],
+		["rest", 11.352],
+		["foul-play", 4.855]
+	],
+	"teammates": [
+		["azumarill", 49.466],
+		["amoonguss", 40.066],
+		["meowscarada", 28.923],
+		["arcanine", 28.559],
+		["annihilape", 27.908],
+		["torkoal", 19.805],
+		["hydreigon", 18.882],
+		["kingambit", 17.726],
+		["maushold", 16.915],
+		["grimmsnarl", 15.836],
+		["garganacl", 15.393]
+	]
+}, {
+	"ident": "ceruledge",
+	"abilities": [
+		["flash-fire", 97.592],
+		["weak-armor", 2.408]
+	],
+	"items": [
+		["leftovers", 22.667],
+		["clear-amulet", 22.627],
+		["safety-goggles", 11.245],
+		["assault-vest", 8.331],
+		["scope-lens", 7.268],
+		["expert-belt", 6.541],
+		["weakness-policy", 5.162],
+		["life-orb", 4.098],
+		["charcoal", 3.929],
+		["razor-claw", 2.138],
+		["focus-sash", 1.496]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 12.317],
+		["adamant", [252, 116, 60, 0, 12, 68], 8.202],
+		["adamant", [244, 60, 12, 0, 188, 4], 7.876],
+		["adamant", [196, 116, 4, 0, 4, 188], 6.458],
+		["adamant", [244, 116, 60, 0, 12, 76], 5.831],
+		["adamant", [252, 4, 220, 0, 28, 4], 4.745]
+	],
+	"moves": [
+		["bitter-blade", 99.937],
+		["shadow-sneak", 89.139],
+		["bulk-up", 75.885],
+		["protect", 55.584],
+		["tera-blast", 39.546],
+		["shadow-claw", 18.065],
+		["close-combat", 4.19]
+	],
+	"teammates": [
+		["gholdengo", 57.088],
+		["murkrow", 49.62],
+		["hydreigon", 37.249],
+		["garchomp", 35.214],
+		["meowscarada", 28.559],
+		["maushold", 28.54],
+		["dragonite", 25.426],
+		["sylveon", 21.41],
+		["tatsugiri", 20.973],
+		["dondozo", 20.965],
+		["tauros-paldea-water", 15.12]
+	]
+}, {
+	"ident": "kilowattrel",
+	"abilities": [
+		["wind-power", 47.431],
+		["competitive", 41.793],
+		["volt-absorb", 10.776]
+	],
+	"items": [
+		["focus-sash", 66.054],
+		["life-orb", 14.868],
+		["charti-berry", 4.409],
+		["choice-specs", 3.605],
+		["safety-goggles", 3.279],
+		["magnet", 2.698],
+		["mental-herb", 2.003]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 48.001],
+		["timid", [0, 0, 0, 252, 4, 252], 37.001],
+		["modest", [4, 0, 0, 252, 0, 252], 4.319],
+		["timid", [164, 0, 0, 92, 0, 252], 2.361],
+		["modest", [0, 0, 0, 252, 0, 252], 1.763],
+		["modest", [0, 0, 4, 252, 0, 252], 1.532]
+	],
+	"moves": [
+		["tailwind", 84.442],
+		["air-slash", 58.823],
+		["protect", 58.069],
+		["thunderbolt", 57.685],
+		["discharge", 33.626],
+		["hurricane", 31.481],
+		["volt-switch", 17.72],
+		["thunder", 14.057],
+		["endeavor", 13.787],
+		["eerie-impulse", 8.892],
+		["feather-dance", 8.706]
+	],
+	"teammates": [
+		["garchomp", 46.914],
+		["gholdengo", 42.307],
+		["amoonguss", 25.158],
+		["meowscarada", 24.56],
+		["pelipper", 21.895],
+		["volcarona", 18.509],
+		["dragonite", 15.099],
+		["vaporeon", 14.134],
+		["grimmsnarl", 12.555],
+		["skeledirge", 12.204],
+		["hydreigon", 12.018]
+	]
+}, {
+	"ident": "rotom-heat",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["choice-specs", 38.179],
+		["sitrus-berry", 34.215],
+		["safety-goggles", 14.924],
+		["choice-scarf", 4.3],
+		["wiki-berry", 3.437]
+	],
+	"spreads": [
+		["timid", [84, 0, 0, 172, 0, 252], 17.515],
+		["modest", [252, 0, 100, 116, 12, 28], 16.376],
+		["modest", [244, 0, 20, 116, 4, 124], 13.839],
+		["modest", [252, 0, 28, 196, 4, 28], 7.021],
+		["modest", [244, 0, 100, 116, 4, 44], 6.083],
+		["modest", [220, 0, 4, 252, 12, 20], 4.916]
+	],
+	"moves": [
+		["overheat", 99.926],
+		["thunderbolt", 92.484],
+		["protect", 54.936],
+		["volt-switch", 45.318],
+		["will-o-wisp", 43.979],
+		["trick", 38.733],
+		["nasty-plot", 12.154]
+	],
+	"teammates": [
+		["tyranitar", 43.813],
+		["murkrow", 39.042],
+		["lycanroc", 38.985],
+		["tatsugiri", 36.725],
+		["dondozo", 36.724],
+		["garchomp", 34.1],
+		["gholdengo", 31.888],
+		["meowscarada", 26.852],
+		["azumarill", 22.071],
+		["annihilape", 19.572],
+		["hydreigon", 16.37]
+	]
+}, {
+	"ident": "quaquaval",
+	"abilities": [
+		["moxie", 99.967],
+		["torrent", 0.033]
+	],
+	"items": [
+		["razor-claw", 59.54],
+		["life-orb", 14.807],
+		["mystic-water", 7.173],
+		["sitrus-berry", 4.479],
+		["clear-amulet", 4.21],
+		["choice-band", 3.491],
+		["focus-sash", 2.263]
+	],
+	"spreads": [
+		["adamant", [116, 156, 4, 0, 28, 204], 59.54],
+		["adamant", [252, 12, 12, 0, 156, 76], 6.446],
+		["adamant", [220, 140, 0, 0, 0, 148], 5.306],
+		["adamant", [4, 252, 0, 0, 0, 252], 4.999],
+		["jolly", [4, 252, 0, 0, 0, 252], 4.813],
+		["adamant", [100, 164, 4, 0, 44, 196], 4.454]
+	],
+	"moves": [
+		["aqua-step", 98.792],
+		["protect", 77.265],
+		["brick-break", 64.694],
+		["focus-energy", 59.542],
+		["close-combat", 29.898],
+		["brave-bird", 13.764],
+		["aqua-jet", 13.689],
+		["ice-spinner", 8.998],
+		["roost", 8.208],
+		["bulk-up", 7.351]
+	],
+	"teammates": [
+		["amoonguss", 60.374],
+		["armarouge", 58.681],
+		["hydreigon", 58.382],
+		["maushold", 57.035],
+		["annihilape", 55.806],
+		["meowscarada", 18.221],
+		["baxcalibur", 12.198],
+		["kilowattrel", 10.947],
+		["tinkaton", 9.132],
+		["gholdengo", 8.82],
+		["murkrow", 8.024]
+	]
+}, {
+	"ident": "salamence",
+	"abilities": [
+		["intimidate", 99.514],
+		["moxie", 0.486]
+	],
+	"items": [
+		["life-orb", 42.63],
+		["choice-specs", 16.641],
+		["clear-amulet", 11.223],
+		["choice-scarf", 8.11],
+		["razor-claw", 5.973],
+		["haban-berry", 3.816],
+		["scope-lens", 2.716],
+		["mirror-herb", 1.97],
+		["focus-sash", 1.482],
+		["sitrus-berry", 1.058]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 27.402],
+		["modest", [4, 0, 0, 252, 0, 252], 8.677],
+		["timid", [4, 0, 0, 252, 0, 252], 8.572],
+		["timid", [0, 0, 4, 252, 0, 252], 6.885],
+		["adamant", [4, 252, 0, 0, 0, 252], 6.87],
+		["timid", [0, 0, 0, 252, 4, 252], 6.293]
+	],
+	"moves": [
+		["tailwind", 56.27],
+		["dragon-claw", 48.981],
+		["protect", 48.552],
+		["draco-meteor", 43.976],
+		["dual-wingbeat", 41.279],
+		["tera-blast", 25.356],
+		["heat-wave", 24.271],
+		["brick-break", 21.211],
+		["dragon-dance", 20.439],
+		["air-slash", 12.153],
+		["hurricane", 11.422],
+		["flamethrower", 9.893],
+		["focus-energy", 8.689],
+		["dragon-pulse", 7.94]
+	],
+	"teammates": [
+		["armarouge", 34.949],
+		["palafin", 32.835],
+		["sylveon", 32.05],
+		["indeedee-f", 30.155],
+		["garchomp", 25.517],
+		["amoonguss", 25.368],
+		["kingambit", 22.967],
+		["meowscarada", 21.287],
+		["annihilape", 19.272],
+		["volcarona", 17.651],
+		["maushold", 15.315]
+	]
+}, {
+	"ident": "gastrodon",
+	"abilities": [
+		["storm-drain", 99.85],
+		["sand-force", 0.119],
+		["sticky-hold", 0.031]
+	],
+	"items": [
+		["leftovers", 40.709],
+		["rindo-berry", 29.023],
+		["sitrus-berry", 10.989],
+		["wiki-berry", 6.578],
+		["assault-vest", 3.499],
+		["aguav-berry", 2.806],
+		["life-orb", 1.371],
+		["expert-belt", 0.994]
+	],
+	"spreads": [
+		["calm", [252, 0, 236, 4, 10, 0], 28.19],
+		["bold", [180, 0, 172, 4, 148, 4], 8.896],
+		["relaxed", [252, 0, 156, 0, 100, 0], 7.682],
+		["bold", [236, 0, 236, 36, 0, 0], 7.005],
+		["modest", [252, 0, 0, 252, 4, 0], 6.797],
+		["bold", [204, 0, 172, 0, 132, 0], 5.207]
+	],
+	"moves": [
+		["earth-power", 97.984],
+		["protect", 82.582],
+		["clear-smog", 62.551],
+		["icy-wind", 42.904],
+		["ice-beam", 38.165],
+		["yawn", 36.764],
+		["recover", 16.949],
+		["muddy-water", 13.896]
+	],
+	"teammates": [
+		["annihilape", 53.34],
+		["meowscarada", 46.696],
+		["grimmsnarl", 40.587],
+		["skeledirge", 39.138],
+		["maushold", 32.566],
+		["gholdengo", 24.371],
+		["sylveon", 19.185],
+		["murkrow", 17.463],
+		["garchomp", 14.019],
+		["tyranitar", 12.931],
+		["garganacl", 11.902]
+	]
+}, {
+	"ident": "oranguru",
+	"abilities": [
+		["telepathy", 56.052],
+		["inner-focus", 39.738],
+		["symbiosis", 4.21]
+	],
+	"items": [
+		["mental-herb", 43.27],
+		["safety-goggles", 33.924],
+		["rocky-helmet", 5.814],
+		["sitrus-berry", 4.791],
+		["covert-cloak", 2.609],
+		["aguav-berry", 2.067],
+		["life-orb", 1.592],
+		["light-clay", 1.482]
+	],
+	"spreads": [
+		["relaxed", [252, 0, 252, 0, 4, 0], 34.367],
+		["relaxed", [252, 0, 220, 0, 38, 0], 6.841],
+		["relaxed", [244, 0, 172, 0, 92, 0], 6.447],
+		["calm", [252, 0, 132, 0, 124, 0], 5.689],
+		["relaxed", [252, 0, 116, 0, 140, 0], 5.469],
+		["sassy", [252, 0, 252, 0, 4, 0], 5.256]
+	],
+	"moves": [
+		["trick-room", 99.501],
+		["instruct", 99.311],
+		["protect", 48.618],
+		["bulldoze", 46.617],
+		["foul-play", 31.439],
+		["psychic", 18.992],
+		["taunt", 18.456],
+		["psyshock", 10.967],
+		["yawn", 7.419]
+	],
+	"teammates": [
+		["annihilape", 61.052],
+		["torkoal", 51.075],
+		["bellibolt", 32.512],
+		["amoonguss", 32.141],
+		["hariyama", 24.756],
+		["donphan", 20.677],
+		["hydreigon", 20.197],
+		["kingambit", 18.674],
+		["indeedee-f", 17.714],
+		["maushold", 16.441],
+		["sylveon", 15.796]
+	]
+}, {
+	"ident": "abomasnow",
+	"abilities": [
+		["snow-warning", 100.0],
+		["soundproof", 0.0]
+	],
+	"items": [
+		["focus-sash", 45.637],
+		["choice-scarf", 29.623],
+		["light-clay", 14.027],
+		["babiri-berry", 2.207],
+		["occa-berry", 1.748],
+		["icy-rock", 1.445],
+		["wiki-berry", 0.922]
+	],
+	"spreads": [
+		["timid", [0, 0, 4, 252, 0, 252], 25.881],
+		["modest", [172, 0, 4, 252, 4, 76], 14.359],
+		["modest", [252, 0, 0, 252, 0, 4], 9.538],
+		["timid", [4, 0, 0, 252, 0, 252], 8.897],
+		["modest", [252, 0, 0, 252, 4, 0], 6.778],
+		["quiet", [252, 0, 4, 252, 0, 0], 5.219]
+	],
+	"moves": [
+		["blizzard", 97.874],
+		["aurora-veil", 89.695],
+		["protect", 60.469],
+		["energy-ball", 46.565],
+		["earth-power", 43.463],
+		["grass-knot", 22.756],
+		["giga-drain", 12.371],
+		["icy-wind", 8.535]
+	],
+	"teammates": [
+		["annihilape", 38.207],
+		["dondozo", 29.658],
+		["tatsugiri", 29.546],
+		["kingambit", 27.016],
+		["cetitan", 24.526],
+		["arcanine", 24.216],
+		["hydreigon", 23.074],
+		["mimikyu", 22.125],
+		["armarouge", 20.173],
+		["indeedee-f", 19.639],
+		["murkrow", 17.992]
+	]
+}, {
+	"ident": "gyarados",
+	"abilities": [
+		["intimidate", 94.68],
+		["moxie", 5.32]
+	],
+	"items": [
+		["lum-berry", 39.048],
+		["life-orb", 30.091],
+		["clear-amulet", 14.122],
+		["mirror-herb", 5.012],
+		["covert-cloak", 4.249],
+		["sitrus-berry", 2.354],
+		["safety-goggles", 1.493]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 23.073],
+		["jolly", [36, 228, 12, 0, 4, 228], 12.103],
+		["adamant", [4, 252, 0, 0, 0, 252], 8.733],
+		["adamant", [156, 196, 4, 0, 4, 148], 7.835],
+		["adamant", [140, 204, 4, 0, 12, 148], 3.925],
+		["adamant", [252, 92, 52, 0, 12, 100], 3.037]
+	],
+	"moves": [
+		["waterfall", 99.963],
+		["protect", 95.479],
+		["dragon-dance", 93.403],
+		["tera-blast", 85.192],
+		["earthquake", 12.539]
+	],
+	"teammates": [
+		["amoonguss", 51.812],
+		["garchomp", 46.518],
+		["meowscarada", 39.262],
+		["volcarona", 26.022],
+		["kingambit", 21.547],
+		["gholdengo", 20.047],
+		["gothitelle", 17.231],
+		["hydreigon", 16.562],
+		["talonflame", 14.467],
+		["murkrow", 14.437],
+		["magnezone", 11.032]
+	]
+}, {
+	"ident": "gardevoir",
+	"abilities": [
+		["telepathy", 72.018],
+		["trace", 17.652],
+		["synchronize", 10.33]
+	],
+	"items": [
+		["focus-sash", 41.419],
+		["choice-scarf", 28.89],
+		["mirror-herb", 11.424],
+		["sitrus-berry", 3.594],
+		["mental-herb", 3.368],
+		["safety-goggles", 2.964],
+		["choice-specs", 1.994],
+		["babiri-berry", 1.762]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 26.821],
+		["modest", [4, 0, 0, 252, 0, 252], 17.387],
+		["timid", [4, 0, 0, 252, 0, 252], 10.362],
+		["modest", [0, 0, 4, 252, 0, 252], 10.067],
+		["modest", [0, 0, 0, 252, 4, 252], 6.133],
+		["modest", [252, 0, 252, 4, 0, 0], 4.443]
+	],
+	"moves": [
+		["dazzling-gleam", 84.498],
+		["psychic", 55.646],
+		["moonblast", 50.612],
+		["protect", 38.471],
+		["trick-room", 37.679],
+		["imprison", 27.439],
+		["mystical-fire", 23.353],
+		["trick", 17.642],
+		["psyshock", 13.156],
+		["will-o-wisp", 12.543],
+		["skill-swap", 11.049],
+		["tera-blast", 7.026],
+		["thunderbolt", 5.717]
+	],
+	"teammates": [
+		["garchomp", 64.169],
+		["arcanine", 28.435],
+		["murkrow", 26.1],
+		["talonflame", 23.257],
+		["gholdengo", 23.247],
+		["meowscarada", 16.146],
+		["maushold", 15.956],
+		["salamence", 12.406],
+		["garganacl", 12.02],
+		["gyarados", 11.939],
+		["rotom-mow", 11.899]
+	]
+}, {
+	"ident": "breloom",
+	"abilities": [
+		["technician", 92.571],
+		["poison-heal", 6.833],
+		["effect-spore", 0.596]
+	],
+	"items": [
+		["focus-sash", 69.882],
+		["loaded-dice", 18.708],
+		["choice-scarf", 4.594],
+		["toxic-orb", 2.254]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 24.247],
+		["adamant", [0, 252, 0, 0, 4, 252], 19.187],
+		["adamant", [4, 252, 0, 0, 0, 252], 15.107],
+		["jolly", [4, 252, 0, 0, 0, 252], 10.648],
+		["adamant", [124, 156, 4, 0, 4, 220], 10.121],
+		["jolly", [0, 252, 0, 0, 0, 252], 4.594]
+	],
+	"moves": [
+		["spore", 99.031],
+		["mach-punch", 92.428],
+		["bullet-seed", 90.886],
+		["protect", 65.057],
+		["rock-tomb", 30.708],
+		["seed-bomb", 7.703]
+	],
+	"teammates": [
+		["gholdengo", 55.361],
+		["murkrow", 49.404],
+		["hydreigon", 43.692],
+		["pelipper", 26.385],
+		["arcanine", 22.559],
+		["garchomp", 20.525],
+		["maushold", 19.443],
+		["kingambit", 18.898],
+		["dondozo", 13.201],
+		["tatsugiri", 13.201],
+		["palafin", 12.035]
+	]
+}, {
+	"ident": "jumpluff",
+	"abilities": [
+		["chlorophyll", 94.582],
+		["infiltrator", 5.4],
+		["leaf-guard", 0.019]
+	],
+	"items": [
+		["mental-herb", 94.412],
+		["rocky-helmet", 4.4]
+	],
+	"spreads": [
+		["timid", [252, 0, 0, 0, 4, 252], 94.294],
+		["timid", [204, 0, 12, 4, 92, 196], 4.219]
+	],
+	"moves": [
+		["pollen-puff", 99.638],
+		["rage-powder", 98.702],
+		["sleep-powder", 95.279],
+		["tailwind", 94.879]
+	],
+	"teammates": [
+		["armarouge", 98.359],
+		["gallade", 94.31],
+		["kingambit", 94.199],
+		["garchomp", 94.174],
+		["sylveon", 94.142],
+		["sylveon", 94.142]
+	]
+}, {
+	"ident": "tinkaton",
+	"abilities": [
+		["mold-breaker", 71.332],
+		["own-tempo", 28.659],
+		["pickpocket", 0.009]
+	],
+	"items": [
+		["assault-vest", 56.237],
+		["metal-coat", 11.187],
+		["air-balloon", 7.682],
+		["safety-goggles", 4.802],
+		["occa-berry", 4.626],
+		["iapapa-berry", 4.079],
+		["sitrus-berry", 3.866],
+		["focus-sash", 1.213],
+		["mirror-herb", 1.17],
+		["covert-cloak", 1.067]
+	],
+	"spreads": [
+		["adamant", [92, 244, 124, 0, 48, 0], 15.889],
+		["adamant", [204, 116, 0, 0, 0, 188], 10.05],
+		["jolly", [244, 44, 124, 0, 4, 92], 9.85],
+		["adamant", [252, 252, 4, 0, 0, 0], 8.058],
+		["adamant", [244, 116, 140, 0, 4, 4], 7.211],
+		["careful", [244, 0, 0, 0, 172, 92], 6.342]
+	],
+	"moves": [
+		["fake-out", 99.223],
+		["gigaton-hammer", 98.798],
+		["play-rough", 45.735],
+		["knock-off", 45.595],
+		["feint", 23.475],
+		["encore", 22.226],
+		["brick-break", 17.804],
+		["helping-hand", 15.046],
+		["protect", 13.564]
+	],
+	"teammates": [
+		["garganacl", 23.587],
+		["meowscarada", 21.905],
+		["torkoal", 19.618],
+		["hatterene", 19.56],
+		["skeledirge", 18.862],
+		["gholdengo", 18.239],
+		["volcarona", 17.354],
+		["kilowattrel", 16.668],
+		["murkrow", 16.368],
+		["baxcalibur", 14.593],
+		["skuntank", 14.333]
+	]
+}, {
+	"ident": "cryogonal",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["focus-sash", 99.398]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 91.248],
+		["timid", [4, 0, 0, 252, 0, 252], 5.77]
+	],
+	"moves": [
+		["protect", 99.814],
+		["icy-wind", 99.513],
+		["freeze-dry", 97.506],
+		["haze", 97.089]
+	],
+	"teammates": [
+		["garchomp", 93.619],
+		["talonflame", 93.584],
+		["grimmsnarl", 89.355],
+		["annihilape", 86.881],
+		["arcanine", 84.431],
+		["rotom-heat", 5.13],
+		["gyarados", 4.627],
+		["gholdengo", 4.273],
+		["toedscruel", 4.193],
+		["kingambit", 3.615],
+		["krookodile", 1.085]
+	]
+}, {
+	"ident": "drednaw",
+	"abilities": [
+		["swift-swim", 91.693],
+		["strong-jaw", 8.098],
+		["shell-armor", 0.209]
+	],
+	"items": [
+		["life-orb", 63.376],
+		["white-herb", 17.524],
+		["choice-band", 8.405],
+		["clear-amulet", 8.056]
+	],
+	"spreads": [
+		["adamant", [4, 252, 0, 0, 0, 252], 39.919],
+		["adamant", [0, 252, 0, 0, 4, 252], 13.823],
+		["adamant", [0, 252, 0, 0, 0, 252], 8.711],
+		["adamant", [12, 196, 4, 0, 108, 188], 6.856],
+		["adamant", [68, 252, 4, 0, 44, 140], 5.461],
+		["adamant", [156, 252, 0, 0, 0, 100], 4.195]
+	],
+	"moves": [
+		["rock-slide", 99.469],
+		["liquidation", 90.76],
+		["protect", 76.651],
+		["ice-spinner", 60.291],
+		["shell-smash", 19.009],
+		["tera-blast", 18.91],
+		["waterfall", 9.064],
+		["crunch", 9.01]
+	],
+	"teammates": [
+		["pelipper", 85.53],
+		["gholdengo", 49.278],
+		["amoonguss", 29.267],
+		["kingambit", 28.406],
+		["tsareena", 23.71],
+		["meowscarada", 21.231],
+		["palafin", 20.2],
+		["hydreigon", 19.374],
+		["kilowattrel", 15.079],
+		["breloom", 12.092],
+		["gengar", 11.023]
+	]
+}, {
+	"ident": "salazzle",
+	"abilities": [
+		["oblivious", 76.637],
+		["corrosion", 23.363]
+	],
+	"items": [
+		["focus-sash", 79.712],
+		["eject-pack", 11.678],
+		["covert-cloak", 4.017]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 44.026],
+		["timid", [0, 0, 0, 252, 4, 252], 30.584],
+		["timid", [0, 0, 4, 252, 0, 252], 7.01],
+		["modest", [20, 0, 4, 228, 4, 252], 4.124],
+		["timid", [212, 0, 76, 4, 4, 212], 3.946],
+		["mild", [4, 0, 0, 252, 0, 252], 1.605]
+	],
+	"moves": [
+		["fake-out", 95.766],
+		["overheat", 87.373],
+		["sludge-bomb", 82.131],
+		["taunt", 33.307],
+		["endeavor", 27.959],
+		["encore", 26.719],
+		["acid-spray", 10.698],
+		["toxic", 8.483],
+		["protect", 7.469],
+		["will-o-wisp", 5.689]
+	],
+	"teammates": [
+		["amoonguss", 69.538],
+		["baxcalibur", 68.11],
+		["mimikyu", 63.865],
+		["kingambit", 46.851],
+		["tauros-paldea-water", 36.145],
+		["gholdengo", 32.154],
+		["hydreigon", 24.575],
+		["dragonite", 12.194],
+		["krookodile", 9.723],
+		["gallade", 9.579],
+		["garchomp", 7.532]
+	]
+}, {
+	"ident": "rotom-mow",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["covert-cloak", 35.912],
+		["leftovers", 26.654],
+		["sitrus-berry", 24.704],
+		["choice-specs", 7.544],
+		["assault-vest", 3.537]
+	],
+	"spreads": [
+		["modest", [252, 0, 4, 92, 44, 116], 35.912],
+		["modest", [252, 0, 0, 252, 4, 0], 26.623],
+		["modest", [252, 0, 4, 196, 12, 44], 23.525],
+		["modest", [252, 0, 0, 252, 0, 4], 4.16],
+		["modest", [244, 0, 4, 252, 4, 4], 3.687],
+		["modest", [244, 0, 180, 36, 4, 44], 1.86]
+	],
+	"moves": [
+		["leaf-storm", 100.0],
+		["discharge", 64.781],
+		["protect", 61.951],
+		["will-o-wisp", 61.495],
+		["thunder", 26.852],
+		["helping-hand", 26.627],
+		["rain-dance", 26.623],
+		["thunderbolt", 13.138]
+	],
+	"teammates": [
+		["garchomp", 54.622],
+		["arcanine", 52.178],
+		["garganacl", 52.133],
+		["murkrow", 51.05],
+		["gholdengo", 35.659],
+		["meowscarada", 34.503],
+		["pelipper", 32.844],
+		["beartic", 27.513],
+		["barraskewda", 26.623],
+		["clodsire", 24.095],
+		["gardevoir", 18.619]
+	]
+}, {
+	"ident": "sableye",
+	"abilities": [
+		["prankster", 99.992],
+		["keen-eye", 0.007],
+		["stall", 0.0]
+	],
+	"items": [
+		["light-clay", 47.913],
+		["wide-lens", 15.674],
+		["focus-sash", 9.381],
+		["roseli-berry", 8.269],
+		["sitrus-berry", 7.107],
+		["lagging-tail", 6.813]
+	],
+	"spreads": [
+		["bold", [252, 0, 100, 4, 148, 4], 36.983],
+		["calm", [252, 0, 60, 0, 196, 0], 10.155],
+		["careful", [252, 0, 4, 0, 252, 0], 10.042],
+		["bold", [252, 0, 100, 0, 156, 0], 4.895],
+		["bold", [252, 0, 92, 0, 160, 4], 4.7],
+		["sassy", [252, 0, 4, 0, 252, 0], 4.194]
+	],
+	"moves": [
+		["foul-play", 71.346],
+		["encore", 61.511],
+		["light-screen", 51.545],
+		["reflect", 51.181],
+		["fake-out", 44.415],
+		["will-o-wisp", 32.317],
+		["quash", 30.598],
+		["disable", 11.639],
+		["snarl", 11.038],
+		["taunt", 7.549],
+		["trick", 6.877]
+	],
+	"teammates": [
+		["volcarona", 44.739],
+		["tauros-paldea-water", 42.601],
+		["grimmsnarl", 40.744],
+		["garchomp", 20.553],
+		["kingambit", 19.091],
+		["hydreigon", 18.292],
+		["amoonguss", 16.575],
+		["maushold", 16.506],
+		["toxtricity", 16.399],
+		["arcanine", 16.177],
+		["sylveon", 15.547]
+	]
+}, {
+	"ident": "avalugg",
+	"abilities": [
+		["sturdy", 98.018],
+		["own-tempo", 1.956],
+		["ice-body", 0.027]
+	],
+	"items": [
+		["figy-berry", 97.95]
+	],
+	"spreads": [
+		["impish", [252, 4, 252, 0, 0, 0], 96.487]
+	],
+	"moves": [
+		["body-press", 99.899],
+		["ice-spinner", 98.485],
+		["wide-guard", 96.749],
+		["recover", 96.625]
+	],
+	"teammates": [
+		["skeledirge", 96.584],
+		["meowscarada", 96.584],
+		["azumarill", 96.576],
+		["hydreigon", 96.575],
+		["tauros-paldea-fire", 96.575],
+		["tauros-paldea-fire", 96.575]
+	]
+}, {
+	"ident": "glimmora",
+	"abilities": [
+		["toxic-debris", 99.917],
+		["corrosion", 0.083]
+	],
+	"items": [
+		["assault-vest", 30.935],
+		["life-orb", 29.661],
+		["focus-sash", 17.094],
+		["shuca-berry", 6.824],
+		["choice-specs", 4.878],
+		["rocky-helmet", 3.689],
+		["wiki-berry", 2.09]
+	],
+	"spreads": [
+		["modest", [252, 0, 172, 76, 4, 4], 14.787],
+		["timid", [4, 0, 0, 252, 0, 252], 13.636],
+		["modest", [252, 0, 0, 252, 4, 0], 11.103],
+		["modest", [180, 0, 4, 76, 188, 60], 8.665],
+		["timid", [0, 0, 0, 252, 4, 252], 8.104],
+		["quiet", [252, 0, 0, 252, 4, 0], 7.532]
+	],
+	"moves": [
+		["power-gem", 81.374],
+		["sludge-bomb", 70.123],
+		["earth-power", 55.009],
+		["energy-ball", 43.854],
+		["spiky-shield", 43.798],
+		["mortal-spin", 36.91],
+		["dazzling-gleam", 22.522],
+		["protect", 15.578],
+		["sludge-wave", 8.907],
+		["stealth-rock", 6.345]
+	],
+	"teammates": [
+		["meowscarada", 32.891],
+		["dondozo", 31.477],
+		["tatsugiri", 31.456],
+		["grimmsnarl", 23.842],
+		["annihilape", 22.077],
+		["murkrow", 18.007],
+		["quaquaval", 17.214],
+		["tinkaton", 16.435],
+		["volcarona", 16.342],
+		["kilowattrel", 15.194],
+		["baxcalibur", 14.97]
+	]
+}, {
+	"ident": "corviknight",
+	"abilities": [
+		["mirror-armor", 96.349],
+		["pressure", 3.428],
+		["unnerve", 0.224]
+	],
+	"items": [
+		["rocky-helmet", 49.647],
+		["safety-goggles", 19.13],
+		["leftovers", 12.799],
+		["covert-cloak", 9.219],
+		["sitrus-berry", 6.798]
+	],
+	"spreads": [
+		["jolly", [172, 76, 4, 0, 4, 252], 42.19],
+		["adamant", [252, 204, 4, 0, 20, 28], 11.892],
+		["impish", [244, 0, 236, 0, 28, 0], 4.142],
+		["impish", [252, 20, 52, 0, 148, 36], 3.885],
+		["adamant", [196, 180, 4, 0, 44, 84], 3.685],
+		["careful", [252, 36, 20, 0, 124, 76], 3.5]
+	],
+	"moves": [
+		["iron-head", 79.84],
+		["tailwind", 79.801],
+		["brave-bird", 79.438],
+		["taunt", 57.107],
+		["roost", 39.619],
+		["bulk-up", 19.64],
+		["body-press", 15.507],
+		["iron-defense", 11.18]
+	],
+	"teammates": [
+		["grimmsnarl", 63.599],
+		["garchomp", 59.84],
+		["annihilape", 58.514],
+		["rotom-wash", 49.864],
+		["gengar", 42.066],
+		["amoonguss", 16.655],
+		["tyranitar", 15.893],
+		["arcanine", 12.79],
+		["meowscarada", 9.976],
+		["skeledirge", 9.626],
+		["gallade", 7.76]
+	]
+}, {
+	"ident": "barraskewda",
+	"abilities": [
+		["swift-swim", 67.417],
+		["propeller-tail", 32.583]
+	],
+	"items": [
+		["life-orb", 58.411],
+		["focus-sash", 29.94],
+		["choice-band", 10.951]
+	],
+	"spreads": [
+		["adamant", [4, 252, 0, 0, 0, 252], 62.758],
+		["timid", [4, 252, 0, 0, 0, 252], 26.499],
+		["jolly", [4, 252, 0, 0, 0, 252], 7.364]
+	],
+	"moves": [
+		["liquidation", 98.036],
+		["close-combat", 91.104],
+		["protect", 51.075],
+		["psychic-fangs", 40.566],
+		["crunch", 39.142],
+		["ice-fang", 31.875],
+		["aqua-jet", 18.087],
+		["throat-chop", 11.854]
+	],
+	"teammates": [
+		["pelipper", 91.902],
+		["gholdengo", 40.876],
+		["rotom-mow", 33.546],
+		["beartic", 33.546],
+		["murkrow", 32.74],
+		["clodsire", 30.433],
+		["palafin", 28.824],
+		["armarouge", 26.968],
+		["indeedee-f", 26.74],
+		["meowscarada", 19.212],
+		["maushold", 9.435]
+	]
+}, {
+	"ident": "hatterene",
+	"abilities": [
+		["magic-bounce", 99.391],
+		["healer", 0.609],
+		["anticipation", 0.0]
+	],
+	"items": [
+		["focus-sash", 46.578],
+		["covert-cloak", 23.713],
+		["life-orb", 14.043],
+		["nothing", 3.701],
+		["leftovers", 3.645],
+		["mental-herb", 3.375]
+	],
+	"spreads": [
+		["quiet", [252, 0, 4, 252, 0, 0], 48.827],
+		["quiet", [252, 0, 0, 252, 4, 0], 22.058],
+		["modest", [252, 0, 4, 252, 0, 0], 7.941],
+		["calm", [0, 0, 4, 252, 252, 0], 4.185],
+		["sassy", [252, 0, 0, 4, 252, 0], 3.089],
+		["quiet", [244, 0, 12, 252, 0, 0], 2.274]
+	],
+	"moves": [
+		["trick-room", 98.212],
+		["dazzling-gleam", 96.032],
+		["mystical-fire", 58.885],
+		["psychic", 48.787],
+		["protect", 28.608],
+		["heal-pulse", 26.033],
+		["psyshock", 11.949],
+		["nuzzle", 5.91],
+		["shadow-ball", 3.823],
+		["magic-powder", 2.995]
+	],
+	"teammates": [
+		["torkoal", 51.404],
+		["hariyama", 33.012],
+		["tinkaton", 30.156],
+		["skeledirge", 28.361],
+		["garganacl", 24.84],
+		["skuntank", 22.098],
+		["amoonguss", 19.097],
+		["kingambit", 17.232],
+		["tyranitar", 14.951],
+		["meowscarada", 13.799],
+		["indeedee-f", 12.113]
+	]
+}, {
+	"ident": "bellibolt",
+	"abilities": [
+		["electromorphosis", 99.939],
+		["static", 0.061],
+		["damp", 0.0]
+	],
+	"items": [
+		["weakness-policy", 93.409],
+		["assault-vest", 4.05]
+	],
+	"spreads": [
+		["modest", [252, 0, 4, 252, 0, 0], 74.339],
+		["bold", [196, 0, 252, 60, 0, 0], 6.171],
+		["quiet", [252, 0, 0, 252, 4, 0], 5.838],
+		["modest", [252, 0, 0, 252, 4, 0], 5.215],
+		["sassy", [196, 0, 188, 0, 124, 0], 1.811],
+		["modest", [244, 0, 0, 252, 12, 0], 1.427]
+	],
+	"moves": [
+		["protect", 94.541],
+		["parabolic-charge", 88.787],
+		["thunderbolt", 88.375],
+		["hyper-voice", 79.078],
+		["muddy-water", 17.75],
+		["discharge", 9.865],
+		["tera-blast", 6.904]
+	],
+	"teammates": [
+		["annihilape", 85.755],
+		["oranguru", 83.901],
+		["amoonguss", 53.233],
+		["donphan", 53.157],
+		["hydreigon", 42.133],
+		["maushold", 22.632],
+		["torkoal", 21.299],
+		["salamence", 17.15],
+		["dragonite", 13.75],
+		["gastrodon", 9.26],
+		["indeedee-f", 7.941]
+	]
+}, {
+	"ident": "scizor",
+	"abilities": [
+		["technician", 95.335],
+		["swarm", 4.665],
+		["light-metal", 0.0]
+	],
+	"items": [
+		["clear-amulet", 21.221],
+		["metal-coat", 19.298],
+		["life-orb", 17.144],
+		["choice-band", 16.67],
+		["air-balloon", 7.592],
+		["weakness-policy", 4.462],
+		["occa-berry", 3.253],
+		["lum-berry", 3.176],
+		["white-herb", 1.525],
+		["assault-vest", 1.243]
+	],
+	"spreads": [
+		["adamant", [252, 252, 0, 0, 4, 0], 20.595],
+		["brave", [212, 196, 0, 0, 100, 0], 17.637],
+		["adamant", [244, 156, 4, 0, 4, 100], 16.015],
+		["adamant", [252, 252, 0, 0, 0, 4], 12.522],
+		["adamant", [252, 164, 0, 0, 92, 0], 7.442],
+		["brave", [252, 252, 0, 0, 0, 0], 3.929]
+	],
+	"moves": [
+		["bullet-punch", 82.357],
+		["protect", 69.22],
+		["swords-dance", 57.46],
+		["close-combat", 51.92],
+		["u-turn", 43.357],
+		["aerial-ace", 31.473],
+		["iron-head", 19.103],
+		["pounce", 9.061],
+		["defog", 7.442],
+		["tailwind", 6.877],
+		["tera-blast", 6.119]
+	],
+	"teammates": [
+		["meowscarada", 37.856],
+		["amoonguss", 36.133],
+		["armarouge", 22.565],
+		["indeedee-f", 21.643],
+		["hydreigon", 18.643],
+		["pelipper", 17.922],
+		["azumarill", 17.648],
+		["gengar", 16.597],
+		["skeledirge", 16.297],
+		["garchomp", 15.384],
+		["dragonite", 14.075]
+	]
+}, {
+	"ident": "vaporeon",
+	"abilities": [
+		["water-absorb", 99.708],
+		["hydration", 0.292]
+	],
+	"items": [
+		["leftovers", 67.762],
+		["sitrus-berry", 17.297],
+		["life-orb", 8.532],
+		["choice-specs", 1.86]
+	],
+	"spreads": [
+		["modest", [148, 0, 252, 4, 100, 4], 44.841],
+		["modest", [36, 0, 252, 124, 12, 84], 6.967],
+		["bold", [156, 0, 236, 84, 4, 28], 6.51],
+		["modest", [28, 0, 100, 252, 4, 124], 6.364],
+		["bold", [252, 0, 252, 0, 4, 0], 4.883],
+		["modest", [52, 0, 252, 156, 36, 12], 3.937]
+	],
+	"moves": [
+		["muddy-water", 98.129],
+		["protect", 86.718],
+		["haze", 79.496],
+		["ice-beam", 67.71],
+		["calm-mind", 16.772],
+		["icy-wind", 13.156],
+		["yawn", 11.678],
+		["tera-blast", 8.954]
+	],
+	"teammates": [
+		["garchomp", 58.639],
+		["volcarona", 53.986],
+		["gholdengo", 52.222],
+		["dragonite", 48.626],
+		["kilowattrel", 47.034],
+		["grimmsnarl", 27.293],
+		["annihilape", 18.554],
+		["hydreigon", 17.784],
+		["sylveon", 17.039],
+		["arcanine", 14.016],
+		["amoonguss", 10.195]
+	]
+}, {
+	"ident": "arboliva",
+	"abilities": [
+		["seed-sower", 71.013],
+		["harvest", 28.987]
+	],
+	"items": [
+		["sitrus-berry", 34.315],
+		["grassy-seed", 19.123],
+		["big-root", 13.914],
+		["leftovers", 12.338],
+		["aguav-berry", 4.954],
+		["throat-spray", 3.649],
+		["assault-vest", 3.343],
+		["mirror-herb", 2.219],
+		["life-orb", 1.725]
+	],
+	"spreads": [
+		["sassy", [244, 0, 180, 0, 84, 0], 15.253],
+		["sassy", [252, 0, 0, 4, 252, 0], 9.867],
+		["quiet", [252, 0, 0, 252, 4, 0], 8.526],
+		["modest", [252, 0, 0, 252, 4, 0], 7.725],
+		["calm", [252, 0, 0, 4, 252, 0], 5.859],
+		["quiet", [252, 0, 68, 132, 52, 0], 5.406]
+	],
+	"moves": [
+		["giga-drain", 65.608],
+		["protect", 56.816],
+		["strength-sap", 53.016],
+		["leech-seed", 52.424],
+		["earth-power", 52.311],
+		["pollen-puff", 24.391],
+		["dazzling-gleam", 15.284],
+		["hyper-voice", 15.239],
+		["energy-ball", 10.569],
+		["charm", 8.241],
+		["weather-ball", 7.901],
+		["grass-knot", 7.848],
+		["helping-hand", 6.358],
+		["solar-beam", 4.859]
+	],
+	"teammates": [
+		["kingambit", 40.729],
+		["annihilape", 36.62],
+		["torkoal", 35.11],
+		["oranguru", 25.47],
+		["maushold", 23.94],
+		["gothitelle", 19.158],
+		["grimmsnarl", 16.379],
+		["florges", 12.525],
+		["misdreavus", 12.493],
+		["hariyama", 12.188],
+		["volcarona", 11.544]
+	]
+}, {
+	"ident": "cetitan",
+	"abilities": [
+		["slush-rush", 61.812],
+		["thick-fat", 20.877],
+		["sheer-force", 17.311]
+	],
+	"items": [
+		["sitrus-berry", 35.034],
+		["assault-vest", 33.798],
+		["life-orb", 20.323],
+		["leftovers", 3.607],
+		["clear-amulet", 3.025]
+	],
+	"spreads": [
+		["adamant", [4, 252, 12, 0, 204, 36], 17.156],
+		["adamant", [4, 252, 108, 0, 140, 4], 8.677],
+		["adamant", [252, 252, 0, 0, 4, 0], 8.331],
+		["adamant", [0, 252, 0, 0, 140, 116], 5.293],
+		["jolly", [4, 252, 0, 0, 0, 252], 4.564],
+		["adamant", [140, 252, 0, 0, 0, 116], 4.306]
+	],
+	"moves": [
+		["liquidation", 57.216],
+		["ice-spinner", 55.422],
+		["ice-shard", 51.49],
+		["protect", 43.69],
+		["belly-drum", 35.786],
+		["superpower", 35.658],
+		["heavy-slam", 32.418],
+		["icicle-crash", 29.307],
+		["earthquake", 25.689],
+		["play-rough", 8.395],
+		["tera-blast", 7.292]
+	],
+	"teammates": [
+		["abomasnow", 62.969],
+		["annihilape", 49.302],
+		["armarouge", 32.042],
+		["indeedee-f", 29.864],
+		["maushold", 23.883],
+		["hydreigon", 22.932],
+		["murkrow", 19.84],
+		["dondozo", 18.795],
+		["tatsugiri", 18.671],
+		["flamigo", 16.905],
+		["gholdengo", 7.801]
+	]
+}, {
+	"ident": "toxapex",
+	"abilities": [
+		["regenerator", 99.819],
+		["merciless", 0.181],
+		["limber", 0.0]
+	],
+	"items": [
+		["binding-band", 92.309],
+		["heavy-duty-boots", 2.553],
+		["leftovers", 1.895]
+	],
+	"spreads": [
+		["bold", [252, 0, 220, 0, 36, 0], 90.886],
+		["sassy", [252, 0, 4, 0, 252, 0], 2.553],
+		["impish", [252, 0, 4, 0, 252, 0], 1.826]
+	],
+	"moves": [
+		["baneful-bunker", 98.311],
+		["haze", 96.437],
+		["recover", 96.183],
+		["infestation", 95.037]
+	],
+	"teammates": [
+		["gholdengo", 91.301],
+		["meowscarada", 89.535],
+		["murkrow", 89.08],
+		["baxcalibur", 88.081],
+		["rotom-wash", 87.645],
+		["dragonite", 2.926],
+		["kingambit", 2.501],
+		["hydreigon", 2.232],
+		["talonflame", 1.855],
+		["annihilape", 1.661],
+		["ceruledge", 1.494]
+	]
+}, {
+	"ident": "clodsire",
+	"abilities": [
+		["unaware", 63.611],
+		["water-absorb", 36.385],
+		["poison-point", 0.003]
+	],
+	"items": [
+		["black-sludge", 65.378],
+		["leftovers", 21.291],
+		["sitrus-berry", 12.451]
+	],
+	"spreads": [
+		["sassy", [196, 0, 252, 0, 60, 0], 44.418],
+		["impish", [76, 36, 252, 0, 140, 4], 14.251],
+		["sassy", [252, 4, 0, 0, 252, 0], 12.077],
+		["careful", [252, 4, 0, 0, 252, 0], 8.948],
+		["relaxed", [252, 0, 252, 0, 0, 0], 5.616],
+		["impish", [252, 0, 252, 0, 4, 0], 2.193]
+	],
+	"moves": [
+		["recover", 73.252],
+		["haze", 67.928],
+		["poison-jab", 65.095],
+		["yawn", 57.256],
+		["toxic", 26.902],
+		["earthquake", 18.703],
+		["stomping-tantrum", 18.62],
+		["helping-hand", 13.305],
+		["protect", 12.167],
+		["after-you", 12.014],
+		["rain-dance", 9.247],
+		["curse", 7.72]
+	],
+	"teammates": [
+		["pelipper", 57.896],
+		["gholdengo", 45.798],
+		["barraskewda", 44.525],
+		["beartic", 44.424],
+		["rotom-mow", 44.418],
+		["grimmsnarl", 20.84],
+		["tyranitar", 16.169],
+		["lycanroc", 15.557],
+		["garchomp", 14.774],
+		["houndstone", 14.685],
+		["hippowdon", 14.251]
+	]
+}, {
+	"ident": "flamigo",
+	"abilities": [
+		["costar", 90.557],
+		["scrappy", 9.443],
+		["tangled-feet", 0.0]
+	],
+	"items": [
+		["focus-sash", 27.395],
+		["white-herb", 17.566],
+		["choice-scarf", 13.476],
+		["life-orb", 12.391],
+		["assault-vest", 6.839],
+		["psychic-seed", 5.07],
+		["sharp-beak", 4.723],
+		["choice-band", 2.288],
+		["covert-cloak", 2.112],
+		["black-belt", 1.986],
+		["safety-goggles", 1.222]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 38.403],
+		["jolly", [4, 252, 0, 0, 0, 252], 26.759],
+		["adamant", [4, 252, 0, 0, 0, 252], 8.774],
+		["jolly", [12, 252, 4, 0, 12, 228], 4.98],
+		["modest", [4, 0, 0, 252, 0, 252], 4.721],
+		["adamant", [0, 252, 0, 0, 0, 252], 2.999]
+	],
+	"moves": [
+		["close-combat", 94.278],
+		["brave-bird", 83.6],
+		["throat-chop", 41.077],
+		["detect", 28.457],
+		["protect", 24.707],
+		["liquidation", 23.265],
+		["roost", 17.121],
+		["tailwind", 15.469],
+		["u-turn", 15.17],
+		["wide-guard", 13.422],
+		["acrobatics", 9.131],
+		["sleep-talk", 8.333],
+		["quick-guard", 6.363]
+	],
+	"teammates": [
+		["armarouge", 35.178],
+		["indeedee-f", 34.95],
+		["maushold", 26.249],
+		["dondozo", 24.69],
+		["tatsugiri", 24.688],
+		["cetitan", 19.816],
+		["annihilape", 19.807],
+		["gholdengo", 15.924],
+		["meowscarada", 14.099],
+		["dragapult", 13.363],
+		["grimmsnarl", 12.842]
+	]
+}, {
+	"ident": "floatzel",
+	"abilities": [
+		["swift-swim", 99.754],
+		["water-veil", 0.246]
+	],
+	"items": [
+		["life-orb", 79.551],
+		["choice-band", 16.449]
+	],
+	"spreads": [
+		["adamant", [132, 252, 4, 0, 4, 116], 55.145],
+		["adamant", [4, 252, 0, 0, 0, 252], 22.295],
+		["adamant", [164, 196, 44, 0, 100, 4], 8.851],
+		["jolly", [28, 252, 4, 0, 4, 220], 4.416],
+		["jolly", [20, 252, 4, 0, 4, 228], 3.445],
+		["jolly", [100, 252, 0, 0, 0, 156], 2.102]
+	],
+	"moves": [
+		["wave-crash", 96.518],
+		["ice-spinner", 90.65],
+		["aqua-jet", 75.042],
+		["protect", 68.477],
+		["brick-break", 24.207],
+		["bulk-up", 8.858],
+		["tera-blast", 8.074],
+		["liquidation", 7.915],
+		["crunch", 6.542]
+	],
+	"teammates": [
+		["pelipper", 93.357],
+		["arcanine", 59.823],
+		["kingambit", 49.302],
+		["gholdengo", 28.358],
+		["farigiraf", 28.076],
+		["breloom", 27.853],
+		["sylveon", 26.286],
+		["meowscarada", 23.705],
+		["amoonguss", 20.002],
+		["scizor", 12.901],
+		["raichu", 11.657]
+	]
+}, {
+	"ident": "tsareena",
+	"abilities": [
+		["queenly-majesty", 96.328],
+		["sweet-veil", 3.536],
+		["leaf-guard", 0.135]
+	],
+	"items": [
+		["choice-scarf", 52.94],
+		["sitrus-berry", 16.169],
+		["aguav-berry", 11.926],
+		["assault-vest", 10.016],
+		["king's-rock", 5.382]
+	],
+	"spreads": [
+		["jolly", [92, 188, 4, 0, 4, 220], 32.935],
+		["jolly", [92, 196, 4, 0, 4, 212], 10.769],
+		["careful", [252, 0, 140, 0, 116, 0], 7.731],
+		["adamant", [252, 252, 0, 0, 4, 0], 7.093],
+		["jolly", [4, 252, 0, 0, 0, 252], 5.497],
+		["adamant", [180, 76, 0, 0, 0, 252], 5.382]
+	],
+	"moves": [
+		["trop-kick", 76.831],
+		["play-rough", 74.274],
+		["u-turn", 69.454],
+		["low-sweep", 44.906],
+		["protect", 28.152],
+		["high-jump-kick", 24.905],
+		["helping-hand", 23.365],
+		["power-whip", 23.154],
+		["taunt", 13.613],
+		["low-kick", 8.883]
+	],
+	"teammates": [
+		["pelipper", 61.911],
+		["drednaw", 52.669],
+		["gholdengo", 43.851],
+		["kilowattrel", 33.489],
+		["kingambit", 26.841],
+		["annihilape", 18.564],
+		["sableye", 12.878],
+		["toxtricity", 12.704],
+		["murkrow", 11.965],
+		["tauros-paldea-water", 11.195],
+		["skeledirge", 11.087]
+	]
+}, {
+	"ident": "magnezone",
+	"abilities": [
+		["analytic", 80.959],
+		["sturdy", 10.238],
+		["magnet-pull", 8.803]
+	],
+	"items": [
+		["choice-specs", 71.384],
+		["safety-goggles", 7.921],
+		["sitrus-berry", 7.657],
+		["life-orb", 5.214],
+		["air-balloon", 3.401]
+	],
+	"spreads": [
+		["modest", [252, 0, 0, 252, 0, 4], 53.978],
+		["modest", [236, 0, 4, 252, 4, 12], 15.232],
+		["modest", [196, 0, 12, 236, 4, 12], 5.371],
+		["modest", [252, 0, 4, 76, 132, 44], 5.368],
+		["modest", [252, 0, 4, 100, 116, 36], 3.177],
+		["timid", [0, 0, 4, 252, 0, 252], 3.134]
+	],
+	"moves": [
+		["flash-cannon", 99.211],
+		["thunderbolt", 84.029],
+		["tera-blast", 80.776],
+		["volt-switch", 61.946],
+		["discharge", 24.728],
+		["protect", 22.498],
+		["electroweb", 13.366]
+	],
+	"teammates": [
+		["amoonguss", 65.839],
+		["meowscarada", 60.087],
+		["garchomp", 55.53],
+		["volcarona", 42.046],
+		["gyarados", 41.504],
+		["grimmsnarl", 24.426],
+		["hydreigon", 23.085],
+		["skeledirge", 21.012],
+		["annihilape", 19.942],
+		["arcanine", 16.594],
+		["azumarill", 10.744]
+	]
+}, {
+	"ident": "houndstone",
+	"abilities": [
+		["sand-rush", 96.248],
+		["fluffy", 3.752]
+	],
+	"items": [
+		["choice-band", 36.272],
+		["lum-berry", 21.722],
+		["sitrus-berry", 17.546],
+		["choice-scarf", 6.141],
+		["life-orb", 5.082],
+		["colbur-berry", 4.51],
+		["assault-vest", 3.467],
+		["spell-tag", 1.503]
+	],
+	"spreads": [
+		["adamant", [220, 228, 4, 0, 12, 44], 33.07],
+		["adamant", [252, 236, 4, 0, 4, 12], 21.411],
+		["jolly", [252, 4, 0, 0, 0, 252], 6.946],
+		["adamant", [0, 252, 0, 0, 4, 252], 6.879],
+		["naive", [252, 4, 0, 0, 0, 252], 5.301],
+		["adamant", [108, 132, 4, 0, 12, 252], 4.51]
+	],
+	"moves": [
+		["last-respects", 92.872],
+		["play-rough", 64.978],
+		["ice-fang", 59.113],
+		["stomping-tantrum", 34.713],
+		["crunch", 26.044],
+		["protect", 23.254],
+		["will-o-wisp", 20.992],
+		["snarl", 17.881],
+		["shadow-sneak", 17.863],
+		["psychic-fangs", 7.4],
+		["destiny-bond", 5.468],
+		["helping-hand", 5.195],
+		["yawn", 4.201],
+		["phantom-force", 4.1]
+	],
+	"teammates": [
+		["tyranitar", 71.549],
+		["garchomp", 34.231],
+		["lycanroc", 25.909],
+		["hippowdon", 20.777],
+		["sylveon", 18.35],
+		["armarouge", 17.702],
+		["meowscarada", 17.027],
+		["hariyama", 16.348],
+		["clodsire", 14.057],
+		["annihilape", 9.397],
+		["garganacl", 7.263]
+	]
+}, {
+	"ident": "mismagius",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["focus-sash", 99.384]
+	],
+	"spreads": [
+		["timid", [0, 0, 4, 252, 0, 252], 99.025]
+	],
+	"moves": [
+		["shadow-ball", 99.84],
+		["icy-wind", 99.364],
+		["trick-room", 99.219],
+		["imprison", 99.025]
+	],
+	"teammates": [
+		["garchomp", 99.404],
+		["murkrow", 99.396],
+		["pawmot", 99.047],
+		["volcarona", 99.029],
+		["kingambit", 99.026],
+		["kingambit", 99.026]
+	]
+}, {
+	"ident": "donphan",
+	"abilities": [
+		["sand-veil", 96.366],
+		["sturdy", 3.634]
+	],
+	"items": [
+		["assault-vest", 98.655]
+	],
+	"spreads": [
+		["brave", [252, 252, 0, 0, 4, 0], 92.444],
+		["brave", [196, 236, 0, 0, 76, 0], 3.96]
+	],
+	"moves": [
+		["ice-shard", 99.984],
+		["earthquake", 99.913],
+		["ice-spinner", 98.648],
+		["high-horsepower", 94.764]
+	],
+	"teammates": [
+		["amoonguss", 96.55],
+		["oranguru", 94.363],
+		["bellibolt", 94.004],
+		["annihilape", 93.963],
+		["hydreigon", 70.969],
+		["dragonite", 21.619],
+		["tyranitar", 3.974],
+		["tyranitar", 3.974]
+	]
+}, {
+	"ident": "dachsbun",
+	"abilities": [
+		["well-baked-body", 100.0],
+		["aroma-veil", 0.0]
+	],
+	"items": [
+		["leftovers", 92.649],
+		["assault-vest", 5.651]
+	],
+	"spreads": [
+		["bold", [252, 0, 36, 4, 188, 28], 39.881],
+		["sassy", [252, 0, 4, 0, 252, 0], 33.184],
+		["careful", [252, 0, 0, 0, 252, 4], 14.491],
+		["jolly", [228, 4, 60, 0, 12, 204], 5.597],
+		["jolly", [252, 4, 0, 0, 0, 252], 1.617],
+		["relaxed", [252, 0, 36, 4, 212, 0], 0.87]
+	],
+	"moves": [
+		["body-press", 97.964],
+		["protect", 91.319],
+		["snarl", 62.398],
+		["play-rough", 42.68],
+		["substitute", 40.616],
+		["yawn", 36.128],
+		["charm", 16.883]
+	],
+	"teammates": [
+		["armarouge", 91.849],
+		["torkoal", 69.261],
+		["indeedee-f", 49.358],
+		["meowscarada", 35.942],
+		["indeedee", 35.757],
+		["azumarill", 35.132],
+		["hariyama", 31.748],
+		["farigiraf", 31.018],
+		["annihilape", 19.054],
+		["abomasnow", 18.352],
+		["baxcalibur", 18.116]
+	]
+}, {
+	"ident": "krookodile",
+	"abilities": [
+		["intimidate", 91.852],
+		["anger-point", 6.124],
+		["moxie", 2.024]
+	],
+	"items": [
+		["assault-vest", 76.045],
+		["life-orb", 9.262],
+		["choice-band", 5.854],
+		["clear-amulet", 5.65]
+	],
+	"spreads": [
+		["adamant", [244, 100, 44, 0, 76, 44], 35.7],
+		["jolly", [60, 244, 4, 0, 4, 196], 23.832],
+		["jolly", [0, 252, 0, 0, 4, 252], 10.52],
+		["adamant", [60, 236, 4, 0, 76, 132], 5.641],
+		["adamant", [132, 180, 0, 0, 0, 196], 4.806],
+		["jolly", [100, 92, 4, 0, 116, 196], 3.592]
+	],
+	"moves": [
+		["crunch", 93.551],
+		["earthquake", 75.15],
+		["snarl", 64.357],
+		["close-combat", 38.269],
+		["gunk-shot", 36.686],
+		["stomping-tantrum", 33.248],
+		["rock-slide", 28.739],
+		["protect", 10.921]
+	],
+	"teammates": [
+		["gholdengo", 60.861],
+		["rotom-heat", 38.22],
+		["gastrodon", 37.928],
+		["murkrow", 37.681],
+		["breloom", 33.414],
+		["amoonguss", 24.506],
+		["mimikyu", 24.123],
+		["baxcalibur", 23.905],
+		["salazzle", 23.833],
+		["indeedee-f", 10.118],
+		["azumarill", 7.94]
+	]
+}, {
+	"ident": "bronzong",
+	"abilities": [
+		["levitate", 86.381],
+		["heatproof", 13.619],
+		["heavy-metal", 0.0]
+	],
+	"items": [
+		["leftovers", 65.852],
+		["mental-herb", 10.338],
+		["occa-berry", 6.85],
+		["covert-cloak", 4.078],
+		["aguav-berry", 3.056],
+		["safety-goggles", 2.357],
+		["toxic-orb", 1.738],
+		["sitrus-berry", 1.635]
+	],
+	"spreads": [
+		["relaxed", [252, 0, 252, 0, 4, 0], 27.266],
+		["sassy", [252, 4, 0, 0, 252, 0], 13.551],
+		["sassy", [212, 0, 108, 0, 188, 0], 10.537],
+		["relaxed", [240, 0, 252, 0, 16, 0], 6.819],
+		["sassy", [252, 0, 116, 0, 140, 0], 6.293],
+		["relaxed", [252, 0, 76, 0, 180, 0], 5.544]
+	],
+	"moves": [
+		["trick-room", 93.92],
+		["body-press", 79.934],
+		["iron-defense", 66.564],
+		["gyro-ball", 34.361],
+		["skill-swap", 26.439],
+		["helping-hand", 16.192],
+		["iron-head", 11.628],
+		["hypnosis", 11.498],
+		["psychic", 8.921],
+		["bulldoze", 8.13],
+		["stomping-tantrum", 6.82],
+		["protect", 5.973],
+		["reflect", 3.983],
+		["imprison", 3.838],
+		["substitute", 3.202]
+	],
+	"teammates": [
+		["kingambit", 37.496],
+		["amoonguss", 33.339],
+		["hydreigon", 31.149],
+		["tyranitar", 29.694],
+		["skeledirge", 24.642],
+		["lycanroc", 22.385],
+		["torkoal", 20.362],
+		["grimmsnarl", 13.545],
+		["meowscarada", 12.829],
+		["gallade", 11.241],
+		["espathra", 10.176]
+	]
+}, {
+	"ident": "beartic",
+	"abilities": [
+		["swift-swim", 93.853],
+		["slush-rush", 3.074],
+		["snow-cloak", 3.073]
+	],
+	"items": [
+		["choice-band", 69.759],
+		["clear-amulet", 14.597],
+		["life-orb", 11.02]
+	],
+	"spreads": [
+		["adamant", [0, 252, 0, 0, 4, 252], 69.674],
+		["jolly", [4, 252, 0, 0, 0, 252], 10.638],
+		["adamant", [4, 252, 0, 0, 0, 252], 7.99],
+		["adamant", [28, 252, 4, 0, 4, 220], 3.666],
+		["adamant", [100, 252, 0, 0, 0, 156], 2.597],
+		["brave", [244, 252, 4, 0, 8, 0], 2.082]
+	],
+	"moves": [
+		["icicle-crash", 95.522],
+		["liquidation", 95.312],
+		["close-combat", 82.622],
+		["earthquake", 74.055],
+		["protect", 25.373],
+		["swords-dance", 9.388]
+	],
+	"teammates": [
+		["pelipper", 92.461],
+		["rotom-mow", 71.983],
+		["gholdengo", 69.901],
+		["barraskewda", 69.655],
+		["clodsire", 63.049],
+		["amoonguss", 21.396],
+		["meowscarada", 13.192],
+		["annihilape", 9.848],
+		["raichu", 9.449],
+		["abomasnow", 4.95],
+		["hydreigon", 3.771]
+	]
+}, {
+	"ident": "lilligant",
+	"abilities": [
+		["chlorophyll", 99.823],
+		["own-tempo", 0.177],
+		["leaf-guard", 0.0]
+	],
+	"items": [
+		["focus-sash", 66.497],
+		["covert-cloak", 16.732],
+		["wide-lens", 14.462]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 60.781],
+		["timid", [0, 0, 4, 252, 0, 252], 7.874],
+		["modest", [0, 0, 4, 252, 0, 252], 6.893],
+		["timid", [252, 0, 76, 12, 68, 100], 6.32],
+		["timid", [252, 0, 0, 100, 0, 156], 5.141],
+		["timid", [0, 0, 0, 252, 4, 252], 4.41]
+	],
+	"moves": [
+		["after-you", 91.339],
+		["sleep-powder", 74.327],
+		["leaf-storm", 69.773],
+		["protect", 52.744],
+		["tera-blast", 27.314],
+		["pollen-puff", 18.628],
+		["encore", 18.188],
+		["energy-ball", 15.455],
+		["quiver-dance", 13.153]
+	],
+	"teammates": [
+		["torkoal", 84.981],
+		["oranguru", 36.73],
+		["farigiraf", 27.621],
+		["hariyama", 27.046],
+		["kingambit", 26.155],
+		["mimikyu", 13.811],
+		["sylveon", 13.361],
+		["annihilape", 13.208],
+		["hydreigon", 12.287],
+		["dragonite", 10.902],
+		["sableye", 10.464]
+	]
+}, {
+	"ident": "toxtricity",
+	"abilities": [
+		["punk-rock", 99.427],
+		["minus", 0.508],
+		["plus", 0.065],
+		["technician", 0.0]
+	],
+	"items": [
+		["choice-specs", 50.792],
+		["throat-spray", 32.622],
+		["life-orb", 5.186],
+		["air-balloon", 4.852],
+		["choice-scarf", 4.181]
+	],
+	"spreads": [
+		["modest", [252, 0, 0, 252, 4, 0], 19.477],
+		["modest", [68, 0, 36, 220, 44, 140], 18.419],
+		["hardy", [204, 0, 0, 252, 0, 52], 8.61],
+		["modest", [4, 0, 0, 252, 0, 252], 7.221],
+		["timid", [4, 0, 0, 252, 0, 252], 7.184],
+		["modest", [20, 0, 0, 252, 0, 236], 5.278]
+	],
+	"moves": [
+		["overdrive", 94.521],
+		["boomburst", 94.134],
+		["sludge-bomb", 90.454],
+		["protect", 44.112],
+		["hex", 37.4],
+		["volt-switch", 15.076],
+		["snarl", 7.968]
+	],
+	"teammates": [
+		["pelipper", 44.091],
+		["sableye", 40.774],
+		["kingambit", 29.905],
+		["gengar", 24.9],
+		["drednaw", 24.658],
+		["barraskewda", 17.832],
+		["gholdengo", 15.867],
+		["tsareena", 15.749],
+		["annihilape", 15.342],
+		["amoonguss", 14.001],
+		["meowscarada", 13.922]
+	]
+}, {
+	"ident": "weavile",
+	"abilities": [
+		["pressure", 86.906],
+		["pickpocket", 13.094]
+	],
+	"items": [
+		["focus-sash", 64.692],
+		["king's-rock", 20.347],
+		["assault-vest", 6.02],
+		["charti-berry", 5.09]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 25.356],
+		["jolly", [0, 252, 4, 0, 0, 252], 23.198],
+		["hasty", [0, 252, 0, 4, 0, 252], 17.063],
+		["adamant", [4, 252, 0, 0, 0, 252], 9.904],
+		["jolly", [172, 84, 4, 0, 4, 244], 5.972],
+		["jolly", [0, 252, 0, 0, 4, 252], 5.492]
+	],
+	"moves": [
+		["fake-out", 94.791],
+		["ice-spinner", 56.598],
+		["icy-wind", 36.239],
+		["icicle-crash", 36.062],
+		["ice-shard", 22.595],
+		["taunt", 21.736],
+		["fake-tears", 20.807],
+		["fling", 20.357],
+		["low-sweep", 19.813],
+		["feint", 17.233],
+		["night-slash", 14.061],
+		["foul-play", 13.73],
+		["protect", 9.65]
+	],
+	"teammates": [
+		["gholdengo", 35.543],
+		["sylveon", 29.083],
+		["murkrow", 27.588],
+		["indeedee-f", 22.538],
+		["meowscarada", 21.715],
+		["palafin", 21.35],
+		["scizor", 19.843],
+		["hydreigon", 19.473],
+		["breloom", 17.829],
+		["pelipper", 17.709],
+		["maushold", 17.49]
+	]
+}, {
+	"ident": "toedscruel",
+	"abilities": [
+		["mycelium-might", 100.0]
+	],
+	"items": [
+		["sitrus-berry", 56.958],
+		["mental-herb", 18.571],
+		["occa-berry", 7.835],
+		["rocky-helmet", 4.593],
+		["covert-cloak", 3.092],
+		["aguav-berry", 3.01],
+		["leftovers", 2.256]
+	],
+	"spreads": [
+		["calm", [252, 0, 4, 4, 236, 12], 25.469],
+		["bold", [252, 0, 252, 0, 4, 0], 18.407],
+		["bold", [244, 0, 244, 12, 4, 4], 18.395],
+		["modest", [252, 0, 180, 76, 0, 0], 13.321],
+		["bold", [244, 0, 244, 4, 4, 12], 7.248],
+		["jolly", [0, 252, 0, 0, 4, 252], 2.36]
+	],
+	"moves": [
+		["spore", 99.433],
+		["rage-powder", 94.814],
+		["earth-power", 93.895],
+		["trick-room", 88.673],
+		["giga-drain", 7.914]
+	],
+	"teammates": [
+		["gholdengo", 37.866],
+		["skeledirge", 32.404],
+		["tauros-paldea-water", 31.769],
+		["tyranitar", 27.55],
+		["farigiraf", 25.992],
+		["lycanroc", 25.47],
+		["kingambit", 21.096],
+		["talonflame", 16.632],
+		["annihilape", 16.383],
+		["gyarados", 15.712],
+		["azumarill", 15.462]
+	]
+}, {
+	"ident": "indeedee",
+	"abilities": [
+		["psychic-surge", 99.09],
+		["inner-focus", 0.91],
+		["synchronize", 0.0]
+	],
+	"items": [
+		["focus-sash", 44.161],
+		["psychic-seed", 29.571],
+		["choice-specs", 19.728],
+		["choice-scarf", 2.395]
+	],
+	"spreads": [
+		["modest", [4, 0, 0, 252, 0, 252], 43.802],
+		["modest", [252, 0, 0, 252, 4, 0], 21.11],
+		["modest", [84, 0, 172, 196, 52, 0], 14.699],
+		["relaxed", [252, 0, 252, 0, 4, 0], 8.407],
+		["modest", [84, 0, 172, 196, 4, 52], 4.995],
+		["modest", [0, 0, 0, 252, 4, 252], 3.33]
+	],
+	"moves": [
+		["psychic", 90.635],
+		["hyper-voice", 66.81],
+		["protect", 46.288],
+		["encore", 44.026],
+		["dazzling-gleam", 33.366],
+		["trick-room", 33.318],
+		["imprison", 23.396],
+		["shadow-ball", 22.627],
+		["tera-blast", 19.695]
+	],
+	"teammates": [
+		["meowscarada", 60.672],
+		["armarouge", 52.993],
+		["torkoal", 51.308],
+		["dachsbun", 42.368],
+		["azumarill", 40.528],
+		["maushold", 35.004],
+		["gholdengo", 25.299],
+		["pelipper", 18.181],
+		["barraskewda", 18.066],
+		["sylveon", 17.332],
+		["hydreigon", 16.987]
+	]
+}, {
+	"ident": "raichu",
+	"abilities": [
+		["lightning-rod", 99.915],
+		["static", 0.085]
+	],
+	"items": [
+		["focus-sash", 66.113],
+		["air-balloon", 15.419],
+		["sitrus-berry", 6.641],
+		["assault-vest", 5.312],
+		["light-ball", 3.943]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 27.511],
+		["timid", [4, 0, 0, 252, 0, 252], 20.913],
+		["timid", [252, 0, 0, 4, 0, 252], 19.018],
+		["timid", [0, 0, 4, 252, 0, 252], 6.907],
+		["timid", [244, 0, 12, 0, 0, 252], 6.641],
+		["timid", [12, 0, 76, 36, 164, 220], 2.846]
+	],
+	"moves": [
+		["fake-out", 97.734],
+		["nuzzle", 61.612],
+		["protect", 51.514],
+		["thunder", 43.804],
+		["volt-switch", 24.102],
+		["thunderbolt", 23.244],
+		["brick-break", 19.031],
+		["tera-blast", 18.531],
+		["discharge", 13.007],
+		["encore", 12.173],
+		["grass-knot", 11.411],
+		["helping-hand", 9.497]
+	],
+	"teammates": [
+		["pelipper", 73.078],
+		["amoonguss", 71.819],
+		["drednaw", 38.148],
+		["gholdengo", 27.917],
+		["arcanine", 27.877],
+		["scizor", 21.708],
+		["palafin", 20.726],
+		["annihilape", 18.488],
+		["floatzel", 18.344],
+		["hydreigon", 16.033],
+		["meowscarada", 14.827]
+	]
+}, {
+	"ident": "scovillain",
+	"abilities": [
+		["chlorophyll", 95.783],
+		["moody", 4.173],
+		["insomnia", 0.044]
+	],
+	"items": [
+		["life-orb", 45.594],
+		["focus-sash", 26.719],
+		["choice-scarf", 11.625],
+		["assault-vest", 8.245],
+		["mental-herb", 3.015]
+	],
+	"spreads": [
+		["modest", [4, 0, 0, 252, 0, 252], 41.338],
+		["modest", [0, 0, 0, 252, 4, 252], 28.694],
+		["timid", [36, 0, 220, 60, 4, 188], 11.595],
+		["hardy", [0, 0, 0, 252, 0, 0], 9.62],
+		["calm", [252, 0, 4, 0, 252, 0], 3.207],
+		["timid", [4, 0, 0, 252, 0, 252], 2.696]
+	],
+	"moves": [
+		["flamethrower", 93.082],
+		["tera-blast", 88.492],
+		["rage-powder", 73.431],
+		["energy-ball", 59.498],
+		["solar-beam", 24.274],
+		["spicy-extract", 18.144],
+		["grass-knot", 11.595],
+		["fire-blast", 9.727],
+		["protect", 6.437]
+	],
+	"teammates": [
+		["torkoal", 90.943],
+		["hariyama", 67.145],
+		["kingambit", 65.054],
+		["farigiraf", 47.459],
+		["annihilape", 44.844],
+		["hydreigon", 26.692],
+		["oranguru", 19.673],
+		["meowscarada", 14.019],
+		["dragapult", 11.996],
+		["rotom-wash", 11.694],
+		["grafaiai", 11.612]
+	]
+}, {
+	"ident": "dudunsparce",
+	"abilities": [
+		["rattled", 70.948],
+		["serene-grace", 29.052],
+		["run-away", 0.0]
+	],
+	"items": [
+		["weakness-policy", 66.778],
+		["sitrus-berry", 16.458],
+		["leftovers", 8.602],
+		["choice-band", 2.234],
+		["rocky-helmet", 2.02]
+	],
+	"spreads": [
+		["modest", [0, 0, 188, 252, 0, 68], 24.764],
+		["adamant", [0, 252, 188, 0, 0, 68], 23.212],
+		["modest", [244, 0, 0, 252, 12, 0], 16.6],
+		["modest", [140, 0, 36, 252, 76, 4], 8.248],
+		["modest", [4, 0, 0, 252, 0, 252], 5.504],
+		["brave", [196, 236, 0, 0, 76, 0], 4.431]
+	],
+	"moves": [
+		["protect", 73.151],
+		["boomburst", 60.482],
+		["stored-power", 43.463],
+		["flamethrower", 40.488],
+		["hyper-drill", 39.99],
+		["baton-pass", 29.638],
+		["zen-headbutt", 23.212],
+		["glare", 21.164],
+		["calm-mind", 16.396],
+		["roost", 9.424],
+		["drill-run", 7.074],
+		["rock-slide", 6.875],
+		["curse", 4.431],
+		["ice-spinner", 3.537],
+		["fire-blast", 3.457]
+	],
+	"teammates": [
+		["annihilape", 74.241],
+		["armarouge", 45.283],
+		["murkrow", 31.687],
+		["meowscarada", 29.008],
+		["indeedee-f", 24.675],
+		["jolteon", 24.177],
+		["oranguru", 23.999],
+		["farigiraf", 23.729],
+		["drifblim", 23.233],
+		["gardevoir", 22.056],
+		["maushold", 18.576]
+	]
+}, {
+	"ident": "rabsca",
+	"abilities": [
+		["telepathy", 78.449],
+		["synchronize", 21.551]
+	],
+	"items": [
+		["mental-herb", 37.324],
+		["leppa-berry", 22.967],
+		["sitrus-berry", 12.567],
+		["covert-cloak", 8.645],
+		["iapapa-berry", 8.179],
+		["life-orb", 4.843],
+		["safety-goggles", 1.752]
+	],
+	"spreads": [
+		["calm", [252, 0, 0, 0, 252, 0], 30.564],
+		["timid", [252, 0, 0, 0, 0, 252], 17.821],
+		["relaxed", [252, 0, 172, 0, 84, 0], 9.508],
+		["sassy", [196, 0, 116, 36, 156, 0], 7.356],
+		["bold", [252, 0, 156, 0, 100, 0], 7.058],
+		["modest", [252, 0, 4, 252, 0, 0], 4.847]
+	],
+	"moves": [
+		["revival-blessing", 98.757],
+		["protect", 64.338],
+		["trick-room", 44.287],
+		["bug-buzz", 36.516],
+		["struggle-bug", 33.276],
+		["extrasensory", 30.728],
+		["psychic", 28.977],
+		["memento", 19.502],
+		["safeguard", 17.866],
+		["sludge-bomb", 9.636]
+	],
+	"teammates": [
+		["dondozo", 42.394],
+		["tatsugiri", 42.391],
+		["grimmsnarl", 38.846],
+		["glimmora", 37.622],
+		["volcarona", 34.845],
+		["tyranitar", 23.252],
+		["maushold", 20.316],
+		["annihilape", 17.993],
+		["kingambit", 17.302],
+		["lycanroc", 11.737],
+		["torkoal", 11.05]
+	]
+}, {
+	"ident": "mudsdale",
+	"abilities": [
+		["inner-focus", 45.13],
+		["stamina", 30.79],
+		["own-tempo", 24.08]
+	],
+	"items": [
+		["assault-vest", 48.087],
+		["choice-band", 25.555],
+		["life-orb", 15.882],
+		["lum-berry", 4.813],
+		["leftovers", 2.072]
+	],
+	"spreads": [
+		["brave", [252, 252, 0, 0, 4, 0], 52.259],
+		["adamant", [252, 252, 0, 0, 4, 0], 25.741],
+		["adamant", [228, 196, 0, 0, 84, 0], 8.127],
+		["brave", [252, 252, 4, 0, 0, 0], 2.907],
+		["adamant", [156, 220, 92, 0, 36, 4], 2.448],
+		["relaxed", [0, 252, 252, 0, 4, 0], 1.677]
+	],
+	"moves": [
+		["rock-slide", 89.436],
+		["high-horsepower", 75.432],
+		["heavy-slam", 61.566],
+		["earthquake", 56.226],
+		["close-combat", 56.048],
+		["iron-head", 24.449],
+		["body-press", 14.522],
+		["tera-blast", 6.079]
+	],
+	"teammates": [
+		["oranguru", 41.456],
+		["annihilape", 40.855],
+		["armarouge", 37.83],
+		["torkoal", 26.484],
+		["gholdengo", 26.157],
+		["hydreigon", 24.5],
+		["mimikyu", 18.439],
+		["sableye", 16.257],
+		["lilligant", 16.257],
+		["grimmsnarl", 16.121],
+		["dudunsparce", 15.777]
+	]
+}, {
+	"ident": "cyclizar",
+	"abilities": [
+		["regenerator", 91.66],
+		["shed-skin", 8.34]
+	],
+	"items": [
+		["sitrus-berry", 26.18],
+		["aguav-berry", 18.29],
+		["covert-cloak", 10.41],
+		["iapapa-berry", 9.141],
+		["weakness-policy", 7.795],
+		["rocky-helmet", 6.395],
+		["focus-sash", 5.186],
+		["figy-berry", 3.686],
+		["choice-band", 3.255],
+		["mental-herb", 2.963],
+		["choice-scarf", 2.257]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 15.021],
+		["jolly", [252, 4, 36, 0, 36, 180], 10.168],
+		["jolly", [244, 0, 12, 0, 0, 252], 10.115],
+		["timid", [252, 0, 0, 0, 4, 252], 10.045],
+		["jolly", [252, 4, 0, 0, 0, 252], 9.473],
+		["jolly", [252, 0, 0, 0, 100, 156], 9.036]
+	],
+	"moves": [
+		["shed-tail", 91.557],
+		["protect", 60.96],
+		["knock-off", 44.921],
+		["breaking-swipe", 35.86],
+		["taunt", 35.79],
+		["ice-spinner", 24.424],
+		["draco-meteor", 16.459],
+		["body-slam", 13.786],
+		["rapid-spin", 13.776],
+		["dragon-claw", 13.27],
+		["hyper-voice", 12.406],
+		["shift-gear", 7.944],
+		["double-edge", 6.261],
+		["crunch", 5.859]
+	],
+	"teammates": [
+		["azumarill", 28.581],
+		["amoonguss", 27.342],
+		["gothitelle", 26.729],
+		["meowscarada", 24.866],
+		["gholdengo", 23.552],
+		["palafin", 22.763],
+		["indeedee-f", 18.338],
+		["sylveon", 13.471],
+		["gengar", 13.389],
+		["torkoal", 11.754],
+		["arcanine", 11.736]
+	]
+}, {
+	"ident": "pincurchin",
+	"abilities": [
+		["electric-surge", 99.221],
+		["lightning-rod", 0.779]
+	],
+	"items": [
+		["life-orb", 57.681],
+		["eject-button", 37.124],
+		["electric-seed", 2.891]
+	],
+	"spreads": [
+		["quiet", [252, 4, 0, 252, 0, 0], 51.74],
+		["quiet", [252, 20, 0, 236, 0, 0], 37.124],
+		["brave", [252, 252, 4, 0, 0, 0], 5.04],
+		["quiet", [252, 0, 0, 252, 4, 0], 2.497]
+	],
+	"moves": [
+		["protect", 98.745],
+		["sucker-punch", 97.115],
+		["thunderbolt", 91.162],
+		["surf", 54.39],
+		["acupressure", 37.265],
+		["zing-zap", 7.335]
+	],
+	"teammates": [
+		["meowscarada", 85.447],
+		["gastrodon", 54.217],
+		["annihilape", 52.02],
+		["garganacl", 51.776],
+		["sylveon", 51.751],
+		["dragonite", 34.032],
+		["quaquaval", 33.927],
+		["skeledirge", 33.708],
+		["grimmsnarl", 33.705],
+		["toxtricity", 5.33],
+		["dragapult", 5.312]
+	]
+}, {
+	"ident": "umbreon",
+	"abilities": [
+		["inner-focus", 98.201],
+		["synchronize", 1.799]
+	],
+	"items": [
+		["mirror-herb", 57.724],
+		["leftovers", 22.067],
+		["iapapa-berry", 7.394],
+		["sitrus-berry", 5.447],
+		["safety-goggles", 4.834]
+	],
+	"spreads": [
+		["bold", [236, 0, 196, 0, 76, 0], 58.674],
+		["bold", [252, 0, 252, 0, 4, 0], 8.846],
+		["bold", [252, 0, 156, 0, 100, 0], 7.433],
+		["bold", [244, 0, 236, 4, 20, 4], 6.132],
+		["bold", [252, 0, 252, 0, 0, 4], 5.592],
+		["calm", [252, 0, 0, 4, 252, 0], 4.879]
+	],
+	"moves": [
+		["foul-play", 99.935],
+		["moonlight", 87.184],
+		["skill-swap", 75.578],
+		["stored-power", 57.703],
+		["snarl", 33.604],
+		["yawn", 22.655],
+		["taunt", 7.754]
+	],
+	"teammates": [
+		["sylveon", 65.631],
+		["talonflame", 60.648],
+		["garchomp", 59.395],
+		["gholdengo", 58.128],
+		["gastrodon", 57.561],
+		["annihilape", 16.355],
+		["ceruledge", 11.967],
+		["torkoal", 10.365],
+		["armarouge", 8.458],
+		["meowscarada", 7.676],
+		["abomasnow", 7.456]
+	]
+}, {
+	"ident": "orthworm",
+	"abilities": [
+		["earth-eater", 100.0],
+		["sand-veil", 0.0]
+	],
+	"items": [
+		["leftovers", 44.376],
+		["sitrus-berry", 43.473],
+		["rocky-helmet", 7.931]
+	],
+	"spreads": [
+		["careful", [252, 0, 4, 0, 252, 0], 22.481],
+		["impish", [252, 0, 4, 0, 252, 0], 19.699],
+		["bold", [252, 0, 4, 0, 252, 0], 13.254],
+		["calm", [252, 0, 4, 0, 252, 0], 9.366],
+		["relaxed", [252, 0, 4, 0, 252, 0], 4.306],
+		["impish", [244, 0, 20, 0, 244, 0], 3.601]
+	],
+	"moves": [
+		["protect", 84.791],
+		["shed-tail", 84.601],
+		["body-press", 70.359],
+		["iron-defense", 66.706],
+		["helping-hand", 37.11],
+		["iron-head", 30.156],
+		["tera-blast", 5.388],
+		["coil", 4.149]
+	],
+	"teammates": [
+		["garchomp", 67.95],
+		["kilowattrel", 30.812],
+		["grimmsnarl", 28.583],
+		["volcarona", 28.273],
+		["quaquaval", 28.026],
+		["ceruledge", 27.422],
+		["sylveon", 27.367],
+		["sableye", 25.82],
+		["tauros-paldea-water", 25.58],
+		["palafin", 12.324],
+		["murkrow", 9.001]
+	]
+}, {
+	"ident": "spiritomb",
+	"abilities": [
+		["infiltrator", 73.207],
+		["pressure", 26.793]
+	],
+	"items": [
+		["iapapa-berry", 23.64],
+		["sitrus-berry", 19.986],
+		["safety-goggles", 16.43],
+		["wiki-berry", 9.141],
+		["focus-sash", 7.192],
+		["mental-herb", 6.891],
+		["lum-berry", 4.44],
+		["figy-berry", 3.507],
+		["leftovers", 3.285],
+		["roseli-berry", 2.414]
+	],
+	"spreads": [
+		["sassy", [252, 0, 4, 0, 252, 0], 38.22],
+		["relaxed", [252, 0, 156, 0, 100, 0], 23.64],
+		["sassy", [252, 0, 0, 4, 252, 0], 9.037],
+		["impish", [252, 0, 156, 0, 100, 0], 5.216],
+		["calm", [252, 0, 60, 0, 196, 0], 4.44],
+		["quiet", [252, 0, 60, 100, 92, 0], 3.507]
+	],
+	"moves": [
+		["trick-room", 99.625],
+		["will-o-wisp", 85.583],
+		["foul-play", 47.556],
+		["snarl", 30.605],
+		["pain-split", 26.942],
+		["night-shade", 25.497],
+		["ally-switch", 22.299],
+		["imprison", 14.622],
+		["helping-hand", 12.984],
+		["taunt", 9.594],
+		["skill-swap", 8.998]
+	],
+	"teammates": [
+		["amoonguss", 41.464],
+		["meowscarada", 34.736],
+		["armarouge", 30.766],
+		["indeedee-f", 29.463],
+		["gallade", 23.858],
+		["hariyama", 23.766],
+		["garganacl", 20.992],
+		["kingambit", 20.057],
+		["gengar", 18.64],
+		["gothitelle", 15.967],
+		["pelipper", 14.512]
+	]
+}, {
+	"ident": "coalossal",
+	"abilities": [
+		["steam-engine", 88.607],
+		["flash-fire", 11.273],
+		["flame-body", 0.12]
+	],
+	"items": [
+		["weakness-policy", 35.728],
+		["choice-band", 32.587],
+		["assault-vest", 11.747],
+		["sitrus-berry", 11.088],
+		["covert-cloak", 3.673],
+		["absorb-bulb", 3.446]
+	],
+	"spreads": [
+		["adamant", [0, 252, 188, 0, 0, 68], 32.587],
+		["quiet", [252, 0, 0, 252, 4, 0], 11.271],
+		["modest", [236, 0, 4, 236, 4, 28], 10.948],
+		["adamant", [172, 252, 4, 0, 12, 68], 10.124],
+		["naughty", [228, 252, 0, 0, 0, 28], 7.441],
+		["modest", [252, 0, 0, 252, 4, 0], 6.523]
+	],
+	"moves": [
+		["explosion", 56.767],
+		["rock-slide", 55.44],
+		["protect", 46.627],
+		["body-press", 37.217],
+		["power-gem", 33.506],
+		["flare-blitz", 33.151],
+		["heat-wave", 32.911],
+		["earth-power", 28.046],
+		["tera-blast", 27.233],
+		["heat-crash", 13.04],
+		["overheat", 7.967],
+		["flamethrower", 7.84],
+		["ancient-power", 6.379]
+	],
+	"teammates": [
+		["armarouge", 48.652],
+		["indeedee-f", 48.39],
+		["dragapult", 46.77],
+		["gholdengo", 33.491],
+		["flamigo", 29.061],
+		["meowscarada", 24.173],
+		["dondozo", 18.181],
+		["tatsugiri", 18.181],
+		["dragonite", 18.0],
+		["grimmsnarl", 17.319],
+		["palafin", 13.074]
+	]
+}, {
+	"ident": "drifblim",
+	"abilities": [
+		["unburden", 55.793],
+		["flare-boost", 39.539],
+		["aftermath", 4.669]
+	],
+	"items": [
+		["psychic-seed", 52.563],
+		["flame-orb", 39.538],
+		["choice-scarf", 3.323]
+	],
+	"spreads": [
+		["timid", [0, 0, 252, 0, 4, 252], 27.542],
+		["timid", [116, 0, 0, 252, 0, 140], 27.235],
+		["modest", [12, 0, 108, 252, 36, 100], 8.673],
+		["timid", [4, 0, 252, 0, 0, 252], 6.288],
+		["modest", [0, 0, 252, 76, 180, 0], 4.629],
+		["modest", [0, 0, 172, 236, 100, 0], 4.212]
+	],
+	"moves": [
+		["tailwind", 88.894],
+		["shadow-ball", 88.781],
+		["icy-wind", 64.604],
+		["clear-smog", 30.374],
+		["will-o-wisp", 26.974],
+		["helping-hand", 19.437],
+		["protect", 12.202],
+		["trick-room", 11.175],
+		["haze", 7.947],
+		["destiny-bond", 6.8],
+		["air-slash", 6.141],
+		["nothing", 5.891],
+		["explosion", 5.187],
+		["strength-sap", 4.873],
+		["imprison", 4.714]
+	],
+	"teammates": [
+		["indeedee-f", 67.75],
+		["armarouge", 49.279],
+		["annihilape", 43.626],
+		["farigiraf", 27.269],
+		["dudunsparce", 27.26],
+		["pelipper", 16.556],
+		["lycanroc", 13.202],
+		["tyranitar", 13.169],
+		["kingambit", 13.08],
+		["sylveon", 10.154],
+		["gothitelle", 8.863]
+	]
+}, {
+	"ident": "gothorita",
+	"abilities": [
+		["shadow-tag", 100.0],
+		["frisk", 0.0],
+		["competitive", 0.0]
+	],
+	"items": [
+		["eviolite", 100.0]
+	],
+	"spreads": [
+		["sassy", [252, 0, 140, 0, 116, 0], 85.573],
+		["bold", [0, 0, 252, 0, 252, 0], 6.335],
+		["calm", [252, 0, 220, 0, 36, 0], 4.787]
+	],
+	"moves": [
+		["fake-out", 100.0],
+		["protect", 95.213],
+		["helping-hand", 91.909],
+		["hypnosis", 90.155],
+		["trick-room", 8.3]
+	],
+	"teammates": [
+		["azumarill", 88.569],
+		["gothitelle", 85.889],
+		["gengar", 85.878],
+		["amoonguss", 81.035],
+		["arcanine", 80.816],
+		["torkoal", 7.683],
+		["hariyama", 7.468],
+		["breloom", 4.849],
+		["cyclizar", 4.849],
+		["hydreigon", 4.787],
+		["rotom-mow", 4.787]
+	]
+}, {
+	"ident": "dragalge",
+	"abilities": [
+		["adaptability", 99.894],
+		["poison-point", 0.106],
+		["poison-touch", 0.0]
+	],
+	"items": [
+		["sitrus-berry", 75.928],
+		["life-orb", 12.541],
+		["assault-vest", 9.117]
+	],
+	"spreads": [
+		["quiet", [252, 0, 4, 252, 0, 0], 83.148],
+		["quiet", [252, 0, 0, 252, 4, 0], 9.126],
+		["quiet", [228, 0, 100, 180, 0, 0], 2.942]
+	],
+	"moves": [
+		["sludge-bomb", 99.891],
+		["draco-meteor", 91.875],
+		["haze", 86.744],
+		["protect", 82.073],
+		["shadow-ball", 15.675],
+		["icy-wind", 9.27]
+	],
+	"teammates": [
+		["kingambit", 77.633],
+		["maushold", 74.824],
+		["torkoal", 68.502],
+		["gothitelle", 67.83],
+		["annihilape", 67.611],
+		["hatterene", 15.406],
+		["tsareena", 9.083],
+		["mimikyu", 9.073],
+		["veluza", 9.073],
+		["hariyama", 6.375],
+		["spiritomb", 6.304]
+	]
+}, {
+	"ident": "pachirisu",
+	"abilities": [
+		["volt-absorb", 99.969],
+		["run-away", 0.031],
+		["pickup", 0.0]
+	],
+	"items": [
+		["sitrus-berry", 84.725],
+		["aguav-berry", 5.981],
+		["leftovers", 3.08],
+		["air-balloon", 2.216]
+	],
+	"spreads": [
+		["impish", [252, 0, 68, 0, 188, 0], 58.369],
+		["impish", [252, 0, 156, 0, 100, 0], 15.455],
+		["careful", [252, 0, 196, 0, 60, 0], 5.953],
+		["impish", [252, 0, 164, 0, 92, 0], 5.405],
+		["jolly", [252, 4, 0, 0, 0, 252], 3.285],
+		["timid", [252, 0, 60, 0, 0, 196], 2.43]
+	],
+	"moves": [
+		["follow-me", 99.991],
+		["nuzzle", 96.938],
+		["super-fang", 93.554],
+		["protect", 72.178],
+		["encore", 18.287]
+	],
+	"teammates": [
+		["gyarados", 53.132],
+		["talonflame", 51.345],
+		["garchomp", 51.157],
+		["gothitelle", 47.899],
+		["gardevoir", 45.603],
+		["gholdengo", 18.09],
+		["pelipper", 17.765],
+		["rotom-mow", 15.2],
+		["meowscarada", 11.162],
+		["drednaw", 9.309],
+		["azumarill", 7.547]
+	]
+}, {
+	"ident": "skuntank",
+	"abilities": [
+		["stench", 99.844],
+		["aftermath", 0.156],
+		["keen-eye", 0.0]
+	],
+	"items": [
+		["sitrus-berry", 98.607]
+	],
+	"spreads": [
+		["calm", [44, 0, 252, 0, 212, 0], 98.607]
+	],
+	"moves": [
+		["foul-play", 98.722],
+		["protect", 98.607],
+		["haze", 98.607],
+		["snarl", 98.607]
+	],
+	"teammates": [
+		["skeledirge", 89.837],
+		["torkoal", 88.951],
+		["tinkaton", 88.951],
+		["garganacl", 88.951],
+		["hatterene", 88.951],
+		["toxtricity", 0.916],
+		["spiritomb", 0.887],
+		["kingambit", 0.887],
+		["houndstone", 0.887]
+	]
+}, {
+	"ident": "espathra",
+	"abilities": [
+		["speed-boost", 92.955],
+		["opportunist", 7.045],
+		["frisk", 0.0]
+	],
+	"items": [
+		["focus-sash", 42.308],
+		["weakness-policy", 26.133],
+		["leftovers", 9.498],
+		["choice-specs", 7.288],
+		["life-orb", 6.141],
+		["nothing", 4.219]
+	],
+	"spreads": [
+		["modest", [0, 0, 0, 252, 4, 252], 27.518],
+		["timid", [252, 0, 36, 180, 0, 36], 21.179],
+		["timid", [4, 0, 0, 252, 0, 252], 14.799],
+		["modest", [44, 0, 52, 188, 60, 164], 9.714],
+		["bold", [252, 0, 252, 4, 0, 0], 5.387],
+		["modest", [4, 0, 0, 252, 0, 252], 4.951]
+	],
+	"moves": [
+		["protect", 85.399],
+		["lumina-crash", 83.613],
+		["dazzling-gleam", 53.397],
+		["calm-mind", 47.034],
+		["baton-pass", 24.79],
+		["hypnosis", 22.653],
+		["stored-power", 12.797],
+		["shadow-ball", 11.567],
+		["energy-ball", 10.44],
+		["substitute", 10.251],
+		["tera-blast", 9.274],
+		["skill-swap", 7.577],
+		["feather-dance", 4.141]
+	],
+	"teammates": [
+		["kingambit", 39.372],
+		["hydreigon", 36.19],
+		["salazzle", 30.74],
+		["meowscarada", 26.492],
+		["grimmsnarl", 23.933],
+		["gallade", 23.602],
+		["salamence", 21.875],
+		["bronzong", 21.818],
+		["tauros-paldea-fire", 21.738],
+		["rotom-wash", 21.576],
+		["garchomp", 11.858]
+	]
+}, {
+	"ident": "hippowdon",
+	"abilities": [
+		["sand-stream", 84.275],
+		["sand-force", 15.725]
+	],
+	"items": [
+		["leftovers", 72.601],
+		["assault-vest", 14.781],
+		["smooth-rock", 6.395],
+		["rocky-helmet", 5.182]
+	],
+	"spreads": [
+		["careful", [252, 0, 12, 0, 244, 0], 60.924],
+		["brave", [252, 252, 0, 0, 4, 0], 14.779],
+		["careful", [252, 4, 0, 0, 252, 0], 6.394],
+		["impish", [252, 4, 252, 0, 0, 0], 5.587],
+		["brave", [188, 252, 60, 4, 4, 0], 5.181],
+		["relaxed", [252, 0, 4, 0, 252, 0], 3.473]
+	],
+	"moves": [
+		["slack-off", 66.538],
+		["body-press", 66.377],
+		["curse", 61.011],
+		["stomping-tantrum", 60.967],
+		["earthquake", 33.465],
+		["ice-fang", 21.167],
+		["rock-slide", 21.062],
+		["iron-head", 20.217],
+		["protect", 12.618],
+		["whirlwind", 12.443],
+		["helping-hand", 7.862]
+	],
+	"teammates": [
+		["tyranitar", 71.182],
+		["lycanroc", 62.803],
+		["garchomp", 60.805],
+		["houndstone", 59.12],
+		["clodsire", 38.818],
+		["kingambit", 15.535],
+		["annihilape", 15.134],
+		["bronzong", 14.652],
+		["gholdengo", 11.155],
+		["armarouge", 10.508],
+		["indeedee", 10.304]
+	]
+}, {
+	"ident": "staraptor",
+	"abilities": [
+		["reckless", 66.786],
+		["intimidate", 33.214]
+	],
+	"items": [
+		["choice-scarf", 86.793],
+		["choice-band", 8.615]
+	],
+	"spreads": [
+		["jolly", [252, 4, 0, 0, 0, 252], 34.834],
+		["adamant", [4, 252, 0, 0, 0, 252], 28.457],
+		["jolly", [4, 252, 0, 0, 0, 252], 22.481],
+		["brave", [252, 252, 0, 0, 4, 0], 7.793],
+		["jolly", [0, 252, 0, 0, 4, 252], 4.712]
+	],
+	"moves": [
+		["brave-bird", 99.767],
+		["u-turn", 87.523],
+		["double-edge", 66.863],
+		["final-gambit", 63.485],
+		["close-combat", 43.567],
+		["giga-impact", 20.596]
+	],
+	"teammates": [
+		["garchomp", 61.156],
+		["meowscarada", 38.905],
+		["gholdengo", 36.633],
+		["arcanine", 35.216],
+		["azumarill", 34.551],
+		["farigiraf", 31.977],
+		["amoonguss", 25.241],
+		["kingambit", 25.002],
+		["sylveon", 24.71],
+		["rotom-heat", 24.457],
+		["tyranitar", 23.135]
+	]
+}, {
+	"ident": "glaceon",
+	"abilities": [
+		["snow-cloak", 96.728],
+		["ice-body", 3.272]
+	],
+	"items": [
+		["bright-powder", 31.656],
+		["choice-specs", 31.375],
+		["assault-vest", 20.614],
+		["leftovers", 8.46],
+		["sitrus-berry", 2.929]
+	],
+	"spreads": [
+		["modest", [252, 0, 0, 252, 4, 0], 53.366],
+		["modest", [244, 0, 0, 252, 12, 0], 16.137],
+		["modest", [252, 0, 60, 196, 0, 0], 5.704],
+		["sassy", [252, 0, 0, 252, 4, 0], 4.435],
+		["modest", [252, 0, 84, 92, 68, 12], 4.233],
+		["quiet", [252, 0, 0, 252, 4, 0], 2.899]
+	],
+	"moves": [
+		["tera-blast", 91.389],
+		["freeze-dry", 89.246],
+		["blizzard", 80.919],
+		["shadow-ball", 53.227],
+		["detect", 25.47],
+		["protect", 19.424],
+		["hyper-voice", 14.893],
+		["calm-mind", 8.288]
+	],
+	"teammates": [
+		["abomasnow", 73.672],
+		["talonflame", 40.5],
+		["meowscarada", 35.984],
+		["dondozo", 34.412],
+		["tatsugiri", 34.385],
+		["tauros-paldea-fire", 23.113],
+		["azumarill", 22.104],
+		["tyranitar", 21.245],
+		["tsareena", 20.732],
+		["volcarona", 13.13],
+		["slowking", 9.08]
+	]
+}, {
+	"ident": "klefki",
+	"abilities": [
+		["prankster", 100.0],
+		["magician", 0.0]
+	],
+	"items": [
+		["light-clay", 86.284],
+		["leftovers", 10.485]
+	],
+	"spreads": [
+		["sassy", [252, 0, 4, 0, 252, 0], 24.961],
+		["bold", [252, 0, 68, 4, 180, 4], 20.659],
+		["timid", [252, 0, 0, 0, 0, 252], 13.715],
+		["modest", [252, 0, 0, 252, 4, 0], 13.526],
+		["bold", [252, 0, 252, 0, 6, 0], 10.843],
+		["careful", [252, 0, 4, 0, 252, 0], 7.88]
+	],
+	"moves": [
+		["reflect", 86.821],
+		["light-screen", 86.674],
+		["trick-room", 86.289],
+		["foul-play", 44.49],
+		["dazzling-gleam", 32.167],
+		["thunder-wave", 23.78],
+		["steel-beam", 20.66]
+	],
+	"teammates": [
+		["amoonguss", 44.692],
+		["sylveon", 33.389],
+		["annihilape", 32.154],
+		["garganacl", 26.31],
+		["kingambit", 25.104],
+		["armarouge", 22.324],
+		["pelipper", 21.814],
+		["meowscarada", 21.013],
+		["dragapult", 19.598],
+		["arcanine", 18.672],
+		["palafin", 14.623]
+	]
+}, {
+	"ident": "golduck",
+	"abilities": [
+		["swift-swim", 78.627],
+		["cloud-nine", 21.373],
+		["damp", 0.0]
+	],
+	"items": [
+		["life-orb", 55.304],
+		["assault-vest", 18.591],
+		["mystic-water", 16.678],
+		["mirror-herb", 4.35],
+		["safety-goggles", 2.279]
+	],
+	"spreads": [
+		["modest", [112, 0, 0, 252, 44, 100], 28.528],
+		["modest", [0, 0, 4, 252, 0, 252], 25.736],
+		["timid", [0, 0, 0, 252, 4, 252], 18.559],
+		["modest", [4, 0, 0, 252, 0, 252], 16.686],
+		["modest", [0, 0, 0, 252, 4, 252], 4.745],
+		["timid", [92, 0, 0, 252, 0, 164], 2.279]
+	],
+	"moves": [
+		["surf", 89.775],
+		["protect", 71.907],
+		["ice-beam", 63.886],
+		["clear-smog", 33.389],
+		["grass-knot", 28.814],
+		["icy-wind", 26.418],
+		["hydro-pump", 24.444],
+		["psychic", 18.667],
+		["tera-blast", 18.595],
+		["encore", 4.749]
+	],
+	"teammates": [
+		["pelipper", 67.554],
+		["armarouge", 32.476],
+		["kilowattrel", 30.8],
+		["kingambit", 30.083],
+		["gengar", 29.77],
+		["clodsire", 28.534],
+		["grimmsnarl", 28.521],
+		["garchomp", 28.012],
+		["gardevoir", 25.744],
+		["meowscarada", 22.93],
+		["gallade", 19.33]
+	]
+}, {
+	"ident": "slowbro",
+	"abilities": [
+		["oblivious", 73.206],
+		["regenerator", 26.573],
+		["own-tempo", 0.221]
+	],
+	"items": [
+		["leftovers", 53.195],
+		["safety-goggles", 22.602],
+		["covert-cloak", 12.403],
+		["sitrus-berry", 5.614],
+		["eviolite", 2.53]
+	],
+	"spreads": [
+		["relaxed", [244, 0, 76, 0, 188, 0], 22.436],
+		["quiet", [148, 0, 0, 244, 116, 0], 16.754],
+		["careful", [252, 0, 100, 0, 156, 0], 13.978],
+		["relaxed", [252, 0, 156, 0, 100, 0], 12.39],
+		["bold", [252, 0, 252, 0, 4, 0], 11.204],
+		["relaxed", [252, 0, 164, 92, 0, 0], 8.555]
+	],
+	"moves": [
+		["slack-off", 81.14],
+		["body-press", 55.001],
+		["iron-defense", 54.98],
+		["skill-swap", 48.076],
+		["hydro-pump", 29.688],
+		["trick-room", 29.031],
+		["yawn", 21.01],
+		["psychic", 19.997],
+		["calm-mind", 11.321],
+		["tera-blast", 11.204],
+		["icy-wind", 9.809],
+		["chilling-water", 5.922],
+		["protect", 4.977]
+	],
+	"teammates": [
+		["meowscarada", 44.605],
+		["kingambit", 39.214],
+		["hydreigon", 31.207],
+		["annihilape", 28.802],
+		["grimmsnarl", 27.816],
+		["kilowattrel", 22.436],
+		["tyranitar", 22.411],
+		["salamence", 19.758],
+		["talonflame", 19.468],
+		["pelipper", 19.094],
+		["maushold", 18.439]
+	]
+}, {
+	"ident": "medicham",
+	"abilities": [
+		["pure-power", 99.787],
+		["telepathy", 0.213]
+	],
+	"items": [
+		["focus-sash", 88.486],
+		["covert-cloak", 4.917],
+		["life-orb", 2.329]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 60.667],
+		["adamant", [4, 252, 0, 0, 0, 252], 16.894],
+		["timid", [252, 0, 0, 0, 4, 252], 4.864],
+		["sassy", [252, 0, 4, 0, 252, 0], 4.575],
+		["careful", [188, 0, 156, 0, 160, 0], 3.503],
+		["jolly", [252, 4, 0, 0, 0, 252], 3.262]
+	],
+	"moves": [
+		["fake-out", 87.465],
+		["close-combat", 79.571],
+		["ice-punch", 63.683],
+		["skill-swap", 54.158],
+		["trick-room", 24.88],
+		["psych-up", 23.291],
+		["psycho-cut", 15.969],
+		["taunt", 6.45],
+		["axe-kick", 5.922],
+		["bullet-punch", 5.887],
+		["helping-hand", 5.582],
+		["light-screen", 5.037],
+		["reflect", 4.961]
+	],
+	"teammates": [
+		["meowscarada", 65.836],
+		["gardevoir", 52.283],
+		["volcarona", 50.144],
+		["drednaw", 49.961],
+		["salamence", 49.953],
+		["azumarill", 16.825],
+		["hydreigon", 15.62],
+		["skeledirge", 15.491],
+		["magnezone", 15.416],
+		["amoonguss", 10.528],
+		["gholdengo", 9.797]
+	]
+}, {
+	"ident": "goodra",
+	"abilities": [
+		["sap-sipper", 80.839],
+		["gooey", 10.586],
+		["hydration", 8.575]
+	],
+	"items": [
+		["assault-vest", 70.047],
+		["life-orb", 8.862],
+		["leftovers", 7.891],
+		["sitrus-berry", 5.399],
+		["haban-berry", 3.671]
+	],
+	"spreads": [
+		["quiet", [252, 0, 4, 252, 0, 0], 45.44],
+		["timid", [4, 0, 0, 252, 0, 252], 8.575],
+		["quiet", [188, 0, 164, 156, 0, 0], 7.521],
+		["quiet", [76, 0, 180, 252, 0, 0], 5.672],
+		["modest", [244, 0, 172, 16, 76, 0], 5.399],
+		["modest", [252, 0, 84, 172, 0, 0], 5.164]
+	],
+	"moves": [
+		["draco-meteor", 61.347],
+		["fire-blast", 60.32],
+		["sludge-bomb", 59.844],
+		["blizzard", 51.217],
+		["muddy-water", 30.557],
+		["protect", 24.845],
+		["thunderbolt", 23.403],
+		["dragon-pulse", 18.906],
+		["ice-beam", 11.427],
+		["surf", 9.384],
+		["feint", 9.138],
+		["life-dew", 7.446],
+		["hydro-pump", 5.65],
+		["dragon-tail", 5.533],
+		["body-press", 5.333]
+	],
+	"teammates": [
+		["glimmora", 52.259],
+		["abomasnow", 51.213],
+		["annihilape", 48.82],
+		["maushold", 48.364],
+		["slowking", 46.71],
+		["grimmsnarl", 17.721],
+		["meowscarada", 16.756],
+		["pelipper", 15.461],
+		["gholdengo", 14.725],
+		["arcanine", 13.785],
+		["hariyama", 12.919]
+	]
+}, {
+	"ident": "frosmoth",
+	"abilities": [
+		["ice-scales", 95.967],
+		["shield-dust", 4.033]
+	],
+	"items": [
+		["life-orb", 57.286],
+		["safety-goggles", 27.073],
+		["weakness-policy", 8.689],
+		["shell-bell", 3.355]
+	],
+	"spreads": [
+		["modest", [0, 0, 0, 252, 4, 252], 41.325],
+		["modest", [0, 0, 4, 252, 0, 252], 23.975],
+		["modest", [0, 0, 0, 188, 92, 228], 15.727],
+		["modest", [108, 0, 28, 116, 4, 252], 8.689],
+		["modest", [28, 0, 0, 252, 0, 228], 3.355],
+		["timid", [116, 0, 0, 252, 0, 140], 3.097]
+	],
+	"moves": [
+		["quiver-dance", 88.166],
+		["tera-blast", 85.199],
+		["ice-beam", 60.388],
+		["protect", 59.607],
+		["blizzard", 38.318],
+		["giga-drain", 24.05],
+		["air-slash", 10.154],
+		["tailwind", 10.021],
+		["struggle-bug", 8.904]
+	],
+	"teammates": [
+		["kingambit", 66.073],
+		["hariyama", 55.225],
+		["sylveon", 55.037],
+		["farigiraf", 52.198],
+		["amoonguss", 50.63],
+		["abomasnow", 38.163],
+		["cetitan", 25.872],
+		["bronzong", 17.719],
+		["armarouge", 12.453],
+		["indeedee-f", 12.355],
+		["quaquaval", 12.251]
+	]
+}, {
+	"ident": "slowking",
+	"abilities": [
+		["regenerator", 86.08],
+		["oblivious", 13.92],
+		["own-tempo", 0.0]
+	],
+	"items": [
+		["mental-herb", 53.071],
+		["rocky-helmet", 12.424],
+		["choice-specs", 8.714],
+		["focus-sash", 7.647],
+		["safety-goggles", 5.278],
+		["sitrus-berry", 3.821],
+		["aguav-berry", 2.459],
+		["figy-berry", 2.358]
+	],
+	"spreads": [
+		["relaxed", [252, 0, 252, 0, 4, 0], 46.244],
+		["sassy", [252, 0, 164, 0, 92, 0], 12.348],
+		["quiet", [252, 0, 0, 252, 4, 0], 8.149],
+		["modest", [236, 0, 28, 204, 36, 0], 5.924],
+		["sassy", [244, 0, 0, 172, 92, 0], 4.804],
+		["quiet", [252, 0, 100, 156, 0, 0], 3.229]
+	],
+	"moves": [
+		["trick-room", 87.12],
+		["chilly-reception", 71.175],
+		["helping-hand", 48.803],
+		["chilling-water", 46.019],
+		["hydro-pump", 29.68],
+		["swagger", 17.213],
+		["psychic", 15.751],
+		["flamethrower", 13.653],
+		["yawn", 12.689],
+		["psyshock", 10.355],
+		["ice-beam", 8.464],
+		["protect", 8.41],
+		["blizzard", 6.703],
+		["surf", 6.567]
+	],
+	"teammates": [
+		["annihilape", 61.15],
+		["abomasnow", 54.206],
+		["maushold", 48.155],
+		["glimmora", 47.098],
+		["goodra", 47.016],
+		["armarouge", 20.272],
+		["grimmsnarl", 15.786],
+		["hydreigon", 12.366],
+		["tinkaton", 12.348],
+		["salamence", 12.348],
+		["indeedee-f", 12.316]
+	]
+}, {
+	"ident": "jolteon",
+	"abilities": [
+		["volt-absorb", 99.531],
+		["quick-feet", 0.469]
+	],
+	"items": [
+		["loaded-dice", 63.364],
+		["choice-specs", 30.417],
+		["air-balloon", 2.176]
+	],
+	"spreads": [
+		["timid", [252, 0, 4, 0, 0, 252], 25.691],
+		["jolly", [252, 0, 4, 0, 0, 252], 25.479],
+		["modest", [4, 0, 0, 252, 0, 252], 16.354],
+		["timid", [4, 0, 0, 252, 0, 252], 14.455],
+		["timid", [148, 52, 68, 0, 4, 236], 8.115],
+		["timid", [212, 60, 0, 0, 0, 236], 4.263]
+	],
+	"moves": [
+		["pin-missile", 63.525],
+		["thunder-wave", 59.35],
+		["baby-doll-eyes", 56.546],
+		["light-screen", 55.477],
+		["thunderbolt", 37.151],
+		["volt-switch", 31.059],
+		["tera-blast", 27.735],
+		["shadow-ball", 23.039],
+		["thunder", 15.458],
+		["detect", 10.946]
+	],
+	"teammates": [
+		["annihilape", 56.677],
+		["murkrow", 53.342],
+		["meowscarada", 47.022],
+		["dudunsparce", 46.144],
+		["gardevoir", 42.179],
+		["grimmsnarl", 22.862],
+		["pelipper", 16.896],
+		["drednaw", 15.272],
+		["skeledirge", 15.009],
+		["tsareena", 15.009],
+		["gholdengo", 8.376]
+	]
+}, {
+	"ident": "revavroom",
+	"abilities": [
+		["overcoat", 63.132],
+		["filter", 36.868]
+	],
+	"items": [
+		["figy-berry", 46.001],
+		["clear-amulet", 14.858],
+		["choice-scarf", 14.52],
+		["choice-band", 9.425],
+		["shuca-berry", 4.298],
+		["air-balloon", 3.961],
+		["life-orb", 2.887]
+	],
+	"spreads": [
+		["adamant", [252, 196, 20, 0, 36, 4], 46.001],
+		["adamant", [220, 244, 4, 0, 4, 36], 14.858],
+		["adamant", [0, 252, 0, 0, 4, 252], 11.273],
+		["adamant", [4, 252, 0, 0, 0, 252], 5.577],
+		["jolly", [0, 252, 0, 0, 4, 252], 5.183],
+		["brave", [252, 252, 4, 0, 0, 0], 4.99]
+	],
+	"moves": [
+		["gunk-shot", 70.611],
+		["parting-shot", 66.474],
+		["spin-out", 65.421],
+		["protect", 63.985],
+		["iron-head", 34.55],
+		["tera-blast", 21.973],
+		["shift-gear", 21.499],
+		["self-destruct", 16.765],
+		["zen-headbutt", 14.229],
+		["poison-jab", 10.069]
+	],
+	"teammates": [
+		["dondozo", 46.452],
+		["tatsugiri", 46.452],
+		["amoonguss", 38.445],
+		["pawmot", 35.936],
+		["hydreigon", 33.329],
+		["indeedee-f", 18.274],
+		["grimmsnarl", 14.562],
+		["garganacl", 14.52],
+		["dragapult", 13.3],
+		["corviknight", 13.192],
+		["dragonite", 11.079]
+	]
+}, {
+	"ident": "stantler",
+	"abilities": [
+		["intimidate", 100.0],
+		["sap-sipper", 0.0],
+		["frisk", 0.0]
+	],
+	"items": [
+		["eviolite", 61.322],
+		["leftovers", 21.909],
+		["sitrus-berry", 16.458]
+	],
+	"spreads": [
+		["impish", [252, 0, 140, 0, 116, 0], 49.093],
+		["careful", [248, 0, 0, 0, 236, 24], 21.909],
+		["brave", [252, 252, 4, 0, 0, 0], 16.458],
+		["relaxed", [252, 0, 140, 0, 116, 0], 6.753],
+		["careful", [252, 0, 140, 0, 116, 0], 4.95]
+	],
+	"moves": [
+		["body-slam", 92.543],
+		["trick-room", 78.576],
+		["skill-swap", 76.261],
+		["thunder-wave", 70.527],
+		["protect", 38.776],
+		["imprison", 28.25]
+	],
+	"teammates": [
+		["amoonguss", 76.088],
+		["annihilape", 54.326],
+		["hydreigon", 54.18],
+		["wigglytuff", 54.053],
+		["salazzle", 47.581],
+		["abomasnow", 23.21],
+		["volcarona", 21.933],
+		["tauros-paldea-water", 21.909],
+		["pelipper", 21.909],
+		["luxray", 20.226],
+		["grimmsnarl", 16.526]
+	]
+}, {
+	"ident": "bisharp",
+	"abilities": [
+		["defiant", 91.158],
+		["pressure", 5.854],
+		["inner-focus", 2.989]
+	],
+	"items": [
+		["eviolite", 97.601]
+	],
+	"spreads": [
+		["adamant", [236, 252, 4, 0, 4, 12], 57.801],
+		["adamant", [252, 252, 0, 0, 4, 0], 13.636],
+		["adamant", [0, 252, 4, 0, 0, 252], 10.661],
+		["hardy", [124, 252, 4, 0, 124, 0], 5.854],
+		["brave", [252, 252, 0, 0, 4, 0], 4.026],
+		["adamant", [128, 252, 0, 0, 0, 128], 3.974]
+	],
+	"moves": [
+		["iron-head", 99.892],
+		["sucker-punch", 90.116],
+		["protect", 81.997],
+		["brick-break", 81.654],
+		["swords-dance", 21.232],
+		["night-slash", 10.352]
+	],
+	"teammates": [
+		["farigiraf", 65.089],
+		["gholdengo", 61.548],
+		["annihilape", 61.474],
+		["grimmsnarl", 58.145],
+		["dragonite", 58.06],
+		["dragapult", 11.522],
+		["murkrow", 11.222],
+		["talonflame", 10.434],
+		["breloom", 10.375],
+		["quaquaval", 10.375],
+		["pawmot", 10.367]
+	]
+}, {
+	"ident": "grafaiai",
+	"abilities": [
+		["prankster", 99.572],
+		["unburden", 0.37],
+		["poison-touch", 0.058]
+	],
+	"items": [
+		["focus-sash", 40.122],
+		["covert-cloak", 16.201],
+		["black-sludge", 10.203],
+		["mental-herb", 10.177],
+		["aguav-berry", 9.068],
+		["air-balloon", 4.523],
+		["shuca-berry", 4.076],
+		["ganlon-berry", 2.042]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 37.047],
+		["calm", [252, 0, 4, 0, 252, 0], 16.653],
+		["timid", [188, 0, 0, 0, 252, 68], 12.931],
+		["impish", [252, 0, 132, 0, 120, 0], 8.473],
+		["careful", [252, 4, 0, 0, 252, 0], 5.287],
+		["impish", [252, 0, 252, 0, 4, 0], 2.94]
+	],
+	"moves": [
+		["parting-shot", 79.711],
+		["doodle", 48.228],
+		["swagger", 47.739],
+		["foul-play", 45.121],
+		["gunk-shot", 36.747],
+		["taunt", 29.935],
+		["encore", 24.189],
+		["protect", 18.685],
+		["toxic", 13.698],
+		["scary-face", 9.667],
+		["helping-hand", 9.5],
+		["super-fang", 8.375],
+		["knock-off", 7.486],
+		["rain-dance", 6.083]
+	],
+	"teammates": [
+		["rotom-wash", 46.302],
+		["slaking", 40.915],
+		["meowscarada", 40.635],
+		["dragapult", 31.675],
+		["torkoal", 29.319],
+		["scovillain", 28.864],
+		["arcanine", 26.539],
+		["sylveon", 22.207],
+		["gengar", 14.963],
+		["tyranitar", 14.382],
+		["maushold", 10.216]
+	]
+}, {
+	"ident": "clawitzer",
+	"abilities": [
+		["mega-launcher", 100.0]
+	],
+	"items": [
+		["choice-specs", 38.229],
+		["expert-belt", 15.082],
+		["assault-vest", 10.795],
+		["wiki-berry", 10.746],
+		["safety-goggles", 8.63],
+		["choice-scarf", 8.12],
+		["life-orb", 4.816]
+	],
+	"spreads": [
+		["modest", [252, 0, 0, 252, 4, 0], 33.141],
+		["modest", [252, 0, 0, 252, 0, 0], 12.283],
+		["modest", [252, 0, 0, 252, 0, 4], 11.387],
+		["quiet", [0, 0, 252, 252, 0, 0], 10.031],
+		["quiet", [252, 0, 4, 252, 0, 0], 9.934],
+		["timid", [0, 0, 0, 252, 4, 252], 8.12]
+	],
+	"moves": [
+		["dark-pulse", 87.408],
+		["aura-sphere", 79.064],
+		["ice-beam", 51.096],
+		["water-pulse", 44.227],
+		["muddy-water", 41.114],
+		["dragon-pulse", 31.199],
+		["protect", 27.542],
+		["heal-pulse", 12.5],
+		["flash-cannon", 10.912]
+	],
+	"teammates": [
+		["hariyama", 51.384],
+		["kilowattrel", 32.551],
+		["hatterene", 32.206],
+		["skeledirge", 31.068],
+		["grimmsnarl", 30.824],
+		["arboliva", 24.326],
+		["kingambit", 22.562],
+		["volcarona", 19.384],
+		["farigiraf", 18.97],
+		["maushold", 17.525],
+		["sylveon", 15.041]
+	]
+}, {
+	"ident": "leafeon",
+	"abilities": [
+		["chlorophyll", 98.29],
+		["leaf-guard", 1.71]
+	],
+	"items": [
+		["clear-amulet", 68.24],
+		["razor-claw", 10.215],
+		["life-orb", 6.167],
+		["lum-berry", 5.528],
+		["occa-berry", 4.95]
+	],
+	"spreads": [
+		["adamant", [244, 236, 0, 0, 20, 4], 54.601],
+		["adamant", [4, 252, 0, 0, 0, 252], 13.926],
+		["adamant", [244, 236, 4, 0, 20, 4], 9.897],
+		["naughty", [0, 252, 0, 4, 0, 252], 7.748],
+		["jolly", [0, 252, 0, 0, 0, 252], 6.536],
+		["careful", [252, 156, 20, 0, 76, 4], 5.528]
+	],
+	"moves": [
+		["leaf-blade", 100.0],
+		["protect", 96.978],
+		["tera-blast", 87.289],
+		["quick-attack", 60.495],
+		["trailblaze", 11.801],
+		["yawn", 9.546],
+		["swords-dance", 9.287],
+		["x-scissor", 5.955]
+	],
+	"teammates": [
+		["torkoal", 80.166],
+		["dragapult", 70.767],
+		["azumarill", 63.66],
+		["farigiraf", 63.65],
+		["tyranitar", 63.649],
+		["murkrow", 15.275],
+		["garchomp", 11.387],
+		["kingambit", 9.745],
+		["grimmsnarl", 9.743],
+		["quaquaval", 9.743],
+		["talonflame", 7.117]
+	]
+}, {
+	"ident": "florges",
+	"abilities": [
+		["flower-veil", 94.101],
+		["symbiosis", 5.899]
+	],
+	"items": [
+		["aguav-berry", 70.19],
+		["leftovers", 19.653],
+		["choice-scarf", 3.631],
+		["rocky-helmet", 3.161]
+	],
+	"spreads": [
+		["quiet", [252, 0, 0, 252, 4, 0], 55.219],
+		["quiet", [252, 0, 0, 252, 0, 0], 20.295],
+		["modest", [252, 0, 0, 252, 4, 0], 14.791],
+		["calm", [252, 0, 180, 0, 76, 0], 1.881],
+		["calm", [248, 0, 0, 8, 252, 0], 1.418],
+		["modest", [252, 0, 132, 108, 4, 12], 1.246]
+	],
+	"moves": [
+		["pollen-puff", 94.402],
+		["dazzling-gleam", 92.643],
+		["synthesis", 71.926],
+		["tera-blast", 71.245],
+		["protect", 26.928],
+		["helping-hand", 22.057],
+		["moonblast", 7.323]
+	],
+	"teammates": [
+		["annihilape", 71.291],
+		["grimmsnarl", 70.984],
+		["arboliva", 70.105],
+		["gothitelle", 70.046],
+		["misdreavus", 69.928],
+		["armarouge", 21.697],
+		["meowscarada", 21.388],
+		["indeedee-f", 19.977],
+		["kingambit", 19.063],
+		["amoonguss", 19.0],
+		["torkoal", 3.264]
+	]
+}, {
+	"ident": "stonjourner",
+	"abilities": [
+		["power-spot", 100.0]
+	],
+	"items": [
+		["focus-sash", 68.879],
+		["aguav-berry", 9.372],
+		["leftovers", 6.725],
+		["air-balloon", 5.984],
+		["sitrus-berry", 5.688]
+	],
+	"spreads": [
+		["adamant", [0, 252, 4, 0, 0, 252], 39.56],
+		["jolly", [0, 244, 0, 0, 4, 252], 17.757],
+		["impish", [252, 4, 252, 0, 0, 0], 12.515],
+		["careful", [252, 0, 0, 0, 252, 4], 9.219],
+		["brave", [252, 252, 0, 0, 4, 0], 5.985],
+		["jolly", [4, 252, 0, 0, 0, 252], 3.884]
+	],
+	"moves": [
+		["wide-guard", 97.14],
+		["rock-slide", 93.234],
+		["protect", 79.431],
+		["heavy-slam", 49.899],
+		["gravity", 22.871],
+		["body-press", 19.419],
+		["stomping-tantrum", 9.35],
+		["low-kick", 7.747],
+		["imprison", 4.988]
+	],
+	"teammates": [
+		["gholdengo", 35.559],
+		["murkrow", 31.356],
+		["hydreigon", 28.251],
+		["maushold", 27.051],
+		["annihilape", 25.979],
+		["krookodile", 17.344],
+		["dragapult", 16.841],
+		["tinkaton", 15.459],
+		["rotom-wash", 15.459],
+		["toedscruel", 15.459],
+		["armarouge", 10.885]
+	]
+}, {
+	"ident": "misdreavus",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["eviolite", 99.988]
+	],
+	"spreads": [
+		["sassy", [252, 0, 132, 0, 124, 0], 63.756],
+		["sassy", [4, 0, 252, 0, 252, 0], 16.983],
+		["sassy", [252, 0, 0, 4, 252, 0], 15.007]
+	],
+	"moves": [
+		["trick-room", 99.636],
+		["will-o-wisp", 96.175],
+		["perish-song", 84.565],
+		["night-shade", 80.822],
+		["shadow-ball", 18.814]
+	],
+	"teammates": [
+		["gothitelle", 80.758],
+		["annihilape", 80.751],
+		["grimmsnarl", 80.738],
+		["florges", 80.738],
+		["arboliva", 80.738],
+		["amoonguss", 11.59],
+		["mabosstiff", 10.002],
+		["quaquaval", 10.002],
+		["houndoom", 6.621],
+		["pachirisu", 6.529],
+		["garchomp", 3.807]
+	]
+}, {
+	"ident": "appletun",
+	"abilities": [
+		["thick-fat", 69.803],
+		["ripen", 24.41],
+		["gluttony", 5.787]
+	],
+	"items": [
+		["leftovers", 62.964],
+		["sitrus-berry", 16.948],
+		["aguav-berry", 11.988],
+		["rocky-helmet", 3.829]
+	],
+	"spreads": [
+		["bold", [188, 0, 244, 0, 76, 0], 23.972],
+		["modest", [252, 0, 0, 252, 4, 0], 12.997],
+		["calm", [252, 0, 100, 0, 156, 0], 12.18],
+		["sassy", [252, 0, 4, 0, 252, 0], 10.565],
+		["bold", [172, 0, 172, 0, 164, 0], 5.75],
+		["modest", [252, 0, 0, 252, 0, 0], 5.579]
+	],
+	"moves": [
+		["leech-seed", 75.186],
+		["iron-defense", 63.862],
+		["body-press", 63.638],
+		["protect", 51.343],
+		["apple-acid", 33.338],
+		["dragon-pulse", 27.269],
+		["amnesia", 26.941],
+		["recover", 23.254],
+		["giga-drain", 17.051]
+	],
+	"teammates": [
+		["hydreigon", 55.499],
+		["meowscarada", 27.156],
+		["volcarona", 24.67],
+		["gyarados", 24.017],
+		["pawmot", 23.98],
+		["sableye", 17.934],
+		["kingambit", 17.925],
+		["indeedee-f", 15.357],
+		["tauros-paldea-water", 14.755],
+		["grimmsnarl", 13.204],
+		["glimmora", 12.978]
+	]
+}, {
+	"ident": "sawsbuck",
+	"abilities": [
+		["chlorophyll", 99.785],
+		["sap-sipper", 0.215],
+		["serene-grace", 0.0]
+	],
+	"items": [
+		["life-orb", 99.263]
+	],
+	"spreads": [
+		["adamant", [28, 236, 0, 0, 0, 244], 99.263]
+	],
+	"moves": [
+		["horn-leech", 99.96],
+		["tera-blast", 99.862],
+		["stomping-tantrum", 99.309],
+		["play-rough", 49.919],
+		["protect", 48.672]
+	],
+	"teammates": [
+		["torkoal", 99.27],
+		["armarouge", 99.263],
+		["indeedee-f", 99.263],
+		["dragapult", 98.037],
+		["sylveon", 97.945],
+		["sylveon", 97.945]
+	]
+}, {
+	"ident": "pyroar",
+	"abilities": [
+		["moxie", 65.418],
+		["unnerve", 34.582],
+		["rivalry", 0.0]
+	],
+	"items": [
+		["life-orb", 76.498],
+		["choice-specs", 11.636],
+		["sitrus-berry", 11.305]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 76.878],
+		["timid", [0, 0, 4, 252, 0, 252], 11.415],
+		["timid", [252, 0, 28, 0, 0, 228], 11.305]
+	],
+	"moves": [
+		["flamethrower", 99.408],
+		["tera-blast", 88.231],
+		["protect", 88.151],
+		["hyper-voice", 77.326],
+		["snarl", 11.627],
+		["dark-pulse", 11.5],
+		["will-o-wisp", 11.305]
+	],
+	"teammates": [
+		["rotom-wash", 65.963],
+		["gallade", 65.623],
+		["sylveon", 65.575],
+		["kingambit", 65.575],
+		["salamence", 65.575],
+		["annihilape", 10.856],
+		["indeedee-f", 10.669],
+		["murkrow", 10.621],
+		["armarouge", 10.613],
+		["clodsire", 10.613],
+		["maushold", 9.576]
+	]
+}, {
+	"ident": "ditto",
+	"abilities": [
+		["imposter", 99.951],
+		["limber", 0.049]
+	],
+	"items": [
+		["focus-sash", 41.961],
+		["choice-scarf", 40.519],
+		["life-orb", 9.847],
+		["iron-ball", 2.484],
+		["leftovers", 1.574]
+	],
+	"spreads": [
+		["relaxed", [252, 0, 252, 0, 4, 0], 27.921],
+		["relaxed", [248, 8, 252, 0, 0, 0], 16.756],
+		["sassy", [252, 0, 4, 0, 252, 0], 13.433],
+		["adamant", [4, 252, 0, 0, 0, 252], 12.257],
+		["hardy", [252, 0, 0, 0, 0, 0], 10.011],
+		["careful", [252, 0, 76, 0, 180, 0], 7.091]
+	],
+	"moves": [
+		["nothing", 300.0],
+		["transform", 100.0]
+	],
+	"teammates": [
+		["indeedee-f", 47.733],
+		["murkrow", 45.362],
+		["garchomp", 29.609],
+		["maushold", 29.3],
+		["torkoal", 28.637],
+		["ceruledge", 27.967],
+		["grimmsnarl", 24.143],
+		["farigiraf", 18.722],
+		["arboliva", 16.757],
+		["staraptor", 16.756],
+		["annihilape", 14.816]
+	]
+}, {
+	"ident": "slaking",
+	"abilities": [
+		["truant", 100.0]
+	],
+	"items": [
+		["clear-amulet", 29.923],
+		["life-orb", 24.492],
+		["mirror-herb", 22.374],
+		["leftovers", 9.314],
+		["assault-vest", 6.483],
+		["lum-berry", 4.542]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 26.301],
+		["adamant", [28, 164, 4, 0, 76, 236], 20.277],
+		["adamant", [196, 12, 12, 0, 252, 36], 18.762],
+		["adamant", [4, 252, 0, 0, 0, 252], 7.763],
+		["jolly", [0, 164, 0, 0, 92, 252], 7.388],
+		["adamant", [4, 228, 4, 0, 100, 172], 6.392]
+	],
+	"moves": [
+		["body-slam", 86.385],
+		["drain-punch", 65.594],
+		["shadow-claw", 50.612],
+		["bulk-up", 48.513],
+		["slack-off", 27.671],
+		["sucker-punch", 21.11],
+		["fire-punch", 20.054],
+		["zen-headbutt", 14.612],
+		["earthquake", 14.032],
+		["protect", 13.588],
+		["facade", 10.811],
+		["night-slash", 7.684]
+	],
+	"teammates": [
+		["grafaiai", 64.16],
+		["sylveon", 53.647],
+		["arcanine", 47.699],
+		["rotom-wash", 28.504],
+		["arboliva", 20.964],
+		["gengar", 20.74],
+		["sableye", 18.827],
+		["gastrodon", 18.765],
+		["tyranitar", 18.548],
+		["gholdengo", 17.185],
+		["orthworm", 15.974]
+	]
+}, {
+	"ident": "lurantis",
+	"abilities": [
+		["contrary", 100.0],
+		["leaf-guard", 0.0]
+	],
+	"items": [
+		["sitrus-berry", 74.543],
+		["wide-lens", 16.231],
+		["assault-vest", 4.614]
+	],
+	"spreads": [
+		["quiet", [252, 0, 0, 252, 4, 0], 74.545],
+		["quiet", [252, 0, 4, 252, 0, 0], 16.232],
+		["modest", [228, 0, 4, 188, 4, 84], 3.752],
+		["quiet", [212, 0, 0, 252, 44, 0], 3.563]
+	],
+	"moves": [
+		["leaf-storm", 99.751],
+		["pollen-puff", 95.665],
+		["protect", 95.13],
+		["tera-blast", 83.168],
+		["giga-drain", 20.849]
+	],
+	"teammates": [
+		["torkoal", 84.938],
+		["annihilape", 81.037],
+		["hariyama", 65.329],
+		["hatterene", 65.028],
+		["tinkaton", 64.802],
+		["oranguru", 20.02],
+		["indeedee-f", 17.496],
+		["lilligant", 16.23],
+		["grimmsnarl", 3.572],
+		["garchomp", 3.563],
+		["gengar", 3.563]
+	]
+}, {
+	"ident": "cloyster",
+	"abilities": [
+		["skill-link", 100.0],
+		["shell-armor", 0.0],
+		["overcoat", 0.0]
+	],
+	"items": [
+		["focus-sash", 49.697],
+		["white-herb", 33.046],
+		["king's-rock", 16.648]
+	],
+	"spreads": [
+		["adamant", [0, 252, 0, 0, 4, 252], 38.247],
+		["naughty", [0, 252, 0, 4, 0, 252], 27.444],
+		["adamant", [0, 196, 0, 0, 180, 132], 16.647],
+		["adamant", [4, 252, 0, 0, 0, 252], 12.721]
+	],
+	"moves": [
+		["icicle-spear", 100.0],
+		["shell-smash", 82.98],
+		["protect", 66.159],
+		["rock-blast", 46.693],
+		["tera-blast", 36.881],
+		["liquidation", 29.649],
+		["hydro-pump", 27.58]
+	],
+	"teammates": [
+		["indeedee-f", 78.42],
+		["flamigo", 58.186],
+		["meowscarada", 34.612],
+		["tyranitar", 26.677],
+		["houndstone", 26.677],
+		["lycanroc", 26.677],
+		["cyclizar", 25.557],
+		["weavile", 25.516],
+		["armarouge", 17.62],
+		["abomasnow", 16.654],
+		["baxcalibur", 16.651]
+	]
+}, {
+	"ident": "hawlucha",
+	"abilities": [
+		["unburden", 99.956],
+		["mold-breaker", 0.044],
+		["limber", 0.0]
+	],
+	"items": [
+		["mirror-herb", 38.478],
+		["psychic-seed", 36.452],
+		["weakness-policy", 11.642],
+		["power-herb", 6.234],
+		["grassy-seed", 4.649]
+	],
+	"spreads": [
+		["adamant", [0, 252, 0, 0, 4, 252], 31.788],
+		["jolly", [0, 252, 0, 0, 4, 252], 26.118],
+		["adamant", [252, 248, 0, 0, 4, 4], 21.594],
+		["adamant", [28, 252, 0, 0, 80, 148], 9.426],
+		["adamant", [0, 252, 4, 0, 0, 252], 6.906]
+	],
+	"moves": [
+		["acrobatics", 98.433],
+		["protect", 60.317],
+		["close-combat", 47.336],
+		["thunder-punch", 27.119],
+		["drain-punch", 23.921],
+		["encore", 21.985],
+		["flying-press", 21.65],
+		["detect", 17.3],
+		["bulk-up", 13.413],
+		["fire-punch", 13.376],
+		["iron-head", 13.013],
+		["rock-slide", 7.438],
+		["sky-attack", 6.234],
+		["poison-jab", 5.803],
+		["tera-blast", 4.849]
+	],
+	"teammates": [
+		["grimmsnarl", 39.101],
+		["indeedee-f", 34.453],
+		["rotom-heat", 24.223],
+		["armarouge", 22.56],
+		["gengar", 21.244],
+		["hydreigon", 21.223],
+		["tinkaton", 21.18],
+		["sylveon", 16.079],
+		["gholdengo", 13.776],
+		["abomasnow", 13.286],
+		["murkrow", 13.018]
+	]
+}, {
+	"ident": "rotom-frost",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["assault-vest", 56.442],
+		["choice-specs", 13.775],
+		["leftovers", 13.076],
+		["choice-scarf", 12.084]
+	],
+	"spreads": [
+		["modest", [252, 0, 4, 244, 4, 4], 45.327],
+		["timid", [4, 0, 0, 252, 0, 252], 15.234],
+		["timid", [252, 0, 0, 0, 4, 252], 12.569],
+		["timid", [36, 0, 0, 252, 0, 220], 8.908],
+		["modest", [172, 0, 0, 156, 0, 180], 8.556],
+		["timid", [0, 0, 0, 252, 0, 252], 2.59]
+	],
+	"moves": [
+		["blizzard", 100.0],
+		["thunderbolt", 87.029],
+		["discharge", 58.946],
+		["tera-blast", 57.392],
+		["volt-switch", 26.372],
+		["protect", 25.71],
+		["trick", 16.757],
+		["will-o-wisp", 15.82]
+	],
+	"teammates": [
+		["abomasnow", 56.499],
+		["garchomp", 39.062],
+		["murkrow", 36.136],
+		["armarouge", 35.14],
+		["azumarill", 24.544],
+		["gholdengo", 23.667],
+		["arcanine", 23.005],
+		["kilowattrel", 22.524],
+		["hydreigon", 22.091],
+		["annihilape", 18.066],
+		["cetitan", 15.86]
+	]
+}, {
+	"ident": "luxray",
+	"abilities": [
+		["guts", 54.633],
+		["intimidate", 45.354],
+		["rivalry", 0.013]
+	],
+	"items": [
+		["flame-orb", 54.614],
+		["rocky-helmet", 36.679],
+		["sitrus-berry", 3.56],
+		["aguav-berry", 2.39]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 49.93],
+		["bold", [248, 0, 244, 8, 0, 4], 36.512],
+		["jolly", [0, 252, 0, 0, 0, 252], 3.56],
+		["calm", [252, 0, 0, 4, 252, 0], 2.39],
+		["brave", [252, 252, 0, 0, 4, 0], 2.351],
+		["sassy", [252, 4, 0, 0, 252, 0], 1.735]
+	],
+	"moves": [
+		["wild-charge", 59.033],
+		["crunch", 52.218],
+		["play-rough", 51.682],
+		["fire-fang", 49.943],
+		["snarl", 44.515],
+		["light-screen", 40.636],
+		["volt-switch", 36.828],
+		["discharge", 36.512],
+		["howl", 5.912],
+		["protect", 5.71]
+	],
+	"teammates": [
+		["gallade", 55.231],
+		["meowscarada", 51.664],
+		["ceruledge", 50.203],
+		["corviknight", 49.943],
+		["golduck", 49.93],
+		["amoonguss", 39.631],
+		["volcarona", 36.648],
+		["pelipper", 36.544],
+		["tauros-paldea-water", 36.512],
+		["stantler", 36.512],
+		["glaceon", 3.974]
+	]
+}, {
+	"ident": "wigglytuff",
+	"abilities": [
+		["competitive", 100.0],
+		["cute-charm", 0.0],
+		["frisk", 0.0]
+	],
+	"items": [
+		["babiri-berry", 86.718],
+		["silk-scarf", 9.022]
+	],
+	"spreads": [
+		["modest", [0, 0, 84, 252, 172, 0], 86.718],
+		["modest", [0, 0, 4, 252, 252, 0], 11.779]
+	],
+	"moves": [
+		["protect", 99.347],
+		["dazzling-gleam", 99.157],
+		["hyper-voice", 98.587],
+		["flamethrower", 98.567]
+	],
+	"teammates": [
+		["amoonguss", 98.536],
+		["annihilape", 98.515],
+		["stantler", 98.515],
+		["hydreigon", 98.497],
+		["salazzle", 86.718],
+		["salazzle", 86.718]
+	]
+}, {
+	"ident": "zoroark",
+	"abilities": [
+		["illusion", 100.0]
+	],
+	"items": [
+		["mental-herb", 44.496],
+		["focus-sash", 33.768],
+		["choice-specs", 8.594],
+		["choice-scarf", 7.333],
+		["expert-belt", 3.069]
+	],
+	"spreads": [
+		["calm", [4, 0, 76, 252, 172, 0], 44.496],
+		["adamant", [0, 252, 4, 0, 0, 252], 28.881],
+		["timid", [0, 0, 0, 252, 4, 252], 7.983],
+		["timid", [0, 0, 0, 212, 44, 252], 7.282],
+		["timid", [0, 0, 0, 252, 0, 252], 3.688],
+		["timid", [4, 0, 0, 252, 0, 252], 3.177]
+	],
+	"moves": [
+		["sucker-punch", 74.104],
+		["flamethrower", 62.414],
+		["nasty-plot", 46.991],
+		["night-daze", 46.667],
+		["u-turn", 36.208],
+		["protect", 31.471],
+		["encore", 30.519],
+		["dark-pulse", 22.422],
+		["snarl", 15.776],
+		["trick", 6.812],
+		["tera-blast", 5.523],
+		["sludge-bomb", 5.49]
+	],
+	"teammates": [
+		["tinkaton", 46.367],
+		["garchomp", 41.731],
+		["gyarados", 40.545],
+		["talonflame", 40.237],
+		["gardevoir", 40.083],
+		["annihilape", 8.854],
+		["indeedee-f", 8.615],
+		["tatsugiri", 7.314],
+		["dondozo", 7.285],
+		["maushold", 7.282],
+		["torkoal", 5.925]
+	]
+}, {
+	"ident": "oricorio-sensu",
+	"abilities": [
+		["dancer", 100.0]
+	],
+	"items": [
+		["leftovers", 45.783],
+		["focus-sash", 41.277],
+		["mental-herb", 5.447],
+		["mago-berry", 4.214]
+	],
+	"spreads": [
+		["modest", [12, 0, 0, 252, 0, 244], 41.254],
+		["modest", [4, 0, 4, 252, 4, 244], 21.151],
+		["mild", [0, 20, 0, 252, 0, 236], 12.502],
+		["timid", [0, 0, 0, 252, 4, 252], 5.771],
+		["modest", [4, 0, 0, 252, 0, 252], 5.045],
+		["calm", [252, 0, 196, 0, 60, 0], 4.414]
+	],
+	"moves": [
+		["revelation-dance", 95.685],
+		["protect", 89.331],
+		["quiver-dance", 59.141],
+		["substitute", 41.363],
+		["tailwind", 37.829],
+		["air-slash", 27.222],
+		["helping-hand", 18.045],
+		["icy-wind", 15.532]
+	],
+	"teammates": [
+		["volcarona", 91.343],
+		["flamigo", 41.787],
+		["lilligant", 35.521],
+		["torkoal", 35.247],
+		["vivillon", 35.03],
+		["quaquaval", 28.848],
+		["maushold", 25.095],
+		["garchomp", 22.711],
+		["pawmot", 20.414],
+		["gardevoir", 20.4],
+		["kingambit", 12.243]
+	]
+}, {
+	"ident": "noivern",
+	"abilities": [
+		["telepathy", 64.624],
+		["infiltrator", 32.23],
+		["frisk", 3.146]
+	],
+	"items": [
+		["covert-cloak", 35.467],
+		["focus-sash", 16.869],
+		["haban-berry", 11.175],
+		["life-orb", 8.414],
+		["leftovers", 7.047],
+		["heavy-duty-boots", 4.832],
+		["eject-pack", 4.029],
+		["normal-gem", 3.251],
+		["choice-scarf", 2.703],
+		["nothing", 2.475]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 41.735],
+		["timid", [4, 0, 0, 252, 0, 252], 28.591],
+		["timid", [244, 0, 4, 4, 4, 252], 8.879],
+		["modest", [132, 0, 60, 252, 60, 4], 4.836],
+		["modest", [0, 0, 4, 252, 0, 252], 4.828],
+		["modest", [4, 0, 0, 252, 0, 252], 3.108]
+	],
+	"moves": [
+		["draco-meteor", 94.26],
+		["tailwind", 85.758],
+		["flamethrower", 53.286],
+		["u-turn", 43.875],
+		["protect", 35.268],
+		["air-slash", 26.335],
+		["boomburst", 15.573],
+		["heat-wave", 15.567],
+		["super-fang", 14.597]
+	],
+	"teammates": [
+		["gengar", 44.914],
+		["grimmsnarl", 37.933],
+		["armarouge", 37.472],
+		["indeedee-f", 36.187],
+		["maushold", 34.838],
+		["toxtricity", 24.887],
+		["farigiraf", 15.413],
+		["arcanine", 12.685],
+		["cyclizar", 12.471],
+		["hydreigon", 11.398],
+		["torkoal", 10.307]
+	]
+}, {
+	"ident": "haxorus",
+	"abilities": [
+		["mold-breaker", 55.948],
+		["unnerve", 23.863],
+		["rivalry", 20.189]
+	],
+	"items": [
+		["life-orb", 55.919],
+		["sitrus-berry", 18.366],
+		["clear-amulet", 10.453],
+		["choice-scarf", 8.422],
+		["assault-vest", 3.721]
+	],
+	"spreads": [
+		["adamant", [0, 252, 0, 0, 4, 252], 24.657],
+		["adamant", [252, 252, 4, 0, 0, 0], 20.184],
+		["adamant", [252, 0, 52, 0, 84, 108], 18.366],
+		["jolly", [0, 252, 0, 0, 4, 252], 14.448],
+		["adamant", [220, 100, 0, 0, 28, 156], 8.823],
+		["jolly", [4, 252, 0, 0, 0, 252], 7.919]
+	],
+	"moves": [
+		["protect", 52.145],
+		["breaking-swipe", 48.708],
+		["dragon-dance", 42.642],
+		["dragon-claw", 42.114],
+		["first-impression", 39.679],
+		["earthquake", 37.639],
+		["stomping-tantrum", 37.368],
+		["iron-head", 32.318],
+		["rock-slide", 28.412],
+		["tera-blast", 12.566],
+		["close-combat", 9.654]
+	],
+	"teammates": [
+		["volcarona", 41.186],
+		["murkrow", 38.676],
+		["gholdengo", 26.913],
+		["gastrodon", 23.862],
+		["arboliva", 23.862],
+		["coalossal", 23.862],
+		["dragapult", 22.94],
+		["tauros-paldea-water", 21.103],
+		["grimmsnarl", 18.636],
+		["sableye", 18.578],
+		["clodsire", 18.366]
+	]
+}, {
+	"ident": "vivillon",
+	"abilities": [
+		["compound-eyes", 95.023],
+		["friend-guard", 4.969],
+		["shield-dust", 0.009]
+	],
+	"items": [
+		["focus-sash", 95.439]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 49.298],
+		["timid", [0, 0, 4, 252, 0, 252], 45.174],
+		["timid", [252, 0, 4, 0, 0, 252], 3.772]
+	],
+	"moves": [
+		["sleep-powder", 99.645],
+		["rage-powder", 95.206],
+		["hurricane", 94.839],
+		["protect", 49.465],
+		["quiver-dance", 46.02]
+	],
+	"teammates": [
+		["pelipper", 39.431],
+		["kingambit", 39.201],
+		["gholdengo", 39.114],
+		["palafin", 39.105],
+		["drednaw", 39.105],
+		["volcarona", 38.923],
+		["flamigo", 38.66],
+		["oricorio-sensu", 38.36],
+		["torkoal", 38.316],
+		["lilligant", 38.304],
+		["garchomp", 13.397]
+	]
+}, {
+	"ident": "lokix",
+	"abilities": [
+		["tinted-lens", 99.17],
+		["swarm", 0.83]
+	],
+	"items": [
+		["choice-band", 48.959],
+		["focus-sash", 27.072],
+		["life-orb", 15.377],
+		["covert-cloak", 6.698]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 0, 252], 38.464],
+		["jolly", [4, 252, 0, 0, 0, 252], 16.576],
+		["adamant", [116, 244, 0, 0, 0, 148], 12.62],
+		["brave", [188, 188, 12, 0, 116, 4], 10.21],
+		["adamant", [0, 252, 0, 0, 4, 252], 7.673],
+		["adamant", [252, 252, 0, 0, 4, 0], 6.429]
+	],
+	"moves": [
+		["first-impression", 99.598],
+		["u-turn", 92.797],
+		["sucker-punch", 92.737],
+		["leech-life", 39.878],
+		["assurance", 22.834],
+		["protect", 22.674],
+		["throat-chop", 7.476],
+		["counter", 6.239]
+	],
+	"teammates": [
+		["quaquaval", 44.493],
+		["gholdengo", 39.144],
+		["glimmora", 39.114],
+		["gardevoir", 38.466],
+		["squawkabilly", 38.464],
+		["annihilape", 24.911],
+		["amoonguss", 20.305],
+		["pelipper", 15.965],
+		["oranguru", 15.422],
+		["kingambit", 15.221],
+		["drednaw", 15.034]
+	]
+}, {
+	"ident": "toxicroak",
+	"abilities": [
+		["dry-skin", 91.411],
+		["poison-touch", 8.589],
+		["anticipation", 0.0]
+	],
+	"items": [
+		["life-orb", 61.257],
+		["assault-vest", 19.083],
+		["focus-sash", 13.456],
+		["black-sludge", 5.544]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 47.326],
+		["jolly", [4, 252, 0, 0, 0, 252], 18.875],
+		["brave", [252, 252, 0, 0, 4, 0], 14.161],
+		["adamant", [4, 252, 0, 0, 0, 252], 13.389],
+		["jolly", [252, 4, 116, 0, 116, 20], 5.543]
+	],
+	"moves": [
+		["fake-out", 99.561],
+		["close-combat", 73.441],
+		["gunk-shot", 51.715],
+		["poison-jab", 48.284],
+		["protect", 41.5],
+		["drain-punch", 25.008],
+		["sucker-punch", 22.684],
+		["feint", 17.47],
+		["tera-blast", 10.162]
+	],
+	"teammates": [
+		["pelipper", 58.163],
+		["kilowattrel", 38.267],
+		["gastrodon", 25.972],
+		["garchomp", 19.654],
+		["cetitan", 19.397],
+		["raichu", 19.332],
+		["vaporeon", 18.875],
+		["cacturne", 18.872],
+		["lumineon", 18.872],
+		["oranguru", 13.389],
+		["grimmsnarl", 13.389]
+	]
+}, {
+	"ident": "ursaring",
+	"abilities": [
+		["guts", 97.1],
+		["quick-feet", 2.219],
+		["unnerve", 0.681]
+	],
+	"items": [
+		["eviolite", 90.453],
+		["flame-orb", 8.766]
+	],
+	"spreads": [
+		["brave", [252, 140, 0, 0, 116, 0], 68.086],
+		["adamant", [252, 180, 36, 0, 36, 4], 21.289],
+		["brave", [252, 252, 4, 0, 0, 0], 7.022]
+	],
+	"moves": [
+		["protect", 99.286],
+		["hammer-arm", 68.108],
+		["high-horsepower", 68.098],
+		["double-edge", 68.098],
+		["facade", 28.978],
+		["crunch", 24.95],
+		["ice-punch", 21.289],
+		["earthquake", 5.431]
+	],
+	"teammates": [
+		["indeedee-f", 56.639],
+		["armarouge", 55.148],
+		["kingambit", 53.829],
+		["palafin", 52.796],
+		["salamence", 52.796],
+		["amoonguss", 14.347],
+		["annihilape", 10.983],
+		["sableye", 10.98],
+		["grimmsnarl", 9.96],
+		["magnezone", 9.947],
+		["garchomp", 3.817]
+	]
+}, {
+	"ident": "crabominable",
+	"abilities": [
+		["hyper-cutter", 63.371],
+		["iron-fist", 35.174],
+		["anger-point", 1.455]
+	],
+	"items": [
+		["life-orb", 63.552],
+		["punching-glove", 27.963],
+		["assault-vest", 3.383],
+		["weakness-policy", 3.038]
+	],
+	"spreads": [
+		["brave", [252, 252, 0, 0, 4, 0], 66.696],
+		["adamant", [252, 252, 0, 0, 0, 0], 27.946],
+		["adamant", [252, 252, 0, 0, 4, 0], 3.095]
+	],
+	"moves": [
+		["ice-hammer", 95.385],
+		["crabhammer", 94.044],
+		["protect", 91.949],
+		["close-combat", 64.157],
+		["wide-guard", 32.718],
+		["drain-punch", 8.179]
+	],
+	"teammates": [
+		["farigiraf", 63.06],
+		["skeledirge", 63.033],
+		["amoonguss", 59.012],
+		["pelipper", 58.587],
+		["palafin", 58.587],
+		["mimikyu", 35.05],
+		["kingambit", 28.017],
+		["clawitzer", 27.992],
+		["arboliva", 27.566],
+		["rabsca", 27.566],
+		["garganacl", 4.597]
+	]
+}, {
+	"ident": "lucario",
+	"abilities": [
+		["inner-focus", 89.033],
+		["justified", 9.477],
+		["steadfast", 1.491]
+	],
+	"items": [
+		["choice-scarf", 56.662],
+		["expert-belt", 14.02],
+		["assault-vest", 11.345],
+		["muscle-band", 5.164],
+		["choice-band", 3.416],
+		["life-orb", 3.172],
+		["normal-gem", 2.785]
+	],
+	"spreads": [
+		["jolly", [252, 4, 0, 0, 0, 252], 55.455],
+		["adamant", [0, 252, 4, 0, 0, 252], 12.056],
+		["adamant", [244, 60, 0, 0, 0, 204], 8.647],
+		["jolly", [0, 252, 0, 0, 4, 252], 7.87],
+		["adamant", [252, 252, 0, 0, 4, 0], 2.785],
+		["adamant", [172, 252, 4, 0, 4, 76], 2.58]
+	],
+	"moves": [
+		["close-combat", 89.951],
+		["meteor-mash", 73.141],
+		["ice-punch", 61.829],
+		["final-gambit", 55.47],
+		["bullet-punch", 20.119],
+		["extreme-speed", 19.881],
+		["detect", 14.701],
+		["shadow-claw", 12.067],
+		["swords-dance", 9.968],
+		["circle-throw", 8.647],
+		["earthquake", 5.646],
+		["protect", 5.288],
+		["crunch", 4.787]
+	],
+	"teammates": [
+		["mimikyu", 55.5],
+		["torkoal", 55.5],
+		["oranguru", 55.498],
+		["hariyama", 55.46],
+		["lilligant", 55.46],
+		["garchomp", 15.847],
+		["tyranitar", 13.302],
+		["maushold", 12.156],
+		["glimmora", 11.609],
+		["corviknight", 10.703],
+		["houndstone", 10.25]
+	]
+}, {
+	"ident": "houndoom",
+	"abilities": [
+		["flash-fire", 99.995],
+		["unnerve", 0.005],
+		["early-bird", 0.0]
+	],
+	"items": [
+		["focus-sash", 55.604],
+		["throat-spray", 28.409],
+		["life-orb", 13.09]
+	],
+	"spreads": [
+		["modest", [252, 0, 0, 252, 0, 0], 54.919],
+		["timid", [4, 0, 0, 252, 0, 252], 28.816],
+		["hasty", [0, 4, 0, 252, 0, 252], 13.015]
+	],
+	"moves": [
+		["snarl", 83.333],
+		["protect", 56.989],
+		["overheat", 54.919],
+		["sucker-punch", 54.919],
+		["heat-wave", 44.246],
+		["tera-blast", 30.605],
+		["flamethrower", 29.319],
+		["dark-pulse", 16.314],
+		["nasty-plot", 13.523]
+	],
+	"teammates": [
+		["dragapult", 70.514],
+		["grimmsnarl", 54.995],
+		["torkoal", 54.923],
+		["bronzong", 54.919],
+		["skeledirge", 54.919],
+		["kingambit", 15.586],
+		["tyranitar", 15.568],
+		["jolteon", 15.568],
+		["weavile", 15.568],
+		["amoonguss", 13.381],
+		["misdreavus", 13.015]
+	]
+}, {
+	"ident": "dunsparce",
+	"abilities": [
+		["serene-grace", 99.79],
+		["rattled", 0.21],
+		["run-away", 0.0]
+	],
+	"items": [
+		["eviolite", 100.0]
+	],
+	"spreads": [
+		["impish", [244, 4, 76, 0, 180, 4], 99.74]
+	],
+	"moves": [
+		["roost", 100.0],
+		["glare", 99.951],
+		["rock-slide", 99.744],
+		["protect", 99.741]
+	],
+	"teammates": [
+		["tyranitar", 99.744],
+		["gholdengo", 99.74],
+		["volcarona", 99.74],
+		["tauros-paldea-water", 99.74],
+		["rotom-mow", 99.74],
+		["rotom-mow", 99.74]
+	]
+}, {
+	"ident": "veluza",
+	"abilities": [
+		["sharpness", 52.994],
+		["mold-breaker", 47.006]
+	],
+	"items": [
+		["choice-scarf", 46.932],
+		["sitrus-berry", 36.896],
+		["life-orb", 15.865]
+	],
+	"spreads": [
+		["jolly", [252, 4, 0, 0, 0, 252], 46.971],
+		["adamant", [228, 0, 36, 0, 104, 140], 21.717],
+		["jolly", [0, 252, 0, 0, 4, 252], 15.865],
+		["adamant", [0, 252, 0, 0, 4, 252], 12.767]
+	],
+	"moves": [
+		["aqua-cutter", 52.99],
+		["psycho-cut", 52.956],
+		["psychic-fangs", 47.018],
+		["final-gambit", 47.008],
+		["liquidation", 46.981],
+		["drill-run", 46.908],
+		["protect", 37.762],
+		["fillet-away", 36.942],
+		["night-slash", 28.589]
+	],
+	"teammates": [
+		["kingambit", 46.945],
+		["mimikyu", 46.883],
+		["dragalge", 46.883],
+		["tsareena", 46.883],
+		["hatterene", 46.883],
+		["amoonguss", 46.148],
+		["pelipper", 24.601],
+		["gengar", 24.408],
+		["sylveon", 24.407],
+		["beartic", 24.407],
+		["lilligant", 21.728]
+	]
+}, {
+	"ident": "espeon",
+	"abilities": [
+		["magic-bounce", 97.999],
+		["synchronize", 2.001]
+	],
+	"items": [
+		["focus-sash", 40.917],
+		["choice-specs", 40.44],
+		["aguav-berry", 5.962],
+		["light-clay", 4.679],
+		["weakness-policy", 2.932],
+		["twisted-spoon", 1.4]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 42.792],
+		["timid", [4, 0, 0, 252, 0, 252], 41.435],
+		["modest", [252, 0, 0, 252, 4, 0], 5.962],
+		["bold", [252, 0, 28, 220, 4, 0], 2.932],
+		["modest", [4, 0, 0, 252, 0, 252], 2.26]
+	],
+	"moves": [
+		["psychic", 59.824],
+		["dazzling-gleam", 54.535],
+		["protect", 41.495],
+		["shadow-ball", 40.859],
+		["tera-blast", 39.7],
+		["psych-up", 37.856],
+		["stored-power", 37.801],
+		["yawn", 36.826],
+		["trick-room", 8.851],
+		["calm-mind", 8.711],
+		["imprison", 7.418],
+		["light-screen", 5.018],
+		["reflect", 4.996]
+	],
+	"teammates": [
+		["meowscarada", 83.997],
+		["garchomp", 39.909],
+		["murkrow", 39.863],
+		["dragonite", 39.018],
+		["rotom-wash", 38.961],
+		["volcarona", 38.682],
+		["salamence", 36.826],
+		["falinks", 36.826],
+		["gardevoir", 36.826],
+		["grimmsnarl", 7.332],
+		["azumarill", 6.4]
+	]
+}, {
+	"ident": "greedent",
+	"abilities": [
+		["gluttony", 66.653],
+		["cheek-pouch", 33.347]
+	],
+	"items": [
+		["iapapa-berry", 66.311],
+		["sitrus-berry", 32.867]
+	],
+	"spreads": [
+		["careful", [148, 92, 100, 0, 164, 0], 66.149],
+		["brave", [244, 252, 0, 0, 12, 0], 12.61],
+		["brave", [252, 252, 4, 0, 0, 0], 6.293],
+		["impish", [228, 28, 252, 0, 0, 0], 3.929],
+		["brave", [100, 252, 0, 0, 156, 0], 3.86],
+		["adamant", [244, 252, 0, 0, 12, 0], 3.158]
+	],
+	"moves": [
+		["body-slam", 99.648],
+		["belly-drum", 95.558],
+		["protect", 89.789],
+		["crunch", 75.841],
+		["tera-blast", 12.392],
+		["earthquake", 7.353]
+	],
+	"teammates": [
+		["farigiraf", 72.442],
+		["tyranitar", 66.311],
+		["rotom-heat", 66.149],
+		["houndstone", 66.149],
+		["quaquaval", 66.149],
+		["indeedee-f", 18.629],
+		["armarouge", 15.501],
+		["maushold", 13.111],
+		["frosmoth", 12.396],
+		["abomasnow", 12.383],
+		["spiritomb", 12.383]
+	]
+}, {
+	"ident": "bombirdier",
+	"abilities": [
+		["rocky-payload", 70.989],
+		["big-pecks", 28.912],
+		["keen-eye", 0.099]
+	],
+	"items": [
+		["assault-vest", 39.643],
+		["life-orb", 25.064],
+		["focus-sash", 23.837],
+		["choice-scarf", 8.957]
+	],
+	"spreads": [
+		["adamant", [252, 252, 0, 0, 0, 4], 28.395],
+		["adamant", [4, 252, 0, 0, 0, 252], 24.845],
+		["brave", [252, 252, 0, 0, 4, 0], 24.393],
+		["adamant", [76, 212, 4, 0, 4, 212], 11.299],
+		["jolly", [0, 252, 0, 0, 4, 252], 8.763]
+	],
+	"moves": [
+		["rock-slide", 70.832],
+		["brave-bird", 66.702],
+		["sucker-punch", 65.008],
+		["knock-off", 40.129],
+		["stone-edge", 28.344],
+		["tailwind", 25.36],
+		["whirlwind", 25.025],
+		["acrobatics", 23.172],
+		["parting-shot", 15.049],
+		["snarl", 11.299],
+		["u-turn", 10.258]
+	],
+	"teammates": [
+		["gholdengo", 66.909],
+		["dragonite", 30.321],
+		["dragapult", 28.752],
+		["spiritomb", 28.344],
+		["pincurchin", 28.344],
+		["toxtricity", 28.344],
+		["grimmsnarl", 25.389],
+		["gallade", 25.025],
+		["sylveon", 19.315],
+		["baxcalibur", 17.472],
+		["armarouge", 16.006]
+	]
+}, {
+	"ident": "eelektross",
+	"abilities": [
+		["levitate", 100.0]
+	],
+	"items": [
+		["assault-vest", 49.081],
+		["life-orb", 39.464],
+		["safety-goggles", 4.752],
+		["choice-specs", 3.308]
+	],
+	"spreads": [
+		["calm", [184, 0, 76, 122, 120, 0], 41.776],
+		["brave", [228, 252, 28, 0, 0, 0], 34.661],
+		["modest", [244, 0, 0, 252, 12, 0], 6.19],
+		["adamant", [252, 252, 0, 0, 4, 0], 4.783],
+		["quiet", [244, 0, 0, 252, 12, 0], 3.301],
+		["modest", [252, 0, 0, 252, 0, 4], 2.907]
+	],
+	"moves": [
+		["flamethrower", 55.907],
+		["discharge", 53.646],
+		["thunderbolt", 50.415],
+		["giga-drain", 50.288],
+		["wild-charge", 40.027],
+		["close-combat", 36.503],
+		["crunch", 35.206],
+		["dragon-claw", 35.052],
+		["volt-switch", 7.917],
+		["liquidation", 7.738],
+		["thunder-wave", 6.032],
+		["protect", 5.22]
+	],
+	"teammates": [
+		["garchomp", 38.158],
+		["gyarados", 36.794],
+		["volcarona", 32.742],
+		["ceruledge", 32.165],
+		["tsareena", 31.911],
+		["amoonguss", 16.189],
+		["farigiraf", 13.003],
+		["torkoal", 10.174],
+		["armarouge", 9.457],
+		["indeedee-f", 9.282],
+		["skeledirge", 7.411]
+	]
+}, {
+	"ident": "gogoat",
+	"abilities": [
+		["grass-pelt", 54.26],
+		["sap-sipper", 45.74]
+	],
+	"items": [
+		["sitrus-berry", 54.258],
+		["leftovers", 38.733],
+		["chesto-berry", 2.641]
+	],
+	"spreads": [
+		["adamant", [80, 252, 68, 0, 108, 0], 54.258],
+		["adamant", [244, 4, 140, 0, 108, 12], 37.988],
+		["brave", [252, 156, 0, 0, 100, 0], 2.641],
+		["adamant", [252, 252, 0, 0, 4, 0], 2.373]
+	],
+	"moves": [
+		["horn-leech", 97.307],
+		["tera-blast", 92.412],
+		["milk-drink", 92.246],
+		["protect", 59.135],
+		["bulk-up", 43.749]
+	],
+	"teammates": [
+		["hariyama", 94.887],
+		["skeledirge", 55.093],
+		["arboliva", 54.26],
+		["cetitan", 54.258],
+		["oranguru", 54.258],
+		["farigiraf", 40.63],
+		["ceruledge", 39.698],
+		["baxcalibur", 38.079],
+		["salamence", 37.988],
+		["kingambit", 3.577],
+		["frosmoth", 2.641]
+	]
+}, {
+	"ident": "froslass",
+	"abilities": [
+		["snow-cloak", 50.503],
+		["cursed-body", 49.497]
+	],
+	"items": [
+		["focus-sash", 83.974],
+		["rocky-helmet", 5.173],
+		["choice-scarf", 3.51],
+		["bright-powder", 2.154],
+		["eject-button", 1.854]
+	],
+	"spreads": [
+		["jolly", [124, 0, 0, 0, 132, 252], 38.156],
+		["timid", [4, 0, 0, 252, 0, 252], 21.65],
+		["timid", [252, 0, 0, 0, 0, 252], 15.282],
+		["timid", [0, 0, 0, 252, 4, 252], 6.495],
+		["bold", [0, 0, 116, 252, 140, 0], 5.173],
+		["timid", [252, 0, 0, 0, 4, 252], 4.623]
+	],
+	"moves": [
+		["frost-breath", 89.64],
+		["icy-wind", 66.65],
+		["protect", 58.458],
+		["will-o-wisp", 58.313],
+		["shadow-ball", 23.847],
+		["taunt", 20.423],
+		["helping-hand", 20.221],
+		["hex", 13.321],
+		["light-screen", 10.07],
+		["destiny-bond", 9.062],
+		["ice-beam", 8.18],
+		["thunder-wave", 5.228]
+	],
+	"teammates": [
+		["tauros-paldea-fire", 60.998],
+		["abomasnow", 41.794],
+		["palafin", 40.133],
+		["cetitan", 34.811],
+		["meowscarada", 33.347],
+		["amoonguss", 21.529],
+		["hydreigon", 16.745],
+		["corviknight", 13.385],
+		["haxorus", 13.385],
+		["vaporeon", 13.385],
+		["rotom-wash", 10.48]
+	]
+}, {
+	"ident": "oinkologne-f",
+	"abilities": [
+		["aroma-veil", 100.0],
+		["gluttony", 0.0],
+		["thick-fat", 0.0]
+	],
+	"items": [
+		["sitrus-berry", 99.975]
+	],
+	"spreads": [
+		["impish", [244, 0, 156, 0, 108, 0], 99.975]
+	],
+	"moves": [
+		["yawn", 99.975],
+		["body-slam", 99.975],
+		["helping-hand", 99.975],
+		["protect", 99.975]
+	],
+	"teammates": [
+		["volcarona", 99.975],
+		["tauros-paldea-water", 99.975],
+		["grimmsnarl", 99.975],
+		["sableye", 99.975],
+		["skeledirge", 99.975],
+		["skeledirge", 99.975]
+	]
+}, {
+	"ident": "brambleghast",
+	"abilities": [
+		["wind-rider", 98.208],
+		["infiltrator", 1.792]
+	],
+	"items": [
+		["life-orb", 28.61],
+		["power-herb", 21.412],
+		["expert-belt", 20.746],
+		["mirror-herb", 10.447],
+		["leftovers", 6.787],
+		["focus-sash", 4.654],
+		["choice-band", 4.551]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 34.414],
+		["hasty", [4, 252, 0, 0, 0, 252], 20.895],
+		["hasty", [0, 252, 0, 4, 0, 252], 20.862],
+		["adamant", [196, 228, 0, 0, 0, 84], 6.787],
+		["lonely", [0, 252, 0, 4, 0, 252], 3.894],
+		["jolly", [28, 252, 0, 0, 0, 228], 2.698]
+	],
+	"moves": [
+		["power-whip", 77.938],
+		["shadow-sneak", 75.148],
+		["tera-blast", 72.654],
+		["phantom-force", 62.205],
+		["protect", 44.872],
+		["seed-bomb", 23.87],
+		["beat-up", 20.43],
+		["strength-sap", 11.078]
+	],
+	"teammates": [
+		["murkrow", 49.939],
+		["garchomp", 39.185],
+		["kilowattrel", 37.722],
+		["flamigo", 29.048],
+		["gholdengo", 27.665],
+		["annihilape", 27.411],
+		["grimmsnarl", 26.684],
+		["gallade", 21.379],
+		["maushold", 20.978],
+		["volcarona", 20.598],
+		["cetitan", 13.123]
+	]
+}, {
+	"ident": "tropius",
+	"abilities": [
+		["harvest", 100.0],
+		["chlorophyll", 0.0],
+		["solar-power", 0.0]
+	],
+	"items": [
+		["sitrus-berry", 99.952]
+	],
+	"spreads": [
+		["impish", [252, 0, 156, 0, 100, 0], 53.26],
+		["calm", [180, 0, 68, 4, 140, 116], 21.767],
+		["bold", [252, 0, 76, 0, 180, 0], 19.174],
+		["impish", [252, 0, 140, 0, 116, 0], 2.125]
+	],
+	"moves": [
+		["leech-seed", 76.016],
+		["substitute", 74.565],
+		["protect", 56.04],
+		["fly", 55.384],
+		["wide-guard", 46.17],
+		["air-slash", 41.828],
+		["tailwind", 24.021],
+		["giga-drain", 22.612]
+	],
+	"teammates": [
+		["skeledirge", 71.141],
+		["tyranitar", 51.967],
+		["lycanroc", 51.967],
+		["annihilape", 49.886],
+		["glimmora", 49.842],
+		["ceruledge", 21.305],
+		["hydreigon", 21.299],
+		["maushold", 20.739],
+		["sableye", 19.896],
+		["toxtricity", 19.896],
+		["cyclizar", 19.896]
+	]
+}, {
+	"ident": "squawkabilly",
+	"abilities": [
+		["intimidate", 98.013],
+		["guts", 1.738],
+		["hustle", 0.127],
+		["sheer-force", 0.121]
+	],
+	"items": [
+		["focus-sash", 75.363],
+		["covert-cloak", 19.662]
+	],
+	"spreads": [
+		["jolly", [126, 126, 0, 0, 0, 252], 75.285],
+		["jolly", [252, 4, 0, 0, 0, 252], 19.665],
+		["jolly", [252, 4, 4, 0, 4, 244], 2.919]
+	],
+	"moves": [
+		["tailwind", 99.093],
+		["parting-shot", 98.762],
+		["brave-bird", 95.066],
+		["quick-attack", 80.329],
+		["taunt", 19.716]
+	],
+	"teammates": [
+		["gholdengo", 75.729],
+		["glimmora", 75.311],
+		["quaquaval", 75.285],
+		["lokix", 75.285],
+		["gardevoir", 75.285],
+		["meowscarada", 20.94],
+		["orthworm", 19.662],
+		["farigiraf", 19.662],
+		["skeledirge", 19.662],
+		["pawmot", 19.662],
+		["pawmot", 19.662]
+	]
+}, {
+	"ident": "braviary",
+	"abilities": [
+		["defiant", 94.194],
+		["sheer-force", 5.806],
+		["keen-eye", 0.0]
+	],
+	"items": [
+		["sharp-beak", 35.999],
+		["choice-scarf", 29.86],
+		["lum-berry", 13.845],
+		["covert-cloak", 10.224],
+		["life-orb", 5.988]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 68.447],
+		["adamant", [252, 132, 4, 0, 60, 60], 13.845],
+		["adamant", [0, 252, 4, 0, 0, 252], 12.913]
+	],
+	"moves": [
+		["brave-bird", 98.637],
+		["close-combat", 80.502],
+		["tailwind", 74.374],
+		["protect", 55.731],
+		["rock-slide", 30.701],
+		["u-turn", 20.619],
+		["giga-impact", 12.913],
+		["tera-blast", 10.224]
+	],
+	"teammates": [
+		["abomasnow", 36.964],
+		["maushold", 34.306],
+		["ditto", 30.139],
+		["dudunsparce", 30.139],
+		["pyroar", 30.139],
+		["hydreigon", 26.758],
+		["arcanine", 26.74],
+		["oranguru", 24.478],
+		["umbreon", 14.234],
+		["rotom-wash", 13.845],
+		["breloom", 13.845]
+	]
+}, {
+	"ident": "delibird",
+	"abilities": [
+		["vital-spirit", 87.464],
+		["insomnia", 12.436],
+		["hustle", 0.1]
+	],
+	"items": [
+		["choice-scarf", 76.205],
+		["focus-sash", 11.227],
+		["eviolite", 10.859]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 0, 252], 76.205],
+		["jolly", [4, 252, 0, 0, 0, 252], 22.218]
+	],
+	"moves": [
+		["destiny-bond", 77.782],
+		["blizzard", 76.205],
+		["air-slash", 76.205],
+		["chilling-water", 76.205],
+		["ice-spinner", 11.359],
+		["fake-out", 11.227],
+		["aurora-veil", 10.859],
+		["nothing", 10.859],
+		["baton-pass", 10.859],
+		["acrobatics", 10.859],
+		["helping-hand", 9.65]
+	],
+	"teammates": [
+		["abomasnow", 76.305],
+		["gothitelle", 76.205],
+		["stantler", 76.205],
+		["grimmsnarl", 76.205],
+		["sudowoodo", 76.205],
+		["maushold", 19.778],
+		["farigiraf", 18.301],
+		["ursaring", 9.55],
+		["tauros-paldea-fire", 9.55],
+		["greedent", 9.55],
+		["torkoal", 8.65]
+	]
+}, {
+	"ident": "sudowoodo",
+	"abilities": [
+		["rock-head", 92.228],
+		["rattled", 7.768],
+		["sturdy", 0.004]
+	],
+	"items": [
+		["weakness-policy", 81.929],
+		["wide-lens", 11.071],
+		["choice-band", 6.77]
+	],
+	"spreads": [
+		["brave", [252, 156, 100, 0, 0, 0], 74.161],
+		["brave", [0, 252, 132, 0, 124, 0], 11.071],
+		["jolly", [0, 252, 4, 0, 0, 252], 7.768],
+		["brave", [252, 252, 0, 0, 4, 0], 6.957]
+	],
+	"moves": [
+		["head-smash", 100.0],
+		["protect", 93.007],
+		["sucker-punch", 82.115],
+		["body-press", 74.161],
+		["wood-hammer", 25.839],
+		["stealth-rock", 11.071]
+	],
+	"teammates": [
+		["grimmsnarl", 74.347],
+		["delibird", 74.161],
+		["gothitelle", 74.161],
+		["stantler", 74.161],
+		["abomasnow", 74.161],
+		["azumarill", 8.403],
+		["toedscruel", 7.768],
+		["jolteon", 7.768],
+		["dragonite", 7.768],
+		["murkrow", 7.768],
+		["hydreigon", 7.768]
+	]
+}, {
+	"ident": "lycanroc-dusk",
+	"abilities": [
+		["tough-claws", 100.0]
+	],
+	"items": [
+		["choice-band", 91.057],
+		["focus-sash", 8.055]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 95.304]
+	],
+	"moves": [
+		["accelerock", 99.998],
+		["play-rough", 97.663],
+		["zen-headbutt", 89.832],
+		["sucker-punch", 88.852],
+		["rock-slide", 9.173]
+	],
+	"teammates": [
+		["abomasnow", 95.275],
+		["cetitan", 88.176],
+		["ceruledge", 87.854],
+		["palafin", 87.852],
+		["dragonite", 87.841],
+		["annihilape", 9.507],
+		["azumarill", 7.434],
+		["pachirisu", 7.434],
+		["rotom-frost", 7.434],
+		["rotom-frost", 7.434]
+	]
+}, {
+	"ident": "polteageist",
+	"abilities": [
+		["weak-armor", 52.262],
+		["cursed-body", 47.738]
+	],
+	"items": [
+		["focus-sash", 67.851],
+		["white-herb", 16.893],
+		["weakness-policy", 13.838]
+	],
+	"spreads": [
+		["sassy", [252, 0, 0, 4, 252, 0], 66.654],
+		["modest", [204, 0, 4, 164, 4, 132], 14.608],
+		["calm", [252, 0, 0, 4, 252, 0], 13.828]
+	],
+	"moves": [
+		["shadow-ball", 83.809],
+		["trick-room", 80.806],
+		["protect", 79.052],
+		["will-o-wisp", 78.151],
+		["shell-smash", 19.119],
+		["stored-power", 17.686],
+		["giga-drain", 17.402],
+		["hex", 14.318]
+	],
+	"teammates": [
+		["kingambit", 76.712],
+		["skeledirge", 63.857],
+		["gothitelle", 63.792],
+		["clodsire", 63.791],
+		["amoonguss", 60.085],
+		["farigiraf", 14.751],
+		["abomasnow", 14.707],
+		["meowscarada", 14.579],
+		["maushold", 13.888],
+		["flamigo", 13.874],
+		["torkoal", 13.84]
+	]
+}, {
+	"ident": "sunflora",
+	"abilities": [
+		["solar-power", 99.526],
+		["chlorophyll", 0.474],
+		["early-bird", 0.0]
+	],
+	"items": [
+		["life-orb", 99.507]
+	],
+	"spreads": [
+		["quiet", [152, 0, 100, 252, 4, 0], 41.424],
+		["quiet", [228, 0, 0, 252, 28, 0], 30.819],
+		["quiet", [252, 0, 0, 252, 4, 0], 27.278]
+	],
+	"moves": [
+		["earth-power", 98.851],
+		["solar-beam", 98.371],
+		["dazzling-gleam", 72.286],
+		["tera-blast", 69.15],
+		["sludge-bomb", 32.429],
+		["protect", 27.283]
+	],
+	"teammates": [
+		["torkoal", 92.598],
+		["indeedee-f", 90.954],
+		["appletun", 34.03],
+		["hawlucha", 34.03],
+		["palafin", 31.293],
+		["hatterene", 30.819],
+		["clodsire", 30.819],
+		["armarouge", 26.104],
+		["tauros-paldea-water", 26.103],
+		["gallade", 26.103],
+		["zoroark", 24.029]
+	]
+}, {
+	"ident": "tauros-paldea",
+	"abilities": [
+		["intimidate", 100.0],
+		["anger-point", 0.0],
+		["cud-chew", 0.0]
+	],
+	"items": [
+		["assault-vest", 99.755]
+	],
+	"spreads": [
+		["adamant", [252, 252, 0, 0, 4, 0], 95.06]
+	],
+	"moves": [
+		["raging-bull", 99.963],
+		["wild-charge", 98.049],
+		["surf", 98.019],
+		["earthquake", 94.881]
+	],
+	"teammates": [
+		["armarouge", 72.706],
+		["tyranitar", 71.007],
+		["amoonguss", 70.97],
+		["baxcalibur", 70.97],
+		["hatterene", 70.97],
+		["garganacl", 1.736],
+		["lilligant", 1.736],
+		["torkoal", 1.736],
+		["indeedee-f", 1.736]
+	]
+}, {
+	"ident": "dugtrio",
+	"abilities": [
+		["arena-trap", 98.441],
+		["sand-force", 1.559],
+		["sand-veil", 0.0]
+	],
+	"items": [
+		["choice-band", 48.693],
+		["focus-sash", 46.894]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 4, 252], 50.113],
+		["adamant", [4, 252, 0, 0, 0, 252], 46.837]
+	],
+	"moves": [
+		["rock-slide", 97.794],
+		["earthquake", 86.648],
+		["sucker-punch", 50.587],
+		["bulldoze", 48.695],
+		["protect", 48.597],
+		["swords-dance", 46.837],
+		["stomping-tantrum", 14.059]
+	],
+	"teammates": [
+		["hydreigon", 88.695],
+		["volcarona", 45.707],
+		["abomasnow", 44.903],
+		["beartic", 44.903],
+		["gardevoir", 44.901],
+		["gothitelle", 43.792],
+		["maushold", 43.394],
+		["armarouge", 43.389],
+		["indeedee-f", 43.389],
+		["arcanine", 1.745],
+		["raichu", 1.608]
+	]
+}, {
+	"ident": "oricorio",
+	"abilities": [
+		["dancer", 100.0]
+	],
+	"items": [
+		["focus-sash", 83.241],
+		["sitrus-berry", 6.311],
+		["leftovers", 6.189]
+	],
+	"spreads": [
+		["timid", [4, 0, 0, 252, 0, 252], 62.347],
+		["modest", [4, 0, 0, 252, 0, 252], 23.585],
+		["timid", [0, 0, 0, 252, 4, 252], 5.998],
+		["adamant", [252, 252, 0, 0, 4, 0], 4.705]
+	],
+	"moves": [
+		["revelation-dance", 94.946],
+		["tailwind", 66.857],
+		["air-slash", 64.322],
+		["baton-pass", 62.686],
+		["protect", 32.526],
+		["quiver-dance", 23.308],
+		["icy-wind", 19.979],
+		["substitute", 10.702],
+		["hurricane", 9.806]
+	],
+	"teammates": [
+		["volcarona", 91.203],
+		["amoonguss", 74.534],
+		["quaquaval", 73.911],
+		["grimmsnarl", 62.65],
+		["tinkaton", 62.336],
+		["maushold", 20.851],
+		["pawmot", 17.172],
+		["arboliva", 16.686],
+		["drifblim", 16.686],
+		["hydreigon", 12.896],
+		["annihilape", 6.898]
+	]
+}, {
+	"ident": "falinks",
+	"abilities": [
+		["defiant", 99.559],
+		["battle-armor", 0.441]
+	],
+	"items": [
+		["mental-herb", 78.971],
+		["choice-band", 20.575]
+	],
+	"spreads": [
+		["jolly", [0, 252, 0, 0, 0, 252], 78.971],
+		["jolly", [0, 252, 0, 0, 4, 252], 20.575]
+	],
+	"moves": [
+		["iron-head", 99.559],
+		["close-combat", 99.559],
+		["rock-slide", 99.546],
+		["no-retreat", 78.984],
+		["zen-headbutt", 20.586]
+	],
+	"teammates": [
+		["meowscarada", 78.971],
+		["volcarona", 78.971],
+		["salamence", 78.971],
+		["gardevoir", 78.971],
+		["espeon", 78.971],
+		["armarouge", 15.81],
+		["altaria", 15.81],
+		["ampharos", 15.81],
+		["flareon", 15.81]
+	]
+}, {
+	"ident": "masquerain",
+	"abilities": [
+		["intimidate", 100.0],
+		["unnerve", 0.0]
+	],
+	"items": [
+		["focus-sash", 98.309]
+	],
+	"spreads": [
+		["calm", [252, 0, 4, 0, 252, 0], 54.928],
+		["timid", [0, 0, 0, 252, 4, 252], 41.963]
+	],
+	"moves": [
+		["aqua-jet", 55.382],
+		["struggle-bug", 55.136],
+		["mist", 54.886],
+		["lunge", 47.386],
+		["hurricane", 41.953],
+		["tailwind", 40.441],
+		["haze", 37.635],
+		["shadow-ball", 37.579],
+		["u-turn", 9.116],
+		["sticky-web", 5.679]
+	],
+	"teammates": [
+		["scizor", 65.626],
+		["volcarona", 37.577],
+		["rabsca", 37.574],
+		["heracross", 37.574],
+		["forretress", 37.574],
+		["garchomp", 28.177],
+		["armarouge", 28.019],
+		["amoonguss", 28.016],
+		["indeedee-f", 28.015],
+		["dondozo", 5.398],
+		["kingambit", 4.324]
+	]
+}, {
+	"ident": "oricorio-pom-pom",
+	"abilities": [
+		["dancer", 100.0]
+	],
+	"items": [
+		["aguav-berry", 41.927],
+		["focus-sash", 20.316],
+		["choice-specs", 13.758],
+		["petaya-berry", 9.289],
+		["leftovers", 4.204],
+		["sitrus-berry", 3.881],
+		["heavy-duty-boots", 2.672]
+	],
+	"spreads": [
+		["modest", [156, 0, 196, 20, 132, 4], 41.926],
+		["timid", [0, 0, 0, 252, 4, 252], 23.526],
+		["timid", [4, 0, 0, 252, 0, 252], 11.895],
+		["timid", [0, 0, 0, 252, 0, 252], 9.357],
+		["modest", [0, 0, 0, 252, 4, 252], 4.321],
+		["timid", [252, 0, 0, 4, 0, 252], 3.7]
+	],
+	"moves": [
+		["revelation-dance", 96.307],
+		["icy-wind", 69.787],
+		["protect", 66.804],
+		["air-slash", 44.853],
+		["u-turn", 29.646],
+		["hurricane", 21.284],
+		["taunt", 20.331],
+		["teeter-dance", 9.303],
+		["calm-mind", 6.599],
+		["substitute", 6.202],
+		["helping-hand", 5.22],
+		["quiver-dance", 4.745]
+	],
+	"teammates": [
+		["volcarona", 85.894],
+		["flamigo", 66.244],
+		["quaquaval", 54.323],
+		["espathra", 37.738],
+		["jumpluff", 37.497],
+		["arboliva", 21.55],
+		["garchomp", 20.358],
+		["orthworm", 20.357],
+		["tinkaton", 14.449],
+		["amoonguss", 14.081],
+		["torkoal", 12.924]
+	]
+}, {
+	"ident": "heracross",
+	"abilities": [
+		["guts", 63.952],
+		["moxie", 36.048],
+		["swarm", 0.0]
+	],
+	"items": [
+		["flame-orb", 63.95],
+		["clear-amulet", 25.969],
+		["choice-scarf", 8.916]
+	],
+	"spreads": [
+		["adamant", [0, 252, 140, 0, 0, 116], 56.921],
+		["adamant", [252, 252, 4, 0, 0, 0], 25.969],
+		["adamant", [44, 252, 12, 0, 4, 196], 8.58],
+		["adamant", [236, 252, 4, 0, 4, 12], 3.392],
+		["adamant", [12, 252, 196, 0, 36, 12], 2.552]
+	],
+	"moves": [
+		["close-combat", 98.84],
+		["protect", 63.955],
+		["rock-slide", 60.648],
+		["facade", 60.56],
+		["throat-chop", 34.885],
+		["swords-dance", 25.97],
+		["double-edge", 25.969],
+		["megahorn", 12.308]
+	],
+	"teammates": [
+		["volcarona", 58.076],
+		["rabsca", 58.076],
+		["scizor", 58.076],
+		["forretress", 56.922],
+		["masquerain", 56.921],
+		["indeedee-f", 28.523],
+		["sylveon", 26.306],
+		["armarouge", 25.969],
+		["bellibolt", 25.969],
+		["azumarill", 25.969],
+		["amoonguss", 12.554]
+	]
+}, {
+	"ident": "lumineon",
+	"abilities": [
+		["swift-swim", 76.128],
+		["storm-drain", 23.872],
+		["water-veil", 0.0]
+	],
+	"items": [
+		["safety-goggles", 77.675],
+		["focus-sash", 21.288]
+	],
+	"spreads": [
+		["timid", [252, 0, 0, 4, 0, 252], 76.123],
+		["timid", [252, 0, 0, 0, 4, 252], 21.288]
+	],
+	"moves": [
+		["icy-wind", 98.976],
+		["encore", 98.97],
+		["tailwind", 78.678],
+		["surf", 76.123],
+		["soak", 21.357],
+		["hydro-pump", 21.327]
+	],
+	"teammates": [
+		["kilowattrel", 77.682],
+		["pelipper", 76.123],
+		["cacturne", 76.123],
+		["toxicroak", 76.123],
+		["vaporeon", 76.123],
+		["gholdengo", 21.316],
+		["murkrow", 21.316],
+		["garganacl", 21.316],
+		["rabsca", 21.258],
+		["annihilape", 21.252],
+		["annihilape", 21.252]
+	]
+}, {
+	"ident": "cacturne",
+	"abilities": [
+		["water-absorb", 97.356],
+		["sand-veil", 2.644]
+	],
+	"items": [
+		["life-orb", 88.768],
+		["rocky-helmet", 11.226]
+	],
+	"spreads": [
+		["jolly", [4, 252, 0, 0, 0, 252], 86.124],
+		["relaxed", [252, 4, 212, 0, 40, 0], 11.226]
+	],
+	"moves": [
+		["sucker-punch", 99.996],
+		["spiky-shield", 97.352],
+		["swords-dance", 88.768],
+		["seed-bomb", 88.768],
+		["drain-punch", 13.87]
+	],
+	"teammates": [
+		["pelipper", 86.124],
+		["vaporeon", 86.124],
+		["kilowattrel", 86.124],
+		["toxicroak", 86.124],
+		["lumineon", 86.124],
+		["kingambit", 13.851],
+		["frosmoth", 11.226],
+		["sylveon", 11.226],
+		["farigiraf", 11.226],
+		["farigiraf", 11.226]
+	]
+}, {
+	"ident": "mabosstiff",
+	"abilities": [
+		["stakeout", 80.719],
+		["intimidate", 19.271],
+		["guard-dog", 0.01]
+	],
+	"items": [
+		["assault-vest", 80.817],
+		["rocky-helmet", 10.985],
+		["chople-berry", 4.104]
+	],
+	"spreads": [
+		["brave", [4, 252, 0, 0, 252, 0], 80.595],
+		["impish", [248, 176, 68, 0, 0, 12], 10.985],
+		["impish", [188, 60, 252, 0, 0, 4], 4.104]
+	],
+	"moves": [
+		["play-rough", 95.347],
+		["crunch", 92.173],
+		["comeuppance", 91.666],
+		["fire-fang", 80.606],
+		["taunt", 12.608],
+		["psychic-fangs", 7.109],
+		["protect", 5.478]
+	],
+	"teammates": [
+		["amoonguss", 64.746],
+		["quaquaval", 57.818],
+		["misdreavus", 53.714],
+		["houndoom", 35.555],
+		["pachirisu", 35.344],
+		["armarouge", 19.436],
+		["maushold", 19.344],
+		["pelipper", 10.986],
+		["tauros-paldea-water", 10.986],
+		["volcarona", 10.985],
+		["stantler", 10.985]
+	]
+}, {
+	"ident": "altaria",
+	"abilities": [
+		["natural-cure", 64.718],
+		["cloud-nine", 35.282]
+	],
+	"items": [
+		["leftovers", 42.517],
+		["assault-vest", 31.406],
+		["safety-goggles", 7.257],
+		["wiki-berry", 5.755],
+		["sitrus-berry", 5.174],
+		["mago-berry", 2.943]
+	],
+	"spreads": [
+		["calm", [252, 0, 0, 4, 252, 0], 38.246],
+		["modest", [252, 0, 0, 252, 0, 0], 31.406],
+		["bold", [252, 0, 44, 0, 164, 44], 6.769],
+		["calm", [252, 0, 4, 0, 252, 0], 6.018],
+		["calm", [252, 0, 140, 0, 116, 0], 5.12],
+		["bold", [252, 0, 164, 0, 92, 0], 2.943]
+	],
+	"moves": [
+		["dazzling-gleam", 61.356],
+		["draco-meteor", 53.607],
+		["haze", 34.921],
+		["flamethrower", 31.406],
+		["solar-beam", 31.406],
+		["will-o-wisp", 30.02],
+		["roost", 28.503],
+		["helping-hand", 26.319],
+		["dragon-pulse", 20.47],
+		["cotton-guard", 18.129],
+		["perish-song", 17.28],
+		["tailwind", 12.182],
+		["ice-beam", 9.712],
+		["heat-wave", 8.095]
+	],
+	"teammates": [
+		["ampharos", 17.032],
+		["armarouge", 16.021],
+		["flareon", 15.729],
+		["falinks", 15.729],
+		["gholdengo", 12.666],
+		["gothitelle", 12.662],
+		["maushold", 11.076],
+		["arboliva", 10.553],
+		["grafaiai", 10.534],
+		["krookodile", 10.534],
+		["leafeon", 9.971]
+	]
+}, {
+	"ident": "glalie",
+	"abilities": [
+		["moody", 89.084],
+		["ice-body", 9.833],
+		["inner-focus", 1.083]
+	],
+	"items": [
+		["leftovers", 89.084],
+		["never-melt-ice", 9.833]
+	],
+	"spreads": [
+		["timid", [204, 0, 0, 228, 0, 76], 82.353],
+		["modest", [92, 0, 0, 252, 0, 164], 9.833],
+		["timid", [252, 0, 0, 4, 0, 252], 4.728]
+	],
+	"moves": [
+		["protect", 98.917],
+		["icy-wind", 95.192],
+		["frost-breath", 83.436],
+		["helping-hand", 82.353],
+		["freeze-dry", 14.594],
+		["blizzard", 9.833]
+	],
+	"teammates": [
+		["grimmsnarl", 82.382],
+		["garganacl", 73.393],
+		["tyranitar", 72.309],
+		["ditto", 72.309],
+		["palossand", 72.309],
+		["oranguru", 10.043],
+		["bellibolt", 10.043],
+		["houndstone", 10.043],
+		["tauros-paldea-water", 10.043],
+		["ceruledge", 9.863],
+		["abomasnow", 9.833]
+	]
+}, {
+	"ident": "palossand",
+	"abilities": [
+		["sand-veil", 73.55],
+		["water-compaction", 26.45]
+	],
+	"items": [
+		["bright-powder", 73.528],
+		["absorb-bulb", 19.808],
+		["sitrus-berry", 2.722]
+	],
+	"spreads": [
+		["calm", [252, 0, 0, 0, 252, 0], 73.508],
+		["quiet", [244, 0, 0, 252, 12, 0], 21.042],
+		["bold", [252, 0, 124, 12, 120, 0], 2.722]
+	],
+	"moves": [
+		["shore-up", 99.682],
+		["curse", 76.25],
+		["amnesia", 73.964],
+		["iron-defense", 73.509],
+		["earth-power", 26.491],
+		["shadow-ball", 21.874],
+		["hypnosis", 19.782]
+	],
+	"teammates": [
+		["garganacl", 76.26],
+		["tyranitar", 76.019],
+		["grimmsnarl", 73.508],
+		["ditto", 73.508],
+		["glalie", 73.508],
+		["bronzong", 18.863],
+		["gothitelle", 17.66],
+		["hariyama", 17.66],
+		["azumarill", 17.66],
+		["abomasnow", 17.66],
+		["volcarona", 3.957]
+	]
+}, {
+	"ident": "forretress",
+	"abilities": [
+		["sturdy", 99.998],
+		["overcoat", 0.002]
+	],
+	"items": [
+		["leftovers", 88.322],
+		["silk-scarf", 11.535]
+	],
+	"spreads": [
+		["impish", [252, 4, 252, 0, 0, 0], 88.322],
+		["relaxed", [244, 0, 252, 0, 12, 0], 11.535]
+	],
+	"moves": [
+		["explosion", 99.966],
+		["protect", 99.964],
+		["body-press", 99.915],
+		["iron-defense", 88.378]
+	],
+	"teammates": [
+		["rabsca", 99.893],
+		["volcarona", 88.377],
+		["scizor", 88.377],
+		["heracross", 88.323],
+		["masquerain", 88.322],
+		["indeedee-f", 11.587],
+		["armarouge", 11.535],
+		["armarouge", 11.535]
+	]
+}, {
+	"ident": "foongus",
+	"abilities": [
+		["regenerator", 100.0],
+		["effect-spore", 0.0]
+	],
+	"items": [
+		["eviolite", 100.0]
+	],
+	"spreads": [
+		["calm", [252, 0, 20, 0, 236, 0], 100.0]
+	],
+	"moves": [
+		["spore", 100.0],
+		["pollen-puff", 100.0],
+		["rage-powder", 100.0],
+		["protect", 100.0]
+	],
+	"teammates": [
+		["annihilape", 100.0],
+		["tauros-paldea-water", 100.0],
+		["lycanroc", 100.0],
+		["tyranitar", 100.0],
+		["rotom-heat", 100.0],
+		["rotom-heat", 100.0]
+	]
+}, {
+	"ident": "copperajah",
+	"abilities": [
+		["sheer-force", 64.455],
+		["heavy-metal", 35.545]
+	],
+	"items": [
+		["assault-vest", 39.871],
+		["life-orb", 38.468],
+		["leftovers", 20.935]
+	],
+	"spreads": [
+		["careful", [252, 0, 4, 0, 252, 0], 39.867],
+		["naughty", [252, 252, 4, 0, 0, 0], 14.886],
+		["brave", [252, 252, 0, 4, 0, 0], 14.084],
+		["brave", [252, 252, 0, 0, 4, 0], 11.133],
+		["adamant", [252, 252, 0, 0, 4, 0], 10.116],
+		["sassy", [252, 252, 0, 0, 4, 0], 6.049]
+	],
+	"moves": [
+		["rock-slide", 82.011],
+		["body-press", 39.867],
+		["double-edge", 39.867],
+		["iron-defense", 39.867],
+		["heavy-slam", 39.591],
+		["protect", 37.705],
+		["earthquake", 27.657],
+		["high-horsepower", 21.448],
+		["iron-head", 20.536],
+		["taunt", 14.886],
+		["zen-headbutt", 14.146],
+		["play-rough", 11.54]
+	],
+	"teammates": [
+		["armarouge", 60.216],
+		["indeedee-f", 58.333],
+		["rotom-wash", 41.657],
+		["dragapult", 39.867],
+		["hawlucha", 39.867],
+		["annihilape", 20.341],
+		["torkoal", 18.986],
+		["oranguru", 15.874],
+		["mimikyu", 14.971],
+		["mudsdale", 14.084],
+		["donphan", 14.084]
+	]
+}, {
+	"ident": "flareon",
+	"abilities": [
+		["guts", 98.14],
+		["flash-fire", 1.86]
+	],
+	"items": [
+		["toxic-orb", 84.764],
+		["flame-orb", 13.375]
+	],
+	"spreads": [
+		["brave", [244, 252, 0, 0, 12, 0], 34.087],
+		["lonely", [244, 252, 0, 12, 0, 0], 15.478],
+		["adamant", [244, 252, 0, 0, 12, 0], 13.351],
+		["adamant", [4, 252, 0, 0, 252, 0], 13.242],
+		["brave", [252, 236, 0, 0, 20, 0], 11.439],
+		["jolly", [0, 252, 4, 0, 0, 252], 5.242]
+	],
+	"moves": [
+		["flare-blitz", 100.0],
+		["quick-attack", 97.46],
+		["protect", 91.958],
+		["facade", 81.732],
+		["tera-blast", 18.032]
+	],
+	"teammates": [
+		["armarouge", 39.964],
+		["tinkaton", 28.255],
+		["gallade", 28.233],
+		["ampharos", 26.181],
+		["altaria", 26.181],
+		["falinks", 26.181],
+		["indeedee-f", 16.332],
+		["gothitelle", 15.014],
+		["azumarill", 14.966],
+		["arboliva", 14.966],
+		["hatterene", 13.721]
+	]
+}, {
+	"ident": "toedscool",
+	"abilities": [
+		["mycelium-might", 100.0]
+	],
+	"items": [
+		["eviolite", 100.0]
+	],
+	"spreads": [
+		["calm", [252, 0, 4, 0, 252, 0], 74.599],
+		["calm", [252, 0, 244, 0, 12, 0], 13.224],
+		["sassy", [252, 4, 0, 0, 252, 0], 6.031],
+		["sassy", [252, 0, 4, 0, 252, 0], 4.28]
+	],
+	"moves": [
+		["spore", 100.0],
+		["rage-powder", 93.969],
+		["protect", 88.64],
+		["mirror-coat", 88.593],
+		["trick-room", 11.407]
+	],
+	"teammates": [
+		["skeledirge", 89.21],
+		["meowscarada", 89.164],
+		["kingambit", 87.721],
+		["annihilape", 87.104],
+		["hydreigon", 87.093],
+		["kilowattrel", 6.031],
+		["garchomp", 6.031],
+		["noivern", 6.031],
+		["stonjourner", 6.031],
+		["orthworm", 6.031],
+		["tinkaton", 5.201]
+	]
+}, {
+	"ident": "magneton",
+	"abilities": [
+		["sturdy", 80.913],
+		["magnet-pull", 16.783],
+		["analytic", 2.303]
+	],
+	"items": [
+		["choice-scarf", 80.688],
+		["eviolite", 19.087]
+	],
+	"spreads": [
+		["timid", [0, 0, 0, 252, 4, 252], 80.688],
+		["modest", [252, 0, 0, 252, 4, 0], 16.783]
+	],
+	"moves": [
+		["flash-cannon", 100.0],
+		["tera-blast", 98.188],
+		["thunderbolt", 97.964],
+		["electroweb", 80.688],
+		["sunny-day", 16.783]
+	],
+	"teammates": [
+		["grimmsnarl", 81.181],
+		["annihilape", 80.689],
+		["dondozo", 80.688],
+		["tatsugiri", 80.688],
+		["maushold", 80.688],
+		["palafin", 16.8],
+		["volcarona", 16.783],
+		["sylveon", 16.783],
+		["honchkrow", 16.783],
+		["froslass", 16.783],
+		["froslass", 16.783]
+	]
+}, {
+	"ident": "klawf",
+	"abilities": [
+		["anger-shell", 100.0],
+		["regenerator", 0.0],
+		["shell-armor", 0.0]
+	],
+	"items": [
+		["focus-sash", 74.253],
+		["weakness-policy", 14.496],
+		["leftovers", 7.953]
+	],
+	"spreads": [
+		["jolly", [148, 252, 0, 0, 4, 100], 72.394],
+		["jolly", [4, 252, 0, 0, 0, 252], 9.413],
+		["adamant", [252, 252, 0, 0, 4, 0], 7.295],
+		["adamant", [200, 248, 0, 0, 0, 60], 4.666],
+		["adamant", [4, 252, 252, 0, 0, 0], 4.231]
+	],
+	"moves": [
+		["crabhammer", 97.059],
+		["rock-slide", 92.047],
+		["protect", 88.336],
+		["swords-dance", 73.469],
+		["high-horsepower", 15.959],
+		["brick-break", 8.737],
+		["stone-edge", 8.047]
+	],
+	"teammates": [
+		["hydreigon", 77.749],
+		["skeledirge", 75.552],
+		["pachirisu", 72.394],
+		["toxicroak", 72.394],
+		["gyarados", 72.394],
+		["grafaiai", 7.331],
+		["sableye", 6.887],
+		["hawlucha", 6.881],
+		["clodsire", 6.881],
+		["drifblim", 6.881],
+		["weavile", 6.881]
+	]
+}]

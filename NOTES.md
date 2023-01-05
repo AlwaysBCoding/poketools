@@ -2,8 +2,6 @@
   - allow dynamic changes of pokemon_build_state while looking at move coverage table in matchup screen
   - add field state such as reflect, terrain, weather etc... to damage calcs and matchup screen
 
-  - create Analytics tab ALA pikalytics on top of the Smogon/Showdown Data
-
   - implement VGC game logic
   - implement targeting logic
   - control both blue & red team moves

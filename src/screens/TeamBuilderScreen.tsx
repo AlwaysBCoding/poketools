@@ -4,10 +4,11 @@ import useForceUpdate from "use-force-update";
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
 import { PokemonTeam, createNewPokemonTeam } from "../models/pokemon/PokemonTeam";
-import { PokemonBuildEditor } from "../components/PokemonBuildEditor";
 
+import { PokemonBuildEditor } from "../components/PokemonBuildEditor";
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { PokemonTeamResistancesDisplay } from "../components/PokemonTeamResistancesDisplay";
+import { PokemonBuildUsageData } from "../components/PokemonBuildUsageData";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 const allPokemon = AllPokemon as Pokemon[];
@@ -52,6 +53,7 @@ export const TeamBuilderScreen = () => {
       let nextPokemonTeam = team;
       nextPokemonTeam.pokemonBuilds[activeTeamIndex] = pokemonBuildData;
       savePokemonTeam(nextPokemonTeam);
+      setActivePokemonBuild(pokemonBuildData);
       forceUpdate();
     }
   }
@@ -71,9 +73,13 @@ export const TeamBuilderScreen = () => {
           onPokemonBuildClick={onPokemonBuildClick}
           onAddNewPokemonClick={onAddNewPokemonClick} />
         {activePokemonBuild ? (
-          <PokemonBuildEditor
-            initialPokemonBuild={activePokemonBuild}
-            updatePokemonBuildData={savePokemonBuildData} />
+          <div className="pokemon-build-editor-container">
+            <PokemonBuildEditor
+              initialPokemonBuild={activePokemonBuild}
+              updatePokemonBuildData={savePokemonBuildData} />
+            <PokemonBuildUsageData
+              pokemonBuild={activePokemonBuild} />
+          </div>
         ) : (<></>)}
       </div>
       <div className="team-resistances-container">

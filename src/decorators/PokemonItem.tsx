@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { PokemonItemIdent } from "../models/pokemon/PokemonShared";
-import { ALL_ITEM_IDENTS } from "../models/pokemon/PokemonItem";
+import { ALL_ITEM_IDENTS, PokemonItem } from "../models/pokemon/PokemonItem";
 import { toTitleCase } from "./DecoratorsShared";
 
 export const PokemonItemSelectList: React.FC<{
@@ -35,4 +35,8 @@ export const PokemonItemSelectList: React.FC<{
     </select>
   )
 
+}
+
+export const displayPokemonItem = (itemIdent: PokemonItemIdent): string => {
+  return toTitleCase(itemIdent);
 }

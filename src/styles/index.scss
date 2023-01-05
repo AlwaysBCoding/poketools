@@ -521,7 +521,7 @@ $pokemon-base-stats-cell-width: 50%;
   }
 }
 
-.pokemon-build-editor, .pokemon-battle-state-editor {
+.pokemon-build-editor, .pokemon-battle-state-editor, .pokemon-build-usage-data {
   position: relative;
 
   display: flex;
@@ -658,20 +658,39 @@ $pokemon-base-stats-cell-width: 50%;
   }
 }
 
-.pokemon-build-editor {
-  .data-row {
-    .data-row-label {
-      width: 90px;
-    }
-  }
-}
-
 .pokemon-battle-state-editor {
   .data-row {
     .data-row-label {
       width: 100px;
     }
   }
+}
+
+.pokemon-build-usage-data {
+
+  font-size: 14px;
+  // overflow-y: scroll;
+
+  .section {
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+  .usage-stat {
+    display: flex;
+    flex-direction: row;
+    .usage-text {
+      width: 85%;
+      border-bottom: 1px solid $charcoal-ultra-light;
+    }
+    .usage-percentage {
+      width: 15%;
+      border-bottom: 1px solid $charcoal-ultra-light;
+      text-align: right;
+    }
+  }
+
 }
 
 .move-coverage-table {
@@ -1016,6 +1035,16 @@ $pokemon-base-stats-cell-width: 50%;
     .pokemon-data-table-container {
       height: 100%;
       width: 50%;
+    }
+  }
+
+  .pokemon-build-editor-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .pokemon-build-usage-data {
+      margin-left: 20px;
     }
   }
 

@@ -2,7 +2,7 @@
   "ident": "liquidation",
   "type_ident": "water",
   "category_ident": "physical",
-  "base_power": 0.85,
+  "base_power": 85,
   "accuracy": 1,
   "priority": 0,
   "pp": 10,

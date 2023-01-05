@@ -35,3 +35,7 @@ export const PokemonAbilitySelectList: React.FC<{
   )
 
 }
+
+export const displayPokemonAbility = (abilityIdent: PokemonAbilityIdent): string => {
+  return toTitleCase(abilityIdent);
+}

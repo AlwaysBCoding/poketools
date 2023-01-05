@@ -7,6 +7,7 @@ import { PokemonTeam } from "../models/pokemon/PokemonTeam";
 import { PokemonBuild, createDefaultPokemonBuildForPokemonIdent } from "../models/pokemon/PokemonBuild";
 
 import { PokemonBuildEditor } from "../components/PokemonBuildEditor";
+import { PokemonBuildUsageData } from "../components/PokemonBuildUsageData";
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { PokemonTeamResistancesDisplay } from "../components/PokemonTeamResistancesDisplay";
 
@@ -39,6 +40,7 @@ export const TeamEditorScreen = () => {
       let nextPokemonTeam = team;
       nextPokemonTeam.pokemonBuilds[activeTeamIndex] = pokemonBuildData;
       savePokemonTeam(nextPokemonTeam);
+      setActivePokemonBuild(pokemonBuildData);
       forceUpdate();
     }
   }
@@ -68,9 +70,13 @@ export const TeamEditorScreen = () => {
           onPokemonBuildClick={onPokemonBuildClick}
           onAddNewPokemonClick={onAddNewPokemonClick} />
         {activePokemonBuild ? (
-          <PokemonBuildEditor
-            initialPokemonBuild={activePokemonBuild}
-            updatePokemonBuildData={savePokemonBuildData} />
+          <div className="pokemon-build-editor-container">
+            <PokemonBuildEditor
+              initialPokemonBuild={activePokemonBuild}
+              updatePokemonBuildData={savePokemonBuildData} />
+            <PokemonBuildUsageData
+              pokemonBuild={activePokemonBuild} />
+          </div>
         ) : (<></>)}
         <div className="team-resistances-container">
           <PokemonTeamResistancesDisplay team={team} />
