@@ -133,6 +133,7 @@ export type PokemonAbilityIdent =
   | "hydration"
   | "hyper-cutter"
   | "ice-body"
+  | "illusion"
   | "immunity"
   | "imposter"
   | "infiltrator"
@@ -308,6 +309,7 @@ export type PokemonEvolutionLine =
   | "larvesta"
   | "larvitar"
   | "lechonk"
+  | "litleo"
   | "magikarp"
   | "magnemite"
   | "makuhita"
@@ -357,6 +359,7 @@ export type PokemonEvolutionLine =
   | "squawkabilly"
   | "stantler"
   | "starly"
+  | "stunky"
   | "sunkern"
   | "surskit"
   | "swablu"
@@ -374,7 +377,8 @@ export type PokemonEvolutionLine =
   | "wingull"
   | "wooper"
   | "yungoos"
-  | "zangoose";
+  | "zangoose"
+  | "zorua";
 
 export type PokemonIdent = string;
 
