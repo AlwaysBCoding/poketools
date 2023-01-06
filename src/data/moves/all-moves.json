@@ -3835,6 +3835,72 @@
     ]
   },
   {
+    "ident": "mach-punch",
+    "type_ident": "fighting",
+    "category_ident": "physical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 1,
+    "pp": 30,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "magic-powder",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Causes the target to become a Psychic type. Fails if the target is an Arceus or a Silvally, or if the target is already purely Psychic type.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "magic-room",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the held items of all active Pokemon have no effect. An item's effect of causing forme changes is unaffected, but any other effects from such items are negated. During the effect, Fling and Natural Gift are prevented from being used by all active Pokemon. If this move is used during the effect, the effect ends.",
+    "target": "field"
+  },
+  {
+    "ident": "magical-leaf",
+    "type_ident": "grass",
+    "category_ident": "special",
+    "base_power": 60,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "This move does not check accuracy.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "magnet-rise",
+    "type_ident": "electric",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "For 5 turns, the user is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability as long as it remains active. If the user uses Baton Pass, the replacement will gain the effect. Ingrain, Smack Down, Thousand Arrows, and Iron Ball override this move if the user is under any of their effects. Fails if the user is already under this effect or the effects of Ingrain, Smack Down, or Thousand Arrows.",
+    "target": "self"
+  },
+  {
+    "ident": "magnetic-flux",
+    "type_ident": "electric",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the Defense and Special Defense of Pokemon on the user's side with the Plus or Minus Abilities by 1 stage.",
+    "target": "team"
+  },
+  {
     "ident": "make-it-rain",
     "type_ident": "steel",
     "category_ident": "special",
@@ -3853,6 +3919,209 @@
     ]
   },
   {
+    "ident": "mean-look",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "Prevents the target from switching out. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. If the target leaves the field using Baton Pass, the replacement will remain trapped. The effect ends if the user leaves the field.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "mega-drain",
+    "type_ident": "grass",
+    "category_ident": "special",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+    "target": "any-adjacent",
+    "recovery": {
+      "percentage_of_damage": 0.5
+    }
+  },
+  {
+    "ident": "mega-kick",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 120,
+    "accuracy": 0.75,
+    "priority": 0,
+    "pp": 5,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "megahorn",
+    "type_ident": "bug",
+    "category_ident": "physical",
+    "base_power": 120,
+    "accuracy": 0.85,
+    "priority": 0,
+    "pp": 10,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "memento",
+    "type_ident": "dark",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 100,
+    "description": "Lowers the target's Attack and Special Attack by 2 stages. The user faints unless this move misses or there is no target. Fails entirely if this move hits a substitute, but does not fail if the target's stats cannot be changed.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": -2,
+        "special_attack": -2,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "metal-burst",
+    "type_ident": "steel",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Deals damage to the last opposing Pokemon to hit the user with a physical or special attack this turn equal to 1.5 times the HP lost by the user from that attack, rounded down. If the user did not lose HP from that attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's physical or special attack this turn."
+  },
+  {
+    "ident": "metal-claw",
+    "type_ident": "steel",
+    "category_ident": "physical",
+    "base_power": 50,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 35,
+    "description": "Has a 10% chance to raise the user's Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": 1,
+        "frequency": 0.1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "metal-sound",
+    "type_ident": "steel",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 0.85,
+    "priority": 0,
+    "pp": 40,
+    "description": "Lowers the target's Special Defense by 2 stages.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "special_defense": -2,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "meteor-mash",
+    "type_ident": "steel",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 20% chance to raise the user's Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": 1,
+        "frequency": 0.2,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "metronome",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "A random move is selected for use, other than After You, Apple Acid, Armor Cannon, Assist, Astral Barrage, Aura Wheel, Baneful Bunker, Beak Blast, Behemoth Bash, Behemoth Blade, Belch, Bestow, Blazing Torque, Body Press, Branch Poke, Breaking Swipe, Celebrate, Chatter, Chilling Water, Chilly Reception, Clangorous Soul, Collision Course, Combat Torque, Comeuppance, Copycat, Counter, Covet, Crafty Shield, Decorate, Destiny Bond, Detect, Diamond Storm, Doodle, Double Iron Bash, Double Shock, Dragon Ascent, Dragon Energy, Drum Beating, Dynamax Cannon, Electro Drift, Endure, Eternabeam, False Surrender, Feint, Fiery Wrath, Fillet Away, Fleur Cannon, Focus Punch, Follow Me, Freeze Shock, Freezing Glare, Glacial Lance, Grav Apple, Helping Hand, Hold Hands, Hyper Drill, Hyperspace Fury, Hyperspace Hole, Ice Burn, Instruct, Jet Punch, Jungle Healing, King's Shield, Life Dew, Light of Ruin, Magical Torque, Make It Rain, Mat Block, Me First, Meteor Assault, Metronome, Mimic, Mind Blown, Mirror Coat, Mirror Move, Moongeist Beam, Nature Power, Nature's Madness, Noxious Torque, Obstruct, Order Up, Origin Pulse, Overdrive, Photon Geyser, Plasma Fists, Population Bomb, Pounce, Power Shift, Precipice Blades, Protect, Pyro Ball, Quash, Quick Guard, Rage Fist, Rage Powder, Raging Bull, Raging Fury, Relic Song, Revival Blessing, Ruination, Salt Cure, Secret Sword, Shed Tail, Shell Trap, Silk Trap, Sketch, Sleep Talk, Snap Trap, Snarl, Snatch, Snore, Snowscape, Spectral Thief, Spicy Extract, Spiky Shield, Spirit Break, Spotlight, Springtide Storm, Steam Eruption, Steel Beam, Strange Steam, Struggle, Sunsteel Strike, Surging Strikes, Switcheroo, Techno Blast, Thief, Thousand Arrows, Thousand Waves, Thunder Cage, Thunderous Kick, Tidy Up, Trailblaze, Transform, Trick, Twin Beam, V-create, Wicked Blow, Wicked Torque, or Wide Guard.",
+    "target": "self"
+  },
+  {
+    "ident": "milk-drink",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "The user restores 1/2 of its maximum HP, rounded half up.",
+    "target": "self",
+    "recovery": {
+      "percentage_of_maximum_hp": 0.5
+    }
+  },
+  {
+    "ident": "mimic",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "While the user remains active, this move is replaced by the last move used by the target. The copied move has the maximum PP for that move. Fails if the target has not made a move, if the user has Transformed, if the user already knows the move, or if the move is Behemoth Bash, Behemoth Blade, Chatter, Dynamax Cannon, Mimic, Sketch, Struggle, Transform, or any Z-Move.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "minimize",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "Raises the user's evasiveness by 2 stages. Whether or not the user's evasiveness was changed, Body Slam, Dragon Rush, Flying Press, Heat Crash, Heavy Slam, Malicious Moonsault, Steamroller, and Stomp will not check accuracy and have their damage doubled if used against the user while it is active.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "evasiveness": 2,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "mirror-coat",
+    "type_ident": "psychic",
+    "category_ident": "special",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": -5,
+    "pp": 20,
+    "description": "Deals damage to the last opposing Pokemon to hit the user with a special attack this turn equal to twice the HP lost by the user from that attack. If the user did not lose HP from the attack, this move deals 1 HP of damage instead. If that opposing Pokemon's position is no longer in use and there is another opposing Pokemon on the field, the damage is done to it instead. Only the last hit of a multi-hit attack is counted. Fails if the user was not hit by an opposing Pokemon's special attack this turn."
+  },
+  {
+    "ident": "mist",
+    "type_ident": "ice",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 30,
+    "description": "For 5 turns, the user and its party members are protected from having their stat stages lowered by other Pokemon. Fails if the effect is already active on the user's side.",
+    "target": "self-and-allies"
+  },
+  {
     "ident": "misty-terrain",
     "type_ident": "fairy",
     "category_ident": "non-damaging",
@@ -3860,7 +4129,138 @@
     "accuracy": null,
     "priority": 0,
     "pp": 10,
-    "description": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain."
+    "description": "For 5 turns, the terrain becomes Misty Terrain. During the effect, the power of Dragon-type attacks used against grounded Pokemon is multiplied by 0.5 and grounded Pokemon cannot be inflicted with a non-volatile status condition nor confusion. Grounded Pokemon can become affected by Yawn but cannot fall asleep from its effect. Camouflage transforms the user into a Fairy type, Nature Power becomes Moonblast, and Secret Power has a 30% chance to lower Special Attack by 1 stage. Fails if the current terrain is Misty Terrain.",
+    "target": "field"
+  },
+  {
+    "ident": "moonblast",
+    "type_ident": "fairy",
+    "category_ident": "special",
+    "base_power": 95,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 30% chance to lower the target's Special Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "special_attack": -1,
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "moonlight",
+    "type_ident": "fairy",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
+    "target": "self",
+    "recovery": {
+      "percentage_of_maximum_hp": 0.5
+    }
+  },
+  {
+    "ident": "morning-sun",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "The user restores 1/2 of its maximum HP if Delta Stream or no weather conditions are in effect or if the user is holding Utility Umbrella, 2/3 of its maximum HP if the weather is Desolate Land or Sunny Day, and 1/4 of its maximum HP if the weather is Hail, Primordial Sea, Rain Dance, or Sandstorm, all rounded half down.",
+    "target": "self",
+    "recovery": {
+      "percentage_of_maximum_hp": 0.5
+    }
+  },
+  {
+    "ident": "mortal-spin",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 30,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. Has a 100% chance to poison the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "mud-shot",
+    "type_ident": "ground",
+    "category_ident": "special",
+    "base_power": 55,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "speed": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "mud-slap",
+    "type_ident": "ground",
+    "category_ident": "special",
+    "base_power": 20,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 100% chance to lower the target's accuracy by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "accuracy": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "muddy-water",
+    "type_ident": "water",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 0.85,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 30% chance to lower the target's accuracy by 1 stage.",
+    "target": "all-enemies",
+    "stat_changes": [
+      {
+        "accuracy": -1,
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "mystical-fire",
+    "type_ident": "fire",
+    "category_ident": "special",
+    "base_power": 75,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 100% chance to lower the target's Special Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "special_attack": -1,
+        "frequency": 1
+      }
+    ]
   },
   {
     "ident": "nasty-plot",

@@ -1,4 +1,18 @@
 ## TODO
+
+  - implement VGC game logic
+  - implement targeting logic
+  - control both blue & red team moves
+  - save flow charts with teams
+  - search teams for specific combinations/leads
+    - practice against leads on various teams
+  - train VGC AI
+
+  - add N moves
+  - add mons (242-271)
+
+  ---------------------
+
   - synchronize typescript damage calc function in tandem with the python one
     - way to run the damage calc tests from typescript
 
@@ -15,14 +29,6 @@
   - implement status conditions
 
   ---------------------
-
-  - implement VGC game logic
-  - implement targeting logic
-  - control both blue & red team moves
-  - save flow charts with teams
-  - search teams for specific combinations/leads
-    - practice against leads on various teams
-  - train VGC AI
 
   - allow dynamic changes of pokemon_build_state while looking at move coverage table in matchup screen
 
@@ -73,7 +79,7 @@
   - add VGC config
 
   - DEX COMPLETION: (322/400) | 80.50%
-  - MOVE TEMPLATE COMPLETION: (12/26) | 46.15%
+  - MOVE TEMPLATE COMPLETION: (13/26) | 50.00%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/167) | 4.80%
 
@@ -89,7 +95,6 @@
   - Clear Smog (resets all targets stat changes)
   - Comeuppance (wtf is this attack)
   - Copycat (copies last attempted move)
-  - Counter (deals damage to the last pokemon to hit this mon based on damage amount)
   - Defog (removes hazards, terrain)
   - Destiny Bond (kills the killer if active and user faints)
   - Doodle (changes ability of user and ally to that of selected target)
@@ -113,6 +118,10 @@
   - Leech Seed (custom DOT on specific slot)
   - Life Dew (self-and-allies recovery targeting)
   - Lock-On (makes the target unable to avoid the next-turn user move)
+  - Magnetic Flux (contingently boosts stats based on ability)
+  - Magnet Rise (causes user to be in a hover state for 5 turns)
+  - Metal Burst (wtf is this attack?! -- targeting listed as: special on serebii)
+  - Mortal Spin (removes hazards from user's side while dealing damage)
 
 ## Custom Move Behavior Grouping
   - User loses percentage of maximum HP in exchange for stat boosts
@@ -157,6 +166,8 @@
     - Blizzard
     - Growth
     - Hurricane
+    - Moonlight
+    - Morning Sun
   - Move has custom logic depending on the terrain
     - Expanding Force
   - Move has custom logic depending on the gravity
@@ -166,10 +177,11 @@
     - Dream Eater
     - Facade
     - Hex
-  - Use faints by performing this move
+  - Use faints by performing this move (simple faint on success flag on move data?)
     - Explosion
     - Final Gambit
     - Healing Wish
+    - Memento
   - Move has custom logic depending on other moves used this turn
     - Fire Pledge
     - Grass Pledge
@@ -179,6 +191,7 @@
     - Fire Spin (YES DOT)
     - Infestation (YES DOT)
     - Jaw Lock (NO DOT, prevents user switch-out)
+    - Mean Look (NO DOT)
   - Fails unless it is the user's first turn on the field
     - Fake Out
     - First Impression
@@ -246,6 +259,22 @@
   - Base Power increases according to custom counters
     - Last Respects
     - Rage Fist
+  - Changes the target's typing
+    - Magic Powder
+  - Move delegated to a different move
+    - Metronome
+    - Mimic
+  - Deals damage based on how much damage it took as a counter
+    - Counter
+    - Mirror Coat
+  - More obscure field changes with 5 turn counters
+    - Magic Room
+    - Mist
+  - Sets Terrain
+    - Electric Terrain
+    - Grassy Terrain
+    - Misty Terrain
+    - Psychic Terrain
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

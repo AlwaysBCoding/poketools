@@ -1,0 +1,18 @@
+{
+  "ident": "metal-claw",
+  "type_ident": "steel",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 35,
+  "description": "Has a 10% chance to raise the user's Attack by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "attack": 1,
+      "frequency": 0.10,
+      "target": "self"
+    }
+  ]
+}

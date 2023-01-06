@@ -1,0 +1,14 @@
+{
+  "ident": "milk-drink",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 5,
+  "description": "The user restores 1/2 of its maximum HP, rounded half up.",
+  "target": "self",
+  "recovery": {
+    "percentage_of_maximum_hp": 0.50
+  }
+}

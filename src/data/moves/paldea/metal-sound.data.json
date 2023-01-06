@@ -1,0 +1,17 @@
+{
+  "ident": "metal-sound",
+  "type_ident": "steel",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 0.85,
+  "priority": 0,
+  "pp": 40,
+  "description": "Lowers the target's Special Defense by 2 stages.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "special_defense": -2,
+      "frequency": 1
+    }
+  ]
+}

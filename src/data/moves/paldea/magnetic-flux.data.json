@@ -1,0 +1,11 @@
+{
+  "ident": "magnetic-flux",
+  "type_ident": "electric",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the Defense and Special Defense of Pokemon on the user's side with the Plus or Minus Abilities by 1 stage.",
+  "target": "team"
+}

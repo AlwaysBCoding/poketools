@@ -1,0 +1,11 @@
+{
+  "ident": "mega-kick",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 120,
+  "accuracy": 0.75,
+  "priority": 0,
+  "pp": 5,
+  "description": "No additional effect.",
+  "target": "any-adjacent"
+}

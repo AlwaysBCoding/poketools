@@ -1,0 +1,11 @@
+{
+  "ident": "mist",
+  "type_ident": "ice",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 30,
+  "description": "For 5 turns, the user and its party members are protected from having their stat stages lowered by other Pokemon. Fails if the effect is already active on the user's side.",
+  "target": "self-and-allies"
+}

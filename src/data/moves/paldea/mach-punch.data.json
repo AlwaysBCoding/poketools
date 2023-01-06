@@ -1,0 +1,11 @@
+{
+  "ident": "mach-punch",
+  "type_ident": "fighting",
+  "category_ident": "physical",
+  "base_power": 40,
+  "accuracy": 1,
+  "priority": 1,
+  "pp": 30,
+  "description": "No additional effect.",
+  "target": "any-adjacent"
+}
