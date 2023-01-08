@@ -66,51 +66,86 @@ def startBattle():
     data = request.get_json()
     battle = Battle.deserialize(data)
     battle.initial_step()
-    battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
-    serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
-    observation = battle.serialize_ml()
-    blue_agent_actions = blue_agent.show_actions(observation)
+    battle_actions = {
+      'blue-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('blue-field-1')
+      ))),
+      'red-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('red-field-1')
+      ))),
+      'blue-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('blue-field-2')
+      ))),
+      'red-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('red-field-2')
+      )))
+    }
+    # battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
+    # serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
+    # observation = battle.serialize_ml()
+    # blue_agent_actions = blue_agent.show_actions(observation)
     return {
       "battle": battle.serialize_api(),
-      "actions": serialized_battle_actions,
-      "agent_actions": blue_agent_actions.tolist()[0]
+      "actions": battle_actions,
+      "agent_actions": []
+      # "battle": battle.serialize_api(),
+      # "actions": serialized_battle_actions,
+      # "agent_actions": blue_agent_actions.tolist()[0]
     }
   except Exception as e:
     print("GOT EXCEPTION")
     print(e)
     traceback.print_exc()
+    if(type(e).__name__ != 'BadRequest'):
+      ipdb.set_trace()
     return {"status": "error"}
 
-@app.route("/send-battle-action", methods=["POST", "OPTIONS"])
+@app.route("/send-battle-actions", methods=["POST", "OPTIONS"])
 def sendBattleAction():
   try:
     serialized_next_battle_actions = []
 
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])
-    blue_actions = [BattleAction.deserialize(data["battle_action"])]
 
-    observation = battle.serialize_ml()
-    red_possible_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon('red').battle_id)
-    red_actions = [red_possible_actions[red_agent.choose_action(observation, len(red_possible_actions))]]
+    blue_actions = list(map(lambda x: BattleAction.deserialize(x), data["blue_actions"]))
+    red_actions = list(map(lambda x: BattleAction.deserialize(x), data["red_actions"]))
+
+    # observation = battle.serialize_ml()
+    # red_possible_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon('red').battle_id)
+    # red_actions = [red_possible_actions[red_agent.choose_action(observation, len(red_possible_actions))]]
 
     battle.step(blue_actions, red_actions)
 
-    if(battle.field_pokemon('blue')):
-      next_battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon('blue').battle_id)
-      serialized_next_battle_actions = list(map(lambda x: x.serialize_api(), next_battle_actions))
+    battle_actions = {
+      'blue-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('blue-field-1')
+      ))),
+      'red-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('red-field-1')
+      ))),
+      'blue-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('blue-field-2')
+      ))),
+      'red-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('red-field-2')
+      )))
+    }
 
-    observation_ = battle.serialize_ml()
-    blue_agent_actions = blue_agent.show_actions(observation_)
+    # observation_ = battle.serialize_ml()
+    # blue_agent_actions = blue_agent.show_actions(observation_)
     return {
       "battle": battle.serialize_api(),
-      "actions": serialized_next_battle_actions,
-      "agent_actions": blue_agent_actions.tolist()[0]
+      "actions": battle_actions,
+      "agent_actions": []
+      # "agent_actions": blue_agent_actions.tolist()[0]
     }
   except Exception as e:
-    print("GOT EXCEPTION")
-    print(e)
-    traceback.print_exc()
+    if(type(e).__name__ != 'BadRequest'):
+      print("GOT EXCEPTION")
+      print(e)
+      traceback.print_exc()
+      ipdb.set_trace()
     return {"status": "error"}
 
 @app.route("/test/perform-battle-action", methods=["POST", "OPTIONS"])

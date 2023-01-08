@@ -17,21 +17,16 @@ interface CreateBattleParams {
   config: BattleConfig;
   blueSidePokemonBuilds: PokemonBuild[];
   redSidePokemonBuilds: PokemonBuild[];
-  blueSidePartyPokemonIndexes?: number[];
-  redSidePartyPokemonIndexes?: number[];
-  blueSideFieldPokemonIndexes?: number[];
-  redSideFieldPokemonIndexes?: number[];
+  blueSidePokemonOrder?: number[];
+  redSidePokemonOrder?: number[];
 }
 
 export const createBattle = ({
   config,
   blueSidePokemonBuilds,
   redSidePokemonBuilds,
-  blueSidePartyPokemonIndexes,
-  redSidePartyPokemonIndexes,
-  blueSideFieldPokemonIndexes,
-  redSideFieldPokemonIndexes,
-
+  blueSidePokemonOrder = [],
+  redSidePokemonOrder = []
 }: CreateBattleParams): Battle => {
 
   const blueSideOrderedPokemon: PokemonBattleState[] = [];
@@ -40,35 +35,27 @@ export const createBattle = ({
   const blueSidePokemon: PokemonBattleState[] = blueSidePokemonBuilds.map((pokemonBuild: PokemonBuild) => { return createNewPokemonBattleState(pokemonBuild, "blue") });
   const redSidePokemon: PokemonBattleState[] = redSidePokemonBuilds.map((pokemonBuild: PokemonBuild) => { return createNewPokemonBattleState(pokemonBuild, "red") });
 
-  if(blueSideFieldPokemonIndexes && redSideFieldPokemonIndexes) {
-    blueSideOrderedPokemon.push(blueSidePokemon[blueSideFieldPokemonIndexes[0]]);
-    blueSideOrderedPokemon.push(blueSidePokemon[blueSideFieldPokemonIndexes[1]]);
-    redSideOrderedPokemon.push(redSidePokemon[redSideFieldPokemonIndexes[0]]);
-    redSideOrderedPokemon.push(redSidePokemon[redSideFieldPokemonIndexes[1]]);
+  if(blueSidePokemonOrder.length > 0) {
+    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[0]]);
+    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[1]]);
+    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[2]]);
+    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[3]]);
+  }
 
-    if(blueSidePartyPokemonIndexes && redSidePartyPokemonIndexes) {
-      blueSideOrderedPokemon.push(blueSidePokemon[blueSidePartyPokemonIndexes[0]]);
-      blueSideOrderedPokemon.push(blueSidePokemon[blueSidePartyPokemonIndexes[1]]);
-      redSideOrderedPokemon.push(redSidePokemon[redSidePartyPokemonIndexes[0]]);
-      redSideOrderedPokemon.push(redSidePokemon[redSidePartyPokemonIndexes[1]]);
-    }
+  if(redSidePokemonOrder.length > 0) {
+    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[0]]);
+    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[1]]);
+    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[2]]);
+    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[3]]);
   }
 
   const blueSidePokemonIndexes = [...Array(blueSidePokemon.length).keys()];
   const redSidePokemonIndexes = [...Array(redSidePokemon.length).keys()];
 
-  const remainingBlueSidePokemonIndexes = blueSidePokemonIndexes.filter((value: number) => {
-    return !blueSidePartyPokemonIndexes?.includes(value) && !blueSideFieldPokemonIndexes?.includes(value);
-  });
-  const remainingRedSidePokemonIndexes = redSidePokemonIndexes.filter((value: number) => {
-    return !redSidePartyPokemonIndexes?.includes(value) && !redSideFieldPokemonIndexes?.includes(value);
-  });
-  for (const blueSidePokemonIndex of remainingBlueSidePokemonIndexes) {
-    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonIndex]);
-  }
-  for (const redSidePokemonIndex of remainingRedSidePokemonIndexes) {
-    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonIndex]);
-  }
+  const remainingBlueSidePokemonIndexes = blueSidePokemonIndexes.filter((value: number) => { return !blueSidePokemonOrder?.includes(value); });
+  const remainingRedSidePokemonIndexes = redSidePokemonIndexes.filter((value: number) => { return !redSidePokemonOrder?.includes(value); });
+  for (const blueSidePokemonIndex of remainingBlueSidePokemonIndexes) { blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonIndex]); }
+  for (const redSidePokemonIndex of remainingRedSidePokemonIndexes) { redSideOrderedPokemon.push(redSidePokemon[redSidePokemonIndex]); }
 
   return {
     config: config,

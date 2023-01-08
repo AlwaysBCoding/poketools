@@ -129,7 +129,7 @@ class Battle():
     turn_events = []
     turn_events.append(f"Battle Started!")
 
-    if(battle.config.variant == 'doubles'):
+    if(self.config.get('variant') == 'doubles'):
 
       self.battle_state.blue_side_pokemon[0].location = 'field'
       self.battle_state.blue_side_pokemon[1].location = 'field'
@@ -149,7 +149,7 @@ class Battle():
       turn_events.append(f"Go {self.battle_state.red_side_pokemon[0].pokemon_build.pokemon.ident}!")
       turn_events.append(f"Go {self.battle_state.red_side_pokemon[1].pokemon_build.pokemon.ident}!")
 
-    elif(battle.config.variant == 'singles'):
+    elif(self.config.get('variant') == 'singles'):
       self.battle_state.blue_side_pokemon[0].location = 'field'
       self.battle_state.red_side_pokemon[0].location = 'field'
       self.battle_state.field_state['blue-field-1'] = self.battle_state.blue_side_pokemon[0].battle_id
@@ -300,24 +300,20 @@ class Battle():
     STAT_CHANGE_FREQUENCY_ROLL = (1 - hardcoded_stat_change_frequency_roll) if hardcoded_stat_change_frequency_roll else np.random.random()
 
     actor_pokemon_id = battle_action.actor.battle_id
-    actor_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == actor_pokemon_id)
-    actor_slot = 'blue-field-1' if actor_pokemon.battle_side == 'blue' else 'red-field-1'
+    actor_pokemon = self.pokemon_battle_state_by_id(actor_pokemon_id)
+    actor_slot = self.current_pokemon_slot(actor_pokemon_id)
 
     if(actor_pokemon.location == 'graveyard'):
       return [action_events, should_end_battle]
 
     if(battle_action.action_type == 'switch'):
-      actor = self.pokemon_battle_state_by_id(actor_pokemon.battle_id)
-      target = self.pokemon_battle_state_by_id(battle_action.action_data['switch_target'].battle_id)
-      actor.location = 'party'
-      actor.stat_boosts = PokemonStatBoosts()
-      action_events.append(f"{actor.pokemon_build.pokemon.ident} come back!")
-      target.location = 'field'
-      action_events.append(f"Go {target.pokemon_build.pokemon.ident}!")
-      if(actor.battle_side == 'blue'):
-        self.battle_state.field_state['blue-field-1'] = target.battle_id
-      elif(actor_pokemon.battle_side == 'red'):
-        self.battle_state.field_state['red-field-1'] = target.battle_id
+      target_pokemon = self.pokemon_battle_state_by_id(battle_action.action_data['switch_target'].battle_id)
+      actor_pokemon.location = 'party'
+      actor_pokemon.stat_boosts = PokemonStatBoosts()
+      action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} come back!")
+      target_pokemon.location = 'field'
+      action_events.append(f"Go {target_pokemon.pokemon_build.pokemon.ident}!")
+      self.battle_state.field_state[actor_slot] = target_pokemon.battle_id
 
     elif(battle_action.action_type == 'move'):
       move_ident = battle_action.action_data['move']['ident']
@@ -346,7 +342,7 @@ class Battle():
 
       else:
         target_pokemon_id = self.battle_state.field_state[target_slot]
-        target_pokemon = find(self.pokemon_battle_states(), lambda x: x.battle_id == target_pokemon_id)
+        target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
 
         if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
           if(move_ident == "reflect"):
@@ -504,6 +500,16 @@ class Battle():
 
   def party_pokemons(self, side):
     return self.battle_state.party_pokemons(side)
+
+  def current_pokemon_slot(self, pokemon_battle_id):
+    if(self.battle_state.field_state.get('blue-field-1') == pokemon_battle_id):
+      return 'blue-field-1'
+    elif(self.battle_state.field_state.get('blue-field-2') == pokemon_battle_id):
+      return 'blue-field-2'
+    elif(self.battle_state.field_state.get('red-field-1') == pokemon_battle_id):
+      return 'red-field-1'
+    elif(self.battle_state.field_state.get('red-field-2') == pokemon_battle_id):
+      return 'red-field-2'
 
   # SERIALIZERS
   # =====================

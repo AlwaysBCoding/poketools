@@ -17,8 +17,12 @@ export const BattleSimulatorScreen = () => {
   const [activeBlueTeam, setActiveBlueTeam] = useState<PokemonTeam>();
   const [activeRedTeam, setActiveRedTeam] = useState<PokemonTeam>();
   const [battle, setBattle] = useState<Battle>();
-  const [battleActions, setBattleActions] = useState<BattleAction[]>([]);
+  // const [battleActions, setBattleActions] = useState<BattleAction[]>([]);
+  const [battleActions, setBattleActions] = useState<any>({});
   const [agentActions, setAgentActions] = useState<number[]>([]);
+
+  const [blueTeamOrderString, setBlueTeamOrderString] = useState<string>("[]");
+  const [redTeamOrderString, setRedTeamOrderString] = useState<string>("[]");
 
   useEffect(() => {
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
@@ -45,9 +49,11 @@ export const BattleSimulatorScreen = () => {
   const startBattle = async () => {
     if(activeBlueTeam && activeRedTeam) {
       const battle: Battle = createBattle({
-        config: {variant: "singles"},
+        config: {variant: "doubles"},
         blueSidePokemonBuilds: activeBlueTeam.pokemonBuilds,
-        redSidePokemonBuilds: activeRedTeam.pokemonBuilds
+        redSidePokemonBuilds: activeRedTeam.pokemonBuilds,
+        blueSidePokemonOrder: JSON.parse(blueTeamOrderString),
+        redSidePokemonOrder: JSON.parse(redTeamOrderString)
       });
       setBattle(battle);
 
@@ -72,7 +78,7 @@ export const BattleSimulatorScreen = () => {
     }
   }
 
-  const selectBattleAction = async (battleAction: BattleAction) => {
+  const selectBattleActions = async (blueActions: BattleAction[], redActions: BattleAction[]) => {
     const fetchOptions = {
       method: "POST",
       headers: {
@@ -81,11 +87,12 @@ export const BattleSimulatorScreen = () => {
       },
       body: JSON.stringify({
         "battle": battle,
-        "battle_action": battleAction
+        "blue_actions": blueActions,
+        "red_actions": redActions
       })
     }
 
-    const response = await fetch("http://localhost:8000/send-battle-action", fetchOptions);
+    const response = await fetch("http://localhost:8000/send-battle-actions", fetchOptions);
     const result = await response.json();
     const nextBattle = result.battle;
     const nextBattleActions = result.actions;
@@ -112,7 +119,13 @@ export const BattleSimulatorScreen = () => {
           })}
         </select>
         {activeBlueTeam ? (
-          <PokemonTeamDisplayIndex team={activeBlueTeam} />
+          <div className="team-preview blue-team-preview">
+            <PokemonTeamDisplayIndex team={activeBlueTeam} />
+            <input
+              className="blue-team-order"
+              value={blueTeamOrderString}
+              onChange={(e) => { setBlueTeamOrderString(e.target.value); }} />
+          </div>
         ) : (<></>)}
       </div>
       <div className="red-team-select">
@@ -129,7 +142,13 @@ export const BattleSimulatorScreen = () => {
           })}
         </select>
         {activeRedTeam ? (
-          <PokemonTeamDisplayIndex team={activeRedTeam} />
+          <div className="team-preview red-team-preview">
+            <PokemonTeamDisplayIndex team={activeRedTeam} />
+            <input
+            className="red-team-order"
+            value={redTeamOrderString}
+            onChange={(e) => { setRedTeamOrderString(e.target.value); }} />
+          </div>
         ) : (<></>)}
       </div>
       <div className="button" onClick={startBattle}>
@@ -141,7 +160,7 @@ export const BattleSimulatorScreen = () => {
             battle={battle}
             battleActions={battleActions}
             agentActions={agentActions}
-            selectBattleAction={selectBattleAction}
+            selectBattleActions={selectBattleActions}
             perspective="blue" />
         ): (<></>)}
       </div>

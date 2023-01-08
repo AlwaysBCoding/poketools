@@ -970,28 +970,34 @@ $pokemon-base-stats-cell-width: 50%;
 
 .battle-renderer-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
 
   .battle-renderer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     .pokemons {
-      position: relative;
       height: 360px;
       width: calc($battle-renderer-aspect-ratio * 360px);
       background-color: mistyrose;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: stretch;
     }
 
     .player-pokemons {
-      position: absolute;
-      top: 0;
-      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .enemy-pokemons {
-      position: absolute;
-      top: 0;
-      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .side-pokemon {
@@ -999,8 +1005,11 @@ $pokemon-base-stats-cell-width: 50%;
       flex-direction: column;
       justify-content: flex-start;
       align-items: stretch;
-      height: 100px;
       width: 115px;
+
+      img.pokemon-image {
+        width: 100%;
+      }
 
       .pokemon-ident {}
 
@@ -1015,17 +1024,36 @@ $pokemon-base-stats-cell-width: 50%;
         }
       }
 
-      .pokemon-image {
-        width: 100%;
-      }
     }
+  }
+
+  .pokemon-battle-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 200px;
+    background-color: $showdown-light-blue;
+
+    .battle-action-section {
+      width: 25%;
+
+      .battle-actions {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+    }
+
   }
 
   .battle-log-renderer {
     max-height: 800px;
     padding-bottom: 50px;
     overflow-y: scroll;
-    background-color: $showdown-light-blue;
+    background-color: fade-out(coral, 0.40);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
