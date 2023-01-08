@@ -162,13 +162,7 @@ class Game():
 
     battle_config = {"variant": "singles"}
     self.battle = Battle.create(battle_config, blue_side_pokemon, red_side_pokemon)
-
-    blue_side_pokemon_order = [0, 1, 2]
-    np.random.shuffle(blue_side_pokemon_order)
-    red_side_pokemon_order = [0, 1, 2]
-    np.random.shuffle(red_side_pokemon_order)
-
-    self.battle.initial_step(blue_side_pokemon_order, red_side_pokemon_order)
+    self.battle.initial_step()
 
     return self.battle.serialize_ml()
 

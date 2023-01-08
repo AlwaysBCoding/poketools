@@ -125,21 +125,39 @@ class Battle():
       # print(battle_event)
       continue
 
-  def initial_step(self, blue_side_pokemon_order, red_side_pokemon_order):
+  def initial_step(self):
     turn_events = []
     turn_events.append(f"Battle Started!")
-    blue_pokemon = self.battle_state.blue_side_pokemon[blue_side_pokemon_order[0]]
-    blue_pokemon.location = "field"
-    self.battle_state.field_state["blue-field-1"] = blue_pokemon.battle_id
-    self.battle_state.blue_side_pokemon[blue_side_pokemon_order[1]].location = "party"
-    self.battle_state.blue_side_pokemon[blue_side_pokemon_order[2]].location = "party"
-    turn_events.append(f"Go {blue_pokemon.pokemon_build.pokemon.ident}!")
-    red_pokemon = self.battle_state.red_side_pokemon[red_side_pokemon_order[0]]
-    red_pokemon.location = "field"
-    self.battle_state.field_state["red-field-1"] = red_pokemon.battle_id
-    self.battle_state.red_side_pokemon[red_side_pokemon_order[1]].location = "party"
-    self.battle_state.red_side_pokemon[red_side_pokemon_order[2]].location = "party"
-    turn_events.append(f"Go {red_pokemon.pokemon_build.pokemon.ident}!")
+
+    if(battle.config.variant == 'doubles'):
+
+      self.battle_state.blue_side_pokemon[0].location = 'field'
+      self.battle_state.blue_side_pokemon[1].location = 'field'
+      self.battle_state.blue_side_pokemon[2].location = 'party'
+      self.battle_state.blue_side_pokemon[3].location = 'party'
+      self.battle_state.red_side_pokemon[0].location = 'field'
+      self.battle_state.red_side_pokemon[1].location = 'field'
+      self.battle_state.red_side_pokemon[2].location = 'party'
+      self.battle_state.red_side_pokemon[3].location = 'party'
+      self.battle_state.field_state['blue-field-1'] = self.battle_state.blue_side_pokemon[0].battle_id
+      self.battle_state.field_state['blue-field-2'] = self.battle_state.blue_side_pokemon[1].battle_id
+      self.battle_state.field_state['red-field-1'] = self.battle_state.red_side_pokemon[0].battle_id
+      self.battle_state.field_state['red-field-2'] = self.battle_state.red_side_pokemon[1].battle_id
+
+      turn_events.append(f"Go {self.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.ident}!")
+      turn_events.append(f"Go {self.battle_state.blue_side_pokemon[1].pokemon_build.pokemon.ident}!")
+      turn_events.append(f"Go {self.battle_state.red_side_pokemon[0].pokemon_build.pokemon.ident}!")
+      turn_events.append(f"Go {self.battle_state.red_side_pokemon[1].pokemon_build.pokemon.ident}!")
+
+    elif(battle.config.variant == 'singles'):
+      self.battle_state.blue_side_pokemon[0].location = 'field'
+      self.battle_state.red_side_pokemon[0].location = 'field'
+      self.battle_state.field_state['blue-field-1'] = self.battle_state.blue_side_pokemon[0].battle_id
+      self.battle_state.field_state['blue-field-2'] = self.battle_state.blue_side_pokemon[1].battle_id
+
+      turn_events.append(f"Go {self.battle_state.blue_side_pokemon[0].pokemon_build.pokemon.ident}!")
+      turn_events.append(f"Go {self.battle_state.red_side_pokemon[0].pokemon_build.pokemon.ident}!")
+
     self.battle_turns.append(turn_events)
     self.end_battle_turn(turn_events)
 
