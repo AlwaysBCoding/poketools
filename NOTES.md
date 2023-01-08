@@ -44,6 +44,7 @@
   - add bite to move templates (strong jaw)
   - add sound to move templates (soundproof)
   - add ballistic? to move templates (bulletproof)
+  - add wind? to move templates (wind-rider)
 
   - add some sort of concept of move lock-in (Outrage, Encore that gets ticked [choice items ...])
 
@@ -79,7 +80,7 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (322/400) | 80.50%
+  - DEX COMPLETION: (332/400) | 83.00%
   - MOVE TEMPLATE COMPLETION: (15/26) | 57.70%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/167) | 4.80%
