@@ -1,0 +1,17 @@
+{
+  "ident": "night-daze",
+  "type_ident": "dark",
+  "category_ident": "special",
+  "base_power": 85,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 10,
+  "description": "Has a 40% chance to lower the target's accuracy by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "accuracy": -1,
+      "frequency": 0.40
+    }
+  ]
+}

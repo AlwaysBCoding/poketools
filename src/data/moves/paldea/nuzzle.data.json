@@ -1,0 +1,17 @@
+{
+  "ident": "nuzzle",
+  "type_ident": "electric",
+  "category_ident": "physical",
+  "base_power": 20,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Has a 100% chance to paralyze the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "paralyzed",
+      "frequency": 1
+    }
+  ]
+}

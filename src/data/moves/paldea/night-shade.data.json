@@ -1,0 +1,11 @@
+{
+  "ident": "night-shade",
+  "type_ident": "ghost",
+  "category_ident": "special",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Deals damage to the target equal to the user's level.",
+  "target": "any-adjacent"
+}

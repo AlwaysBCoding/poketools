@@ -1,0 +1,11 @@
+{
+  "ident": "order-up",
+  "type_ident": "dragon",
+  "category_ident": "physical",
+  "base_power": 80,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "If an ally Tatsugiri has activated its Commander Ability, this move raises the user's Attack by 1 stage if the Tatsugiri is Curly Form, Defense by 1 stage if Droopy Form, or Speed by 1 stage if Stretchy Form. The effect happens whether or not this move is successful, and even if the Tatsugiri that activated the effect has since fainted.",
+  "target": "any-adjacent"
+}

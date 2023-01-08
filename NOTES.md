@@ -1,5 +1,7 @@
 ## TODO
 
+  - add mons (242-271)
+
   - implement VGC game logic
   - implement targeting logic
   - control both blue & red team moves
@@ -7,9 +9,6 @@
   - search teams for specific combinations/leads
     - practice against leads on various teams
   - train VGC AI
-
-  - add N moves
-  - add mons (242-271)
 
   ---------------------
 
@@ -46,6 +45,8 @@
   - add sound to move templates (soundproof)
   - add ballistic? to move templates (bulletproof)
 
+  - add some sort of concept of move lock-in (Outrage, Encore that gets ticked [choice items ...])
+
   - add switch-in hook logic
     - drizzle, drought, sandstorm, snow-warning ability implementation
 
@@ -79,7 +80,7 @@
   - add VGC config
 
   - DEX COMPLETION: (322/400) | 80.50%
-  - MOVE TEMPLATE COMPLETION: (13/26) | 50.00%
+  - MOVE TEMPLATE COMPLETION: (15/26) | 57.70%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/167) | 4.80%
 
@@ -122,6 +123,9 @@
   - Magnet Rise (causes user to be in a hover state for 5 turns)
   - Metal Burst (wtf is this attack?! -- targeting listed as: special on serebii)
   - Mortal Spin (removes hazards from user's side while dealing damage)
+  - Night Shade (deals damage equal to the user's level)
+  - Order Up (stat change is contingent on the tatsugiri form that Dondozo has in it's mouth)
+  - Outrage (everything about the move... random targeting, move lock-in, confusion at the end)
 
 ## Custom Move Behavior Grouping
   - User loses percentage of maximum HP in exchange for stat boosts
@@ -192,6 +196,7 @@
     - Infestation (YES DOT)
     - Jaw Lock (NO DOT, prevents user switch-out)
     - Mean Look (NO DOT)
+    - No Retreat (NO DOT)
   - Fails unless it is the user's first turn on the field
     - Fake Out
     - First Impression
