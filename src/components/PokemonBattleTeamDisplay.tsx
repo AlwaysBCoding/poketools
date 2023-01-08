@@ -19,9 +19,14 @@ export const PokemonBattleTeamDisplayIndex: React.FC<{
         return (
           <div
             key={`pokemon-index-item-${index}`}
-            className={"pokemon-index-item"}>
+            className={`pokemon-index-item ${pokemonBattleState.location}`}>
             <img className="pokemon-image" src={pokemonImage} alt={pokemonBattleState.pokemon_build.pokemon.ident} />
             <p className="pokemon-ident">{displayPokemonIdent(pokemonBattleState.pokemon_build.pokemon.ident)}</p>
+            {pokemonBattleState.location === "party" ? (
+              <div className="hp-bar-container">
+                <div className="current-hp" style={{width: `${(pokemonBattleState.current_hp / pokemonBattleState.pokemon_build.stat_spread.hp) * 100}%`}}></div>
+              </div>
+            ) : (<></>)}
           </div>
         )
       })}

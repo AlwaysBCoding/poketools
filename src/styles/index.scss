@@ -427,6 +427,40 @@ $pokemon-base-stats-cell-width: 50%;
     }
   }
 
+  .pokemon-index-item {
+    position: relative;
+
+    &.field {
+      background-color: fade-out(green, 0.75);
+    }
+
+    &.preview {
+      background-color: gray;
+    }
+
+    &.graveyard {
+      background-color: fade-out(red, 0.35);
+    }
+
+    &.party {
+      background-color: lighten(gray, 33%);
+    }
+  }
+
+  .hp-bar-container {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 25%;
+    height: 8px;
+    min-height: 8px;
+    background-color: white;
+    .current-hp {
+      background-color: green;
+      height: 100%;
+    }
+  }
+
 }
 
 .pokemon-build-display {

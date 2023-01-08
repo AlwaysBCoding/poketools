@@ -169,29 +169,26 @@ class Battle():
 
   def possible_targets_for_move(self, actor_id, move_ident):
     actor_pokemon_battle_state = self.pokemon_battle_state_by_id(actor_id)
+    actor_slot = self.current_pokemon_slot(actor_id)
     if actor_pokemon_battle_state.location != "field":
       return []
     move_data = find(all_moves_data, lambda x: x.get("ident") == move_ident)
     move_target = move_data.get("target")
 
-    self_ = []
-    any_adjacent = []
+    ALL_SLOTS = ['blue-field-1', 'blue-field-2', 'red-field-1', 'red-field-2']
+
+    self_ = [actor_slot]
+    any_adjacent = [slot for slot in ALL_SLOTS if slot not in [actor_slot]]
     all_enemies = []
-    all_adjacent = []
+    all_adjacent = [slot for slot in ALL_SLOTS if slot not in [actor_slot]]
     self_and_allies = []
 
     if actor_pokemon_battle_state.battle_side == "blue":
-      self_ = ["blue-field-1"]
-      any_adjacent = ["red-field-1"]
-      all_enemies = ["red-field-1"]
-      all_adjacent = ["red-field-1"]
-      self_and_allies = ["blue-field-1"]
+      all_enemies = ["red-field-1", "red-field-2"]
+      self_and_allies = ["blue-field-1", "blue-field-2"]
     elif actor_pokemon_battle_state.battle_side == "red":
-      self_ = ["red-field-1"]
-      any_adjacent = ["blue-field-1"]
-      all_enemies = ["blue-field-1"]
-      all_adjacent = ["blue-field-1"]
-      self_and_allies = ["red-field-1"]
+      all_enemies = ["blue-field-1", "blue-field-2"]
+      self_and_allies = ["red-field-1", "red-field-2"]
 
     if move_target == "self":
       return self_

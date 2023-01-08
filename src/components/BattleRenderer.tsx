@@ -212,20 +212,12 @@ export const BattleRenderer: React.FC<{
         <PokemonBattleTeamDisplayIndex pokemonBattleStates={battle.battle_state.blue_side_pokemon} />
         <div className="pokemons">
           <div className="player-pokemons">
-            <div className={`side-pokemon blue-field-1`}>
-              {blueField1 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField1), "blue-field-1") : (<></>)}
-            </div>
-            <div className={`side-pokemon blue-field-2`}>
-              {blueField2 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField2), "blue-field-2") : (<></>)}
-            </div>
+            {blueField1 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField1), "blue-field-1") : (<></>)}
+            {blueField2 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField2), "blue-field-2") : (<></>)}
           </div>
           <div className="enemy-pokemons">
-            <div className={`side-pokemon red-field-1`}>
-              {redField1 ? renderPokemonAtSlot(decoratePokemonBattleState(redField1), "red-field-1") : (<></>)}
-            </div>
-            <div className={`side-pokemon red-field-2`}>
-              {redField2 ? renderPokemonAtSlot(decoratePokemonBattleState(redField2), "red-field-2") : (<></>)}
-            </div>
+            {redField1 ? renderPokemonAtSlot(decoratePokemonBattleState(redField1), "red-field-1") : (<></>)}
+            {redField2 ? renderPokemonAtSlot(decoratePokemonBattleState(redField2), "red-field-2") : (<></>)}
           </div>
         </div>
         <PokemonBattleTeamDisplayIndex pokemonBattleStates={battle.battle_state.red_side_pokemon} />

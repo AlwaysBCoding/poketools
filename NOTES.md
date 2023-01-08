@@ -1,10 +1,9 @@
 ## TODO
 
-  - add mons (242-271)
+  - add mons (251-271)
+  - add moves P
 
-  - implement VGC game logic
   - implement targeting logic
-  - control both blue & red team moves
   - save flow charts with teams
   - search teams for specific combinations/leads
     - practice against leads on various teams
