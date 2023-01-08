@@ -7,7 +7,9 @@ import {
   GRIMMSNARL_ATEAM_BUILD,
   GASTRODON_ATEAM_BUILD,
   MEOWSCARADA_MAX_STATS,
-  QUAQUAVAL_MAX_STATS
+  QUAQUAVAL_MAX_STATS,
+  GARCHOMP_ATEAM_BUILD,
+  GHOLDENGO_ATEAM_BUILD
 } from "./__factories__/pokemon.factory";
 import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/pokemon/PokemonBuild";
 
@@ -17,6 +19,7 @@ import { BattleConfig } from "../models/battle/BattleShared";
 
 const SERVER_URI = "http://localhost:8000";
 const BATTLE_CONFIG: BattleConfig = {variant: "singles"};
+const BATTLE_CONFIG_VGC: BattleConfig = {variant: "doubles"};
 
 const PERFORM_BATTLE_ACTION = async (battle: Battle, battleAction: BattleAction, hardcodedStatChangeFrequencyRoll?: number): Promise<Record<string, any>> => {
   const fetchOptions = {
@@ -265,6 +268,38 @@ describe("MOVES", () => {
       const drainPunchActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, drainPunchAction);
       expect(drainPunchActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(122);
       expect(drainPunchActionResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(217);
+    });
+
+  });
+
+  // SPREAD DAMAGE
+  describe("EARTHQUAKE", () => {
+    let garchompBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GARCHOMP_ATEAM_BUILD);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+    let gholdengoBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GHOLDENGO_ATEAM_BUILD);
+    let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG_VGC,
+      blueSidePokemonBuilds: [garchompBuild, grimmsnarlBuild],
+      redSidePokemonBuilds: [gholdengoBuild, meowscaradaBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const earthquakeAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "earthquake",
+      ["blue-field-2", "red-field-1", "red-field-2"]
+    );
+
+    test("it damages multiple pokemon on the same turn", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const earthquakeActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, earthquakeAction);
+      initialBattle.battle_state.red_side_pokemon[0].item_ident = "choice-specs";
+      expect(earthquakeActionResult.battle.battle_state.blue_side_pokemon[0].current_hp).toEqual(184);
+      expect(earthquakeActionResult.battle.battle_state.blue_side_pokemon[1].current_hp).toEqual(65);
+      expect(earthquakeActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(0);
+      expect(earthquakeActionResult.battle.battle_state.red_side_pokemon[1].current_hp).toEqual(91);
     });
 
   });

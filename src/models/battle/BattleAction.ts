@@ -19,7 +19,8 @@ export const composeMoveAction = (actor: PokemonBattleState, moveIdent: PokemonM
     action_type: "move",
     action_data: {
       "move": move,
-      "move_targets": moveTargets
+      "move_targets": moveTargets,
+      "selected_targets": moveTargets
     }
   }
 }

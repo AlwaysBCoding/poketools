@@ -1,9 +1,11 @@
 ## TODO
 
+  - implement UI for selecting a move target
+  - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
+
   - add mons (251-271)
   - add moves P
 
-  - implement targeting logic
   - save flow charts with teams
   - search teams for specific combinations/leads
     - practice against leads on various teams

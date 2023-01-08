@@ -38,15 +38,19 @@ export const createBattle = ({
   if(blueSidePokemonOrder.length > 0) {
     blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[0]]);
     blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[1]]);
-    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[2]]);
-    blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[3]]);
+    if(blueSidePokemonOrder.length > 2) {
+      blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[2]]);
+      blueSideOrderedPokemon.push(blueSidePokemon[blueSidePokemonOrder[3]]);
+    }
   }
 
   if(redSidePokemonOrder.length > 0) {
     redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[0]]);
     redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[1]]);
-    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[2]]);
-    redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[3]]);
+    if(redSidePokemonOrder.length > 2) {
+      redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[2]]);
+      redSideOrderedPokemon.push(redSidePokemon[redSidePokemonOrder[3]]);
+    }
   }
 
   const blueSidePokemonIndexes = [...Array(blueSidePokemon.length).keys()];
@@ -73,12 +77,16 @@ export const initialStep = (battle: Battle): Battle => {
 
     battle.battle_state.blue_side_pokemon[0].location = "field";
     battle.battle_state.blue_side_pokemon[1].location = "field";
-    battle.battle_state.blue_side_pokemon[2].location = "party";
-    battle.battle_state.blue_side_pokemon[3].location = "party";
+    if(battle.battle_state.blue_side_pokemon.length > 2) {
+      battle.battle_state.blue_side_pokemon[2].location = "party";
+      battle.battle_state.blue_side_pokemon[3].location = "party";
+    }
     battle.battle_state.red_side_pokemon[0].location = "field";
     battle.battle_state.red_side_pokemon[1].location = "field";
-    battle.battle_state.red_side_pokemon[2].location = "party";
-    battle.battle_state.red_side_pokemon[3].location = "party";
+    if(battle.battle_state.red_side_pokemon.length > 2) {
+      battle.battle_state.red_side_pokemon[2].location = "party";
+      battle.battle_state.red_side_pokemon[3].location = "party";
+    }
     battle.battle_state.field_state["blue-field-1"] = battle.battle_state.blue_side_pokemon[0].battle_id;
     battle.battle_state.field_state["blue-field-2"] = battle.battle_state.blue_side_pokemon[1].battle_id;
     battle.battle_state.field_state["red-field-1"] = battle.battle_state.red_side_pokemon[0].battle_id;
