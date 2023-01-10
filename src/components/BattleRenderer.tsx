@@ -242,12 +242,73 @@ export const BattleRenderer: React.FC<{
     }
   }
 
+  const renderStatBoostBadgeForStat = (pokemonBattleState: PokemonBattleState, stat: string) => {
+    let statBoostValue;
+    let statBoostText;
+    let statBoostSymbol;
+    let statBoostClassName = `stat-boost`;
+    if(stat === "attack") {
+      statBoostValue = pokemonBattleState.stat_boosts.attack;
+      statBoostText = `Atk`;
+    }
+    if(stat === "defense") {
+      statBoostValue = pokemonBattleState.stat_boosts.defense;
+      statBoostText = `Def`;
+    }
+    if(stat === "special_attack") {
+      statBoostValue = pokemonBattleState.stat_boosts.special_attack;
+      statBoostText = `SpA`;
+    }
+    if(stat === "special_defense") {
+      statBoostValue = pokemonBattleState.stat_boosts.special_defense;
+      statBoostText = `SpD`;
+    }
+    if(stat === "speed") {
+      statBoostValue = pokemonBattleState.stat_boosts.speed;
+      statBoostText = `Spe`;
+    }
+    if(stat === "accuracy") {
+      statBoostValue = pokemonBattleState.stat_boosts.accuracy;
+      statBoostText = `Acc`;
+    }
+    if(stat === "evasiveness") {
+      statBoostValue = pokemonBattleState.stat_boosts.evasiveness;
+      statBoostText = `Eva`;
+    }
+    if(stat === "critical_hit") {
+      statBoostValue = pokemonBattleState.stat_boosts.critical_hit;
+      statBoostText = `Cri`;
+    }
+
+    if(statBoostValue && statBoostValue > 0) {
+      statBoostSymbol = "+";
+      statBoostClassName += " positive";
+    } else {
+      statBoostSymbol = "";
+      statBoostClassName += " negative";
+    }
+
+    return (
+      <p className={statBoostClassName}>{`${statBoostSymbol}${statBoostValue} ${statBoostText}`}</p>
+    )
+  }
+
   const renderPokemonAtSlot = (pokemonDecoratedBattleState: PokemonDecoratedBattleState, slot: string) => {
     return (
       <div className={`side-pokemon ${slot}`}>
         <p className="pokemon-ident">{displayPokemonIdent(pokemonDecoratedBattleState.pokemon_battle_state.pokemon_build.pokemon.ident)}</p>
         <div className="hp-bar-container">
           <div className="current-hp" style={{width: `${pokemonDecoratedBattleState.health_percentage}%`}}></div>
+        </div>
+        <div className="stat-boosts">
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.attack ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "attack") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.defense ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "defense") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.special_attack ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "special_attack") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.special_defense ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "special_defense") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.speed ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "speed") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.accuracy ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "accuracy") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.evasiveness ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "evasiveness") : (<></>)}
+          {pokemonDecoratedBattleState.pokemon_battle_state.stat_boosts.critical_hit ? renderStatBoostBadgeForStat(pokemonDecoratedBattleState.pokemon_battle_state, "critical_hit") : (<></>)}
         </div>
         <img src={pokemonDecoratedBattleState.pokemon_image} className="pokemon-image" alt="pokemon-image" />
       </div>

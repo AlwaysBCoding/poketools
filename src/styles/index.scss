@@ -1058,6 +1058,25 @@ $pokemon-base-stats-cell-width: 50%;
         }
       }
 
+      .stat-boosts {
+        margin-top: -2px;
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+
+        .stat-boost {
+          font-weight: bold;
+          &.negative {
+            background-color: $bad-type-interaction-background;
+            color: $bad-type-interaction-font;
+          }
+          &.positive {
+            background-color: $good-type-interaction-background;
+            color: $good-type-interaction-font;
+          }
+        }
+      }
+
     }
 
     .side-field-state {
@@ -1066,6 +1085,7 @@ $pokemon-base-stats-cell-width: 50%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      font-size: 14px;
       &.player-field-state {
         align-items: flex-end;
       }
@@ -1081,6 +1101,7 @@ $pokemon-base-stats-cell-width: 50%;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      font-size: 14px;
     }
   }
 

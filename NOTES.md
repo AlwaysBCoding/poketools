@@ -1,10 +1,8 @@
 ## TODO
 
-  - better battle rendering
-    - stat boosts
-
   - add target to all moves data.json files & recompile
 
+  - can't simultaneously switch two slots to the same pokemon
   - re-target to the other opponent slot, if pokemon at slot has fainted (don't switch in pokemon until end of turn)
   - also ending the battle and not returning errors when slots are empty
 

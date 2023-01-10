@@ -292,10 +292,55 @@ class Battle():
   def order_battle_actions(self, battle_actions):
     return sorted(battle_actions, key=cmp_to_key(self.compare_battle_actions))
 
+  def roll_stat_boosts_for_target(self, target_stat_change, target_boost_pokemon, action_events, hardcoded_stat_change_frequency_roll=None):
+    STAT_CHANGE_FREQUENCY_ROLL = (1 - hardcoded_stat_change_frequency_roll) if hardcoded_stat_change_frequency_roll else np.random.random()
+    if((target_stat_change.get('frequency') >= STAT_CHANGE_FREQUENCY_ROLL)):
+      if(target_stat_change.get('attack')):
+        next_stat_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('attack'), 6), -6)
+        target_boost_pokemon.stat_boosts.attack = next_stat_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} attack now {next_stat_value}")
+      if(target_stat_change.get('defense')):
+        next_stat_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('defense'), 6), -6)
+        target_boost_pokemon.stat_boosts.defense = next_stat_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} defense now {next_stat_value}")
+      if(target_stat_change.get('special_attack')):
+        next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('special_attack'), 6), -6)
+        target_boost_pokemon.stat_boosts.special_attack = next_stat_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special attack now {next_stat_value}")
+      if(target_stat_change.get('special_defense')):
+        next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('special_defense'), 6), -6)
+        target_boost_pokemon.stat_boosts.special_defense = next_stat_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special defense now {next_stat_value}")
+      if(target_stat_change.get('speed')):
+        next_stat_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('speed'), 6), -6)
+        target_boost_pokemon.stat_boosts.speed = next_stat_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} speed now {next_stat_value}")
+      if(target_stat_change.get('critical_hit')):
+        next_stat_value = max(min(target_boost_pokemon.stat_boosts.critical_hit + target_stat_change.get('critical_hit'), 3), 0)
+        target_boost_pokemon.stat_boosts.critical_hit = next_stat_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} critical hit stage now {next_stat_value}")
+      if(target_stat_change.get('all')):
+        next_attack_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('all'), 6), -6)
+        next_defense_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('all'), 6), -6)
+        next_special_attack_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('all'), 6), -6)
+        next_special_defense_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('all'), 6), -6)
+        next_speed_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('all'), 6), -6)
+        target_boost_pokemon.stat_boosts.attack = next_attack_value
+        target_boost_pokemon.stat_boosts.defense = next_defense_value
+        target_boost_pokemon.stat_boosts.special_attack = next_special_attack_value
+        target_boost_pokemon.stat_boosts.special_defense = next_special_defense_value
+        target_boost_pokemon.stat_boosts.speed = next_speed_value
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} attack now {next_attack_value}")
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} defense now {next_defense_value}")
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special attack now {next_special_attack_value}")
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special defense now {next_special_defense_value}")
+        action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} speed now {next_speed_value}")
+
+    return action_events
+
   def perform_battle_action(self, battle_action, hardcoded_stat_change_frequency_roll=None, hardcoded_random_roll=None, hardcoded_crit_roll=None):
     action_events = []
     should_end_battle = False
-    STAT_CHANGE_FREQUENCY_ROLL = (1 - hardcoded_stat_change_frequency_roll) if hardcoded_stat_change_frequency_roll else np.random.random()
 
     actor_pokemon_id = battle_action.actor.battle_id
     actor_pokemon = self.pokemon_battle_state_by_id(actor_pokemon_id)
@@ -432,52 +477,21 @@ class Battle():
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")
 
-        # STAT BOOSTS
+        # TARGET STAT BOOSTS
         # =====================
         if(battle_action.action_data['move'].get('stat_changes')):
           target_stat_change = battle_action.action_data['move']['stat_changes'][0]
-          target_boost_pokemon = actor_pokemon if target_stat_change.get('target') == 'self' else target_pokemon
-          if((not target_boost_pokemon.fainted()) and (not should_end_battle) and (target_stat_change['frequency'] >= STAT_CHANGE_FREQUENCY_ROLL)):
-            if(target_stat_change.get('attack')):
-              next_stat_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('attack'), 6), -6)
-              target_boost_pokemon.stat_boosts.attack = next_stat_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} attack now {next_stat_value}")
-            if(target_stat_change.get('defense')):
-              next_stat_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('defense'), 6), -6)
-              target_boost_pokemon.stat_boosts.defense = next_stat_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} defense now {next_stat_value}")
-            if(target_stat_change.get('special_attack')):
-              next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('special_attack'), 6), -6)
-              target_boost_pokemon.stat_boosts.special_attack = next_stat_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special attack now {next_stat_value}")
-            if(target_stat_change.get('special_defense')):
-              next_stat_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('special_defense'), 6), -6)
-              target_boost_pokemon.stat_boosts.special_defense = next_stat_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special defense now {next_stat_value}")
-            if(target_stat_change.get('speed')):
-              next_stat_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('speed'), 6), -6)
-              target_boost_pokemon.stat_boosts.speed = next_stat_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} speed now {next_stat_value}")
-            if(target_stat_change.get('critical_hit')):
-              next_stat_value = max(min(target_boost_pokemon.stat_boosts.critical_hit + target_stat_change.get('critical_hit'), 3), 0)
-              target_boost_pokemon.stat_boosts.critical_hit = next_stat_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} critical hit stage now {next_stat_value}")
-            if(target_stat_change.get('all')):
-              next_attack_value = max(min(target_boost_pokemon.stat_boosts.attack + target_stat_change.get('all'), 6), -6)
-              next_defense_value = max(min(target_boost_pokemon.stat_boosts.defense + target_stat_change.get('all'), 6), -6)
-              next_special_attack_value = max(min(target_boost_pokemon.stat_boosts.special_attack + target_stat_change.get('all'), 6), -6)
-              next_special_defense_value = max(min(target_boost_pokemon.stat_boosts.special_defense + target_stat_change.get('all'), 6), -6)
-              next_speed_value = max(min(target_boost_pokemon.stat_boosts.speed + target_stat_change.get('all'), 6), -6)
-              target_boost_pokemon.stat_boosts.attack = next_attack_value
-              target_boost_pokemon.stat_boosts.defense = next_defense_value
-              target_boost_pokemon.stat_boosts.special_attack = next_special_attack_value
-              target_boost_pokemon.stat_boosts.special_defense = next_special_defense_value
-              target_boost_pokemon.stat_boosts.speed = next_speed_value
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} attack now {next_attack_value}")
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} defense now {next_defense_value}")
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special attack now {next_special_attack_value}")
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} special defense now {next_special_defense_value}")
-              action_events.append(f"{target_boost_pokemon.pokemon_build.pokemon.ident} speed now {next_speed_value}")
+          target_boost_pokemon = target_pokemon
+          if((not target_stat_change.get('target') == 'self') and (not target_boost_pokemon.fainted()) and (not should_end_battle)):
+            action_events = self.roll_stat_boosts_for_target(target_stat_change, target_boost_pokemon, action_events, hardcoded_stat_change_frequency_roll)
+
+      # SELF STAT BOOSTS
+      # =====================
+      if(battle_action.action_data['move'].get('stat_changes')):
+        target_stat_change = battle_action.action_data['move']['stat_changes'][0]
+        target_boost_pokemon = actor_pokemon
+        if(target_stat_change.get('target') == 'self' and (not target_boost_pokemon.fainted()) and (not should_end_battle)):
+          action_events = self.roll_stat_boosts_for_target(target_stat_change, target_boost_pokemon, action_events, hardcoded_stat_change_frequency_roll)
 
     return [action_events, should_end_battle]
 

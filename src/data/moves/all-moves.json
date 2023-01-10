@@ -1000,7 +1000,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 15,
-    "description": "Resets all of the target's stat stages to 0."
+    "description": "Resets all of the target's stat stages to 0.",
+    "target": "any-adjacent"
   },
   {
     "ident": "close-combat",
@@ -3208,7 +3209,8 @@
     "accuracy": 0.8,
     "priority": 0,
     "pp": 5,
-    "description": "No additional effect."
+    "description": "No additional effect.",
+    "target": "any-adjacent"
   },
   {
     "ident": "hyper-beam",
@@ -3798,6 +3800,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "speed": -1,
@@ -4604,6 +4607,7 @@
     "priority": 0,
     "pp": 10,
     "description": "Has a 10% chance to lower the target's Attack by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "attack": -1,
@@ -4856,7 +4860,8 @@
     "accuracy": 0.85,
     "priority": 0,
     "pp": 10,
-    "description": "No additional effect."
+    "description": "No additional effect.",
+    "target": "any-adjacent"
   },
   {
     "ident": "present",
@@ -5257,7 +5262,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 32,
-    "description": "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities."
+    "description": "If this move is successful and the user has not fainted, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members, or if the target switched out using an Eject Button or through the effect of the Emergency Exit or Wimp Out Abilities.",
+    "target": "any-adjacent"
   },
   {
     "ident": "water-pledge",
