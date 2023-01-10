@@ -9,7 +9,8 @@ import {
   MEOWSCARADA_MAX_STATS,
   QUAQUAVAL_MAX_STATS,
   GARCHOMP_ATEAM_BUILD,
-  GHOLDENGO_ATEAM_BUILD
+  GHOLDENGO_ATEAM_BUILD,
+  BAXCALIBUR_DEFAULT_BUILD
 } from "./__factories__/pokemon.factory";
 import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/pokemon/PokemonBuild";
 
@@ -470,6 +471,36 @@ describe("MOVES", () => {
       expect(flareBlitzActionResult.battle.battle_state.blue_side_pokemon[0].location).toEqual('graveyard');
     });
 
+  });
+
+  // CUSTOM TYPE DAMAGE
+  describe("FLYING PRESS", () => {
+    // TODO: IMPLEMENT
+  });
+
+  // CUSTOM TYPE DAMAGE
+  describe("FREEZE DRY", () => {
+    let baxcaliburBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(BAXCALIBUR_DEFAULT_BUILD);
+    let gastrodonBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GASTRODON_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [baxcaliburBuild],
+      redSidePokemonBuilds: [gastrodonBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const freezeDryAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "freeze-dry",
+      ["red-field-1"]
+    );
+
+    test("it deals super effective type damage to water pokemon", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const freezeDryActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, freezeDryAction);
+      expect(freezeDryActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(110);
+    });
   });
 
   // CRIT STAGE CHANGE

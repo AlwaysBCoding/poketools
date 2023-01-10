@@ -233,14 +233,22 @@ export const calculateDamage = ({
   // =====================
   if(targetPokemon.terastallized) {
     let typeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.tera_type_ident });
-    if(targetPokemon.item_ident === "iron-ball" && targetPokemon.pokemon_build.tera_type_ident === "flying" && pokemonMove.type_ident === "ground" ) {
+    if(pokemonMove.ident === "freeze-dry" && targetPokemon.pokemon_build.tera_type_ident === "water") {
+      type = 2;
+    } else if(targetPokemon.item_ident === "iron-ball" && targetPokemon.pokemon_build.tera_type_ident === "flying" && pokemonMove.type_ident === "ground" ) {
       type = 1;
     } else if(typeEffectiveness) { type = typeEffectiveness.effectiveness; }
   } else {
     let primaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.primary_type_ident });
     let secondaryTypeEffectiveness = typeChart.find((interaction) => { return interaction.offensive_type_ident === pokemonMove.type_ident && interaction.defensive_type_ident === targetPokemon.pokemon_build.pokemon.secondary_type_ident });
 
-    if(targetPokemon.item_ident === "iron-ball" && [targetPokemon.pokemon_build.pokemon.primary_type_ident, targetPokemon.pokemon_build.pokemon.secondary_type_ident].includes("flying") && pokemonMove.type_ident === "ground") {
+    if(pokemonMove.ident === "freeze-dry" && [targetPokemon.pokemon_build.pokemon.primary_type_ident, targetPokemon.pokemon_build.pokemon.secondary_type_ident].includes("water")) {
+      if(targetPokemon.primary_type_ident === "water") {
+        type = 2 * (secondaryTypeEffectiveness ? secondaryTypeEffectiveness.effectiveness : 1);
+      } else if(targetPokemon.secondary_type_ident === "water") {
+        type = 2 * (primaryTypeEffectiveness ? primaryTypeEffectiveness.effectiveness : 1);
+      }
+    } else if(targetPokemon.item_ident === "iron-ball" && [targetPokemon.pokemon_build.pokemon.primary_type_ident, targetPokemon.pokemon_build.pokemon.secondary_type_ident].includes("flying") && pokemonMove.type_ident === "ground") {
       type = 1;
     } else if(primaryTypeEffectiveness && secondaryTypeEffectiveness) {
       type = primaryTypeEffectiveness.effectiveness * secondaryTypeEffectiveness.effectiveness;

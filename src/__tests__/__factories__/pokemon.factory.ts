@@ -1,5 +1,34 @@
 import { PokemonBuildTemplate } from "../../models/pokemon/PokemonBuildTemplate";
 
+export const BAXCALIBUR_DEFAULT_BUILD: PokemonBuildTemplate = {
+  pokemon_ident: "baxcalibur",
+  nickname: null,
+  ability_ident: "thermal-exchange",
+  item_ident: "clear-amulet",
+  level: 50,
+  shiny: false,
+  gender: "male",
+  tera_type_ident: "dragon",
+  nature_ident: "adamant",
+  move_idents: ["protect", "glaive-rush", "ice-shard", "icicle-spear"],
+  iv_spread: {
+    hp: 31,
+    attack: 31,
+    defense: 31,
+    special_attack: 31,
+    special_defense: 31,
+    speed: 31
+  },
+  ev_spread: {
+    hp: 228,
+    attack: 196,
+    defense: 4,
+    special_attack: 0,
+    special_defense: 60,
+    speed: 20
+  }
+}
+
 export const DRAGONITE_SIMPLE_BUILD: PokemonBuildTemplate = {
   pokemon_ident: "dragonite",
   nickname: null,

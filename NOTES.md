@@ -222,8 +222,7 @@
     - Follow Me
     - Rage Powder
   - Custom type effectiveness logic
-    - Flying Press (combines flying in it's type effectiveness calc, weird minimize logic)
-    - Freeze Dry (type effectiveness against water is changed to super effective)
+    - Flying Press
   - User must recharge next turn
     - Blast Burn
     - Frenzy Plant

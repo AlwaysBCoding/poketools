@@ -200,7 +200,12 @@ def calculate_damage(
   # =====================
   primary_type_effectiveness = find(type_chart_data, lambda x: x['offensive_type_ident'] == pokemon_move.get('type_ident') and x['defensive_type_ident'] == target_pokemon.primary_type_ident)
   secondary_type_effectiveness = find(type_chart_data, lambda x: x['offensive_type_ident'] == pokemon_move.get('type_ident') and x['defensive_type_ident'] == target_pokemon.secondary_type_ident)
-  if(target_pokemon.item_ident == 'iron-ball' and 'flying' in [target_pokemon.primary_type_ident, target_pokemon.secondary_type_ident] and pokemon_move.get('type_ident') == 'ground'):
+  if(pokemon_move.get('ident') == 'freeze-dry' and 'water' in [target_pokemon.primary_type_ident, target_pokemon.secondary_type_ident]):
+    if target_pokemon.primary_type_ident == 'water':
+      type_value = 2 * (secondary_type_effectiveness.get('effectiveness') if secondary_type_effectiveness else 1)
+    elif target_pokemon.secondary_type_ident == 'water':
+      type_value = 2 * (primary_type_effectiveness.get('effectiveness') if primary_type_effectiveness else 1)
+  elif(target_pokemon.item_ident == 'iron-ball' and 'flying' in [target_pokemon.primary_type_ident, target_pokemon.secondary_type_ident] and pokemon_move.get('type_ident') == 'ground'):
     type_value = 1
   elif(primary_type_effectiveness and secondary_type_effectiveness):
     type_value = primary_type_effectiveness['effectiveness'] * secondary_type_effectiveness['effectiveness']
