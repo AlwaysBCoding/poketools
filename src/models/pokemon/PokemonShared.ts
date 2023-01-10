@@ -265,6 +265,7 @@ export type PokemonEvolutionLine =
   | "arrokuda"
   | "axew"
   | "azurill"
+  | "bagon"
   | "barboach"
   | "basculin"
   | "bonsly"
