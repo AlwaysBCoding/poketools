@@ -1,0 +1,17 @@
+{
+  "ident": "poison-sting",
+  "type_ident": "poison",
+  "category_ident": "physical",
+  "base_power": 15,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 35,
+  "description": "Has a 30% chance to poison the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "poisoned",
+      "frequency": 0.30
+    }
+  ]
+}

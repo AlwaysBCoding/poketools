@@ -1,0 +1,17 @@
+{
+  "ident": "pounce",
+  "type_ident": "bug",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "speed": -1,
+      "frequency": 1
+    }
+  ]
+}

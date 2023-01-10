@@ -3,8 +3,6 @@
   - implement UI for selecting a move target
   - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
 
-  - add moves P
-
   - save flow charts with teams
   - search teams for specific combinations/leads
     - practice against leads on various teams
@@ -81,7 +79,7 @@
   - add VGC config
 
   - DEX COMPLETION: (352/400) | 88.00%
-  - MOVE TEMPLATE COMPLETION: (15/26) | 57.70%
+  - MOVE TEMPLATE COMPLETION: (17/26) | 65.38%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/167) | 4.80%
 
@@ -92,7 +90,6 @@
 ## Damaging Moves with Custom functionality to add
   - Beat Up (haven't even added the data for this one at all (complex logic))
   - Body Slam (damage doubles and no accuracy check is performed if target used minimize)
-  - Brick Break (destroys screens)
   - Charge (next electric-type attack will have its power doubled)
   - Clear Smog (resets all targets stat changes)
   - Comeuppance (wtf is this attack)
@@ -126,7 +123,14 @@
   - Mortal Spin (removes hazards from user's side while dealing damage)
   - Night Shade (deals damage equal to the user's level)
   - Order Up (stat change is contingent on the tatsugiri form that Dondozo has in it's mouth)
-  - Outrage (everything about the move... random targeting, move lock-in, confusion at the end)
+  - Perish Song (everything about the move...)
+  - Power Split (user and target have attack and special attack stats set to be equal the average of user and target, stat stage changes are unaffected)
+  - Power Swap (swaps attack and special attack stat stage changes with the target)
+  - Power Trick (user swaps it's attack and defense stats, stat changes remain on respective stats)
+  - Power Trip (move is stronger based on user's total number of stat changes)
+  - Present (BP of move & effect of move are contingent on randomness)
+  - Psych Up (user copies all of target's stat changes)
+  - Quash (forces target to move last)
 
 ## Custom Move Behavior Grouping
   - User loses percentage of maximum HP in exchange for stat boosts
@@ -148,10 +152,14 @@
     - Dig
     - Dive
     - Fly
+    - Phantom Force
   - User is protected from damage with custom decay on repeated uses
     - Detect
     - Endure
     - Protect
+  - User is protected from damage with conditional logic on turn
+    - Quick Guard
+    - Wide Guard
   - Damage is conditional on stats of user, target, or ratio of the two
     - Electro Ball
     - Grass Knot
@@ -164,6 +172,7 @@
     - Endeavor
     - Eruption
     - Flail
+    - Pain Split
   - Move has custom logic depending on the current typing of the user
     - Curse
     - Double Shock
@@ -232,11 +241,12 @@
     - Fury Attack
     - Fury Swipes
     - Icicle Spear
+    - Population Bomb
   - Has a multiplier effect across successive usages
     - Echoed Voice
     - Fury Cutter
   - Damage is calculated using a different aValue/dValue than you would expect
-    [IMPLEMENTED]
+    - Psyshock
   - Move takes effect in future turns
     - Future Sight
     - Wish
@@ -259,6 +269,7 @@
     - Bug Bite
     - Covet
     - Incinerate
+    - Pluck
   - Move cannot be used until a condition has been met
     - Belch
     - Last Resort
@@ -281,6 +292,16 @@
     - Grassy Terrain
     - Misty Terrain
     - Psychic Terrain
+  - Damage is conditional on the order the user and target move in
+    - Payback
+  - Move lock-in, random targeting, confusion at the end
+    - Outrage
+    - Petal Dance
+  - Move behavior contingent on if target is an enemy or an ally
+    - Pollen Puff
+  - Destroys Screens if move is successful
+    - Brick Break
+    - Psychic Fangs
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

@@ -1,0 +1,17 @@
+{
+  "ident": "poison-powder",
+  "type_ident": "poison",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 0.75,
+  "priority": 0,
+  "pp": 35,
+  "description": "Poisons the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "poisoned",
+      "frequency": 1
+    }
+  ]
+}

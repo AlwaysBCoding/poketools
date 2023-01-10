@@ -1,0 +1,17 @@
+{
+  "ident": "poison-gas",
+  "type_ident": "poison",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 40,
+  "description": "Poisons the target.",
+  "target": "all-enemies",
+  "secondary_effects": [
+    {
+      "status_ident": "poisoned",
+      "frequency": 1
+    }
+  ]
+}

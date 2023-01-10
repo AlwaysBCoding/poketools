@@ -1,0 +1,18 @@
+{
+  "ident": "parting-shot",
+  "type_ident": "dark",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Lowers the target's Attack and Special Attack by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Attack and Special Attack stat stages were both unchanged, or if there are no unfainted party members.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "attack": -1,
+      "special_attack": -1,
+      "frequency": 1
+    }
+  ]
+}

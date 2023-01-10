@@ -1,0 +1,11 @@
+{
+  "ident": "psychic-fangs",
+  "type_ident": "psychic",
+  "category_ident": "physical",
+  "base_power": 85,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated.",
+  "target": "any-adjacent"
+}

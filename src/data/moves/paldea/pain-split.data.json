@@ -1,0 +1,11 @@
+{
+  "ident": "pain-split",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "The user and the target's HP become the average of their current HP, rounded down, but not more than the maximum HP of either one.",
+  "target": "any-adjacent"
+}

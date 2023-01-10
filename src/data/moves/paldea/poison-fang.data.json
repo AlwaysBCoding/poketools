@@ -1,0 +1,17 @@
+{
+  "ident": "poison-fang",
+  "type_ident": "poison",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 50% chance to badly poison the target.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "badly-poisoned",
+      "frequency": 0.50
+    }
+  ]
+}

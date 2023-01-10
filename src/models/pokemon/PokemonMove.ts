@@ -34,6 +34,7 @@ type PokemonMoveTarget =
   | "all-adjacent"
   | "all-enemies"
   | "all-allies"
+  | "all"
   | "field"
   | "self"
   | "self-or-ally"

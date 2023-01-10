@@ -1,0 +1,12 @@
+{
+  "ident": "psycho-cut",
+  "type_ident": "psychic",
+  "category_ident": "physical",
+  "base_power": 70,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 20,
+  "description": "Has a higher chance for a critical hit.",
+  "target": "any-adjacent",
+  "critical_hit_stage_index": 1
+}

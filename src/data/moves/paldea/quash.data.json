@@ -1,0 +1,11 @@
+{
+  "ident": "quash",
+  "type_ident": "dark",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "Causes the target to take its turn after all other Pokemon this turn, no matter the priority of its selected move. Fails if the target already moved this turn.",
+  "target": "any-adjacent"
+}

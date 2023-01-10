@@ -135,7 +135,7 @@
     "priority": 0,
     "pp": 30,
     "description": "Raises the user's Speed by 2 stages.",
-    "target": "",
+    "target": "self",
     "stat_changes": [
       {
         "speed": 2,
@@ -4427,6 +4427,170 @@
     ]
   },
   {
+    "ident": "pain-split",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "The user and the target's HP become the average of their current HP, rounded down, but not more than the maximum HP of either one.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "parabolic-charge",
+    "type_ident": "electric",
+    "category_ident": "special",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "The user recovers 1/2 the HP lost by the target, rounded half up. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down.",
+    "target": "any-adjacent",
+    "recovery": {
+      "percentage_of_damage": 0.5
+    }
+  },
+  {
+    "ident": "parting-shot",
+    "type_ident": "dark",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Lowers the target's Attack and Special Attack by 1 stage. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Attack and Special Attack stat stages were both unchanged, or if there are no unfainted party members.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": -1,
+        "special_attack": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "pay-day",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "payback",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 50,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Power doubles if the user moves after the target this turn, including actions taken through Instruct or the Dancer Ability. Switching in does not count as an action.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "peck",
+    "type_ident": "flying",
+    "category_ident": "physical",
+    "base_power": 35,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 35,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "perish-song",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 5,
+    "description": "Each active Pokemon receives a perish count of 4 if it doesn't already have a perish count. At the end of each turn including the turn used, the perish count of all active Pokemon lowers by 1 and Pokemon faint if the number reaches 0. The perish count is removed from Pokemon that switch out. If a Pokemon uses Baton Pass while it has a perish count, the replacement will gain the perish count and continue to count down.",
+    "target": "all"
+  },
+  {
+    "ident": "petal-blizzard",
+    "type_ident": "grass",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "No additional effect.",
+    "target": "all-adjacent"
+  },
+  {
+    "ident": "petal-dance",
+    "type_ident": "grass",
+    "category_ident": "special",
+    "base_power": 120,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user spends two or three turns locked into this move and becomes confused immediately after its move on the last turn of the effect if it is not already. This move targets an opposing Pokemon at random on each turn. If the user is prevented from moving, is asleep at the beginning of a turn, or the attack is not successful against the target on the first turn of the effect or the second turn of a three-turn effect, the effect ends without causing confusion. If this move is called by Sleep Talk and the user is asleep, the move is used for one turn and does not confuse the user."
+  },
+  {
+    "ident": "phantom-force",
+    "type_ident": "ghost",
+    "category_ident": "physical",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally. This attack charges on the first turn and executes on the second. On the first turn, the user avoids all attacks. If the user is holding a Power Herb, the move completes in one turn."
+  },
+  {
+    "ident": "pin-missile",
+    "type_ident": "bug",
+    "category_ident": "physical",
+    "base_power": 25,
+    "accuracy": 0.95,
+    "priority": 0,
+    "pp": 20,
+    "description": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+    "target": "any-adjacent",
+    "multihit": [
+      [
+        2,
+        0.35
+      ],
+      [
+        3,
+        0.35
+      ],
+      [
+        4,
+        0.15
+      ],
+      [
+        5,
+        0.15
+      ]
+    ]
+  },
+  {
+    "ident": "play-nice",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Lowers the target's Attack by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "attack": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
     "ident": "play-rough",
     "type_ident": "fairy",
     "category_ident": "physical",
@@ -4443,6 +4607,243 @@
     ]
   },
   {
+    "ident": "pluck",
+    "type_ident": "flying",
+    "category_ident": "physical",
+    "base_power": 60,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "If this move is successful and the user has not fainted, it steals the target's held Berry if it is holding one and eats it immediately, gaining its effects even if the user's item is being ignored. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "poison-fang",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 50,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Has a 50% chance to badly poison the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "badly-poisoned",
+        "frequency": 0.5
+      }
+    ]
+  },
+  {
+    "ident": "poison-gas",
+    "type_ident": "poison",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 40,
+    "description": "Poisons the target.",
+    "target": "all-enemies",
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "poison-jab",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 30% chance to poison the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "poison-powder",
+    "type_ident": "poison",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 0.75,
+    "priority": 0,
+    "pp": 35,
+    "description": "Poisons the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "poison-sting",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 15,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 35,
+    "description": "Has a 30% chance to poison the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 0.3
+      }
+    ]
+  },
+  {
+    "ident": "poison-tail",
+    "type_ident": "poison",
+    "category_ident": "physical",
+    "base_power": 50,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "Has a 10% chance to poison the target and a higher chance for a critical hit.",
+    "target": "any-adjacent",
+    "critical_hit_stage_index": 1,
+    "secondary_effects": [
+      {
+        "status_ident": "poisoned",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "pollen-puff",
+    "type_ident": "bug",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "population-bomb",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 20,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Hits ten times. This move checks accuracy for each hit, and the attack ends if the target avoids a hit. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit ten times. If the user is holding Loaded Dice, this move hits four to ten times at random without checking accuracy between hits.",
+    "target": "any-adjacent",
+    "multihit": 10
+  },
+  {
+    "ident": "pounce",
+    "type_ident": "bug",
+    "category_ident": "physical",
+    "base_power": 50,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "speed": -1,
+        "frequency": 1
+      }
+    ]
+  },
+  {
+    "ident": "pound",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 35,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "powder-snow",
+    "type_ident": "ice",
+    "category_ident": "special",
+    "base_power": 40,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 25,
+    "description": "Has a 10% chance to freeze the target.",
+    "target": "all-enemies",
+    "secondary_effects": [
+      {
+        "status_ident": "frozen",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "power-gem",
+    "type_ident": "rock",
+    "category_ident": "special",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "No additional effect.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "power-split",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user and the target have their Attack and Special Attack stats set to be equal to the average of the user and the target's Attack and Special Attack stats, respectively, rounded down. Stat stage changes are unaffected.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "power-swap",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user swaps its Attack and Special Attack stat stage changes with the target.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "power-trick",
+    "type_ident": "psychic",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user swaps its Attack and Defense stats, and stat stage changes remain on their respective stats. This move can be used again to swap the stats back. If the user uses Baton Pass, the replacement will have its Attack and Defense stats swapped if the effect is active. If the user has its stats recalculated by changing forme while its stats are swapped, this effect is ignored but is still active for the purposes of Baton Pass.",
+    "target": "self"
+  },
+  {
+    "ident": "power-trip",
+    "type_ident": "dark",
+    "category_ident": "physical",
+    "base_power": 20,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Power is equal to 20+(X*20), where X is the user's total stat stage changes that are greater than 0.",
+    "target": "any-adjacent"
+  },
+  {
     "ident": "power-whip",
     "type_ident": "grass",
     "category_ident": "physical",
@@ -4453,6 +4854,17 @@
     "description": "No additional effect."
   },
   {
+    "ident": "present",
+    "type_ident": "normal",
+    "category_ident": "physical",
+    "base_power": null,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 15,
+    "description": "If this move is successful, it deals damage or heals the target. 40% chance for 40 power, 30% chance for 80 power, 10% chance for 120 power, and 20% chance to heal the target by 1/4 of its maximum HP, rounded down.",
+    "target": "any-adjacent"
+  },
+  {
     "ident": "protect",
     "type_ident": "normal",
     "category_ident": "non-damaging",
@@ -4460,7 +4872,47 @@
     "accuracy": null,
     "priority": 4,
     "pp": 10,
-    "description": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn."
+    "description": "The user is protected from most attacks made by other Pokemon during this turn. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
+    "target": "self"
+  },
+  {
+    "ident": "psybeam",
+    "type_ident": "psychic",
+    "category_ident": "special",
+    "base_power": 65,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a 10% chance to confuse the target.",
+    "target": "any-adjacent",
+    "secondary_effects": [
+      {
+        "status_ident": "confused",
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "psych-up",
+    "type_ident": "normal",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 10,
+    "description": "The user copies all of the target's current stat stage changes.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "psychic-fangs",
+    "type_ident": "psychic",
+    "category_ident": "physical",
+    "base_power": 85,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated.",
+    "target": "any-adjacent"
   },
   {
     "ident": "psychic-terrain",
@@ -4470,7 +4922,77 @@
     "accuracy": null,
     "priority": 0,
     "pp": 10,
-    "description": "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain."
+    "description": "For 5 turns, the terrain becomes Psychic Terrain. During the effect, the power of Psychic-type attacks made by grounded Pokemon is multiplied by 1.3 and grounded Pokemon cannot be hit by moves with priority greater than 0, unless the target is an ally. Camouflage transforms the user into a Psychic type, Nature Power becomes Psychic, and Secret Power has a 30% chance to lower the target's Speed by 1 stage. Fails if the current terrain is Psychic Terrain.",
+    "target": "field"
+  },
+  {
+    "ident": "psychic",
+    "type_ident": "psychic",
+    "category_ident": "special",
+    "base_power": 90,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "special_defense": -1,
+        "frequency": 0.1
+      }
+    ]
+  },
+  {
+    "ident": "psycho-cut",
+    "type_ident": "psychic",
+    "category_ident": "physical",
+    "base_power": 70,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 20,
+    "description": "Has a higher chance for a critical hit.",
+    "target": "any-adjacent",
+    "critical_hit_stage_index": 1
+  },
+  {
+    "ident": "psyshield-bash",
+    "type_ident": "psychic",
+    "category_ident": "physical",
+    "base_power": 70,
+    "accuracy": 0.9,
+    "priority": 0,
+    "pp": 10,
+    "description": "Has a 100% chance to raise the user's Defense by 1 stage.",
+    "target": "any-adjacent",
+    "stat_changes": [
+      {
+        "defense": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
+  },
+  {
+    "ident": "psyshock",
+    "type_ident": "psychic",
+    "category_ident": "special",
+    "base_power": 80,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 10,
+    "description": "Deals damage to the target based on its Defense instead of Special Defense.",
+    "target": "any-adjacent"
+  },
+  {
+    "ident": "quash",
+    "type_ident": "dark",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": 1,
+    "priority": 0,
+    "pp": 15,
+    "description": "Causes the target to take its turn after all other Pokemon this turn, no matter the priority of its selected move. Fails if the target already moved this turn.",
+    "target": "any-adjacent"
   },
   {
     "ident": "quick-attack",
@@ -4482,6 +5004,37 @@
     "pp": 30,
     "description": "No additional effect.",
     "target": "any-adjacent"
+  },
+  {
+    "ident": "quick-guard",
+    "type_ident": "fighting",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 3,
+    "pp": 15,
+    "description": "The user and its party members are protected from attacks with original or altered priority greater than 0 made by other Pokemon, including allies, during this turn. This move modifies the same 1/X chance of being successful used by other protection moves, where X starts at 1 and triples each time this move is successfully used, but does not use the chance to check for failure. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn or if this move is already in effect for the user's side.",
+    "target": "self-and-allies"
+  },
+  {
+    "ident": "quiver-dance",
+    "type_ident": "bug",
+    "category_ident": "non-damaging",
+    "base_power": null,
+    "accuracy": null,
+    "priority": 0,
+    "pp": 20,
+    "description": "Raises the user's Special Attack, Special Defense, and Speed by 1 stage.",
+    "target": "self",
+    "stat_changes": [
+      {
+        "special_attack": 1,
+        "special_defense": 1,
+        "speed": 1,
+        "frequency": 1,
+        "target": "self"
+      }
+    ]
   },
   {
     "ident": "rage-fist",

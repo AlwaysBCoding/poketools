@@ -1,0 +1,11 @@
+{
+  "ident": "psych-up",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "The user copies all of the target's current stat stage changes.",
+  "target": "any-adjacent"
+}

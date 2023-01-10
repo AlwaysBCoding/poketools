@@ -1,0 +1,11 @@
+{
+  "ident": "power-swap",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 10,
+  "description": "The user swaps its Attack and Special Attack stat stage changes with the target.",
+  "target": "any-adjacent"
+}

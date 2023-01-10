@@ -1,0 +1,11 @@
+{
+  "ident": "pollen-puff",
+  "type_ident": "bug",
+  "category_ident": "special",
+  "base_power": 90,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "If the target is an ally, this move restores 1/2 of its maximum HP, rounded down, instead of dealing damage.",
+  "target": "any-adjacent"
+}
