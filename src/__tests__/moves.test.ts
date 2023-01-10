@@ -17,6 +17,8 @@ import { BattleAction, composeMoveAction } from "../models/battle/BattleAction";
 import { Battle, createBattle, initialStep } from "../models/battle/Battle";
 import { BattleConfig } from "../models/battle/BattleShared";
 
+import { calculateDamage } from "../models/battle/damage-calc";
+
 const SERVER_URI = "http://localhost:8000";
 const BATTLE_CONFIG: BattleConfig = {variant: "singles"};
 const BATTLE_CONFIG_VGC: BattleConfig = {variant: "doubles"};
@@ -60,6 +62,16 @@ const CALCULATE_DAMAGE = async (battle: Battle, battleAction: BattleAction, rand
   const response = await fetch(`${SERVER_URI}/test/calculate-damage`, fetchOptions);
   const result = await response.json();
   return result;
+
+  // let damage = calculateDamage({
+  //   battleState: battle.battle_state,
+  //   attackingPokemon: battleAction.actor.battle_side === "blue" ? battle.battle_state.blue_side_pokemon[0] : battle.battle_state.red_side_pokemon[0],
+  //   targetPokemon: battleAction.actor.battle_side === "blue" ? battle.battle_state.red_side_pokemon[0] : battle.battle_state.blue_side_pokemon[0],
+  //   moveIdent: battleAction.action_data.move.ident,
+  //   hardcodedRandomRoll: 0.85,
+  //   hardcodedCritRoll: crit_roll ? crit_roll : 0
+  // });
+  // return { damage }
 }
 
 const BATTLE_STEP = async(battle: Battle, blueBattleActions: BattleAction[], redBattleActions: BattleAction[]): Promise<Record<string, any>> => {

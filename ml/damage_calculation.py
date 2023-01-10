@@ -27,6 +27,8 @@ def calculate_damage(
   hardcoded_targeting_value=None
 ):
   pokemon_move = find(all_moves_data, lambda x: x['ident'] == move_ident)
+  if(not pokemon_move):
+    return 0
 
   LIFE_ORB_MODIFIER = (5324/4096)
   SPREAD_MODIFIER = (3072/4096)
@@ -90,17 +92,15 @@ def calculate_damage(
 
   # BASE POWER
   # =====================
-  power = 0
-  if(pokemon_move):
-    power = pokemon_move['base_power']
+  power = pokemon_move.get('base_power')
 
-    if(pokemon_move['ident'] == 'acrobatics' and attacking_pokemon.item_ident == None):
-      power *= 2
-    if(pokemon_move['ident'] == 'knock-off' and target_pokemon.item_ident != None):
-      power *= 1.5
+  if(pokemon_move.get('ident') == 'acrobatics' and attacking_pokemon.item_ident == None):
+    power *= 2
+  if(pokemon_move.get('ident') == 'knock-off' and target_pokemon.item_ident != None):
+    power *= 1.5
 
   for type_enhancement_item in TYPE_ENHANCEMENT_ITEMS:
-    if(attacking_pokemon.item_ident == type_enhancement_item[0] and pokemon_move['type_ident'] == type_enhancement_item[1]):
+    if(attacking_pokemon.item_ident == type_enhancement_item[0] and pokemon_move.get('type_ident') == type_enhancement_item[1]):
       power *= 1.2
 
   # CRITICAL
@@ -117,7 +117,7 @@ def calculate_damage(
 
   # SPREAD
   # =====================
-  if(pokemon_move and hardcoded_targeting_value == "spread"):
+  if(pokemon_move.get('target') in ['all-adjacent', 'all-enemies'] and hardcoded_targeting_value == 'spread'):
     spread = SPREAD_MODIFIER
 
   # WEATHER
@@ -141,35 +141,40 @@ def calculate_damage(
   # =====================
   attack_stat = attacking_pokemon.pokemon_build.stat_spread.attack
   attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.attack}"]
-  if(pokemon_move['ident'] == 'body-press'):
-    attack_stat = attacking_pokemon.pokemon_build.stat_spread.defense
-    attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.defense}"]
-  if(pokemon_move['ident'] == 'foul-play'):
-    attack_stat = target_pokemon.pokemon_build.stat_spread.attack
-    attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
-  if(attacking_pokemon.ability_ident == 'huge-power'):
-    attack_stat *= 2
-
+  defense_stat = target_pokemon.pokemon_build.stat_spread.defense
+  defense_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.defense}"]
+  special_attack_stat = attacking_pokemon.pokemon_build.stat_spread.special_attack
+  special_attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.special_attack}"]
   special_defense_stat = target_pokemon.pokemon_build.stat_spread.special_defense
   special_defense_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.special_defense}"]
-  if(pokemon_move['ident'] == 'psyshock'):
+
+  if(pokemon_move.get('ident') == 'body-press'):
+    attack_stat = attacking_pokemon.pokemon_build.stat_spread.defense
+    attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.defense}"]
+  if(pokemon_move.get('ident') == 'foul-play'):
+    attack_stat = target_pokemon.pokemon_build.stat_spread.attack
+    attack_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
+  if(pokemon_move.get('ident') == 'psyshock'):
     special_defense_stat = target_pokemon.pokemon_build.stat_spread.defense
     special_defense_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.defense}"]
 
-  if(pokemon_move['category_ident'] == 'physical'):
+  if(attacking_pokemon.ability_ident == 'huge-power'):
+    attack_stat *= 2
+
+  if(pokemon_move.get('category_ident') == 'physical'):
     a_value = attack_stat * attack_multipliers
-    d_value = target_pokemon.pokemon_build.stat_spread.defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
-  elif(pokemon_move['category_ident'] == 'special'):
-    a_value = attacking_pokemon.pokemon_build.stat_spread.special_attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.special_attack}"]
+    d_value = defense_stat * defense_multipliers
+  elif(pokemon_move.get('category_ident') == 'special'):
+    a_value = special_attack_stat * special_attack_multipliers
     d_value = special_defense_stat * special_defense_multipliers
     if(target_pokemon.item_ident == 'assault-vest' or (target_pokemon.item_ident == 'eviolite' and target_pokemon.pokemon_build.pokemon.can_evolve())):
       d_value *= 1.5
 
-  if(attacking_pokemon.ability_ident == 'blaze' and pokemon_move['type_ident'] == 'fire' and attacking_pokemon.hp_percentage() <= (1/3)):
+  if(attacking_pokemon.ability_ident == 'blaze' and pokemon_move.get('type_ident') == 'fire' and attacking_pokemon.hp_percentage() <= (1/3)):
     a_value *= 1.5
-  if(attacking_pokemon.ability_ident == 'overgrow' and pokemon_move['type_ident'] == 'grass' and attacking_pokemon.hp_percentage() <= (1/3)):
+  if(attacking_pokemon.ability_ident == 'overgrow' and pokemon_move.get('type_ident') == 'grass' and attacking_pokemon.hp_percentage() <= (1/3)):
     a_value *= 1.5
-  if(attacking_pokemon.ability_ident == 'torrent' and pokemon_move['type_ident'] == 'water' and attacking_pokemon.hp_percentage() <= (1/3)):
+  if(attacking_pokemon.ability_ident == 'torrent' and pokemon_move.get('type_ident') == 'water' and attacking_pokemon.hp_percentage() <= (1/3)):
     a_value *= 1.5
 
   # STAB
@@ -179,48 +184,48 @@ def calculate_damage(
     TERA_STAB_MODIFIER = 2.25
 
   if(attacking_pokemon.terastallized):
-    if(attacking_pokemon.pokemon_build.tera_type_ident == pokemon_move['type_ident']):
-      if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
+    if(attacking_pokemon.pokemon_build.tera_type_ident == pokemon_move.get('type_ident')):
+      if(pokemon_move.get('type_ident') in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
         stab = TERA_STAB_MODIFIER
       else:
         stab = STAB_MODIFIER
     else:
-      if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
+      if(pokemon_move.get('type_ident') in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
         stab = STAB_MODIFIER
   else:
-    if(pokemon_move['type_ident'] in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
+    if(pokemon_move.get('type_ident') in [attacking_pokemon.primary_type_ident, attacking_pokemon.secondary_type_ident]):
       stab = STAB_MODIFIER
 
   # TYPE
   # =====================
-  primary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.primary_type_ident)
-  secondary_type_effectiveness = find(type_chart_data, lambda x: x["offensive_type_ident"] == pokemon_move["type_ident"] and x["defensive_type_ident"] == target_pokemon.secondary_type_ident)
-  if(target_pokemon.item_ident == 'iron-ball' and 'flying' in [target_pokemon.primary_type_ident, target_pokemon.secondary_type_ident] and pokemon_move['type_ident'] == 'ground'):
+  primary_type_effectiveness = find(type_chart_data, lambda x: x['offensive_type_ident'] == pokemon_move.get('type_ident') and x['defensive_type_ident'] == target_pokemon.primary_type_ident)
+  secondary_type_effectiveness = find(type_chart_data, lambda x: x['offensive_type_ident'] == pokemon_move.get('type_ident') and x['defensive_type_ident'] == target_pokemon.secondary_type_ident)
+  if(target_pokemon.item_ident == 'iron-ball' and 'flying' in [target_pokemon.primary_type_ident, target_pokemon.secondary_type_ident] and pokemon_move.get('type_ident') == 'ground'):
     type_value = 1
   elif(primary_type_effectiveness and secondary_type_effectiveness):
-    type_value = primary_type_effectiveness["effectiveness"] * secondary_type_effectiveness["effectiveness"]
+    type_value = primary_type_effectiveness['effectiveness'] * secondary_type_effectiveness['effectiveness']
   elif(primary_type_effectiveness):
-    type_value = primary_type_effectiveness["effectiveness"]
+    type_value = primary_type_effectiveness['effectiveness']
 
   # BURN
   # =====================
-  if(attacking_pokemon.status == "burned" and pokemon_move["category_ident"] == "physical"):
+  if(attacking_pokemon.status == 'burned' and pokemon_move.get('category_ident') == 'physical'):
     burn = BURN_MODIFIER
 
   # OTHER
   # =====================
-  if(attacking_pokemon.item_ident == "life-orb"):
+  if(attacking_pokemon.item_ident == 'life-orb'):
     other *= LIFE_ORB_MODIFIER
 
-  if(target_pokemon.battle_side == "blue"):
-    if(battle_state.blue_side_state.reflect > 0 and pokemon_move['category_ident'] == 'physical' and not is_critical_hit):
+  if(target_pokemon.battle_side == 'blue'):
+    if(battle_state.blue_side_state.reflect > 0 and pokemon_move.get('category_ident') == 'physical' and not is_critical_hit):
       other *= 0.5
-    if(battle_state.blue_side_state.light_screen > 0 and pokemon_move['category_ident'] == 'special' and not is_critical_hit):
+    if(battle_state.blue_side_state.light_screen > 0 and pokemon_move.get('category_ident') == 'special' and not is_critical_hit):
       other *= 0.5
-  elif(target_pokemon.battle_side == "red"):
-    if(battle_state.red_side_state.reflect > 0 and pokemon_move['category_ident'] == 'physical' and not is_critical_hit):
+  elif(target_pokemon.battle_side == 'red'):
+    if(battle_state.red_side_state.reflect > 0 and pokemon_move.get('category_ident') == 'physical' and not is_critical_hit):
       other *= 0.5
-    if(battle_state.red_side_state.light_screen > 0 and pokemon_move['category_ident'] == 'special' and not is_critical_hit):
+    if(battle_state.red_side_state.light_screen > 0 and pokemon_move.get('category_ident') == 'special' and not is_critical_hit):
       other *= 0.5
 
   if(power):
