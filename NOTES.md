@@ -3,7 +3,6 @@
   - implement UI for selecting a move target
   - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
 
-  - add mons (261-271)
   - add moves P
 
   - save flow charts with teams
@@ -81,7 +80,7 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (343/400) | 85.75%
+  - DEX COMPLETION: (352/400) | 88.00%
   - MOVE TEMPLATE COMPLETION: (15/26) | 57.70%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/167) | 4.80%
