@@ -6,5 +6,6 @@
   "accuracy": 0.8,
   "priority": 0,
   "pp": 5,
-  "description": "No additional effect."
+  "description": "No additional effect.",
+  "target": "any-adjacent"
 }

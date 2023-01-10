@@ -152,7 +152,7 @@ export const BattleSimulatorScreen = () => {
         ) : (<></>)}
       </div>
       <div className="button" onClick={startBattle}>
-        <p>START BATTLE</p>
+        <p className="button-text">START BATTLE</p>
       </div>
       <div className="battle-container">
         {battle ? (

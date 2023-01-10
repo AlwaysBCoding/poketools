@@ -1018,7 +1018,7 @@ $pokemon-base-stats-cell-width: 50%;
       background-color: mistyrose;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-start;
       align-items: stretch;
     }
 
@@ -1059,6 +1059,29 @@ $pokemon-base-stats-cell-width: 50%;
       }
 
     }
+
+    .side-field-state {
+      width: 115px;
+      padding-top: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      &.player-field-state {
+        align-items: flex-end;
+      }
+      &.enemy-field-state {
+        align-items: flex-start
+      }
+    }
+
+    .global-field-state {
+      flex: 1;
+      padding-top: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
   }
 
   .pokemon-battle-actions {
@@ -1067,16 +1090,53 @@ $pokemon-base-stats-cell-width: 50%;
     justify-content: flex-start;
     align-items: stretch;
     height: 200px;
-    background-color: $showdown-light-blue;
+    background-color: rgba(50, 43, 64);
 
     .battle-action-section {
       width: 25%;
+      &:not(:first-child) {
+        border-left: 1px solid $charcoal-ultra-light;
+      }
 
       .battle-actions {
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+
+        .moves {
+          cursor: pointer;
+          height: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+
+        .switches {
+          cursor: pointer;
+        }
+
+        .action {
+          color: white;
+          &:hover {
+            background-color: rgba(219, 192, 67);
+            color: black;
+          }
+          padding-top: 5px;
+          padding-bottom: 5px;
+          padding-left: 10px;
+        }
+      }
+
+      .selected-battle-action {
+        color: black;
+        font-weight: 600;
+        background-color: lighten(firebrick, 5%);
+        text-align: center;
+
+        &.selecting-target {
+          background-color: lighten(coral, 5%);
+        }
       }
 
     }
@@ -1087,7 +1147,7 @@ $pokemon-base-stats-cell-width: 50%;
     max-height: 800px;
     padding-bottom: 50px;
     overflow-y: scroll;
-    background-color: fade-out(coral, 0.40);
+    background-color: $showdown-light-blue;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

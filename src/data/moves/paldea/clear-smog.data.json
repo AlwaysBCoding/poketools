@@ -6,5 +6,6 @@
   "accuracy": null,
   "priority": 0,
   "pp": 15,
-  "description": "Resets all of the target's stat stages to 0."
+  "description": "Resets all of the target's stat stages to 0.",
+  "target": "any-adjacent"
 }

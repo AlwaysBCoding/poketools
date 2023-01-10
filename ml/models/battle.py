@@ -56,7 +56,8 @@ class BattleAction():
     if(self.action_type == 'move'):
       action_data = {
         'move': self.action_data['move'],
-        'move_targets': self.action_data['move_targets']
+        'move_targets': self.action_data['move_targets'],
+        'selected_targets': []
       }
     elif(self.action_type == 'switch'):
       action_data = {
@@ -315,7 +316,7 @@ class Battle():
     elif(battle_action.action_type == 'move'):
       move_ident = battle_action.action_data['move']['ident']
       action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} used {move_ident}")
-      target_slots = battle_action.action_data['selected_targets']
+      target_slots = battle_action.action_data.get('selected_targets') if battle_action.action_data['move'].get('target') == 'any-adjacent' else self.possible_targets_for_move(actor_pokemon_id, move_ident)
       targeting_value = "spread" if len(target_slots) > 1 else "single"
 
       for target_slot in target_slots:

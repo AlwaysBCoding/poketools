@@ -7,6 +7,7 @@
   "priority": 0,
   "pp": 10,
   "description": "Has a 100% chance to raise the user's Speed by 1 stage.",
+  "target": "any-adjacent",
   "stat_changes": [
     {
       "speed": 1,

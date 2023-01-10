@@ -7,6 +7,7 @@ import { PokemonBattleState } from "../models/battle/PokemonBattleState";
 import { BattleSide } from "../models/battle/BattleShared";
 
 import { displayBattleAction } from "../decorators/BattleAction";
+import { displayPokemonIdent } from "../decorators/Pokemon";
 
 import { PokemonBattleTeamDisplayIndex } from "../components/PokemonBattleTeamDisplay";
 
@@ -48,16 +49,54 @@ export const BattleActionsRenderer: React.FC<{
   battleActions,
   selectBattleActions = () => undefined
 }) => {
-  const [blueField1BattleAction, setBlueField1BattleAction] = useState<BattleAction | null>(null)
-  const [blueField2BattleAction, setBlueField2BattleAction] = useState<BattleAction | null>(null)
-  const [redField1BattleAction, setRedField1BattleAction] = useState<BattleAction | null>(null)
-  const [redField2BattleAction, setRedField2BattleAction] = useState<BattleAction | null>(null)
+  const [blueField1BattleAction, setBlueField1BattleAction] = useState<BattleAction | null>(null);
+  const [blueField2BattleAction, setBlueField2BattleAction] = useState<BattleAction | null>(null);
+  const [redField1BattleAction, setRedField1BattleAction] = useState<BattleAction | null>(null);
+  const [redField2BattleAction, setRedField2BattleAction] = useState<BattleAction | null>(null);
+  const [blueField1BattleActionTarget, setBlueField1BattleActionTarget] = useState<string | null>(null);
+  const [blueField2BattleActionTarget, setBlueField2BattleActionTarget] = useState<string | null>(null);
+  const [redField1BattleActionTarget, setRedField1BattleActionTarget] = useState<string | null>(null);
+  const [redField2BattleActionTarget, setRedField2BattleActionTarget] = useState<string | null>(null);
+  const [actionTargetSlotCursor, setActionTargetSlotCursor] = useState<string | null>(null);
 
   const selectBattleAction = (battleAction: BattleAction, slot: string) => {
-    if(slot === "blue-field-1") { setBlueField1BattleAction(battleAction); }
-    if(slot === "blue-field-2") { setBlueField2BattleAction(battleAction); }
-    if(slot === "red-field-1") { setRedField1BattleAction(battleAction); }
-    if(slot === "red-field-2") { setRedField2BattleAction(battleAction); }
+    if(actionTargetSlotCursor) {
+      if(actionTargetSlotCursor === "blue-field-1") {
+        setBlueField1BattleActionTarget(slot);
+        const nextBattleAction = blueField1BattleAction;
+        nextBattleAction!.action_data['selected_targets'] = [slot];
+        setBlueField1BattleAction(nextBattleAction);
+      }
+      if(actionTargetSlotCursor === "blue-field-2") {
+        setBlueField2BattleActionTarget(slot);
+        const nextBattleAction = blueField2BattleAction;
+        nextBattleAction!.action_data['selected_targets'] = [slot];
+        setBlueField2BattleAction(nextBattleAction);
+      }
+      if(actionTargetSlotCursor === "red-field-1") {
+        setRedField1BattleActionTarget(slot);
+        const nextBattleAction = redField1BattleAction;
+        nextBattleAction!.action_data['selected_targets'] = [slot];
+        setRedField1BattleAction(nextBattleAction);
+      }
+      if(actionTargetSlotCursor === "red-field-2") {
+        setRedField2BattleActionTarget(slot);
+        const nextBattleAction = redField2BattleAction;
+        nextBattleAction!.action_data['selected_targets'] = [slot];
+        setRedField2BattleAction(nextBattleAction);
+      }
+      setActionTargetSlotCursor(null);
+    } else {
+      if(battleAction.action_data.move) {
+        if(battleAction.action_data.move.target === "any-adjacent") {
+          setActionTargetSlotCursor(slot);
+        }
+      }
+      if(slot === "blue-field-1") { setBlueField1BattleAction(battleAction); }
+      if(slot === "blue-field-2") { setBlueField2BattleAction(battleAction); }
+      if(slot === "red-field-1") { setRedField1BattleAction(battleAction); }
+      if(slot === "red-field-2") { setRedField2BattleAction(battleAction); }
+    }
   }
 
   const submitActions = () => {
@@ -67,10 +106,16 @@ export const BattleActionsRenderer: React.FC<{
       setBlueField2BattleAction(null);
       setRedField1BattleAction(null);
       setRedField2BattleAction(null);
+      setBlueField1BattleActionTarget(null);
+      setBlueField2BattleActionTarget(null);
+      setRedField1BattleActionTarget(null);
+      setRedField2BattleActionTarget(null);
+      setActionTargetSlotCursor(null);
     }
   }
 
   const renderBattleActionsForSlot = (slot: string) => {
+    const selectedBattleActionClassName = actionTargetSlotCursor === slot ? "selected-battle-action selecting-target" : "selected-battle-action";
     return (
       <div className="battle-actions">
         <div className="moves">
@@ -102,18 +147,26 @@ export const BattleActionsRenderer: React.FC<{
           }) : (<></>)}
         </div>
         <div className="flex-spacer" />
-        <div className="selected-battle-action">
+        <div className={selectedBattleActionClassName}>
           {slot === "blue-field-1" && blueField1BattleAction ? (
-            <p>{displayBattleAction(blueField1BattleAction)}</p>
+            <>
+              {blueField1BattleActionTarget ? (<p>{`${displayBattleAction(blueField1BattleAction)} (${blueField1BattleActionTarget})`}</p>) : (<p>{displayBattleAction(blueField1BattleAction)}</p>)}
+            </>
           ) : (<></>)}
           {slot === "blue-field-2" && blueField2BattleAction ? (
-            <p>{displayBattleAction(blueField2BattleAction)}</p>
+            <>
+              {blueField2BattleActionTarget ? (<p>{`${displayBattleAction(blueField2BattleAction)} (${blueField2BattleActionTarget})`}</p>) : (<p>{displayBattleAction(blueField2BattleAction)}</p>)}
+            </>
           ) : (<></>)}
           {slot === "red-field-1" && redField1BattleAction ? (
-            <p>{displayBattleAction(redField1BattleAction)}</p>
+            <>
+              {redField1BattleActionTarget ? (<p>{`${displayBattleAction(redField1BattleAction)} (${redField1BattleActionTarget})`}</p>) : (<p>{displayBattleAction(redField1BattleAction)}</p>)}
+            </>
           ) : (<></>)}
           {slot === "red-field-2" && redField2BattleAction ? (
-            <p>{displayBattleAction(redField2BattleAction)}</p>
+            <>
+              {redField2BattleActionTarget ? (<p>{`${displayBattleAction(redField2BattleAction)} (${redField2BattleActionTarget})`}</p>) : (<p>{displayBattleAction(redField2BattleAction)}</p>)}
+            </>
           ) : (<></>)}
         </div>
       </div>
@@ -137,7 +190,7 @@ export const BattleActionsRenderer: React.FC<{
         </div>
       </div>
       <div className="button" onClick={submitActions}>
-        <p>SUBMIT ACTIONS</p>
+        <p className="button-text">SUBMIT ACTIONS</p>
       </div>
     </>
   )
@@ -192,7 +245,7 @@ export const BattleRenderer: React.FC<{
   const renderPokemonAtSlot = (pokemonDecoratedBattleState: PokemonDecoratedBattleState, slot: string) => {
     return (
       <div className={`side-pokemon ${slot}`}>
-        <p className="pokemon-ident">{pokemonDecoratedBattleState.pokemon_battle_state.pokemon_build.pokemon.ident}</p>
+        <p className="pokemon-ident">{displayPokemonIdent(pokemonDecoratedBattleState.pokemon_battle_state.pokemon_build.pokemon.ident)}</p>
         <div className="hp-bar-container">
           <div className="current-hp" style={{width: `${pokemonDecoratedBattleState.health_percentage}%`}}></div>
         </div>
@@ -214,6 +267,18 @@ export const BattleRenderer: React.FC<{
           <div className="player-pokemons">
             {blueField1 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField1), "blue-field-1") : (<></>)}
             {blueField2 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField2), "blue-field-2") : (<></>)}
+          </div>
+          <div className="side-field-state player-field-state">
+            {battle.battle_state.blue_side_state.tailwind > 0 ? (<p>{`Tailwind: ${battle.battle_state.blue_side_state.tailwind}`}</p>) : (<></>)}
+            {battle.battle_state.blue_side_state.reflect > 0 ? (<p>{`Reflect: ${battle.battle_state.blue_side_state.reflect}`}</p>) : (<></>)}
+            {battle.battle_state.blue_side_state.light_screen > 0 ? (<p>{`Light Screen: ${battle.battle_state.blue_side_state.light_screen}`}</p>) : (<></>)}
+          </div>
+          <div className="global-field-state">
+          </div>
+          <div className="side-field-state enemy-field-state">
+            {battle.battle_state.red_side_state.tailwind > 0 ? (<p>{`Tailwind: ${battle.battle_state.red_side_state.tailwind}`}</p>) : (<></>)}
+            {battle.battle_state.red_side_state.reflect > 0 ? (<p>{`Reflect: ${battle.battle_state.red_side_state.reflect}`}</p>) : (<></>)}
+            {battle.battle_state.red_side_state.light_screen > 0 ? (<p>{`Light Screen: ${battle.battle_state.red_side_state.light_screen}`}</p>) : (<></>)}
           </div>
           <div className="enemy-pokemons">
             {redField1 ? renderPokemonAtSlot(decoratePokemonBattleState(redField1), "red-field-1") : (<></>)}

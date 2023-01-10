@@ -1,6 +1,13 @@
 ## TODO
 
-  - implement UI for selecting a move target
+  - better battle rendering
+    - stat boosts
+
+  - add target to all moves data.json files & recompile
+
+  - re-target to the other opponent slot, if pokemon at slot has fainted (don't switch in pokemon until end of turn)
+  - also ending the battle and not returning errors when slots are empty
+
   - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
 
   - save flow charts with teams
@@ -48,11 +55,6 @@
 
   - add switch-in hook logic
     - drizzle, drought, sandstorm, snow-warning ability implementation
-
-  - better battle rendering
-    - party pokemon + HP
-    - stat boosts
-    - tailwind/reflect turns
 
   - close combat stil lowers stats even if it hits gholdengo for 0 damage
     - need a concept of whether or not a move is successful?

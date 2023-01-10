@@ -7,5 +7,5 @@
   "priority": 0,
   "pp": 15,
   "description": "Power doubles if the user has no held item.",
-  "target": ""
+  "target": "any-adjacent"
 }

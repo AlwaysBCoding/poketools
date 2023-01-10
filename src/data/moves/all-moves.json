@@ -85,7 +85,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Power doubles if the user has no held item.",
-    "target": ""
+    "target": "any-adjacent"
   },
   {
     "ident": "acupressure",
@@ -208,6 +208,7 @@
     "priority": 0,
     "pp": 5,
     "description": "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "all": 1,
@@ -272,6 +273,7 @@
     "priority": 0,
     "pp": 10,
     "description": "Has a 100% chance to raise the user's Speed by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "speed": 1,
@@ -2074,7 +2076,8 @@
     "accuracy": 1,
     "priority": 2,
     "pp": 10,
-    "description": "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally."
+    "description": "If this move is successful, it breaks through the target's Baneful Bunker, Detect, King's Shield, Protect, or Spiky Shield for this turn, allowing other Pokemon to attack the target normally. If the target's side is protected by Crafty Shield, Mat Block, Quick Guard, or Wide Guard, that protection is also broken for this turn and other Pokemon may attack the target's side normally.",
+    "target": "any-adjacent"
   },
   {
     "ident": "fell-stinger",
@@ -2326,6 +2329,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Has a 10% chance to burn the target. If the target lost HP, the user takes recoil damage equal to 33% the HP lost by the target, rounded half up, but not less than 1 HP.",
+    "target": "any-adjacent",
     "recoil": {
       "percentage_of_damage": 0.33
     },
@@ -3569,7 +3573,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 20,
-    "description": "If the target is holding an item that can be removed from it, ignoring the Sticky Hold Ability, this move's power is multiplied by 1.5. If the user has not fainted, the target loses its held item. This move cannot cause Pokemon with the Sticky Hold Ability to lose their held item or cause a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, a Silvally, a Zacian, or a Zamazenta to lose their Blue Orb, Red Orb, Griseous Orb, Plate, Drive, Memory, Rusted Sword, or Rusted Shield respectively. Items lost to this move cannot be regained with Recycle or the Harvest Ability."
+    "description": "If the target is holding an item that can be removed from it, ignoring the Sticky Hold Ability, this move's power is multiplied by 1.5. If the user has not fainted, the target loses its held item. This move cannot cause Pokemon with the Sticky Hold Ability to lose their held item or cause a Kyogre, a Groudon, a Giratina, an Arceus, a Genesect, a Silvally, a Zacian, or a Zamazenta to lose their Blue Orb, Red Orb, Griseous Orb, Plate, Drive, Memory, Rusted Sword, or Rusted Shield respectively. Items lost to this move cannot be regained with Recycle or the Harvest Ability.",
+    "target": "any-adjacent"
   },
   {
     "ident": "kowtow-cleave",
@@ -5077,7 +5082,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 20,
-    "description": "For 5 turns, the user and its party members take 0.5x damage from physical attacks, or 0.66x damage if in a Double Battle. Damage is not reduced further with Aurora Veil. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side."
+    "description": "For 5 turns, the user and its party members take 0.5x damage from physical attacks, or 0.66x damage if in a Double Battle. Damage is not reduced further with Aurora Veil. Critical hits ignore this effect. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Lasts for 8 turns if the user is holding Light Clay. Fails if the effect is already active on the user's side.",
+    "target": "team"
   },
   {
     "ident": "sandstorm",
@@ -5126,6 +5132,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Has a 100% chance to lower the target's Special Attack by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "special_attack": -1,
@@ -5192,7 +5199,7 @@
     "priority": 0,
     "pp": 15,
     "description": "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
-    "target": "self-and-allies"
+    "target": "team"
   },
   {
     "ident": "tera-blast",
@@ -5202,7 +5209,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 10,
-    "description": "If the user is Terastallized, this move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes, and it becomes the same its the user's Tera Type."
+    "description": "If the user is Terastallized, this move becomes a physical attack if the user's Attack is greater than its Special Attack, including stat stage changes, and it becomes the same its the user's Tera Type.",
+    "target": "any-adjacent"
   },
   {
     "ident": "thunder-wave",

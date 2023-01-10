@@ -7,6 +7,7 @@
   "priority": 0,
   "pp": 5,
   "description": "Has a 10% chance to raise the user's Attack, Defense, Special Attack, Special Defense, and Speed by 1 stage.",
+  "target": "any-adjacent",
   "stat_changes": [
     {
       "all": 1,
