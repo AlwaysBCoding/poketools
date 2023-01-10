@@ -83,22 +83,22 @@ export const AllPokemonScreen = () => {
         return effectivenessValue > 1;
       });
       setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "ability" && tokens.length === 2) {
+    } else if(tokens[0].toLowerCase() === "a" && tokens.length === 2) {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         return pokemon.ability_idents.includes(tokens[1] as PokemonAbilityIdent)
       });
       setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "move" && tokens.length === 2) {
+    } else if(tokens[0].toLowerCase() === "m" && tokens.length === 2) {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "move" && tokens.length === 3) {
+    } else if(tokens[0].toLowerCase() === "m" && tokens.length === 3) {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent) && pokemon.move_idents.includes(tokens[2] as PokemonMoveIdent);
       });
       setFilteredPokemon(filteredPokemon);
-    } else if (tokens[0] === "compare" || tokens[0] === "c") {
+    } else if (tokens[0] === "c") {
       const filteredPokemon = allPokemon.filter((pokemon) => {
         return pokemon.ident.includes(tokens[1]) || pokemon.ident.includes(tokens[2])
       })
