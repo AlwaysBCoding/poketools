@@ -355,33 +355,6 @@ describe("MOVES", () => {
 
   });
 
-  // aValue
-  describe("FOUL PLAY", () => {
-    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
-    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
-    quaquavalBuild.stat_spread.attack = 189;
-    grimmsnarlBuild.move_idents = ['foul-play', 'spirit-break', 'reflect', 'light-screen'];
-
-    let createdBattle: Battle = createBattle({
-      config: BATTLE_CONFIG,
-      blueSidePokemonBuilds: [quaquavalBuild],
-      redSidePokemonBuilds: [grimmsnarlBuild]
-    });
-    let initialBattle: Battle = initialStep(createdBattle);
-
-    const foulPlayAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
-      "foul-play",
-      ["blue-field-1"]
-    );
-
-    test("it deals damage with an increased attack stat", async () => {
-      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
-      const foulPlayActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, foulPlayAction);
-      expect(foulPlayActionDamage.damage).toEqual(51);
-    });
-  });
-
   // PRIORITY
   describe("EXTREME SPEED", () => {
     let dragoniteBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(DRAGONITE_SIMPLE_BUILD);
@@ -513,7 +486,34 @@ describe("MOVES", () => {
 
   });
 
-  describe("KNOCK-OFF", () => {
+  // aValue
+  describe("FOUL PLAY", () => {
+    let quaquavalBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(QUAQUAVAL_MAX_STATS);
+    let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
+    quaquavalBuild.stat_spread.attack = 189;
+    grimmsnarlBuild.move_idents = ['foul-play', 'spirit-break', 'reflect', 'light-screen'];
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [quaquavalBuild],
+      redSidePokemonBuilds: [grimmsnarlBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const foulPlayAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.red_side_pokemon[0],
+      "foul-play",
+      ["blue-field-1"]
+    );
+
+    test("it deals damage with an increased attack stat", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const foulPlayActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, foulPlayAction);
+      expect(foulPlayActionDamage.damage).toEqual(51);
+    });
+  });
+
+  describe("KNOCK OFF", () => {
     let grimmsnarlBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GRIMMSNARL_ATEAM_BUILD);
     let meowscaradaBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(MEOWSCARADA_MAX_STATS);
 
@@ -603,6 +603,32 @@ describe("MOVES", () => {
       expect(battleStepResult.battle.battle_state.blue_side_state.light_screen).toEqual(4);
     });
 
+  });
+
+  // dValue
+  describe("PSYSHOCK", () => {
+    let gholdengoBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GHOLDENGO_ATEAM_BUILD);
+    let gastrodonBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GASTRODON_ATEAM_BUILD);
+    gholdengoBuild.move_idents = ["shadow-ball", "thunderbolt", "make-it-rain", "psyshock"];
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [gholdengoBuild],
+      redSidePokemonBuilds: [gastrodonBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const psyshockAction: BattleAction = composeMoveAction(
+      initialBattle.battle_state.blue_side_pokemon[0],
+      "psyshock",
+      ["red-field-1"]
+    );
+
+    test("it calculates damage using target's defense stat", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const psyshockActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, psyshockAction);
+      expect(psyshockActionDamage.damage).toEqual(64);
+    });
   });
 
   describe("REFLECT", () => {

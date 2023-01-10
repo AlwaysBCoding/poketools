@@ -4,6 +4,10 @@ import { PokemonBuildTemplate } from "../models/pokemon/PokemonBuildTemplate";
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
 import { PokemonItemIdent, PokemonAbilityIdent, PokemonTypeIdent, PokemonNatureIdent, PokemonMoveIdent } from "../models/pokemon/PokemonShared";
 
+import { smogonIdentReverseMapping } from "../decorators/Pokemon";
+
+import vgcUsageData from "../data/stats/2022-12-vgc-series1-usage.json";
+
 const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | null => {
   try {
     const team = [];
@@ -18,7 +22,7 @@ const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | nul
 
       const pokemonIdentItems = pokemonIdentText.split("(");
       if(pokemonIdentItems.length === 3) {
-        pokemonBuildTemplate["pokemon_ident"] = pokemonIdentItems[1].trim().replace(")", "").toLowerCase().split(/\s/).join("-");
+        pokemonBuildTemplate["pokemon_ident"] = smogonIdentReverseMapping(pokemonIdentItems[1].trim().replace(")", "").toLowerCase().split(/\s/).join("-"));
         pokemonBuildTemplate["nickname"] = pokemonIdentItems[0].trim();
         const pokemonGenderData = pokemonIdentItems[2].trim().replace(")", "");
         if(pokemonGenderData === "F") {
@@ -29,7 +33,7 @@ const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | nul
         }
       } else if(pokemonIdentItems.length === 2) {
         if(pokemonIdentItems[1].trim() === "M)" || pokemonIdentItems[1].trim() === "F)") {
-          pokemonBuildTemplate["pokemon_ident"] = pokemonIdentItems[0].trim().toLowerCase().split(/\s/).join("-");
+          pokemonBuildTemplate["pokemon_ident"] = smogonIdentReverseMapping(pokemonIdentItems[0].trim().toLowerCase().split(/\s/).join("-"));
           pokemonBuildTemplate["nickname"] = null;
           const pokemonGenderData = pokemonIdentItems[1].trim().replace(")", "");
           if(pokemonGenderData === "F") {
@@ -40,10 +44,10 @@ const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | nul
           }
         } else {
           pokemonBuildTemplate["nickname"] = pokemonIdentItems[0].trim();
-          pokemonBuildTemplate["pokemon_ident"] = pokemonIdentItems[1].trim().toLowerCase().split(/\s/).join("-");
+          pokemonBuildTemplate["pokemon_ident"] = smogonIdentReverseMapping(pokemonIdentItems[1].trim().toLowerCase().split(/\s/).join("-"));
         }
       } else if(pokemonIdentItems.length === 1) {
-        pokemonBuildTemplate["pokemon_ident"] = pokemonIdentItems[0].trim().toLowerCase().split(/\s/).join("-");
+        pokemonBuildTemplate["pokemon_ident"] = smogonIdentReverseMapping(pokemonIdentItems[0].trim().toLowerCase().split(/\s/).join("-"));
         pokemonBuildTemplate["nickname"] = null;
         pokemonBuildTemplate["gender"] = null;
       }
@@ -56,10 +60,12 @@ const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | nul
 
       if(monData.find((r) => { return r.startsWith("Level:") })) {
         pokemonBuildTemplate["level"] = Number(monData.find((r) => { return r.startsWith("Level:") })?.split(":")[1].trim());
-      };
+      } else {
+        pokemonBuildTemplate["level"] = 50;
+      }
 
       if(monData.find((r) => { return r.startsWith("Ability:") })) {
-        pokemonBuildTemplate["ability_ident"] = monData.find((r) => { return r.startsWith("Ability:") })?.split(":")[1].trim().toLowerCase().split(/\n/).join("-") as PokemonAbilityIdent;
+        pokemonBuildTemplate["ability_ident"] = monData.find((r) => { return r.startsWith("Ability:") })?.split(":")[1].trim().toLowerCase().split(/\s/).join("-") as PokemonAbilityIdent;
       }
 
       if(monData.find((r) => { return r.startsWith("Tera Type:") })) {
@@ -135,6 +141,22 @@ const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | nul
         }
         if(evs?.find((r) => { return r[1] === "Spe" })) {
           evSpread["speed"] = Number(evs?.find((r) => { return r[1] === "Spe" })![0]);
+        }
+      } else {
+        const pokemonUsageData = vgcUsageData.find((usageData: any) => {
+          return smogonIdentReverseMapping(usageData.ident) == pokemonBuildTemplate["pokemon_ident"];
+        });
+        if(pokemonUsageData) {
+          const mostCommonSpread = pokemonUsageData.spreads[0];
+          const mostCommonSpreadNature = mostCommonSpread[0] as string;
+          const mostCommonSpreadEVs = mostCommonSpread[1] as number[];
+          evSpread["hp"] = mostCommonSpreadEVs[0];
+          evSpread["attack"] = mostCommonSpreadEVs[1];
+          evSpread["special_attack"] = mostCommonSpreadEVs[2];
+          evSpread["defense"] = mostCommonSpreadEVs[3];
+          evSpread["special_defense"] = mostCommonSpreadEVs[4];
+          evSpread["speed"] = mostCommonSpreadEVs[5];
+          if(!pokemonBuildTemplate["nature_ident"]) { pokemonBuildTemplate["nature_ident"] = mostCommonSpreadNature; }
         }
       }
 

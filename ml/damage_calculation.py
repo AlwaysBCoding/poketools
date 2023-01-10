@@ -150,12 +150,18 @@ def calculate_damage(
   if(attacking_pokemon.ability_ident == 'huge-power'):
     attack_stat *= 2
 
+  special_defense_stat = target_pokemon.pokemon_build.stat_spread.special_defense
+  special_defense_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.special_defense}"]
+  if(pokemon_move['ident'] == 'psyshock'):
+    special_defense_stat = target_pokemon.pokemon_build.stat_spread.defense
+    special_defense_multipliers = STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.defense}"]
+
   if(pokemon_move['category_ident'] == 'physical'):
     a_value = attack_stat * attack_multipliers
     d_value = target_pokemon.pokemon_build.stat_spread.defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.attack}"]
   elif(pokemon_move['category_ident'] == 'special'):
     a_value = attacking_pokemon.pokemon_build.stat_spread.special_attack * STAT_STAGE_MULTIPLIERS[f"{attacking_pokemon.stat_boosts.special_attack}"]
-    d_value = target_pokemon.pokemon_build.stat_spread.special_defense * STAT_STAGE_MULTIPLIERS[f"{target_pokemon.stat_boosts.special_defense}"]
+    d_value = special_defense_stat * special_defense_multipliers
     if(target_pokemon.item_ident == 'assault-vest' or (target_pokemon.item_ident == 'eviolite' and target_pokemon.pokemon_build.pokemon.can_evolve())):
       d_value *= 1.5
 

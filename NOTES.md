@@ -246,7 +246,7 @@
     - Echoed Voice
     - Fury Cutter
   - Damage is calculated using a different aValue/dValue than you would expect
-    - Psyshock
+    [IMPLEMENTED]
   - Move takes effect in future turns
     - Future Sight
     - Wish
