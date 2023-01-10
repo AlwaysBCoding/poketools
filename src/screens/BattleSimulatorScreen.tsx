@@ -8,6 +8,8 @@ import { BattleSide } from "../models/battle/BattleShared";
 
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { BattleRenderer } from "../components/BattleRenderer";
+import { Pokemon } from "../models/pokemon/Pokemon";
+import { PokemonBattleState } from "../models/battle/PokemonBattleState";
 
 export const BattleSimulatorScreen = () => {
   const forceUpdate = useForceUpdate();
@@ -103,6 +105,31 @@ export const BattleSimulatorScreen = () => {
     forceUpdate();
   }
 
+  const replacePokemonAction = async (slot: string, pokemonBattleId: string) => {
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        "battle": battle,
+        "slot": slot,
+        "pokemon_battle_id": pokemonBattleId
+      })
+    }
+
+    const response = await fetch("http://localhost:8000/send-replace-pokemon-action", fetchOptions);
+    const result = await response.json();
+    const nextBattle = result.battle;
+    const nextBattleActions = result.actions;
+    const nextAgentActions = result.agent_actions;
+    setBattle(nextBattle);
+    setBattleActions(nextBattleActions);
+    setAgentActions(nextAgentActions);
+    forceUpdate();
+  }
+
   return (
     <div className="screen battle-simulator-screen">
       <div className="blue-team-select">
@@ -161,6 +188,7 @@ export const BattleSimulatorScreen = () => {
             battleActions={battleActions}
             agentActions={agentActions}
             selectBattleActions={selectBattleActions}
+            replacePokemonAction={replacePokemonAction}
             perspective="blue" />
         ): (<></>)}
       </div>

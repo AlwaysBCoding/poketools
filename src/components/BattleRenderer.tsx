@@ -43,7 +43,7 @@ export const BattleLogRenderer: React.FC<{battle: Battle}> = ({ battle }) => {
 export const BattleActionsRenderer: React.FC<{
   battle: Battle,
   battleActions: any,
-  selectBattleActions: (blueActions: BattleAction[], redActions: BattleAction[]) => void
+  selectBattleActions: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
 }> = ({
   battle,
   battleActions,
@@ -208,12 +208,14 @@ export const BattleRenderer: React.FC<{
   battleActions: any,
   agentActions: number[],
   selectBattleActions?: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
+  replacePokemonAction?: (slot: string, pokemonBattleId: string) => void
   perspective: BattleSide
 }> = ({
   battle,
   battleActions,
   agentActions,
   selectBattleActions = () => undefined,
+  replacePokemonAction = () => undefined,
   perspective
 }) => {
 
@@ -323,7 +325,9 @@ export const BattleRenderer: React.FC<{
   return (
     <div className="battle-renderer-container">
       <div className="battle-renderer">
-        <PokemonBattleTeamDisplayIndex pokemonBattleStates={battle.battle_state.blue_side_pokemon} />
+        <PokemonBattleTeamDisplayIndex
+          pokemonBattleStates={battle.battle_state.blue_side_pokemon}
+          onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("blue-field-1", pokemonBattleState.battle_id)} />
         <div className="pokemons">
           <div className="player-pokemons">
             {blueField1 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField1), "blue-field-1") : (<></>)}
@@ -346,7 +350,9 @@ export const BattleRenderer: React.FC<{
             {redField2 ? renderPokemonAtSlot(decoratePokemonBattleState(redField2), "red-field-2") : (<></>)}
           </div>
         </div>
-        <PokemonBattleTeamDisplayIndex pokemonBattleStates={battle.battle_state.red_side_pokemon} />
+        <PokemonBattleTeamDisplayIndex
+          pokemonBattleStates={battle.battle_state.red_side_pokemon}
+          onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("red-field-1", pokemonBattleState.battle_id)} />
       </div>
       <BattleActionsRenderer battle={battle} battleActions={battleActions} selectBattleActions={selectBattleActions}/>
       <BattleLogRenderer battle={battle} />

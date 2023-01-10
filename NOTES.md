@@ -1,10 +1,11 @@
 ## TODO
 
-  - add target to all moves data.json files & recompile
-
+  - replace-pokemon-action has hardcoded slots right now, remove the hardcoded slots
   - can't simultaneously switch two slots to the same pokemon
   - re-target to the other opponent slot, if pokemon at slot has fainted (don't switch in pokemon until end of turn)
   - also ending the battle and not returning errors when slots are empty
+
+  - add target to all moves data.json files & recompile
 
   - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
 

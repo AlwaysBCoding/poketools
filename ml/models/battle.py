@@ -208,7 +208,7 @@ class Battle():
     available_actions = []
     pokemon_battle_state = self.pokemon_battle_state_by_id(pokemon_battle_state_id)
 
-    if not pokemon_battle_state.location == "field":
+    if not pokemon_battle_state or not pokemon_battle_state.location == "field":
       return []
     else:
       for move_ident in pokemon_battle_state.pokemon_build.move_idents:
@@ -338,6 +338,12 @@ class Battle():
 
     return action_events
 
+  def perform_replace_pokemon_action(self, slot, pokemon_battle_id):
+    replacement_pokemon = self.pokemon_battle_state_by_id(pokemon_battle_id)
+    replacement_pokemon.location = "field"
+    self.battle_state.field_state[slot] = replacement_pokemon.battle_id
+    self.battle_turns[-1].append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
+
   def perform_battle_action(self, battle_action, hardcoded_stat_change_frequency_roll=None, hardcoded_random_roll=None, hardcoded_crit_roll=None):
     action_events = []
     should_end_battle = False
@@ -455,12 +461,7 @@ class Battle():
               self.battle_state.field_state[target_slot] = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
               possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
-              if(len(possible_replacement_pokemons) > 0):
-                replacement_pokemon = np.random.choice(possible_replacement_pokemons)
-                replacement_pokemon.location = "field"
-                self.battle_state.field_state[target_slot] = replacement_pokemon.battle_id
-                action_events.append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
-              else:
+              if(len(possible_replacement_pokemons) == 0):
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")
             if(actor_pokemon.current_hp == 0):
@@ -468,12 +469,7 @@ class Battle():
               self.battle_state.field_state[actor_slot] = None
               action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} fainted")
               possible_replacement_pokemons = self.party_pokemons(actor_pokemon.battle_side)
-              if(len(possible_replacement_pokemons) > 0):
-                replacement_pokemon = np.random.choice(possible_replacement_pokemons)
-                replacement_pokemon.location = "field"
-                self.battle_state.field_state[actor_slot] = replacement_pokemon.battle_id
-                action_events.append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
-              elif not should_end_battle:
+              if(len(possible_replacement_pokemons) == 0 and not should_end_battle):
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")
 

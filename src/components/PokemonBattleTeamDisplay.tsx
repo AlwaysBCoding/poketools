@@ -6,9 +6,11 @@ import { displayPokemonIdent } from "../decorators/Pokemon";
 export const PokemonBattleTeamDisplayIndex: React.FC<{
   pokemonBattleStates: PokemonBattleState[],
   arrange?: "horizontal" | "vertical";
+  onPokemonBattleStateClick?: (pokemonBattleState: PokemonBattleState, teamIndex: number) => void;
 }> = ({
   pokemonBattleStates,
-  arrange = "vertical"
+  arrange = "vertical",
+  onPokemonBattleStateClick = () => undefined
 }) => {
   const modeClassName = arrange === "vertical" ? "mode-index vertical" : "mode-index horizontal";
 
@@ -19,7 +21,8 @@ export const PokemonBattleTeamDisplayIndex: React.FC<{
         return (
           <div
             key={`pokemon-index-item-${index}`}
-            className={`pokemon-index-item ${pokemonBattleState.location}`}>
+            className={`pokemon-index-item ${pokemonBattleState.location}`}
+            onClick={() => { onPokemonBattleStateClick(pokemonBattleState, index); }}>
             <img className="pokemon-image" src={pokemonImage} alt={pokemonBattleState.pokemon_build.pokemon.ident} />
             <p className="pokemon-ident">{displayPokemonIdent(pokemonBattleState.pokemon_build.pokemon.ident)}</p>
             {pokemonBattleState.location === "party" ? (

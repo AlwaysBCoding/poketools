@@ -148,6 +148,44 @@ def sendBattleAction():
       ipdb.set_trace()
     return {"status": "error"}
 
+@app.route("/send-replace-pokemon-action", methods=["POST", "OPTIONS"])
+def sendReplacePokemonAction():
+  try:
+    data = request.get_json()
+    battle = Battle.deserialize(data["battle"])
+    slot = data["slot"]
+    pokemon_battle_id = data["pokemon_battle_id"]
+
+    battle.perform_replace_pokemon_action(slot, pokemon_battle_id)
+
+    battle_actions = {
+      'blue-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('blue-field-1')
+      ))),
+      'red-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('red-field-1')
+      ))),
+      'blue-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('blue-field-2')
+      ))),
+      'red-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
+        battle.battle_state.field_state.get('red-field-2')
+      )))
+    }
+
+    return {
+      "battle": battle.serialize_api(),
+      "actions": battle_actions,
+      "agent_actions": []
+    }
+  except Exception as e:
+    if(type(e).__name__ != 'BadRequest'):
+      print("GOT EXCEPTION")
+      print(e)
+      traceback.print_exc()
+      ipdb.set_trace()
+    return {"status": "error"}
+
 @app.route("/test/perform-battle-action", methods=["POST", "OPTIONS"])
 def testPerformBattleAction():
   try:
