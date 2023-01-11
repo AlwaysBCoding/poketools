@@ -2,9 +2,9 @@ import React, { useState, useEffect, ChangeEvent } from "react";
 import useForceUpdate from "use-force-update";
 
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
-import { BattleAction } from "../models/battle/BattleAction";
+import { BattleAction, composeReplaceAction } from "../models/battle/BattleAction";
 import { Battle, createBattle } from "../models/battle/Battle";
-import { BattleSide } from "../models/battle/BattleShared";
+import { BattleSide, BattleSlot } from "../models/battle/BattleShared";
 
 import { PokemonTeamDisplayIndex } from "../components/PokemonTeamDisplay";
 import { BattleRenderer } from "../components/BattleRenderer";
@@ -105,7 +105,7 @@ export const BattleSimulatorScreen = () => {
     forceUpdate();
   }
 
-  const replacePokemonAction = async (slot: string, pokemonBattleId: string) => {
+  const replacePokemonAction = async (slot: BattleSlot, pokemonBattleId: string) => {
     const fetchOptions = {
       method: "POST",
       headers: {
@@ -114,8 +114,7 @@ export const BattleSimulatorScreen = () => {
       },
       body: JSON.stringify({
         "battle": battle,
-        "slot": slot,
-        "pokemon_battle_id": pokemonBattleId
+        "batle_action": composeReplaceAction(slot, pokemonBattleId)
       })
     }
 

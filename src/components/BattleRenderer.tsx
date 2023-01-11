@@ -4,7 +4,7 @@ import { Battle } from "../models/battle/Battle";
 import { BattleAction } from "../models/battle/BattleAction";
 import { Pokemon } from "../models/pokemon/Pokemon";
 import { PokemonBattleState } from "../models/battle/PokemonBattleState";
-import { BattleSide } from "../models/battle/BattleShared";
+import { BattleSide, BattleSlot } from "../models/battle/BattleShared";
 
 import { displayBattleAction } from "../decorators/BattleAction";
 import { displayPokemonIdent } from "../decorators/Pokemon";
@@ -208,7 +208,7 @@ export const BattleRenderer: React.FC<{
   battleActions: any,
   agentActions: number[],
   selectBattleActions?: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
-  replacePokemonAction?: (slot: string, pokemonBattleId: string) => void
+  replacePokemonAction?: (slot: BattleSlot, pokemonBattleId: string) => void
   perspective: BattleSide
 }> = ({
   battle,

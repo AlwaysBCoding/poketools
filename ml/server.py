@@ -66,20 +66,7 @@ def startBattle():
     data = request.get_json()
     battle = Battle.deserialize(data)
     battle.initial_step()
-    battle_actions = {
-      'blue-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('blue-field-1')
-      ))),
-      'red-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('red-field-1')
-      ))),
-      'blue-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('blue-field-2')
-      ))),
-      'red-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('red-field-2')
-      )))
-    }
+    battle_actions = battle.available_actions_for_battle_state(serialized=True)
     # battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
     # serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
     # observation = battle.serialize_ml()
@@ -116,21 +103,7 @@ def sendBattleAction():
     # red_actions = [red_possible_actions[red_agent.choose_action(observation, len(red_possible_actions))]]
 
     battle.step(blue_actions, red_actions)
-
-    battle_actions = {
-      'blue-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('blue-field-1')
-      ))),
-      'red-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('red-field-1')
-      ))),
-      'blue-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('blue-field-2')
-      ))),
-      'red-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('red-field-2')
-      )))
-    }
+    battle_actions = battle.available_actions_for_battle_state(serialized=True)
 
     # observation_ = battle.serialize_ml()
     # blue_agent_actions = blue_agent.show_actions(observation_)
@@ -152,26 +125,11 @@ def sendBattleAction():
 def sendReplacePokemonAction():
   try:
     data = request.get_json()
-    battle = Battle.deserialize(data["battle"])
-    slot = data["slot"]
-    pokemon_battle_id = data["pokemon_battle_id"]
+    battle = Battle.deserialize(data.get('battle'))
+    battle_action = BattleAction.deserialize(data.get('battle_action'))
 
-    battle.perform_replace_pokemon_action(slot, pokemon_battle_id)
-
-    battle_actions = {
-      'blue-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('blue-field-1')
-      ))),
-      'red-field-1': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('red-field-1')
-      ))),
-      'blue-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('blue-field-2')
-      ))),
-      'red-field-2': list(map(lambda x: x.serialize_api(), battle.available_actions_for_pokemon_battle_state(
-        battle.battle_state.field_state.get('red-field-2')
-      )))
-    }
+    battle.replace_pokemon_step(battle_action)
+    battle_actions = battle.available_actions_for_battle_state(serialized=True)
 
     return {
       "battle": battle.serialize_api(),

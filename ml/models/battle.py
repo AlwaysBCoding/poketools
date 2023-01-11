@@ -59,7 +59,8 @@ class BattleAction():
       }
     elif(self.action_type == 'replace'):
       action_data = {
-        'replace_target_battle_id': self.action_data.get('replace_target_battle_id')
+        'replace_target_battle_id': self.action_data.get('replace_target_battle_id'),
+        'replace_target_pokemon_ident': self.action_data.get('replace_target_pokemon_ident')
       }
 
     return {
@@ -209,59 +210,68 @@ class Battle():
     else:
       return any_adjacent
 
-  def available_actions_for_battle_state(self):
-    available_actions = {
-      'blue-field-1': [],
-      'blue-field-2': [],
-      'red-field-1': [],
-      'red-field-2': []
-    }
+  def available_actions_for_battle_state(self, serialized=False):
+    available_actions = {}
 
-    # if (self.active_prompt_slot):
-    #   party_pokemons = self.party_pokemons('blue') if self.active_prompt_slot in ['blue-field-1', 'blue-field-2'] else self.party_pokemons('red')
-    #   for party_pokemon in party_pokemons:
-    #     available_actions.append(
-    #       BattleAction(
-    #         actor=pokemon_battle_state,
-    #         action_type="switch",
-    #         action_data={
-    #           "switch_target": party_pokemon
-    #         }
-    #       )
-    #     )
+    for slot in ['blue-field-1', 'blue-field-2', 'red-field-1', 'red-field-2']:
+      available_actions_at_slot = self.available_actions_for_slot(slot)
+      if(serialized):
+        available_actions[slot] = list(map(lambda x: x.serialize_api(), available_actions_at_slot))
+      else:
+        available_actions[slot] = available_actions_at_slot
 
-  def available_actions_for_pokemon_battle_state(self, pokemon_battle_state_id):
+    return available_actions
+
+  def available_actions_for_slot(self, slot):
     available_actions = []
-    pokemon_battle_state = self.pokemon_battle_state_by_id(pokemon_battle_state_id)
 
-    if not pokemon_battle_state or not pokemon_battle_state.location == "field":
-      return []
+    if (self.active_prompt_slot):
+      if(self.active_prompt_slot == slot):
+        party_pokemons = self.party_pokemons('blue') if self.active_prompt_slot in ['blue-field-1', 'blue-field-2'] else self.party_pokemons('red')
+        for party_pokemon in party_pokemons:
+          available_actions.append(
+            BattleAction(
+              slot=slot,
+              action_type='replace',
+              action_data={
+                'replace_target_battle_id': party_pokemon.battle_id,
+                'replace_target_pokemon_ident': party_pokemon.pokemon_build.pokemon.ident
+              }
+            )
+          )
+      else:
+        available_actions = []
     else:
-      for move_ident in pokemon_battle_state.pokemon_build.move_idents:
-        available_actions.append(
-          BattleAction(
-            actor=pokemon_battle_state,
-            action_type="move",
-            action_data={
-              "move": find(all_moves_data, lambda x: x.get("ident") == move_ident),
-              "move_targets": self.possible_targets_for_move(pokemon_battle_state.battle_id, move_ident)
-            }
+      pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
+      if(not pokemon_battle_state or not pokemon_battle_state.location == 'field'):
+        available_actions = []
+      else:
+        for move_ident in pokemon_battle_state.pokemon_build.move_idents:
+          available_actions.append(
+            BattleAction(
+              slot=slot,
+              action_type='move',
+              action_data={
+                'move': find(all_moves_data, lambda x: x.get('ident') == move_ident),
+                'move_targets': self.possible_targets_for_move(pokemon_battle_state.battle_id, move_ident)
+              }
+            )
           )
-        )
 
-      party_pokemons = self.party_pokemons(pokemon_battle_state.battle_side)
-      for party_pokemon in party_pokemons:
-        available_actions.append(
-          BattleAction(
-            actor=pokemon_battle_state,
-            action_type="switch",
-            action_data={
-              "switch_target": party_pokemon
-            }
+        party_pokemons = self.party_pokemons(pokemon_battle_state.battle_side)
+        for party_pokemon in party_pokemons:
+          available_actions.append(
+            BattleAction(
+              slot=slot,
+              action_type='switch',
+              action_data={
+                'switch_target_battle_id': party_pokemon.battle_id,
+                'switch_target_pokemon_ident': party_pokemon.pokemon_build.pokemon.ident
+              }
+            )
           )
-        )
 
-      return available_actions
+    return available_actions
 
   def compare_battle_actions(self, battle_action_a, battle_action_b):
     pokemon_battle_state_a = self.pokemon_battle_state_at_slot(battle_action_a.slot)
@@ -364,8 +374,8 @@ class Battle():
 
     return action_events
 
-  def perform_replace_pokemon_action(self, slot, pokemon_battle_id):
-    replacement_pokemon = self.pokemon_battle_state_by_id(pokemon_battle_id)
+  def perform_replace_pokemon_action(self, battle_action):
+    replacement_pokemon = self.pokemon_battle_state_by_id(battle_action.action_data.get('replace_target_battle_id'))
     replacement_pokemon.location = "field"
     self.battle_state.field_state[slot] = replacement_pokemon.battle_id
     self.battle_turns[-1].append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
@@ -379,7 +389,7 @@ class Battle():
     actor_slot = battle_action.slot
 
     if(actor_pokemon.location == 'graveyard'):
-      return [action_events, should_end_battle]
+      return [action_events, should_end_battle, replace_pokemon_action_slot]
 
     if(battle_action.action_type == 'switch'):
       target_pokemon = self.pokemon_battle_state_by_id(battle_action.action_data.get('switch_target_battle_id'))
@@ -538,15 +548,15 @@ class Battle():
     if(not self.active_prompt_slot):
       self.end_battle_turn(turn_events)
 
-  def replace_pokemon_step(self, slot, pokemon_battle_id):
+  def replace_pokemon_step(self, battle_action):
     turn_events = []
     self.active_prompt_slot = None
-    perform_replace_pokemon_action(slot, pokemon_battle_id)
+    perform_replace_pokemon_action(battle_action)
     for index, battle_action in enumerate(self.pending_battle_actions):
       action_events, should_end_battle, replace_pokemon_action_slot = self.perform_battle_action(battle_action)
       turn_events += action_events
       if(should_end_battle):
-        self.status = "complete"
+        self.status = 'complete'
         self.winner = 'blue' if battle_action.slot in ['blue-field-1', 'blue-field-2'] else 'red'
         break
       if(replace_pokemon_action_slot):
