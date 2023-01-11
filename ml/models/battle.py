@@ -377,9 +377,7 @@ class Battle():
     return action_events
 
   def perform_replace_pokemon_action(self, battle_action):
-    actor_pokemon = self.pokemon_battle_state_at_slot(battle_action.slot)
     replacement_pokemon = self.pokemon_battle_state_by_id(battle_action.action_data.get('replace_target_battle_id'))
-    actor_pokemon.location = "party"
     replacement_pokemon.location = "field"
     self.battle_state.field_state[battle_action.slot] = replacement_pokemon.battle_id
     self.battle_turns[-1].append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
@@ -458,6 +456,8 @@ class Battle():
                 self.battle_state.red_side_state.tailwind = 4
 
           elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
+            if(not target_pokemon):
+              continue
 
             # DEFAULT MOVE BEHAVIOR
             # =====================
@@ -499,6 +499,8 @@ class Battle():
               target_pokemon.item_ident = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
             if(battle_action.action_data['move']['ident'] == 'u-turn' and len(self.party_pokemons(actor_pokemon.battle_side)) > 0):
+              actor_pokemon.location = "party"
+              self.battle_state.field_state[battle_action.slot] = None
               replace_pokemon_action_slot = battle_action.slot
 
             # POKEMON FAINTS
@@ -507,7 +509,7 @@ class Battle():
               target_pokemon.location = "graveyard"
               self.battle_state.field_state[active_target_slot] = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
-              possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
+              possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side) + [self.pokemon_battle_state_at_slot(self.adjacent_side_slot(active_target_slot))]
               if(len(possible_replacement_pokemons) == 0):
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")
@@ -515,7 +517,7 @@ class Battle():
               actor_pokemon.location = "graveyard"
               self.battle_state.field_state[actor_slot] = None
               action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} fainted")
-              possible_replacement_pokemons = self.party_pokemons(actor_pokemon.battle_side)
+              possible_replacement_pokemons = self.party_pokemons(actor_pokemon.battle_side) + [self.pokemon_battle_state_at_slot(self.adjacent_side_slot(battle_action.slot))]
               if(len(possible_replacement_pokemons) == 0 and not should_end_battle):
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")
@@ -556,6 +558,10 @@ class Battle():
 
     self.battle_turns.append(turn_events)
 
+    for slot in ['blue-field-1', 'blue-field-2', 'red-field-1', 'red-field-2']:
+      if(not self.battle_state.field_state[slot] and not self.active_prompt_slot and len(self.party_pokemons(self.slot_side(slot))) > 0):
+        self.active_prompt_slot = slot
+
     if(not self.active_prompt_slot):
       self.end_battle_turn(turn_events)
 
@@ -577,6 +583,10 @@ class Battle():
 
     for turn_event in turn_events:
       self.battle_turns[-1].append(turn_event)
+
+    for slot in ['blue-field-1', 'blue-field-2', 'red-field-1', 'red-field-2']:
+      if(not self.battle_state.field_state[slot] and not self.active_prompt_slot and len(self.party_pokemons(self.slot_side(slot))) > 0):
+        self.active_prompt_slot = slot
 
     if(not self.active_prompt_slot):
       self.end_battle_turn(self.battle_turns[-1])
@@ -605,6 +615,12 @@ class Battle():
   def pokemon_battle_state_at_slot(self, slot):
     pokemon_battle_id = self.battle_state.field_state.get(slot)
     return self.pokemon_battle_state_by_id(pokemon_battle_id)
+
+  def slot_side(self, slot):
+    if(slot in ['blue-field-1', 'blue-field-2']):
+      return 'blue'
+    elif(slot in ['red-field-1', 'red-field-2']):
+      return 'red'
 
   def adjacent_side_slot(self, slot):
     if(slot == 'blue-field-1'):

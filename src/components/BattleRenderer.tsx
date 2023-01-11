@@ -121,8 +121,14 @@ export const BattleActionsRenderer: React.FC<{
       if(battle.active_prompt_slot === "red-field-1" && redField1BattleAction) { replacePokemonAction(redField1BattleAction) }
       if(battle.active_prompt_slot === "red-field-2" && redField2BattleAction) { replacePokemonAction(redField2BattleAction) }
       resetState();
-    } else if(blueField1BattleAction && blueField2BattleAction && redField1BattleAction && redField2BattleAction) {
-      selectBattleActions([blueField1BattleAction, blueField2BattleAction], [redField1BattleAction, redField2BattleAction]);
+    } else {
+      const blueActions = [];
+      const redActions = [];
+      if(blueField1BattleAction) { blueActions.push(blueField1BattleAction); }
+      if(blueField2BattleAction) { blueActions.push(blueField2BattleAction); }
+      if(redField1BattleAction) { redActions.push(redField1BattleAction); }
+      if(redField2BattleAction) { redActions.push(redField2BattleAction); }
+      selectBattleActions(blueActions, redActions);
       resetState();
     }
   }

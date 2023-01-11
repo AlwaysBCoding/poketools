@@ -1,9 +1,9 @@
 ## TODO
 
-  - replace-pokemon-action has hardcoded slots right now, remove the hardcoded slots
-  - can't simultaneously switch two slots to the same pokemon
-  - re-target to the other opponent slot, if pokemon at slot has fainted (don't switch in pokemon until end of turn)
-  - also ending the battle and not returning errors when slots are empty
+  - the battle still doesn't end correctly
+  - tsareena leaves the party after u-turn so is eligible to be switched back in again
+
+  - if I fix those two bugs above, it's good to set up a proper game agent (against the entire meta)
 
   - add target to all moves data.json files & recompile
 
