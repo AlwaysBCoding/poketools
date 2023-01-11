@@ -170,7 +170,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       let damage = calculateDamage({
         battleState: battleState,
@@ -187,7 +187,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 1, special_defense: 0, speed: 0};
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 1, special_defense: 0, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       damage = calculateDamage({
         battleState: battleState,
@@ -206,7 +206,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       let damage = calculateDamage({
         battleState: battleState,
@@ -223,7 +223,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: -1, special_defense: 0, speed: 0};
+      battleState.blue_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: -1, special_defense: 0, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       damage = calculateDamage({
         battleState: battleState,
@@ -242,7 +242,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       let damage = calculateDamage({
         battleState: battleState,
@@ -259,7 +259,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: -1, speed: 0};
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: -1, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       damage = calculateDamage({
         battleState: battleState,
@@ -278,7 +278,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0};
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 0, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       let damage = calculateDamage({
         battleState: battleState,
@@ -295,7 +295,7 @@ describe("DAMAGE_CALC", () => {
         Object.assign(annihilapeBuild, {})
       );
 
-      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 1, speed: 0};
+      battleState.red_side_pokemon[0].stat_boosts = {attack: 0, defense: 0, special_attack: 0, special_defense: 1, speed: 0, accuracy: 0, evasiveness: 0, critical_hit: 0};
 
       damage = calculateDamage({
         battleState: battleState,

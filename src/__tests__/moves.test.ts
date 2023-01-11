@@ -126,7 +126,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const acrobaticsAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "acrobatics",
       ["red-field-1"]
     );
@@ -161,7 +161,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const ancientPowerAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "ancient-power",
       ["red-field-1"]
     );
@@ -189,13 +189,13 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const aquaStepAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "aqua-step",
       ["red-field-1"]
     );
 
     const energyBallAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "energy-ball",
       ["blue-field-1"]
     );
@@ -204,16 +204,16 @@ describe("MOVES", () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       initialBattleCopy.battle_state.red_side_pokemon[0].stat_boosts.special_attack = -2;
       const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [aquaStepAction, energyBallAction]);
-      expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
+      expect(initialOrderedActionsResult.battle_actions[0].slot).toEqual("red-field-1");
       const battleStepResult = await BATTLE_STEP(initialBattleCopy, [aquaStepAction], [energyBallAction]);
       expect(battleStepResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.speed).toEqual(1);
       const nextAquaStepAction: BattleAction = composeMoveAction(
-        battleStepResult.battle.battle_state.blue_side_pokemon[0],
+        "blue-field-1",
         "aqua-step",
         ["red-field-1"]
       );
       const nextOrderedActionsResult = await ORDER_BATTLE_ACTIONS(battleStepResult.battle, [nextAquaStepAction, energyBallAction]);
-      expect(nextOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("quaquaval");
+      expect(nextOrderedActionsResult.battle_actions[0].slot).toEqual("blue-field-1");
     });
 
   });
@@ -232,7 +232,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const bodyPressAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "body-press",
       ["blue-field-1"]
     );
@@ -263,7 +263,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const drainPunchAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "drain-punch",
       ["red-field-1"]
     );
@@ -300,7 +300,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const earthquakeAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "earthquake",
       ["blue-field-2", "red-field-1", "red-field-2"]
     );
@@ -332,13 +332,13 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const electricTerrainAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "electric-terrain",
       ["field"]
     );
 
     const spiritBreakAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "spirit-break",
       ["blue-field-1"]
     );
@@ -381,31 +381,31 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const gigaImpactAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "giga-impact",
       ["red-field-1"]
     );
 
     const extremeSpeedAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "extreme-speed",
       ["red-field-1"]
     );
 
     const dracoMeteorAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "draco-meteor",
       ["blue-field-1"]
     );
 
     const quickAttackAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "quick-attack",
       ["blue-field-1"]
     );
 
     const dragonTailAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "dragon-tail",
       ["blue-field-1"]
     );
@@ -414,27 +414,27 @@ describe("MOVES", () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       initialBattleCopy.battle_state.blue_side_pokemon[0].stat_boosts.speed = 4;
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [gigaImpactAction, dracoMeteorAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragonite');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual('blue-field-1');
     });
 
     test("it places priority 1 over boosted priority 0 speed", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       initialBattleCopy.battle_state.blue_side_pokemon[0].stat_boosts.speed = 4;
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [gigaImpactAction, quickAttackAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragapult');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual('red-field-1');
     });
 
     test("it places priority 2 over priority 1", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       initialBattleCopy.battle_state.blue_side_pokemon[0].stat_boosts.speed = 4;
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [extremeSpeedAction, quickAttackAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragonite');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual('blue-field-1');
     });
 
     test("it respects negative priorities", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [gigaImpactAction, dragonTailAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('dragonite');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual('blue-field-1');
     });
 
   });
@@ -452,7 +452,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const flareBlitzAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "flare-blitz",
       ["red-field-1"]
     );
@@ -478,31 +478,6 @@ describe("MOVES", () => {
     // TODO: IMPLEMENT
   });
 
-  // CUSTOM TYPE DAMAGE
-  describe("FREEZE DRY", () => {
-    let baxcaliburBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(BAXCALIBUR_DEFAULT_BUILD);
-    let gastrodonBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GASTRODON_ATEAM_BUILD);
-
-    let createdBattle: Battle = createBattle({
-      config: BATTLE_CONFIG,
-      blueSidePokemonBuilds: [baxcaliburBuild],
-      redSidePokemonBuilds: [gastrodonBuild]
-    });
-    let initialBattle: Battle = initialStep(createdBattle);
-
-    const freezeDryAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
-      "freeze-dry",
-      ["red-field-1"]
-    );
-
-    test("it deals super effective type damage to water pokemon", async () => {
-      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
-      const freezeDryActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, freezeDryAction);
-      expect(freezeDryActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(110);
-    });
-  });
-
   // CRIT STAGE CHANGE
   describe("FOCUS ENERGY", () => {
     let annihilapeBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(ANNIHILAPE_BULKY_BUILD);
@@ -517,7 +492,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const focusEnergyAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "focus-energy",
       ["blue-field-1"]
     );
@@ -544,7 +519,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const foulPlayAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "foul-play",
       ["blue-field-1"]
     );
@@ -553,6 +528,31 @@ describe("MOVES", () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const foulPlayActionDamage = await CALCULATE_DAMAGE(initialBattleCopy, foulPlayAction);
       expect(foulPlayActionDamage.damage).toEqual(51);
+    });
+  });
+
+  // CUSTOM TYPE DAMAGE
+  describe("FREEZE DRY", () => {
+    let baxcaliburBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(BAXCALIBUR_DEFAULT_BUILD);
+    let gastrodonBuild: PokemonBuild = pokemonBuildTemplateToPokemonBuild(GASTRODON_ATEAM_BUILD);
+
+    let createdBattle: Battle = createBattle({
+      config: BATTLE_CONFIG,
+      blueSidePokemonBuilds: [baxcaliburBuild],
+      redSidePokemonBuilds: [gastrodonBuild]
+    });
+    let initialBattle: Battle = initialStep(createdBattle);
+
+    const freezeDryAction: BattleAction = composeMoveAction(
+      "blue-field-1",
+      "freeze-dry",
+      ["red-field-1"]
+    );
+
+    test("it deals super effective type damage to water pokemon", async () => {
+      const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
+      const freezeDryActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, freezeDryAction);
+      expect(freezeDryActionResult.battle.battle_state.red_side_pokemon[0].current_hp).toEqual(110);
     });
   });
 
@@ -568,7 +568,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const knockOffAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "knock-off",
       ["blue-field-1"]
     );
@@ -604,13 +604,13 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const lightScreenAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "light-screen",
       ["blue-field-1"]
     );
 
     const energyBallAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "energy-ball",
       ["blue-field-1"]
     );
@@ -662,7 +662,7 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const psyshockAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "psyshock",
       ["red-field-1"]
     );
@@ -686,19 +686,19 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const reflectAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "reflect",
       ["blue-field-1"]
     );
 
     const knockOffAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "knock-off",
       ["blue-field-1"]
     );
 
     const flowerTrickAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "flower-trick",
       ["blue-field-1"]
     );
@@ -751,13 +751,13 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const sunnyDayAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "sunny-day",
       ["field"]
     );
 
     const spiritBreakAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "spirit-break",
       ["blue-field-1"]
     );
@@ -798,13 +798,13 @@ describe("MOVES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const tailwindAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "tailwind",
       ["blue-field-1"]
     );
 
     const knockOffAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "knock-off",
       ["blue-field-1"]
     );
@@ -819,10 +819,10 @@ describe("MOVES", () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       initialBattleCopy.battle_state.blue_side_pokemon[0].ability_ident = "flame-body";
       const initialOrderedActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [tailwindAction, knockOffAction]);
-      expect(initialOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("meowscarada");
+      expect(initialOrderedActionsResult.battle_actions[0].slot).toEqual("red-field-1");
       const tailwindActionResult = await PERFORM_BATTLE_ACTION(initialBattleCopy, tailwindAction);
       const tailwindOrderedActionsResult = await ORDER_BATTLE_ACTIONS(tailwindActionResult.battle, [tailwindAction, knockOffAction]);
-      expect(tailwindOrderedActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual("talonflame");
+      expect(tailwindOrderedActionsResult.battle_actions[0].slot).toEqual("blue-field-1");
     });
 
     test("it doesn't reset tailwind counter if tailwind is already active", async () => {

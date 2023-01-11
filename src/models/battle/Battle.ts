@@ -1,8 +1,8 @@
 import { PokemonBuild } from "../pokemon/PokemonBuild";
-import { BattleConfig, BattleStatus, BattleSide } from "./BattleShared";
+import { BattleConfig, BattleStatus, BattleSide, BattleSlot } from "./BattleShared";
 import { BattleState, createNewBattleState } from "./BattleState";
 import { PokemonBattleState, createNewPokemonBattleState } from "./PokemonBattleState";
-import { Pokemon } from "../pokemon/Pokemon";
+import { BattleAction } from "./BattleAction";
 
 export interface Battle {
   config: BattleConfig;
@@ -11,6 +11,8 @@ export interface Battle {
   winner: BattleSide | null;
   battle_turns: string[][];
   battle_state: BattleState;
+  active_prompt_slot: BattleSlot | null;
+  pending_battle_actions: BattleAction[];
 }
 
 interface CreateBattleParams {
@@ -67,7 +69,9 @@ export const createBattle = ({
     status: "active",
     winner: null,
     battle_turns: [],
-    battle_state: createNewBattleState(config, blueSideOrderedPokemon, redSideOrderedPokemon)
+    battle_state: createNewBattleState(config, blueSideOrderedPokemon, redSideOrderedPokemon),
+    active_prompt_slot: null,
+    pending_battle_actions: []
   }
 
 }

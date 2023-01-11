@@ -89,29 +89,29 @@ describe("GAME LOOP", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const nastyPlotAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "nasty-plot",
       ["blue-field-1"]
     );
 
     const reflectAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "reflect",
-      ["red-field-1"]
+      ["red-field-1", "red-field-2"]
     );
 
     const battleStepResult = await BATTLE_STEP(initialBattle, [nastyPlotAction], [reflectAction]);
     expect(battleStepResult.battle.battle_state.blue_side_pokemon[0].stat_boosts.special_attack).toEqual(2);
 
     const switchAction: BattleAction = composeSwitchAction(
-      battleStepResult.battle.battle_state.blue_side_pokemon[0],
-      battleStepResult.battle.battle_state.blue_side_pokemon[1]
+      "blue-field-1",
+      battleStepResult.battle.battle_state.blue_side_pokemon[1].battle_id
     );
 
     const lightScreenAction: BattleAction = composeMoveAction(
-      battleStepResult.battle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "light-screen",
-      ["red-field-1"]
+      ["red-field-1", "red-field-2"]
     );
 
     const battleStepResult2 = await BATTLE_STEP(battleStepResult.battle, [switchAction], [lightScreenAction]);
@@ -140,13 +140,13 @@ describe("GAME LOOP", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const braveBirdAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "acrobatics",
       ["red-field-1"]
     )
 
     const drainPunchAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "drain-punch",
       ["blue-field-1"]
     );
@@ -173,13 +173,13 @@ describe("WEATHER", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const flareBlitzAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "flare-blitz",
       ["red-field-1"]
     );
 
     const aquaStepAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "aqua-step",
       ["blue-field-1"]
     );
@@ -220,13 +220,13 @@ describe("WEATHER", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const flareBlitzAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "flare-blitz",
       ["red-field-1"]
     );
 
     const aquaStepAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "aqua-step",
       ["blue-field-1"]
     );

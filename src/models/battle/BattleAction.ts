@@ -1,21 +1,22 @@
 import { PokemonBattleState } from "./PokemonBattleState";
 import { PokemonMoveIdent } from "../pokemon/PokemonShared";
 import { PokemonMoveSimple } from "../pokemon/PokemonMove";
+import { BattleSlot } from "./BattleShared";
 
 import AllMoves from "../../data/moves/all-moves.json";
 const allMoves = AllMoves as PokemonMoveSimple[];
 
 export interface BattleAction {
-  actor: PokemonBattleState;
-  action_type: "move" | "switch";
-  action_data: Record<string, any>
+  slot: BattleSlot;
+  action_type: "move" | "switch" | "replace";
+  action_data: Record<string, any>;
 }
 
-export const composeMoveAction = (actor: PokemonBattleState, moveIdent: PokemonMoveIdent, moveTargets: string[]): BattleAction => {
+export const composeMoveAction = (slot: BattleSlot, moveIdent: PokemonMoveIdent, moveTargets: string[]): BattleAction => {
   const move = allMoves.find((move: PokemonMoveSimple) => { return move.ident === moveIdent });
 
   return {
-    actor: actor,
+    slot: slot,
     action_type: "move",
     action_data: {
       "move": move,
@@ -25,12 +26,22 @@ export const composeMoveAction = (actor: PokemonBattleState, moveIdent: PokemonM
   }
 }
 
-export const composeSwitchAction = (actor: PokemonBattleState, switchTarget: PokemonBattleState): BattleAction => {
+export const composeSwitchAction = (slot: BattleSlot, switchTargetBattleId: PokemonBattleState): BattleAction => {
   return {
-    actor: actor,
+    slot: slot,
     action_type: "switch",
     action_data: {
-      "switch_target": switchTarget
+      "switch_target_battle_id": switchTargetBattleId
+    }
+  }
+}
+
+export const composeReplaceAction = (slot: BattleSlot, replaceTargetBattleId: string): BattleAction => {
+  return {
+    slot: slot,
+    action_type: "replace",
+    action_data: {
+      "replace_target_battle_id": replaceTargetBattleId
     }
   }
 }

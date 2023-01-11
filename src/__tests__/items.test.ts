@@ -124,7 +124,7 @@ describe("ITEMS", () => {
       let initialBattle: Battle = initialStep(createdBattle);
 
       const braveBirdAction: BattleAction = composeMoveAction(
-        initialBattle.battle_state.blue_side_pokemon[0],
+        "blue-field-1",
         "brave-bird",
         ["red-field-1"]
       );
@@ -152,7 +152,7 @@ describe("ITEMS", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const energyBallAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "energy-ball",
       ["blue-field-1"]
     );
@@ -198,13 +198,13 @@ describe("ITEMS", () => {
     let initialBattle2: Battle = initialStep(createdBattle2);
 
     const energyBallAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "energy-ball",
       ["blue-field-1"]
     );
 
     const energyBallAction2: BattleAction = composeMoveAction(
-      initialBattle2.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "energy-ball",
       ["blue-field-1"]
     );
@@ -237,7 +237,7 @@ describe("ITEMS", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const earthquakeAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "earthquake",
       ["blue-field-1"]
     );
@@ -264,7 +264,7 @@ describe("ITEMS", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const uTurnAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "u-turn",
       ["blue-field-1"]
     );

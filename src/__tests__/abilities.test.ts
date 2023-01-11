@@ -124,7 +124,7 @@ describe("ABILITIES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const flareBlitzAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "flare-blitz",
       ["red-field-1"]
     );
@@ -150,7 +150,7 @@ describe("ABILITIES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const aquaStepAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "aqua-step",
       ["red-field-1"]
     );
@@ -176,19 +176,19 @@ describe("ABILITIES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const braveBirdAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "brave-bird",
       ["red-field-1"]
     );
 
     const flareBlitzAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "flare-blitz",
       ["red-field-1"]
     );
 
     const flowerTrickAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "flower-trick",
       ["blue-field-1"]
     );
@@ -196,20 +196,20 @@ describe("ABILITIES", () => {
     test("it moves first with brave bird at full hp", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [braveBirdAction, flowerTrickAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('talonflame');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual("blue-field-1");
     });
 
     test("it moves second with brave bird at half hp", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       initialBattleCopy.battle_state.blue_side_pokemon[0].current_hp = 77;
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [braveBirdAction, flowerTrickAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('meowscarada');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual("red-field-1");
     });
 
     test("it moves second with flare blitz at full hp", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [flareBlitzAction, flowerTrickAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('meowscarada');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual("red-field-1");
     });
 
   });
@@ -226,7 +226,7 @@ describe("ABILITIES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const aquaStepAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "aqua-step",
       ["red-field-1"]
     );
@@ -252,25 +252,25 @@ describe("ABILITIES", () => {
     let initialBattle: Battle = initialStep(createdBattle);
 
     const reflectAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "reflect",
       ["field"]
     );
 
     const thunderWaveAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "thunder-wave",
       ["red-field-1"]
     );
 
     const spiritBreakAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.blue_side_pokemon[0],
+      "blue-field-1",
       "spirit-break",
       ["red-field-1"]
     );
 
     const flowerTrickAction: BattleAction = composeMoveAction(
-      initialBattle.battle_state.red_side_pokemon[0],
+      "red-field-1",
       "flower-trick",
       ["blue-field-1"]
     );
@@ -278,19 +278,19 @@ describe("ABILITIES", () => {
     test("it moves first with prankster reflect", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [reflectAction, flowerTrickAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('grimmsnarl');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual("blue-field-1");
     });
 
     test("it moves second with prankster spirit break", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [spiritBreakAction, flowerTrickAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('meowscarada');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual("red-field-1");
     });
 
     test("it moves first with prankster thunder wave, but prankster thunder wave fails against a dark type", async () => {
       const initialBattleCopy = JSON.parse(JSON.stringify(initialBattle));
       const orderedBattleActionsResult = await ORDER_BATTLE_ACTIONS(initialBattleCopy, [thunderWaveAction, flowerTrickAction]);
-      expect(orderedBattleActionsResult.battle_actions[0].actor.pokemon_build.pokemon.ident).toEqual('grimmsnarl');
+      expect(orderedBattleActionsResult.battle_actions[0].slot).toEqual("blue-field-1");
       // TODO: IMPLEMENT THUNDER WAVE FAILING LOGIC
     });
 

@@ -196,7 +196,7 @@ def testPerformBattleAction():
     hardcoded_random_roll = data.get("random_roll")
     hardcoded_crit_roll = data.get("crit_roll")
 
-    action_events, should_end_battle = battle.perform_battle_action(
+    action_events, should_end_battle, replace_pokemon_action_slot = battle.perform_battle_action(
       battle_action,
       hardcoded_stat_change_frequency_roll,
       hardcoded_random_roll,
@@ -216,10 +216,10 @@ def testPerformBattleAction():
 def testCalculateDamage():
   try:
     data = request.get_json()
-    battle = Battle.deserialize(data["battle"])
-    battle_action = BattleAction.deserialize(data["battle_action"])
-    target_slot = battle_action.action_data["move_targets"][0]
-    attacking_pokemon = battle.pokemon_battle_state_by_id(battle_action.actor.battle_id)
+    battle = Battle.deserialize(data.get('battle'))
+    battle_action = BattleAction.deserialize(data.get('battle_action'))
+    target_slot = battle_action.action_data.get("move_targets")[0]
+    attacking_pokemon = battle.pokemon_battle_state_at_slot(battle_action.slot)
     target_pokemon_battle_id = battle.battle_state.field_state[target_slot]
     target_pokemon = battle.pokemon_battle_state_by_id(target_pokemon_battle_id)
 
