@@ -79,7 +79,7 @@
   - add terastallizing
   - add VGC config
 
-  - DEX COMPLETION: (373/400) | 93.25%
+  - DEX COMPLETION: (381/400) | 95.25%
   - MOVE TEMPLATE COMPLETION: (17/26) | 65.38%
   - ITEM COMPLETION: (21/136) | 15.44%
   - ABILITY COMPLETION: (8/167) | 4.80%
