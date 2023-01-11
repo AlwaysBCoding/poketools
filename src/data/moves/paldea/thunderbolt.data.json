@@ -7,6 +7,7 @@
   "priority": 0,
   "pp": 15,
   "description": "Has a 10% chance to paralyze the target.",
+  "target": "any-adjacent",
   "secondary_effects": [
     {
       "status_ident": "paralyzed",

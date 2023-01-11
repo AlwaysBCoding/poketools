@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Battle } from "../models/battle/Battle";
 import { BattleAction } from "../models/battle/BattleAction";
@@ -44,11 +44,14 @@ export const BattleActionsRenderer: React.FC<{
   battle: Battle,
   battleActions: any,
   selectBattleActions: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
+  replacePokemonAction: (battleAction: BattleAction) => void
 }> = ({
   battle,
   battleActions,
-  selectBattleActions = () => undefined
+  selectBattleActions = () => undefined,
+  replacePokemonAction = () => undefined
 }) => {
+
   const [blueField1BattleAction, setBlueField1BattleAction] = useState<BattleAction | null>(null);
   const [blueField2BattleAction, setBlueField2BattleAction] = useState<BattleAction | null>(null);
   const [redField1BattleAction, setRedField1BattleAction] = useState<BattleAction | null>(null);
@@ -58,6 +61,18 @@ export const BattleActionsRenderer: React.FC<{
   const [redField1BattleActionTarget, setRedField1BattleActionTarget] = useState<string | null>(null);
   const [redField2BattleActionTarget, setRedField2BattleActionTarget] = useState<string | null>(null);
   const [actionTargetSlotCursor, setActionTargetSlotCursor] = useState<string | null>(null);
+
+  const resetState = () => {
+    setBlueField1BattleAction(null);
+    setBlueField2BattleAction(null);
+    setRedField1BattleAction(null);
+    setRedField2BattleAction(null);
+    setBlueField1BattleActionTarget(null);
+    setBlueField2BattleActionTarget(null);
+    setRedField1BattleActionTarget(null);
+    setRedField2BattleActionTarget(null);
+    setActionTargetSlotCursor(null);
+  }
 
   const selectBattleAction = (battleAction: BattleAction, slot: string) => {
     if(actionTargetSlotCursor) {
@@ -100,17 +115,15 @@ export const BattleActionsRenderer: React.FC<{
   }
 
   const submitActions = () => {
-    if(blueField1BattleAction && blueField2BattleAction && redField1BattleAction && redField2BattleAction) {
+    if(battle.active_prompt_slot) {
+      if(battle.active_prompt_slot === "blue-field-1" && blueField1BattleAction) { replacePokemonAction(blueField1BattleAction) }
+      if(battle.active_prompt_slot === "blue-field-2" && blueField2BattleAction) { replacePokemonAction(blueField2BattleAction) }
+      if(battle.active_prompt_slot === "red-field-1" && redField1BattleAction) { replacePokemonAction(redField1BattleAction) }
+      if(battle.active_prompt_slot === "red-field-2" && redField2BattleAction) { replacePokemonAction(redField2BattleAction) }
+      resetState();
+    } else if(blueField1BattleAction && blueField2BattleAction && redField1BattleAction && redField2BattleAction) {
       selectBattleActions([blueField1BattleAction, blueField2BattleAction], [redField1BattleAction, redField2BattleAction]);
-      setBlueField1BattleAction(null);
-      setBlueField2BattleAction(null);
-      setRedField1BattleAction(null);
-      setRedField2BattleAction(null);
-      setBlueField1BattleActionTarget(null);
-      setBlueField2BattleActionTarget(null);
-      setRedField1BattleActionTarget(null);
-      setRedField2BattleActionTarget(null);
-      setActionTargetSlotCursor(null);
+      resetState();
     }
   }
 
@@ -118,6 +131,20 @@ export const BattleActionsRenderer: React.FC<{
     const selectedBattleActionClassName = actionTargetSlotCursor === slot ? "selected-battle-action selecting-target" : "selected-battle-action";
     return (
       <div className="battle-actions">
+        <div className="replaces">
+          {battleActions[slot] ? battleActions[slot].map((battleAction: BattleAction, index: number) => {
+            if(battleAction.action_type === "replace") {
+              return (
+                <div className="action replace" key={`${slot}-replace-${index}`} onClick={() => { selectBattleAction(battleAction, slot) }}>
+                  <p>{displayBattleAction(battleAction)}</p>
+                  {/* agentActions[index].toFixed(4) */}
+                </div>
+              )
+            } else {
+              return (<></>)
+            }
+          }) : (<></>)}
+        </div>
         <div className="moves">
           {battleActions[slot] ? battleActions[slot].map((battleAction: BattleAction, index: number) => {
             if(battleAction.action_type === "move") {
@@ -208,7 +235,7 @@ export const BattleRenderer: React.FC<{
   battleActions: any,
   agentActions: number[],
   selectBattleActions?: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
-  replacePokemonAction?: (slot: BattleSlot, pokemonBattleId: string) => void
+  replacePokemonAction?: (battleAction: BattleAction) => void
   perspective: BattleSide
 }> = ({
   battle,
@@ -326,8 +353,8 @@ export const BattleRenderer: React.FC<{
     <div className="battle-renderer-container">
       <div className="battle-renderer">
         <PokemonBattleTeamDisplayIndex
-          pokemonBattleStates={battle.battle_state.blue_side_pokemon}
-          onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("blue-field-1", pokemonBattleState.battle_id)} />
+          pokemonBattleStates={battle.battle_state.blue_side_pokemon} />
+          {/* onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("blue-field-1", pokemonBattleState.battle_id)}  */}
         <div className="pokemons">
           <div className="player-pokemons">
             {blueField1 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField1), "blue-field-1") : (<></>)}
@@ -351,10 +378,10 @@ export const BattleRenderer: React.FC<{
           </div>
         </div>
         <PokemonBattleTeamDisplayIndex
-          pokemonBattleStates={battle.battle_state.red_side_pokemon}
-          onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("red-field-1", pokemonBattleState.battle_id)} />
+          pokemonBattleStates={battle.battle_state.red_side_pokemon} />
+          {/* onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("red-field-1", pokemonBattleState.battle_id) } */}
       </div>
-      <BattleActionsRenderer battle={battle} battleActions={battleActions} selectBattleActions={selectBattleActions}/>
+      <BattleActionsRenderer battle={battle} battleActions={battleActions} selectBattleActions={selectBattleActions} replacePokemonAction={replacePokemonAction} />
       <BattleLogRenderer battle={battle} />
       {agentActions.length > 0 ? (
         <BattleEvalBar maxActionValue={Math.max(...(agentActions.slice(0, battleActions.length)))} />

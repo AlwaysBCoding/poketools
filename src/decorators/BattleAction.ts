@@ -9,5 +9,8 @@ export const displayBattleAction = (battleAction: BattleAction): string => {
   if(battleAction.action_type === "switch") {
     return `switch -> ${displayPokemonIdent(battleAction.action_data.switch_target_pokemon_ident)}`;
   }
+  if(battleAction.action_type === "replace") {
+    return `replace -> ${displayPokemonIdent(battleAction.action_data.replace_target_pokemon_ident)}`;
+  }
   return "";
 }

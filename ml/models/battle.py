@@ -10,6 +10,7 @@ import json
 from pprint import pprint
 import numpy as np
 import math
+import ipdb
 
 all_moves_f = open(Path("../src/data/moves/all-moves.json"))
 all_moves_data = json.load(all_moves_f)
@@ -50,7 +51,7 @@ class BattleAction():
       action_data = {
         'move': self.action_data.get('move'),
         'move_targets': self.action_data.get('move_targets'),
-        'selected_targets': []
+        'selected_targets': self.action_data.get('selected_targets')
       }
     elif(self.action_type == 'switch'):
       action_data = {
@@ -253,7 +254,8 @@ class Battle():
               action_type='move',
               action_data={
                 'move': find(all_moves_data, lambda x: x.get('ident') == move_ident),
-                'move_targets': self.possible_targets_for_move(pokemon_battle_state.battle_id, move_ident)
+                'move_targets': self.possible_targets_for_move(pokemon_battle_state.battle_id, move_ident),
+                'selected_targets': []
               }
             )
           )
@@ -375,9 +377,11 @@ class Battle():
     return action_events
 
   def perform_replace_pokemon_action(self, battle_action):
+    actor_pokemon = self.pokemon_battle_state_at_slot(battle_action.slot)
     replacement_pokemon = self.pokemon_battle_state_by_id(battle_action.action_data.get('replace_target_battle_id'))
+    actor_pokemon.location = "party"
     replacement_pokemon.location = "field"
-    self.battle_state.field_state[slot] = replacement_pokemon.battle_id
+    self.battle_state.field_state[battle_action.slot] = replacement_pokemon.battle_id
     self.battle_turns[-1].append(f"Go {replacement_pokemon.pokemon_build.pokemon.ident}!")
 
   def perform_battle_action(self, battle_action, hardcoded_stat_change_frequency_roll=None, hardcoded_random_roll=None, hardcoded_crit_roll=None):
@@ -385,10 +389,10 @@ class Battle():
     should_end_battle = False
     replace_pokemon_action_slot = None
 
-    actor_pokemon = self.pokemon_battle_state_at_slot(battle_action.slot)
     actor_slot = battle_action.slot
+    actor_pokemon = self.pokemon_battle_state_at_slot(actor_slot)
 
-    if(actor_pokemon.location == 'graveyard'):
+    if(not actor_pokemon):
       return [action_events, should_end_battle, replace_pokemon_action_slot]
 
     if(battle_action.action_type == 'switch'):
@@ -404,13 +408,18 @@ class Battle():
       move_ident = battle_action.action_data['move']['ident']
       action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} used {move_ident}")
       target_slots = battle_action.action_data.get('selected_targets') if battle_action.action_data['move'].get('target') == 'any-adjacent' else self.possible_targets_for_move(actor_pokemon.battle_id, move_ident)
-      targeting_value = "spread" if len(target_slots) > 1 else "single"
+      targeting_value = 'spread' if len(target_slots) > 1 else 'single'
 
       for target_slot in target_slots:
-        target_pokemon_id = self.battle_state.field_state.get(target_slot)
+        active_target_slot = target_slot
+        target_pokemon_id = self.battle_state.field_state.get(active_target_slot)
         target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
+        if(not target_pokemon and targeting_value == 'single'):
+          active_target_slot = self.adjacent_side_slot(target_slot)
+          target_pokemon_id = self.battle_state.field_state.get(active_target_slot)
+          target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
 
-        if(target_slot == 'field'):
+        if(active_target_slot == 'field'):
 
           if(move_ident == 'electric-terrain'):
             self.battle_state.global_state.set_terrain('electric')
@@ -431,21 +440,21 @@ class Battle():
             self.battle_state.global_state.set_weather('sun')
 
         else:
-          if(battle_action.action_data["move"]["category_ident"] == "non-damaging"):
-            if(move_ident == "reflect"):
-              if(actor_pokemon.battle_side == "blue" and self.battle_state.blue_side_state.reflect == 0):
+          if(battle_action.action_data['move']['category_ident'] == 'non-damaging'):
+            if(move_ident == 'reflect'):
+              if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.reflect == 0):
                 self.battle_state.blue_side_state.reflect = 5
-              elif(actor_pokemon.battle_side == "red" and self.battle_state.red_side_state.reflect == 0):
+              elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.reflect == 0):
                 self.battle_state.red_side_state.reflect = 5
-            if(move_ident == "light-screen"):
-              if(actor_pokemon.battle_side == "blue" and self.battle_state.blue_side_state.light_screen == 0):
+            if(move_ident == 'light-screen'):
+              if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.light_screen == 0):
                 self.battle_state.blue_side_state.light_screen = 5
-              elif(actor_pokemon.battle_side == "red" and self.battle_state.red_side_state.light_screen == 0):
+              elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.light_screen == 0):
                 self.battle_state.red_side_state.light_screen = 5
-            if(move_ident == "tailwind"):
-              if(actor_pokemon.battle_side == "blue" and self.battle_state.blue_side_state.tailwind == 0):
+            if(move_ident == 'tailwind'):
+              if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.tailwind == 0):
                 self.battle_state.blue_side_state.tailwind = 4
-              elif(actor_pokemon.battle_side == "red" and self.battle_state.red_side_state.tailwind == 0):
+              elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.tailwind == 0):
                 self.battle_state.red_side_state.tailwind = 4
 
           elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
@@ -489,12 +498,14 @@ class Battle():
               knocked_off_item_ident = target_pokemon.item_ident
               target_pokemon.item_ident = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
+            if(battle_action.action_data['move']['ident'] == 'u-turn' and len(self.party_pokemons(actor_pokemon.battle_side)) > 0):
+              replace_pokemon_action_slot = battle_action.slot
 
             # POKEMON FAINTS
             # =====================
             if(target_pokemon.current_hp == 0):
               target_pokemon.location = "graveyard"
-              self.battle_state.field_state[target_slot] = None
+              self.battle_state.field_state[active_target_slot] = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
               possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
               if(len(possible_replacement_pokemons) == 0):
@@ -551,7 +562,7 @@ class Battle():
   def replace_pokemon_step(self, battle_action):
     turn_events = []
     self.active_prompt_slot = None
-    perform_replace_pokemon_action(battle_action)
+    self.perform_replace_pokemon_action(battle_action)
     for index, battle_action in enumerate(self.pending_battle_actions):
       action_events, should_end_battle, replace_pokemon_action_slot = self.perform_battle_action(battle_action)
       turn_events += action_events
@@ -595,6 +606,18 @@ class Battle():
     pokemon_battle_id = self.battle_state.field_state.get(slot)
     return self.pokemon_battle_state_by_id(pokemon_battle_id)
 
+  def adjacent_side_slot(self, slot):
+    if(slot == 'blue-field-1'):
+      return 'blue-field-2'
+    elif(slot == 'blue-field-2'):
+      return 'blue-field-1'
+    elif(slot == 'red-field-1'):
+      return 'red-field-2'
+    elif(slot == 'red-field-2'):
+      return 'red-field-1'
+    else:
+      return None
+
   # SERIALIZERS
   # =====================
   @classmethod
@@ -618,6 +641,7 @@ class Battle():
       "winner": self.winner,
       "battle_turns": self.battle_turns,
       "battle_state": self.battle_state.serialize_api(),
+      "active_prompt_slot": self.active_prompt_slot,
       "pending_battle_actions": list(map(lambda x: x.serialize_api(), self.pending_battle_actions))
     }
   def serialize_ml(self):

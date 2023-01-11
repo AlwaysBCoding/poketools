@@ -61,7 +61,7 @@ red_agent.Q_eval.load_state_dict(red_checkpoint['model_state_dict'])
 red_agent.Q_eval.optimizer.load_state_dict(red_checkpoint['optimizer_state_dict'])
 
 @app.route("/start-battle", methods=["POST", "OPTIONS"])
-def startBattle():
+def start_battle():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data)
@@ -88,7 +88,7 @@ def startBattle():
     return {"status": "error"}
 
 @app.route("/send-battle-actions", methods=["POST", "OPTIONS"])
-def sendBattleAction():
+def send_battle_action():
   try:
     serialized_next_battle_actions = []
 
@@ -122,7 +122,7 @@ def sendBattleAction():
     return {"status": "error"}
 
 @app.route("/send-replace-pokemon-action", methods=["POST", "OPTIONS"])
-def sendReplacePokemonAction():
+def send_replace_pokemon_action():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data.get('battle'))
@@ -145,7 +145,7 @@ def sendReplacePokemonAction():
     return {"status": "error"}
 
 @app.route("/test/perform-battle-action", methods=["POST", "OPTIONS"])
-def testPerformBattleAction():
+def test_perform_battle_action():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data['battle'])
@@ -171,7 +171,7 @@ def testPerformBattleAction():
     return {"status": "error"}
 
 @app.route("/test/calculate-damage", methods=["POST", "OPTIONS"])
-def testCalculateDamage():
+def test_calculate_damage():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data.get('battle'))
@@ -204,7 +204,7 @@ def testCalculateDamage():
     return {"status": "error"}
 
 @app.route("/test/battle-step", methods=["POST", "OPTIONS"])
-def testBattleStep():
+def test_battle_step():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])
@@ -221,7 +221,7 @@ def testBattleStep():
     return {"status": "error"}
 
 @app.route("/test/order-actions", methods=["POST", "OPTIONS"])
-def testOrderActions():
+def test_order_actions():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])

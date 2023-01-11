@@ -1125,16 +1125,15 @@ $pokemon-base-stats-cell-width: 50%;
         flex-direction: column;
         justify-content: flex-start;
 
-        .moves {
+        .moves, .switches, .replaces {
           cursor: pointer;
+        }
+
+        .moves {
           height: 60%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-        }
-
-        .switches {
-          cursor: pointer;
         }
 
         .action {
@@ -1198,6 +1197,10 @@ $pokemon-base-stats-cell-width: 50%;
 
 // SCREENS
 // =====================
+.screen {
+  padding-bottom: 1000px;
+}
+
 .screen.home-screen {
 }
 
@@ -1220,7 +1223,6 @@ $pokemon-base-stats-cell-width: 50%;
 }
 
 .screen.team-builder-screen, .screen.team-editor-screen {
-  padding-bottom: 1000px;
 
   .pokemon-select {
     height: 300px;

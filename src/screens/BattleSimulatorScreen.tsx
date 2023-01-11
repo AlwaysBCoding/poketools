@@ -39,12 +39,14 @@ export const BattleSimulatorScreen = () => {
       if(nextTeam) {
         setActiveBlueTeam(nextTeam);
       }
+      setBlueTeamOrderString("[]");
     } else if(side === "red") {
       setRedTeamName(event.target.value);
       const nextTeam: PokemonTeam | undefined = allTeams.find((team: PokemonTeam) => { return team.team_name === event.target.value });
       if(nextTeam) {
         setActiveRedTeam(nextTeam);
       }
+      setRedTeamOrderString("[]");
     }
   }
 
@@ -105,7 +107,7 @@ export const BattleSimulatorScreen = () => {
     forceUpdate();
   }
 
-  const replacePokemonAction = async (slot: BattleSlot, pokemonBattleId: string) => {
+  const replacePokemonAction = async (battleAction: BattleAction) => {
     const fetchOptions = {
       method: "POST",
       headers: {
@@ -114,7 +116,7 @@ export const BattleSimulatorScreen = () => {
       },
       body: JSON.stringify({
         "battle": battle,
-        "batle_action": composeReplaceAction(slot, pokemonBattleId)
+        "battle_action": battleAction
       })
     }
 
@@ -146,7 +148,7 @@ export const BattleSimulatorScreen = () => {
         </select>
         {activeBlueTeam ? (
           <div className="team-preview blue-team-preview">
-            <PokemonTeamDisplayIndex team={activeBlueTeam} />
+            <PokemonTeamDisplayIndex team={activeBlueTeam} onPokemonBuildClick={(_, teamIndex) => { setBlueTeamOrderString(JSON.stringify(JSON.parse(blueTeamOrderString).concat(teamIndex))) }} />
             <input
               className="blue-team-order"
               value={blueTeamOrderString}
@@ -169,7 +171,7 @@ export const BattleSimulatorScreen = () => {
         </select>
         {activeRedTeam ? (
           <div className="team-preview red-team-preview">
-            <PokemonTeamDisplayIndex team={activeRedTeam} />
+            <PokemonTeamDisplayIndex team={activeRedTeam} onPokemonBuildClick={(_, teamIndex) => { setRedTeamOrderString(JSON.stringify(JSON.parse(redTeamOrderString).concat(teamIndex))) }} />
             <input
             className="red-team-order"
             value={redTeamOrderString}
