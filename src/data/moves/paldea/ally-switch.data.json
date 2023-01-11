@@ -6,5 +6,6 @@
   "accuracy": null,
   "priority": 2,
   "pp": 15,
-  "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side."
+  "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
+  "target": "self"
 }

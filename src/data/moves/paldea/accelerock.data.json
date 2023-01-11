@@ -7,5 +7,5 @@
   "priority": 1,
   "pp": 20,
   "description": "No additional effect.",
-  "target": ""
+  "target": "any-adjacent"
 }

@@ -22,7 +22,7 @@
     "priority": 1,
     "pp": 20,
     "description": "No additional effect.",
-    "target": ""
+    "target": "any-adjacent"
   },
   {
     "ident": "acid-armor",
@@ -33,7 +33,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Raises the user's Defense by 2 stages.",
-    "target": "",
+    "target": "self",
     "stat_changes": [
       {
         "defense": 2,
@@ -51,7 +51,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Has a 100% chance to lower the target's Special Defense by 2 stages.",
-    "target": "",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "special_defense": -2,
@@ -68,7 +68,7 @@
     "priority": 0,
     "pp": 30,
     "description": "Has a 10% chance to lower the target's Special Defense by 1 stage.",
-    "target": "",
+    "target": "all-enemies",
     "stat_changes": [
       {
         "special_defense": -1,
@@ -96,13 +96,13 @@
     "priority": 0,
     "pp": 30,
     "description": "Raises a random stat by 2 stages as long as the stat is not already at stage 6. The user can choose to use this move on itself or an adjacent ally. Fails if no stat stage can be raised or if used on an ally with a substitute.",
+    "target": "self-or-ally",
     "stat_changes": [
       {
         "random": 2,
         "frequency": 1
       }
-    ],
-    "target": "self-or-ally"
+    ]
   },
   {
     "ident": "aerial-ace",
@@ -113,7 +113,7 @@
     "priority": 0,
     "pp": 20,
     "description": "This move does not check accuracy.",
-    "target": ""
+    "target": "any-adjacent"
   },
   {
     "ident": "after-you",
@@ -124,7 +124,7 @@
     "priority": 0,
     "pp": 15,
     "description": "The target makes its move immediately after the user this turn, no matter the priority of its selected move. Fails if the target would have moved next anyway, or if the target already moved this turn.",
-    "target": ""
+    "target": "any-adjacent"
   },
   {
     "ident": "agility",
@@ -153,7 +153,7 @@
     "priority": 0,
     "pp": 25,
     "description": "Has a higher chance for a critical hit.",
-    "target": "",
+    "target": "any-adjacent",
     "critical_hit_stage_index": 1
   },
   {
@@ -165,6 +165,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Has a 30% chance to make the target flinch.",
+    "target": "any-adjacent",
     "secondary_effects": [
       {
         "status": "flinched",
@@ -180,7 +181,8 @@
     "accuracy": null,
     "priority": 2,
     "pp": 15,
-    "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side."
+    "description": "The user swaps positions with its ally. Fails if the user is the only Pokemon on its side.",
+    "target": "self"
   },
   {
     "ident": "amnesia",
@@ -191,6 +193,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Raises the user's Special Defense by 2 stages.",
+    "target": "self",
     "stat_changes": [
       {
         "special_defense": 2,
@@ -226,6 +229,7 @@
     "priority": 0,
     "pp": 10,
     "description": "Has a 100% chance to lower the target's Special Defense by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "special_defense": -1,
@@ -242,6 +246,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Has a higher chance for a critical hit.",
+    "target": "any-adjacent",
     "critical_hit_stage_index": 1
   },
   {
@@ -252,7 +257,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 20,
-    "description": "No additional effect."
+    "description": "No additional effect.",
+    "target": "any-adjacent"
   },
   {
     "ident": "aqua-ring",
@@ -262,7 +268,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 20,
-    "description": "The user has 1/16 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect."
+    "description": "The user has 1/16 of its maximum HP, rounded down, restored at the end of each turn while it remains active. If Big Root is held by the user, the HP recovered is 1.3x normal, rounded half down. If the user uses Baton Pass, the replacement will receive the healing effect.",
+    "target": "self"
   },
   {
     "ident": "aqua-step",
@@ -290,7 +297,8 @@
     "accuracy": 0.9,
     "priority": 0,
     "pp": 10,
-    "description": "No additional effect."
+    "description": "No additional effect.",
+    "target": "any-adjacent"
   },
   {
     "ident": "arm-thrust",
@@ -301,6 +309,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times.",
+    "target": "any-adjacent",
     "multihit": [
       [
         2,
@@ -329,11 +338,13 @@
     "priority": 0,
     "pp": 5,
     "description": "Lowers the user's Defense and Special Defense by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "defense": -1,
         "special_defense": -1,
-        "frequency": 1
+        "frequency": 1,
+        "target": "self"
       }
     ]
   },
@@ -363,7 +374,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 10,
-    "description": "Power doubles if the target has already taken damage this turn, other than direct damage from Belly Drum, confusion, Curse, or Pain Split."
+    "description": "Power doubles if the target has already taken damage this turn, other than direct damage from Belly Drum, confusion, Curse, or Pain Split.",
+    "target": "any-adjacent"
   },
   {
     "ident": "astonish",
@@ -374,6 +386,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Has a 30% chance to make the target flinch.",
+    "target": "any-adjacent",
     "secondary_effects": [
       {
         "status": "flinched",
@@ -390,6 +403,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Has a higher chance for a critical hit.",
+    "target": "any-adjacent",
     "critical_hit_stage_index": 1
   },
   {
@@ -400,7 +414,8 @@
     "accuracy": 1,
     "priority": 0,
     "pp": 15,
-    "description": "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if both the user and the target are the same gender, if either is genderless, or if the target is already infatuated. The effect ends when either the user or the target is no longer active. Pokemon with the Oblivious Ability or protected by the Aroma Veil Ability are immune."
+    "description": "Causes the target to become infatuated, making it unable to attack 50% of the time. Fails if both the user and the target are the same gender, if either is genderless, or if the target is already infatuated. The effect ends when either the user or the target is no longer active. Pokemon with the Oblivious Ability or protected by the Aroma Veil Ability are immune.",
+    "target": "any-adjacent"
   },
   {
     "ident": "aura-sphere",
@@ -410,7 +425,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 20,
-    "description": "This move does not check accuracy."
+    "description": "This move does not check accuracy.",
+    "target": "any-adjacent"
   },
   {
     "ident": "aurora-beam",
@@ -421,6 +437,7 @@
     "priority": 0,
     "pp": 20,
     "description": "Has a 10% chance to lower the target's Attack by 1 stage.",
+    "target": "any-adjacent",
     "stat_changes": [
       {
         "attack": -1,
@@ -436,7 +453,8 @@
     "accuracy": null,
     "priority": 0,
     "pp": 20,
-    "description": "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Hail."
+    "description": "For 5 turns, the user and its party members take 0.5x damage from physical and special attacks, or 0.66x damage if in a Double Battle; does not reduce damage further with Reflect or Light Screen. Critical hits ignore this protection. It is removed from the user's side if the user or an ally is successfully hit by Brick Break, Psychic Fangs, or Defog. Brick Break and Psychic Fangs remove the effect before damage is calculated. Lasts for 8 turns if the user is holding Light Clay. Fails unless the weather is Hail.",
+    "target": "team"
   },
   {
     "ident": "avalanche",
@@ -446,7 +464,8 @@
     "accuracy": 1,
     "priority": -4,
     "pp": 10,
-    "description": "Power doubles if the user was hit by the target this turn."
+    "description": "Power doubles if the user was hit by the target this turn.",
+    "target": "any-adjacent"
   },
   {
     "ident": "axe-kick",
@@ -457,6 +476,7 @@
     "priority": 0,
     "pp": 10,
     "description": "If this attack is not successful, the user loses half of its maximum HP, rounded down, as crash damage. Pokemon with the Magic Guard Ability are unaffected by crash damage.",
+    "target": "any-adjacent",
     "crash_damage": {
       "percentage_of_maximum_hp": 0.5
     }

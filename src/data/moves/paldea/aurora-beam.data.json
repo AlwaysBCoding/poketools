@@ -7,6 +7,7 @@
   "priority": 0,
   "pp": 20,
   "description": "Has a 10% chance to lower the target's Attack by 1 stage.",
+  "target": "any-adjacent",
   "stat_changes": [
     {
       "attack": -1,

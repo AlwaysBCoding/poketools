@@ -7,5 +7,5 @@
   "priority": 0,
   "pp": 20,
   "description": "This move does not check accuracy.",
-  "target": ""
+  "target": "any-adjacent"
 }

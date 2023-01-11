@@ -7,11 +7,13 @@
   "priority": 0,
   "pp": 5,
   "description": "Lowers the user's Defense and Special Defense by 1 stage.",
+  "target": "any-adjacent",
   "stat_changes": [
     {
       "defense": -1,
       "special_defense": -1,
-      "frequency": 1
+      "frequency": 1,
+      "target": "self"
     }
   ]
 }

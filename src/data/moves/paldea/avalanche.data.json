@@ -6,5 +6,6 @@
   "accuracy": 1,
   "priority": -4,
   "pp": 10,
-  "description": "Power doubles if the user was hit by the target this turn."
+  "description": "Power doubles if the user was hit by the target this turn.",
+  "target": "any-adjacent"
 }
