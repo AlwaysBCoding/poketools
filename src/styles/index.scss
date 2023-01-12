@@ -146,6 +146,11 @@ $pokemon-base-stats-cell-width: 50%;
     font-weight: 500;
     color: $background-cream;
   }
+
+  &:hover {
+    background-color: fade-out(black, 0.50);
+    color: black;
+  }
 }
 
 .pokemon-data-table {
@@ -1164,7 +1169,10 @@ $pokemon-base-stats-cell-width: 50%;
   }
 
   .battle-log-renderer {
-    max-height: 800px;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    max-height: 100vh;
     padding-bottom: 50px;
     overflow-y: scroll;
     background-color: $showdown-light-blue;
@@ -1193,12 +1201,18 @@ $pokemon-base-stats-cell-width: 50%;
     }
   }
 
+  .battle-state-history-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
 }
 
 // SCREENS
 // =====================
 .screen {
-  padding-bottom: 1000px;
+  padding-bottom: 500px;
 }
 
 .screen.home-screen {

@@ -1,13 +1,15 @@
 ## TODO
 
+  - focus on being able to run a game through python (including with switches for fainted pokemon)
+    - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
+    - see if you can get an ml vgc model to train
+
   - the battle still doesn't end correctly
   - tsareena leaves the party after u-turn so is eligible to be switched back in again
 
   - if I fix those two bugs above, it's good to set up a proper game agent (against the entire meta)
 
   - add target to all moves data.json files & recompile
-
-  - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
 
   - save flow charts with teams
   - search teams for specific combinations/leads

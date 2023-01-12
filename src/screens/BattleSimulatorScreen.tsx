@@ -19,7 +19,7 @@ export const BattleSimulatorScreen = () => {
   const [activeBlueTeam, setActiveBlueTeam] = useState<PokemonTeam>();
   const [activeRedTeam, setActiveRedTeam] = useState<PokemonTeam>();
   const [battle, setBattle] = useState<Battle>();
-  // const [battleActions, setBattleActions] = useState<BattleAction[]>([]);
+  const [historicalBattleStates, setHistoricalBattleStates] = useState<{battle: Battle, battleActions: Record<string, any>}[]>([]);
   const [battleActions, setBattleActions] = useState<any>({});
   const [agentActions, setAgentActions] = useState<number[]>([]);
 
@@ -78,6 +78,10 @@ export const BattleSimulatorScreen = () => {
       setBattle(nextBattle);
       setBattleActions(nextBattleActions);
       setAgentActions(nextAgentActions);
+      setHistoricalBattleStates([{
+        battle: nextBattle,
+        battleActions: nextBattleActions
+      }]);
       forceUpdate();
     }
   }
@@ -104,6 +108,10 @@ export const BattleSimulatorScreen = () => {
     setBattle(nextBattle);
     setBattleActions(nextBattleActions);
     setAgentActions(nextAgentActions);
+    setHistoricalBattleStates(historicalBattleStates.concat({
+      battle: nextBattle,
+      battleActions: nextBattleActions
+    }));
     forceUpdate();
   }
 
@@ -128,6 +136,10 @@ export const BattleSimulatorScreen = () => {
     setBattle(nextBattle);
     setBattleActions(nextBattleActions);
     setAgentActions(nextAgentActions);
+    setHistoricalBattleStates(historicalBattleStates.concat({
+      battle: nextBattle,
+      battleActions: nextBattleActions
+    }));
     forceUpdate();
   }
 
@@ -190,6 +202,7 @@ export const BattleSimulatorScreen = () => {
             agentActions={agentActions}
             selectBattleActions={selectBattleActions}
             replacePokemonAction={replacePokemonAction}
+            historicalBattleStates={historicalBattleStates}
             perspective="blue" />
         ): (<></>)}
       </div>

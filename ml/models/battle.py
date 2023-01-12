@@ -208,6 +208,8 @@ class Battle():
       return self_and_allies
     elif move_target == "field":
       return ["field"]
+    elif move_target == "team":
+      return ["team"]
     else:
       return any_adjacent
 
@@ -405,20 +407,14 @@ class Battle():
     elif(battle_action.action_type == 'move'):
       move_ident = battle_action.action_data['move']['ident']
       action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} used {move_ident}")
+
       target_slots = battle_action.action_data.get('selected_targets') if battle_action.action_data['move'].get('target') == 'any-adjacent' else self.possible_targets_for_move(actor_pokemon.battle_id, move_ident)
       targeting_value = 'spread' if len(target_slots) > 1 else 'single'
 
       for target_slot in target_slots:
         active_target_slot = target_slot
-        target_pokemon_id = self.battle_state.field_state.get(active_target_slot)
-        target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
-        if(not target_pokemon and targeting_value == 'single'):
-          active_target_slot = self.adjacent_side_slot(target_slot)
-          target_pokemon_id = self.battle_state.field_state.get(active_target_slot)
-          target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
 
         if(active_target_slot == 'field'):
-
           if(move_ident == 'electric-terrain'):
             self.battle_state.global_state.set_terrain('electric')
           elif(move_ident == 'grassy-terrain'):
@@ -437,23 +433,33 @@ class Battle():
           elif(move_ident == 'sunny-day'):
             self.battle_state.global_state.set_weather('sun')
 
+        if(active_target_slot == 'team'):
+          if(move_ident == 'reflect'):
+            if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.reflect == 0):
+              self.battle_state.blue_side_state.reflect = 5
+            elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.reflect == 0):
+              self.battle_state.red_side_state.reflect = 5
+          if(move_ident == 'light-screen'):
+            if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.light_screen == 0):
+              self.battle_state.blue_side_state.light_screen = 5
+            elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.light_screen == 0):
+              self.battle_state.red_side_state.light_screen = 5
+          if(move_ident == 'tailwind'):
+            if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.tailwind == 0):
+              self.battle_state.blue_side_state.tailwind = 4
+            elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.tailwind == 0):
+              self.battle_state.red_side_state.tailwind = 4
+
         else:
+          target_pokemon_id = self.battle_state.field_state.get(active_target_slot)
+          target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
+          if(not target_pokemon and targeting_value == 'single'):
+            active_target_slot = self.adjacent_side_slot(target_slot)
+            target_pokemon_id = self.battle_state.field_state.get(active_target_slot)
+            target_pokemon = self.pokemon_battle_state_by_id(target_pokemon_id)
+
           if(battle_action.action_data['move']['category_ident'] == 'non-damaging'):
-            if(move_ident == 'reflect'):
-              if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.reflect == 0):
-                self.battle_state.blue_side_state.reflect = 5
-              elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.reflect == 0):
-                self.battle_state.red_side_state.reflect = 5
-            if(move_ident == 'light-screen'):
-              if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.light_screen == 0):
-                self.battle_state.blue_side_state.light_screen = 5
-              elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.light_screen == 0):
-                self.battle_state.red_side_state.light_screen = 5
-            if(move_ident == 'tailwind'):
-              if(actor_pokemon.battle_side == 'blue' and self.battle_state.blue_side_state.tailwind == 0):
-                self.battle_state.blue_side_state.tailwind = 4
-              elif(actor_pokemon.battle_side == 'red' and self.battle_state.red_side_state.tailwind == 0):
-                self.battle_state.red_side_state.tailwind = 4
+            continue
 
           elif(battle_action.action_data['move']['category_ident'] in ['physical', 'special']):
             if(not target_pokemon):
@@ -559,7 +565,7 @@ class Battle():
     self.battle_turns.append(turn_events)
 
     for slot in ['blue-field-1', 'blue-field-2', 'red-field-1', 'red-field-2']:
-      if(not self.battle_state.field_state[slot] and not self.active_prompt_slot and len(self.party_pokemons(self.slot_side(slot))) > 0):
+      if(not self.battle_state.field_state.get(slot) and not self.active_prompt_slot and len(self.party_pokemons(self.slot_side(slot))) > 0):
         self.active_prompt_slot = slot
 
     if(not self.active_prompt_slot):
@@ -585,7 +591,7 @@ class Battle():
       self.battle_turns[-1].append(turn_event)
 
     for slot in ['blue-field-1', 'blue-field-2', 'red-field-1', 'red-field-2']:
-      if(not self.battle_state.field_state[slot] and not self.active_prompt_slot and len(self.party_pokemons(self.slot_side(slot))) > 0):
+      if(not self.battle_state.field_state.get(slot) and not self.active_prompt_slot and len(self.party_pokemons(self.slot_side(slot))) > 0):
         self.active_prompt_slot = slot
 
     if(not self.active_prompt_slot):

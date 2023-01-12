@@ -40,6 +40,25 @@ export const BattleLogRenderer: React.FC<{battle: Battle}> = ({ battle }) => {
   )
 }
 
+export const BattleStateHistoryControls: React.FC<{
+  onStepBackwards: () => void,
+  onStepForwards: () => void,
+}> = ({
+  onStepBackwards = () => undefined,
+  onStepForwards = () => undefined
+}) => {
+  return (
+    <div className="battle-state-history-controls">
+      <div className="button step-backward" onClick={onStepBackwards}>
+        <p className="button-text">{`<< STEP`}</p>
+      </div>
+      <div className="button step-forward" onClick={onStepForwards}>
+        <p className="button-text">{`STEP >>`}</p>
+      </div>
+    </div>
+  )
+}
+
 export const BattleActionsRenderer: React.FC<{
   battle: Battle,
   battleActions: any,
@@ -242,15 +261,44 @@ export const BattleRenderer: React.FC<{
   agentActions: number[],
   selectBattleActions?: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
   replacePokemonAction?: (battleAction: BattleAction) => void
-  perspective: BattleSide
+  perspective: BattleSide,
+  historicalBattleStates: {battle: Battle, battleActions: Record<string, any>}[]
 }> = ({
   battle,
   battleActions,
   agentActions,
   selectBattleActions = () => undefined,
   replacePokemonAction = () => undefined,
-  perspective
+  perspective,
+  historicalBattleStates
 }) => {
+
+  const [activeBattle, setActiveBattle] = useState<Battle>(battle);
+  const [activeBattleActions, setActiveBattleActions] = useState<any>(battleActions);
+  const [historicalBattleStateRewindCursor, setHistoricalBattleStateRewindCursor] = useState<number>(0);
+
+  useEffect(() => {
+    setActiveBattle(battle);
+    setHistoricalBattleStateRewindCursor(0);
+  }, [battle])
+
+  useEffect(() => {
+    setActiveBattleActions(battleActions);
+    setHistoricalBattleStateRewindCursor(0);
+  }, [battleActions])
+
+  const stepHistoricalBattleState = (direction: "backwards" | "forwards") => {
+    let nextHistoricalBattleStateRewindCursor = historicalBattleStateRewindCursor;
+    if(direction === "backwards") {
+      nextHistoricalBattleStateRewindCursor = Math.min(nextHistoricalBattleStateRewindCursor + 1, (historicalBattleStates.length - 1));
+    } else if(direction === "forwards") {
+      nextHistoricalBattleStateRewindCursor = Math.max(nextHistoricalBattleStateRewindCursor - 1, 0);
+    }
+    const historicalBattleState = historicalBattleStates[(historicalBattleStates.length - 1 - nextHistoricalBattleStateRewindCursor)];
+    setActiveBattle(historicalBattleState.battle);
+    setActiveBattleActions(historicalBattleState.battleActions);
+    setHistoricalBattleStateRewindCursor(nextHistoricalBattleStateRewindCursor);
+  }
 
   const decoratePokemonBattleState = (pokemonBattleState: PokemonBattleState): PokemonDecoratedBattleState => {
     let pokemonImage;
@@ -269,11 +317,11 @@ export const BattleRenderer: React.FC<{
   }
 
   const pokemonBattleStateAtSlot = (slot: string): PokemonBattleState | undefined => {
-    const targetBattleId = battle.battle_state.field_state[slot];
+    const targetBattleId = activeBattle.battle_state.field_state[slot];
     if(slot.startsWith("blue")) {
-      return battle.battle_state.blue_side_pokemon.find((pokemonBattleState) => { return pokemonBattleState.battle_id === targetBattleId });
+      return activeBattle.battle_state.blue_side_pokemon.find((pokemonBattleState) => { return pokemonBattleState.battle_id === targetBattleId });
     } else if(slot.startsWith("red")) {
-      return battle.battle_state.red_side_pokemon.find((pokemonBattleState) => { return pokemonBattleState.battle_id === targetBattleId });
+      return activeBattle.battle_state.red_side_pokemon.find((pokemonBattleState) => { return pokemonBattleState.battle_id === targetBattleId });
     }
   }
 
@@ -359,7 +407,7 @@ export const BattleRenderer: React.FC<{
     <div className="battle-renderer-container">
       <div className="battle-renderer">
         <PokemonBattleTeamDisplayIndex
-          pokemonBattleStates={battle.battle_state.blue_side_pokemon} />
+          pokemonBattleStates={activeBattle.battle_state.blue_side_pokemon} />
           {/* onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("blue-field-1", pokemonBattleState.battle_id)}  */}
         <div className="pokemons">
           <div className="player-pokemons">
@@ -367,16 +415,16 @@ export const BattleRenderer: React.FC<{
             {blueField2 ? renderPokemonAtSlot(decoratePokemonBattleState(blueField2), "blue-field-2") : (<></>)}
           </div>
           <div className="side-field-state player-field-state">
-            {battle.battle_state.blue_side_state.tailwind > 0 ? (<p>{`Tailwind: ${battle.battle_state.blue_side_state.tailwind}`}</p>) : (<></>)}
-            {battle.battle_state.blue_side_state.reflect > 0 ? (<p>{`Reflect: ${battle.battle_state.blue_side_state.reflect}`}</p>) : (<></>)}
-            {battle.battle_state.blue_side_state.light_screen > 0 ? (<p>{`Light Screen: ${battle.battle_state.blue_side_state.light_screen}`}</p>) : (<></>)}
+            {activeBattle.battle_state.blue_side_state.tailwind > 0 ? (<p>{`Tailwind: ${activeBattle.battle_state.blue_side_state.tailwind}`}</p>) : (<></>)}
+            {activeBattle.battle_state.blue_side_state.reflect > 0 ? (<p>{`Reflect: ${activeBattle.battle_state.blue_side_state.reflect}`}</p>) : (<></>)}
+            {activeBattle.battle_state.blue_side_state.light_screen > 0 ? (<p>{`Light Screen: ${activeBattle.battle_state.blue_side_state.light_screen}`}</p>) : (<></>)}
           </div>
           <div className="global-field-state">
           </div>
           <div className="side-field-state enemy-field-state">
-            {battle.battle_state.red_side_state.tailwind > 0 ? (<p>{`Tailwind: ${battle.battle_state.red_side_state.tailwind}`}</p>) : (<></>)}
-            {battle.battle_state.red_side_state.reflect > 0 ? (<p>{`Reflect: ${battle.battle_state.red_side_state.reflect}`}</p>) : (<></>)}
-            {battle.battle_state.red_side_state.light_screen > 0 ? (<p>{`Light Screen: ${battle.battle_state.red_side_state.light_screen}`}</p>) : (<></>)}
+            {activeBattle.battle_state.red_side_state.tailwind > 0 ? (<p>{`Tailwind: ${activeBattle.battle_state.red_side_state.tailwind}`}</p>) : (<></>)}
+            {activeBattle.battle_state.red_side_state.reflect > 0 ? (<p>{`Reflect: ${activeBattle.battle_state.red_side_state.reflect}`}</p>) : (<></>)}
+            {activeBattle.battle_state.red_side_state.light_screen > 0 ? (<p>{`Light Screen: ${activeBattle.battle_state.red_side_state.light_screen}`}</p>) : (<></>)}
           </div>
           <div className="enemy-pokemons">
             {redField1 ? renderPokemonAtSlot(decoratePokemonBattleState(redField1), "red-field-1") : (<></>)}
@@ -384,11 +432,14 @@ export const BattleRenderer: React.FC<{
           </div>
         </div>
         <PokemonBattleTeamDisplayIndex
-          pokemonBattleStates={battle.battle_state.red_side_pokemon} />
+          pokemonBattleStates={activeBattle.battle_state.red_side_pokemon} />
           {/* onPokemonBattleStateClick={(pokemonBattleState, teamIndex) => replacePokemonAction("red-field-1", pokemonBattleState.battle_id) } */}
       </div>
-      <BattleActionsRenderer battle={battle} battleActions={battleActions} selectBattleActions={selectBattleActions} replacePokemonAction={replacePokemonAction} />
-      <BattleLogRenderer battle={battle} />
+      <BattleActionsRenderer battle={activeBattle} battleActions={activeBattleActions} selectBattleActions={selectBattleActions} replacePokemonAction={replacePokemonAction} />
+      <BattleLogRenderer battle={activeBattle} />
+      <BattleStateHistoryControls
+        onStepBackwards={() => stepHistoricalBattleState("backwards")}
+        onStepForwards={() => stepHistoricalBattleState("forwards")} />
       {agentActions.length > 0 ? (
         <BattleEvalBar maxActionValue={Math.max(...(agentActions.slice(0, battleActions.length)))} />
       ) : (<></>)}
