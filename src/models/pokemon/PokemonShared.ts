@@ -920,6 +920,7 @@ export type PokemonMoveIdent =
   | "phantom-force"
   | "pin-missile"
   | "play-nice"
+  | "play-rough"
   | "pluck"
   | "poison-fang"
   | "poison-gas"

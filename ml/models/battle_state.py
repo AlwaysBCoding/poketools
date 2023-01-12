@@ -186,25 +186,38 @@ class BattleState():
   def serialize_ml(self):
     POKEMON_BATTLE_STATE_EMPTY_ML = np.zeros(77, dtype=np.float32)
 
-    blue_party_pokemons = self.party_pokemons('blue')
-    red_party_pokemons = self.party_pokemons('red')
+    blue_side_pokemon_1 = self.blue_side_pokemon[0]
+    blue_side_pokemon_2 = self.blue_side_pokemon[1]
+    blue_side_pokemon_3 = self.blue_side_pokemon[2]
+    blue_side_pokemon_4 = self.blue_side_pokemon[3]
+    red_side_pokemon_1 = self.red_side_pokemon[0]
+    red_side_pokemon_2 = self.red_side_pokemon[1]
+    red_side_pokemon_3 = self.red_side_pokemon[2]
+    red_side_pokemon_4 = self.red_side_pokemon[3]
 
-    blue_field_slot = self.field_pokemon('blue').serialize_ml() if self.field_pokemon('blue') else POKEMON_BATTLE_STATE_EMPTY_ML
-    red_field_slot = self.field_pokemon('red').serialize_ml() if self.field_pokemon('red') else POKEMON_BATTLE_STATE_EMPTY_ML
-
-    blue_party_slot_1 = self.party_pokemons('blue')[0].serialize_ml() if len(self.party_pokemons('blue')) > 0 else POKEMON_BATTLE_STATE_EMPTY_ML
-    blue_party_slot_2 = self.party_pokemons('blue')[1].serialize_ml() if len(self.party_pokemons('blue')) > 1 else POKEMON_BATTLE_STATE_EMPTY_ML
-    red_party_slot_1 = self.party_pokemons('red')[0].serialize_ml() if len(self.party_pokemons('red')) > 0 else POKEMON_BATTLE_STATE_EMPTY_ML
-    red_party_slot_2 = self.party_pokemons('red')[1].serialize_ml() if len(self.party_pokemons('red')) > 1 else POKEMON_BATTLE_STATE_EMPTY_ML
+    blue_field_pokemon_1_battle_id = self.field_state['blue-field-1']
+    blue_field_pokemon_2_battle_id = self.field_state['blue-field-2']
+    blue_field_pokemon_1 = find(self.blue_side_pokemon, lambda x: x.battle_id == blue_field_pokemon_1_battle_id)
+    blue_field_pokemon_2 = find(self.blue_side_pokemon, lambda x: x.battle_id == blue_field_pokemon_2_battle_id)
+    red_field_pokemon_1_battle_id = self.field_state['red-field-1']
+    red_field_pokemon_2_battle_id = self.field_state['red-field-2']
+    red_field_pokemon_1 = find(self.red_side_pokemon, lambda x: x.battle_id == red_field_pokemon_1_battle_id)
+    red_field_pokemon_2 = find(self.red_side_pokemon, lambda x: x.battle_id == red_field_pokemon_2_battle_id)
 
     return flatten([
       self.global_state.serialize_ml(),
       self.blue_side_state.serialize_ml(),
       self.red_side_state.serialize_ml(),
-      flatten(blue_field_slot),
-      flatten(red_field_slot),
-      flatten(blue_party_slot_1),
-      flatten(blue_party_slot_2),
-      flatten(red_party_slot_1),
-      flatten(red_party_slot_2)
+      flatten(blue_field_pokemon_1.serialize_ml() if blue_field_pokemon_1 else POKEMON_BATTLE_STATE_EMPTY_ML),
+      flatten(blue_field_pokemon_2.serialize_ml() if blue_field_pokemon_2 else POKEMON_BATTLE_STATE_EMPTY_ML),
+      flatten(blue_side_pokemon_1.serialize_ml()),
+      flatten(blue_side_pokemon_2.serialize_ml()),
+      flatten(blue_side_pokemon_3.serialize_ml()),
+      flatten(blue_side_pokemon_4.serialize_ml()),
+      flatten(red_field_pokemon_1.serialize_ml() if red_field_pokemon_1 else POKEMON_BATTLE_STATE_EMPTY_ML),
+      flatten(red_field_pokemon_2.serialize_ml() if red_field_pokemon_2 else POKEMON_BATTLE_STATE_EMPTY_ML),
+      flatten(red_side_pokemon_1.serialize_ml()),
+      flatten(red_side_pokemon_2.serialize_ml()),
+      flatten(red_side_pokemon_3.serialize_ml()),
+      flatten(red_side_pokemon_4.serialize_ml())
     ])

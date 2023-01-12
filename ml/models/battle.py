@@ -1,7 +1,7 @@
 from models.pokemon_battle_state import PokemonBattleState, PokemonStatBoosts
 from models.battle_state import BattleState
 from helpers import find, flatten
-from mappings import variant_mapping
+from mappings import battle_status_mapping, battle_side_mapping
 from damage_calculation import calculate_damage
 
 from functools import cmp_to_key
@@ -212,6 +212,64 @@ class Battle():
       return ["team"]
     else:
       return any_adjacent
+
+  def ml_valid_actions_for_slot(self, slot):
+    pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
+    if(not pokemon_battle_state):
+      return [0]
+    else:
+      return [0, 1, 2, 3]
+
+  def ml_valid_actions_for_side(self, side):
+    field_slots = ['blue-field-1', 'blue-field-2'] if side == 'blue' else ['red-field-1', 'red-field-2']
+    slot_1_valid_actions = self.ml_valid_actions_for_slot(field_slots[0])
+    slot_2_valid_actions = self.ml_valid_actions_for_slot(field_slots[1])
+    side_valid_actions = []
+
+    all_slot_actions = self.ml_available_actions_for_slot()
+    for index_1, slot_action_1 in enumerate(all_slot_actions):
+      if(index_1 in slot_1_valid_actions):
+        for index_2, slot_action_2 in enumerate(all_slot_actions):
+          if(index_2 in slot_2_valid_actions):
+            side_valid_actions.append(index_2 + (index_1 * len(all_slot_actions)))
+      else:
+        continue
+
+    return side_valid_actions
+
+  def ml_avaialable_actions_for_side(self):
+    side_actions = []
+    slot_actions = self.ml_available_actions_for_slot()
+    for slot_action in slot_actions:
+      for slot_action2 in slot_actions:
+        composite_action = [slot_action, slot_action2]
+        side_actions.append(composite_action)
+    return side_actions
+
+  def ml_available_actions_for_slot(self):
+    return [
+      ["NO-OP", None],
+      ["move1", "no-targeting"],
+      ["move1", "target-ally"],
+      ["move1", "target-enemy-1"],
+      ["move1", "target-enemy-2"],
+      ["move2", "no-targeting"],
+      ["move2", "target-ally"],
+      ["move2", "target-enemy-1"],
+      ["move2", "target-enemy-2"],
+      ["move3", "no-targeting"],
+      ["move3", "target-ally"],
+      ["move3", "target-enemy-1"],
+      ["move3", "target-enemy-2"],
+      ["move4", "no-targeting"],
+      ["move4", "target-ally"],
+      ["move4", "target-enemy-1"],
+      ["move4", "target-enemy-2"],
+      ["switch", "pokemon1"],
+      ["switch", "pokemon2"],
+      ["switch", "pokemon3"],
+      ["switch", "pokemon4"]
+    ]
 
   def available_actions_for_battle_state(self, serialized=False):
     available_actions = {}
@@ -672,7 +730,9 @@ class Battle():
     }
   def serialize_ml(self):
     return flatten([
-      variant_mapping(self.config.get('variant')),
+      battle_status_mapping(self.status),
+      battle_side_mapping(self.winner),
       np.float32(self.turn_index),
-      self.battle_state.serialize_ml()
+      self.battle_state.serialize_ml(),
+      1
     ])

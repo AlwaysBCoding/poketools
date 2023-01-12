@@ -93,6 +93,10 @@ export const BattleActionsRenderer: React.FC<{
     setActionTargetSlotCursor(null);
   }
 
+  useEffect(() => {
+    resetState();
+  }, [battle]);
+
   const selectBattleAction = (battleAction: BattleAction, slot: string) => {
     if(actionTargetSlotCursor) {
       if(actionTargetSlotCursor === "blue-field-1") {

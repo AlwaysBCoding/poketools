@@ -29,14 +29,14 @@ class PokemonStatBoosts():
 
   def serialize_ml(self):
     return [
-      np.float32(self.attack),
-      np.float32(self.defense),
-      np.float32(self.special_attack),
-      np.float32(self.special_defense),
-      np.float32(self.speed),
-      np.float32(self.accuracy),
-      np.float32(self.evasiveness),
-      np.float32(self.critical_hit)
+      np.float32(self.attack / 6),
+      np.float32(self.defense / 6),
+      np.float32(self.special_attack / 6),
+      np.float32(self.special_defense / 6),
+      np.float32(self.speed / 6),
+      np.float32(self.accuracy / 6),
+      np.float32(self.evasiveness / 6),
+      np.float32(self.critical_hit / 3)
     ]
 
 class PokemonBattleState():
@@ -174,13 +174,14 @@ class PokemonBattleState():
 
   def serialize_ml(self):
     return flatten([
-      type_ident_mapping(self.primary_type_ident),
-      type_ident_mapping(self.secondary_type_ident),
-      ability_ident_mapping(self.ability_ident),
-      item_ident_mapping(self.item_ident),
-      status_ident_mapping(self.status),
-      self.stat_boosts.serialize_ml(),
-      np.float32(self.current_hp),
-      np.float32(self.max_hp()),
-      location_mapping(self.location)
+      flatten(type_ident_mapping(self.primary_type_ident)),
+      flatten(type_ident_mapping(self.secondary_type_ident)),
+      flatten(type_ident_mapping(self.pokemon_build.tera_type_ident)),
+      flatten(ability_ident_mapping(self.ability_ident)),
+      flatten(item_ident_mapping(self.item_ident)),
+      flatten(status_ident_mapping(self.status)),
+      flatten(self.stat_boosts.serialize_ml()),
+      np.float32(self.current_hp / self.max_hp()),
+      flatten(location_mapping(self.location)),
+      flatten(self.pokemon_build.serialize_ml())
     ])

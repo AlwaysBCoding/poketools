@@ -17,11 +17,11 @@ if __name__ == "__main__":
 
   env = Game()
 
-  NUMBER_OF_AGENT_ACTIONS = 6
-  OBSERVATION_DIMENSIONS = 485
+  NUMBER_OF_AGENT_ACTIONS = 446
+  OBSERVATION_DIMENSIONS = 34058
   GAMMA = 0.99
   EPSILON_START = 1.0
-  EPSILON_END = 0.01
+  EPSILON_END = 0.0095
   EPSILON_DEC = 2e-4
   LEARNING_RATE = 0.002
   BATCH_SIZE = 64
@@ -76,11 +76,11 @@ if __name__ == "__main__":
     observation = env.reset()
 
     while not done == 1:
-      n_possible_actions_blue = len(env.possible_actions('blue'))
-      n_possible_actions_red = len(env.possible_actions('red'))
+      blue_valid_actions = env.battle.ml_valid_actions_for_side("blue")
+      red_valid_actions = env.battle.ml_valid_actions_for_side("red")
 
-      blue_action = blue_agent.choose_action(observation, n_possible_actions_blue)
-      red_action = red_agent.choose_action(observation, n_possible_actions_red)
+      blue_action = blue_agent.choose_action(observation, blue_valid_actions)
+      red_action = red_agent.choose_action(observation, red_valid_actions)
 
       observation_, blue_reward, red_reward, done = env.step(blue_action, red_action)
       score += blue_reward

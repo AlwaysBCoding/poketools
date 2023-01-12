@@ -1,8 +1,21 @@
 ## TODO
 
+  - write logic to determine the valid actions for any given battle_state
+  - deal with the replace actions for when pokemon faints (can just use switch actions honestly)
+
+  - write the mapping from ml_action to BattleAction
+
+  - write the reward function to be able to give a reward for knocking out a pokemon (so AI favors immediate knockouts when it can get them)
+    - this reward function should be zero-sum so it means that you lose a point when you get knocked out
+
+  - write parsers for smogon data into python to create samples of metagame that the model gets trained on
+
   - focus on being able to run a game through python (including with switches for fainted pokemon)
-    - fix serialize_ml() functions to use 0-1 values and normalize large ranges better
     - see if you can get an ml vgc model to train
+
+  - make the battle log much more robust, where you have some standardized notation to analyze a move instead of just log text
+    - (see the damage rolls / crit rolls, etc...)
+      - on a KO show the % chance that the mon would be KO'd there
 
   - tsareena leaves the party after u-turn so is eligible to be switched back in again
 
@@ -15,9 +28,6 @@
   - train VGC AI
 
   ---------------------
-
-  - synchronize typescript damage calc function in tandem with the python one
-    - way to run the damage calc tests from typescript
 
   - * BLITZ THROUGH ADDING DAMAGE ONLY ABILITIES/ITEMS *
   - * SHIP THE DAMAGE CALCULATOR AS THE FIRST GOAL *

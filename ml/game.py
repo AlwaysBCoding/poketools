@@ -147,30 +147,25 @@ class Game():
     talonflame_battle_state = PokemonBattleState.create_from_pokemon_build(talonflame_build, "blue")
     grimmsnarl_battle_state = PokemonBattleState.create_from_pokemon_build(grimmsnarl_build, "blue")
     gholdengo_battle_state = PokemonBattleState.create_from_pokemon_build(gholdengo_build, "blue")
+    garchomp_battle_state = PokemonBattleState.create_from_pokemon_build(garchomp_build, "blue")
 
     tsareena_battle_state = PokemonBattleState.create_from_pokemon_build(tsareena_build, "red")
     gastrodon_battle_state = PokemonBattleState.create_from_pokemon_build(gastrodon_build, "red")
-    garchomp_battle_state = PokemonBattleState.create_from_pokemon_build(garchomp_build, "red")
     annihilape_battle_state = PokemonBattleState.create_from_pokemon_build(annihilape_build, "red")
     meowscarada_battle_state = PokemonBattleState.create_from_pokemon_build(meowscarada_build, "red")
     quaquaval_battle_state = PokemonBattleState.create_from_pokemon_build(quaquaval_build, "red")
 
-    all_red_side_pokemon = [tsareena_battle_state, gastrodon_battle_state, garchomp_battle_state, annihilape_battle_state, meowscarada_battle_state, quaquaval_battle_state]
+    all_blue_side_pokemon = [talonflame_battle_state, grimmsnarl_battle_state, gholdengo_battle_state, garchomp_battle_state]
+    all_red_side_pokemon = [tsareena_battle_state, gastrodon_battle_state, annihilape_battle_state, meowscarada_battle_state, quaquaval_battle_state]
 
-    blue_side_pokemon = [talonflame_battle_state, grimmsnarl_battle_state, gholdengo_battle_state]
-    red_side_pokemon = list(np.random.choice(all_red_side_pokemon, size=3, replace=False))
+    blue_side_pokemon = list(np.random.choice(all_blue_side_pokemon, size=4, replace=False))
+    red_side_pokemon = list(np.random.choice(all_red_side_pokemon, size=4, replace=False))
 
-    battle_config = {"variant": "singles"}
+    battle_config = {"variant": "doubles"}
     self.battle = Battle.create(battle_config, blue_side_pokemon, red_side_pokemon)
     self.battle.initial_step()
 
     return self.battle.serialize_ml()
-
-  def possible_actions(self, side):
-    if(self.battle.field_pokemon(side)):
-      return self.battle.available_actions_for_pokemon_battle_state(self.battle.field_pokemon(side).battle_id)
-    else:
-      return []
 
   def step(self, blue_action, red_action):
     blue_field_pokemon = self.battle.field_pokemon('blue')

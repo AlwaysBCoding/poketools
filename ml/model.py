@@ -68,15 +68,14 @@ class Agent():
     actions = self.Q_eval.forward(state)
     return actions
 
-  def choose_action(self, observation, n_current_game_actions):
+  def choose_action(self, observation, valid_action_indexes):
     if np.random.random() > self.epsilon:
       state = T.tensor([observation]).to(self.Q_eval.device)
-      # actions = self.Q_eval.forward(state)
-      actions = self.Q_eval.forward(state)[0:1,:n_current_game_actions]
-      action = T.argmax(actions).item()
+      all_actions = self.Q_eval.forward(state)
+      valid_actions = [all_actions[i] for i in valid_action_indexes]
+      action = T.argmax(valid_actions).item()
     else:
-      # action = np.random.choice(self.action_space)
-      action = np.random.choice([i for i in range(n_current_game_actions)])
+      action = np.random.choice(self.action_space)
 
     return action
 

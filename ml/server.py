@@ -71,6 +71,8 @@ def start_battle():
     # serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
     # observation = battle.serialize_ml()
     # blue_agent_actions = blue_agent.show_actions(observation)
+
+    ipdb.set_trace()
     return {
       "battle": battle.serialize_api(),
       "actions": battle_actions,

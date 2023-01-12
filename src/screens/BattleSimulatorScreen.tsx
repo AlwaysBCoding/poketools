@@ -143,8 +143,6 @@ export const BattleSimulatorScreen = () => {
     forceUpdate();
   }
 
-  console.log(battle);
-
   return (
     <div className="screen battle-simulator-screen">
       <div className="blue-team-select">
