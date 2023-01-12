@@ -498,7 +498,7 @@ class Battle():
               knocked_off_item_ident = target_pokemon.item_ident
               target_pokemon.item_ident = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} had {knocked_off_item_ident} knocked off!")
-            if(battle_action.action_data['move']['ident'] == 'u-turn' and len(self.party_pokemons(actor_pokemon.battle_side)) > 0):
+            if(battle_action.action_data['move'].get('should_switch_out_user') and len(self.party_pokemons(actor_pokemon.battle_side)) > 0):
               actor_pokemon.location = "party"
               self.battle_state.field_state[battle_action.slot] = None
               replace_pokemon_action_slot = battle_action.slot

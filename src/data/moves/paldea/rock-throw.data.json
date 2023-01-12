@@ -1,0 +1,11 @@
+{
+  "ident": "rock-throw",
+  "type_ident": "rock",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 15,
+  "description": "No additional effect.",
+  "target": "any-adjacent"
+}

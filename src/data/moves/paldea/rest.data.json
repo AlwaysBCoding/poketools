@@ -1,0 +1,21 @@
+{
+  "ident": "rest",
+  "type_ident": "psychic",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 5,
+  "description": "The user falls asleep for the next two turns and restores all of its HP, curing itself of any non-volatile status condition in the process. Fails if the user has full HP, is already asleep, or if another effect is preventing sleep.",
+  "target": "self",
+  "recovery": {
+    "percentage_of_maximum_hp": 1
+  },
+  "secondary_effects": [
+    {
+      "status_ident": "asleep",
+      "target": "self",
+      "frequency": 1
+    }
+  ]
+}

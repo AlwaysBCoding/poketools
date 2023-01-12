@@ -1,0 +1,11 @@
+{
+  "ident": "revelation-dance",
+  "type_ident": "normal",
+  "category_ident": "special",
+  "base_power": 90,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 15,
+  "description": "This move's type depends on the user's primary type. If the user's primary type is typeless, this move's type is the user's secondary type if it has one, otherwise the added type from Forest's Curse or Trick-or-Treat. This move is typeless if the user's type is typeless alone.",
+  "target": "any-adjacent"
+}

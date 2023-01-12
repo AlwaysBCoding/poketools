@@ -1,0 +1,11 @@
+{
+  "ident": "rapid-spin",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 50,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 40,
+  "description": "If this move is successful and the user has not fainted, the effects of Leech Seed and binding moves end for the user, and all hazards are removed from the user's side of the field. Has a 100% chance to raise the user's Speed by 1 stage.",
+  "target": "any-adjacent"
+}

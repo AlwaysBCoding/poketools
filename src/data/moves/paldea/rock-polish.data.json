@@ -1,0 +1,18 @@
+{
+  "ident": "rock-polish",
+  "type_ident": "rock",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 20,
+  "description": "Raises the user's Speed by 2 stages.",
+  "target": "self",
+  "stat_changes": [
+    {
+      "speed": 2,
+      "frequency": 1,
+      "target": "self"
+    }
+  ]
+}

@@ -6,5 +6,7 @@
   "accuracy": null,
   "priority": 0,
   "pp": 40,
-  "description": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes, confusion, and certain move effects transferred to it."
+  "description": "The user is replaced with another Pokemon in its party. The selected Pokemon has the user's stat stage changes, confusion, and certain move effects transferred to it.",
+  "target": "self",
+  "should_switch_out_user": true
 }

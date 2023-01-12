@@ -1,0 +1,11 @@
+{
+  "ident": "ruination",
+  "type_ident": "dark",
+  "category_ident": "special",
+  "base_power": null,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 10,
+  "description": "Deals damage to the target equal to half of its current HP, rounded down, but not less than 1 HP.",
+  "target": "any-adjacent"
+}

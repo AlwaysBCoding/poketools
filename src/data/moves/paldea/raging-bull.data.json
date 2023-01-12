@@ -1,0 +1,11 @@
+{
+  "ident": "raging-bull",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 90,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 10,
+  "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated. If the user's current form is a Paldean Tauros, this move's type changes to match. Fighting type for Combat Breed, Fire type for Blaze Breed, and Water type for Aqua Breed.",
+  "target": "any-adjacent"
+}

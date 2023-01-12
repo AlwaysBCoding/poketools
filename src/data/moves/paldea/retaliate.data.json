@@ -1,0 +1,11 @@
+{
+  "ident": "retaliate",
+  "type_ident": "normal",
+  "category_ident": "physical",
+  "base_power": 70,
+  "accuracy": 1,
+  "priority": 0,
+  "pp": 5,
+  "description": "Power doubles if one of the user's party members fainted last turn.",
+  "target": "any-adjacent"
+}

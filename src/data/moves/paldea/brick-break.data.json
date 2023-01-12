@@ -6,5 +6,6 @@
   "accuracy": 1,
   "priority": 0,
   "pp": 15,
-  "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated."
+  "description": "If this attack does not miss, the effects of Reflect, Light Screen, and Aurora Veil end for the target's side of the field before damage is calculated.",
+  "target": "any-adjacent"
 }

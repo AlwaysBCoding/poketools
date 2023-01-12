@@ -40,6 +40,9 @@ type PokemonMoveTarget =
   | "self-or-ally"
   | "self-and-allies"
   | "team"
+  | "random-enemy"
+  | "last-attacking-enemy"
+  | "custom"
 
 interface PokemonMoveDelegate {
   ident: string;
@@ -68,11 +71,15 @@ export interface PokemonMoveSimple {
   target?: PokemonMoveTarget;
   stat_changes?: any;
   secondary_effects?: any;
-  recovery?: any;
-  recoil?: any;
+
   crash_damage?: any;
   critical_hit_stage_index?: number;
   multihit?: number[][];
+  recharge_turn?: boolean;
+  recoil?: any;
+  recovery?: any;
+  self_damage?: any;
+  should_switch_out_user?: boolean;
 }
 
 export interface PokemonMove {

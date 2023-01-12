@@ -7,6 +7,7 @@
   "priority": 0,
   "pp": 20,
   "description": "Raises the user's Attack and Defense by 1 stage.",
+  "target": "self",
   "stat_changes": [
     {
       "attack": 1,

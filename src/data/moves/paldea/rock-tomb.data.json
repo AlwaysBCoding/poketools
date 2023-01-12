@@ -1,0 +1,17 @@
+{
+  "ident": "rock-tomb",
+  "type_ident": "rock",
+  "category_ident": "physical",
+  "base_power": 60,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 100% chance to lower the target's Speed by 1 stage.",
+  "target": "any-adjacent",
+  "stat_changes": [
+    {
+      "speed": -1,
+      "frequency": 1
+    }
+  ]
+}

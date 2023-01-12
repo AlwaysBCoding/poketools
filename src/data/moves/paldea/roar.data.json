@@ -1,0 +1,11 @@
+{
+  "ident": "roar",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": -6,
+  "pp": 20,
+  "description": "The target is forced to switch out and be replaced with a random unfainted ally. Fails if the target is the last unfainted Pokemon in its party, or if the target used Ingrain previously or has the Suction Cups Ability.",
+  "target": "any-adjacent"
+}

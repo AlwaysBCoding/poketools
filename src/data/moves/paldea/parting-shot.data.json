@@ -14,5 +14,6 @@
       "special_attack": -1,
       "frequency": 1
     }
-  ]
+  ],
+  "should_switch_out_user": true
 }

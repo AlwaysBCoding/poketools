@@ -73,6 +73,7 @@ export type PokemonStatusIdent =
 export type PokemonVolatileStatus =
   | "flinched"
   | "confused"
+  | "drowsy"
   | "taunted"
   | "substitute";
 

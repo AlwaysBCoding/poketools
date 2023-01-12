@@ -1,0 +1,11 @@
+{
+  "ident": "revival-blessing",
+  "type_ident": "normal",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 1,
+  "description": "A fainted party member is selected and revived with 1/2 its max HP, rounded down. Fails if there are no fainted party members.",
+  "target": "self"
+}

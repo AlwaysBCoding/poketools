@@ -1,0 +1,12 @@
+{
+  "ident": "razor-leaf",
+  "type_ident": "grass",
+  "category_ident": "physical",
+  "base_power": 55,
+  "accuracy": 0.95,
+  "priority": 0,
+  "pp": 25,
+  "description": "Has a higher chance for a critical hit.",
+  "target": "any-adjacent",
+  "critical_hit_stage_index": 1
+}

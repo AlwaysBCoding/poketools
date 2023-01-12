@@ -6,5 +6,6 @@
   "accuracy": 1,
   "priority": 0,
   "pp": 10,
-  "description": "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal."
+  "description": "Damage is calculated using the user's Defense stat as its Attack, including stat stage changes. Other effects that modify the Attack stat are used as normal.",
+  "target": "any-adjacent"
 }

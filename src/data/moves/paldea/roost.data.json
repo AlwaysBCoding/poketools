@@ -1,0 +1,14 @@
+{
+  "ident": "roost",
+  "type_ident": "flying",
+  "category_ident": "non-damaging",
+  "base_power": null,
+  "accuracy": null,
+  "priority": 0,
+  "pp": 5,
+  "description": "The user restores 1/2 of its maximum HP, rounded half up. Until the end of the turn, Flying-type users lose their Flying type and pure Flying-type users become Normal type. Does nothing if the user's HP is full.",
+  "target": "self",
+  "recovery": {
+    "percentage_of_maximum_hp": 0.50
+  }
+}

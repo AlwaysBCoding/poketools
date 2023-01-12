@@ -80,9 +80,9 @@
   - add VGC config
 
   - DEX COMPLETION: (397/400) | 99.25%
-  - MOVE TEMPLATE COMPLETION: (17/26) | 65.38%
+  - MOVE TEMPLATE COMPLETION: (22/26) | 84.62%
   - ITEM COMPLETION: (21/136) | 15.44%
-  - ABILITY COMPLETION: (8/167) | 4.80%
+  - ABILITY COMPLETION: (8/200) | 4.00%
 
 ## NOTES
   - store "evolution_line" on the pokemon data structure and migrate can_evolve? to an instance method on the Pokemon class
@@ -93,15 +93,12 @@
   - Body Slam (damage doubles and no accuracy check is performed if target used minimize)
   - Charge (next electric-type attack will have its power doubled)
   - Clear Smog (resets all targets stat changes)
-  - Comeuppance (wtf is this attack)
+  - Comeuppance (wtf is this attack | target is "last pokemon")
   - Copycat (copies last attempted move)
-  - Defog (removes hazards, terrain)
   - Destiny Bond (kills the killer if active and user faints)
-  - Doodle (changes ability of user and ally to that of selected target)
   - Dragon Darts (smart targeting)
   - Dragon Rush (weird effect about countering minimize)
   - Encore (target becomes encore'd must repeat last move)
-  - Entrainment (changes targets ability)
   - False Swipe (leaves the target with at least 1 HP)
   - Fell Stinger (raises the user's attack if it knocks out target)
   - Fling (depends what item is being held, each item different)
@@ -121,7 +118,6 @@
   - Magnetic Flux (contingently boosts stats based on ability)
   - Magnet Rise (causes user to be in a hover state for 5 turns)
   - Metal Burst (wtf is this attack?! -- targeting listed as: special on serebii)
-  - Mortal Spin (removes hazards from user's side while dealing damage)
   - Night Shade (deals damage equal to the user's level)
   - Order Up (stat change is contingent on the tatsugiri form that Dondozo has in it's mouth)
   - Perish Song (everything about the move...)
@@ -132,6 +128,12 @@
   - Present (BP of move & effect of move are contingent on randomness)
   - Psych Up (user copies all of target's stat changes)
   - Quash (forces target to move last)
+  - Recycle (user regains last used item)
+  - Reflect Type (user changes type to match the target)
+  - Revival Blessing (revives fainted pokemon)
+  - Rollout (locks user into move, power doubles each turn)
+  - Roost (flying type users lose their flying type / become normal type until the end of the turn)
+  - Ruination (deals damage equal to half of target's current hp)
 
 ## Custom Move Behavior Grouping
   - User loses percentage of maximum HP in exchange for stat boosts
@@ -143,11 +145,9 @@
   - Target is forced to switch out if attack is successful
     - Circle Throw
     - Dragon Tail
+    - Roar
   - User is forced to switch out if attack is successful
-    - Chilly Reception
-    - Flip Turn
-    - Parting Shot
-    - U-Turn
+    [IMPLEMENTED]
   - Attack Takes place over multiple turns where first turn hides user
     - Bounce
     - Dig
@@ -174,6 +174,7 @@
     - Eruption
     - Flail
     - Pain Split
+    - Reversal
   - Move has custom logic depending on the current typing of the user
     - Curse
     - Double Shock
@@ -197,9 +198,10 @@
     - Final Gambit
     - Healing Wish
     - Memento
-  - Move has custom logic depending on other moves used this turn
+  - Move has custom move order or logic depending on other moves used this turn
     - Fire Pledge
     - Grass Pledge
+    - Round
     - Water Pledge
   - Prevents target from switching out, potentially deals DOT damage [BINDING]
     - Bind (YES DOT)
@@ -242,6 +244,7 @@
     - Fury Swipes
     - Icicle Spear
     - Population Bomb
+    - Rock Blast
   - Has a multiplier effect across successive usages
     - Echoed Voice
     - Fury Cutter
@@ -294,14 +297,31 @@
     - Psychic Terrain
   - Damage is conditional on the order the user and target move in
     - Payback
+  - Damage is conditional on if user's mon fainted this turn
+    - Retaliate
   - Move lock-in, random targeting, confusion at the end
     - Outrage
     - Petal Dance
+    - Raging Fury
+    - Uproar
   - Move behavior contingent on if target is an enemy or an ally
     - Pollen Puff
   - Destroys Screens if move is successful
     - Brick Break
     - Psychic Fangs
+    - Raging Bull (also changes type)
+  - Removes Hazards from the side or field
+    - Defog
+    - Mortal Spin
+    - Rapid Spin
+  - Move type depends on user type
+    - Raging Bull
+    - Revelation Dance
+    - Tera Blast
+  - Changes Abilities in some way
+    - Doodle
+    - Entrainment
+    - Role Play
 
 ## OPEN AI QUESTIONS
   - what to do for imperfect knowledge games, where observation states become avaialable over time

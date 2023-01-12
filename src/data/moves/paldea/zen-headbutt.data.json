@@ -1,0 +1,17 @@
+{
+  "ident": "zen-headbutt",
+  "type_ident": "psychic",
+  "category_ident": "physical",
+  "base_power": 80,
+  "accuracy": 0.90,
+  "priority": 0,
+  "pp": 15,
+  "description": "Has a 20% chance to make the target flinch.",
+  "target": "any-adjacent",
+  "secondary_effects": [
+    {
+      "status_ident": "flinched",
+      "frequency": 0.20
+    }
+  ]
+}

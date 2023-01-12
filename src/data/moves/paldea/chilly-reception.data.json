@@ -6,5 +6,7 @@
   "accuracy": null,
   "priority": 0,
   "pp": 10,
-  "description": "For 5 turns, the weather becomes Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members."
+  "description": "For 5 turns, the weather becomes Snow. The user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+  "target": "field",
+  "should_switch_out_user": true
 }
