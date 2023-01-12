@@ -86,7 +86,7 @@ export const BattleSimulatorScreen = () => {
     }
   }
 
-  const selectBattleActions = async (blueActions: BattleAction[], redActions: BattleAction[]) => {
+  const selectBattleActions = async (battle: Battle, blueActions: BattleAction[], redActions: BattleAction[]) => {
     const fetchOptions = {
       method: "POST",
       headers: {
@@ -142,6 +142,8 @@ export const BattleSimulatorScreen = () => {
     }));
     forceUpdate();
   }
+
+  console.log(battle);
 
   return (
     <div className="screen battle-simulator-screen">

@@ -515,7 +515,9 @@ class Battle():
               target_pokemon.location = "graveyard"
               self.battle_state.field_state[active_target_slot] = None
               action_events.append(f"{target_pokemon.pokemon_build.pokemon.ident} fainted")
-              possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side) + [self.pokemon_battle_state_at_slot(self.adjacent_side_slot(active_target_slot))]
+              possible_replacement_pokemons = self.party_pokemons(target_pokemon.battle_side)
+              if(self.pokemon_battle_state_at_slot(self.adjacent_side_slot(active_target_slot))):
+                possible_replacement_pokemons += [self.pokemon_battle_state_at_slot(self.adjacent_side_slot(active_target_slot))]
               if(len(possible_replacement_pokemons) == 0):
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")
@@ -523,7 +525,9 @@ class Battle():
               actor_pokemon.location = "graveyard"
               self.battle_state.field_state[actor_slot] = None
               action_events.append(f"{actor_pokemon.pokemon_build.pokemon.ident} fainted")
-              possible_replacement_pokemons = self.party_pokemons(actor_pokemon.battle_side) + [self.pokemon_battle_state_at_slot(self.adjacent_side_slot(battle_action.slot))]
+              possible_replacement_pokemons = self.party_pokemons(actor_pokemon.battle_side)
+              if(self.pokemon_battle_state_at_slot(self.adjacent_side_slot(battle_action.slot))):
+                possible_replacement_pokemons += [self.pokemon_battle_state_at_slot(self.adjacent_side_slot(battle_action.slot))]
               if(len(possible_replacement_pokemons) == 0 and not should_end_battle):
                 should_end_battle = True
                 action_events.append("THE BATTLE IS OVER")

@@ -1166,6 +1166,15 @@ $pokemon-base-stats-cell-width: 50%;
 
     }
 
+    .battle-complete-text {
+      width: 100%;
+      text-align: center;
+      align-self: center;
+      font-size: 64px;
+      font-weight: bold;
+      color: white;
+    }
+
   }
 
   .battle-log-renderer {

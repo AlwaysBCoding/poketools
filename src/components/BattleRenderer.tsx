@@ -62,7 +62,7 @@ export const BattleStateHistoryControls: React.FC<{
 export const BattleActionsRenderer: React.FC<{
   battle: Battle,
   battleActions: any,
-  selectBattleActions: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
+  selectBattleActions: (battle: Battle, blueActions: BattleAction[], redActions: BattleAction[]) => void,
   replacePokemonAction: (battleAction: BattleAction) => void
 }> = ({
   battle,
@@ -147,7 +147,7 @@ export const BattleActionsRenderer: React.FC<{
       if(blueField2BattleAction) { blueActions.push(blueField2BattleAction); }
       if(redField1BattleAction) { redActions.push(redField1BattleAction); }
       if(redField2BattleAction) { redActions.push(redField2BattleAction); }
-      selectBattleActions(blueActions, redActions);
+      selectBattleActions(battle, blueActions, redActions);
       resetState();
     }
   }
@@ -225,27 +225,35 @@ export const BattleActionsRenderer: React.FC<{
     )
   }
 
-  return (
-    <>
+  if(battle.status !== "complete") {
+    return (
+      <>
+        <div className="pokemon-battle-actions">
+          <div className="battle-action-section blue-field-1">
+            {renderBattleActionsForSlot("blue-field-1")}
+          </div>
+          <div className="battle-action-section blue-field-2">
+            {renderBattleActionsForSlot("blue-field-2")}
+          </div>
+          <div className="battle-action-section red-field-1">
+            {renderBattleActionsForSlot("red-field-1")}
+          </div>
+          <div className="battle-action-section red-field-2">
+            {renderBattleActionsForSlot("red-field-2")}
+          </div>
+        </div>
+        <div className="button" onClick={submitActions}>
+          <p className="button-text">SUBMIT ACTIONS</p>
+        </div>
+      </>
+    )
+  } else {
+    return (
       <div className="pokemon-battle-actions">
-        <div className="battle-action-section blue-field-1">
-          {renderBattleActionsForSlot("blue-field-1")}
-        </div>
-        <div className="battle-action-section blue-field-2">
-          {renderBattleActionsForSlot("blue-field-2")}
-        </div>
-        <div className="battle-action-section red-field-1">
-          {renderBattleActionsForSlot("red-field-1")}
-        </div>
-        <div className="battle-action-section red-field-2">
-          {renderBattleActionsForSlot("red-field-2")}
-        </div>
+        <h4 className="battle-complete-text">BATTLE COMPLETE</h4>
       </div>
-      <div className="button" onClick={submitActions}>
-        <p className="button-text">SUBMIT ACTIONS</p>
-      </div>
-    </>
-  )
+    )
+  }
 
 }
 
@@ -259,7 +267,7 @@ export const BattleRenderer: React.FC<{
   battle: Battle,
   battleActions: any,
   agentActions: number[],
-  selectBattleActions?: (blueActions: BattleAction[], redActions: BattleAction[]) => void,
+  selectBattleActions?: (battle: Battle, blueActions: BattleAction[], redActions: BattleAction[]) => void,
   replacePokemonAction?: (battleAction: BattleAction) => void
   perspective: BattleSide,
   historicalBattleStates: {battle: Battle, battleActions: Record<string, any>}[]
