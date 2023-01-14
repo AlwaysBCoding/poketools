@@ -67,12 +67,15 @@ def start_battle():
     battle = Battle.deserialize(data)
     battle.initial_step()
     battle_actions = battle.available_actions_for_battle_state(serialized=True)
-    # battle_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon("blue").battle_id)
     # serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
     # observation = battle.serialize_ml()
     # blue_agent_actions = blue_agent.show_actions(observation)
 
-    ipdb.set_trace()
+    all_blue_actions = battle.ml_available_actions_for_side()
+    valid_blue_actions = battle.ml_valid_actions_for_side('blue')
+
+    # pprint([all_blue_actions[i] for i in valid_blue_actions])
+
     return {
       "battle": battle.serialize_api(),
       "actions": battle_actions,

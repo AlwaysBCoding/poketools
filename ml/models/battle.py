@@ -215,10 +215,33 @@ class Battle():
 
   def ml_valid_actions_for_slot(self, slot):
     pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
+    valid_actions = []
+
     if(not pokemon_battle_state):
-      return [0]
+      valid_actions = [0]
     else:
-      return [0, 1, 2, 3]
+      for index, move_ident in enumerate(pokemon_battle_state.pokemon_build.move_idents):
+        move_data = find(all_moves_data, lambda x: x.get('ident') == move_ident)
+        if(move_data):
+          move_target = move_data.get('target')
+          if(move_target == 'any-adjacent'):
+            valid_actions.append(2 + (index * 4))
+            valid_actions.append(3 + (index * 4))
+            valid_actions.append(4 + (index * 4))
+          else:
+            valid_actions.append(1 + (index * 4))
+        else:
+          continue
+      if(slot in ['blue-field-1', 'blue-field-2']):
+        for i in [0, 1, 2, 3]:
+          if(self.battle_state.blue_side_pokemon[i].location == 'party'):
+            valid_actions.append(17 + i)
+      elif(slot in ['red-field-1', 'red-field-2']):
+        for i in [0, 1, 2, 3]:
+          if(self.battle_state.red_side_pokemon[i].location == 'party'):
+            valid_actions.append(17 + i)
+
+    return valid_actions
 
   def ml_valid_actions_for_side(self, side):
     field_slots = ['blue-field-1', 'blue-field-2'] if side == 'blue' else ['red-field-1', 'red-field-2']
@@ -235,9 +258,10 @@ class Battle():
       else:
         continue
 
+    side_valid_actions = list(filter(lambda x: x not in [374, 396, 418, 440], side_valid_actions))
     return side_valid_actions
 
-  def ml_avaialable_actions_for_side(self):
+  def ml_available_actions_for_side(self):
     side_actions = []
     slot_actions = self.ml_available_actions_for_slot()
     for slot_action in slot_actions:
