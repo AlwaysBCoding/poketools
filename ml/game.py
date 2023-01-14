@@ -215,6 +215,8 @@ class Game():
     return self.battle.serialize_ml()
 
   def step(self, blue_action, red_action):
+    self.blue_reward = 0
+    self.red_reward = 0
     self.battle.ml_step(blue_action, red_action)
 
     next_blue_pokemon_count = len(self.battle.battle_state.alive_pokemons('blue'))
