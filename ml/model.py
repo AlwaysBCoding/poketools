@@ -75,7 +75,7 @@ class Agent():
       valid_actions = [all_actions[i] for i in valid_action_indexes]
       action = T.argmax(valid_actions).item()
     else:
-      action = np.random.choice(self.action_space)
+      action = np.random.choice(valid_action_indexes)
 
     return action
 

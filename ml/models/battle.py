@@ -91,6 +91,8 @@ class Battle():
     self.active_prompt_slot = active_prompt_slot
     self.pending_battle_actions = pending_battle_actions
 
+    self.ml_turns = []
+
   @classmethod
   def create(cls, config, blue_side_pokemon, red_side_pokemon):
     return cls(
@@ -718,6 +720,8 @@ class Battle():
   def ml_step(self, blue_action_index, red_action_index):
     blue_chosen_action = self.ml_available_actions_for_side()[blue_action_index]
     red_chosen_action = self.ml_available_actions_for_side()[red_action_index]
+
+    self.ml_turns.append({"blue": blue_chosen_action, "red": red_chosen_action})
 
     blue_battle_actions = [self.ml_action_to_battle_action('blue-field-1', blue_chosen_action[0]), self.ml_action_to_battle_action('blue-field-2', blue_chosen_action[1])]
     red_battle_actions = [self.ml_action_to_battle_action('red-field-1', red_chosen_action[0]), self.ml_action_to_battle_action('red-field-2', red_chosen_action[1])]

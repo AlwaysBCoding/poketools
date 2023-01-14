@@ -5,6 +5,7 @@ import torch as T
 from pathlib import Path
 from pprint import pprint
 import numpy as np
+import traceback
 import ipdb
 
 if __name__ == "__main__":
@@ -69,54 +70,59 @@ if __name__ == "__main__":
 
   scores, epsilon_history = [], []
 
-  for i in range(n_games):
-    epoch += 1
-    score = 0
-    done = 0
-    observation = env.reset()
+  try:
+    for i in range(n_games):
+      epoch += 1
+      score = 0
+      done = 0
+      observation = env.reset()
 
-    while not done == 1:
-      blue_valid_actions = env.battle.ml_valid_actions_for_side('blue')
-      red_valid_actions = env.battle.ml_valid_actions_for_side('red')
+      while not done == 1:
+        blue_valid_actions = env.battle.ml_valid_actions_for_side('blue')
+        red_valid_actions = env.battle.ml_valid_actions_for_side('red')
 
-      blue_action = blue_agent.choose_action(observation, blue_valid_actions)
-      red_action = red_agent.choose_action(observation, red_valid_actions)
+        blue_action = blue_agent.choose_action(observation, blue_valid_actions)
+        red_action = red_agent.choose_action(observation, red_valid_actions)
 
-      observation_, blue_reward, red_reward, done = env.step(blue_action, red_action)
-      score += blue_reward
+        observation_, blue_reward, red_reward, done = env.step(blue_action, red_action)
+        score += blue_reward
 
-      blue_agent.store_transition(observation, blue_action, blue_reward, observation_, done)
-      blue_agent.learn()
-      red_agent.store_transition(observation, red_action, red_reward, observation_, done)
-      red_agent.learn()
+        blue_agent.store_transition(observation, blue_action, blue_reward, observation_, done)
+        blue_agent.learn()
+        red_agent.store_transition(observation, red_action, red_reward, observation_, done)
+        red_agent.learn()
 
-      observation = observation_
+        observation = observation_
 
-    scores.append(score)
-    epsilon_history.append(blue_agent.epsilon)
-    average_score = np.mean(scores[-1000:])
+      scores.append(score)
+      epsilon_history.append(blue_agent.epsilon)
+      average_score = np.mean(scores[-1000:])
 
-    print(
-      'episode ',
-      epoch,
-      'score %.2f' % score,
-      'average score %.2f' % average_score,
-      'epsilon %.2f' % blue_agent.epsilon
-    )
+      print(
+        'episode ',
+        epoch,
+        'score %.2f' % score,
+        'average score %.2f' % average_score,
+        'epsilon %.2f' % blue_agent.epsilon
+      )
 
-    if(SAVE_CHECKPOINT and (i % checkpoint_interval == 0)):
-      blue_checkpoint_params = {}
-      blue_checkpoint_params['epoch'] = epoch
-      blue_checkpoint_params['model_state_dict'] = blue_agent.Q_eval.state_dict()
-      blue_checkpoint_params['optimizer_state_dict'] = blue_agent.Q_eval.optimizer.state_dict()
-      blue_checkpoint_params['average_score'] = np.mean(scores[-1000:])
-      T.save(blue_checkpoint_params, BLUE_CHECKPOINT_PATH)
+      if(SAVE_CHECKPOINT and (i % checkpoint_interval == 0)):
+        blue_checkpoint_params = {}
+        blue_checkpoint_params['epoch'] = epoch
+        blue_checkpoint_params['model_state_dict'] = blue_agent.Q_eval.state_dict()
+        blue_checkpoint_params['optimizer_state_dict'] = blue_agent.Q_eval.optimizer.state_dict()
+        blue_checkpoint_params['average_score'] = np.mean(scores[-1000:])
+        T.save(blue_checkpoint_params, BLUE_CHECKPOINT_PATH)
 
-      red_checkpoint_params = {}
-      red_checkpoint_params['model_state_dict'] = red_agent.Q_eval.state_dict()
-      red_checkpoint_params['optimizer_state_dict'] = red_agent.Q_eval.optimizer.state_dict()
-      T.save(red_checkpoint_params, RED_CHECKPOINT_PATH)
+        red_checkpoint_params = {}
+        red_checkpoint_params['model_state_dict'] = red_agent.Q_eval.state_dict()
+        red_checkpoint_params['optimizer_state_dict'] = red_agent.Q_eval.optimizer.state_dict()
+        T.save(red_checkpoint_params, RED_CHECKPOINT_PATH)
 
-      scores = scores[-1000:]
-      epsilon_history = epsilon_history[-1000:]
-      print("CHECKPOINT SAVED")
+        scores = scores[-1000:]
+        epsilon_history = epsilon_history[-1000:]
+        print("CHECKPOINT SAVED")
+  except Exception as e:
+    traceback.print_exc()
+    ipdb.set_trace()
+

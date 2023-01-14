@@ -2229,7 +2229,7 @@
     "priority": 0,
     "pp": 15,
     "description": "Has a 10% chance to burn the target and a 10% chance to make it flinch.",
-    "target": "",
+    "target": "any-adjacent",
     "secondary_effects": [
       {
         "status_ident": "burned",

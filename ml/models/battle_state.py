@@ -184,7 +184,7 @@ class BattleState():
     }
 
   def serialize_ml(self):
-    POKEMON_BATTLE_STATE_EMPTY_ML = np.zeros(77, dtype=np.float32)
+    POKEMON_BATTLE_STATE_EMPTY_ML = np.zeros(2836, dtype=np.float32)
 
     blue_side_pokemon_1 = self.blue_side_pokemon[0]
     blue_side_pokemon_2 = self.blue_side_pokemon[1]
