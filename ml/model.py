@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import numpy as np
+import ipdb
 
 class DeepQNetwork(nn.Module):
   def __init__(self, learning_rate, input_dimensions, fc1_dimensions, fc2_dimensions, n_actions):
@@ -72,8 +73,9 @@ class Agent():
     if np.random.random() > self.epsilon:
       state = T.tensor([observation]).to(self.Q_eval.device)
       all_actions = self.Q_eval.forward(state)
-      valid_actions = [all_actions[i] for i in valid_action_indexes]
-      action = T.argmax(valid_actions).item()
+      valid_action_mask = T.tensor([1e10 if i in valid_action_indexes else -1e10 for i in range(len(all_actions[0]))])
+      masked_action_values = T.min(all_actions, valid_action_mask)
+      action = T.argmax(masked_action_values).item()
     else:
       action = np.random.choice(valid_action_indexes)
 
