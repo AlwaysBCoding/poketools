@@ -217,7 +217,19 @@ class Battle():
     pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
     valid_actions = []
 
-    if(not pokemon_battle_state):
+    if(self.active_prompt_slot):
+      if(slot == self.active_prompt_slot):
+        if(slot in ['blue-field-1', 'blue-field-2']):
+          for i in [0, 1, 2, 3]:
+            if(self.battle_state.blue_side_pokemon[i].location == 'party'):
+              valid_actions.append(17 + i)
+        elif(slot in ['red-field-1', 'red-field-2']):
+          for i in [0, 1, 2, 3]:
+            if(self.battle_state.red_side_pokemon[i].location == 'party'):
+              valid_actions.append(17 + i)
+      else:
+        valid_actions = [0]
+    elif(not pokemon_battle_state):
       valid_actions = [0]
     else:
       for index, move_ident in enumerate(pokemon_battle_state.pokemon_build.move_idents):
@@ -294,6 +306,78 @@ class Battle():
       ["switch", "pokemon3"],
       ["switch", "pokemon4"]
     ]
+
+  def ml_action_to_battle_action(self, slot, ml_action):
+    pprint(f"SLOT: {slot} -- ML ACTION: {ml_action}")
+    pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
+
+    if(ml_action[0] == 'NO-OP'):
+      return None
+    elif(ml_action[0] in ['move1', 'move2', 'move3', 'move4']):
+      move_index = 0
+      if(ml_action[0] == 'move1'):
+        move_index = 0
+      if(ml_action[0] == 'move2'):
+        move_index = 1
+      if(ml_action[0] == 'move3'):
+        move_index = 2
+      if(ml_action[0] == 'move4'):
+        move_index = 3
+      move_ident = pokemon_battle_state.pokemon_build.move_idents[move_index]
+      move_data = find(all_moves_data, lambda x: x.get("ident") == move_ident)
+      selected_targets = []
+      if(ml_action[1] == 'target-ally'):
+        selected_targets.append(self.adjacent_side_slot(slot))
+      elif(ml_action[1] == 'target-enemy-1'):
+        if(slot in ['blue-field-1', 'blue-field-2']):
+          selected_targets.append('red-field-1')
+        elif(slot in ['red-field-1', 'red-field-2']):
+          selected_targets.append('blue-field-1')
+      elif(ml_action[1] == 'target-enemy-2'):
+        if(slot in ['blue-field-1', 'blue-field-2']):
+          selected_targets.append('red-field-2')
+        elif(slot in ['red-field-1', 'red-field-2']):
+          selected_targets.append('blue-field-2')
+
+      return BattleAction(
+        slot=slot,
+        action_type='move',
+        action_data={
+          'move': move_data,
+          'selected_targets': selected_targets
+        }
+      )
+    elif(ml_action[0] == 'switch'):
+      target_switch_index = 0
+      if(ml_action[1] == 'pokemon1'):
+        target_switch_index = 0
+      if(ml_action[1] == 'pokemon2'):
+        target_switch_index = 1
+      if(ml_action[1] == 'pokemon3'):
+        target_switch_index = 2
+      if(ml_action[1] == 'pokemon4'):
+        target_switch_index = 3
+
+      target_switch_pokemon = self.battle_state.blue_side_pokemon[target_switch_index] if slot in ['blue-field-1', 'blue-field-2'] else self.battle_state.red_side_pokemon[target_switch_index]
+
+      if(self.active_prompt_slot):
+        return BattleAction(
+          slot=slot,
+          action_type='replace',
+          action_data={
+            'replace_target_battle_id': target_switch_pokemon.battle_id,
+            'switch_target_pokemon_ident': target_switch_pokemon.pokemon_build.pokemon.ident
+          }
+        )
+      else:
+        return BattleAction(
+          slot=slot,
+          action_type='switch',
+          action_data={
+            'switch_target_battle_id': target_switch_pokemon.battle_id,
+            'switch_target_pokemon_ident': target_switch_pokemon.pokemon_build.pokemon.ident
+          }
+        )
 
   def available_actions_for_battle_state(self, serialized=False):
     available_actions = {}
@@ -632,6 +716,27 @@ class Battle():
 
     return [action_events, should_end_battle, replace_pokemon_action_slot]
 
+  def ml_step(self, blue_action_index, red_action_index):
+    blue_chosen_action = self.ml_available_actions_for_side()[blue_action_index]
+    red_chosen_action = self.ml_available_actions_for_side()[red_action_index]
+
+    blue_battle_actions = [self.ml_action_to_battle_action('blue-field-1', blue_chosen_action[0]), self.ml_action_to_battle_action('blue-field-2', blue_chosen_action[1])]
+    red_battle_actions = [self.ml_action_to_battle_action('red-field-1', red_chosen_action[0]), self.ml_action_to_battle_action('red-field-2', red_chosen_action[1])]
+
+    if(self.active_prompt_slot):
+      if(self.active_prompt_slot == 'blue-field-1'):
+        self.replace_pokemon_step(blue_battle_actions[0])
+      elif(self.active_prompt_slot == 'blue-field-2'):
+        self.replace_pokemon_step(blue_battle_actions[1])
+      elif(self.active_prompt_slot == 'red-field-1'):
+        self.replace_pokemon_step(red_battle_actions[0])
+      elif(self.active_prompt_slot == 'red-field-2'):
+        self.replace_pokemon_step(red_battle_actions[1])
+    else:
+      blue_battle_actions = [i for i in blue_battle_actions if i is not None]
+      red_battle_actions = [i for i in red_battle_actions if i is not None]
+      self.step(blue_battle_actions, red_battle_actions)
+
   def step(self, blue_actions, red_actions):
     turn_events = []
     battle_actions = blue_actions + red_actions
@@ -658,6 +763,8 @@ class Battle():
       self.end_battle_turn(turn_events)
 
   def replace_pokemon_step(self, battle_action):
+    pprint("REPLACE POKEMON STEP")
+    pprint(battle_action)
     turn_events = []
     self.active_prompt_slot = None
     self.perform_replace_pokemon_action(battle_action)

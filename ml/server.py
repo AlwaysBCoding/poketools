@@ -71,11 +71,6 @@ def start_battle():
     # observation = battle.serialize_ml()
     # blue_agent_actions = blue_agent.show_actions(observation)
 
-    all_blue_actions = battle.ml_available_actions_for_side()
-    valid_blue_actions = battle.ml_valid_actions_for_side('blue')
-
-    # pprint([all_blue_actions[i] for i in valid_blue_actions])
-
     return {
       "battle": battle.serialize_api(),
       "actions": battle_actions,
@@ -100,14 +95,16 @@ def send_battle_action():
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])
 
-    blue_actions = list(map(lambda x: BattleAction.deserialize(x), data["blue_actions"]))
-    red_actions = list(map(lambda x: BattleAction.deserialize(x), data["red_actions"]))
+    # blue_actions = list(map(lambda x: BattleAction.deserialize(x), data["blue_actions"]))
+    # red_actions = list(map(lambda x: BattleAction.deserialize(x), data["red_actions"]))
 
-    # observation = battle.serialize_ml()
-    # red_possible_actions = battle.available_actions_for_pokemon_battle_state(battle.field_pokemon('red').battle_id)
-    # red_actions = [red_possible_actions[red_agent.choose_action(observation, len(red_possible_actions))]]
+    valid_blue_actions = battle.ml_valid_actions_for_side('blue')
+    valid_red_actions = battle.ml_valid_actions_for_side('red')
 
-    battle.step(blue_actions, red_actions)
+    chosen_blue_action = np.random.choice(valid_blue_actions)
+    chosen_red_action = np.random.choice(valid_red_actions)
+
+    battle.ml_step(chosen_blue_action, chosen_red_action)
     battle_actions = battle.available_actions_for_battle_state(serialized=True)
 
     # observation_ = battle.serialize_ml()

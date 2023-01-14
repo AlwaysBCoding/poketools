@@ -76,13 +76,13 @@ if __name__ == "__main__":
     observation = env.reset()
 
     while not done == 1:
-      blue_valid_actions = env.battle.ml_valid_actions_for_side("blue")
-      red_valid_actions = env.battle.ml_valid_actions_for_side("red")
+      blue_valid_actions = env.battle.ml_valid_actions_for_side('blue')
+      red_valid_actions = env.battle.ml_valid_actions_for_side('red')
 
       blue_action = blue_agent.choose_action(observation, blue_valid_actions)
       red_action = red_agent.choose_action(observation, red_valid_actions)
 
-      observation_, blue_reward, red_reward, done = env.step(blue_action, red_action)
+      observation_, blue_reward, red_reward, done = env.ml_step(blue_action, red_action)
       score += blue_reward
 
       blue_agent.store_transition(observation, blue_action, blue_reward, observation_, done)
