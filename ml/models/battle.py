@@ -308,7 +308,6 @@ class Battle():
     ]
 
   def ml_action_to_battle_action(self, slot, ml_action):
-    pprint(f"SLOT: {slot} -- ML ACTION: {ml_action}")
     pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
 
     if(ml_action[0] == 'NO-OP'):
@@ -763,8 +762,6 @@ class Battle():
       self.end_battle_turn(turn_events)
 
   def replace_pokemon_step(self, battle_action):
-    pprint("REPLACE POKEMON STEP")
-    pprint(battle_action)
     turn_events = []
     self.active_prompt_slot = None
     self.perform_replace_pokemon_action(battle_action)

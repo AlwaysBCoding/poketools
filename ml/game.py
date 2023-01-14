@@ -151,7 +151,7 @@ hydreigon_data = find(all_pokemon_data, lambda x: x['ident'] == 'hydreigon')
 hydreigon = Pokemon.deserialize(hydreigon_data)
 hydreigon_build = PokemonBuild(
   pokemon=hydreigon,
-  item_ident="haban-barry",
+  item_ident="haban-berry",
   ability_ident="levitate",
   level=50,
   gender="male",
@@ -178,11 +178,15 @@ class Game():
     self.blue_reward = 0
     self.red_reward = 0
     self.done = 0
+    self.blue_pokemon_count = 0
+    self.red_pokemon_count = 0
 
   def reset(self):
     self.blue_reward = 0
     self.red_reward = 0
     self.done = 0
+    self.blue_pokemon_count = 4
+    self.red_pokemon_count = 4
 
     talonflame_battle_state = PokemonBattleState.create_from_pokemon_build(talonflame_build, "blue")
     grimmsnarl_battle_state = PokemonBattleState.create_from_pokemon_build(grimmsnarl_build, "blue")
@@ -211,28 +215,28 @@ class Game():
     return self.battle.serialize_ml()
 
   def step(self, blue_action, red_action):
-    blue_field_pokemon = self.battle.field_pokemon('blue')
-    red_field_pokemon = self.battle.field_pokemon('red')
+    self.battle.ml_step(blue_action, red_action)
 
-    blue_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(blue_field_pokemon.battle_id)
-    red_pokemon_actions = self.battle.available_actions_for_pokemon_battle_state(red_field_pokemon.battle_id)
+    next_blue_pokemon_count = len(self.battle.battle_state.alive_pokemons('blue'))
+    next_red_pokemon_count = len(self.battle.battle_state.alive_pokemons('red'))
 
-    self.battle.step([blue_pokemon_actions[blue_action]], [red_pokemon_actions[red_action]])
+    if (next_blue_pokemon_count < self.blue_pokemon_count):
+      self.blue_reward -= (self.blue_pokemon_count - next_blue_pokemon_count)
+      self.red_reward += (self.blue_pokemon_count - next_blue_pokemon_count)
+      self.blue_pokemon_count = next_blue_pokemon_count
+    if (next_red_pokemon_count < self.red_pokemon_count):
+      self.blue_reward += (self.red_pokemon_count - next_red_pokemon_count)
+      self.red_reward -= (self.red_pokemon_count - next_red_pokemon_count)
+      self.red_pokemon_count = next_red_pokemon_count
 
     if(self.battle.status == 'complete'):
       self.done = 1
       if(self.battle.winner == 'blue'):
-        # total_team_hp = 523
-        # remaining_hp = reduce(lambda memo, i: memo + i.current_hp, self.battle.alive_pokemons("blue"), 0)
-        # self.reward = np.round((remaining_hp / total_team_hp) * 100, 2)
-        self.blue_reward = 1
-        self.red_reward = -1
+        self.blue_reward += 5
+        self.red_reward -= 5
       elif(self.battle.winner == 'red'):
-        # total_team_hp = 540
-        # remaining_hp = reduce(lambda memo, i: memo + i.current_hp, self.battle.alive_pokemons("red"), 0)
-        # self.reward = np.round((remaining_hp / total_team_hp) * 100, 2) * -1
-        self.blue_reward = -1
-        self.red_reward = -1
+        self.blue_reward -= 5
+        self.red_reward += 5
 
     observation_ = self.battle.serialize_ml()
 
