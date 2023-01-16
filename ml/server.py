@@ -18,10 +18,10 @@ CORS(app)
 
 BLUE_CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/blue.checkpoint.pt")
 RED_CHECKPOINT_PATH = Path("/Users/alwaysbcoding/Desktop/Code/poketools/ml/red.checkpoint.pt")
-NUMBER_OF_AGENT_ACTIONS = 6
-OBSERVATION_DIMENSIONS = 485
+NUMBER_OF_AGENT_ACTIONS = 446
+OBSERVATION_DIMENSIONS = 34058
 EPSILON_START = 1.0
-EPSILON_END = 0.01
+EPSILON_END = 0.0095
 EPSILON_DEC = 2e-4
 LEARNING_RATE = 0.002
 GAMMA = 0.99
