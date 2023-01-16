@@ -40,6 +40,28 @@ export const BattleLogRenderer: React.FC<{battle: Battle}> = ({ battle }) => {
   )
 }
 
+export const BattleAnalysisRenderer: React.FC<{battle: Battle, agentActions: Record<string, any>}> = ({ battle, agentActions }) => {
+  return (
+    <div className="battle-analysis-renderer">
+      {agentActions.blue.map((agentAction: any, index: number) => {
+        return (
+          <div className="agent-action" key={`agent-action-${index}`}>
+            <p className="agent-action-text">{`${agentAction[0][0]}, ${agentAction[0][1]} | ${agentAction[1].toFixed(4)}`}</p>
+          </div>
+        )
+      })}
+      <hr />
+      {agentActions.red.map((agentAction: any, index: number) => {
+        return (
+          <div className="agent-action" key={`agent-action-${index}`}>
+            <p className="agent-action-text">{`${agentAction[0][0]}, ${agentAction[0][1]} | ${agentAction[1].toFixed(4)}`}</p>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 export const BattleStateHistoryControls: React.FC<{
   onStepBackwards: () => void,
   onStepForwards: () => void,
@@ -140,10 +162,10 @@ export const BattleActionsRenderer: React.FC<{
   const submitActions = () => {
     if(battle.active_prompt_slot) {
       selectBattleActions(battle, [], []);
-      // if(battle.active_prompt_slot === "blue-field-1" && blueField1BattleAction) { replacePokemonAction(blueField1BattleAction) }
-      // if(battle.active_prompt_slot === "blue-field-2" && blueField2BattleAction) { replacePokemonAction(blueField2BattleAction) }
-      // if(battle.active_prompt_slot === "red-field-1" && redField1BattleAction) { replacePokemonAction(redField1BattleAction) }
-      // if(battle.active_prompt_slot === "red-field-2" && redField2BattleAction) { replacePokemonAction(redField2BattleAction) }
+      if(battle.active_prompt_slot === "blue-field-1" && blueField1BattleAction) { replacePokemonAction(blueField1BattleAction) }
+      if(battle.active_prompt_slot === "blue-field-2" && blueField2BattleAction) { replacePokemonAction(blueField2BattleAction) }
+      if(battle.active_prompt_slot === "red-field-1" && redField1BattleAction) { replacePokemonAction(redField1BattleAction) }
+      if(battle.active_prompt_slot === "red-field-2" && redField2BattleAction) { replacePokemonAction(redField2BattleAction) }
       resetState();
     } else {
       const blueActions = [];
@@ -271,7 +293,7 @@ interface PokemonDecoratedBattleState {
 export const BattleRenderer: React.FC<{
   battle: Battle,
   battleActions: any,
-  agentActions: number[],
+  agentActions: Record<string, any>,
   selectBattleActions?: (battle: Battle, blueActions: BattleAction[], redActions: BattleAction[]) => void,
   replacePokemonAction?: (battleAction: BattleAction) => void
   perspective: BattleSide,
@@ -450,12 +472,15 @@ export const BattleRenderer: React.FC<{
       </div>
       <BattleActionsRenderer battle={activeBattle} battleActions={activeBattleActions} selectBattleActions={selectBattleActions} replacePokemonAction={replacePokemonAction} />
       <BattleLogRenderer battle={activeBattle} />
+      {agentActions.blue ? (
+        <BattleAnalysisRenderer battle={activeBattle} agentActions={agentActions} />
+      ) : (<></>)}
       <BattleStateHistoryControls
         onStepBackwards={() => stepHistoricalBattleState("backwards")}
         onStepForwards={() => stepHistoricalBattleState("forwards")} />
-      {agentActions.length > 0 ? (
+      {/* {agentActions.length > 0 ? (
         <BattleEvalBar maxActionValue={Math.max(...(agentActions.slice(0, battleActions.length)))} />
-      ) : (<></>)}
+      ) : (<></>)} */}
     </div>
   )
 

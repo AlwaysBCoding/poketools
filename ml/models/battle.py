@@ -7,6 +7,7 @@ from damage_calculation import calculate_damage
 from functools import cmp_to_key
 from pathlib import Path
 import json
+import traceback
 from pprint import pprint
 import numpy as np
 import math
@@ -822,6 +823,12 @@ class Battle():
     elif(slot in ['red-field-1', 'red-field-2']):
       return 'red'
 
+  def enemy_side_slots(self, slot):
+    if(slot in ['blue-field-1', 'blue-field-2']):
+      return ['red-field-1', 'red-field-2']
+    elif(slot in ['red-field-1', 'red-field-2']):
+      return ['blue-field-1', 'blue-field-2']
+
   def adjacent_side_slot(self, slot):
     if(slot == 'blue-field-1'):
       return 'blue-field-2'
@@ -868,3 +875,71 @@ class Battle():
       self.battle_state.serialize_ml(),
       1
     ])
+
+  def ml_slot_action_serialize_api(self, slot, ml_action):
+    # return ml_action
+    pokemon_battle_state = self.pokemon_battle_state_at_slot(slot)
+    if(self.active_prompt_slot and self.active_prompt_slot != slot):
+      return ''
+    if(not pokemon_battle_state and ml_action[0] != 'switch'):
+      return ''
+    target_pokemon = None
+    if(ml_action[1] == 'target-ally'):
+      target_pokemon = self.pokemon_battle_state_at_slot(self.adjacent_side_slot(slot))
+    elif(ml_action[1] == 'target-enemy-1'):
+      target_pokemon = self.pokemon_battle_state_at_slot(self.enemy_side_slots(slot)[0])
+    elif(ml_action[1] == 'target-enemy-2'):
+      target_pokemon = self.pokemon_battle_state_at_slot(self.enemy_side_slots(slot)[1])
+    elif(ml_action[1] == 'pokemon1'):
+      if(self.slot_side(slot) == 'blue'):
+        target_pokemon = self.battle_state.blue_side_pokemon[0]
+      elif(self.slot_side(slot) == 'red'):
+        target_pokemon = self.battle_state.red_side_pokemon[0]
+    elif(ml_action[1] == 'pokemon2'):
+      if(self.slot_side(slot) == 'blue'):
+        target_pokemon = self.battle_state.blue_side_pokemon[1]
+      elif(self.slot_side(slot) == 'red'):
+        target_pokemon = self.battle_state.red_side_pokemon[1]
+    elif(ml_action[1] == 'pokemon3'):
+      if(self.slot_side(slot) == 'blue'):
+        target_pokemon = self.battle_state.blue_side_pokemon[2]
+      elif(self.slot_side(slot) == 'red'):
+        target_pokemon = self.battle_state.red_side_pokemon[2]
+    elif(ml_action[1] == 'pokemon4'):
+      if(self.slot_side(slot) == 'blue'):
+        target_pokemon = self.battle_state.blue_side_pokemon[3]
+      elif(self.slot_side(slot) == 'red'):
+        target_pokemon = self.battle_state.red_side_pokemon[3]
+
+    if ml_action[0] == 'NO-OP':
+      return ''
+    elif ml_action[0] == 'move1':
+      if(target_pokemon):
+        return f"{pokemon_battle_state.pokemon_build.move_idents[0]} -> {target_pokemon.pokemon_build.pokemon.ident}"
+      else:
+        return f"{pokemon_battle_state.pokemon_build.move_idents[0]}"
+    elif ml_action[0] == 'move2':
+      if(target_pokemon):
+        return f"{pokemon_battle_state.pokemon_build.move_idents[1]} -> {target_pokemon.pokemon_build.pokemon.ident}"
+      else:
+        return f"{pokemon_battle_state.pokemon_build.move_idents[1]}"
+    elif ml_action[0] == 'move3':
+      if(target_pokemon):
+        return f"{pokemon_battle_state.pokemon_build.move_idents[2]} -> {target_pokemon.pokemon_build.pokemon.ident}"
+      else:
+        return f"{pokemon_battle_state.pokemon_build.move_idents[2]}"
+    elif ml_action[0] == 'move4':
+      if(target_pokemon):
+        return f"{pokemon_battle_state.pokemon_build.move_idents[3]} -> {target_pokemon.pokemon_build.pokemon.ident}"
+      else:
+        return f"{pokemon_battle_state.pokemon_build.move_idents[3]}"
+    elif ml_action[0] == 'switch':
+      return f"switch -> {target_pokemon.pokemon_build.pokemon.ident}"
+
+  def ml_action_serialize_api(self, ml_action, side):
+    slot_1_action = ml_action[0]
+    slot_2_action = ml_action[1]
+    slot_1 = 'blue-field-1' if side == 'blue' else 'red-field-1'
+    slot_2 = 'blue-field-2' if side == 'blue' else 'red-field-2'
+
+    return [self.ml_slot_action_serialize_api(slot_1, ml_action[0]), self.ml_slot_action_serialize_api(slot_2, ml_action[1])]

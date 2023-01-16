@@ -1195,6 +1195,26 @@ $pokemon-base-stats-cell-width: 50%;
     }
   }
 
+  .battle-analysis-renderer {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    max-height: 100vh;
+    padding-bottom: 50px;
+    overflow-y: scroll;
+    background-color: $showdown-light-blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    min-width: 400px;
+
+    hr {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+  }
+
   .battle-eval-bar-container {
     width: 20px;
     background-color: red;

@@ -1,12 +1,8 @@
 ## TODO
 
-  - write logic to determine the valid actions for any given battle_state
+  - logic for replace_pokemon is still broken
+    - u-turn KOing a pokemon will not end the turn, it will prompt the enemy to send in a mon, then execute the pending action
   - deal with the replace actions for when pokemon faints (can just use switch actions honestly)
-
-  - write the mapping from ml_action to BattleAction
-
-  - write the reward function to be able to give a reward for knocking out a pokemon (so AI favors immediate knockouts when it can get them)
-    - this reward function should be zero-sum so it means that you lose a point when you get knocked out
 
   - write parsers for smogon data into python to create samples of metagame that the model gets trained on
 

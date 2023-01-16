@@ -67,17 +67,26 @@ def start_battle():
     battle = Battle.deserialize(data)
     battle.initial_step()
     battle_actions = battle.available_actions_for_battle_state(serialized=True)
-    # serialized_battle_actions = list(map(lambda x: x.serialize_api(), battle_actions))
-    # observation = battle.serialize_ml()
-    # blue_agent_actions = blue_agent.show_actions(observation)
+
+    observation = battle.serialize_ml()
+
+    blue_valid_actions = battle.ml_valid_actions_for_side('blue')
+    red_valid_actions = battle.ml_valid_actions_for_side('red')
+
+    blue_values, blue_indexes = T.topk(blue_agent.show_actions(observation, blue_valid_actions), 5)
+    red_values, red_indexes = T.topk(red_agent.show_actions(observation, red_valid_actions), 5)
+
+    all_actions = battle.ml_available_actions_for_side()
+    blue_zipped_actions = [[battle.ml_action_serialize_api(all_actions[x], 'blue'), blue_values[0][index].item()] for index, x in enumerate(blue_indexes[0])]
+    red_zipped_actions = [[battle.ml_action_serialize_api(all_actions[x], 'red'), red_values[0][index].item()] for index, x in enumerate(red_indexes[0])]
 
     return {
-      "battle": battle.serialize_api(),
-      "actions": battle_actions,
-      "agent_actions": []
-      # "battle": battle.serialize_api(),
-      # "actions": serialized_battle_actions,
-      # "agent_actions": blue_agent_actions.tolist()[0]
+      'battle': battle.serialize_api(),
+      'actions': battle_actions,
+      'agent_actions': {
+        'blue': blue_zipped_actions,
+        'red': red_zipped_actions
+      }
     }
   except Exception as e:
     print("GOT EXCEPTION")
@@ -95,25 +104,38 @@ def send_battle_action():
     data = request.get_json()
     battle = Battle.deserialize(data["battle"])
 
-    # blue_actions = list(map(lambda x: BattleAction.deserialize(x), data["blue_actions"]))
+    observation = battle.serialize_ml()
+
+    blue_actions = list(map(lambda x: BattleAction.deserialize(x), data["blue_actions"]))
     # red_actions = list(map(lambda x: BattleAction.deserialize(x), data["red_actions"]))
+    all_actions = battle.ml_available_actions_for_side()
+    red_valid_actions = battle.ml_valid_actions_for_side('red')
+    red_action = red_agent.choose_action(observation, red_valid_actions)
+    red_actions = [battle.ml_action_to_battle_action('red-field-1', all_actions[red_action][0]), battle.ml_action_to_battle_action('red-field-2', all_actions[red_action][1])]
+    red_actions = [i for i in red_actions if i is not None]
 
-    valid_blue_actions = battle.ml_valid_actions_for_side('blue')
-    valid_red_actions = battle.ml_valid_actions_for_side('red')
-
-    chosen_blue_action = np.random.choice(valid_blue_actions)
-    chosen_red_action = np.random.choice(valid_red_actions)
-
-    battle.ml_step(chosen_blue_action, chosen_red_action)
+    battle.step(blue_actions, red_actions)
     battle_actions = battle.available_actions_for_battle_state(serialized=True)
 
-    # observation_ = battle.serialize_ml()
-    # blue_agent_actions = blue_agent.show_actions(observation_)
+    observation_ = battle.serialize_ml()
+
+    blue_valid_actions = battle.ml_valid_actions_for_side('blue')
+    red_valid_actions = battle.ml_valid_actions_for_side('red')
+
+    blue_values, blue_indexes = T.topk(blue_agent.show_actions(observation_, blue_valid_actions), 5)
+    red_values, red_indexes = T.topk(red_agent.show_actions(observation_, red_valid_actions), 5)
+
+    all_actions = battle.ml_available_actions_for_side()
+    blue_zipped_actions = [[battle.ml_action_serialize_api(all_actions[x], 'blue'), blue_values[0][index].item()] for index, x in enumerate(blue_indexes[0])]
+    red_zipped_actions = [[battle.ml_action_serialize_api(all_actions[x], 'red'), red_values[0][index].item()] for index, x in enumerate(red_indexes[0])]
+
     return {
-      "battle": battle.serialize_api(),
-      "actions": battle_actions,
-      "agent_actions": []
-      # "agent_actions": blue_agent_actions.tolist()[0]
+      'battle': battle.serialize_api(),
+      'actions': battle_actions,
+      'agent_actions': {
+        'blue': blue_zipped_actions,
+        'red': red_zipped_actions
+      }
     }
   except Exception as e:
     if(type(e).__name__ != 'BadRequest'):
@@ -128,15 +150,40 @@ def send_replace_pokemon_action():
   try:
     data = request.get_json()
     battle = Battle.deserialize(data.get('battle'))
-    battle_action = BattleAction.deserialize(data.get('battle_action'))
+    observation = battle.serialize_ml()
 
-    battle.replace_pokemon_step(battle_action)
+    if(battle.active_prompt_slot in ['red-field-1', 'red-field-2']):
+      all_actions = battle.ml_available_actions_for_side()
+      red_valid_actions = battle.ml_valid_actions_for_side('red')
+      red_action = red_agent.choose_action(observation, red_valid_actions)
+      red_actions = [battle.ml_action_to_battle_action('red-field-1', all_actions[red_action][0]), battle.ml_action_to_battle_action('red-field-2', all_actions[red_action][1])]
+      red_actions = [i for i in red_actions if i is not None]
+      battle_action = red_actions[0]
+      battle.replace_pokemon_step(battle_action)
+    else:
+      battle_action = BattleAction.deserialize(data.get('battle_action'))
+      battle.replace_pokemon_step(battle_action)
+
     battle_actions = battle.available_actions_for_battle_state(serialized=True)
+    observation_ = battle.serialize_ml()
+
+    blue_valid_actions = battle.ml_valid_actions_for_side('blue')
+    red_valid_actions = battle.ml_valid_actions_for_side('red')
+
+    blue_values, blue_indexes = T.topk(blue_agent.show_actions(observation_, blue_valid_actions), 5)
+    red_values, red_indexes = T.topk(red_agent.show_actions(observation_, red_valid_actions), 5)
+
+    all_actions = battle.ml_available_actions_for_side()
+    blue_zipped_actions = [[battle.ml_action_serialize_api(all_actions[x], 'blue'), blue_values[0][index].item()] for index, x in enumerate(blue_indexes[0])]
+    red_zipped_actions = [[battle.ml_action_serialize_api(all_actions[x], 'red'), red_values[0][index].item()] for index, x in enumerate(red_indexes[0])]
 
     return {
-      "battle": battle.serialize_api(),
-      "actions": battle_actions,
-      "agent_actions": []
+      'battle': battle.serialize_api(),
+      'actions': battle_actions,
+      'agent_actions': {
+        'blue': blue_zipped_actions,
+        'red': red_zipped_actions
+      }
     }
   except Exception as e:
     if(type(e).__name__ != 'BadRequest'):

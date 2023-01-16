@@ -21,7 +21,7 @@ export const BattleSimulatorScreen = () => {
   const [battle, setBattle] = useState<Battle>();
   const [historicalBattleStates, setHistoricalBattleStates] = useState<{battle: Battle, battleActions: Record<string, any>}[]>([]);
   const [battleActions, setBattleActions] = useState<any>({});
-  const [agentActions, setAgentActions] = useState<number[]>([]);
+  const [agentActions, setAgentActions] = useState<Record<string, any>>({});
 
   const [blueTeamOrderString, setBlueTeamOrderString] = useState<string>("[]");
   const [redTeamOrderString, setRedTeamOrderString] = useState<string>("[]");

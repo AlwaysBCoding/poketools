@@ -64,10 +64,12 @@ class Agent():
 
     self.memory_counter += 1
 
-  def show_actions(self, observation):
+  def show_actions(self, observation, valid_action_indexes):
     state = T.tensor([observation]).to(self.Q_eval.device)
-    actions = self.Q_eval.forward(state)
-    return actions
+    all_actions = self.Q_eval.forward(state)
+    valid_action_mask = T.tensor([1e10 if i in valid_action_indexes else -1e10 for i in range(len(all_actions[0]))])
+    masked_action_values = T.min(all_actions, valid_action_mask)
+    return masked_action_values
 
   def choose_action(self, observation, valid_action_indexes):
     if np.random.random() > self.epsilon:
