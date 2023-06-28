@@ -41,7 +41,7 @@ export const DamageCalculationScreen = () => {
   const [battleState, setBattleState] = useState<BattleState>(createEmptyBattleState());
 
   useEffect(() => {
-    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
+    const savedTeams: Record<string, PokemonTeam> = localStorage.getItem("savedTeams") ? JSON.parse(localStorage.getItem("savedTeams")) : {};
     const nextTeams: PokemonTeam[] = Object.values(savedTeams);
     setAllTeams(nextTeams);
   }, []);
