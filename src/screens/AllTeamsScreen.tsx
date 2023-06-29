@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
 
@@ -10,7 +11,7 @@ export const AllTeamsScreen = () => {
   useEffect(() => {
 
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
-    const nextTeams: PokemonTeam[] = Object.values(savedTeams);
+    const nextTeams: PokemonTeam[] = savedTeams ? Object.values(savedTeams) : [];
 
     setTeams(nextTeams);
 
