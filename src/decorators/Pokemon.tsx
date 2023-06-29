@@ -35,6 +35,12 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "great_tusk") { return "Great Tusk" }
   else if(pokemonIdent === "indeedee-female") { return "Indeedee-F" }
   else if(pokemonIdent === "indeedee-male") { return "Indeedee-M" }
+  else if(pokemonIdent === "iron_bundle") { return "Iron Bundle" }
+  else if(pokemonIdent === "iron_hands") { return "Iron Hands" }
+  else if(pokemonIdent === "iron_jugulis") { return "Iron Jugulis" }
+  else if(pokemonIdent === "iron_moth") { return "Iron Moth" }
+  else if(pokemonIdent === "iron_thorns") { return "Iron Thorns" }
+  else if(pokemonIdent === "iron_treads") { return "Iron Treads" }
   else if(pokemonIdent === "iron_valiant") { return "Iron Valiant" }
   else if(pokemonIdent === "lycanroc-dusk") { return "Lycanroc (Dusk)" }
   else if(pokemonIdent === "lycanroc-midday") { return "Lycanroc (Midday)" }
