@@ -10,7 +10,7 @@ export const AllTeamsScreen = () => {
   useEffect(() => {
 
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
-    const nextTeams: PokemonTeam[] = Object.values(savedTeams);
+    const nextTeams: PokemonTeam[] = savedTeams ? Object.values(savedTeams) : [];
 
     setTeams(nextTeams);
 
