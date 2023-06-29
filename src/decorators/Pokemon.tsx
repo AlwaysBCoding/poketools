@@ -26,6 +26,7 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "deerling-summer") { return "Deerling (Summer)" }
   else if(pokemonIdent === "deerling-autumn") { return "Deerling (Autumn)" }
   else if(pokemonIdent === "deerling-winter") { return "Deerling (Winter)" }
+  else if(pokemonIdent === "flutter_mane") { return "Flutter Mane" }
   else if(pokemonIdent === "gastrodon-east") { return "Gastrodon (East)"}
   else if(pokemonIdent === "gastrodon-west") { return "Gastrodon (West)"}
   else if(pokemonIdent === "indeedee-female") { return "Indeedee-F" }
@@ -60,6 +61,7 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "tauros-combat") { return "Tauros (Combat)" }
   else if(pokemonIdent === "toxtricity-amped") { return "Toxtricity (Amped)" }
   else if(pokemonIdent === "toxtricity-low-key") { return "Toxtricity (Low-Key)" }
+  else if(pokemonIdent === "wo_chien") { return "Wo-Chien" }
   else if(pokemonIdent === "wooper-paldea") { return "Wooper (Paldea)" }
   else { return toTitleCase(pokemonIdent); }
 }
