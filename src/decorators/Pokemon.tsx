@@ -22,7 +22,9 @@ export const displayPokemonGender = (gender: PokemonGender): string => {
 }
 
 export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
-  if(pokemonIdent === "deerling-spring") { return "Deerling (Spring)" }
+  if(pokemonIdent === "chi_yu" ) { return "Chi-Yu" }
+  else if(pokemonIdent === "chien_pao") { return "Chien-Pao" }
+  else if(pokemonIdent === "deerling-spring") { return "Deerling (Spring)" }
   else if(pokemonIdent === "deerling-summer") { return "Deerling (Summer)" }
   else if(pokemonIdent === "deerling-autumn") { return "Deerling (Autumn)" }
   else if(pokemonIdent === "deerling-winter") { return "Deerling (Winter)" }
@@ -59,6 +61,7 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "tauros-aqua") { return "Tauros (Aqua)" }
   else if(pokemonIdent === "tauros-blaze") { return "Tauros (Blaze)" }
   else if(pokemonIdent === "tauros-combat") { return "Tauros (Combat)" }
+  else if(pokemonIdent === "ting_lu") { return "Ting-Lu" }
   else if(pokemonIdent === "toxtricity-amped") { return "Toxtricity (Amped)" }
   else if(pokemonIdent === "toxtricity-low-key") { return "Toxtricity (Low-Key)" }
   else if(pokemonIdent === "wo_chien") { return "Wo-Chien" }
