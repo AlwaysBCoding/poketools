@@ -22,7 +22,8 @@ export const displayPokemonGender = (gender: PokemonGender): string => {
 }
 
 export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
-  if(pokemonIdent === "chi_yu" ) { return "Chi-Yu" }
+  if(pokemonIdent === "brute_bonnet") { return "Brute Bonnet" }
+  else if(pokemonIdent === "chi_yu" ) { return "Chi-Yu" }
   else if(pokemonIdent === "chien_pao") { return "Chien-Pao" }
   else if(pokemonIdent === "deerling-spring") { return "Deerling (Spring)" }
   else if(pokemonIdent === "deerling-summer") { return "Deerling (Summer)" }
@@ -31,8 +32,10 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "flutter_mane") { return "Flutter Mane" }
   else if(pokemonIdent === "gastrodon-east") { return "Gastrodon (East)"}
   else if(pokemonIdent === "gastrodon-west") { return "Gastrodon (West)"}
+  else if(pokemonIdent === "great_tusk") { return "Great Tusk" }
   else if(pokemonIdent === "indeedee-female") { return "Indeedee-F" }
   else if(pokemonIdent === "indeedee-male") { return "Indeedee-M" }
+  else if(pokemonIdent === "iron_valiant") { return "Iron Valiant" }
   else if(pokemonIdent === "lycanroc-dusk") { return "Lycanroc (Dusk)" }
   else if(pokemonIdent === "lycanroc-midday") { return "Lycanroc (Midday)" }
   else if(pokemonIdent === "lycanroc-midnight") { return "Lycanroc (Midnight)" }
@@ -43,18 +46,22 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "oricorio-pom-pom") { return "Oricorio Pom-Pom" }
   else if(pokemonIdent === "palafin-zero") { return "Palafin (Zero)" }
   else if(pokemonIdent === "palafin-hero") { return "Palafin (Hero)" }
+  else if(pokemonIdent === "roaring_moon") { return "Roaring Moon" }
   else if(pokemonIdent === "rotom-base") { return "Rotom (Base)" }
   else if(pokemonIdent === "rotom-mow") { return "Rotom (Mow)" }
   else if(pokemonIdent === "rotom-heat") { return "Rotom (Heat)" }
   else if(pokemonIdent === "rotom-wash") { return "Rotom (Wash)" }
   else if(pokemonIdent === "rotom-fan") { return "Rotom (Fan)" }
   else if(pokemonIdent === "rotom-frost") { return "Rotom (Frost)" }
+  else if(pokemonIdent === "sandy_shocks") { return "Sandy Shocks" }
   else if(pokemonIdent === "sawsbuck-spring") { return "Sawsbuck (Spring)" }
   else if(pokemonIdent === "sawsbuck-summer") { return "Sawsbuck (Summer)" }
   else if(pokemonIdent === "sawsbuck-autumn") { return "Sawsbuck (Autumn)" }
   else if(pokemonIdent === "sawsbuck-winter") { return "Sawsbuck (Winter)" }
+  else if(pokemonIdent === "scream_tail") { return "Scream Tail" }
   else if(pokemonIdent === "shellos-east") { return "Shellos (East)" }
   else if(pokemonIdent === "shellos-west") { return "Shellos (West)" }
+  else if(pokemonIdent === "slither_wing") { return "Slither Wing" }
   else if(pokemonIdent === "tatsugiri-curly") { return "Tatsugiri (Curly)" }
   else if(pokemonIdent === "tatsugiri-droopy") { return "Tatsugiri (Droopy)" }
   else if(pokemonIdent === "tatsugiri-stretchy") { return "Tatsugiri (Stretchy)" }
