@@ -310,6 +310,7 @@ export type PokemonEvolutionLine =
   | "crabrawler"
   | "croagunk"
   | "cufant"
+  | "cyndaquil"
   | "dedenne"
   | "deerling"
   | "deino"
