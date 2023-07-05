@@ -22,7 +22,8 @@ class Pokemon():
     self,
     ident,
     national_pokedex_number,
-    paldea_regional_pokedex_number,
+    pokedex_region,
+    regional_pokedex_number,
     evolution_line_ident,
     evolution_line_index,
     primary_type_ident,
@@ -35,7 +36,8 @@ class Pokemon():
   ):
     self.ident = ident
     self.national_pokedex_number = national_pokedex_number
-    self.paldea_regional_pokedex_number = paldea_regional_pokedex_number
+    self.pokedex_region = pokedex_region
+    self.regional_pokedex_number = regional_pokedex_number
     self.evolution_line_ident = evolution_line_ident
     self.evolution_line_index = evolution_line_index
     self.primary_type_ident = primary_type_ident
@@ -59,7 +61,8 @@ class Pokemon():
     return cls(
       ident=serialized_pokemon["ident"],
       national_pokedex_number=serialized_pokemon["national_pokedex_number"],
-      paldea_regional_pokedex_number=serialized_pokemon["paldea_regional_pokedex_number"],
+      pokedex_region=serialized_pokemon["pokedex_region"],
+      regional_pokedex_number=serialized_pokemon["regional_pokedex_number"],
       evolution_line_ident=serialized_pokemon["evolution_line_ident"],
       evolution_line_index=serialized_pokemon["evolution_line_index"],
       primary_type_ident=serialized_pokemon["primary_type_ident"],
@@ -82,7 +85,8 @@ class Pokemon():
     return {
       "ident": self.ident,
       "national_pokedex_number": self.national_pokedex_number,
-      "paldea_regional_pokedex_number": self.paldea_regional_pokedex_number,
+      "pokedex_region": self.pokedex_region,
+      "regional_pokedex_number": self.regional_pokedex_number,
       "evolution_line_ident": self.evolution_line_ident,
       "evolution_line_index": self.evolution_line_index,
       "primary_type_ident": self.primary_type_ident,

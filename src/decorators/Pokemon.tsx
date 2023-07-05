@@ -25,6 +25,7 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   if(pokemonIdent === "brute_bonnet") { return "Brute Bonnet" }
   else if(pokemonIdent === "chi_yu" ) { return "Chi-Yu" }
   else if(pokemonIdent === "chien_pao") { return "Chien-Pao" }
+  else if(pokemonIdent === "decidueye-hisui") { return "Decidueye (Hisui)" }
   else if(pokemonIdent === "deerling-spring") { return "Deerling (Spring)" }
   else if(pokemonIdent === "deerling-summer") { return "Deerling (Summer)" }
   else if(pokemonIdent === "deerling-autumn") { return "Deerling (Autumn)" }
@@ -59,6 +60,7 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "rotom-wash") { return "Rotom (Wash)" }
   else if(pokemonIdent === "rotom-fan") { return "Rotom (Fan)" }
   else if(pokemonIdent === "rotom-frost") { return "Rotom (Frost)" }
+  else if(pokemonIdent === "samurott-hisui") { return "Samurott (Hisui)" }
   else if(pokemonIdent === "sandy_shocks") { return "Sandy Shocks" }
   else if(pokemonIdent === "sawsbuck-spring") { return "Sawsbuck (Spring)" }
   else if(pokemonIdent === "sawsbuck-summer") { return "Sawsbuck (Summer)" }
@@ -77,6 +79,7 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else if(pokemonIdent === "ting_lu") { return "Ting-Lu" }
   else if(pokemonIdent === "toxtricity-amped") { return "Toxtricity (Amped)" }
   else if(pokemonIdent === "toxtricity-low-key") { return "Toxtricity (Low-Key)" }
+  else if(pokemonIdent === "typhlosion-hisui") { return "Typhlosion (Hisui)" }
   else if(pokemonIdent === "wo_chien") { return "Wo-Chien" }
   else if(pokemonIdent === "wooper-paldea") { return "Wooper (Paldea)" }
   else { return toTitleCase(pokemonIdent); }

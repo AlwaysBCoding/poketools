@@ -17,7 +17,7 @@ export const PokemonBattleTeamDisplayIndex: React.FC<{
   return (
     <div className={`pokemon-team-display ${modeClassName}`}>
       {pokemonBattleStates.map((pokemonBattleState, index) => {
-        const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBattleState.pokemon_build.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBattleState.pokemon_build.pokemon.ident.split("-")[0]}/${pokemonBattleState.pokemon_build.pokemon.ident}.static.png`);
+        const pokemonImage = require(`../data/pokemon/${pokemonBattleState.pokemon_build.pokemon.pokedex_region}/${String(pokemonBattleState.pokemon_build.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBattleState.pokemon_build.pokemon.ident.split("-")[0]}/${pokemonBattleState.pokemon_build.pokemon.ident}.static.png`);
         return (
           <div
             key={`pokemon-index-item-${index}`}

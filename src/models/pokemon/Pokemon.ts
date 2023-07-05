@@ -10,9 +10,8 @@ import {
 export interface Pokemon {
   ident: string;
   national_pokedex_number: number;
-  paldea_regional_pokedex_number: number;
-  // regional_pokedex_number: number;
-  // pokedex_region: "hisui" | "paldea";
+  regional_pokedex_number: number;
+  pokedex_region: "hisui" | "paldea";
   evolution_line_ident: PokemonEvolutionLine;
   evolution_line_index: number;
   can_evolve?: boolean;

@@ -14,7 +14,7 @@ export const PokemonBuildDisplay: React.FC<{
   onSectionInputChange = () => undefined,
   onEnterPress = () => undefined
 }) => {
-  const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+  const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
 
   const keyPressHandler = (event: KeyboardEvent<HTMLInputElement>) => {
     if(event.key === "Enter") {

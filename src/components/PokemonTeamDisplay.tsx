@@ -9,7 +9,7 @@ import { PokemonBuildDisplay } from "./PokemonBuildDisplay";
 import { displayPokemonIdent } from "../decorators/Pokemon";
 
 const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBuild }) => {
-  const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+  const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
   return (
     <div className="slot-content">
       <h4 className="slot-title pokemon-ident">{displayPokemonIdent(pokemonBuild.pokemon.ident)}</h4>
@@ -75,7 +75,7 @@ export const PokemonTeamDisplayIndex: React.FC<{
   return (
     <div className={`pokemon-team-display ${modeClassName}`}>
       {team.pokemonBuilds.map((pokemonBuild, index) => {
-        const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+        const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
         const classString = (index === activeTeamIndex) ? "pokemon-index-item active" : "pokemon-index-item"
         return (
           <div

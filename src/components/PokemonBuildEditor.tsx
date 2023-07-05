@@ -146,7 +146,7 @@ export const PokemonBuildEditor: React.FC<{
     forceUpdate();
   }
 
-  const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+  const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
   const move0 = ALL_MOVES.find((move: PokemonMoveSimple) => { return move.ident === pokemonBuild.move_idents[0] });
   const move1 = ALL_MOVES.find((move: PokemonMoveSimple) => { return move.ident === pokemonBuild.move_idents[1] });
   const move2 = ALL_MOVES.find((move: PokemonMoveSimple) => { return move.ident === pokemonBuild.move_idents[2] });

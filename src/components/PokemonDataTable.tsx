@@ -67,7 +67,7 @@ const PokemonDataRow: React.FC<{
   onPokemonClick = () => undefined
 }) => {
 
-  const pokemonImage = require(`../data/pokemon/paldea/${String(pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemon.ident.split("-")[0]}/${pokemon.ident}.static.png`);
+  const pokemonImage = require(`../data/pokemon/${pokemon.pokedex_region}/${String(pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemon.ident.split("-")[0]}/${pokemon.ident}.static.png`);
 
   const dataRowClassName = clickable ? "pokemon-data-row clickable" : "pokemon-data-row";
 
@@ -75,7 +75,7 @@ const PokemonDataRow: React.FC<{
     <div
       className={dataRowClassName}
       onClick={() => { onPokemonClick(pokemon) }}>
-      <p className="index-number">{pokemon.paldea_regional_pokedex_number}</p>
+      <p className="index-number">{pokemon.regional_pokedex_number}</p>
       <div className="pokemon-image-display">
         <img className="pokemon-image" src={pokemonImage} alt={pokemon.ident} />
       </div>

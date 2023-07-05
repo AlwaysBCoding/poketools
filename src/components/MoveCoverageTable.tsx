@@ -48,7 +48,7 @@ export const MoveCoverageTable: React.FC<{
         <p className="header-item pokemon-build pokemon-build-6">{displayPokemonIdent(activeRedTeam.pokemonBuilds[5].pokemon.ident)}</p>
       </div>
       {activeBlueTeam.pokemonBuilds.map((pokemonBuild, pokemonBuildIndex) => {
-        const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+        const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
         return (
           <div
             className="data-row"

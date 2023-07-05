@@ -1,8 +1,1055 @@
 [
   {
+    "ident": "rowlet",
+    "national_pokedex_number": 722,
+    "regional_pokedex_number": 1,
+    "pokedex_region": "hisui",
+    "evolution_line_ident": "rowlet",
+    "evolution_line_index": 0,
+    "primary_type_ident": "grass",
+    "secondary_type_ident": "flying",
+    "height": 0.3,
+    "weight": 1.5,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 68,
+      "attack": 55,
+      "defense": 55,
+      "special_attack": 50,
+      "special_defense": 50,
+      "speed": 42
+    },
+    "ability_idents": [
+      "overgrow",
+      "long-reach"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "astonish",
+      "brave-bird",
+      "bullet-seed",
+      "confuse-ray",
+      "defog",
+      "double-team",
+      "endure",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "feather-dance",
+      "giga-drain",
+      "grass-knot",
+      "grass-pledge",
+      "grassy-terrain",
+      "growl",
+      "helping-hand",
+      "knock-off",
+      "leafage",
+      "leaf-blade",
+      "leaf-storm",
+      "light-screen",
+      "magical-leaf",
+      "nasty-plot",
+      "night-shade",
+      "peck",
+      "pluck",
+      "protect",
+      "rain-dance",
+      "razor-leaf",
+      "rest",
+      "roost",
+      "seed-bomb",
+      "shadow-claw",
+      "shadow-sneak",
+      "sleep-talk",
+      "solar-beam",
+      "substitute",
+      "sucker-punch",
+      "sunny-day",
+      "swift",
+      "swords-dance",
+      "synthesis",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "trailblaze"
+    ]
+  },
+  {
+    "ident": "dartrix",
+    "national_pokedex_number": 723,
+    "regional_pokedex_number": 2,
+    "pokedex_region": "hisui",
+    "evolution_line_ident": "rowlet",
+    "evolution_line_index": 1,
+    "primary_type_ident": "grass",
+    "secondary_type_ident": "flying",
+    "height": 0.7,
+    "weight": 16,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 78,
+      "attack": 75,
+      "defense": 75,
+      "special_attack": 70,
+      "special_defense": 70,
+      "speed": 52
+    },
+    "ability_idents": [
+      "overgrow",
+      "long-reach"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "astonish",
+      "baton-pass",
+      "brave-bird",
+      "bullet-seed",
+      "confuse-ray",
+      "defog",
+      "double-team",
+      "endure",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "feather-dance",
+      "giga-drain",
+      "grass-knot",
+      "grass-pledge",
+      "grassy-terrain",
+      "growl",
+      "helping-hand",
+      "knock-off",
+      "leafage",
+      "leaf-blade",
+      "leaf-storm",
+      "light-screen",
+      "magical-leaf",
+      "nasty-plot",
+      "night-shade",
+      "peck",
+      "pluck",
+      "protect",
+      "rain-dance",
+      "razor-leaf",
+      "rest",
+      "roost",
+      "seed-bomb",
+      "shadow-claw",
+      "shadow-sneak",
+      "sleep-talk",
+      "solar-beam",
+      "substitute",
+      "sucker-punch",
+      "sunny-day",
+      "swift",
+      "swords-dance",
+      "synthesis",
+      "tackle",
+      "tailwind",
+      "take-down",
+      "tera-blast",
+      "trailblaze"
+    ]
+  },
+  {
+    "national_pokedex_number": 724,
+    "pokedex_region": "hisui",
+    "regional_pokedex_number": 3,
+    "evolution_line_ident": "rowlet",
+    "evolution_line_index": 2,
+    "ident": "decidueye",
+    "primary_type_ident": "grass",
+    "secondary_type_ident": "ghost",
+    "height": 1.6,
+    "weight": 36.6,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 78,
+      "attack": 107,
+      "defense": 75,
+      "special_attack": 100,
+      "special_defense": 100,
+      "speed": 70
+    },
+    "ability_idents": [
+      "overgrow",
+      "long-reach"
+    ],
+    "move_idents": [
+      "acrobatics",
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "astonish",
+      "baton-pass",
+      "brave-bird",
+      "bullet-seed",
+      "confuse-ray",
+      "defog",
+      "double-team",
+      "endure",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "feather-dance",
+      "frenzy-plant",
+      "giga-drain",
+      "giga-impact",
+      "grass-knot",
+      "grass-pledge",
+      "grassy-terrain",
+      "growl",
+      "helping-hand",
+      "hex",
+      "hurricane",
+      "hyper-beam",
+      "imprison",
+      "knock-off",
+      "leafage",
+      "leaf-blade",
+      "leaf-storm",
+      "light-screen",
+      "low-kick",
+      "low-sweep",
+      "magical-leaf",
+      "nasty-plot",
+      "night-shade",
+      "peck",
+      "phantom-force",
+      "pluck",
+      "protect",
+      "rain-dance",
+      "razor-leaf",
+      "rest",
+      "roost",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "shadow-sneak",
+      "sleep-talk",
+      "solar-beam",
+      "spirit-shackle",
+      "spite",
+      "substitute",
+      "sucker-punch",
+      "sunny-day",
+      "swift",
+      "swords-dance",
+      "synthesis",
+      "tackle",
+      "tailwind",
+      "take-down",
+      "tera-blast",
+      "trailblaze",
+      "u-turn"
+    ]
+  },
+  {
+    "national_pokedex_number": 724,
+    "pokedex_region": "hisui",
+    "regional_pokedex_number": 3,
+    "evolution_line_ident": "rowlet",
+    "evolution_line_index": 2,
+    "ident": "decidueye-hisui",
+    "primary_type_ident": "grass",
+    "secondary_type_ident": "fighting",
+    "height": 1.6,
+    "weight": 37,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 88,
+      "attack": 112,
+      "defense": 80,
+      "special_attack": 95,
+      "special_defense": 95,
+      "speed": 60
+    },
+    "ability_idents": [
+      "overgrow",
+      "scrappy"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-cutter",
+      "air-slash",
+      "astonish",
+      "aura-sphere",
+      "baton-pass",
+      "brave-bird",
+      "brick-break",
+      "bulk-up",
+      "bullet-seed",
+      "close-combat",
+      "confuse-ray",
+      "defog",
+      "double-team",
+      "endure",
+      "energy-ball",
+      "facade",
+      "false-swipe",
+      "feather-dance",
+      "focus-blast",
+      "frenzy-plant",
+      "giga-drain",
+      "giga-impact",
+      "grass-knot",
+      "grass-pledge",
+      "grassy-terrain",
+      "growl",
+      "helping-hand",
+      "hyper-beam",
+      "knock-off",
+      "leafage",
+      "leaf-blade",
+      "leaf-storm",
+      "light-screen",
+      "low-kick",
+      "low-sweep",
+      "magical-leaf",
+      "nasty-plot",
+      "night-shade",
+      "peck",
+      "pluck",
+      "protect",
+      "rain-dance",
+      "razor-leaf",
+      "rest",
+      "reversal",
+      "rock-tomb",
+      "roost",
+      "scary-face",
+      "seed-bomb",
+      "shadow-claw",
+      "shadow-sneak",
+      "sleep-talk",
+      "solar-beam",
+      "substitute",
+      "sucker-punch",
+      "sunny-day",
+      "swift",
+      "swords-dance",
+      "synthesis",
+      "tackle",
+      "tailwind",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "trailblaze",
+      "triple-arrows",
+      "u-turn"
+    ]
+  },
+  {
+    "ident": "cyndaquil",
+    "national_pokedex_number": 155,
+    "regional_pokedex_number": 4,
+    "pokedex_region": "hisui",
+    "evolution_line_ident": "cyndaquil",
+    "evolution_line_index": 0,
+    "primary_type_ident": "fire",
+    "secondary_type_ident": null,
+    "height": 0.5,
+    "weight": 7.9,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 39,
+      "attack": 52,
+      "defense": 43,
+      "special_attack": 60,
+      "special_defense": 50,
+      "speed": 65
+    },
+    "ability_idents": [
+      "blaze",
+      "flash-fire"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "body-slam",
+      "covet",
+      "curse",
+      "defense-curl",
+      "dig",
+      "double-edge",
+      "double-kick",
+      "ember",
+      "endure",
+      "eruption",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-pledge",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flame-wheel",
+      "flare-blitz",
+      "heat-wave",
+      "howl",
+      "inferno",
+      "iron-head",
+      "lava-plume",
+      "leer",
+      "overheat",
+      "play-rough",
+      "protect",
+      "quick-attack",
+      "rest",
+      "reversal",
+      "rollout",
+      "sleep-talk",
+      "smokescreen",
+      "substitute",
+      "sunny-day",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "wild-charge",
+      "will-o-wisp",
+      "zen-headbutt"
+    ]
+  },
+  {
+    "ident": "quilava",
+    "national_pokedex_number": 156,
+    "regional_pokedex_number": 5,
+    "pokedex_region": "hisui",
+    "evolution_line_ident": "cyndaquil",
+    "evolution_line_index": 1,
+    "primary_type_ident": "fire",
+    "secondary_type_ident": null,
+    "height": 0.9,
+    "weight": 19,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 58,
+      "attack": 64,
+      "defense": 58,
+      "special_attack": 80,
+      "special_defense": 65,
+      "speed": 80
+    },
+    "ability_idents": [
+      "blaze",
+      "flash-fire"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "body-slam",
+      "brick-break",
+      "covet",
+      "curse",
+      "defense-curl",
+      "dig",
+      "double-edge",
+      "double-kick",
+      "ember",
+      "endure",
+      "eruption",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-pledge",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flame-wheel",
+      "flare-blitz",
+      "heat-wave",
+      "howl",
+      "inferno",
+      "iron-head",
+      "lava-plume",
+      "leer",
+      "overheat",
+      "play-rough",
+      "protect",
+      "quick-attack",
+      "rest",
+      "reversal",
+      "rollout",
+      "sleep-talk",
+      "smokescreen",
+      "substitute",
+      "sunny-day",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "wild-charge",
+      "will-o-wisp",
+      "zen-headbutt"
+    ]
+  },
+  {
+    "national_pokedex_number": 157,
+    "pokedex_region": "hisui",
+    "regional_pokedex_number": 6,
+    "evolution_line_ident": "cyndaquil",
+    "evolution_line_index": 2,
+    "ident": "typhlosion",
+    "primary_type_ident": "fire",
+    "secondary_type_ident": null,
+    "height": 1.7,
+    "weight": 79.5,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 78,
+      "attack": 84,
+      "defense": 78,
+      "special_attack": 109,
+      "special_defense": 85,
+      "speed": 100
+    },
+    "ability_idents": [
+      "blaze",
+      "flash-fire"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "blast-burn",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "covet",
+      "curse",
+      "defense-curl",
+      "dig",
+      "double-edge",
+      "double-kick",
+      "earthquake",
+      "ember",
+      "endure",
+      "eruption",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-pledge",
+      "fire-punch",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flame-wheel",
+      "flare-blitz",
+      "fling",
+      "focus-blast",
+      "giga-impact",
+      "gyro-ball",
+      "heat-wave",
+      "helping-hand",
+      "howl",
+      "hyper-beam",
+      "inferno",
+      "iron-head",
+      "lava-plume",
+      "leer",
+      "low-kick",
+      "overheat",
+      "play-rough",
+      "protect",
+      "quick-attack",
+      "rest",
+      "reversal",
+      "rock-slide",
+      "rock-tomb",
+      "rollout",
+      "shadow-ball",
+      "shadow-claw",
+      "sleep-talk",
+      "smokescreen",
+      "solar-beam",
+      "stomping-tantrum",
+      "substitute",
+      "sunny-day",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder-punch",
+      "wild-charge",
+      "will-o-wisp",
+      "zen-headbutt"
+    ]
+  },
+  {
+    "national_pokedex_number": 157,
+    "pokedex_region": "hisui",
+    "regional_pokedex_number": 6,
+    "evolution_line_ident": "cyndaquil",
+    "evolution_line_index": 2,
+    "ident": "typhlosion-hisui",
+    "primary_type_ident": "fire",
+    "secondary_type_ident": "ghost",
+    "height": 1.6,
+    "weight": 69.8,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 73,
+      "attack": 84,
+      "defense": 78,
+      "special_attack": 119,
+      "special_defense": 85,
+      "speed": 95
+    },
+    "ability_idents": [
+      "blaze",
+      "frisk"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "blast-burn",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "calm-mind",
+      "confuse-ray",
+      "covet",
+      "curse",
+      "defense-curl",
+      "dig",
+      "double-edge",
+      "double-kick",
+      "earthquake",
+      "ember",
+      "endure",
+      "eruption",
+      "extrasensory",
+      "facade",
+      "fire-blast",
+      "fire-fang",
+      "fire-pledge",
+      "fire-punch",
+      "fire-spin",
+      "flame-charge",
+      "flamethrower",
+      "flame-wheel",
+      "flare-blitz",
+      "focus-blast",
+      "giga-impact",
+      "gyro-ball",
+      "heat-wave",
+      "hex",
+      "howl",
+      "hyper-beam",
+      "infernal-parade",
+      "inferno",
+      "iron-head",
+      "lava-plume",
+      "leer",
+      "low-kick",
+      "night-shade",
+      "overheat",
+      "play-rough",
+      "protect",
+      "quick-attack",
+      "rest",
+      "reversal",
+      "rock-slide",
+      "rollout",
+      "shadow-ball",
+      "shadow-claw",
+      "sleep-talk",
+      "smokescreen",
+      "solar-beam",
+      "stomping-tantrum",
+      "substitute",
+      "sunny-day",
+      "swift",
+      "tackle",
+      "take-down",
+      "tera-blast",
+      "thunder-punch",
+      "wild-charge",
+      "will-o-wisp",
+      "zen-headbutt"
+    ]
+  },
+  {
+    "ident": "oshawott",
+    "national_pokedex_number": 501,
+    "regional_pokedex_number": 7,
+    "pokedex_region": "hisui",
+    "evolution_line_ident": "oshawott",
+    "evolution_line_index": 0,
+    "primary_type_ident": "water",
+    "secondary_type_ident": null,
+    "height": 0.5,
+    "weight": 5.9,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 55,
+      "attack": 55,
+      "defense": 45,
+      "special_attack": 63,
+      "special_defense": 45,
+      "speed": 45
+    },
+    "ability_idents": [
+      "torrent",
+      "shell-armor"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-tail",
+      "avalanche",
+      "blizzard",
+      "chilling-water",
+      "copycat",
+      "detect",
+      "dig",
+      "encore",
+      "endure",
+      "facade",
+      "false-swipe",
+      "fling",
+      "focus-energy",
+      "fury-cutter",
+      "grass-knot",
+      "helping-hand",
+      "hydro-pump",
+      "ice-beam",
+      "icy-wind",
+      "knock-off",
+      "liquidation",
+      "night-slash",
+      "protect",
+      "rain-dance",
+      "razor-shell",
+      "rest",
+      "retaliate",
+      "sacred-sword",
+      "screech",
+      "sleep-talk",
+      "snowscape",
+      "soak",
+      "substitute",
+      "surf",
+      "swift",
+      "swords-dance",
+      "tackle",
+      "tail-whip",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "waterfall",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "x-scissor"
+    ]
+  },
+  {
+    "ident": "dewott",
+    "national_pokedex_number": 502,
+    "regional_pokedex_number": 8,
+    "pokedex_region": "hisui",
+    "evolution_line_ident": "oshawott",
+    "evolution_line_index": 1,
+    "primary_type_ident": "water",
+    "secondary_type_ident": null,
+    "height": 0.8,
+    "weight": 24.5,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 75,
+      "attack": 75,
+      "defense": 60,
+      "special_attack": 83,
+      "special_defense": 60,
+      "speed": 60
+    },
+    "ability_idents": [
+      "torrent",
+      "shell-armor"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-tail",
+      "avalanche",
+      "blizzard",
+      "brick-break",
+      "chilling-water",
+      "copycat",
+      "detect",
+      "dig",
+      "encore",
+      "endure",
+      "facade",
+      "false-swipe",
+      "fling",
+      "focus-energy",
+      "fury-cutter",
+      "grass-knot",
+      "helping-hand",
+      "hydro-pump",
+      "ice-beam",
+      "icy-wind",
+      "knock-off",
+      "liquidation",
+      "night-slash",
+      "protect",
+      "rain-dance",
+      "razor-shell",
+      "rest",
+      "retaliate",
+      "sacred-sword",
+      "screech",
+      "sleep-talk",
+      "snowscape",
+      "soak",
+      "substitute",
+      "surf",
+      "swift",
+      "swords-dance",
+      "tackle",
+      "tail-whip",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "waterfall",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "x-scissor"
+    ]
+  },
+  {
+    "national_pokedex_number": 503,
+    "pokedex_region": "hisui",
+    "regional_pokedex_number": 9,
+    "evolution_line_ident": "oshawott",
+    "evolution_line_index": 2,
+    "ident": "samurott",
+    "primary_type_ident": "water",
+    "secondary_type_ident": null,
+    "height": 1.5,
+    "weight": 94.6,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 95,
+      "attack": 100,
+      "defense": 85,
+      "special_attack": 108,
+      "special_defense": 70,
+      "speed": 70
+    },
+    "ability_idents": [
+      "torrent",
+      "shell-armor"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-tail",
+      "avalanche",
+      "blizzard",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "chilling-water",
+      "copycat",
+      "detect",
+      "dig",
+      "drill-run",
+      "encore",
+      "endure",
+      "facade",
+      "false-swipe",
+      "fling",
+      "focus-energy",
+      "fury-cutter",
+      "giga-impact",
+      "grass-knot",
+      "helping-hand",
+      "hydro-cannon",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "knock-off",
+      "liquidation",
+      "megahorn",
+      "night-slash",
+      "protect",
+      "rain-dance",
+      "razor-shell",
+      "rest",
+      "retaliate",
+      "sacred-sword",
+      "scary-face",
+      "screech",
+      "slash",
+      "sleep-talk",
+      "smart-strike",
+      "snowscape",
+      "soak",
+      "substitute",
+      "surf",
+      "swift",
+      "swords-dance",
+      "tackle",
+      "tail-whip",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "waterfall",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "x-scissor"
+    ]
+  },
+  {
+    "national_pokedex_number": 503,
+    "pokedex_region": "hisui",
+    "regional_pokedex_number": 9,
+    "evolution_line_ident": "oshawott",
+    "evolution_line_index": 2,
+    "ident": "samurott-hisui",
+    "primary_type_ident": "water",
+    "secondary_type_ident": "dark",
+    "height": 1.5,
+    "weight": 58.2,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 90,
+      "attack": 108,
+      "defense": 80,
+      "special_attack": 100,
+      "special_defense": 65,
+      "speed": 85
+    },
+    "ability_idents": [
+      "torrent",
+      "sharpness"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "air-slash",
+      "aqua-cutter",
+      "aqua-jet",
+      "aqua-tail",
+      "avalanche",
+      "blizzard",
+      "body-slam",
+      "brick-break",
+      "bulldoze",
+      "ceaseless-edge",
+      "chilling-water",
+      "copycat",
+      "dark-pulse",
+      "detect",
+      "dig",
+      "drill-run",
+      "encore",
+      "endure",
+      "facade",
+      "false-swipe",
+      "fling",
+      "focus-energy",
+      "fury-cutter",
+      "giga-impact",
+      "grass-knot",
+      "helping-hand",
+      "hydro-cannon",
+      "hydro-pump",
+      "hyper-beam",
+      "ice-beam",
+      "icy-wind",
+      "knock-off",
+      "liquidation",
+      "megahorn",
+      "night-slash",
+      "protect",
+      "rain-dance",
+      "razor-shell",
+      "rest",
+      "retaliate",
+      "sacred-sword",
+      "scary-face",
+      "screech",
+      "slash",
+      "sleep-talk",
+      "smart-strike",
+      "snarl",
+      "snowscape",
+      "soak",
+      "substitute",
+      "sucker-punch",
+      "surf",
+      "swift",
+      "swords-dance",
+      "tackle",
+      "tail-whip",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "waterfall",
+      "water-gun",
+      "water-pledge",
+      "water-pulse",
+      "x-scissor"
+    ]
+  },
+  {
     "ident": "sprigatito",
     "national_pokedex_number": 906,
-    "paldea_regional_pokedex_number": 1,
     "evolution_line_ident": "sprigatito",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -71,12 +1118,13 @@
       "trailblaze",
       "u-turn",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 1
   },
   {
     "ident": "floragato",
     "national_pokedex_number": 907,
-    "paldea_regional_pokedex_number": 2,
     "evolution_line_ident": "sprigatito",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -150,12 +1198,13 @@
       "trailblaze",
       "u-turn",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 2
   },
   {
     "ident": "meowscarada",
     "national_pokedex_number": 908,
-    "paldea_regional_pokedex_number": 3,
     "evolution_line_ident": "sprigatito",
     "evolution_line_index": 2,
     "primary_type_ident": "grass",
@@ -250,12 +1299,13 @@
       "trick-room",
       "u-turn",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 3
   },
   {
     "ident": "fuecoco",
     "national_pokedex_number": 909,
-    "paldea_regional_pokedex_number": 4,
     "evolution_line_ident": "fuecoco",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -323,12 +1373,13 @@
       "will-o-wisp",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 4
   },
   {
     "ident": "crocalor",
     "national_pokedex_number": 910,
-    "paldea_regional_pokedex_number": 5,
     "evolution_line_ident": "fuecoco",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -397,12 +1448,13 @@
       "will-o-wisp",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 5
   },
   {
     "ident": "skeledirge",
     "national_pokedex_number": 911,
-    "paldea_regional_pokedex_number": 6,
     "evolution_line_ident": "fuecoco",
     "evolution_line_index": 2,
     "primary_type_ident": "fire",
@@ -485,12 +1537,13 @@
       "will-o-wisp",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 6
   },
   {
     "ident": "quaxly",
     "national_pokedex_number": 912,
-    "paldea_regional_pokedex_number": 7,
     "evolution_line_ident": "quaxly",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -551,12 +1604,13 @@
       "water-pledge",
       "wing-attack",
       "work-up"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 7
   },
   {
     "ident": "quaxwell",
     "national_pokedex_number": 913,
-    "paldea_regional_pokedex_number": 8,
     "evolution_line_ident": "quaxly",
     "evolution_line_index": 1,
     "can_evolve": true,
@@ -621,12 +1675,13 @@
       "water-pulse",
       "wing-attack",
       "work-up"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 8
   },
   {
     "ident": "quaquaval",
     "national_pokedex_number": 914,
-    "paldea_regional_pokedex_number": 9,
     "evolution_line_ident": "quaxly",
     "evolution_line_index": 2,
     "can_evolve": false,
@@ -712,12 +1767,13 @@
       "wave-crash",
       "wing-attack",
       "work-up"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 9
   },
   {
     "ident": "lechonk",
     "national_pokedex_number": 915,
-    "paldea_regional_pokedex_number": 10,
     "evolution_line_ident": "lechonk",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -782,11 +1838,14 @@
       "work-up",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 10
   },
   {
     "national_pokedex_number": 741,
-    "paldea_regional_pokedex_number": 100,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 100,
     "evolution_line_ident": "oricorio",
     "evolution_line_index": 0,
     "ident": "oricorio-baile",
@@ -857,7 +1916,8 @@
   },
   {
     "national_pokedex_number": 741,
-    "paldea_regional_pokedex_number": 100,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 100,
     "evolution_line_ident": "oricorio",
     "evolution_line_index": 0,
     "ident": "oricorio-pom-pom",
@@ -928,7 +1988,8 @@
   },
   {
     "national_pokedex_number": 741,
-    "paldea_regional_pokedex_number": 100,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 100,
     "evolution_line_ident": "oricorio",
     "evolution_line_index": 0,
     "ident": "oricorio-pau",
@@ -999,7 +2060,8 @@
   },
   {
     "national_pokedex_number": 741,
-    "paldea_regional_pokedex_number": 100,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 100,
     "evolution_line_ident": "oricorio",
     "evolution_line_index": 0,
     "ident": "oricorio-sensu",
@@ -1071,7 +2133,6 @@
   {
     "ident": "mareep",
     "national_pokedex_number": 179,
-    "paldea_regional_pokedex_number": 101,
     "evolution_line_ident": "mareep",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -1134,12 +2195,13 @@
       "trailblaze",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 101
   },
   {
     "ident": "flaaffy",
     "national_pokedex_number": 180,
-    "paldea_regional_pokedex_number": 102,
     "evolution_line_ident": "mareep",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -1209,12 +2271,13 @@
       "trailblaze",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 102
   },
   {
     "ident": "ampharos",
     "national_pokedex_number": 181,
-    "paldea_regional_pokedex_number": 103,
     "evolution_line_ident": "mareep",
     "evolution_line_index": 2,
     "primary_type_ident": "electric",
@@ -1294,12 +2357,13 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 103
   },
   {
     "ident": "petilil",
     "national_pokedex_number": 548,
-    "paldea_regional_pokedex_number": 104,
     "evolution_line_ident": "petilil",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -1357,12 +2421,13 @@
       "tera-blast",
       "trailblaze",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 104
   },
   {
     "ident": "lilligant",
     "national_pokedex_number": 549,
-    "paldea_regional_pokedex_number": 105,
     "evolution_line_ident": "petilil",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -1429,12 +2494,13 @@
       "tera-blast",
       "trailblaze",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 105
   },
   {
     "ident": "shroomish",
     "national_pokedex_number": 285,
-    "paldea_regional_pokedex_number": 106,
     "evolution_line_ident": "shroomish",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -1500,12 +2566,13 @@
       "venoshock",
       "worry-seed",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 106
   },
   {
     "ident": "breloom",
     "national_pokedex_number": 286,
-    "paldea_regional_pokedex_number": 107,
     "evolution_line_ident": "shroomish",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -1599,12 +2666,13 @@
       "venoshock",
       "worry-seed",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 107
   },
   {
     "ident": "applin",
     "national_pokedex_number": 840,
-    "paldea_regional_pokedex_number": 108,
     "evolution_line_ident": "applin",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -1637,12 +2705,13 @@
       "sucker-punch",
       "tera-blast",
       "withdraw"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 108
   },
   {
     "ident": "flapple",
     "national_pokedex_number": 841,
-    "paldea_regional_pokedex_number": 109,
     "evolution_line_ident": "applin",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -1715,11 +2784,14 @@
       "u-turn",
       "wing-attack",
       "withdraw"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 109
   },
   {
     "national_pokedex_number": 916,
-    "paldea_regional_pokedex_number": 11,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 11,
     "evolution_line_ident": "lechonk",
     "evolution_line_index": 1,
     "ident": "oinkologne-male",
@@ -1795,7 +2867,8 @@
   },
   {
     "national_pokedex_number": 916,
-    "paldea_regional_pokedex_number": 11,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 11,
     "evolution_line_ident": "lechonk",
     "evolution_line_index": 1,
     "ident": "oinkologne-female",
@@ -1872,7 +2945,6 @@
   {
     "ident": "appletun",
     "national_pokedex_number": 842,
-    "paldea_regional_pokedex_number": 110,
     "evolution_line_ident": "applin",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -1951,12 +3023,13 @@
       "trailblaze",
       "withdraw",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 110
   },
   {
     "ident": "spoink",
     "national_pokedex_number": 325,
-    "paldea_regional_pokedex_number": 111,
     "evolution_line_ident": "spoink",
     "evolution_line_index": 0,
     "primary_type_ident": "psychic",
@@ -2037,12 +3110,13 @@
       "trick-room",
       "whirlwind",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 111
   },
   {
     "ident": "grumpig",
     "national_pokedex_number": 326,
-    "paldea_regional_pokedex_number": 112,
     "evolution_line_ident": "spoink",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -2148,11 +3222,14 @@
       "trick-room",
       "whirlwind",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 112
   },
   {
     "national_pokedex_number": 931,
-    "paldea_regional_pokedex_number": 113,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 113,
     "evolution_line_ident": "squawkabilly",
     "evolution_line_index": 0,
     "ident": "squawkabilly-green",
@@ -2225,7 +3302,8 @@
   },
   {
     "national_pokedex_number": 931,
-    "paldea_regional_pokedex_number": 113,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 113,
     "evolution_line_ident": "squawkabilly",
     "evolution_line_index": 0,
     "ident": "squawkabilly-blue",
@@ -2298,7 +3376,8 @@
   },
   {
     "national_pokedex_number": 931,
-    "paldea_regional_pokedex_number": 113,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 113,
     "evolution_line_ident": "squawkabilly",
     "evolution_line_index": 0,
     "ident": "squawkabilly-yellow",
@@ -2371,7 +3450,8 @@
   },
   {
     "national_pokedex_number": 931,
-    "paldea_regional_pokedex_number": 113,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 113,
     "evolution_line_ident": "squawkabilly",
     "evolution_line_index": 0,
     "ident": "squawkabilly-white",
@@ -2445,7 +3525,6 @@
   {
     "ident": "misdreavus",
     "national_pokedex_number": 200,
-    "paldea_regional_pokedex_number": 114,
     "evolution_line_ident": "misdreavus",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -2532,12 +3611,13 @@
       "trick-room",
       "will-o-wisp",
       "wonder-room"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 114
   },
   {
     "ident": "mismagius",
     "national_pokedex_number": 429,
-    "paldea_regional_pokedex_number": 115,
     "evolution_line_ident": "misdreavus",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -2625,12 +3705,13 @@
       "trick-room",
       "will-o-wisp",
       "wonder-room"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 115
   },
   {
     "ident": "makuhita",
     "national_pokedex_number": 296,
-    "paldea_regional_pokedex_number": 116,
     "evolution_line_ident": "makuhita",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -2716,12 +3797,13 @@
       "whirlwind",
       "wide-guard",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 116
   },
   {
     "ident": "hariyama",
     "national_pokedex_number": 297,
-    "paldea_regional_pokedex_number": 117,
     "evolution_line_ident": "makuhita",
     "evolution_line_index": 1,
     "primary_type_ident": "fighting",
@@ -2813,12 +3895,13 @@
       "whirlwind",
       "wide-guard",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 117
   },
   {
     "ident": "crabrawler",
     "national_pokedex_number": 739,
-    "paldea_regional_pokedex_number": 118,
     "evolution_line_ident": "crabrawler",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -2893,12 +3976,13 @@
       "vice-grip",
       "wide-guard",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 118
   },
   {
     "ident": "crabominable",
     "national_pokedex_number": 740,
-    "paldea_regional_pokedex_number": 119,
     "evolution_line_ident": "crabrawler",
     "evolution_line_index": 1,
     "primary_type_ident": "fighting",
@@ -2984,12 +4068,13 @@
       "vice-grip",
       "wide-guard",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 119
   },
   {
     "ident": "tarountula",
     "national_pokedex_number": 918,
-    "paldea_regional_pokedex_number": 12,
     "evolution_line_ident": "tarountula",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -3056,12 +4141,13 @@
       "toxic-spikes",
       "trailblaze",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 12
   },
   {
     "ident": "salandit",
     "national_pokedex_number": 757,
-    "paldea_regional_pokedex_number": 120,
     "evolution_line_ident": "salandit",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -3136,12 +4222,13 @@
       "trailblaze",
       "venoshock",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 120
   },
   {
     "ident": "salazzle",
     "national_pokedex_number": 758,
-    "paldea_regional_pokedex_number": 121,
     "evolution_line_ident": "salandit",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -3229,12 +4316,13 @@
       "trailblaze",
       "venoshock",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 121
   },
   {
     "ident": "phanpy",
     "national_pokedex_number": 231,
-    "paldea_regional_pokedex_number": 122,
     "evolution_line_ident": "phanpy",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -3309,12 +4397,13 @@
       "tera-blast",
       "thief",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 122
   },
   {
     "ident": "donphan",
     "national_pokedex_number": 232,
-    "paldea_regional_pokedex_number": 123,
     "evolution_line_ident": "phanpy",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -3405,12 +4494,13 @@
       "thief",
       "thunder-fang",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 123
   },
   {
     "ident": "cufant",
     "national_pokedex_number": 878,
-    "paldea_regional_pokedex_number": 124,
     "evolution_line_ident": "cufant",
     "evolution_line_index": 0,
     "primary_type_ident": "steel",
@@ -3481,12 +4571,13 @@
       "tera-blast",
       "whirlwind",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 124
   },
   {
     "ident": "copperajah",
     "national_pokedex_number": 879,
-    "paldea_regional_pokedex_number": 125,
     "evolution_line_ident": "cufant",
     "evolution_line_index": 1,
     "primary_type_ident": "steel",
@@ -3562,12 +4653,13 @@
       "tera-blast",
       "whirlwind",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 125
   },
   {
     "ident": "gible",
     "national_pokedex_number": 443,
-    "paldea_regional_pokedex_number": 126,
     "evolution_line_ident": "gible",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -3639,12 +4731,13 @@
       "thrash",
       "thunder-fang",
       "twister"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 126
   },
   {
     "ident": "gabite",
     "national_pokedex_number": 444,
-    "paldea_regional_pokedex_number": 127,
     "evolution_line_ident": "gible",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -3719,12 +4812,13 @@
       "thrash",
       "thunder-fang",
       "twister"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 127
   },
   {
     "ident": "garchomp",
     "national_pokedex_number": 445,
-    "paldea_regional_pokedex_number": 128,
     "evolution_line_ident": "gible",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -3808,12 +4902,13 @@
       "thrash",
       "thunder-fang",
       "twister"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 128
   },
   {
     "ident": "nacli",
     "national_pokedex_number": 932,
-    "paldea_regional_pokedex_number": 129,
     "evolution_line_ident": "nacli",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -3876,12 +4971,13 @@
       "take-down",
       "tera-blast",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 129
   },
   {
     "ident": "spidops",
     "national_pokedex_number": 919,
-    "paldea_regional_pokedex_number": 13,
     "evolution_line_ident": "tarountula",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -3959,12 +5055,13 @@
       "trailblaze",
       "u-turn",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 13
   },
   {
     "ident": "naclstack",
     "national_pokedex_number": 933,
-    "paldea_regional_pokedex_number": 130,
     "evolution_line_ident": "nacli",
     "evolution_line_index": 1,
     "primary_type_ident": "rock",
@@ -4031,12 +5128,13 @@
       "take-down",
       "tera-blast",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 130
   },
   {
     "ident": "garganacl",
     "national_pokedex_number": 934,
-    "paldea_regional_pokedex_number": 131,
     "evolution_line_ident": "nacli",
     "evolution_line_index": 2,
     "primary_type_ident": "rock",
@@ -4115,12 +5213,13 @@
       "thunder-punch",
       "wide-guard",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 131
   },
   {
     "ident": "wingull",
     "national_pokedex_number": 278,
-    "paldea_regional_pokedex_number": 132,
     "evolution_line_ident": "wingull",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -4190,12 +5289,13 @@
       "water-pulse",
       "wide-guard",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 132
   },
   {
     "ident": "pelipper",
     "national_pokedex_number": 279,
-    "paldea_regional_pokedex_number": 133,
     "evolution_line_ident": "wingull",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -4274,12 +5374,13 @@
       "water-pulse",
       "wide-guard",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 133
   },
   {
     "ident": "magikarp",
     "national_pokedex_number": 129,
-    "paldea_regional_pokedex_number": 134,
     "evolution_line_ident": "magikarp",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -4306,12 +5407,13 @@
       "flail",
       "splash",
       "tackle"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 134
   },
   {
     "ident": "gyarados",
     "national_pokedex_number": 130,
-    "paldea_regional_pokedex_number": 135,
     "evolution_line_ident": "magikarp",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -4388,12 +5490,13 @@
       "waterfall",
       "water-pulse",
       "whirlpool"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 135
   },
   {
     "ident": "arrokuda",
     "national_pokedex_number": 846,
-    "paldea_regional_pokedex_number": 136,
     "evolution_line_ident": "arrokuda",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -4451,12 +5554,13 @@
       "thrash",
       "waterfall",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 136
   },
   {
     "ident": "barraskewda",
     "national_pokedex_number": 847,
-    "paldea_regional_pokedex_number": 137,
     "evolution_line_ident": "arrokuda",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -4521,11 +5625,14 @@
       "throat-chop",
       "waterfall",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 137
   },
   {
     "national_pokedex_number": 550,
-    "paldea_regional_pokedex_number": 138,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 138,
     "evolution_line_ident": "basculin",
     "evolution_line_index": 0,
     "ident": "basculin-red-striped",
@@ -4601,7 +5708,8 @@
   },
   {
     "national_pokedex_number": 550,
-    "paldea_regional_pokedex_number": 138,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 138,
     "evolution_line_ident": "basculin",
     "evolution_line_index": 0,
     "ident": "basculin-blue-striped",
@@ -4677,7 +5785,8 @@
   },
   {
     "national_pokedex_number": 550,
-    "paldea_regional_pokedex_number": 138,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 138,
     "evolution_line_ident": "basculin",
     "evolution_line_index": 0,
     "ident": "basculin-white-striped",
@@ -4750,7 +5859,6 @@
   {
     "ident": "gulpin",
     "national_pokedex_number": 316,
-    "paldea_regional_pokedex_number": 139,
     "evolution_line_ident": "gulpin",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -4828,12 +5936,13 @@
       "venoshock",
       "water-pulse",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 139
   },
   {
     "ident": "nymble",
     "national_pokedex_number": 920,
-    "paldea_regional_pokedex_number": 14,
     "evolution_line_ident": "nymble",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -4888,12 +5997,13 @@
       "trailblaze",
       "u-turn",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 14
   },
   {
     "ident": "swalot",
     "national_pokedex_number": 317,
-    "paldea_regional_pokedex_number": 140,
     "evolution_line_ident": "gulpin",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -4979,12 +6089,13 @@
       "water-pulse",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 140
   },
   {
     "ident": "meowth",
     "national_pokedex_number": 52,
-    "paldea_regional_pokedex_number": 141,
     "evolution_line_ident": "meowth",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -5066,12 +6177,13 @@
       "thunder-wave",
       "trailblaze",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 141
   },
   {
     "ident": "persian",
     "national_pokedex_number": 53,
-    "paldea_regional_pokedex_number": 142,
     "evolution_line_ident": "meowth",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -5156,12 +6268,13 @@
       "thunder-wave",
       "trailblaze",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 142
   },
   {
     "ident": "drifloon",
     "national_pokedex_number": 425,
-    "paldea_regional_pokedex_number": 143,
     "evolution_line_ident": "drifloon",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -5239,12 +6352,13 @@
       "trick",
       "trick-room",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 143
   },
   {
     "ident": "drifblim",
     "national_pokedex_number": 426,
-    "paldea_regional_pokedex_number": 144,
     "evolution_line_ident": "drifloon",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -5328,12 +6442,13 @@
       "trick",
       "trick-room",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 144
   },
   {
     "ident": "flabebe",
     "national_pokedex_number": 669,
-    "paldea_regional_pokedex_number": 145,
     "evolution_line_ident": "flabebe",
     "evolution_line_index": 0,
     "primary_type_ident": "fairy",
@@ -5400,12 +6515,13 @@
       "trailblaze",
       "vine-whip",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 145
   },
   {
     "ident": "floette",
     "national_pokedex_number": 670,
-    "paldea_regional_pokedex_number": 146,
     "evolution_line_ident": "flabebe",
     "evolution_line_index": 1,
     "primary_type_ident": "fairy",
@@ -5475,12 +6591,13 @@
       "trick",
       "vine-whip",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 146
   },
   {
     "ident": "florges",
     "national_pokedex_number": 671,
-    "paldea_regional_pokedex_number": 147,
     "evolution_line_ident": "flabebe",
     "evolution_line_index": 2,
     "primary_type_ident": "fairy",
@@ -5552,12 +6669,13 @@
       "trick",
       "vine-whip",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 147
   },
   {
     "ident": "diglett",
     "national_pokedex_number": 50,
-    "paldea_regional_pokedex_number": 148,
     "evolution_line_ident": "diglett",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -5626,12 +6744,13 @@
       "take-down",
       "tera-blast",
       "thief"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 148
   },
   {
     "ident": "dugtrio",
     "national_pokedex_number": 51,
-    "paldea_regional_pokedex_number": 149,
     "evolution_line_ident": "diglett",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -5706,12 +6825,13 @@
       "tera-blast",
       "thief",
       "tri-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 149
   },
   {
     "ident": "lokix",
     "national_pokedex_number": 921,
-    "paldea_regional_pokedex_number": 15,
     "evolution_line_ident": "nymble",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -5782,12 +6902,13 @@
       "trailblaze",
       "u-turn",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 15
   },
   {
     "ident": "torkoal",
     "national_pokedex_number": 324,
-    "paldea_regional_pokedex_number": 150,
     "evolution_line_ident": "torkoal",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -5865,12 +6986,13 @@
       "withdraw",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 150
   },
   {
     "ident": "numel",
     "national_pokedex_number": 322,
-    "paldea_regional_pokedex_number": 151,
     "evolution_line_ident": "numel",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -5954,12 +7076,13 @@
       "will-o-wisp",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 151
   },
   {
     "ident": "camerupt",
     "national_pokedex_number": 323,
-    "paldea_regional_pokedex_number": 152,
     "evolution_line_ident": "numel",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -6048,12 +7171,13 @@
       "will-o-wisp",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 152
   },
   {
     "ident": "bronzor",
     "national_pokedex_number": 436,
-    "paldea_regional_pokedex_number": 153,
     "evolution_line_ident": "bronzor",
     "evolution_line_index": 0,
     "primary_type_ident": "steel",
@@ -6133,12 +7257,13 @@
       "trick",
       "trick-room",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 153
   },
   {
     "ident": "bronzong",
     "national_pokedex_number": 437,
-    "paldea_regional_pokedex_number": 154,
     "evolution_line_ident": "bronzor",
     "evolution_line_index": 1,
     "primary_type_ident": "steel",
@@ -6225,12 +7350,13 @@
       "trick-room",
       "weather-ball",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 154
   },
   {
     "ident": "axew",
     "national_pokedex_number": 610,
-    "paldea_regional_pokedex_number": 155,
     "evolution_line_ident": "axew",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -6307,12 +7433,13 @@
       "tera-blast",
       "trailblaze",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 155
   },
   {
     "ident": "fraxure",
     "national_pokedex_number": 611,
-    "paldea_regional_pokedex_number": 156,
     "evolution_line_ident": "axew",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -6390,12 +7517,13 @@
       "tera-blast",
       "trailblaze",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 156
   },
   {
     "ident": "haxorus",
     "national_pokedex_number": 612,
-    "paldea_regional_pokedex_number": 157,
     "evolution_line_ident": "axew",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -6481,12 +7609,13 @@
       "tera-blast",
       "trailblaze",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 157
   },
   {
     "ident": "mankey",
     "national_pokedex_number": 56,
-    "paldea_regional_pokedex_number": 158,
     "evolution_line_ident": "mankey",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -6574,12 +7703,13 @@
       "thunderbolt",
       "thunder-punch",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 158
   },
   {
     "ident": "primeape",
     "national_pokedex_number": 57,
-    "paldea_regional_pokedex_number": 159,
     "evolution_line_ident": "mankey",
     "evolution_line_index": 1,
     "primary_type_ident": "fighting",
@@ -6672,12 +7802,13 @@
       "thunderbolt",
       "thunder-punch",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 159
   },
   {
     "ident": "hoppip",
     "national_pokedex_number": 187,
-    "paldea_regional_pokedex_number": 16,
     "evolution_line_ident": "hoppip",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -6756,12 +7887,13 @@
       "trailblaze",
       "u-turn",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 16
   },
   {
     "ident": "annihilape",
     "national_pokedex_number": 979,
-    "paldea_regional_pokedex_number": 160,
     "evolution_line_ident": "mankey",
     "evolution_line_index": 2,
     "primary_type_ident": "fighting",
@@ -6858,12 +7990,13 @@
       "thunderbolt",
       "thunder-punch",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 160
   },
   {
     "ident": "meditite",
     "national_pokedex_number": 307,
-    "paldea_regional_pokedex_number": 161,
     "evolution_line_ident": "meditite",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -6955,12 +8088,13 @@
       "trick-room",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 161
   },
   {
     "ident": "medicham",
     "national_pokedex_number": 308,
-    "paldea_regional_pokedex_number": 162,
     "evolution_line_ident": "meditite",
     "evolution_line_index": 1,
     "primary_type_ident": "fighting",
@@ -7057,12 +8191,13 @@
       "trick-room",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 162
   },
   {
     "ident": "riolu",
     "national_pokedex_number": 447,
-    "paldea_regional_pokedex_number": 163,
     "evolution_line_ident": "riolu",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -7143,12 +8278,13 @@
       "vacuum-wave",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 163
   },
   {
     "ident": "lucario",
     "national_pokedex_number": 448,
-    "paldea_regional_pokedex_number": 164,
     "evolution_line_ident": "riolu",
     "evolution_line_index": 1,
     "primary_type_ident": "fighting",
@@ -7251,12 +8387,13 @@
       "water-pulse",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 164
   },
   {
     "ident": "charcadet",
     "national_pokedex_number": 935,
-    "paldea_regional_pokedex_number": 165,
     "evolution_line_ident": "charcadet",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -7308,12 +8445,13 @@
       "take-down",
       "tera-blast",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 165
   },
   {
     "ident": "armarouge",
     "national_pokedex_number": 936,
-    "paldea_regional_pokedex_number": 166,
     "evolution_line_ident": "charcadet",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -7393,12 +8531,13 @@
       "trick-room",
       "wide-guard",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 166
   },
   {
     "ident": "ceruledge",
     "national_pokedex_number": 937,
-    "paldea_regional_pokedex_number": 167,
     "evolution_line_ident": "charcadet",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -7477,12 +8616,13 @@
       "tera-blast",
       "will-o-wisp",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 167
   },
   {
     "ident": "barboach",
     "national_pokedex_number": 339,
-    "paldea_regional_pokedex_number": 168,
     "evolution_line_ident": "barboach",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -7552,12 +8692,13 @@
       "water-gun",
       "water-pulse",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 168
   },
   {
     "ident": "whiscash",
     "national_pokedex_number": 340,
-    "paldea_regional_pokedex_number": 169,
     "evolution_line_ident": "barboach",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -7634,12 +8775,13 @@
       "water-gun",
       "water-pulse",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 169
   },
   {
     "ident": "skiploom",
     "national_pokedex_number": 188,
-    "paldea_regional_pokedex_number": 17,
     "evolution_line_ident": "hoppip",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -7718,12 +8860,13 @@
       "trailblaze",
       "u-turn",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 17
   },
   {
     "ident": "tadbulb",
     "national_pokedex_number": 938,
-    "paldea_regional_pokedex_number": 170,
     "evolution_line_ident": "tadbulb",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -7787,12 +8930,13 @@
       "weather-ball",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 170
   },
   {
     "ident": "bellibolt",
     "national_pokedex_number": 939,
-    "paldea_regional_pokedex_number": 171,
     "evolution_line_ident": "tadbulb",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -7859,12 +9003,13 @@
       "weather-ball",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 171
   },
   {
     "ident": "goomy",
     "national_pokedex_number": 704,
-    "paldea_regional_pokedex_number": 172,
     "evolution_line_ident": "goomy",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -7919,12 +9064,13 @@
       "thunderbolt",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 172
   },
   {
     "ident": "sliggoo",
     "national_pokedex_number": 705,
-    "paldea_regional_pokedex_number": 173,
     "evolution_line_ident": "goomy",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -7984,12 +9130,13 @@
       "thunderbolt",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 173
   },
   {
     "ident": "goodra",
     "national_pokedex_number": 706,
-    "paldea_regional_pokedex_number": 174,
     "evolution_line_ident": "goomy",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -8069,12 +9216,13 @@
       "thunder-punch",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 174
   },
   {
     "ident": "croagunk",
     "national_pokedex_number": 453,
-    "paldea_regional_pokedex_number": 175,
     "evolution_line_ident": "croagunk",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -8161,12 +9309,13 @@
       "vacuum-wave",
       "venoshock",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 175
   },
   {
     "ident": "toxicroak",
     "national_pokedex_number": 454,
-    "paldea_regional_pokedex_number": 176,
     "evolution_line_ident": "croagunk",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -8259,12 +9408,13 @@
       "vacuum-wave",
       "venoshock",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 176
   },
   {
     "ident": "wattrel",
     "national_pokedex_number": 940,
-    "paldea_regional_pokedex_number": 177,
     "evolution_line_ident": "wattrel",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -8333,12 +9483,13 @@
       "volt-switch",
       "weather-ball",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 177
   },
   {
     "ident": "kilowattrel",
     "national_pokedex_number": 941,
-    "paldea_regional_pokedex_number": 178,
     "evolution_line_ident": "wattrel",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -8410,12 +9561,13 @@
       "volt-switch",
       "weather-ball",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 178
   },
   {
     "ident": "eevee",
     "national_pokedex_number": 133,
-    "paldea_regional_pokedex_number": 179,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -8481,12 +9633,13 @@
       "trailblaze",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 179
   },
   {
     "ident": "jumpluff",
     "national_pokedex_number": 189,
-    "paldea_regional_pokedex_number": 18,
     "evolution_line_ident": "hoppip",
     "evolution_line_index": 2,
     "primary_type_ident": "grass",
@@ -8567,12 +9720,13 @@
       "trailblaze",
       "u-turn",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 18
   },
   {
     "ident": "vaporeon",
     "national_pokedex_number": 134,
-    "paldea_regional_pokedex_number": 180,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -8654,12 +9808,13 @@
       "water-pulse",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 180
   },
   {
     "ident": "jolteon",
     "national_pokedex_number": 135,
-    "paldea_regional_pokedex_number": 181,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -8741,12 +9896,13 @@
       "wild-charge",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 181
   },
   {
     "ident": "flareon",
     "national_pokedex_number": 136,
-    "paldea_regional_pokedex_number": 182,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -8825,12 +9981,13 @@
       "will-o-wisp",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 182
   },
   {
     "ident": "espeon",
     "national_pokedex_number": 196,
-    "paldea_regional_pokedex_number": 183,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -8921,12 +10078,13 @@
       "wish",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 183
   },
   {
     "ident": "umbreon",
     "national_pokedex_number": 197,
-    "paldea_regional_pokedex_number": 184,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -9011,12 +10169,13 @@
       "trailblaze",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 184
   },
   {
     "ident": "leafeon",
     "national_pokedex_number": 470,
-    "paldea_regional_pokedex_number": 185,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -9099,12 +10258,13 @@
       "wish",
       "x-scissor",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 185
   },
   {
     "ident": "glaceon",
     "national_pokedex_number": 471,
-    "paldea_regional_pokedex_number": 186,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "ice",
@@ -9183,12 +10343,13 @@
       "water-pulse",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 186
   },
   {
     "ident": "sylveon",
     "national_pokedex_number": 700,
-    "paldea_regional_pokedex_number": 187,
     "evolution_line_ident": "eevee",
     "evolution_line_index": 1,
     "primary_type_ident": "fairy",
@@ -9268,12 +10429,13 @@
       "trailblaze",
       "wish",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 187
   },
   {
     "ident": "dunsparce",
     "national_pokedex_number": 206,
-    "paldea_regional_pokedex_number": 188,
     "evolution_line_ident": "dunsparce",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -9370,11 +10532,14 @@
       "wild-charge",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 188
   },
   {
     "national_pokedex_number": 982,
-    "paldea_regional_pokedex_number": 189,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 189,
     "evolution_line_ident": "dunsparce",
     "evolution_line_index": 1,
     "ident": "dudunsparce-two-segment",
@@ -9483,7 +10648,8 @@
   },
   {
     "national_pokedex_number": 982,
-    "paldea_regional_pokedex_number": 189,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 189,
     "evolution_line_ident": "dunsparce",
     "evolution_line_index": 1,
     "ident": "dudunsparce-three-segment",
@@ -9586,7 +10752,6 @@
   {
     "ident": "fletchling",
     "national_pokedex_number": 661,
-    "paldea_regional_pokedex_number": 19,
     "evolution_line_ident": "fletchling",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -9647,11 +10812,14 @@
       "tera-blast",
       "thief",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 19
   },
   {
     "national_pokedex_number": 585,
-    "paldea_regional_pokedex_number": 190,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 190,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 0,
     "ident": "deerling-spring",
@@ -9724,7 +10892,8 @@
   },
   {
     "national_pokedex_number": 585,
-    "paldea_regional_pokedex_number": 190,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 190,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 0,
     "ident": "deerling-summer",
@@ -9797,7 +10966,8 @@
   },
   {
     "national_pokedex_number": 585,
-    "paldea_regional_pokedex_number": 190,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 190,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 0,
     "ident": "deerling-autumn",
@@ -9870,7 +11040,8 @@
   },
   {
     "national_pokedex_number": 585,
-    "paldea_regional_pokedex_number": 190,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 190,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 0,
     "ident": "deerling-winter",
@@ -9943,7 +11114,8 @@
   },
   {
     "national_pokedex_number": 586,
-    "paldea_regional_pokedex_number": 191,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 191,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 1,
     "ident": "sawsbuck-spring",
@@ -10023,7 +11195,8 @@
   },
   {
     "national_pokedex_number": 586,
-    "paldea_regional_pokedex_number": 191,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 191,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 1,
     "ident": "sawsbuck-summer",
@@ -10103,7 +11276,8 @@
   },
   {
     "national_pokedex_number": 586,
-    "paldea_regional_pokedex_number": 191,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 191,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 1,
     "ident": "sawsbuck-autumn",
@@ -10183,7 +11357,8 @@
   },
   {
     "national_pokedex_number": 586,
-    "paldea_regional_pokedex_number": 191,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 191,
     "evolution_line_ident": "deerling",
     "evolution_line_index": 1,
     "ident": "sawsbuck-winter",
@@ -10264,7 +11439,6 @@
   {
     "ident": "girafarig",
     "national_pokedex_number": 203,
-    "paldea_regional_pokedex_number": 192,
     "evolution_line_ident": "girafarig",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -10358,12 +11532,13 @@
       "uproar",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 192
   },
   {
     "ident": "farigiraf",
     "national_pokedex_number": 981,
-    "paldea_regional_pokedex_number": 193,
     "evolution_line_ident": "girafarig",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -10459,12 +11634,13 @@
       "uproar",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 193
   },
   {
     "ident": "grimer",
     "national_pokedex_number": 88,
-    "paldea_regional_pokedex_number": 194,
     "evolution_line_ident": "grimer",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -10551,12 +11727,13 @@
       "toxic",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 194
   },
   {
     "ident": "muk",
     "national_pokedex_number": 89,
-    "paldea_regional_pokedex_number": 195,
     "evolution_line_ident": "grimer",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -10650,12 +11827,13 @@
       "toxic-spikes",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 195
   },
   {
     "ident": "maschiff",
     "national_pokedex_number": 942,
-    "paldea_regional_pokedex_number": 196,
     "evolution_line_ident": "maschiff",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -10722,12 +11900,13 @@
       "thief",
       "thunder-fang",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 196
   },
   {
     "ident": "mabosstiff",
     "national_pokedex_number": 943,
-    "paldea_regional_pokedex_number": 197,
     "evolution_line_ident": "maschiff",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -10800,12 +11979,13 @@
       "thunder-fang",
       "trailblaze",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 197
   },
   {
     "ident": "toxel",
     "national_pokedex_number": 848,
-    "paldea_regional_pokedex_number": 198,
     "evolution_line_ident": "toxel",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -10847,11 +12027,14 @@
       "substitute",
       "tearful-look",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 198
   },
   {
     "national_pokedex_number": 849,
-    "paldea_regional_pokedex_number": 199,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 199,
     "evolution_line_ident": "toxel",
     "evolution_line_index": 1,
     "ident": "toxtricity-amped",
@@ -10949,7 +12132,8 @@
   },
   {
     "national_pokedex_number": 849,
-    "paldea_regional_pokedex_number": 199,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 199,
     "evolution_line_ident": "toxel",
     "evolution_line_index": 1,
     "ident": "toxtricity-low-key",
@@ -11048,7 +12232,6 @@
   {
     "ident": "fletchinder",
     "national_pokedex_number": 662,
-    "paldea_regional_pokedex_number": 20,
     "evolution_line_ident": "fletchling",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -11114,12 +12297,13 @@
       "thief",
       "u-turn",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 20
   },
   {
     "ident": "dedenne",
     "national_pokedex_number": 702,
-    "paldea_regional_pokedex_number": 200,
     "evolution_line_ident": "dedenne",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -11195,12 +12379,13 @@
       "u-turn",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 200
   },
   {
     "ident": "pachirisu",
     "national_pokedex_number": 417,
-    "paldea_regional_pokedex_number": 201,
     "evolution_line_ident": "pachirisu",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -11286,12 +12471,13 @@
       "u-turn",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 201
   },
   {
     "ident": "shroodle",
     "national_pokedex_number": 944,
-    "paldea_regional_pokedex_number": 202,
     "evolution_line_ident": "shroodle",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -11363,12 +12549,13 @@
       "trailblaze",
       "u-turn",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 202
   },
   {
     "ident": "grafaiai",
     "national_pokedex_number": 945,
-    "paldea_regional_pokedex_number": 203,
     "evolution_line_ident": "shroodle",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -11448,12 +12635,13 @@
       "u-turn",
       "venoshock",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 203
   },
   {
     "ident": "stantler",
     "national_pokedex_number": 234,
-    "paldea_regional_pokedex_number": 204,
     "evolution_line_ident": "stantler",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -11538,12 +12726,13 @@
       "trick-room",
       "wild-charge",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 204
   },
   {
     "ident": "foongus",
     "national_pokedex_number": 590,
-    "paldea_regional_pokedex_number": 205,
     "evolution_line_ident": "foongus",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -11606,12 +12795,13 @@
       "toxic",
       "venoshock",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 205
   },
   {
     "ident": "amoonguss",
     "national_pokedex_number": 591,
-    "paldea_regional_pokedex_number": 206,
     "evolution_line_ident": "foongus",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -11679,12 +12869,13 @@
       "toxic",
       "venoshock",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 206
   },
   {
     "ident": "voltorb",
     "national_pokedex_number": 100,
-    "paldea_regional_pokedex_number": 207,
     "evolution_line_ident": "voltorb",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -11747,12 +12938,13 @@
       "thunder-wave",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 207
   },
   {
     "ident": "electrode",
     "national_pokedex_number": 101,
-    "paldea_regional_pokedex_number": 208,
     "evolution_line_ident": "voltorb",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -11819,12 +13011,13 @@
       "thunder-wave",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 208
   },
   {
     "ident": "magnemite",
     "national_pokedex_number": 81,
-    "paldea_regional_pokedex_number": 209,
     "evolution_line_ident": "magnemite",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -11891,12 +13084,13 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 209
   },
   {
     "ident": "talonflame",
     "national_pokedex_number": 663,
-    "paldea_regional_pokedex_number": 21,
     "evolution_line_ident": "fletchling",
     "evolution_line_index": 2,
     "primary_type_ident": "fire",
@@ -11966,12 +13160,13 @@
       "thief",
       "u-turn",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 21
   },
   {
     "ident": "magneton",
     "national_pokedex_number": 82,
-    "paldea_regional_pokedex_number": 210,
     "evolution_line_ident": "magnemite",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -12040,12 +13235,13 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 210
   },
   {
     "ident": "magnezone",
     "national_pokedex_number": 462,
-    "paldea_regional_pokedex_number": 211,
     "evolution_line_ident": "magnemite",
     "evolution_line_index": 2,
     "primary_type_ident": "electric",
@@ -12119,12 +13315,13 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 211
   },
   {
     "ident": "ditto",
     "national_pokedex_number": 132,
-    "paldea_regional_pokedex_number": 212,
     "evolution_line_ident": "ditto",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -12148,12 +13345,13 @@
     ],
     "move_idents": [
       "transform"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 212
   },
   {
     "ident": "growlithe",
     "national_pokedex_number": 58,
-    "paldea_regional_pokedex_number": 213,
     "evolution_line_ident": "growlithe",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -12226,12 +13424,13 @@
       "thunder-fang",
       "wild-charge",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 213
   },
   {
     "ident": "arcanine",
     "national_pokedex_number": 59,
-    "paldea_regional_pokedex_number": 214,
     "evolution_line_ident": "growlithe",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -12313,12 +13512,13 @@
       "thunder-fang",
       "wild-charge",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 214
   },
   {
     "ident": "teddiursa",
     "national_pokedex_number": 216,
-    "paldea_regional_pokedex_number": 215,
     "evolution_line_ident": "teddiursa",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -12404,12 +13604,13 @@
       "thunder-punch",
       "trailblaze",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 215
   },
   {
     "ident": "ursaring",
     "national_pokedex_number": 217,
-    "paldea_regional_pokedex_number": 216,
     "evolution_line_ident": "teddiursa",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -12503,12 +13704,13 @@
       "thunder-punch",
       "trailblaze",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 216
   },
   {
     "ident": "zangoose",
     "national_pokedex_number": 335,
-    "paldea_regional_pokedex_number": 217,
     "evolution_line_ident": "zangoose",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -12609,12 +13811,13 @@
       "thunder-wave",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 217
   },
   {
     "ident": "seviper",
     "national_pokedex_number": 336,
-    "paldea_regional_pokedex_number": 218,
     "evolution_line_ident": "seviper",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -12701,12 +13904,13 @@
       "wrap",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 218
   },
   {
     "ident": "swablu",
     "national_pokedex_number": 333,
-    "paldea_regional_pokedex_number": 219,
     "evolution_line_ident": "swablu",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -12777,12 +13981,13 @@
       "tera-blast",
       "thief",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 219
   },
   {
     "ident": "pawmi",
     "national_pokedex_number": 954,
-    "paldea_regional_pokedex_number": 22,
     "evolution_line_ident": "pawmi",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -12854,12 +14059,13 @@
       "volt-switch",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 22
   },
   {
     "ident": "altaria",
     "national_pokedex_number": 334,
-    "paldea_regional_pokedex_number": 220,
     "evolution_line_ident": "swablu",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -12945,12 +14151,13 @@
       "thief",
       "trailblaze",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 220
   },
   {
     "ident": "skiddo",
     "national_pokedex_number": 672,
-    "paldea_regional_pokedex_number": 221,
     "evolution_line_ident": "skiddo",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -13022,12 +14229,13 @@
       "wild-charge",
       "worry-seed",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 221
   },
   {
     "ident": "gogoat",
     "national_pokedex_number": 673,
-    "paldea_regional_pokedex_number": 222,
     "evolution_line_ident": "skiddo",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -13103,11 +14311,14 @@
       "wild-charge",
       "worry-seed",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 222
   },
   {
     "national_pokedex_number": 128,
-    "paldea_regional_pokedex_number": 223,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 223,
     "evolution_line_ident": "tauros",
     "evolution_line_index": 0,
     "ident": "tauros-combat",
@@ -13183,7 +14394,8 @@
   },
   {
     "national_pokedex_number": 128,
-    "paldea_regional_pokedex_number": 223,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 223,
     "evolution_line_ident": "tauros",
     "evolution_line_index": 0,
     "ident": "tauros-blaze",
@@ -13263,7 +14475,8 @@
   },
   {
     "national_pokedex_number": 128,
-    "paldea_regional_pokedex_number": 223,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 223,
     "evolution_line_ident": "tauros",
     "evolution_line_index": 0,
     "ident": "tauros-aqua",
@@ -13343,7 +14556,6 @@
   {
     "ident": "litleo",
     "national_pokedex_number": 667,
-    "paldea_regional_pokedex_number": 224,
     "evolution_line_ident": "litleo",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -13415,12 +14627,13 @@
       "will-o-wisp",
       "work-up",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 224
   },
   {
     "ident": "pyroar",
     "national_pokedex_number": 668,
-    "paldea_regional_pokedex_number": 225,
     "evolution_line_ident": "litleo",
     "evolution_line_index": 1,
     "primary_type_ident": "fire",
@@ -13495,12 +14708,13 @@
       "will-o-wisp",
       "work-up",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 225
   },
   {
     "ident": "stunky",
     "national_pokedex_number": 434,
-    "paldea_regional_pokedex_number": 226,
     "evolution_line_ident": "stunky",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -13581,12 +14795,13 @@
       "toxic-spikes",
       "trailblaze",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 226
   },
   {
     "ident": "skuntank",
     "national_pokedex_number": 435,
-    "paldea_regional_pokedex_number": 227,
     "evolution_line_ident": "stunky",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -13670,12 +14885,13 @@
       "toxic-spikes",
       "trailblaze",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 227
   },
   {
     "ident": "zorua",
     "national_pokedex_number": 570,
-    "paldea_regional_pokedex_number": 228,
     "evolution_line_ident": "zorua",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -13748,12 +14964,13 @@
       "torment",
       "trick",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 228
   },
   {
     "ident": "zoroark",
     "national_pokedex_number": 571,
-    "paldea_regional_pokedex_number": 229,
     "evolution_line_ident": "zorua",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -13838,12 +15055,13 @@
       "torment",
       "trick",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 229
   },
   {
     "ident": "pawmo",
     "national_pokedex_number": 955,
-    "paldea_regional_pokedex_number": 23,
     "evolution_line_ident": "pawmi",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -13919,12 +15137,13 @@
       "volt-switch",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 23
   },
   {
     "ident": "sneasel",
     "national_pokedex_number": 215,
-    "paldea_regional_pokedex_number": 230,
     "evolution_line_ident": "sneasel",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -14011,12 +15230,13 @@
       "trailblaze",
       "water-pulse",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 230
   },
   {
     "ident": "weavile",
     "national_pokedex_number": 461,
-    "paldea_regional_pokedex_number": 231,
     "evolution_line_ident": "sneasel",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -14110,12 +15330,13 @@
       "trailblaze",
       "water-pulse",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 231
   },
   {
     "ident": "murkrow",
     "national_pokedex_number": 198,
-    "paldea_regional_pokedex_number": 232,
     "evolution_line_ident": "murkrow",
     "evolution_line_index": 0,
     "can_evolve": true,
@@ -14196,12 +15417,13 @@
       "u-turn",
       "whirlwind",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 232
   },
   {
     "ident": "honchkrow",
     "national_pokedex_number": 430,
-    "paldea_regional_pokedex_number": 233,
     "evolution_line_ident": "murkrow",
     "evolution_line_index": 1,
     "can_evolve": false,
@@ -14287,12 +15509,13 @@
       "u-turn",
       "whirlwind",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 233
   },
   {
     "ident": "gothita",
     "national_pokedex_number": 574,
-    "paldea_regional_pokedex_number": 234,
     "evolution_line_ident": "gothita",
     "evolution_line_index": 0,
     "primary_type_ident": "psychic",
@@ -14369,12 +15592,13 @@
       "trick",
       "trick-room",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 234
   },
   {
     "ident": "gothorita",
     "national_pokedex_number": 575,
-    "paldea_regional_pokedex_number": 235,
     "evolution_line_ident": "gothita",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -14452,12 +15676,13 @@
       "trick",
       "trick-room",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 235
   },
   {
     "ident": "gothitelle",
     "national_pokedex_number": 576,
-    "paldea_regional_pokedex_number": 236,
     "evolution_line_ident": "gothita",
     "evolution_line_index": 2,
     "primary_type_ident": "psychic",
@@ -14541,12 +15766,13 @@
       "trick",
       "trick-room",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 236
   },
   {
     "ident": "sinistea",
     "national_pokedex_number": 854,
-    "paldea_regional_pokedex_number": 237,
     "evolution_line_ident": "sinistea",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -14607,12 +15833,13 @@
       "trick-room",
       "will-o-wisp",
       "withdraw"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 237
   },
   {
     "ident": "polteageist",
     "national_pokedex_number": 855,
-    "paldea_regional_pokedex_number": 238,
     "evolution_line_ident": "sinistea",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -14680,12 +15907,13 @@
       "trick-room",
       "will-o-wisp",
       "withdraw"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 238
   },
   {
     "ident": "mimikyu",
     "national_pokedex_number": 778,
-    "paldea_regional_pokedex_number": 239,
     "evolution_line_ident": "mimikyu",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -14765,12 +15993,13 @@
       "will-o-wisp",
       "wood-hammer",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 239
   },
   {
     "ident": "pawmot",
     "national_pokedex_number": 956,
-    "paldea_regional_pokedex_number": 24,
     "evolution_line_ident": "pawmot",
     "evolution_line_index": 2,
     "primary_type_ident": "electric",
@@ -14861,12 +16090,13 @@
       "volt-switch",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 24
   },
   {
     "ident": "klefki",
     "national_pokedex_number": 707,
-    "paldea_regional_pokedex_number": 240,
     "evolution_line_ident": "klefki",
     "evolution_line_index": 0,
     "primary_type_ident": "steel",
@@ -14933,11 +16163,14 @@
       "thunder-wave",
       "torment",
       "trick-room"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 240
   },
   {
     "national_pokedex_number": 876,
-    "paldea_regional_pokedex_number": 241,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 241,
     "evolution_line_ident": "indeedee",
     "evolution_line_index": 0,
     "ident": "indeedee-male",
@@ -15007,7 +16240,8 @@
   },
   {
     "national_pokedex_number": 876,
-    "paldea_regional_pokedex_number": 241,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 241,
     "evolution_line_ident": "indeedee",
     "evolution_line_index": 0,
     "ident": "indeedee-female",
@@ -15080,7 +16314,6 @@
   {
     "ident": "bramblin",
     "national_pokedex_number": 946,
-    "paldea_regional_pokedex_number": 242,
     "evolution_line_ident": "bramblin",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -15145,12 +16378,13 @@
       "tera-blast",
       "thief",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 242
   },
   {
     "ident": "brambleghast",
     "national_pokedex_number": 947,
-    "paldea_regional_pokedex_number": 243,
     "evolution_line_ident": "bramblin",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -15217,12 +16451,13 @@
       "tera-blast",
       "thief",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 243
   },
   {
     "ident": "toedscool",
     "national_pokedex_number": 948,
-    "paldea_regional_pokedex_number": 244,
     "evolution_line_ident": "toedscool",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -15300,12 +16535,13 @@
       "trick-room",
       "venoshock",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 244
   },
   {
     "ident": "toedscruel",
     "national_pokedex_number": 949,
-    "paldea_regional_pokedex_number": 245,
     "evolution_line_ident": "toedscool",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -15386,12 +16622,13 @@
       "trick-room",
       "venoshock",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 245
   },
   {
     "ident": "tropius",
     "national_pokedex_number": 357,
-    "paldea_regional_pokedex_number": 246,
     "evolution_line_ident": "tropius",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -15471,12 +16708,13 @@
       "whirlwind",
       "wide-guard",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 246
   },
   {
     "ident": "fomantis",
     "national_pokedex_number": 753,
-    "paldea_regional_pokedex_number": 247,
     "evolution_line_ident": "fomantis",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -15535,12 +16773,13 @@
       "trailblaze",
       "worry-seed",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 247
   },
   {
     "ident": "lurantis",
     "national_pokedex_number": 754,
-    "paldea_regional_pokedex_number": 248,
     "evolution_line_ident": "fomantis",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -15610,12 +16849,13 @@
       "trailblaze",
       "worry-seed",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 248
   },
   {
     "ident": "klawf",
     "national_pokedex_number": 950,
-    "paldea_regional_pokedex_number": 249,
     "evolution_line_ident": "klawf",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -15689,12 +16929,13 @@
       "trailblaze",
       "vice-grip",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 249
   },
   {
     "ident": "houndour",
     "national_pokedex_number": 228,
-    "paldea_regional_pokedex_number": 25,
     "evolution_line_ident": "houndour",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -15774,12 +17015,13 @@
       "torment",
       "trailblaze",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 25
   },
   {
     "ident": "capsakid",
     "national_pokedex_number": 951,
-    "paldea_regional_pokedex_number": 250,
     "evolution_line_ident": "capsakid",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -15840,12 +17082,13 @@
       "trailblaze",
       "worry-seed",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 250
   },
   {
     "ident": "scovillain",
     "national_pokedex_number": 952,
-    "paldea_regional_pokedex_number": 251,
     "evolution_line_ident": "capsakid",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -15915,12 +17158,13 @@
       "will-o-wisp",
       "worry-seed",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 251
   },
   {
     "ident": "cacnea",
     "national_pokedex_number": 331,
-    "paldea_regional_pokedex_number": 252,
     "evolution_line_ident": "cacnea",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -15999,12 +17243,13 @@
       "toxic-spikes",
       "trailblaze",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 252
   },
   {
     "ident": "cacturne",
     "national_pokedex_number": 332,
-    "paldea_regional_pokedex_number": 253,
     "evolution_line_ident": "cacnea",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -16091,12 +17336,13 @@
       "trailblaze",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 253
   },
   {
     "ident": "rellor",
     "national_pokedex_number": 953,
-    "paldea_regional_pokedex_number": 254,
     "evolution_line_ident": "rellor",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -16152,12 +17398,13 @@
       "thief",
       "weather-ball",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 254
   },
   {
     "ident": "rabsca",
     "national_pokedex_number": 954,
-    "paldea_regional_pokedex_number": 255,
     "evolution_line_ident": "rellor",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -16246,12 +17493,13 @@
       "weather-ball",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 255
   },
   {
     "ident": "venonat",
     "national_pokedex_number": 48,
-    "paldea_regional_pokedex_number": 256,
     "evolution_line_ident": "venonat",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -16318,12 +17566,13 @@
       "toxic-spikes",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 256
   },
   {
     "ident": "venomoth",
     "national_pokedex_number": 49,
-    "paldea_regional_pokedex_number": 257,
     "evolution_line_ident": "venonat",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -16397,12 +17646,13 @@
       "u-turn",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 257
   },
   {
     "ident": "pineco",
     "national_pokedex_number": 204,
-    "paldea_regional_pokedex_number": 258,
     "evolution_line_ident": "pineco",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -16477,12 +17727,13 @@
       "tera-blast",
       "toxic-spikes",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 258
   },
   {
     "ident": "forretress",
     "national_pokedex_number": 205,
-    "paldea_regional_pokedex_number": 259,
     "evolution_line_ident": "pineco",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -16572,12 +17823,13 @@
       "venoshock",
       "volt-switch",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 259
   },
   {
     "ident": "houndoom",
     "national_pokedex_number": 229,
-    "paldea_regional_pokedex_number": 26,
     "evolution_line_ident": "houndour",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -16659,12 +17911,13 @@
       "torment",
       "trailblaze",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 26
   },
   {
     "ident": "scyther",
     "national_pokedex_number": 123,
-    "paldea_regional_pokedex_number": 260,
     "evolution_line_ident": "scyther",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -16737,12 +17990,13 @@
       "u-turn",
       "wing-attack",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 260
   },
   {
     "ident": "scizor",
     "national_pokedex_number": 212,
-    "paldea_regional_pokedex_number": 261,
     "evolution_line_ident": "scyther",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -16823,12 +18077,13 @@
       "u-turn",
       "wing-attack",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 261
   },
   {
     "ident": "heracross",
     "national_pokedex_number": 214,
-    "paldea_regional_pokedex_number": 262,
     "evolution_line_ident": "heracross",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -16910,12 +18165,13 @@
       "thrash",
       "throat-chop",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 262
   },
   {
     "ident": "flittle",
     "national_pokedex_number": 955,
-    "paldea_regional_pokedex_number": 263,
     "evolution_line_ident": "flittle",
     "evolution_line_index": 0,
     "primary_type_ident": "psychic",
@@ -16985,12 +18241,13 @@
       "uproar",
       "u-turn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 263
   },
   {
     "ident": "espathra",
     "national_pokedex_number": 956,
-    "paldea_regional_pokedex_number": 264,
     "evolution_line_ident": "flittle",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -17077,12 +18334,13 @@
       "uproar",
       "u-turn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 264
   },
   {
     "ident": "hippopotas",
     "national_pokedex_number": 449,
-    "paldea_regional_pokedex_number": 265,
     "evolution_line_ident": "hippopotas",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -17149,12 +18407,13 @@
       "thunder-fang",
       "whirlwind",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 265
   },
   {
     "ident": "hippowdon",
     "national_pokedex_number": 450,
-    "paldea_regional_pokedex_number": 266,
     "evolution_line_ident": "hippopotas",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -17226,12 +18485,13 @@
       "thunder-fang",
       "whirlwind",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 266
   },
   {
     "ident": "sandile",
     "national_pokedex_number": 551,
-    "paldea_regional_pokedex_number": 267,
     "evolution_line_ident": "sandile",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -17305,12 +18565,13 @@
       "thrash",
       "thunder-fang",
       "torment"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 267
   },
   {
     "ident": "krokorok",
     "national_pokedex_number": 552,
-    "paldea_regional_pokedex_number": 268,
     "evolution_line_ident": "sandile",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -17389,12 +18650,13 @@
       "thrash",
       "thunder-fang",
       "torment"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 268
   },
   {
     "ident": "krookodile",
     "national_pokedex_number": 553,
-    "paldea_regional_pokedex_number": 269,
     "evolution_line_ident": "sandile",
     "evolution_line_index": 2,
     "primary_type_ident": "ground",
@@ -17481,12 +18743,13 @@
       "thrash",
       "thunder-fang",
       "torment"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 269
   },
   {
     "ident": "yungoos",
     "national_pokedex_number": 734,
-    "paldea_regional_pokedex_number": 27,
     "evolution_line_ident": "yungoos",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -17555,12 +18818,13 @@
       "work-up",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 27
   },
   {
     "ident": "silicobra",
     "national_pokedex_number": 843,
-    "paldea_regional_pokedex_number": 270,
     "evolution_line_ident": "silicobra",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -17621,12 +18885,13 @@
       "take-down",
       "tera-blast",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 270
   },
   {
     "ident": "sandaconda",
     "national_pokedex_number": 844,
-    "paldea_regional_pokedex_number": 271,
     "evolution_line_ident": "silicobra",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -17697,12 +18962,13 @@
       "thunder-fang",
       "wrap",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 271
   },
   {
     "ident": "mudbray",
     "national_pokedex_number": 749,
-    "paldea_regional_pokedex_number": 272,
     "evolution_line_ident": "mudbray",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -17766,12 +19032,13 @@
       "superpower",
       "take-down",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 272
   },
   {
     "ident": "mudsdale",
     "national_pokedex_number": 750,
-    "paldea_regional_pokedex_number": 273,
     "evolution_line_ident": "mudbray",
     "evolution_line_index": 1,
     "primary_type_ident": "ground",
@@ -17841,12 +19108,13 @@
       "superpower",
       "take-down",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 273
   },
   {
     "ident": "larvesta",
     "national_pokedex_number": 636,
-    "paldea_regional_pokedex_number": 274,
     "evolution_line_ident": "larvesta",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -17913,12 +19181,13 @@
       "wild-charge",
       "will-o-wisp",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 274
   },
   {
     "ident": "volcarona",
     "national_pokedex_number": 637,
-    "paldea_regional_pokedex_number": 275,
     "evolution_line_ident": "larvesta",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -17999,12 +19268,13 @@
       "wild-charge",
       "will-o-wisp",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 275
   },
   {
     "ident": "bagon",
     "national_pokedex_number": 371,
-    "paldea_regional_pokedex_number": 276,
     "evolution_line_ident": "bagon",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -18074,12 +19344,13 @@
       "thunder-fang",
       "twister",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 276
   },
   {
     "ident": "shelgon",
     "national_pokedex_number": 372,
-    "paldea_regional_pokedex_number": 277,
     "evolution_line_ident": "bagon",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -18149,12 +19420,13 @@
       "thunder-fang",
       "twister",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 277
   },
   {
     "ident": "salamence",
     "national_pokedex_number": 373,
-    "paldea_regional_pokedex_number": 278,
     "evolution_line_ident": "bagon",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -18239,12 +19511,13 @@
       "thunder-fang",
       "twister",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 278
   },
   {
     "ident": "tinkatink",
     "national_pokedex_number": 957,
-    "paldea_regional_pokedex_number": 279,
     "evolution_line_ident": "tinkatink",
     "evolution_line_index": 0,
     "primary_type_ident": "fairy",
@@ -18312,12 +19585,13 @@
       "tera-blast",
       "thief",
       "thunder-wave"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 279
   },
   {
     "ident": "gumshoos",
     "national_pokedex_number": 735,
-    "paldea_regional_pokedex_number": 28,
     "evolution_line_ident": "yungoos",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -18396,12 +19670,13 @@
       "work-up",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 28
   },
   {
     "ident": "tinkatuff",
     "national_pokedex_number": 958,
-    "paldea_regional_pokedex_number": 280,
     "evolution_line_ident": "tinkatink",
     "evolution_line_index": 1,
     "primary_type_ident": "fairy",
@@ -18470,12 +19745,13 @@
       "tera-blast",
       "thief",
       "thunder-wave"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 280
   },
   {
     "ident": "tinkaton",
     "national_pokedex_number": 959,
-    "paldea_regional_pokedex_number": 281,
     "evolution_line_ident": "tinkatink",
     "evolution_line_index": 2,
     "primary_type_ident": "fairy",
@@ -18547,12 +19823,13 @@
       "tera-blast",
       "thief",
       "thunder-wave"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 281
   },
   {
     "ident": "hatenna",
     "national_pokedex_number": 856,
-    "paldea_regional_pokedex_number": 282,
     "evolution_line_ident": "hatenna",
     "evolution_line_index": 0,
     "primary_type_ident": "psychic",
@@ -18619,12 +19896,13 @@
       "thunder-wave",
       "trick",
       "trick-room"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 282
   },
   {
     "ident": "hattrem",
     "national_pokedex_number": 857,
-    "paldea_regional_pokedex_number": 283,
     "evolution_line_ident": "hatenna",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -18692,12 +19970,13 @@
       "thunder-wave",
       "trick",
       "trick-room"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 283
   },
   {
     "ident": "hatterene",
     "national_pokedex_number": 858,
-    "paldea_regional_pokedex_number": 284,
     "evolution_line_ident": "hatenna",
     "evolution_line_index": 2,
     "primary_type_ident": "psychic",
@@ -18773,12 +20052,13 @@
       "thunder-wave",
       "trick",
       "trick-room"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 284
   },
   {
     "ident": "impidimp",
     "national_pokedex_number": 859,
-    "paldea_regional_pokedex_number": 285,
     "evolution_line_ident": "impidimp",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -18841,12 +20121,13 @@
       "torment",
       "trailblaze",
       "trick"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 285
   },
   {
     "ident": "morgrem",
     "national_pokedex_number": 860,
-    "paldea_regional_pokedex_number": 286,
     "evolution_line_ident": "impidimp",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -18912,12 +20193,13 @@
       "torment",
       "trailblaze",
       "trick"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 286
   },
   {
     "ident": "grimmsnarl",
     "national_pokedex_number": 861,
-    "paldea_regional_pokedex_number": 287,
     "evolution_line_ident": "impidimp",
     "evolution_line_index": 2,
     "primary_type_ident": "dark",
@@ -18998,12 +20280,13 @@
       "torment",
       "trailblaze",
       "trick"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 287
   },
   {
     "ident": "wiglett",
     "national_pokedex_number": 960,
-    "paldea_regional_pokedex_number": 288,
     "evolution_line_ident": "wiglett",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -19065,12 +20348,13 @@
       "water-gun",
       "water-pulse",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 288
   },
   {
     "ident": "wugtrio",
     "national_pokedex_number": 961,
-    "paldea_regional_pokedex_number": 289,
     "evolution_line_ident": "wiglett",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -19135,12 +20419,13 @@
       "water-gun",
       "water-pulse",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 289
   },
   {
     "ident": "skwovet",
     "national_pokedex_number": 819,
-    "paldea_regional_pokedex_number": 29,
     "evolution_line_ident": "skwovet",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -19198,12 +20483,13 @@
       "tera-blast",
       "thief",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 29
   },
   {
     "ident": "bombirdier",
     "national_pokedex_number": 962,
-    "paldea_regional_pokedex_number": 290,
     "evolution_line_ident": "bombirdier",
     "evolution_line_index": 0,
     "primary_type_ident": "flying",
@@ -19284,12 +20570,13 @@
       "u-turn",
       "whirlwind",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 290
   },
   {
     "ident": "finizen",
     "national_pokedex_number": 963,
-    "paldea_regional_pokedex_number": 291,
     "evolution_line_ident": "finizen",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -19355,11 +20642,14 @@
       "water-gun",
       "water-pulse",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 291
   },
   {
     "national_pokedex_number": 964,
-    "paldea_regional_pokedex_number": 292,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 292,
     "evolution_line_ident": "finizen",
     "evolution_line_index": 1,
     "ident": "palafin-zero",
@@ -19448,7 +20738,8 @@
   },
   {
     "national_pokedex_number": 964,
-    "paldea_regional_pokedex_number": 292,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 292,
     "evolution_line_ident": "finizen",
     "evolution_line_index": 1,
     "ident": "palafin-hero",
@@ -19538,7 +20829,6 @@
   {
     "ident": "varoom",
     "national_pokedex_number": 965,
-    "paldea_regional_pokedex_number": 293,
     "evolution_line_ident": "varoom",
     "evolution_line_index": 0,
     "primary_type_ident": "steel",
@@ -19604,12 +20894,13 @@
       "uproar",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 293
   },
   {
     "ident": "revavroom",
     "national_pokedex_number": 966,
-    "paldea_regional_pokedex_number": 294,
     "evolution_line_ident": "varoom",
     "evolution_line_index": 1,
     "primary_type_ident": "steel",
@@ -19682,12 +20973,13 @@
       "uproar",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 294
   },
   {
     "ident": "cyclizar",
     "national_pokedex_number": 967,
-    "paldea_regional_pokedex_number": 295,
     "evolution_line_ident": "cyclizar",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -19761,12 +21053,13 @@
       "trailblaze",
       "u-turn",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 295
   },
   {
     "ident": "orthworm",
     "national_pokedex_number": 968,
-    "paldea_regional_pokedex_number": 296,
     "evolution_line_ident": "orthworm",
     "evolution_line_index": 0,
     "primary_type_ident": "steel",
@@ -19830,12 +21123,13 @@
       "take-down",
       "tera-blast",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 296
   },
   {
     "ident": "sableye",
     "national_pokedex_number": 302,
-    "paldea_regional_pokedex_number": 297,
     "evolution_line_ident": "sableye",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -19938,12 +21232,13 @@
       "will-o-wisp",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 297
   },
   {
     "ident": "shuppet",
     "national_pokedex_number": 353,
-    "paldea_regional_pokedex_number": 298,
     "evolution_line_ident": "shuppet",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -20016,12 +21311,13 @@
       "trick",
       "trick-room",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 298
   },
   {
     "ident": "banette",
     "national_pokedex_number": 354,
-    "paldea_regional_pokedex_number": 299,
     "evolution_line_ident": "shuppet",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -20101,12 +21397,13 @@
       "trick",
       "trick-room",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 299
   },
   {
     "ident": "greedent",
     "national_pokedex_number": 820,
-    "paldea_regional_pokedex_number": 30,
     "evolution_line_ident": "skwovet",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -20179,12 +21476,13 @@
       "thunder-fang",
       "trailblaze",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 30
   },
   {
     "ident": "falinks",
     "national_pokedex_number": 870,
-    "paldea_regional_pokedex_number": 300,
     "evolution_line_ident": "falinks",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -20247,12 +21545,13 @@
       "tera-blast",
       "trailblaze",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 300
   },
   {
     "ident": "hawlucha",
     "national_pokedex_number": 701,
-    "paldea_regional_pokedex_number": 301,
     "evolution_line_ident": "hawlucha",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -20343,12 +21642,13 @@
       "wing-attack",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 301
   },
   {
     "ident": "spiritomb",
     "national_pokedex_number": 442,
-    "paldea_regional_pokedex_number": 302,
     "evolution_line_ident": "spiritomb",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -20422,12 +21722,13 @@
       "trick",
       "trick-room",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 302
   },
   {
     "ident": "noibat",
     "national_pokedex_number": 714,
-    "paldea_regional_pokedex_number": 303,
     "evolution_line_ident": "noibat",
     "evolution_line_index": 0,
     "primary_type_ident": "flying",
@@ -20501,12 +21802,13 @@
       "wild-charge",
       "wing-attack",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 303
   },
   {
     "ident": "noivern",
     "national_pokedex_number": 715,
-    "paldea_regional_pokedex_number": 304,
     "evolution_line_ident": "noibat",
     "evolution_line_index": 1,
     "primary_type_ident": "flying",
@@ -20591,12 +21893,13 @@
       "wild-charge",
       "wing-attack",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 304
   },
   {
     "ident": "dreepy",
     "national_pokedex_number": 885,
-    "paldea_regional_pokedex_number": 305,
     "evolution_line_ident": "dreepy",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -20643,12 +21946,13 @@
       "swift",
       "tera-blast",
       "thunder-wave"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 305
   },
   {
     "ident": "drakloak",
     "national_pokedex_number": 886,
-    "paldea_regional_pokedex_number": 306,
     "evolution_line_ident": "dreepy",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -20725,12 +22029,13 @@
       "thunder-wave",
       "u-turn",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 306
   },
   {
     "ident": "dragapult",
     "national_pokedex_number": 887,
-    "paldea_regional_pokedex_number": 307,
     "evolution_line_ident": "dreepy",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -20815,12 +22120,13 @@
       "thunder-wave",
       "u-turn",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 307
   },
   {
     "ident": "glimmet",
     "national_pokedex_number": 966,
-    "paldea_regional_pokedex_number": 308,
     "evolution_line_ident": "glimmet",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -20883,12 +22189,13 @@
       "toxic",
       "toxic-spikes",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 308
   },
   {
     "ident": "glimmora",
     "national_pokedex_number": 967,
-    "paldea_regional_pokedex_number": 309,
     "evolution_line_ident": "glimmet",
     "evolution_line_index": 1,
     "primary_type_ident": "rock",
@@ -20959,12 +22266,13 @@
       "toxic",
       "toxic-spikes",
       "venoshock"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 309
   },
   {
     "ident": "sunkern",
     "national_pokedex_number": 191,
-    "paldea_regional_pokedex_number": 31,
     "evolution_line_ident": "sunkern",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -21026,11 +22334,14 @@
       "tera-blast",
       "trailblaze",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 31
   },
   {
     "national_pokedex_number": 479,
-    "paldea_regional_pokedex_number": 310,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 310,
     "evolution_line_ident": "rotom",
     "evolution_line_index": 0,
     "ident": "rotom-base",
@@ -21097,7 +22408,8 @@
   },
   {
     "national_pokedex_number": 479,
-    "paldea_regional_pokedex_number": 310,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 310,
     "evolution_line_ident": "rotom",
     "evolution_line_index": 0,
     "ident": "rotom-heat",
@@ -21165,7 +22477,8 @@
   },
   {
     "national_pokedex_number": 479,
-    "paldea_regional_pokedex_number": 310,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 310,
     "evolution_line_ident": "rotom",
     "evolution_line_index": 0,
     "ident": "rotom-wash",
@@ -21233,7 +22546,8 @@
   },
   {
     "national_pokedex_number": 479,
-    "paldea_regional_pokedex_number": 310,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 310,
     "evolution_line_ident": "rotom",
     "evolution_line_index": 0,
     "ident": "rotom-frost",
@@ -21301,7 +22615,8 @@
   },
   {
     "national_pokedex_number": 479,
-    "paldea_regional_pokedex_number": 310,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 310,
     "evolution_line_ident": "rotom",
     "evolution_line_index": 0,
     "ident": "rotom-fan",
@@ -21369,7 +22684,8 @@
   },
   {
     "national_pokedex_number": 479,
-    "paldea_regional_pokedex_number": 310,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 310,
     "evolution_line_ident": "rotom",
     "evolution_line_index": 0,
     "ident": "rotom-mow",
@@ -21438,7 +22754,6 @@
   {
     "ident": "greavard",
     "national_pokedex_number": 971,
-    "paldea_regional_pokedex_number": 311,
     "evolution_line_ident": "greavard",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -21510,12 +22825,13 @@
       "thunder-fang",
       "trick",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 311
   },
   {
     "ident": "houndstone",
     "national_pokedex_number": 972,
-    "paldea_regional_pokedex_number": 312,
     "evolution_line_ident": "greavard",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -21592,12 +22908,13 @@
       "trick",
       "will-o-wisp",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 312
   },
   {
     "ident": "oranguru",
     "national_pokedex_number": 765,
-    "paldea_regional_pokedex_number": 313,
     "evolution_line_ident": "oranguru",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -21678,12 +22995,13 @@
       "trick-room",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 313
   },
   {
     "ident": "passimian",
     "national_pokedex_number": 766,
-    "paldea_regional_pokedex_number": 314,
     "evolution_line_ident": "passimian",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -21760,12 +23078,13 @@
       "thrash",
       "trailblaze",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 314
   },
   {
     "ident": "komala",
     "national_pokedex_number": 775,
-    "paldea_regional_pokedex_number": 315,
     "evolution_line_ident": "komala",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -21842,12 +23161,13 @@
       "wood-hammer",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 315
   },
   {
     "ident": "larvitar",
     "national_pokedex_number": 246,
-    "paldea_regional_pokedex_number": 316,
     "evolution_line_ident": "larvitar",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -21921,12 +23241,13 @@
       "taunt",
       "tera-blast",
       "thrash"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 316
   },
   {
     "ident": "pupitar",
     "national_pokedex_number": 247,
-    "paldea_regional_pokedex_number": 317,
     "evolution_line_ident": "larvitar",
     "evolution_line_index": 1,
     "primary_type_ident": "rock",
@@ -22000,12 +23321,13 @@
       "taunt",
       "tera-blast",
       "thrash"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 317
   },
   {
     "ident": "tyranitar",
     "national_pokedex_number": 248,
-    "paldea_regional_pokedex_number": 318,
     "evolution_line_ident": "larvitar",
     "evolution_line_index": 2,
     "primary_type_ident": "rock",
@@ -22108,12 +23430,13 @@
       "thunder-fang",
       "thunder-punch",
       "thunder-wave"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 318
   },
   {
     "ident": "stonjourner",
     "national_pokedex_number": 874,
-    "paldea_regional_pokedex_number": 319,
     "evolution_line_ident": "stonjourner",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -22174,12 +23497,13 @@
       "take-down",
       "tera-blast",
       "wide-guard"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 319
   },
   {
     "ident": "sunflora",
     "national_pokedex_number": 192,
-    "paldea_regional_pokedex_number": 32,
     "evolution_line_ident": "sunkern",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -22249,11 +23573,14 @@
       "tera-blast",
       "trailblaze",
       "worry-seed"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 32
   },
   {
     "national_pokedex_number": 875,
-    "paldea_regional_pokedex_number": 320,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 320,
     "evolution_line_ident": "eiscue",
     "evolution_line_index": 0,
     "ident": "eiscue-ice-face",
@@ -22326,7 +23653,8 @@
   },
   {
     "national_pokedex_number": 875,
-    "paldea_regional_pokedex_number": 320,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 320,
     "evolution_line_ident": "eiscue",
     "evolution_line_index": 0,
     "ident": "eiscue-noice-face",
@@ -22400,7 +23728,6 @@
   {
     "ident": "pincurchin",
     "national_pokedex_number": 871,
-    "paldea_regional_pokedex_number": 321,
     "evolution_line_ident": "pincurchin",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -22468,12 +23795,13 @@
       "water-gun",
       "wild-charge",
       "zing-zap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 321
   },
   {
     "ident": "sandygast",
     "national_pokedex_number": 769,
-    "paldea_regional_pokedex_number": 322,
     "evolution_line_ident": "sandygast",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -22547,12 +23875,13 @@
       "swallow",
       "tera-blast",
       "trick"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 322
   },
   {
     "ident": "palossand",
     "national_pokedex_number": 770,
-    "paldea_regional_pokedex_number": 323,
     "evolution_line_ident": "sandygast",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -22629,12 +23958,13 @@
       "swallow",
       "tera-blast",
       "trick"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 323
   },
   {
     "ident": "slowpoke",
     "national_pokedex_number": 79,
-    "paldea_regional_pokedex_number": 324,
     "evolution_line_ident": "slowpoke",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -22721,12 +24051,13 @@
       "water-pulse",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 324
   },
   {
     "ident": "slowbro",
     "national_pokedex_number": 80,
-    "paldea_regional_pokedex_number": 325,
     "evolution_line_ident": "slowpoke",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -22826,12 +24157,13 @@
       "withdraw",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 325
   },
   {
     "ident": "slowking",
     "national_pokedex_number": 199,
-    "paldea_regional_pokedex_number": 326,
     "evolution_line_ident": "slowpoke",
     "evolution_line_index": 2,
     "primary_type_ident": "water",
@@ -22937,11 +24269,14 @@
       "water-pulse",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 326
   },
   {
     "national_pokedex_number": 422,
-    "paldea_regional_pokedex_number": 327,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 327,
     "evolution_line_ident": "shellos",
     "evolution_line_index": 0,
     "ident": "shellos-west",
@@ -23019,7 +24354,8 @@
   },
   {
     "national_pokedex_number": 422,
-    "paldea_regional_pokedex_number": 327,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 327,
     "evolution_line_ident": "shellos",
     "evolution_line_index": 0,
     "ident": "shellos-east",
@@ -23097,7 +24433,8 @@
   },
   {
     "national_pokedex_number": 423,
-    "paldea_regional_pokedex_number": 328,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 328,
     "evolution_line_ident": "shellos",
     "evolution_line_index": 1,
     "ident": "gastrodon-west",
@@ -23183,7 +24520,8 @@
   },
   {
     "national_pokedex_number": 423,
-    "paldea_regional_pokedex_number": 328,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 328,
     "evolution_line_ident": "shellos",
     "evolution_line_index": 1,
     "ident": "gastrodon-east",
@@ -23270,7 +24608,6 @@
   {
     "ident": "shellder",
     "national_pokedex_number": 90,
-    "paldea_regional_pokedex_number": 329,
     "evolution_line_ident": "shellder",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -23336,12 +24673,13 @@
       "water-pulse",
       "whirlpool",
       "withdraw"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 329
   },
   {
     "ident": "kricketot",
     "national_pokedex_number": 401,
-    "paldea_regional_pokedex_number": 33,
     "evolution_line_ident": "kricketot",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -23370,12 +24708,13 @@
       "struggle-bug",
       "tackle",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 33
   },
   {
     "ident": "cloyster",
     "national_pokedex_number": 91,
-    "paldea_regional_pokedex_number": 330,
     "evolution_line_ident": "shellder",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -23451,12 +24790,13 @@
       "water-pulse",
       "whirlpool",
       "withdraw"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 330
   },
   {
     "ident": "qwilfish",
     "national_pokedex_number": 211,
-    "paldea_regional_pokedex_number": 331,
     "evolution_line_ident": "qwilfish",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -23541,12 +24881,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 331
   },
   {
     "ident": "luvdisc",
     "national_pokedex_number": 370,
-    "paldea_regional_pokedex_number": 332,
     "evolution_line_ident": "luvdisc",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -23601,12 +24942,13 @@
       "water-gun",
       "water-pulse",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 332
   },
   {
     "ident": "finneon",
     "national_pokedex_number": 456,
-    "paldea_regional_pokedex_number": 333,
     "evolution_line_ident": "finneon",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -23673,12 +25015,13 @@
       "water-gun",
       "water-pulse",
       "whirlpool"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 333
   },
   {
     "ident": "lumineon",
     "national_pokedex_number": 457,
-    "paldea_regional_pokedex_number": 334,
     "evolution_line_ident": "finneon",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -23750,12 +25093,13 @@
       "water-gun",
       "water-pulse",
       "whirlpool"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 334
   },
   {
     "ident": "bruxish",
     "national_pokedex_number": 779,
-    "paldea_regional_pokedex_number": 335,
     "evolution_line_ident": "bruxish",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -23827,12 +25171,13 @@
       "water-gun",
       "water-pulse",
       "wave-crash"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 335
   },
   {
     "ident": "alomomola",
     "national_pokedex_number": 594,
-    "paldea_regional_pokedex_number": 336,
     "evolution_line_ident": "alomomola",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -23906,12 +25251,13 @@
       "wide-guard",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 336
   },
   {
     "ident": "skrelp",
     "national_pokedex_number": 690,
-    "paldea_regional_pokedex_number": 337,
     "evolution_line_ident": "skrelp",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -23980,12 +25326,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 337
   },
   {
     "ident": "dragalge",
     "national_pokedex_number": 691,
-    "paldea_regional_pokedex_number": 338,
     "evolution_line_ident": "skrelp",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -24059,12 +25406,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 338
   },
   {
     "ident": "clauncher",
     "national_pokedex_number": 692,
-    "paldea_regional_pokedex_number": 339,
     "evolution_line_ident": "clauncher",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -24131,12 +25479,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 339
   },
   {
     "ident": "kricketune",
     "national_pokedex_number": 402,
-    "paldea_regional_pokedex_number": 34,
     "evolution_line_ident": "kricketot",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -24200,12 +25549,13 @@
       "tera-blast",
       "trailblaze",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 34
   },
   {
     "ident": "clawitzer",
     "national_pokedex_number": 693,
-    "paldea_regional_pokedex_number": 340,
     "evolution_line_ident": "clauncher",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -24280,12 +25630,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 340
   },
   {
     "ident": "tynamo",
     "national_pokedex_number": 602,
-    "paldea_regional_pokedex_number": 341,
     "evolution_line_ident": "tynamo",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -24313,12 +25664,13 @@
       "tackle",
       "tera-blast",
       "thunder-wave"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 341
   },
   {
     "ident": "eelektrik",
     "national_pokedex_number": 603,
-    "paldea_regional_pokedex_number": 342,
     "evolution_line_ident": "tynamo",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -24379,12 +25731,13 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 342
   },
   {
     "ident": "eelektross",
     "national_pokedex_number": 604,
-    "paldea_regional_pokedex_number": 343,
     "evolution_line_ident": "tynamo",
     "evolution_line_index": 2,
     "primary_type_ident": "electric",
@@ -24472,12 +25825,13 @@
       "wild-charge",
       "zap-cannon",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 343
   },
   {
     "ident": "mareanie",
     "national_pokedex_number": 747,
-    "paldea_regional_pokedex_number": 344,
     "evolution_line_ident": "mareanie",
     "evolution_line_index": 0,
     "primary_type_ident": "poison",
@@ -24540,12 +25894,13 @@
       "venoshock",
       "water-pulse",
       "wide-guard"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 344
   },
   {
     "ident": "toxapex",
     "national_pokedex_number": 748,
-    "paldea_regional_pokedex_number": 345,
     "evolution_line_ident": "mareanie",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -24614,12 +25969,13 @@
       "venoshock",
       "water-pulse",
       "wide-guard"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 345
   },
   {
     "ident": "flamigo",
     "national_pokedex_number": 973,
-    "paldea_regional_pokedex_number": 346,
     "evolution_line_ident": "flamigo",
     "evolution_line_index": 0,
     "primary_type_ident": "flying",
@@ -24692,12 +26048,13 @@
       "water-pulse",
       "wide-guard",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 346
   },
   {
     "ident": "dratini",
     "national_pokedex_number": 147,
-    "paldea_regional_pokedex_number": 347,
     "evolution_line_ident": "dratini",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -24770,12 +26127,13 @@
       "waterfall",
       "water-pulse",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 347
   },
   {
     "ident": "dragonair",
     "national_pokedex_number": 148,
-    "paldea_regional_pokedex_number": 348,
     "evolution_line_ident": "dratini",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -24848,12 +26206,13 @@
       "waterfall",
       "water-pulse",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 348
   },
   {
     "ident": "dragonite",
     "national_pokedex_number": 149,
-    "paldea_regional_pokedex_number": 349,
     "evolution_line_ident": "dratini",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -24956,12 +26315,13 @@
       "water-pulse",
       "wing-attack",
       "wrap"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 349
   },
   {
     "ident": "scatterbug",
     "national_pokedex_number": 664,
-    "paldea_regional_pokedex_number": 35,
     "evolution_line_ident": "scatterbug",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -24995,12 +26355,13 @@
       "stun-spore",
       "tackle",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 35
   },
   {
     "ident": "spewpa",
     "national_pokedex_number": 665,
-    "paldea_regional_pokedex_number": 36,
     "evolution_line_ident": "scatterbug",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -25036,12 +26397,13 @@
       "stun-spore",
       "tackle",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 36
   },
   {
     "ident": "pawniard",
     "national_pokedex_number": 624,
-    "paldea_regional_pokedex_number": 367,
     "evolution_line_ident": "pawniard",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -25118,12 +26480,13 @@
       "thunder-wave",
       "torment",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 367
   },
   {
     "ident": "bisharp",
     "national_pokedex_number": 625,
-    "paldea_regional_pokedex_number": 368,
     "evolution_line_ident": "pawniard",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -25205,12 +26568,13 @@
       "thunder-wave",
       "torment",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 368
   },
   {
     "ident": "kingambit",
     "national_pokedex_number": 983,
-    "paldea_regional_pokedex_number": 369,
     "evolution_line_ident": "pawniard",
     "evolution_line_index": 2,
     "primary_type_ident": "dark",
@@ -25294,12 +26658,13 @@
       "torment",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 369
   },
   {
     "ident": "vivillon",
     "national_pokedex_number": 666,
-    "paldea_regional_pokedex_number": 37,
     "evolution_line_ident": "scatterbug",
     "evolution_line_index": 2,
     "primary_type_ident": "bug",
@@ -25368,12 +26733,13 @@
       "tera-blast",
       "thief",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 37
   },
   {
     "ident": "deino",
     "national_pokedex_number": 633,
-    "paldea_regional_pokedex_number": 370,
     "evolution_line_ident": "deino",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -25439,12 +26805,13 @@
       "thunder-wave",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 370
   },
   {
     "ident": "zweilous",
     "national_pokedex_number": 634,
-    "paldea_regional_pokedex_number": 371,
     "evolution_line_ident": "deino",
     "evolution_line_index": 1,
     "primary_type_ident": "dark",
@@ -25512,12 +26879,13 @@
       "thunder-wave",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 371
   },
   {
     "ident": "hydreigon",
     "national_pokedex_number": 635,
-    "paldea_regional_pokedex_number": 372,
     "evolution_line_ident": "deino",
     "evolution_line_index": 2,
     "primary_type_ident": "dark",
@@ -25608,12 +26976,13 @@
       "u-turn",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 372
   },
   {
     "ident": "dondozo",
     "national_pokedex_number": 977,
-    "paldea_regional_pokedex_number": 374,
     "evolution_line_ident": "dondozo",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -25684,11 +27053,14 @@
       "wave-crash",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 374
   },
   {
     "national_pokedex_number": 978,
-    "paldea_regional_pokedex_number": 375,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 375,
     "evolution_line_ident": "tatsugiri",
     "evolution_line_index": 0,
     "ident": "tatsugiri-curly",
@@ -25750,7 +27122,8 @@
   },
   {
     "national_pokedex_number": 978,
-    "paldea_regional_pokedex_number": 375,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 375,
     "evolution_line_ident": "tatsugiri",
     "evolution_line_index": 0,
     "ident": "tatsugiri-droopy",
@@ -25812,7 +27185,8 @@
   },
   {
     "national_pokedex_number": 978,
-    "paldea_regional_pokedex_number": 375,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 375,
     "evolution_line_ident": "tatsugiri",
     "evolution_line_index": 0,
     "ident": "tatsugiri-stretchy",
@@ -25875,7 +27249,6 @@
   {
     "ident": "great_tusk",
     "national_pokedex_number": 984,
-    "paldea_regional_pokedex_number": 376,
     "evolution_line_ident": "great_tusk",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -25948,12 +27321,13 @@
       "tera-blast",
       "thunder-fang",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 376
   },
   {
     "ident": "scream_tail",
     "national_pokedex_number": 985,
-    "paldea_regional_pokedex_number": 377,
     "evolution_line_ident": "scream_tail",
     "evolution_line_index": 0,
     "primary_type_ident": "fairy",
@@ -26048,12 +27422,13 @@
       "water-pulse",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 377
   },
   {
     "ident": "brute_bonnet",
     "national_pokedex_number": 986,
-    "paldea_regional_pokedex_number": 378,
     "evolution_line_ident": "brute_bonnet",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -26124,12 +27499,13 @@
       "trailblaze",
       "venoshock",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 378
   },
   {
     "ident": "flutter_mane",
     "national_pokedex_number": 983,
-    "paldea_regional_pokedex_number": 379,
     "evolution_line_ident": "flutter_mane",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -26199,12 +27575,13 @@
       "thunder-wave",
       "trick-room",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 379
   },
   {
     "ident": "combee",
     "national_pokedex_number": 415,
-    "paldea_regional_pokedex_number": 38,
     "evolution_line_ident": "combee",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -26235,12 +27612,13 @@
       "struggle-bug",
       "sweet-scent",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 38
   },
   {
     "ident": "slither_wing",
     "national_pokedex_number": 988,
-    "paldea_regional_pokedex_number": 380,
     "evolution_line_ident": "slither_wing",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -26313,12 +27691,13 @@
       "wild-charge",
       "will-o-wisp",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 380
   },
   {
     "ident": "sandy_shocks",
     "national_pokedex_number": 989,
-    "paldea_regional_pokedex_number": 381,
     "evolution_line_ident": "sandy_shocks",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -26388,12 +27767,13 @@
       "volt-switch",
       "wild-charge",
       "zap-cannon"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 381
   },
   {
     "ident": "iron_treads",
     "national_pokedex_number": 990,
-    "paldea_regional_pokedex_number": 382,
     "evolution_line_ident": "iron_treads",
     "evolution_line_index": 0,
     "primary_type_ident": "ground",
@@ -26460,12 +27840,13 @@
       "volt-switch",
       "wild-charge",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 382
   },
   {
     "ident": "iron_bundle",
     "national_pokedex_number": 991,
-    "paldea_regional_pokedex_number": 383,
     "evolution_line_ident": "iron_bundle",
     "evolution_line_index": 0,
     "primary_type_ident": "ice",
@@ -26528,12 +27909,13 @@
       "u-turn",
       "water-pulse",
       "whirlpool"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 383
   },
   {
     "ident": "iron_hands",
     "national_pokedex_number": 992,
-    "paldea_regional_pokedex_number": 384,
     "evolution_line_ident": "iron_hands",
     "evolution_line_index": 0,
     "primary_type_ident": "fighting",
@@ -26608,12 +27990,13 @@
       "volt-switch",
       "whirlwind",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 384
   },
   {
     "ident": "iron_jugulis",
     "national_pokedex_number": 993,
-    "paldea_regional_pokedex_number": 385,
     "evolution_line_ident": "iron_jugulis",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -26684,12 +28067,13 @@
       "u-turn",
       "work-up",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 385
   },
   {
     "ident": "iron_moth",
     "national_pokedex_number": 994,
-    "paldea_regional_pokedex_number": 386,
     "evolution_line_ident": "iron_moth",
     "evolution_line_index": 0,
     "primary_type_ident": "fire",
@@ -26761,12 +28145,13 @@
       "u-turn",
       "venoshock",
       "whirlwind"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 386
   },
   {
     "ident": "iron_thorns",
     "national_pokedex_number": 995,
-    "paldea_regional_pokedex_number": 387,
     "evolution_line_ident": "iron_thorns",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -26854,12 +28239,13 @@
       "thunder-wave",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 387
   },
   {
     "ident": "frigibax",
     "national_pokedex_number": 996,
-    "paldea_regional_pokedex_number": 388,
     "evolution_line_ident": "frigibax",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -26918,12 +28304,13 @@
       "tackle",
       "take-down",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 388
   },
   {
     "ident": "arctibax",
     "national_pokedex_number": 997,
-    "paldea_regional_pokedex_number": 389,
     "evolution_line_ident": "frigibax",
     "evolution_line_index": 1,
     "primary_type_ident": "dragon",
@@ -26986,12 +28373,13 @@
       "tackle",
       "take-down",
       "tera-blast"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 389
   },
   {
     "ident": "vespiquen",
     "national_pokedex_number": 416,
-    "paldea_regional_pokedex_number": 39,
     "evolution_line_ident": "combee",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -27066,12 +28454,13 @@
       "u-turn",
       "venoshock",
       "x-scissor"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 39
   },
   {
     "ident": "baxcalibur",
     "national_pokedex_number": 998,
-    "paldea_regional_pokedex_number": 390,
     "evolution_line_ident": "frigibax",
     "evolution_line_index": 2,
     "primary_type_ident": "dragon",
@@ -27147,12 +28536,13 @@
       "tera-blast",
       "thunder-fang",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 390
   },
   {
     "ident": "gimmighoul",
     "national_pokedex_number": 999,
-    "paldea_regional_pokedex_number": 391,
     "evolution_line_ident": "gimmighoul",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -27192,12 +28582,13 @@
       "take-down",
       "tera-blast",
       "thief"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 391
   },
   {
     "ident": "gholdengo",
     "national_pokedex_number": 1000,
-    "paldea_regional_pokedex_number": 392,
     "evolution_line_ident": "gimmighoul",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -27262,12 +28653,13 @@
       "thunder-punch",
       "thunder-wave",
       "trick"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 392
   },
   {
     "ident": "wo_chien",
     "national_pokedex_number": 1001,
-    "paldea_regional_pokedex_number": 393,
     "evolution_line_ident": "wo_chien",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -27339,12 +28731,13 @@
       "tickle",
       "trailblaze",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 393
   },
   {
     "ident": "chien_pao",
     "national_pokedex_number": 1002,
-    "paldea_regional_pokedex_number": 394,
     "evolution_line_ident": "chien_pao",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -27410,12 +28803,13 @@
       "taunt",
       "tera-blast",
       "throat-chop"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 394
   },
   {
     "ident": "ting_lu",
     "national_pokedex_number": 1003,
-    "paldea_regional_pokedex_number": 395,
     "evolution_line_ident": "ting_lu",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -27481,12 +28875,13 @@
       "throat-chop",
       "whirlwind",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 395
   },
   {
     "ident": "chi_yu",
     "national_pokedex_number": 1004,
-    "paldea_regional_pokedex_number": 396,
     "evolution_line_ident": "chi_yu",
     "evolution_line_index": 0,
     "primary_type_ident": "dark",
@@ -27551,12 +28946,13 @@
       "tera-blast",
       "will-o-wisp",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 396
   },
   {
     "ident": "roaring_moon",
     "national_pokedex_number": 1005,
-    "paldea_regional_pokedex_number": 397,
     "evolution_line_ident": "roaring_moon",
     "evolution_line_index": 0,
     "primary_type_ident": "dragon",
@@ -27642,12 +29038,13 @@
       "u-turn",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 397
   },
   {
     "ident": "iron_valiant",
     "national_pokedex_number": 1006,
-    "paldea_regional_pokedex_number": 398,
     "evolution_line_ident": "iron_valiant",
     "evolution_line_index": 0,
     "primary_type_ident": "fairy",
@@ -27744,12 +29141,13 @@
       "wide-guard",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 398
   },
   {
     "ident": "rookidee",
     "national_pokedex_number": 821,
-    "paldea_regional_pokedex_number": 40,
     "evolution_line_ident": "rookidee",
     "evolution_line_index": 0,
     "primary_type_ident": "flying",
@@ -27811,12 +29209,13 @@
       "tera-blast",
       "thief",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 40
   },
   {
     "ident": "corvisquire",
     "national_pokedex_number": 822,
-    "paldea_regional_pokedex_number": 41,
     "evolution_line_ident": "rookidee",
     "evolution_line_index": 1,
     "primary_type_ident": "flying",
@@ -27880,12 +29279,13 @@
       "tera-blast",
       "thief",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 41
   },
   {
     "ident": "corviknight",
     "national_pokedex_number": 823,
-    "paldea_regional_pokedex_number": 42,
     "evolution_line_ident": "rookidee",
     "evolution_line_index": 2,
     "primary_type_ident": "flying",
@@ -27966,12 +29366,13 @@
       "tera-blast",
       "thief",
       "u-turn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 42
   },
   {
     "ident": "happiny",
     "national_pokedex_number": 440,
-    "paldea_regional_pokedex_number": 43,
     "evolution_line_ident": "happiny",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -28030,12 +29431,13 @@
       "tera-blast",
       "thunder-wave",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 43
   },
   {
     "ident": "chansey",
     "national_pokedex_number": 113,
-    "paldea_regional_pokedex_number": 44,
     "evolution_line_ident": "happiny",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -28135,12 +29537,13 @@
       "water-pulse",
       "wild-charge",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 44
   },
   {
     "ident": "blissey",
     "national_pokedex_number": 242,
-    "paldea_regional_pokedex_number": 45,
     "evolution_line_ident": "happiny",
     "evolution_line_index": 2,
     "primary_type_ident": "normal",
@@ -28242,12 +29645,13 @@
       "water-pulse",
       "wild-charge",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 45
   },
   {
     "ident": "azurill",
     "national_pokedex_number": 298,
-    "paldea_regional_pokedex_number": 46,
     "evolution_line_ident": "azurill",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -28311,12 +29715,13 @@
       "tickle",
       "waterfall",
       "water-gun"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 46
   },
   {
     "ident": "marill",
     "national_pokedex_number": 183,
-    "paldea_regional_pokedex_number": 47,
     "evolution_line_ident": "azurill",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -28406,12 +29811,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 47
   },
   {
     "ident": "azumarill",
     "national_pokedex_number": 184,
-    "paldea_regional_pokedex_number": 48,
     "evolution_line_ident": "azurill",
     "evolution_line_index": 2,
     "primary_type_ident": "water",
@@ -28504,12 +29910,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 48
   },
   {
     "ident": "surskit",
     "national_pokedex_number": 283,
-    "paldea_regional_pokedex_number": 49,
     "evolution_line_ident": "surskit",
     "evolution_line_index": 0,
     "primary_type_ident": "bug",
@@ -28580,12 +29987,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 49
   },
   {
     "ident": "masquerain",
     "national_pokedex_number": 284,
-    "paldea_regional_pokedex_number": 50,
     "evolution_line_ident": "surskit",
     "evolution_line_index": 1,
     "primary_type_ident": "bug",
@@ -28672,12 +30080,13 @@
       "water-gun",
       "water-pulse",
       "whirlwind"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 50
   },
   {
     "ident": "buizel",
     "national_pokedex_number": 418,
-    "paldea_regional_pokedex_number": 51,
     "evolution_line_ident": "buizel",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -28753,12 +30162,13 @@
       "water-pulse",
       "wave-crash",
       "whirlpool"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 51
   },
   {
     "ident": "floatzel",
     "national_pokedex_number": 419,
-    "paldea_regional_pokedex_number": 52,
     "evolution_line_ident": "buizel",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -28841,11 +30251,14 @@
       "water-pulse",
       "wave-crash",
       "whirlpool"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 52
   },
   {
     "national_pokedex_number": 194,
-    "paldea_regional_pokedex_number": 53,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 53,
     "evolution_line_ident": "wooper",
     "evolution_line_index": 0,
     "ident": "wooper-paldea",
@@ -28933,7 +30346,6 @@
   {
     "ident": "clodsire",
     "national_pokedex_number": 1009,
-    "paldea_regional_pokedex_number": 54,
     "evolution_line_ident": "wooper",
     "evolution_line_index": 1,
     "primary_type_ident": "poison",
@@ -29022,12 +30434,13 @@
       "water-pulse",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 54
   },
   {
     "ident": "psyduck",
     "national_pokedex_number": 54,
-    "paldea_regional_pokedex_number": 55,
     "evolution_line_ident": "psyduck",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -29112,12 +30525,13 @@
       "wonder-room",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 55
   },
   {
     "ident": "golduck",
     "national_pokedex_number": 55,
-    "paldea_regional_pokedex_number": 56,
     "evolution_line_ident": "psyduck",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -29208,12 +30622,13 @@
       "wonder-room",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 56
   },
   {
     "ident": "chewtle",
     "national_pokedex_number": 833,
-    "paldea_regional_pokedex_number": 57,
     "evolution_line_ident": "chewtle",
     "evolution_line_index": 0,
     "primary_type_ident": "water",
@@ -29270,12 +30685,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 57
   },
   {
     "ident": "drednaw",
     "national_pokedex_number": 834,
-    "paldea_regional_pokedex_number": 58,
     "evolution_line_ident": "chewtle",
     "evolution_line_index": 1,
     "primary_type_ident": "water",
@@ -29354,12 +30770,13 @@
       "waterfall",
       "water-gun",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 58
   },
   {
     "ident": "igglybuff",
     "national_pokedex_number": 174,
-    "paldea_regional_pokedex_number": 59,
     "evolution_line_ident": "igglybuff",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -29434,12 +30851,13 @@
       "trailblaze",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 59
   },
   {
     "ident": "jigglypuff",
     "national_pokedex_number": 39,
-    "paldea_regional_pokedex_number": 60,
     "evolution_line_ident": "igglybuff",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -29551,12 +30969,13 @@
       "wild-charge",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 60
   },
   {
     "ident": "wigglytuff",
     "national_pokedex_number": 40,
-    "paldea_regional_pokedex_number": 61,
     "evolution_line_ident": "igglybuff",
     "evolution_line_index": 2,
     "primary_type_ident": "normal",
@@ -29671,12 +31090,13 @@
       "wild-charge",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 61
   },
   {
     "ident": "ralts",
     "national_pokedex_number": 280,
-    "paldea_regional_pokedex_number": 62,
     "evolution_line_ident": "ralts",
     "evolution_line_index": 0,
     "primary_type_ident": "psychic",
@@ -29765,12 +31185,13 @@
       "trick-room",
       "will-o-wisp",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 62
   },
   {
     "ident": "kirlia",
     "national_pokedex_number": 281,
-    "paldea_regional_pokedex_number": 63,
     "evolution_line_ident": "ralts",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -29860,12 +31281,13 @@
       "trick-room",
       "will-o-wisp",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 63
   },
   {
     "ident": "gardevoir",
     "national_pokedex_number": 282,
-    "paldea_regional_pokedex_number": 64,
     "evolution_line_ident": "ralts",
     "evolution_line_index": 2,
     "primary_type_ident": "psychic",
@@ -29963,12 +31385,13 @@
       "will-o-wisp",
       "wish",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 64
   },
   {
     "ident": "gallade",
     "national_pokedex_number": 475,
-    "paldea_regional_pokedex_number": 65,
     "evolution_line_ident": "ralts",
     "evolution_line_index": 2,
     "primary_type_ident": "psychic",
@@ -30094,12 +31517,13 @@
       "will-o-wisp",
       "x-scissor",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 65
   },
   {
     "ident": "drowzee",
     "national_pokedex_number": 96,
-    "paldea_regional_pokedex_number": 66,
     "evolution_line_ident": "drowzee",
     "evolution_line_index": 0,
     "primary_type_ident": "psychic",
@@ -30186,12 +31610,13 @@
       "trick",
       "trick-room",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 66
   },
   {
     "ident": "hypno",
     "national_pokedex_number": 97,
-    "paldea_regional_pokedex_number": 67,
     "evolution_line_ident": "drowzee",
     "evolution_line_index": 1,
     "primary_type_ident": "psychic",
@@ -30286,12 +31711,13 @@
       "trick",
       "trick-room",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 67
   },
   {
     "ident": "gastly",
     "national_pokedex_number": 92,
-    "paldea_regional_pokedex_number": 68,
     "evolution_line_ident": "gastly",
     "evolution_line_index": 0,
     "primary_type_ident": "ghost",
@@ -30370,12 +31796,13 @@
       "trick-room",
       "venoshock",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 68
   },
   {
     "ident": "haunter",
     "national_pokedex_number": 93,
-    "paldea_regional_pokedex_number": 69,
     "evolution_line_ident": "gastly",
     "evolution_line_index": 1,
     "primary_type_ident": "ghost",
@@ -30462,12 +31889,13 @@
       "trick-room",
       "venoshock",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 69
   },
   {
     "ident": "gengar",
     "national_pokedex_number": 94,
-    "paldea_regional_pokedex_number": 70,
     "evolution_line_ident": "gastly",
     "evolution_line_index": 2,
     "primary_type_ident": "ghost",
@@ -30560,12 +31988,13 @@
       "trick-room",
       "venoshock",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 70
   },
   {
     "ident": "tandemaus",
     "national_pokedex_number": 945,
-    "paldea_regional_pokedex_number": 71,
     "evolution_line_ident": "tandemaus",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -30637,11 +32066,14 @@
       "tickle",
       "u-turn",
       "water-pulse"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 71
   },
   {
     "national_pokedex_number": 946,
-    "paldea_regional_pokedex_number": 72,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 72,
     "evolution_line_ident": "tandemaus",
     "evolution_line_index": 1,
     "ident": "maushold-family-of-three",
@@ -30724,7 +32156,8 @@
   },
   {
     "national_pokedex_number": 946,
-    "paldea_regional_pokedex_number": 72,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 72,
     "evolution_line_ident": "tandemaus",
     "evolution_line_index": 1,
     "ident": "maushold-family-of-four",
@@ -30808,7 +32241,6 @@
   {
     "ident": "pichu",
     "national_pokedex_number": 172,
-    "paldea_regional_pokedex_number": 73,
     "evolution_line_ident": "pichu",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -30876,12 +32308,13 @@
       "volt-tackle",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 73
   },
   {
     "ident": "pikachu",
     "national_pokedex_number": 25,
-    "paldea_regional_pokedex_number": 74,
     "evolution_line_ident": "pichu",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -30965,12 +32398,13 @@
       "volt-tackle",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 74
   },
   {
     "ident": "raichu",
     "national_pokedex_number": 26,
-    "paldea_regional_pokedex_number": 75,
     "evolution_line_ident": "pichu",
     "evolution_line_index": 2,
     "primary_type_ident": "electric",
@@ -31057,12 +32491,13 @@
       "volt-tackle",
       "wild-charge",
       "wish"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 75
   },
   {
     "ident": "fidough",
     "national_pokedex_number": 970,
-    "paldea_regional_pokedex_number": 76,
     "evolution_line_ident": "fidough",
     "evolution_line_index": 0,
     "primary_type_ident": "fairy",
@@ -31131,12 +32566,13 @@
       "wish",
       "work-up",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 76
   },
   {
     "ident": "dachsbun",
     "national_pokedex_number": 971,
-    "paldea_regional_pokedex_number": 77,
     "evolution_line_ident": "fidough",
     "evolution_line_index": 1,
     "primary_type_ident": "fairy",
@@ -31210,12 +32646,13 @@
       "wish",
       "work-up",
       "yawn"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 77
   },
   {
     "ident": "slakoth",
     "national_pokedex_number": 287,
-    "paldea_regional_pokedex_number": 78,
     "evolution_line_ident": "slakoth",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -31300,12 +32737,13 @@
       "x-scissor",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 78
   },
   {
     "ident": "vigoroth",
     "national_pokedex_number": 288,
-    "paldea_regional_pokedex_number": 79,
     "evolution_line_ident": "slakoth",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -31409,12 +32847,13 @@
       "x-scissor",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 79
   },
   {
     "ident": "slaking",
     "national_pokedex_number": 289,
-    "paldea_regional_pokedex_number": 80,
     "evolution_line_ident": "slakoth",
     "evolution_line_index": 2,
     "primary_type_ident": "normal",
@@ -31527,12 +32966,13 @@
       "x-scissor",
       "yawn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 80
   },
   {
     "ident": "bounsweet",
     "national_pokedex_number": 761,
-    "paldea_regional_pokedex_number": 81,
     "evolution_line_ident": "bounsweet",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -31595,12 +33035,13 @@
       "tera-blast",
       "trailblaze",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 81
   },
   {
     "ident": "steenee",
     "national_pokedex_number": 762,
-    "paldea_regional_pokedex_number": 82,
     "evolution_line_ident": "bounsweet",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -31666,12 +33107,13 @@
       "tera-blast",
       "trailblaze",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 82
   },
   {
     "ident": "tsareena",
     "national_pokedex_number": 763,
-    "paldea_regional_pokedex_number": 83,
     "evolution_line_ident": "bounsweet",
     "evolution_line_index": 2,
     "primary_type_ident": "grass",
@@ -31747,12 +33189,13 @@
       "trop-kick",
       "u-turn",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 83
   },
   {
     "ident": "smoliv",
     "national_pokedex_number": 935,
-    "paldea_regional_pokedex_number": 84,
     "evolution_line_ident": "smoliv",
     "evolution_line_index": 0,
     "primary_type_ident": "grass",
@@ -31811,12 +33254,13 @@
       "terrain-pulse",
       "trailblaze",
       "weather-ball"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 84
   },
   {
     "ident": "dolliv",
     "national_pokedex_number": 936,
-    "paldea_regional_pokedex_number": 85,
     "evolution_line_ident": "smoliv",
     "evolution_line_index": 1,
     "primary_type_ident": "grass",
@@ -31875,12 +33319,13 @@
       "terrain-pulse",
       "trailblaze",
       "weather-ball"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 85
   },
   {
     "ident": "arboliva",
     "national_pokedex_number": 937,
-    "paldea_regional_pokedex_number": 86,
     "evolution_line_ident": "smoliv",
     "evolution_line_index": 2,
     "primary_type_ident": "grass",
@@ -31953,12 +33398,13 @@
       "terrain-pulse",
       "trailblaze",
       "weather-ball"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 86
   },
   {
     "ident": "bonsly",
     "national_pokedex_number": 438,
-    "paldea_regional_pokedex_number": 87,
     "evolution_line_ident": "bonsly",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -32032,12 +33478,13 @@
       "tera-blast",
       "thief",
       "trailblaze"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 87
   },
   {
     "ident": "sudowoodo",
     "national_pokedex_number": 185,
-    "paldea_regional_pokedex_number": 88,
     "evolution_line_ident": "bonsly",
     "evolution_line_index": 1,
     "primary_type_ident": "rock",
@@ -32126,12 +33573,13 @@
       "thunder-punch",
       "trailblaze",
       "wood-hammer"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 88
   },
   {
     "ident": "rockruff",
     "national_pokedex_number": 744,
-    "paldea_regional_pokedex_number": 89,
     "evolution_line_ident": "rockruff",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -32203,11 +33651,14 @@
       "thunder-fang",
       "trailblaze",
       "zen-headbutt"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 89
   },
   {
     "national_pokedex_number": 745,
-    "paldea_regional_pokedex_number": 90,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 90,
     "evolution_line_ident": "rockruff",
     "evolution_line_index": 1,
     "ident": "lycanroc-midday",
@@ -32296,7 +33747,8 @@
   },
   {
     "national_pokedex_number": 745,
-    "paldea_regional_pokedex_number": 90,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 90,
     "evolution_line_ident": "rockruff",
     "evolution_line_index": 1,
     "ident": "lycanroc-midnight",
@@ -32387,7 +33839,8 @@
   },
   {
     "national_pokedex_number": 745,
-    "paldea_regional_pokedex_number": 90,
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 90,
     "evolution_line_ident": "rockruff",
     "evolution_line_index": 1,
     "ident": "lycanroc-dusk",
@@ -32476,7 +33929,6 @@
   {
     "ident": "rolycoly",
     "national_pokedex_number": 837,
-    "paldea_regional_pokedex_number": 91,
     "evolution_line_ident": "rolycoly",
     "evolution_line_index": 0,
     "primary_type_ident": "rock",
@@ -32535,12 +33987,13 @@
       "take-down",
       "tera-blast",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 91
   },
   {
     "ident": "carkol",
     "national_pokedex_number": 838,
-    "paldea_regional_pokedex_number": 92,
     "evolution_line_ident": "rolycoly",
     "evolution_line_index": 1,
     "primary_type_ident": "rock",
@@ -32609,12 +34062,13 @@
       "take-down",
       "tera-blast",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 92
   },
   {
     "ident": "coalossal",
     "national_pokedex_number": 839,
-    "paldea_regional_pokedex_number": 93,
     "evolution_line_ident": "rolycoly",
     "evolution_line_index": 2,
     "primary_type_ident": "rock",
@@ -32689,12 +34143,13 @@
       "tar-shot",
       "tera-blast",
       "will-o-wisp"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 93
   },
   {
     "ident": "shinx",
     "national_pokedex_number": 403,
-    "paldea_regional_pokedex_number": 94,
     "evolution_line_ident": "shinx",
     "evolution_line_index": 0,
     "primary_type_ident": "electric",
@@ -32768,12 +34223,13 @@
       "trailblaze",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 94
   },
   {
     "ident": "luxio",
     "national_pokedex_number": 404,
-    "paldea_regional_pokedex_number": 95,
     "evolution_line_ident": "shinx",
     "evolution_line_index": 1,
     "primary_type_ident": "electric",
@@ -32847,12 +34303,13 @@
       "trailblaze",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 95
   },
   {
     "ident": "luxray",
     "national_pokedex_number": 405,
-    "paldea_regional_pokedex_number": 96,
     "evolution_line_ident": "shinx",
     "evolution_line_index": 2,
     "primary_type_ident": "electric",
@@ -32930,12 +34387,13 @@
       "trailblaze",
       "volt-switch",
       "wild-charge"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 96
   },
   {
     "ident": "starly",
     "national_pokedex_number": 396,
-    "paldea_regional_pokedex_number": 97,
     "evolution_line_ident": "starly",
     "evolution_line_index": 0,
     "primary_type_ident": "normal",
@@ -32997,12 +34455,13 @@
       "u-turn",
       "whirlwind",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 97
   },
   {
     "ident": "staravia",
     "national_pokedex_number": 397,
-    "paldea_regional_pokedex_number": 98,
     "evolution_line_ident": "starly",
     "evolution_line_index": 1,
     "primary_type_ident": "normal",
@@ -33064,12 +34523,13 @@
       "u-turn",
       "whirlwind",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 98
   },
   {
     "ident": "staraptor",
     "national_pokedex_number": 398,
-    "paldea_regional_pokedex_number": 99,
     "evolution_line_ident": "starly",
     "evolution_line_index": 2,
     "primary_type_ident": "normal",
@@ -33135,6 +34595,8 @@
       "u-turn",
       "whirlwind",
       "wing-attack"
-    ]
+    ],
+    "pokedex_region": "paldea",
+    "regional_pokedex_number": 99
   }
 ]

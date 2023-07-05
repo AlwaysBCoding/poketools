@@ -340,9 +340,9 @@ export const BattleRenderer: React.FC<{
     const pokemon: Pokemon = pokemonBattleState.pokemon_build.pokemon;
     const pokemonPerspective = pokemonBattleState.battle_side === "blue" ? "back" : "front";
     try {
-      pokemonImage = require(`../data/pokemon/paldea/${String(pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemon.ident.split("-")[0]}/${pokemon.ident}.motion.${pokemonPerspective}.gif`);
+      pokemonImage = require(`../data/pokemon/${pokemon.pokedex_region}/${String(pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemon.ident.split("-")[0]}/${pokemon.ident}.motion.${pokemonPerspective}.gif`);
     } catch (error) {
-      pokemonImage = require(`../data/pokemon/paldea/${String(pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemon.ident.split("-")[0]}/${pokemon.ident}.static.png`);
+      pokemonImage = require(`../data/pokemon/${pokemon.pokedex_region}/${String(pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemon.ident.split("-")[0]}/${pokemon.ident}.static.png`);
     }
     return {
       pokemon_battle_state: pokemonBattleState,

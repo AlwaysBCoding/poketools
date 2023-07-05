@@ -31,7 +31,7 @@ const PokemonDataRow: React.FC<{
   battleState,
   pokemonBuildData,
 }) => {
-  const pokemonImage = require(`../data/pokemon/paldea/${String(pokemonBuildData.pokemonBuild.pokemon.paldea_regional_pokedex_number).padStart(2, "0")}-${pokemonBuildData.pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuildData.pokemonBuild.pokemon.ident}.static.png`);
+  const pokemonImage = require(`../data/pokemon/${pokemonBuildData.pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuildData.pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuildData.pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuildData.pokemonBuild.pokemon.ident}.static.png`);
   const dataRowClassName = pokemonBuildData.side === "blue" ? `data-row blue-team` : `data-row red-team`;
 
   return (
