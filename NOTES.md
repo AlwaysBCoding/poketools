@@ -365,14 +365,6 @@ Hisuian Zoroark
 Hisuian Zoroark line
 Hisuian Braviary
 Hisuian Braviary line
-Tornadus (Incarnate Forme)
-Thundurus (Incarnate Forme)
-Landorus (Incarnate Forme)
-Enamorus (Incarnate Forme) 
-Tornadus (Therian Forme)
-Thundurus (Therian Forme)
-Landorus (Therian Forme)
-Enamorus (Therian Forme)
 Chesnaught line
 Delphox line
 Greninja line
