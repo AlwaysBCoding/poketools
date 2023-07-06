@@ -376,10 +376,6 @@ Inteleon line
 Kubfu
 Urshifu Rapid-Strike
 Urshifu Single-Strike
-Regieleki
-Regidrago
-Glastrier
-Spectrier
 Wyrdeer
 Kleavor
 Ursaluna
