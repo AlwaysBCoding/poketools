@@ -22,11 +22,11 @@ export const TeamEditorScreen = () => {
   const [activeTeamIndex, setActiveTeamIndex] = useState<number | undefined>(undefined);
 
   useEffect(() => {
-    const teamName = location.state.teamName;
+    const teamUUID = location.state.teamUUID;
     const savedTeams = JSON.parse(`${localStorage.getItem("savedTeams")}`);
-    const teamData: PokemonTeam = savedTeams[teamName] as PokemonTeam;
+    const teamData: PokemonTeam = savedTeams[teamUUID] as PokemonTeam;
     setTeam(teamData);
-  }, [location.state.teamName]);
+  }, [location.state.teamUUID]);
 
   const savePokemonTeam = (team: PokemonTeam) => {
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);

@@ -16,6 +16,12 @@ export const AllTeamsScreen = () => {
 
   }, []);
 
+  const onUpdate = () => {
+    const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
+    const nextTeams: PokemonTeam[] = savedTeams ? Object.values(savedTeams) : [];
+    setTeams(nextTeams);
+  }
+
   return (
     <div className="screen all-teams-screen">
       <h4>ALL TEAMS</h4>
@@ -24,8 +30,9 @@ export const AllTeamsScreen = () => {
           <PokemonTeamDisplay
             key={`pokemon-team-${index}`}
             team={team}
-            config={{deleteable: true, editable: true}}
-            mode="show" />
+            config={{actions: true, editable: true, saveable: true, deleteable: true}}
+            onUpdate={onUpdate}
+            mode="list" />
         )
       })}
     </div>

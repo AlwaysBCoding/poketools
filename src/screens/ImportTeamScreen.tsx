@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { PokemonBuild, pokemonBuildTemplateToPokemonBuild } from "../models/pokemon/PokemonBuild"
 import { PokemonBuildTemplate } from "../models/pokemon/PokemonBuildTemplate";
 import { PokemonTeam } from "../models/pokemon/PokemonTeam";
@@ -180,18 +181,19 @@ export const ImportTeamScreen = () => {
         const pokemonBuilds: PokemonBuild[] = pokemonBuildTemplates.map((pbt: PokemonBuildTemplate) => { return pokemonBuildTemplateToPokemonBuild(pbt) })
         const timestamp = Date.now();
         const team: PokemonTeam = {
+          uuid: uuidv4(),
           team_name: `Imported Team: ${timestamp}`,
           created_at: timestamp,
           pokemonBuilds
         }
         let nextSavedTeams: Record<string, PokemonTeam> = {};
         const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
-        nextSavedTeams[team.team_name] = team;
+        nextSavedTeams[team.uuid] = team;
         if(!savedTeams) {
-          nextSavedTeams[team.team_name] = team;
+          nextSavedTeams[team.uuid] = team;
         } else {
           nextSavedTeams = savedTeams;
-          nextSavedTeams[team.team_name] = team;
+          nextSavedTeams[team.uuid] = team;
         }
         localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
         alert("team imported");

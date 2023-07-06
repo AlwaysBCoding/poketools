@@ -8,6 +8,15 @@ import { PokemonBuildDisplay } from "./PokemonBuildDisplay";
 
 import { displayPokemonIdent } from "../decorators/Pokemon";
 
+const PokemonSlotDisplaySimple: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBuild }) => {
+  const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
+  return (
+    <div className="slot-content">
+      <img className="pokemon-image" src={pokemonImage} alt={pokemonBuild.pokemon.ident} />
+    </div>
+  )
+}
+
 const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBuild }) => {
   const pokemonImage = require(`../data/pokemon/${pokemonBuild.pokemon.pokedex_region}/${String(pokemonBuild.pokemon.regional_pokedex_number).padStart(2, "0")}-${pokemonBuild.pokemon.ident.split("-")[0]}/${pokemonBuild.pokemon.ident}.static.png`);
   return (
@@ -41,7 +50,8 @@ const PokemonSlotDisplay: React.FC<{pokemonBuild: PokemonBuild}> = ({ pokemonBui
 interface PokemonTeamDisplayProps {
   team: PokemonTeam,
   config: Record<string, any>,
-  mode: "index" | "show" | "builder"
+  mode: "index" | "show" | "builder" | "list",
+  onUpdate: () => void
 }
 
 export const PokemonTeamDisplayIndex: React.FC<{
@@ -92,8 +102,9 @@ export const PokemonTeamDisplayIndex: React.FC<{
   )
 }
 
-export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, config, mode }) => {
+export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, config, mode, onUpdate }) => {
   const navigate = useNavigate();
+  const [isEditingName, setIsEditingName] = useState<boolean>(false);
   const [teamNameString, setTeamNameString] = useState<string>(team.team_name);
 
   useEffect(() => {
@@ -101,20 +112,26 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
     // eslint-disable-next-line
   }, [teamNameString]);
 
+  const editPokemonTeamName = () => {
+    setIsEditingName(true);
+  }
+
   const editPokemonTeam = () => {
-    navigate("/team-editor", {state: {teamName: team.team_name}});
+    navigate("/team-editor", {state: {teamUUID: team.uuid}})
   }
 
   const savePokemonTeam = () => {
     let nextSavedTeams: Record<string, PokemonTeam> = {};
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
     if(!savedTeams) {
-      nextSavedTeams[team.team_name] = team;
+      nextSavedTeams[team.uuid] = team;
     } else {
       nextSavedTeams = savedTeams;
-      nextSavedTeams[team.team_name] = team;
+      nextSavedTeams[team.uuid] = team;
     }
     localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+    setIsEditingName(false);
+    onUpdate();
   }
 
 
@@ -123,63 +140,35 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
     const savedTeams: Record<string, PokemonTeam> = JSON.parse(`${localStorage.getItem("savedTeams")}`);
     if(savedTeams) {
       nextSavedTeams = savedTeams;
-      delete nextSavedTeams[team.team_name];
+      delete nextSavedTeams[team.uuid];
     }
     localStorage.setItem("savedTeams", JSON.stringify(nextSavedTeams));
+    onUpdate();
   }
 
   return (
     <div className={`pokemon-team-display mode-${mode}`}>
-      <div className="team-actions">
-        {config.editable ? (
-          <input
-            className="team-name"
-            placeholder="ENTER TEAM NAME"
-            value={teamNameString}
-            onChange={(e) => { setTeamNameString(e.target.value) }} />
-        ) : (
-          <p className="team-name">{team.team_name}</p>
-        )}
-        {config.editable ? (
-          <div className="button" onClick={editPokemonTeam}>
-            <p>EDIT</p>
-          </div>
-        ) : (<></>)}
-        {config.saveable ? (
-          <div className="button" onClick={savePokemonTeam}>
-            <p>SAVE</p>
-          </div>
-        ) : (<></>)}
-        {config.deleteable ? (
-          <div className="button" onClick={deletePokemonTeam}>
-            <p>DELETE</p>
-          </div>
-        ) : (<></>)}
-        <div className="button" onClick={() => { navigate("/team-matchup", {state: {teamName: team.team_name}}); }}>
-          <p>MATCHUP</p>
-        </div>
-      </div>
       {mode === "show" ? (
         <div className="slots">
-        <div className="slot slot-1">
-          {team.pokemonBuilds[0] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[0]} />) : (<h4 className="slot-title">SLOT 1</h4>)}
+          <div className="slot slot-1">
+            {team.pokemonBuilds[0] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[0]} />) : (<h4 className="slot-title">SLOT 1</h4>)}
+          </div>
+          <div className="slot slot-2">
+            {team.pokemonBuilds[1] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[1]} />) : (<h4 className="slot-title">SLOT 2</h4>)}
+          </div>
+          <div className="slot slot-3">
+            {team.pokemonBuilds[2] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[2]} />) : (<h4 className="slot-title">SLOT 3</h4>)}
+          </div>
+          <div className="slot slot-4">
+            {team.pokemonBuilds[3] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[3]} />) : (<h4 className="slot-title">SLOT 4</h4>)}
+          </div>
+          <div className="slot slot-5">
+            {team.pokemonBuilds[4] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[4]} />) : (<h4 className="slot-title">SLOT 5</h4>)}
+          </div>
+          <div className="slot slot-6">
+            {team.pokemonBuilds[5] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[5]} />) : (<h4 className="slot-title">SLOT 6</h4>)}
+          </div>
         </div>
-        <div className="slot slot-2">
-          {team.pokemonBuilds[1] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[1]} />) : (<h4 className="slot-title">SLOT 2</h4>)}
-        </div>
-        <div className="slot slot-3">
-          {team.pokemonBuilds[2] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[2]} />) : (<h4 className="slot-title">SLOT 3</h4>)}
-        </div>
-        <div className="slot slot-4">
-          {team.pokemonBuilds[3] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[3]} />) : (<h4 className="slot-title">SLOT 4</h4>)}
-        </div>
-        <div className="slot slot-5">
-          {team.pokemonBuilds[4] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[4]} />) : (<h4 className="slot-title">SLOT 5</h4>)}
-        </div>
-        <div className="slot slot-6">
-          {team.pokemonBuilds[5] ? (<PokemonSlotDisplay pokemonBuild={team.pokemonBuilds[5]} />) : (<h4 className="slot-title">SLOT 6</h4>)}
-        </div>
-      </div>
       ) : (<></>)}
       {mode === "builder" ? (
         <div className="pokemon-team-display builder">
@@ -190,6 +179,63 @@ export const PokemonTeamDisplay: React.FC<PokemonTeamDisplayProps> = ({ team, co
                 pokemonBuild={pokemonBuild} />
             )
           })}
+        </div>
+      ) : (<></>)}
+      {mode === "list" ? (
+        <div className="pokemon-team-display list">
+          {isEditingName ? (
+            <input
+              className="team-name"
+              placeholder="ENTER TEAM NAME"
+              value={teamNameString}
+              onChange={(e) => { setTeamNameString(e.target.value) }} />
+          ) : (
+            <p className="team-name">{team.team_name}</p>
+          )}
+          <div className="slots" onClick={editPokemonTeam}>
+            <div className="slot slot-1">
+              {team.pokemonBuilds[0] ? (<PokemonSlotDisplaySimple pokemonBuild={team.pokemonBuilds[0]} />) : (<></>)}
+            </div>
+            <div className="slot slot-2">
+              {team.pokemonBuilds[1] ? (<PokemonSlotDisplaySimple pokemonBuild={team.pokemonBuilds[1]} />) : (<></>)}
+            </div>
+            <div className="slot slot-3">
+              {team.pokemonBuilds[2] ? (<PokemonSlotDisplaySimple pokemonBuild={team.pokemonBuilds[2]} />) : (<></>)}
+            </div>
+            <div className="slot slot-4">
+              {team.pokemonBuilds[3] ? (<PokemonSlotDisplaySimple pokemonBuild={team.pokemonBuilds[3]} />) : (<></>)}
+            </div>
+            <div className="slot slot-5">
+              {team.pokemonBuilds[4] ? (<PokemonSlotDisplaySimple pokemonBuild={team.pokemonBuilds[4]} />) : (<></>)}
+            </div>
+            <div className="slot slot-6">
+              {team.pokemonBuilds[5] ? (<PokemonSlotDisplaySimple pokemonBuild={team.pokemonBuilds[5]} />) : (<></>)}
+            </div>
+          </div>
+        </div>
+      ) : (<></>)}
+      {config.actions ? (
+        <div className="team-actions">
+          {config.editable ? (
+            <div className="button" onClick={editPokemonTeamName}>
+              <p>EDIT</p>
+            </div>
+          ) : (<></>)}
+          {config.saveable ? (
+            <div className="button" onClick={savePokemonTeam}>
+              <p>SAVE</p>
+            </div>
+          ) : (<></>)}
+          {config.deleteable ? (
+            <div className="button" onClick={deletePokemonTeam}>
+              <p>DELETE</p>
+            </div>
+          ) : (<></>)}
+          {config.matchupable ? (
+            <div className="button" onClick={() => { navigate("/team-matchup", {state: {teamName: team.team_name}}); }}>
+              <p>MATCHUP</p>
+            </div>
+          ) : (<></>)}
         </div>
       ) : (<></>)}
     </div>
