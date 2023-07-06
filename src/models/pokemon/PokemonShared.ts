@@ -248,6 +248,7 @@ export type PokemonAbilityIdent =
   | "sturdy"
   | "super-luck"
   | "supreme-overlord"
+  | "surge-surfer"
   | "swarm"
   | "sweet-veil"
   | "swift-swim"
