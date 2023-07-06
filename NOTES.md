@@ -342,3 +342,62 @@
   - how many epochs to train for?
   - would it be better to just have the pokemon ID and let the AI figure it out, or generalize the pokemon to it's stats and input that into the neural net?
   - How fast can you ad-hoc train a model?
+
+### Pokemon HOME Mons to add
+Alolan Raichu
+Alolan Dugtrio line
+Alolan Persian line
+Perrserker line
+Hisuian Arcanine line
+Galarian Slowbro line
+Galarian Slowking
+Alolan Muk line
+Hisuian Electrode line
+Quagsire line
+Overqwil line
+Tauros
+Articuno
+Zapdos
+Moltres
+Galarian Articuno
+Galarian Zapdos
+Galarian Moltres
+Uxie
+Mesprit
+Azelf
+Heatran
+Cresselia
+Hisuian Lilligant
+Basculegion (Male) line
+Basculegion (Female)
+Hisuian Zoroark
+Hisuian Zoroark line
+Hisuian Braviary
+Hisuian Braviary line
+Tornadus (Incarnate Forme)
+Thundurus (Incarnate Forme)
+Landorus (Incarnate Forme)
+Enamorus (Incarnate Forme) 
+Tornadus (Therian Forme)
+Thundurus (Therian Forme)
+Landorus (Therian Forme)
+Enamorus (Therian Forme)
+Chesnaught line
+Delphox line
+Greninja line
+Hisuian Goodra
+Hisuian Goodra line
+Rillaboom line
+Cinderace line
+Inteleon line
+Kubfu
+Urshifu Rapid-Strike
+Urshifu Single-Strike
+Regieleki
+Regidrago
+Glastrier
+Spectrier
+Wyrdeer
+Kleavor
+Ursaluna
+Carbink

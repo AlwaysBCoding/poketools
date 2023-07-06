@@ -303,6 +303,7 @@ export type PokemonEvolutionLine =
   | "cacnea"
   | "capsakid"
   | "charcadet"
+  | "charmander"
   | "chewtle"
   | "chi_yu"
   | "chien_pao"
