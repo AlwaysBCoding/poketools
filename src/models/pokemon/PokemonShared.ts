@@ -257,6 +257,7 @@ export type PokemonAbilityIdent =
   | "synchronize"
   | "tablets-of-ruin"
   | "tangled-feet"
+  | "tangling-hair"
   | "technician"
   | "telepathy"
   | "thermal-exchange"

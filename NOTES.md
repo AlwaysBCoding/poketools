@@ -344,8 +344,6 @@
   - How fast can you ad-hoc train a model?
 
 ### Pokemon HOME Mons to add
-Alolan Dugtrio line
-Alolan Persian line
 Perrserker line
 Hisuian Arcanine line
 Galarian Slowbro line
