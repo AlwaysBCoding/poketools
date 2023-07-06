@@ -86,6 +86,7 @@ export type PokemonAbilityIdent =
   | "aroma-veil"
   | "battle-armor"
   | "beads-of-ruin"
+  | "berserk"
   | "big-pecks"
   | "blaze"
   | "bulletproof"
@@ -289,6 +290,7 @@ export type PokemonEvolutionLine =
   | "alomomola"
   | "applin"
   | "arrokuda"
+  | "articuno"
   | "axew"
   | "azurill"
   | "bagon"
@@ -387,6 +389,7 @@ export type PokemonEvolutionLine =
   | "meditite"
   | "meowth"
   | "misdreavus"
+  | "moltres"
   | "mudbray"
   | "murkrow"
   | "nacli"
@@ -477,6 +480,7 @@ export type PokemonEvolutionLine =
   | "wooper"
   | "yungoos"
   | "zangoose"
+  | "zapdos"
   | "zorua";
 
 export type PokemonIdent = string;

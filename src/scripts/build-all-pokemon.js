@@ -27,7 +27,7 @@ var recursive_file_path_search = function(dir, done) {
 
 const FILE_FILTER_REGEX = new RegExp(/(.*).data.json$/, 'g');
 const ALL_POKEMON_DATA = [];
-FOLDER_PATHS = ["../data/pokemon/alola", "../data/pokemon/galar", "../data/pokemon/hisui", "../data/pokemon/paldea"];
+FOLDER_PATHS = ["../data/pokemon/kanto", "../data/pokemon/alola", "../data/pokemon/galar", "../data/pokemon/hisui", "../data/pokemon/paldea"];
 
 
 FOLDER_PATHS.forEach((folderPath) => {

@@ -353,12 +353,6 @@ Hisuian Electrode line
 Quagsire line
 Overqwil line
 Tauros
-Articuno
-Zapdos
-Moltres
-Galarian Articuno
-Galarian Zapdos
-Galarian Moltres
 Uxie
 Mesprit
 Azelf

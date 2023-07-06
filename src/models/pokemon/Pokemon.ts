@@ -11,7 +11,7 @@ export interface Pokemon {
   ident: string;
   national_pokedex_number: number;
   regional_pokedex_number: number;
-  pokedex_region: "alola" | "galar" | "hisui" | "paldea";
+  pokedex_region: "kanto" | "alola" | "galar" | "hisui" | "paldea";
   evolution_line_ident: PokemonEvolutionLine;
   evolution_line_index: number;
   can_evolve?: boolean;
