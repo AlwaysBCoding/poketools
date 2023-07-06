@@ -38,93 +38,44 @@ export const AllPokemonScreen = () => {
 
   const filterByQueryString = (queryString: string) => {
     const tokens = queryString.split(/\s+/);
-
-    if(tokens[0].toLowerCase() === "type") {
-      if(tokens.length === 2) {
-        const filteredPokemon = allPokemon.filter((pokemon) => {
-          return [pokemon.primary_type_ident, pokemon.secondary_type_ident].includes(tokens[1] as PokemonTypeIdent);
-        });
-        setFilteredPokemon(filteredPokemon);
-      } else if(tokens.length === 3) {
-        const filteredPokemon = allPokemon.filter((pokemon) => {
-          const values = [tokens[1] as PokemonTypeIdent, tokens[2] as PokemonTypeIdent];
-          return values.every(value => {
-            return [pokemon.primary_type_ident, pokemon.secondary_type_ident].includes(value);
-          })
-        });
-        setFilteredPokemon(filteredPokemon);
-      }
-    } else if(tokens[0].toLowerCase() === "resists" && tokens.length === 2) {
-      const filteredPokemon = allPokemon.filter((pokemon) => {
-        const primaryTypeResistance = typeChart.find((interaction) => {
-          return interaction.offensive_type_ident === tokens[1] && interaction.defensive_type_ident === pokemon.primary_type_ident;
-        })!.effectiveness;
-        const secondaryTypeResistance = pokemon.secondary_type_ident ? (
-          typeChart.find((interaction) => {
-            return interaction.offensive_type_ident === tokens[1] && interaction.defensive_type_ident === pokemon.secondary_type_ident;
-          })!.effectiveness
-        ) : 1;
-        const resistanceValue = primaryTypeResistance * secondaryTypeResistance;
-        return resistanceValue < 1;
-      });
-      setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "beats" && tokens.length === 2) {
-      const filteredPokemon = allPokemon.filter((pokemon) => {
-        const primaryTypeEffectiveness = typeChart.find((interaction) => {
-          return interaction.offensive_type_ident === pokemon.primary_type_ident && interaction.defensive_type_ident === tokens[1];
-        })!.effectiveness;
-        const secondaryTypeEffectiveness = pokemon.secondary_type_ident ? (
-          typeChart.find((interaction) => {
-            return interaction.offensive_type_ident === pokemon.secondary_type_ident && interaction.defensive_type_ident === tokens[1];
-          })!.effectiveness
-        ) : 1;
-        const effectivenessValue = primaryTypeEffectiveness * secondaryTypeEffectiveness;
-        return effectivenessValue > 1;
-      });
-      setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "a" && tokens.length === 2) {
-      const filteredPokemon = allPokemon.filter((pokemon) => {
-        return pokemon.ability_idents.includes(tokens[1] as PokemonAbilityIdent)
-      });
-      setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "m" && tokens.length === 2) {
-      const filteredPokemon = allPokemon.filter((pokemon) => {
-        return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent);
-      });
-      setFilteredPokemon(filteredPokemon);
-    } else if(tokens[0].toLowerCase() === "m" && tokens.length === 3) {
-      const filteredPokemon = allPokemon.filter((pokemon) => {
-        return pokemon.move_idents.includes(tokens[1] as PokemonMoveIdent) && pokemon.move_idents.includes(tokens[2] as PokemonMoveIdent);
-      });
-      setFilteredPokemon(filteredPokemon);
-    } else if (tokens[0] === "c") {
-      const filteredPokemon = allPokemon.filter((pokemon) => {
-        return pokemon.ident.includes(tokens[1]) || pokemon.ident.includes(tokens[2])
-      })
-      setFilteredPokemon(filteredPokemon);
-    } else if(tokens[1] === "than" && tokens.length === 3) {
-      const comparePokemon = allPokemon.find((pokemon) => {
-        return pokemon.ident === tokens[2];
-      })!;
-      if(tokens[0] === "faster") {
-        const filteredPokemon = allPokemon.filter((pokemon) => {
-          return pokemon.base_stats.speed >= comparePokemon.base_stats.speed
-        });
-        setCurrentSortStat("speed");
-        setCurrentSortStatDirection("desc");
-        setFilteredPokemon(filteredPokemon);
-      } else if(tokens[0] === "slower") {
-        const filteredPokemon = allPokemon.filter((pokemon) => {
-          return pokemon.base_stats.speed <= comparePokemon.base_stats.speed
-        });
-        setCurrentSortStat("speed");
-        setCurrentSortStatDirection("asc");
-        setFilteredPokemon(filteredPokemon);
-      }
-    } else {
-      setCurrentSortStat("");
-      setFilteredPokemon(allPokemon);
+    const tokenTuples = [];
+    for (let i = 0; i < tokens.length; i += 2) {
+      let tuple = [tokens[i], tokens[i + 1]];
+      tokenTuples.push(tuple);
     }
+
+    var filteredPokemon = allPokemon;
+    tokenTuples.forEach((tuple) => {
+      const command = tuple[0];
+      const arg = tuple[1];
+
+      if(command === "a") {
+        filteredPokemon = filteredPokemon.filter((pokemon) => {
+          return pokemon.ability_idents.includes(arg as PokemonAbilityIdent);
+        })
+      }
+      if(command === "c") {
+        filteredPokemon = filteredPokemon.filter((pokemon) => {
+          return pokemon.ident.includes(arg as PokemonAbilityIdent);
+        })
+      }
+      if(command === "m") {
+        filteredPokemon = filteredPokemon.filter((pokemon) => {
+          return pokemon.move_idents.includes(arg as PokemonMoveIdent);
+        })
+      }
+      if(command === "o") {
+        setCurrentSortStat(arg);
+        setCurrentSortStatDirection("desc");
+      }
+      if(command === "t") {
+        filteredPokemon = filteredPokemon.filter((pokemon) => {
+          return [pokemon.primary_type_ident, pokemon.secondary_type_ident].includes(arg as PokemonTypeIdent);
+        })
+      }
+    })
+
+    setFilteredPokemon(filteredPokemon);
   }
 
   const sortByBaseStat = (baseStat: string, toggleDirection: boolean) => {
