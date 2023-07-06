@@ -178,12 +178,14 @@ export const PokemonFormeSelectList: React.FC<{
     setSelectedFormeIdent(formeIdent);
   }, [formeIdent]);
   
+  const ALL_FORMES = ALL_POKEMON.filter((pokemon) => { return pokemon.ident === formeRootIdent || pokemon.forme_root_ident === formeRootIdent});
+  
   return (
     <select className="pokemon-select-list" onChange={handleFormeSelect} value={selectedFormeIdent}>
       <option value={""} disabled={true}>
         --Select a Forme--
       </option>
-      {ALL_POKEMON.filter((pokemon) => { return pokemon.ident === formeRootIdent || pokemon.forme_root_ident === formeRootIdent}).map((pokemon: Pokemon, index: number) => {
+      {ALL_FORMES.map((pokemon: Pokemon, index: number) => {
         return (
           <option key={`pokemon-${index}`} value={pokemon.ident}>{displayFormeIdent(pokemon.ident)}</option>
         )

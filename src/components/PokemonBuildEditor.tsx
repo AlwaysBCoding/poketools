@@ -18,7 +18,7 @@ import { calculateStatSpread } from "../models/pokemon/stat-calc";
 import { PokemonTypeBadge, PokemonTypeSelectList } from "../decorators/PokemonType";
 import { displayPokemonMove } from "../decorators/PokemonMove";
 import { PokemonMoveCategoryBadge } from "../decorators/PokemonMoveCategory";
-import { PokemonSelectList, displayPokemonGender } from "../decorators/Pokemon";
+import { PokemonSelectList, PokemonFormeSelectList, displayPokemonGender } from "../decorators/Pokemon";
 import { PokemonNatureSelectList } from "../decorators/PokemonNature";
 import { PokemonAbilitySelectList } from "../decorators/PokemonAbility";
 import { PokemonItemSelectList } from "../decorators/PokemonItem";
@@ -42,6 +42,13 @@ export const PokemonBuildEditor: React.FC<{
 
   const handlePokemonSelect = (pokemonIdent: PokemonIdent) => {
     const nextPokemonBuild = createDefaultPokemonBuildForPokemonIdent(pokemonIdent);
+    setPokemonBuild(nextPokemonBuild);
+    updatePokemonBuildData(nextPokemonBuild);
+    forceUpdate();
+  }
+
+  const handleFormeSelect = (formeIdent: PokemonIdent) => {
+    const nextPokemonBuild = createDefaultPokemonBuildForPokemonIdent(formeIdent);
     setPokemonBuild(nextPokemonBuild);
     updatePokemonBuildData(nextPokemonBuild);
     forceUpdate();
@@ -160,7 +167,15 @@ export const PokemonBuildEditor: React.FC<{
           <p className="data-row-label">Pokemon</p>
           <PokemonSelectList
             pokemonIdent={pokemonBuild.pokemon.ident}
+            formeRootIdent={pokemonBuild.pokemon.forme_root_ident}
             onPokemonSelect={handlePokemonSelect} />
+        </div>
+        <div className="data-row pokemon-forme">
+          <p className="data-row-label">Forme</p>
+          <PokemonFormeSelectList
+            formeIdent={pokemonBuild.pokemon.ident}
+            formeRootIdent={pokemonBuild.pokemon.forme_root_ident ? pokemonBuild.pokemon.forme_root_ident : pokemonBuild.pokemon.ident}
+            onFormeSelect={handleFormeSelect} />
         </div>
         <div className="data-row pokemon-type">
           <p className="data-row-label">Type</p>
