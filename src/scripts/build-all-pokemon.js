@@ -51,6 +51,7 @@ FOLDER_PATHS.forEach((folderPath) => {
       if(fileJSON.formes && fileJSON.formes.length > 0) {
         for (const forme of fileJSON.formes) {
           const formeData = Object.assign({
+            forme_root_ident: fileJSON.ident,
             national_pokedex_number: fileJSON.national_pokedex_number,
             pokedex_region: fileJSON.pokedex_region,
             regional_pokedex_number: fileJSON.regional_pokedex_number,

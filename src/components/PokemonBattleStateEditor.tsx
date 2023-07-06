@@ -18,7 +18,7 @@ import {
 } from "../models/pokemon/PokemonShared";
 
 import { PokemonTypeBadge, PokemonTypeSelectList } from "../decorators/PokemonType";
-import { PokemonSelectList, displayPokemonGender } from "../decorators/Pokemon";
+import { PokemonSelectList, PokemonFormeSelectList, displayPokemonGender } from "../decorators/Pokemon";
 import { displayPokemonMove } from "../decorators/PokemonMove";
 import { PokemonMoveCategoryBadge } from "../decorators/PokemonMoveCategory";
 import { PokemonNatureSelectList } from "../decorators/PokemonNature";
@@ -165,6 +165,13 @@ export const PokemonBattleStateEditor: React.FC<{
     forceUpdate();
   }
 
+  const handleFormeSelect = (formeIdent: PokemonIdent) => {
+    const nextPokemonBattleState = createDefaultPokemonBattleStateForPokemonIdent(formeIdent);
+    setPokemonBattleState(nextPokemonBattleState);
+    updatePokemonBattleState(nextPokemonBattleState);
+    forceUpdate();
+  }
+
   const handleTeraTypeSelect = (typeIdent: PokemonTypeIdent) => {
     const nextPokemonBattleState = pokemonBattleState;
     nextPokemonBattleState.pokemon_build.tera_type_ident = typeIdent;
@@ -273,7 +280,15 @@ export const PokemonBattleStateEditor: React.FC<{
           <p className="data-row-label">Pokemon</p>
           <PokemonSelectList
             pokemonIdent={pokemonBattleState.pokemon_build.pokemon.ident}
+            formeRootIdent={pokemonBattleState.pokemon_build.pokemon.forme_root_ident}
             onPokemonSelect={handlePokemonSelect} />
+        </div>
+        <div className="data-row pokemon-forme">
+          <p className="data-row-label">Forme</p>
+          <PokemonFormeSelectList
+            formeIdent={pokemonBattleState.pokemon_build.pokemon.ident}
+            formeRootIdent={pokemonBattleState.pokemon_build.pokemon.forme_root_ident ? pokemonBattleState.pokemon_build.pokemon.forme_root_ident : pokemonBattleState.pokemon_build.pokemon.ident}
+            onFormeSelect={handleFormeSelect} />
         </div>
         <div className="data-row pokemon-type">
           <p className="data-row-label">Type</p>

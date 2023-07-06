@@ -7,6 +7,7 @@
   "formes": [
     {
       "ident": "wooper-paldea",
+      "forme_root_ident": "wooper",
       "primary_type_ident": "poison",
       "secondary_type_ident": "ground",
       "height": 0.4,

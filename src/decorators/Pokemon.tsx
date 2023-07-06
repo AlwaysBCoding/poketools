@@ -6,6 +6,26 @@ import { toTitleCase } from "./DecoratorsShared";
 
 import AllPokemon from "../data/pokemon/all-pokemon.json";
 const ALL_POKEMON = AllPokemon as Pokemon[];
+const ALL_UNIQUE_POKEMON: Pokemon[] = [];
+
+ALL_POKEMON.forEach((pokemon) => {
+  let formes = [];
+  if(pokemon.forme_root_ident) {
+    formes = ALL_POKEMON.filter((x) => { return x.ident === pokemon.forme_root_ident || x.forme_root_ident === pokemon.forme_root_ident })
+  } else {
+    formes = ALL_POKEMON.filter((x) => { return x.ident === pokemon.ident || x.forme_root_ident === pokemon.ident })
+  }
+  
+  if(pokemon.forme_root_ident || formes.length > 1) {
+    if(!pokemon.forme_root_ident) { pokemon.forme_root_ident = pokemon.ident }
+    if(pokemon.ident === formes[0].ident) {
+      ALL_UNIQUE_POKEMON.push(pokemon)
+    }
+  } else {
+    ALL_UNIQUE_POKEMON.push(pokemon)
+  }
+ 
+})
 
 const alphabeticalComp = (a: Pokemon, b: Pokemon): number => {
   if(a.ident > b.ident) { return 1; }
@@ -88,11 +108,23 @@ export const displayPokemonIdent = (pokemonIdent: PokemonIdent): string => {
   else { return toTitleCase(pokemonIdent); }
 }
 
+export const displayFormeIdent = (formeIdent: PokemonIdent): string => {
+  let formeSegments = formeIdent.split("-");
+  if(formeSegments.length > 1) {
+    formeSegments.shift();
+    return toTitleCase(formeSegments.join("-"));
+  } else {
+    return "Base";
+  }
+}
+
 export const PokemonSelectList: React.FC<{
   pokemonIdent: PokemonIdent,
+  formeRootIdent?: PokemonIdent,
   onPokemonSelect?: (pokemonIdent: PokemonIdent) => void
 }> = ({
   pokemonIdent,
+  formeRootIdent,
   onPokemonSelect = () => undefined
 }) => {
 
@@ -107,19 +139,57 @@ export const PokemonSelectList: React.FC<{
     setSelectedPokemonIdent(pokemonIdent);
   }, [pokemonIdent]);
 
+  const selectedRootPokemon = formeRootIdent ? ALL_UNIQUE_POKEMON.find((pokemon) => { return formeRootIdent === pokemon.ident || formeRootIdent === pokemon.forme_root_ident }) : undefined;
+
   return (
-    <select className="pokemon-select-list" onChange={handlePokemonSelect} value={selectedPokemonIdent}>
+    <select className="pokemon-select-list" onChange={handlePokemonSelect} value={selectedRootPokemon ? selectedRootPokemon.ident : selectedPokemonIdent}>
       <option value={""} disabled={true}>
         --Select a Pokemon--
       </option>
-      {ALL_POKEMON.sort(alphabeticalComp).map((pokemon: Pokemon, index: number) => {
+      {ALL_UNIQUE_POKEMON.sort(alphabeticalComp).map((pokemon: Pokemon, index: number) => {
+        const displayIdent = pokemon.forme_root_ident ? displayPokemonIdent(pokemon.forme_root_ident) : displayPokemonIdent(pokemon.ident)
         return (
-          <option key={`pokemon-${index}`} value={pokemon.ident}>{displayPokemonIdent(pokemon.ident)}</option>
+          <option key={`pokemon-${index}`} value={pokemon.ident}>{displayIdent}</option>
         )
       })}
     </select>
   )
 
+}
+
+export const PokemonFormeSelectList: React.FC<{
+  formeIdent: PokemonIdent,
+  formeRootIdent: PokemonIdent,
+  onFormeSelect?: (pokemonIdent: PokemonIdent) => void 
+}> = ({
+  formeIdent,
+  formeRootIdent,
+  onFormeSelect = () => undefined
+}) => {
+  
+  const [selectedFormeIdent, setSelectedFormeIdent] = useState<PokemonIdent>(formeIdent);
+
+  const handleFormeSelect = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedFormeIdent(e.target.value as PokemonIdent);
+    onFormeSelect(e.target.value as PokemonIdent);
+  }
+
+  useEffect(() => {
+    setSelectedFormeIdent(formeIdent);
+  }, [formeIdent]);
+  
+  return (
+    <select className="pokemon-select-list" onChange={handleFormeSelect} value={selectedFormeIdent}>
+      <option value={""} disabled={true}>
+        --Select a Forme--
+      </option>
+      {ALL_POKEMON.filter((pokemon) => { return pokemon.ident === formeRootIdent || pokemon.forme_root_ident === formeRootIdent}).map((pokemon: Pokemon, index: number) => {
+        return (
+          <option key={`pokemon-${index}`} value={pokemon.ident}>{displayFormeIdent(pokemon.ident)}</option>
+        )
+      })}
+    </select>
+  )
 }
 
 export const smogonIdentReverseMapping = (smogonIdent: string): PokemonIdent => {

@@ -1,5 +1,6 @@
 [
   {
+    "forme_root_ident": "articuno",
     "national_pokedex_number": 144,
     "pokedex_region": "kanto",
     "regional_pokedex_number": 144,
@@ -71,6 +72,7 @@
     ]
   },
   {
+    "forme_root_ident": "articuno",
     "national_pokedex_number": 144,
     "pokedex_region": "kanto",
     "regional_pokedex_number": 144,
@@ -146,6 +148,7 @@
     ]
   },
   {
+    "forme_root_ident": "zapdos",
     "national_pokedex_number": 145,
     "pokedex_region": "kanto",
     "regional_pokedex_number": 145,
@@ -221,6 +224,7 @@
     ]
   },
   {
+    "forme_root_ident": "zapdos",
     "national_pokedex_number": 145,
     "pokedex_region": "kanto",
     "regional_pokedex_number": 145,
@@ -293,6 +297,7 @@
     ]
   },
   {
+    "forme_root_ident": "moltres",
     "national_pokedex_number": 146,
     "pokedex_region": "kanto",
     "regional_pokedex_number": 146,
@@ -365,6 +370,7 @@
     ]
   },
   {
+    "forme_root_ident": "moltres",
     "national_pokedex_number": 146,
     "pokedex_region": "kanto",
     "regional_pokedex_number": 146,
@@ -436,451 +442,6 @@
       "thief",
       "u-turn",
       "wing-attack"
-    ]
-  },
-  {
-    "national_pokedex_number": 26,
-    "pokedex_region": "alola",
-    "regional_pokedex_number": 33,
-    "evolution_line_ident": "pichu",
-    "evolution_line_index": 2,
-    "ident": "raichu-alola",
-    "primary_type_ident": "electric",
-    "secondary_type_ident": "psychic",
-    "height": 0.7,
-    "weight": 21,
-    "genders": [
-      "male",
-      "female"
-    ],
-    "base_stats": {
-      "hp": 60,
-      "attack": 85,
-      "defense": 50,
-      "special_attack": 95,
-      "special_defense": 85,
-      "speed": 110
-    },
-    "ability_idents": [
-      "surge-surfer"
-    ],
-    "move_idents": [
-      "agility",
-      "body-slam",
-      "brick-break",
-      "calm-mind",
-      "charge",
-      "charge-beam",
-      "charm",
-      "dig",
-      "disarming-voice",
-      "discharge",
-      "double-team",
-      "draining-kiss",
-      "eerie-impulse",
-      "electric-terrain",
-      "electro-ball",
-      "encore",
-      "endure",
-      "facade",
-      "fake-out",
-      "fake-tears",
-      "feint",
-      "flail",
-      "fling",
-      "fly",
-      "focus-blast",
-      "giga-impact",
-      "grass-knot",
-      "growl",
-      "helping-hand",
-      "hyper-beam",
-      "iron-tail",
-      "light-screen",
-      "nasty-plot",
-      "nuzzle",
-      "play-nice",
-      "play-rough",
-      "present",
-      "protect",
-      "psychic",
-      "psychic-terrain",
-      "psyshock",
-      "quick-attack",
-      "rain-dance",
-      "reflect",
-      "rest",
-      "reversal",
-      "skill-swap",
-      "sleep-talk",
-      "spark",
-      "stored-power",
-      "substitute",
-      "surf",
-      "sweet-kiss",
-      "swift",
-      "tail-whip",
-      "take-down",
-      "tera-blast",
-      "thief",
-      "thunder",
-      "thunderbolt",
-      "thunder-punch",
-      "thunder-shock",
-      "thunder-wave",
-      "tickle",
-      "trailblaze",
-      "volt-switch",
-      "volt-tackle",
-      "wild-charge",
-      "wish"
-    ]
-  },
-  {
-    "national_pokedex_number": 52,
-    "pokedex_region": "alola",
-    "regional_pokedex_number": 52,
-    "evolution_line_ident": "meowth",
-    "evolution_line_index": 0,
-    "ident": "meowth-alola",
-    "primary_type_ident": "dark",
-    "secondary_type_ident": null,
-    "height": 0.4,
-    "weight": 4.2,
-    "genders": [
-      "male",
-      "female"
-    ],
-    "base_stats": {
-      "hp": 40,
-      "attack": 35,
-      "defense": 35,
-      "special_attack": 50,
-      "special_defense": 40,
-      "speed": 90
-    },
-    "ability_idents": [
-      "pickup",
-      "technician",
-      "rattled"
-    ],
-    "move_idents": [
-      "aerial-ace",
-      "agility",
-      "amnesia",
-      "assurance",
-      "bite",
-      "body-slam",
-      "charm",
-      "chilling-water",
-      "confuse-ray",
-      "covet",
-      "dark-pulse",
-      "dig",
-      "endure",
-      "facade",
-      "fake-out",
-      "fake-tears",
-      "feint",
-      "flail",
-      "flatter",
-      "foul-play",
-      "fury-swipes",
-      "growl",
-      "gunk-shot",
-      "helping-hand",
-      "hyper-voice",
-      "hypnosis",
-      "icy-wind",
-      "metal-claw",
-      "nasty-plot",
-      "night-slash",
-      "parting-shot",
-      "pay-day",
-      "play-rough",
-      "power-gem",
-      "protect",
-      "rain-dance",
-      "rest",
-      "scratch",
-      "screech",
-      "seed-bomb",
-      "shadow-ball",
-      "shadow-claw",
-      "sleep-talk",
-      "snarl",
-      "spite",
-      "substitute",
-      "sunny-day",
-      "swift",
-      "take-down",
-      "taunt",
-      "tera-blast",
-      "thief",
-      "thunder",
-      "thunderbolt",
-      "thunder-wave",
-      "trailblaze",
-      "u-turn"
-    ]
-  },
-  {
-    "national_pokedex_number": 53,
-    "pokedex_region": "alola",
-    "regional_pokedex_number": 53,
-    "evolution_line_ident": "meowth",
-    "evolution_line_index": 1,
-    "ident": "persian-alola",
-    "primary_type_ident": "dark",
-    "secondary_type_ident": null,
-    "height": 1.1,
-    "weight": 33,
-    "genders": [
-      "male",
-      "female"
-    ],
-    "base_stats": {
-      "hp": 65,
-      "attack": 60,
-      "defense": 60,
-      "special_attack": 75,
-      "special_defense": 65,
-      "speed": 115
-    },
-    "ability_idents": [
-      "fur-coat",
-      "technician",
-      "rattled"
-    ],
-    "move_idents": [
-      "aerial-ace",
-      "agility",
-      "amnesia",
-      "assurance",
-      "bite",
-      "body-slam",
-      "charm",
-      "chilling-water",
-      "confuse-ray",
-      "covet",
-      "dark-pulse",
-      "dig",
-      "endure",
-      "facade",
-      "fake-out",
-      "fake-tears",
-      "feint",
-      "flail",
-      "flatter",
-      "foul-play",
-      "fury-swipes",
-      "giga-impact",
-      "growl",
-      "gunk-shot",
-      "helping-hand",
-      "hyper-beam",
-      "hyper-voice",
-      "hypnosis",
-      "icy-wind",
-      "metal-claw",
-      "nasty-plot",
-      "night-slash",
-      "parting-shot",
-      "pay-day",
-      "play-rough",
-      "power-gem",
-      "protect",
-      "quash",
-      "rain-dance",
-      "rest",
-      "scratch",
-      "screech",
-      "seed-bomb",
-      "shadow-ball",
-      "shadow-claw",
-      "sleep-talk",
-      "snarl",
-      "spite",
-      "substitute",
-      "sunny-day",
-      "swift",
-      "switcheroo",
-      "take-down",
-      "taunt",
-      "tera-blast",
-      "thief",
-      "thunder",
-      "thunderbolt",
-      "thunder-wave",
-      "trailblaze",
-      "u-turn"
-    ]
-  },
-  {
-    "national_pokedex_number": 50,
-    "pokedex_region": "alola",
-    "regional_pokedex_number": 85,
-    "evolution_line_ident": "diglett",
-    "evolution_line_index": 0,
-    "ident": "diglett-alola",
-    "primary_type_ident": "ground",
-    "secondary_type_ident": "steel",
-    "height": 0.2,
-    "weight": 1,
-    "genders": [
-      "male",
-      "female"
-    ],
-    "base_stats": {
-      "hp": 10,
-      "attack": 55,
-      "defense": 30,
-      "special_attack": 35,
-      "special_defense": 45,
-      "speed": 90
-    },
-    "ability_idents": [
-      "sand-veil",
-      "tangling-hair",
-      "sand-force"
-    ],
-    "move_idents": [
-      "agility",
-      "ancient-power",
-      "astonish",
-      "body-slam",
-      "bulldoze",
-      "charm",
-      "dig",
-      "earth-power",
-      "earthquake",
-      "endure",
-      "facade",
-      "final-gambit",
-      "fissure",
-      "flash-cannon",
-      "foul-play",
-      "growl",
-      "headbutt",
-      "helping-hand",
-      "hone-claws",
-      "iron-defense",
-      "iron-head",
-      "memento",
-      "metal-claw",
-      "metal-sound",
-      "mud-shot",
-      "mud-slap",
-      "protect",
-      "rest",
-      "reversal",
-      "rock-blast",
-      "rock-slide",
-      "rock-tomb",
-      "sand-attack",
-      "sandstorm",
-      "scary-face",
-      "shadow-claw",
-      "sleep-talk",
-      "sludge-bomb",
-      "stealth-rock",
-      "steel-beam",
-      "stomping-tantrum",
-      "stone-edge",
-      "substitute",
-      "sucker-punch",
-      "sunny-day",
-      "swords-dance",
-      "take-down",
-      "tera-blast",
-      "thief",
-      "thrash"
-    ]
-  },
-  {
-    "national_pokedex_number": 51,
-    "pokedex_region": "alola",
-    "regional_pokedex_number": 86,
-    "evolution_line_ident": "diglett",
-    "evolution_line_index": 1,
-    "ident": "dugtrio-alola",
-    "primary_type_ident": "ground",
-    "secondary_type_ident": "steel",
-    "height": 0.7,
-    "weight": 66.6,
-    "genders": [
-      "male",
-      "female"
-    ],
-    "base_stats": {
-      "hp": 35,
-      "attack": 100,
-      "defense": 60,
-      "special_attack": 50,
-      "special_defense": 70,
-      "speed": 110
-    },
-    "ability_idents": [
-      "sand-veil",
-      "tangling-hair",
-      "sand-force"
-    ],
-    "move_idents": [
-      "agility",
-      "ancient-power",
-      "astonish",
-      "body-slam",
-      "bulldoze",
-      "charm",
-      "dig",
-      "earth-power",
-      "earthquake",
-      "endure",
-      "facade",
-      "final-gambit",
-      "fissure",
-      "flash-cannon",
-      "foul-play",
-      "giga-impact",
-      "growl",
-      "headbutt",
-      "helping-hand",
-      "hone-claws",
-      "hyper-beam",
-      "iron-defense",
-      "iron-head",
-      "memento",
-      "metal-claw",
-      "metal-sound",
-      "mud-shot",
-      "mud-slap",
-      "night-slash",
-      "protect",
-      "rest",
-      "reversal",
-      "rock-blast",
-      "rock-slide",
-      "rock-tomb",
-      "sand-attack",
-      "sandstorm",
-      "sand-tomb",
-      "scary-face",
-      "shadow-claw",
-      "sleep-talk",
-      "sludge-bomb",
-      "stealth-rock",
-      "steel-beam",
-      "stomping-tantrum",
-      "stone-edge",
-      "substitute",
-      "sucker-punch",
-      "sunny-day",
-      "swords-dance",
-      "take-down",
-      "tera-blast",
-      "thief",
-      "thrash",
-      "tri-attack"
     ]
   },
   {
@@ -1416,6 +977,456 @@
     ]
   },
   {
+    "forme_root_ident": "raichu",
+    "national_pokedex_number": 26,
+    "pokedex_region": "alola",
+    "regional_pokedex_number": 33,
+    "evolution_line_ident": "pichu",
+    "evolution_line_index": 2,
+    "ident": "raichu-alola",
+    "primary_type_ident": "electric",
+    "secondary_type_ident": "psychic",
+    "height": 0.7,
+    "weight": 21,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 60,
+      "attack": 85,
+      "defense": 50,
+      "special_attack": 95,
+      "special_defense": 85,
+      "speed": 110
+    },
+    "ability_idents": [
+      "surge-surfer"
+    ],
+    "move_idents": [
+      "agility",
+      "body-slam",
+      "brick-break",
+      "calm-mind",
+      "charge",
+      "charge-beam",
+      "charm",
+      "dig",
+      "disarming-voice",
+      "discharge",
+      "double-team",
+      "draining-kiss",
+      "eerie-impulse",
+      "electric-terrain",
+      "electro-ball",
+      "encore",
+      "endure",
+      "facade",
+      "fake-out",
+      "fake-tears",
+      "feint",
+      "flail",
+      "fling",
+      "fly",
+      "focus-blast",
+      "giga-impact",
+      "grass-knot",
+      "growl",
+      "helping-hand",
+      "hyper-beam",
+      "iron-tail",
+      "light-screen",
+      "nasty-plot",
+      "nuzzle",
+      "play-nice",
+      "play-rough",
+      "present",
+      "protect",
+      "psychic",
+      "psychic-terrain",
+      "psyshock",
+      "quick-attack",
+      "rain-dance",
+      "reflect",
+      "rest",
+      "reversal",
+      "skill-swap",
+      "sleep-talk",
+      "spark",
+      "stored-power",
+      "substitute",
+      "surf",
+      "sweet-kiss",
+      "swift",
+      "tail-whip",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "thunder-punch",
+      "thunder-shock",
+      "thunder-wave",
+      "tickle",
+      "trailblaze",
+      "volt-switch",
+      "volt-tackle",
+      "wild-charge",
+      "wish"
+    ]
+  },
+  {
+    "forme_root_ident": "meowth",
+    "national_pokedex_number": 52,
+    "pokedex_region": "alola",
+    "regional_pokedex_number": 52,
+    "evolution_line_ident": "meowth",
+    "evolution_line_index": 0,
+    "ident": "meowth-alola",
+    "primary_type_ident": "dark",
+    "secondary_type_ident": null,
+    "height": 0.4,
+    "weight": 4.2,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 40,
+      "attack": 35,
+      "defense": 35,
+      "special_attack": 50,
+      "special_defense": 40,
+      "speed": 90
+    },
+    "ability_idents": [
+      "pickup",
+      "technician",
+      "rattled"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "agility",
+      "amnesia",
+      "assurance",
+      "bite",
+      "body-slam",
+      "charm",
+      "chilling-water",
+      "confuse-ray",
+      "covet",
+      "dark-pulse",
+      "dig",
+      "endure",
+      "facade",
+      "fake-out",
+      "fake-tears",
+      "feint",
+      "flail",
+      "flatter",
+      "foul-play",
+      "fury-swipes",
+      "growl",
+      "gunk-shot",
+      "helping-hand",
+      "hyper-voice",
+      "hypnosis",
+      "icy-wind",
+      "metal-claw",
+      "nasty-plot",
+      "night-slash",
+      "parting-shot",
+      "pay-day",
+      "play-rough",
+      "power-gem",
+      "protect",
+      "rain-dance",
+      "rest",
+      "scratch",
+      "screech",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "sleep-talk",
+      "snarl",
+      "spite",
+      "substitute",
+      "sunny-day",
+      "swift",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "thunder-wave",
+      "trailblaze",
+      "u-turn"
+    ]
+  },
+  {
+    "forme_root_ident": "persian",
+    "national_pokedex_number": 53,
+    "pokedex_region": "alola",
+    "regional_pokedex_number": 53,
+    "evolution_line_ident": "meowth",
+    "evolution_line_index": 1,
+    "ident": "persian-alola",
+    "primary_type_ident": "dark",
+    "secondary_type_ident": null,
+    "height": 1.1,
+    "weight": 33,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 65,
+      "attack": 60,
+      "defense": 60,
+      "special_attack": 75,
+      "special_defense": 65,
+      "speed": 115
+    },
+    "ability_idents": [
+      "fur-coat",
+      "technician",
+      "rattled"
+    ],
+    "move_idents": [
+      "aerial-ace",
+      "agility",
+      "amnesia",
+      "assurance",
+      "bite",
+      "body-slam",
+      "charm",
+      "chilling-water",
+      "confuse-ray",
+      "covet",
+      "dark-pulse",
+      "dig",
+      "endure",
+      "facade",
+      "fake-out",
+      "fake-tears",
+      "feint",
+      "flail",
+      "flatter",
+      "foul-play",
+      "fury-swipes",
+      "giga-impact",
+      "growl",
+      "gunk-shot",
+      "helping-hand",
+      "hyper-beam",
+      "hyper-voice",
+      "hypnosis",
+      "icy-wind",
+      "metal-claw",
+      "nasty-plot",
+      "night-slash",
+      "parting-shot",
+      "pay-day",
+      "play-rough",
+      "power-gem",
+      "protect",
+      "quash",
+      "rain-dance",
+      "rest",
+      "scratch",
+      "screech",
+      "seed-bomb",
+      "shadow-ball",
+      "shadow-claw",
+      "sleep-talk",
+      "snarl",
+      "spite",
+      "substitute",
+      "sunny-day",
+      "swift",
+      "switcheroo",
+      "take-down",
+      "taunt",
+      "tera-blast",
+      "thief",
+      "thunder",
+      "thunderbolt",
+      "thunder-wave",
+      "trailblaze",
+      "u-turn"
+    ]
+  },
+  {
+    "forme_root_ident": "diglett",
+    "national_pokedex_number": 50,
+    "pokedex_region": "alola",
+    "regional_pokedex_number": 85,
+    "evolution_line_ident": "diglett",
+    "evolution_line_index": 0,
+    "ident": "diglett-alola",
+    "primary_type_ident": "ground",
+    "secondary_type_ident": "steel",
+    "height": 0.2,
+    "weight": 1,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 10,
+      "attack": 55,
+      "defense": 30,
+      "special_attack": 35,
+      "special_defense": 45,
+      "speed": 90
+    },
+    "ability_idents": [
+      "sand-veil",
+      "tangling-hair",
+      "sand-force"
+    ],
+    "move_idents": [
+      "agility",
+      "ancient-power",
+      "astonish",
+      "body-slam",
+      "bulldoze",
+      "charm",
+      "dig",
+      "earth-power",
+      "earthquake",
+      "endure",
+      "facade",
+      "final-gambit",
+      "fissure",
+      "flash-cannon",
+      "foul-play",
+      "growl",
+      "headbutt",
+      "helping-hand",
+      "hone-claws",
+      "iron-defense",
+      "iron-head",
+      "memento",
+      "metal-claw",
+      "metal-sound",
+      "mud-shot",
+      "mud-slap",
+      "protect",
+      "rest",
+      "reversal",
+      "rock-blast",
+      "rock-slide",
+      "rock-tomb",
+      "sand-attack",
+      "sandstorm",
+      "scary-face",
+      "shadow-claw",
+      "sleep-talk",
+      "sludge-bomb",
+      "stealth-rock",
+      "steel-beam",
+      "stomping-tantrum",
+      "stone-edge",
+      "substitute",
+      "sucker-punch",
+      "sunny-day",
+      "swords-dance",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash"
+    ]
+  },
+  {
+    "forme_root_ident": "dugtrio",
+    "national_pokedex_number": 51,
+    "pokedex_region": "alola",
+    "regional_pokedex_number": 86,
+    "evolution_line_ident": "diglett",
+    "evolution_line_index": 1,
+    "ident": "dugtrio-alola",
+    "primary_type_ident": "ground",
+    "secondary_type_ident": "steel",
+    "height": 0.7,
+    "weight": 66.6,
+    "genders": [
+      "male",
+      "female"
+    ],
+    "base_stats": {
+      "hp": 35,
+      "attack": 100,
+      "defense": 60,
+      "special_attack": 50,
+      "special_defense": 70,
+      "speed": 110
+    },
+    "ability_idents": [
+      "sand-veil",
+      "tangling-hair",
+      "sand-force"
+    ],
+    "move_idents": [
+      "agility",
+      "ancient-power",
+      "astonish",
+      "body-slam",
+      "bulldoze",
+      "charm",
+      "dig",
+      "earth-power",
+      "earthquake",
+      "endure",
+      "facade",
+      "final-gambit",
+      "fissure",
+      "flash-cannon",
+      "foul-play",
+      "giga-impact",
+      "growl",
+      "headbutt",
+      "helping-hand",
+      "hone-claws",
+      "hyper-beam",
+      "iron-defense",
+      "iron-head",
+      "memento",
+      "metal-claw",
+      "metal-sound",
+      "mud-shot",
+      "mud-slap",
+      "night-slash",
+      "protect",
+      "rest",
+      "reversal",
+      "rock-blast",
+      "rock-slide",
+      "rock-tomb",
+      "sand-attack",
+      "sandstorm",
+      "sand-tomb",
+      "scary-face",
+      "shadow-claw",
+      "sleep-talk",
+      "sludge-bomb",
+      "stealth-rock",
+      "steel-beam",
+      "stomping-tantrum",
+      "stone-edge",
+      "substitute",
+      "sucker-punch",
+      "sunny-day",
+      "swords-dance",
+      "take-down",
+      "tera-blast",
+      "thief",
+      "thrash",
+      "tri-attack"
+    ]
+  },
+  {
     "ident": "rowlet",
     "national_pokedex_number": 722,
     "regional_pokedex_number": 1,
@@ -1578,6 +1589,7 @@
     ]
   },
   {
+    "forme_root_ident": "decidueye",
     "national_pokedex_number": 724,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 3,
@@ -1674,6 +1686,7 @@
     ]
   },
   {
+    "forme_root_ident": "decidueye",
     "national_pokedex_number": 724,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 3,
@@ -1923,6 +1936,7 @@
     ]
   },
   {
+    "forme_root_ident": "typhlosion",
     "national_pokedex_number": 157,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 6,
@@ -2017,6 +2031,7 @@
     ]
   },
   {
+    "forme_root_ident": "typhlosion",
     "national_pokedex_number": 157,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 6,
@@ -2276,6 +2291,7 @@
     ]
   },
   {
+    "forme_root_ident": "samurott",
     "national_pokedex_number": 503,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 9,
@@ -2368,6 +2384,7 @@
     ]
   },
   {
+    "forme_root_ident": "samurott",
     "national_pokedex_number": 503,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 9,
@@ -2464,6 +2481,7 @@
     ]
   },
   {
+    "forme_root_ident": "tornadus",
     "national_pokedex_number": 641,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 231,
@@ -2545,6 +2563,7 @@
     ]
   },
   {
+    "forme_root_ident": "tornadus",
     "national_pokedex_number": 641,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 231,
@@ -2625,6 +2644,7 @@
     ]
   },
   {
+    "forme_root_ident": "thundurus",
     "national_pokedex_number": 642,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 232,
@@ -2711,6 +2731,7 @@
     ]
   },
   {
+    "forme_root_ident": "thundurus",
     "national_pokedex_number": 642,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 232,
@@ -2796,6 +2817,7 @@
     ]
   },
   {
+    "forme_root_ident": "landorus",
     "national_pokedex_number": 645,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 233,
@@ -2875,6 +2897,7 @@
     ]
   },
   {
+    "forme_root_ident": "landorus",
     "national_pokedex_number": 645,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 233,
@@ -2953,6 +2976,7 @@
     ]
   },
   {
+    "forme_root_ident": "enamorus",
     "national_pokedex_number": 905,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 234,
@@ -3029,6 +3053,7 @@
     ]
   },
   {
+    "forme_root_ident": "enamorus",
     "national_pokedex_number": 905,
     "pokedex_region": "hisui",
     "regional_pokedex_number": 234,
@@ -3899,6 +3924,7 @@
     "regional_pokedex_number": 10
   },
   {
+    "forme_root_ident": "oricorio",
     "national_pokedex_number": 741,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 100,
@@ -3971,6 +3997,7 @@
     ]
   },
   {
+    "forme_root_ident": "oricorio",
     "national_pokedex_number": 741,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 100,
@@ -4043,6 +4070,7 @@
     ]
   },
   {
+    "forme_root_ident": "oricorio",
     "national_pokedex_number": 741,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 100,
@@ -4115,6 +4143,7 @@
     ]
   },
   {
+    "forme_root_ident": "oricorio",
     "national_pokedex_number": 741,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 100,
@@ -4845,6 +4874,7 @@
     "regional_pokedex_number": 109
   },
   {
+    "forme_root_ident": "oinkologne",
     "national_pokedex_number": 916,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 11,
@@ -4922,6 +4952,7 @@
     ]
   },
   {
+    "forme_root_ident": "oinkologne",
     "national_pokedex_number": 916,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 11,
@@ -5283,6 +5314,7 @@
     "regional_pokedex_number": 112
   },
   {
+    "forme_root_ident": "squawkabilly",
     "national_pokedex_number": 931,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 113,
@@ -5357,6 +5389,7 @@
     ]
   },
   {
+    "forme_root_ident": "squawkabilly",
     "national_pokedex_number": 931,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 113,
@@ -5431,6 +5464,7 @@
     ]
   },
   {
+    "forme_root_ident": "squawkabilly",
     "national_pokedex_number": 931,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 113,
@@ -5505,6 +5539,7 @@
     ]
   },
   {
+    "forme_root_ident": "squawkabilly",
     "national_pokedex_number": 931,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 113,
@@ -7686,6 +7721,7 @@
     "regional_pokedex_number": 137
   },
   {
+    "forme_root_ident": "basculin",
     "national_pokedex_number": 550,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 138,
@@ -7763,6 +7799,7 @@
     ]
   },
   {
+    "forme_root_ident": "basculin",
     "national_pokedex_number": 550,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 138,
@@ -7840,6 +7877,7 @@
     ]
   },
   {
+    "forme_root_ident": "basculin",
     "national_pokedex_number": 550,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 138,
@@ -12593,6 +12631,7 @@
     "regional_pokedex_number": 188
   },
   {
+    "forme_root_ident": "dudunsparce",
     "national_pokedex_number": 982,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 189,
@@ -12703,6 +12742,7 @@
     ]
   },
   {
+    "forme_root_ident": "dudunsparce",
     "national_pokedex_number": 982,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 189,
@@ -12873,6 +12913,7 @@
     "regional_pokedex_number": 19
   },
   {
+    "forme_root_ident": "deerling",
     "national_pokedex_number": 585,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 190,
@@ -12947,6 +12988,7 @@
     ]
   },
   {
+    "forme_root_ident": "deerling",
     "national_pokedex_number": 585,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 190,
@@ -13021,6 +13063,7 @@
     ]
   },
   {
+    "forme_root_ident": "deerling",
     "national_pokedex_number": 585,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 190,
@@ -13095,6 +13138,7 @@
     ]
   },
   {
+    "forme_root_ident": "deerling",
     "national_pokedex_number": 585,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 190,
@@ -13169,6 +13213,7 @@
     ]
   },
   {
+    "forme_root_ident": "sawsbuck",
     "national_pokedex_number": 586,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 191,
@@ -13250,6 +13295,7 @@
     ]
   },
   {
+    "forme_root_ident": "sawsbuck",
     "national_pokedex_number": 586,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 191,
@@ -13331,6 +13377,7 @@
     ]
   },
   {
+    "forme_root_ident": "sawsbuck",
     "national_pokedex_number": 586,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 191,
@@ -13412,6 +13459,7 @@
     ]
   },
   {
+    "forme_root_ident": "sawsbuck",
     "national_pokedex_number": 586,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 191,
@@ -14088,6 +14136,7 @@
     "regional_pokedex_number": 198
   },
   {
+    "forme_root_ident": "toxtricity",
     "national_pokedex_number": 849,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 199,
@@ -14187,6 +14236,7 @@
     ]
   },
   {
+    "forme_root_ident": "toxtricity",
     "national_pokedex_number": 849,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 199,
@@ -16372,6 +16422,7 @@
     "regional_pokedex_number": 222
   },
   {
+    "forme_root_ident": "tauros",
     "national_pokedex_number": 128,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 223,
@@ -16449,6 +16500,7 @@
     ]
   },
   {
+    "forme_root_ident": "tauros",
     "national_pokedex_number": 128,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 223,
@@ -16530,6 +16582,7 @@
     ]
   },
   {
+    "forme_root_ident": "tauros",
     "national_pokedex_number": 128,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 223,
@@ -18224,6 +18277,7 @@
     "regional_pokedex_number": 240
   },
   {
+    "forme_root_ident": "indeedee",
     "national_pokedex_number": 876,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 241,
@@ -18295,6 +18349,7 @@
     ]
   },
   {
+    "forme_root_ident": "indeedee",
     "national_pokedex_number": 876,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 241,
@@ -22703,6 +22758,7 @@
     "regional_pokedex_number": 291
   },
   {
+    "forme_root_ident": "palafin",
     "national_pokedex_number": 964,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 292,
@@ -22793,6 +22849,7 @@
     ]
   },
   {
+    "forme_root_ident": "palafin",
     "national_pokedex_number": 964,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 292,
@@ -24395,6 +24452,7 @@
     "regional_pokedex_number": 31
   },
   {
+    "forme_root_ident": "rotom",
     "national_pokedex_number": 479,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 310,
@@ -24463,6 +24521,7 @@
     ]
   },
   {
+    "forme_root_ident": "rotom",
     "national_pokedex_number": 479,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 310,
@@ -24532,6 +24591,7 @@
     ]
   },
   {
+    "forme_root_ident": "rotom",
     "national_pokedex_number": 479,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 310,
@@ -24601,6 +24661,7 @@
     ]
   },
   {
+    "forme_root_ident": "rotom",
     "national_pokedex_number": 479,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 310,
@@ -24670,6 +24731,7 @@
     ]
   },
   {
+    "forme_root_ident": "rotom",
     "national_pokedex_number": 479,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 310,
@@ -24739,6 +24801,7 @@
     ]
   },
   {
+    "forme_root_ident": "rotom",
     "national_pokedex_number": 479,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 310,
@@ -25634,6 +25697,7 @@
     "regional_pokedex_number": 32
   },
   {
+    "forme_root_ident": "eiscue",
     "national_pokedex_number": 875,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 320,
@@ -25708,6 +25772,7 @@
     ]
   },
   {
+    "forme_root_ident": "eiscue",
     "national_pokedex_number": 875,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 320,
@@ -26330,6 +26395,7 @@
     "regional_pokedex_number": 326
   },
   {
+    "forme_root_ident": "shellos",
     "national_pokedex_number": 422,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 327,
@@ -26409,6 +26475,7 @@
     ]
   },
   {
+    "forme_root_ident": "shellos",
     "national_pokedex_number": 422,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 327,
@@ -26488,6 +26555,7 @@
     ]
   },
   {
+    "forme_root_ident": "gastrodon",
     "national_pokedex_number": 423,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 328,
@@ -26575,6 +26643,7 @@
     ]
   },
   {
+    "forme_root_ident": "gastrodon",
     "national_pokedex_number": 423,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 328,
@@ -29114,6 +29183,7 @@
     "regional_pokedex_number": 374
   },
   {
+    "forme_root_ident": "tatsugiri",
     "national_pokedex_number": 978,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 375,
@@ -29177,6 +29247,7 @@
     ]
   },
   {
+    "forme_root_ident": "tatsugiri",
     "national_pokedex_number": 978,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 375,
@@ -29240,6 +29311,7 @@
     ]
   },
   {
+    "forme_root_ident": "tatsugiri",
     "national_pokedex_number": 978,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 375,
@@ -32312,6 +32384,7 @@
     "regional_pokedex_number": 52
   },
   {
+    "forme_root_ident": "wooper",
     "national_pokedex_number": 194,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 53,
@@ -34127,6 +34200,7 @@
     "regional_pokedex_number": 71
   },
   {
+    "forme_root_ident": "maushold",
     "national_pokedex_number": 946,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 72,
@@ -34211,6 +34285,7 @@
     ]
   },
   {
+    "forme_root_ident": "maushold",
     "national_pokedex_number": 946,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 72,
@@ -35712,6 +35787,7 @@
     "regional_pokedex_number": 89
   },
   {
+    "forme_root_ident": "lycanroc",
     "national_pokedex_number": 745,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 90,
@@ -35802,6 +35878,7 @@
     ]
   },
   {
+    "forme_root_ident": "lycanroc",
     "national_pokedex_number": 745,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 90,
@@ -35894,6 +35971,7 @@
     ]
   },
   {
+    "forme_root_ident": "lycanroc",
     "national_pokedex_number": 745,
     "pokedex_region": "paldea",
     "regional_pokedex_number": 90,

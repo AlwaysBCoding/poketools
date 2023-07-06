@@ -42,7 +42,8 @@ export const pokemonBuildTemplateToPokemonBuild = (pokemonBuildTemplate: Pokemon
     let adjustedIdent = pokemonBuildTemplate.pokemon_ident;
     if(adjustedIdent === "maushold-four") { adjustedIdent = "maushold-family-of-four" }
     if(adjustedIdent === "maushold-three") { adjustedIdent = "maushold-family-of-three" }
-    return pokemon.ident.includes(adjustedIdent);
+    // return pokemon.ident.includes(adjustedIdent);
+    return pokemon.ident === adjustedIdent;
   }) as Pokemon);
 
   pokemonBuild.pokemon = pokemonData;

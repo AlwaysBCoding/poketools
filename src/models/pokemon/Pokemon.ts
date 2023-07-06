@@ -9,6 +9,7 @@ import {
 
 export interface Pokemon {
   ident: string;
+  forme_root_ident?: string;
   national_pokedex_number: number;
   regional_pokedex_number: number;
   pokedex_region: "kanto" | "alola" | "galar" | "hisui" | "paldea";
