@@ -356,8 +356,6 @@ Tauros
 Uxie
 Mesprit
 Azelf
-Heatran
-Cresselia
 Hisuian Lilligant
 Basculegion (Male) line
 Basculegion (Female)
@@ -373,9 +371,6 @@ Hisuian Goodra line
 Rillaboom line
 Cinderace line
 Inteleon line
-Kubfu
-Urshifu Rapid-Strike
-Urshifu Single-Strike
 Wyrdeer
 Kleavor
 Ursaluna
