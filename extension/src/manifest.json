@@ -4,7 +4,8 @@
   "description": "A simple Chrome extension example",
   "version": "1.0",
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -17,6 +18,12 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
   "icons": {
     "16": "assets/images/icon16.png",
     "48": "assets/images/icon48.png",

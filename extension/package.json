@@ -14,5 +14,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development"
+  },
+  "dependencies": {
+    "webextension-polyfill-ts": "^0.26.0"
   }
 }
