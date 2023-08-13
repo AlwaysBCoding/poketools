@@ -1,0 +1,89 @@
+// COLORS
+// =====================
+$phantom-dark-gray: #222222;
+
+// GLOBALS
+// =====================
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a, input, textarea {
+  all: unset;
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+h1, h2, h3, h4, h5, h6, p, hr, pre, a, input, span {
+  font-family: "Verdana";
+  margin: 0;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+hr {
+  width: 100%;
+}
+
+.flex-spacer {
+  flex: 1;
+}
+
+// Layout
+#root {
+  width: 360px;
+  height: 540px;
+}
+
+.popup-container {
+  width: 100%;
+  height: 100%;
+  background-color: $phantom-dark-gray;
+}
+
+// .Container {
+//   min-height: 100vh;
+//   background-color: $background-cream;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: flex-start;
+// }
+
+// .App {
+//   width: 100%;
+//   min-height: 100vh;
+//   max-width: 1280px;
+//   padding-left: 64px;
+//   padding-right: 64px;
+//   background-color: $background-cream;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+// }
+
+// Component Styles
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}

@@ -3,9 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.65.1",
+    "webextension-polyfill-ts": "^0.26.0"
+  },
   "devDependencies": {
     "@types/chrome": "^0.0.243",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
     "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
@@ -14,8 +26,5 @@
   "scripts": {
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development"
-  },
-  "dependencies": {
-    "webextension-polyfill-ts": "^0.26.0"
   }
 }
