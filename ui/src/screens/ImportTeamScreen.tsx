@@ -12,7 +12,7 @@ import vgcUsageData from "../data/stats/2022-12-vgc-series1-usage.json";
 const parsePokepasteText = (pokepasteText: string): PokemonBuildTemplate[] | null => {
   try {
     const team = [];
-    const monsText = pokepasteText. split(/^\n/gm);
+    const monsText = pokepasteText.split(/^\n/gm);
 
     for (const monText of monsText) {
       const pokemonBuildTemplate: any = {};
