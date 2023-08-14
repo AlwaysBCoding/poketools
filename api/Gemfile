@@ -1,0 +1,25 @@
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby "3.2.2"
+gem "rails", "~> 7.0.6"
+
+gem "aws-sdk-s3", "~> 1.53.0"
+gem "aws-sdk-sqs", "~> 1.53.0"
+gem "bootsnap", require: false
+gem "httparty", "~> 0.21.0"
+gem "pg", "~> 1.4.6"
+gem "puma", "~> 5.0"
+gem "rack-cors"
+gem "sqlite3", "~> 1.4"
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "webrick"
+
+group :development do
+  gem "pry-rails"
+end
+
+group :development, :test do
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+end
+

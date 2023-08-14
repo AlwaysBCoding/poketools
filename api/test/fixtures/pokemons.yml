@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ident: MyString
+  national_pokedex_number: 1
+  regional_pokedex_number: 1
+  pokedex_region: MyString
+
+two:
+  ident: MyString
+  national_pokedex_number: 1
+  regional_pokedex_number: 1
+  pokedex_region: MyString

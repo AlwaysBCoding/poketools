@@ -1,0 +1,2 @@
+class PokemonStatSpread < ApplicationRecord
+end
