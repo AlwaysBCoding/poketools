@@ -1,6 +1,8 @@
 class PokemonTeam < ApplicationRecord
   validates :uuid, presence: true
 
+  has_many :pokemon_battles, foreign_key: :user_team_id
+
   before_validation :generate_uuid, on: :create
 
   # Class Methods
